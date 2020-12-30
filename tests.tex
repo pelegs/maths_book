@@ -1,0 +1,46 @@
+\documentclass[a4paper]{report}
+\usepackage[
+    a4paper,
+    top=25.4mm, bottom=25.4mm,
+	]{geometry}
+\setlength\parindent{0em}
+\setlength{\parskip}{1em}
+\usepackage{blindtext}
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{calc}
+\usepackage{kpfonts}
+\usepackage{xcolor}
+\definecolor{blu}{HTML}{4268BD}
+
+% Used to set chapter title look.
+% "explicit" is there so we can
+% use the first parameter (#1).
+\usepackage[explicit]{titlesec}
+\newcommand{\chapternumsize}{\fontsize{70}{70}\selectfont}
+\newcommand{\chaptertitlesize}{\fontsize{30}{30}\selectfont}
+
+\newcommand{\newchapter}[1]{
+	\begin{tikzpicture}[overlay, remember picture]
+		\coordinate (boxtopright) at ($(current page text area.east |- current page.north)-(0pt,0)$);
+		\coordinate (boxbottomleft) at ($(boxtopright)-(3cm,5cm)$);
+		\coordinate (boxbottomright) at (boxtopright |- boxbottomleft);
+		\coordinate (lineleft) at (current page text area.west |- boxbottomleft);
+
+		\draw[thick] (boxbottomright) to (lineleft);
+		\filldraw[blu] (boxtopright) rectangle (boxbottomleft) node [midway, text=white, text width=3cm, align=center, yshift=-5mm] (chapternum) {\Large CHAPTER\\\vspace{7mm}\chapternumsize\thechapter};
+		\node[anchor=south west, xshift=-4pt, align=left, text width=10cm] at (lineleft |- chapternum.south) {\chaptertitlesize #1};
+	\end{tikzpicture}
+}
+
+\titleformat{\chapter}{}{}{0pt}{\newchapter{#1}}
+
+\begin{document}
+\setcounter{chapter}{2}
+\chapter{This is a Test Title}
+\section{The Foo and the Bar}
+\subsection{The Foo; or: Why Does a Fish?}
+\Blindtext
+\subsection{The Bar, the One and Only}
+\blindtext[2]
+\end{document}
