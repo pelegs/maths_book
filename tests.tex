@@ -39,6 +39,18 @@
 
 \titleformat{\chapter}{}{}{0pt}{\newchapter{#1}}
 
+%---------%
+% HEADERS %
+%---------%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}% Clear header/footer
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter:\ #1}{}}
+\fancyhead[RO,LE]{\leftmark}% Chapter details in book
+\fancyfoot[RO,LE]{\thepage}
+\makeatother
+
 %-------%
 % BOXES %
 %-------%
@@ -97,5 +109,5 @@
 	A Foo is simply a thing.
 \end{definition}
 \subsection{The Bar, the One and Only}
-\blindtext[2]
+\blindtext[6]
 \end{document}
