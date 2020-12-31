@@ -11,7 +11,13 @@
 \usetikzlibrary{calc}
 \usepackage{kpfonts}
 \usepackage{xcolor}
-\definecolor{blu}{HTML}{4268BD}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{B93F0B}
+
+\usepackage{amsmath, bm}
 
 %---------------%
 % CHAPTER TITLE %
@@ -32,7 +38,7 @@
 		\coordinate (lineleft) at (current page text area.west |- boxbottomleft);
 
 		%\draw[thick] (boxbottomright) to (lineleft);
-		\filldraw[blu, rounded corners=4mm] ($(boxtopright)+(0,1cm)$) rectangle (boxbottomleft) node [midway, text=white, text width=3cm, align=center, yshift=-5mm] (chapternum) {\Large CHAPTER\\\vspace{7mm}\chapternumsize\thechapter};
+		\filldraw[xblue, rounded corners=4mm] ($(boxtopright)+(0,1cm)$) rectangle (boxbottomleft) node [midway, text=white, text width=3cm, align=center, yshift=-5mm] (chapternum) {\Large CHAPTER\\\vspace{7mm}\chapternumsize\thechapter};
 		\node[anchor=south west, xshift=-4pt, align=left, text width=10cm] at (lineleft |- chapternum.south) {\chaptertitlesize #1};
 	\end{tikzpicture}
 }
@@ -55,6 +61,7 @@
 % BOXES %
 %-------%
 
+\usepackage{fontawesome}
 \usepackage[most]{tcolorbox}
 \tcbset{
 	common/.style={
@@ -78,12 +85,36 @@
 		separator sign={:~},},
 	defstyle/.style={
 		common,
-		colframe=blu,
-		colback=blu!5,
-		colbacktitle=blu,
+		colframe=xpurple,
+		colback=xpurple!5,
+		colbacktitle=xpurple,
 		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-				\textcolor{blu}{$\pi$}};}},
+			\node[anchor=south east, outer sep=0pt] at (\linewidth-width, 1) {
+				\textcolor{xpurple}{$\pi$}};}},
+	exmplstyle/.style={
+		common,
+		colframe=xblue,
+		colback=xblue!5,
+		colbacktitle=xblue,
+		overlay unbroken and last={
+			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
+				\textcolor{xblue}{\faArrowCircleDown}};}},
+	notestyle/.style={
+		common,
+		colframe=xred,
+		colback=xred!5,
+		colbacktitle=xred,
+		overlay unbroken and last={
+			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
+				\textcolor{xred}{!}};}},
+	chllngstyle/.style={
+		common,
+		colframe=xgreen,
+		colback=xgreen!5,
+		colbacktitle=xgreen,
+		overlay unbroken and last={
+			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 0) {
+				\textcolor{xgreen}{?}};}},
 	thmstyle/.style={
 		common,
 		colframe=second,
@@ -94,6 +125,9 @@
 				\textcolor{second}{$\heartsuit$}};}},
 	}
 \newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
+\newtcbtheorem[auto counter, number within=chapter]{example}{Example}{exmplstyle}{example}
+\newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
+\newtcbtheorem[auto counter, number within=chapter]{challange}{Challange}{chllngstyle}{challange}
 
 %----------%
 % DOCUMENT %
@@ -108,10 +142,32 @@
 \begin{definition}{The Foo}{}
 	A Foo is simply a thing, i.e.
 	\begin{equation}
-		e^{i\tau} = 1.
+		e^{i\pi} = -e^{i\tau} = -1.
 		\label{eq:a thing}
 	\end{equation}
 \end{definition}
+\Blindtext[1]
+\begin{example}{A Bla which is not a Foo}{}
+	Is there even such a thing? Consider
+	\begin{equation*}
+		f(x) = \sin(x)+5x^{2}.
+	\end{equation*}
+\end{example}
 \subsection{The Bar, the One and Only}
-\blindtext[6]
+\Blindtext[3]
+\begin{note}{Something to Consider}{}
+	Bla bla bla, yada yada yada.
+	~\\
+	~\\
+	More lines.
+\end{note}
+\Blindtext[3]
+\begin{challange}{Generalize this thing}{}
+	In 2D, the distance between two points $\bm{A}=(A_{x},A_{y})$ and $\bm{B}=(B_{x},B_{y})$ is
+	\begin{equation}
+		|AB| = \sqrt{(A_{x}-B_{x})^{2} + (A_{y}-B_{y})^{2}}.
+		\label{eq:dist2D}
+	\end{equation}
+	Generalize this to 3D and to $N$D, where $N\in\mathbb{N}$.
+\end{challange}
 \end{document}
