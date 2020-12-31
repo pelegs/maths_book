@@ -1,4 +1,4 @@
-\documentclass[a4paper]{report}
+\documentclass[a4paper]{book}
 \usepackage[
     a4paper,
     top=25.4mm, bottom=25.4mm,
@@ -13,6 +13,10 @@
 \usepackage{xcolor}
 \definecolor{blu}{HTML}{4268BD}
 
+%---------------%
+% CHAPTER TITLE %
+%---------------%
+
 % Used to set chapter title look.
 % "explicit" is there so we can
 % use the first parameter (#1).
@@ -22,18 +26,66 @@
 
 \newcommand{\newchapter}[1]{
 	\begin{tikzpicture}[overlay, remember picture]
-		\coordinate (boxtopright) at ($(current page text area.east |- current page.north)-(0pt,0)$);
+		\coordinate (boxtopright) at (current page text area.east |- current page.north);
 		\coordinate (boxbottomleft) at ($(boxtopright)-(3cm,5cm)$);
 		\coordinate (boxbottomright) at (boxtopright |- boxbottomleft);
 		\coordinate (lineleft) at (current page text area.west |- boxbottomleft);
 
-		\draw[thick] (boxbottomright) to (lineleft);
-		\filldraw[blu] (boxtopright) rectangle (boxbottomleft) node [midway, text=white, text width=3cm, align=center, yshift=-5mm] (chapternum) {\Large CHAPTER\\\vspace{7mm}\chapternumsize\thechapter};
+		%\draw[thick] (boxbottomright) to (lineleft);
+		\filldraw[blu, rounded corners=4mm] ($(boxtopright)+(0,1cm)$) rectangle (boxbottomleft) node [midway, text=white, text width=3cm, align=center, yshift=-5mm] (chapternum) {\Large CHAPTER\\\vspace{7mm}\chapternumsize\thechapter};
 		\node[anchor=south west, xshift=-4pt, align=left, text width=10cm] at (lineleft |- chapternum.south) {\chaptertitlesize #1};
 	\end{tikzpicture}
 }
 
 \titleformat{\chapter}{}{}{0pt}{\newchapter{#1}}
+
+%-------%
+% BOXES %
+%-------%
+
+\usepackage[most]{tcolorbox}
+\tcbset{
+	common/.style={
+		lower separated=false,
+		coltitle=white,
+		colback=gray!5,
+		boxrule=0.5pt,
+		fonttitle=\bfseries,
+		enhanced,
+		breakable,
+		top=8pt,
+		before skip=8pt,
+		attach boxed title to top left={
+			yshift=-0.25cm,
+			xshift=0.38cm},
+		boxed title style={
+			boxrule=0pt,
+			colframe=white,
+			arc=0pt,
+			outer arc=0pt},
+		separator sign={:~},},
+	defstyle/.style={
+		common,
+		colframe=blu,
+		colback=blu!5,
+		colbacktitle=blu,
+		overlay unbroken and last={
+			\node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
+				\textcolor{blu}{$\pi$}};}},
+	thmstyle/.style={
+		common,
+		colframe=second,
+		colback=second!5,
+		colbacktitle=second,
+		overlay unbroken and last={
+			\node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
+				\textcolor{second}{$\heartsuit$}};}},
+	}
+\newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
+
+%----------%
+% DOCUMENT %
+%----------%
 
 \begin{document}
 \setcounter{chapter}{2}
@@ -41,6 +93,9 @@
 \section{The Foo and the Bar}
 \subsection{The Foo; or: Why Does a Fish?}
 \Blindtext
+\begin{definition}{The Foo}{}
+	A Foo is simply a thing.
+\end{definition}
 \subsection{The Bar, the One and Only}
 \blindtext[2]
 \end{document}

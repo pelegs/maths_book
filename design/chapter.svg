@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.0129716"
-     inkscape:cx="403.45275"
-     inkscape:cy="350.27697"
+     inkscape:cx="219.11068"
+     inkscape:cy="455.94584"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -51,17 +51,15 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 198.00668,57.672719 11.269156,57.45628"
-       id="path877" />
     <rect
-       style="opacity:1;fill:#4268bd;stroke:none;stroke-width:0.529;stroke-linecap:square;stroke-dasharray:0.529, 1.58699999999999997;fill-opacity:1"
+       style="opacity:1;fill:#4268bd;fill-opacity:1;stroke:none;stroke-width:0.529;stroke-linecap:square;stroke-dasharray:0.529, 1.587"
        id="rect833"
-       width="31.412226"
-       height="57.729523"
-       x="166.59445"
-       y="0.20777951" />
+       width="31.412231"
+       height="70.958694"
+       x="-198.00668"
+       y="-57.937313"
+       ry="5.3636823"
+       transform="scale(-1)" />
     <text
        xml:space="preserve"
        style="font-size:5.19717px;line-height:1.25;font-family:System-ui;-inkscape-font-specification:'System-ui, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;stroke-width:0.389788;fill:#ffffff;"
