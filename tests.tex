@@ -129,6 +129,13 @@
 \newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
 \newtcbtheorem[auto counter, number within=chapter]{challange}{Challange}{chllngstyle}{challange}
 
+%---------%
+% FIGURES %
+%---------%
+
+\usepackage{float}
+\usepackage[labelfont={color=xblue,bf}, figurename=Figure]{caption}
+
 %----------%
 % DOCUMENT %
 %----------%
@@ -170,4 +177,16 @@
 	\end{equation}
 	Generalize this to 3D and to $N$D, where $N\in\mathbb{N}$.
 \end{challange}
+
+\Blindtext[1]
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\draw[thick, fill=xblue!50] (0,0) node [left] {$A$} -- (1,2) node [above] {$B$} -- (2,-1) node [right] {$C$} -- cycle;
+	\end{tikzpicture}
+	\caption{This is a triangle.}
+	\label{fig:triangle}
+\end{figure}
+
 \end{document}
