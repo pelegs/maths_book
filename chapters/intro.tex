@@ -6,32 +6,37 @@ In this chapter we will introduce some key concepts that will be used in later c
 \end{note}
 
 \section{Trigonometry}
-Consider a \emph{right triangle} with sides $a,b,c$ and angles $\alpha, \beta, \gamma=\ang{90}$ (\figref{righttriangle}). We use the ratios between the three sides of the triangle to define three functions of $\alpha$:
-\begin{definition}{The basic triginometric functions}{}
+Consider a \emph{right triangle} with sides $a,b,c$, an angle $\gamma=\ang{90}$ and two other angles $\alpha,\beta$:
 
-	\vspace{5mm}
-	\begin{itemize}
-		\item The \emph{sine} of the angle $\alpha$ is $\sin(\alpha)=\frac{a}{c}$.
-		\item The \emph{cosine} of the angle $\alpha$ is $\cos(\alpha)=\frac{b}{c}$.
-		\item The \emph{tangent} of the angle $\alpha$ is $\tan(\alpha)=\frac{b}{a}$.
-		\end{itemize}
-	\label{def:basic_trig}
-
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}
+\centering
+\begin{tikzpicture}
 		\coordinate (A) at (0,0);
 		\coordinate (B) at (4,3);
 		\coordinate (C) at (4,0);
 
-		\draw[fill=xblue!30] (A) -- node (c) [midway, above, rotate=36.87] {Hypotenous, $c$} (B) -- node (a) [midway, above, rotate=-90] {Opposite, $a$} (C) -- node (b) [midway, below] {Adjacent, $b$} cycle;
+		\draw[fill=xblue!30] (A) -- node (c) [midway, above, rotate=36.87] {$c$ (Hypotenous)} (B) -- node (a) [midway, right] {$a$ (Opposite)} (C) -- node (b) [midway, below] {$b$ (Adjacent)} cycle;
 		\draw[thick] ($(C)+(0,0.3)$) rectangle ($(C)-(0.3,0)$);
 		\draw[thick, xpurple!50!black, fill=xpurple!45] (A) -- ($(A)+(0.8,0)$) arc (0:36.87:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\alpha$} -- cycle;
-		\draw[thick, xblue!50!black, fill=xblue!45] (B) -- ($(B)+(0,-0.8)$) arc (270:216.97:0.8) node [midway, above, xshift=4pt] {$\beta$} -- cycle;
+		\draw[thick, xblue!50!black, fill=xblue!45] (B) -- ($(B)+(0,-0.8)$) arc (270:216.97:0.8) node [midway, above, xshift=5pt] {$\beta$} -- cycle;
 		\draw[thick] (A) -- (B) -- (C) -- cycle;
 	\end{tikzpicture}
-	\caption{A right right triangle with sides $a,b,c$ and angles $\alpha,\beta,\gamma=\ang{90}$.}
-	\label{fig:righttriangle}
-\end{figure}
+\flushleft
+
+We use the ratios between the three sides of the triangle to define three functions of $\alpha$:
+\begin{definition}{The basic triginometric functions}{}
+	\vspace{5mm}
+	\begin{enumerate}
+		\item The \emph{sine} of the angle $\alpha$ is $\sin(\alpha)=\frac{a}{c}$,
+		\item the \emph{cosine} of the angle $\alpha$ is $\cos(\alpha)=\frac{b}{c}$, and
+		\item the \emph{tangent} of the angle $\alpha$ is $\tan(\alpha)=\frac{a}{b}$, which in turn is equal to $\frac{\sin(\alpha)}{\cos(\alpha)}$.
+		\end{enumerate}
+	\label{def:basic_trig}
 \end{definition}
+
+Due to the \emph{triangle inequality}, $a$ and $b$ must each be less or equal to $c$, which means that $\sin(\alpha)=\frac{a}{c}$ must be less or equal to $1$, and the same is true for $\cos(\alpha)=\frac{b}{c}$.
+
+\begin{note}{}{}
+	Since $\gamma=\ang{90}$, the two angles $\alpha$ and $\beta$ each must be in the range of $\ang{0}$ to $\ang{90}$, and $\alpha+\beta=\ang{90}$ (since $\alpha+\beta+\gamma=\ang{180}$). This means that $\sin(\alpha)=\sin(\ang{90}-\beta)$. WRITE ABOUT SIN(A)=COS(B), COS(A)=SIN(B).
+\end{note}
+
 \section{Sets}
