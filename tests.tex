@@ -10,6 +10,13 @@
 \usepackage{tikzpagenodes}
 \usetikzlibrary{calc}
 \usepackage{kpfonts}
+
+\usepackage{amsmath, bm}
+
+%--------%
+% COLORS %
+%--------%
+
 \usepackage{xcolor}
 \definecolor{xblue}{HTML}{4268BD}
 \definecolor{xred}{HTML}{BD4242}
@@ -17,7 +24,9 @@
 \definecolor{xpurple}{HTML}{7F52B2}
 \definecolor{xorange}{HTML}{B93F0B}
 
-\usepackage{amsmath, bm}
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
 
 %---------------%
 % CHAPTER TITLE %
@@ -134,7 +143,30 @@
 %---------%
 
 \usepackage{float}
-\usepackage[labelfont={color=xblue,bf}, figurename=Figure]{caption}
+\usepackage{caption}
+\usepackage[colorlinks=true, linkcolor=xblue]{hyperref}
+
+% Caption label
+\DeclareCaptionLabelSeparator{doublespace}{\ \ }
+\captionsetup{labelfont={color=xblue,bf}, figurename=Figure, labelsep=doublespace}
+
+% Refs format
+\newcommand{\figref}[1]{
+	\color{figtextcolor}\textbf{Figure}~\ref{fig:#1} \color{normaltextcolor}
+}
+
+%-------------------%
+% HIGHLIGHTED WORDS %
+%-------------------%
+
+\usepackage{imakeidx}
+\usepackage{marginnote}
+\makeindex
+\renewcommand\emph[1]{
+	\colorbox{xpurple!30}{\textbf{#1}}
+	\index{#1}
+	\marginnote[#1]{}
+}
 
 %----------%
 % DOCUMENT %
@@ -168,7 +200,11 @@
 	~\\
 	More lines.
 \end{note}
-\Blindtext[3]
+\Blindtext[2]
+
+In the middle of this random Lorem Ipsum, there are some other words! This is refreshing, isn't it? Any way, this is used to test some \emph{highlighting} and \emph{indexing} of words. I hope it works. Well, it doesn't. I need to check how to make the marginnotes to go to the left side in odd pages.
+
+\Blindtext[2]
 \begin{challange}{Generalize this thing}{}
 	In 2D, the distance between two points $\bm{A}=(A_{x},A_{y})$ and $\bm{B}=(B_{x},B_{y})$ is
 	\begin{equation}
@@ -180,6 +216,8 @@
 
 \Blindtext[1]
 
+As you probably learned in school, a \emph{triangle} is a shape with three sides. An example of a triangle can be seen in \figref{triangle}.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -188,5 +226,5 @@
 	\caption{This is a triangle.}
 	\label{fig:triangle}
 \end{figure}
-
+\printindex
 \end{document}
