@@ -39,4 +39,22 @@ Due to the \emph{triangle inequality}, $a$ and $b$ must each be less or equal to
 	Since $\gamma=\ang{90}$, the two angles $\alpha$ and $\beta$ each must be in the range of $\ang{0}$ to $\ang{90}$, and $\alpha+\beta=\ang{90}$ (since $\alpha+\beta+\gamma=\ang{180}$). This means that $\sin(\alpha)=\sin(\ang{90}-\beta)$. WRITE ABOUT SIN(A)=COS(B), COS(A)=SIN(B).
 \end{note}
 
+\begin{tikzpicture}
+	\pgfmathsetmacro{\ax}{5}
+	\pgfmathsetmacro{\un}{4}
+	\pgfmathsetmacro{\th}{35}
+	\coordinate (C) at ({\un*cos(\th)},0);
+	\draw[thick, fill=xgreen!10] (A) circle (\un);
+	\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {$x$};
+	\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {$y$};
+	\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
+	\draw[ultra thick, densely dotted, xpurple] (B.center) -- ({\un*cos(\th)},0);
+	\draw[ultra thick, densely dotted, xred] (A) -- ({\un*cos(\th)},0);
+	\draw[very thick, xred, decorate, decoration={brace, amplitude=3pt, raise=4pt, mirror}] (A) -- ({\un*cos(\th)},0) node[midway, below, yshift=-5pt] {$\cos(\alpha)$};
+	\draw[very thick, xpurple, decorate, decoration={brace, amplitude=3pt, raise=4pt}] (B.center) -- ({\un*cos(\th)},0) node [midway, right, xshift=14mm] (Atxt) {$\sin(\alpha)$};
+	\draw[very thick, xpurple] (Atxt.west) -- ++(-33pt,0);
+	\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\alpha$};
+	\draw[thick] ($(C)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
+\end{tikzpicture}
+
 \section{Sets}
