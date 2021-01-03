@@ -16,6 +16,8 @@
 \usepackage{tikzpagenodes}
 \usetikzlibrary{calc}
 
+\tikzset{arrow/.style={thick, ->, >=stealth}}
+
 %-------%
 % FONTS %
 %-------%
@@ -107,7 +109,7 @@
 		colback=xpurple!5,
 		colbacktitle=xpurple,
 		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt] at (\linewidth-width, 1) {
+			\node[anchor=south east, outer sep=0pt] at (\linewidth-width, 0) {
 				\textcolor{xpurple}{$\pi$}};}},
 	exmplstyle/.style={
 		common,
@@ -171,24 +173,25 @@
 \usepackage{imakeidx}
 \usepackage{marginnote}
 \makeindex
-\renewcommand\emph[1]{
-	\colorbox{xpurple!30}{\textbf{#1}}
-	\index{#1}
-	\marginnote[#1]{}
-}
+\renewcommand\emph[1]{\color{xpurple}{\textbf{#1}}\color{normaltextcolor}\index{#1}\marginnote[#1]{}}
 
 %-------%
 % MATHS %
 %-------%
 
 \usepackage{amsmath, bm}
+\usepackage{siunitx}
 
 %----------%
 % DOCUMENT %
 %----------%
 
 \begin{document}
-\setcounter{chapter}{2}
+
+% Chapters
+\input{chapters/intro.tex}
+
+% For tests
 \chapter{This is a Test Title}
 \section{The Foo and the Bar}
 \subsection{The Foo; or: Why Does a Fish?}
