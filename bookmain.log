@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  3 JAN 2021 01:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  3 JAN 2021 17:55
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
-**tests
-(./tests.tex
+**bookmain
+(./bookmain.tex
 LaTeX2e <2020-02-02> patch level 4
 L3 programming layer <2020-02-25>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/book.cls
@@ -741,15 +741,6 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldsf'
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 940.
 LaTeX Info: Redefining \not on input line 1580.
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
-Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
-\symboldoperators=\mathgroup9
-\symboldletters=\mathgroup10
-\symboldsymbols=\mathgroup11
-\symboldlargesymbols=\mathgroup12
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
-LaTeX Info: Redefining \bm on input line 209.
-)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box58
@@ -927,7 +918,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '4.22'
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 ))
 \c@tcblisting=\count322
 )))
@@ -1177,55 +1168,64 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
 \c@mn@abspage=\count352
 )
-\tests@idxfile=\write6
-\openout6 = `tests.idx'.
+\bookmain@idxfile=\write6
+\openout6 = `bookmain.idx'.
 
 
-Writing index file tests.idx
-(./tests.aux)
-\openout1 = `tests.aux'.
+Writing index file bookmain.idx
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup9
+\symboldletters=\mathgroup10
+\symboldsymbols=\mathgroup11
+\symboldlargesymbols=\mathgroup12
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
+) (./bookmain.aux)
+\openout1 = `bookmain.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 175.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 190.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 1
-75.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omljkp.fd
+90.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 190.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 1
-75.
+90.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 190.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 1
-75.
+90.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 190.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-175.
+190.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
 LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 1
-75.
+90.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
@@ -1298,7 +1298,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box123
-Package hyperref Info: Link coloring ON on input line 175.
+Package hyperref Info: Link coloring ON on input line 190.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1312,12 +1312,12 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count360
 )
-LaTeX Info: Redefining \ref on input line 175.
-LaTeX Info: Redefining \pageref on input line 175.
-LaTeX Info: Redefining \nameref on input line 175.
- (./tests.out) (./tests.out)
+LaTeX Info: Redefining \ref on input line 190.
+LaTeX Info: Redefining \pageref on input line 190.
+LaTeX Info: Redefining \nameref on input line 190.
+ (./bookmain.out) (./bookmain.out)
 \@outlinefile=\write7
-\openout7 = `tests.out'.
+\openout7 = `bookmain.out'.
 
 Package newfloat Info: `float' package detected.
 
@@ -1327,71 +1327,71 @@ Chapter 3.
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
-183.
+198.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-183.
+198.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
-183.
+198.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
-183.
+198.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 194.
+ut line 209.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 
 LaTeX Font Warning: Font shape `U/fontawesometwo/b/n' undefined
-(Font)              using `U/fontawesometwo/m/n' instead on input line 194.
+(Font)              using `U/fontawesometwo/m/n' instead on input line 209.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 198--202
+Underfull \hbox (badness 10000) in paragraph at lines 213--217
 
  []
 
-Package marginnote Info: Margin note 3.1 is on absolute page 3 on input line 20
-5.
-Package marginnote Info: xpos seems to be 322.98616pt on input line 205.
-Package marginnote Info: Margin note 3.2 is on absolute page 3 on input line 20
-5.
-Package marginnote Info: xpos seems to be 403.56796pt on input line 205.
+Package marginnote Info: Margin note 3.1 is on absolute page 3 on input line 22
+0.
+Package marginnote Info: xpos seems to be 322.98616pt on input line 220.
+Package marginnote Info: Margin note 3.2 is on absolute page 3 on input line 22
+0.
+Package marginnote Info: xpos seems to be 403.56796pt on input line 220.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-Package marginnote Info: Margin note 4.1 is on absolute page 4 on input line 21
-9.
-Package marginnote Info: xpos seems to be 328.29144pt on input line 219.
+Package marginnote Info: Margin note 4.1 is on absolute page 4 on input line 23
+4.
+Package marginnote Info: xpos seems to be 328.29144pt on input line 234.
 
 [4]
-runsystem(makeindex tests.idx)...executed safely (allowed).
+runsystem(makeindex bookmain.idx)...executed.
 
- (./tests.ind) [5
+ (./bookmain.ind) [5
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 230.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 230.
- (./tests.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 230.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 230.
-Package rerunfilecheck Info: File `tests.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 245.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
+ (./bookmain.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 245.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 245.
+Package rerunfilecheck Info: File `bookmain.out' has not changed.
 (rerunfilecheck)             Checksum: 5B1392B4756A166C106C193DF2BB9B2F;280.
 
 
@@ -1400,12 +1400,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  29152 strings out of 480997
- 566761 string characters out of 5912179
- 855785 words of memory out of 5000000
+ 566821 string characters out of 5912179
+ 855761 words of memory out of 5000000
  44094 multiletter control sequences out of 15000+600000
  562316 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,11n,103p,812b,1324s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,11n,103p,815b,1324s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometw
 o.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr
@@ -1416,7 +1416,7 @@ xlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/local/texlive/
 exmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texlive/2019/texmf
 -dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/local/texlive/2019/texmf-dist/
 fonts/type1/public/kpfonts/jkpsyb.pfb>
-Output written on tests.pdf (5 pages, 81952 bytes).
+Output written on bookmain.pdf (5 pages, 81952 bytes).
 PDF statistics:
  131 PDF objects out of 1000 (max. 8388607)
  91 compressed objects within 1 object stream
