@@ -6,18 +6,23 @@ In this chapter we will introduce some key concepts that will be used in later c
 \end{note}
 
 \section{Trigonometry}
-Consider a \emph{right triangle} with sides $a,b,c$, an angle $\gamma=\ang{90}$ and two other angles $\alpha,\beta$:
+\subsection{Basic Definitions}
+Consider a \emph{right triangle} $ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
 
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[node distance=3mm]
 		\coordinate (A) at (0,0);
 		\coordinate (B) at (4,3);
 		\coordinate (C) at (4,0);
 
+		\node[left of=A] {$A$};
+		\node[above of=B] {$B$};
+		\node[right of=C] {$C$};
+
 		\draw[fill=xblue!30] (A) -- node (c) [midway, above, rotate=36.87] {$c$ (Hypotenous)} (B) -- node (a) [midway, right] {$a$ (Opposite)} (C) -- node (b) [midway, below] {$b$ (Adjacent)} cycle;
 		\draw[thick] ($(C)+(0,0.3)$) rectangle ($(C)-(0.3,0)$);
-		\draw[thick, xpurple!50!black, fill=xpurple!45] (A) -- ($(A)+(0.8,0)$) arc (0:36.87:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\alpha$} -- cycle;
-		\draw[thick, xblue!50!black, fill=xblue!45] (B) -- ($(B)+(0,-0.8)$) arc (270:216.97:0.8) node [midway, above, xshift=5pt] {$\beta$} -- cycle;
+		\draw[thick, xpurple!50!black, fill=xpurple!45] (A) -- ($(A)+(1,0)$) arc (0:36.87:1) node [midway, xshift=-3mm, yshift=-2pt] {$\alpha$} -- cycle;
+		%\draw[thick, xblue!50!black, fill=xblue!45] (B) -- ($(B)+(0,-0.8)$) arc (270:216.97:0.8) node [midway, above, xshift=5pt] {$\beta$} -- cycle;
 		\draw[thick] (A) -- (B) -- (C) -- cycle;
 	\end{tikzpicture}
 \flushleft
@@ -34,17 +39,32 @@ We use the ratios between the three sides of the triangle to define three functi
 \end{definition}
 
 We can rearrange the above definitions to yield
-\begin{equation}
-	a = c\sin(\alpha),\ b=c\cos(\alpha).
+\begin{align}
+	a &= c\sin(\alpha),\\
+	b &= c\cos(\alpha).
 	\label{eq:basic_trig_rearrange}
+\end{align}
+
+Normaly, the Hypotenous is the longest side of a right triangle. We will consider here the two edge cases where one of the sides $a,b$ is equal to the Hypotenous (and the other side is thus $0$):
+\begin{itemize}
+	\item if $a=c$ then $\alpha=\ang{90}$,\
+	\item if $b=c$ then $\alpha=0$.
+\end{itemize}
+
+The posssible length of $a$ is therefore in the range $0\leq a \leq c$, which means that $0\leq \frac{a}{c} \leq 1$, or since $\sin(\alpha)=\frac{a}{c}$,
+\begin{equation}
+	0\leq \sin(\alpha) \leq1.
+	\label{eq:img_sin}
 \end{equation}
 
-Due to the \emph{triangle inequality}, $a$ and $b$ must each be less or equal to $c$, which means that $\sin(\alpha)=\frac{a}{c}$ must be less or equal to $1$, and the same is true for $\cos(\alpha)=\frac{b}{c}$.
+The same is of course true for $b$, and thus
+\begin{equation}
+	0\leq \cos(\alpha) \leq1
+	\label{eq:img_sin}
+\end{equation}
+as well.
 
-\begin{note}{}{}
-	Since $\gamma=\ang{90}$, the two angles $\alpha$ and $\beta$ each must be in the range of $\ang{0}$ to $\ang{90}$, and $\alpha+\beta=\ang{90}$ (since $\alpha+\beta+\gamma=\ang{180}$). This means that $\sin(\alpha)=\sin(\ang{90}-\beta)$. WRITE ABOUT SIN(A)=COS(B), COS(A)=SIN(B).
-\end{note}
-
+\subsection{The Unit Circle}
 \begin{tikzpicture}
 	\pgfmathsetmacro{\ax}{5}
 	\pgfmathsetmacro{\un}{4}
