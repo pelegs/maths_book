@@ -40,7 +40,7 @@ We use the ratios between the three sides of the triangle to define three functi
 
 We can rearrange the above definitions to yield
 \begin{align}
-	a &= c\sin(\alpha),\\
+	a &= c\sin(\alpha),\nonumber\\
 	b &= c\cos(\alpha).
 	\label{eq:basic_trig_rearrange}
 \end{align}
@@ -60,11 +60,28 @@ The posssible length of $a$ is therefore in the range $0\leq a \leq c$, which me
 The same is of course true for $b$, and thus
 \begin{equation}
 	0\leq \cos(\alpha) \leq1
-	\label{eq:img_sin}
+	\label{eq:img_cos}
 \end{equation}
 as well.
 
+As a reminder, the \emph{Pythagorean theorem}\footnote{It's worth mentioning that no three positive integers $a, b$, and $c$ satisfy the equation $a^{n}+b^{n}=c^{n}$ for any integer value of $n>2$. \href{https://en.wikipedia.org/wiki/Fermat\%27s_Last_Theorem}{There's a proof for this, however it is too large to fit in the footnotes}.} states that for a right triangle like the one here,
+\begin{equation}
+	a^{2} + b^{2} = c^{2}.
+	\label{eq:pythagorean_theorem}
+\end{equation}
+By substituting \xref[eq]{basic_trig_rearrange} into the above we get
+\begin{equation*}
+	c^{2} = a^{2}+b^{2} = \left( c\sin(\alpha) \right)^{2} + \left( c\cos(\alpha) \right)^{2} = c^{2}\sin^{2}(\alpha) + c^{2}\cos^{2}(\alpha) = c^{2}\left( \sin^{2}(\alpha) + \cos^{2}(\alpha) \right),
+\end{equation*}
+and cancelling $c^{2}$ on both sides simply yields
+\begin{equation}
+	\sin^{2}(\alpha) + \cos^{2}(\alpha) = 1.
+	\label{eq:sin2_cos2_1}
+\end{equation}
+
 \subsection{The Unit Circle}
+
+\centering
 \begin{tikzpicture}
 	\pgfmathsetmacro{\ax}{5}
 	\pgfmathsetmacro{\un}{4}
@@ -82,5 +99,6 @@ as well.
 	\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\alpha$};
 	\draw[thick] ($(C)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
 \end{tikzpicture}
+\flushleft
 
 \section{Sets}
