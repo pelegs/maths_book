@@ -100,8 +100,8 @@ We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$
 		\coordinate (D) at ({\un*cos(\th)},0);
 
 		\draw[thick, fill=black!5] (A) circle (\un);
-		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {$x$};
-		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {$y$};
+		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
+		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
 		\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
 		\draw[ultra thick, densely dotted, xpurple] (B.center) -- ({\un*cos(\th)},0);
 		%\draw[ultra thick, densely dotted, xred] (A) -- ({\un*cos(\th)},0);
@@ -111,30 +111,45 @@ We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$
 		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
 		\draw[thick] ($(D)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
 
-		\filldraw (A) circle (2pt) node[below left] {$\bm{O}=(0,0)$};
+		\filldraw (A) circle (2pt) node[below left] {$(0,0)=\bm{O}$};
 		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
 		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
 		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
 		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
-		\filldraw (D) circle (2pt) node[below] {$\bm{D}$};
+		\filldraw (D) circle (2pt) node[below, anchor=north east, xshift=2mm] {$(x,0)=\bm{D}$};
 		\filldraw (B) circle (2pt) node[right, xshift=1mm, yshift=1mm] {$\bm{P}=(x,y)$};
 	\end{tikzpicture}
-	\caption{A unit circle with}
+	\caption{A unit circle with (...)}
 	\label{fig:unit_circle}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
-		\filldraw (A) circle (2pt) node[below left] {$\bm{O}=(0,0)$};
+		\pgfmathsetmacro{\ax}{4.5}
+		\pgfmathsetmacro{\un}{3.5}
+		\pgfmathsetmacro{\th}{35}
+		\coordinate (D) at ({\un*cos(\th)},0);
+
+		\filldraw[xred!35] (A) -- (\un,0) arc (0:90:\un);
+		\filldraw[xblue!35] (A) -- (0,\un) arc (90:180:\un);
+		\filldraw[xgreen!35] (A) -- (-\un,0) arc (180:270:\un);
+		\filldraw[xorange!35] (A) -- (0,-\un) arc (270:360:\un);
+		\node at ({ \un/2.5},{ \un/2.5}) {\Huge$1$};
+		\node at ({-\un/2.5},{ \un/2.5}) {\Huge$2$};
+		\node at ({-\un/2.5},{-\un/2.5}) {\Huge$3$};
+		\node at ({ \un/2.5},{-\un/2.5}) {\Huge$4$};
+		
+		\draw[thick] (A) circle (\un);
+		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
+		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
+		\filldraw (A) circle (2pt) node[below right] {$(0,0)$};
 		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
 		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
 		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
 		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
-		\filldraw (D) circle (2pt) node[below] {$\bm{D}$};
-		\filldraw (B) circle (2pt) node[right, xshift=1mm, yshift=1mm] {$\bm{P}=(x,y)$};
 	\end{tikzpicture}
-	\caption{A unit circle with}
+	\caption{The different quadrants of the unit circle.}
 	\label{fig:unit_circle_quadrants}
 \end{figure}
 
@@ -146,10 +161,10 @@ We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$
 		\toprule
 		Quadrant & $\cos(\theta)=x$ & $\sin(\theta)=y$\\
 		\midrule
-		1 & $\left[ 0,1 \right]$ & $\left[ 0,1 \right]$\\
-		2 & $\left[-1,0 \right]$ & $\left[ 0,1 \right]$\\
-		3 & $\left[-1,0 \right]$ & $\left[-1,0 \right]$\\
-		4 & $\left[ 0,1 \right]$ & $\left[-1,0 \right]$\\
+		\rowcolor{xred!35}1 & $\left[ 0,1 \right]$ & $\left[ 0,1 \right]$\\
+		\rowcolor{xblue!35}2 & $\left[-1,0 \right]$ & $\left[ 0,1 \right]$\\
+		\rowcolor{xgreen!35}3 & $\left[-1,0 \right]$ & $\left[-1,0 \right]$\\
+		\rowcolor{xorange!35}4 & $\left[ 0,1 \right]$ & $\left[-1,0 \right]$\\
 		\bottomrule
 	\end{tabular}
 \end{table}
