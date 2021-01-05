@@ -91,7 +91,7 @@ The triangle $\triangle OPD$ is a right triangle. Therefore, we can use the trig
 
 We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$, respectively, as a function of $\theta$.
 
-\begin{figure}[]
+\begin{figure}
 	\centering
 	\begin{tikzpicture}
 		\pgfmathsetmacro{\ax}{4.5}
@@ -121,6 +121,21 @@ We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$
 	\end{tikzpicture}
 	\caption{A unit circle with}
 	\label{fig:unit_circle}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\filldraw (A) circle (2pt) node[below left] {$\bm{O}=(0,0)$};
+		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
+		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
+		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
+		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
+		\filldraw (D) circle (2pt) node[below] {$\bm{D}$};
+		\filldraw (B) circle (2pt) node[right, xshift=1mm, yshift=1mm] {$\bm{P}=(x,y)$};
+	\end{tikzpicture}
+	\caption{A unit circle with}
+	\label{fig:unit_circle_quadrants}
 \end{figure}
 
 \begin{table}
