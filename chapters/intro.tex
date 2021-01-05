@@ -7,7 +7,7 @@ In this chapter we will introduce some key concepts that will be used in later c
 
 \section{Trigonometry}
 \subsection{Basic Definitions}
-Consider a \emph{right triangle} $ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
+Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
 
 \centering
 \begin{tikzpicture}[node distance=3mm]
@@ -64,14 +64,14 @@ The same is of course true for $b$, and thus
 \end{equation}
 as well.
 
-As a reminder, the \emph{Pythagorean theorem}\footnote{It's worth mentioning that no three positive integers $a, b$, and $c$ satisfy the equation $a^{n}+b^{n}=c^{n}$ for any integer value of $n>2$. \href{https://en.wikipedia.org/wiki/Fermat\%27s_Last_Theorem}{There's a proof for this, however it is too large to fit in the footnotes}.} states that for a right triangle like the one here,
+As a reminder, the \emph{Pythagorean theorem}\footnote{It's worth mentioning that no three positive integers $a, b$, and $c$ satisfy the equation $a^{n}+b^{n}=c^{n}$ for any integer value of $n>2$. \href{https://en.wikipedia.org/wiki/Fermat\%27s_Last_Theorem}{This can be proven, however the proof is too large to fit in the footnotes}.} states that for a right triangle like the one here,
 \begin{equation}
 	a^{2} + b^{2} = c^{2}.
 	\label{eq:pythagorean_theorem}
 \end{equation}
 By substituting \xref[eq]{basic_trig_rearrange} into the above we get
 \begin{equation*}
-	c^{2} = a^{2}+b^{2} = \left( c\sin(\alpha) \right)^{2} + \left( c\cos(\alpha) \right)^{2} = c^{2}\sin^{2}(\alpha) + c^{2}\cos^{2}(\alpha) = c^{2}\left( \sin^{2}(\alpha) + \cos^{2}(\alpha) \right),
+	c^{2} = a^{2}+b^{2} = \left( c\sin(\alpha) \right)^{2} + \left( c\cos(\alpha) \right)^{2} = c^{2}\sin^{2}(\alpha) + c^{2}\cos^{2}(\alpha) = c^{2}\left[ \sin^{2}(\alpha) + \cos^{2}(\alpha) \right],
 \end{equation*}
 and cancelling $c^{2}$ on both sides simply yields
 \begin{equation}
@@ -80,25 +80,63 @@ and cancelling $c^{2}$ on both sides simply yields
 \end{equation}
 
 \subsection{The Unit Circle}
-The range of the trigonometric functions can be extended by using the \emph{unit circle}: a circle of radius $R=1$ placed such that its center lies at the origin of a 
-\centering
-\begin{tikzpicture}
-	\pgfmathsetmacro{\ax}{5}
-	\pgfmathsetmacro{\un}{4}
-	\pgfmathsetmacro{\th}{35}
-	\coordinate (C) at ({\un*cos(\th)},0);
-	\draw[thick, fill=xgreen!10] (A) circle (\un);
-	\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {$x$};
-	\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {$y$};
-	\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
-	\draw[ultra thick, densely dotted, xpurple] (B.center) -- ({\un*cos(\th)},0);
-	\draw[ultra thick, densely dotted, xred] (A) -- ({\un*cos(\th)},0);
-	\draw[very thick, xred, decorate, decoration={brace, amplitude=3pt, raise=4pt, mirror}] (A) -- ({\un*cos(\th)},0) node[midway, below, yshift=-5pt] {$\cos(\alpha)$};
-	\draw[very thick, xpurple, decorate, decoration={brace, amplitude=3pt, raise=4pt}] (B.center) -- ({\un*cos(\th)},0) node [midway, right, xshift=14mm] (Atxt) {$\sin(\alpha)$};
-	\draw[very thick, xpurple] (Atxt.west) -- ++(-33pt,0);
-	\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\alpha$};
-	\draw[thick] ($(C)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
-\end{tikzpicture}
-\flushleft
+The range of the trigonometric functions can be extended by using the \emph{unit circle}: a circle of radius $R=1$ is placed such that its center lies at the origin of a 2-dimensional axis system, i.e. at the point $\bm{O}=(0,0)$. A radius to a point $\bm{P}=(x,y)$ on the circle's circumference is the drawn. This radius has an angle $\theta$ to the $x$-axis. A line from $\bm{P}$ perpendicular to the $x$-axis intersecting at the point $\bm{D}$ is drawn (see \xref{unit_circle}).
 
-\section{Sets}
+The triangle $\triangle OPD$ is a right triangle. Therefore, we can use the trigonometic functions to calculate the coordinates of the point $\bm{P}=(x,y)$:
+\begin{align}
+	x &= R\cos(\theta) = \cos(\theta),\nonumber\\
+	y &= R\sin(\theta) = \sin(\theta).
+	\label{eq:xy_P}
+\end{align}
+
+We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$, respectively, as a function of $\theta$.
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}
+		\pgfmathsetmacro{\ax}{4.5}
+		\pgfmathsetmacro{\un}{3.5}
+		\pgfmathsetmacro{\th}{35}
+		\coordinate (D) at ({\un*cos(\th)},0);
+
+		\draw[thick, fill=black!5] (A) circle (\un);
+		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {$x$};
+		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {$y$};
+		\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
+		\draw[ultra thick, densely dotted, xpurple] (B.center) -- ({\un*cos(\th)},0);
+		%\draw[ultra thick, densely dotted, xred] (A) -- ({\un*cos(\th)},0);
+		%\draw[very thick, xred, decorate, decoration={brace, amplitude=3pt, raise=4pt, mirror}] (A) -- ({\un*cos(\th)},0) node[midway, below, yshift=-5pt] {$\cos(\alpha)$};
+		%\draw[very thick, xpurple, decorate, decoration={brace, amplitude=3pt, raise=4pt}] (B.center) -- ({\un*cos(\th)},0) node [midway, right, xshift=14mm] (Atxt) {$\sin(\alpha)$};
+		%\draw[very thick, xpurple] (Atxt.west) -- ++(-33pt,0);
+		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
+		\draw[thick] ($(D)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
+
+		\filldraw (A) circle (2pt) node[below left] {$\bm{O}=(0,0)$};
+		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
+		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
+		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
+		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
+		\filldraw (D) circle (2pt) node[below] {$\bm{D}$};
+		\filldraw (B) circle (2pt) node[right, xshift=1mm, yshift=1mm] {$\bm{P}=(x,y)$};
+	\end{tikzpicture}
+	\caption{A unit circle with}
+	\label{fig:unit_circle}
+\end{figure}
+
+\begin{table}
+	\caption{Text}
+	\label{tab:quadrants_trig_vals}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		Quadrant & $\cos(\theta)=x$ & $\sin(\theta)=y$\\
+		\midrule
+		1 & $\left[ 0,1 \right]$ & $\left[ 0,1 \right]$\\
+		2 & $\left[-1,0 \right]$ & $\left[ 0,1 \right]$\\
+		3 & $\left[-1,0 \right]$ & $\left[-1,0 \right]$\\
+		4 & $\left[ 0,1 \right]$ & $\left[-1,0 \right]$\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+%\section{Sets}
