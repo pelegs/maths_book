@@ -1,5 +1,3 @@
-\chapter{Sets}
-
 \chapter{Introduction}
 In this chapter we will introduce some key concepts that will be used in later chapters.
 
@@ -7,7 +5,8 @@ In this chapter we will introduce some key concepts that will be used in later c
 	It is recommended for readers who are familiar with the topics to at least gloss over this chapter and make sure they know and understand all the concept presented here.
 \end{note}
 
-\section{Trigonometry}
+\section{Mathematical sybols and Sets}
+\section{Trigonometric functions}
 \subsection{Basic Definitions}
 Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
 
@@ -93,6 +92,28 @@ The triangle $\triangle OPD$ is a right triangle. Therefore, we can use the trig
 
 We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$, respectively, as a function of $\theta$.
 
+We will switch to measuring angles in \emph{Radians} instead of degrees: $\theta$ radians is the length of an arc of a unit circle of angle $\theta$ (\xref{radians}). This allows us to use the same units as $x$ and $y$. The full circumference of a circle is of $2\pi$ radians, and therefore a single radian is equivalent to $\frac{180}{\pi} \approx 57.3$ degrees. \xref[tab]{rad_degs} shows some common angles in radians.
+
+\begin{table}
+	\caption{Common angles in radians.}
+	\label{tab:rad_degs}
+	\centering
+	\begin{tabular}{ll}
+		\toprule
+		Degrees & Radians \\
+		\midrule
+		\ang{0} & 0 \\
+		\ang{45} & $\frac{\pi}{4}$ \\
+		\ang{90} & $\frac{\pi}{2}$ \\
+		\ang{180} & $\pi$ \\
+		\ang{270} & $\frac{3\pi}{2}$ \\
+		\ang{360} & $2\pi$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The use of the unit extension of the trigonometric functions as periodic functions $\mathbb{R}\longrightarrow\mathbb{R}$ with period $[\ang{0},\ang{360}]$.
+
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -106,10 +127,6 @@ We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$
 		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
 		\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
 		\draw[ultra thick, densely dotted, xpurple] (B.center) -- ({\un*cos(\th)},0);
-		%\draw[ultra thick, densely dotted, xred] (A) -- ({\un*cos(\th)},0);
-		%\draw[very thick, xred, decorate, decoration={brace, amplitude=3pt, raise=4pt, mirror}] (A) -- ({\un*cos(\th)},0) node[midway, below, yshift=-5pt] {$\cos(\alpha)$};
-		%\draw[very thick, xpurple, decorate, decoration={brace, amplitude=3pt, raise=4pt}] (B.center) -- ({\un*cos(\th)},0) node [midway, right, xshift=14mm] (Atxt) {$\sin(\alpha)$};
-		%\draw[very thick, xpurple] (Atxt.west) -- ++(-33pt,0);
 		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
 		\draw[thick] ($(D)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
 
@@ -123,6 +140,31 @@ We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$
 	\end{tikzpicture}
 	\caption{A unit circle with (...)}
 	\label{fig:unit_circle}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\pgfmathsetmacro{\ax}{4.5}
+		\pgfmathsetmacro{\un}{3.5}
+		\pgfmathsetmacro{\th}{35}
+		\coordinate (D) at ({\un*cos(\th)},0);
+
+		\draw[thick, fill=black!5] (A) circle (\un);
+		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
+		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
+		%\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
+		\draw[xred, fill=xred!15] (A) -- (\un,0) arc (0:\th:\un) -- cycle;
+		\draw[xred, ultra thick]  (\un,0) arc (0:\th:\un) node [midway, right] {\Large$\theta$ radians};
+		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
+
+		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
+		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
+		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
+		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
+	\end{tikzpicture}
+	\caption{Radians}
+	\label{fig:radians}
 \end{figure}
 
 \begin{figure}

@@ -1,12 +1,27 @@
-\documentclass[a4paper]{book}
+\documentclass[b5paper]{book}
 \usepackage[
-    a4paper,
-    top=25.4mm, bottom=25.4mm,
+    b5paper,
+		margin=1.5cm,
 	]{geometry}
 \setlength\parindent{0em}
 \setlength{\parskip}{1em}
 
+\usepackage{booktabs}
 \usepackage{blindtext}
+
+%-----------%
+% XREF DICT %
+%-----------%
+
+\usepackage{pgfkeys}
+\pgfkeyssetvalue{/xref dict/fig}{Figure}
+\pgfkeyssetvalue{/xref dict/eq}{Equation}
+\pgfkeyssetvalue{/xref dict/eqs}{Equations}
+\pgfkeyssetvalue{/xref dict/tab}{Table}
+\pgfkeyssetvalue{/xref dict/def}{Definition}
+\pgfkeyssetvalue{/xref dict/note}{Note}
+\pgfkeyssetvalue{/xref dict/challange}{Challange}
+\pgfkeyssetvalue{/xref dict/example}{Example}
 
 %----------%
 % GRAPHICS %
@@ -14,9 +29,12 @@
 
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc, decorations.pathreplacing, decorations.text}
 
-\tikzset{arrow/.style={thick, ->, >=stealth}}
+\tikzset{
+	arrow/.style={thick, ->, >=stealth},
+	vector/.style={very thick, ->, >=stealth},
+}
 
 %-------%
 % FONTS %
@@ -29,15 +47,23 @@
 %--------%
 
 \usepackage{xcolor}
+\usepackage{colortbl}
 \definecolor{xblue}{HTML}{4268BD}
 \definecolor{xred}{HTML}{BD4242}
 \definecolor{xgreen}{HTML}{52B256}
 \definecolor{xpurple}{HTML}{7F52B2}
 \definecolor{xorange}{HTML}{B93F0B}
+\definecolor{xdotted}{HTML}{999999}
 
 % Document-specific colors
 \colorlet{normaltextcolor}{black}
 \colorlet{figtextcolor}{xblue}
+
+%------- %
+% XHFILL %
+%------- %
+
+\usepackage{xhfill}
 
 %---------------%
 % CHAPTER TITLE %
@@ -50,20 +76,31 @@
 \newcommand{\chapternumsize}{\fontsize{70}{70}\selectfont}
 \newcommand{\chaptertitlesize}{\fontsize{30}{30}\selectfont}
 
-\newcommand{\newchapter}[1]{
-	\begin{tikzpicture}[overlay, remember picture]
-		\coordinate (boxtopright) at (current page text area.east |- current page.north);
-		\coordinate (boxbottomleft) at ($(boxtopright)-(3cm,5cm)$);
-		\coordinate (boxbottomright) at (boxtopright |- boxbottomleft);
-		\coordinate (lineleft) at (current page text area.west |- boxbottomleft);
+%\newcommand{\newchapter}[1]{
+%	\begin{tikzpicture}[overlay, remember picture]
+%		\coordinate (boxtopright) at (current page text area.east |- current page.north);
+%		\coordinate (boxbottomleft) at ($(boxtopright)-(3cm,5cm)$);
+%		\coordinate (boxbottomright) at (boxtopright |- boxbottomleft);
+%		\coordinate (lineleft) at (current page text area.west |- boxbottomleft);
+%
+%		%\draw[thick] (boxbottomright) to (lineleft);
+%		\filldraw[xblue, rounded corners=4mm] ($(boxtopright)+(0,1cm)$) rectangle (boxbottomleft) node [midway, text=white, text width=3cm, align=center, yshift=-5mm] (chapternum) {\Large CHAPTER\\\vspace{7mm}\chapternumsize\thechapter};
+%		\node[anchor=south west, xshift=-4pt, align=left, text width=10cm] at (lineleft |- chapternum.south) {\chaptertitlesize #1};
+%	\end{tikzpicture}
+%}
 
-		%\draw[thick] (boxbottomright) to (lineleft);
-		\filldraw[xblue, rounded corners=4mm] ($(boxtopright)+(0,1cm)$) rectangle (boxbottomleft) node [midway, text=white, text width=3cm, align=center, yshift=-5mm] (chapternum) {\Large CHAPTER\\\vspace{7mm}\chapternumsize\thechapter};
-		\node[anchor=south west, xshift=-4pt, align=left, text width=10cm] at (lineleft |- chapternum.south) {\chaptertitlesize #1};
+\titleformat{\chapter}{\sffamily\bfseries}{}{0pt}{
+	\centering
+	\begin{tikzpicture}[font=\sffamily\bfseries]
+		\fill[xblue!30, rounded corners] (0,0) rectangle (5cm,5cm);
+		\node at (2.5cm,4.5cm) {\fontsize{85}{85}\selectfont\thechapter};
+		\node[align=center] at (2.5cm, -1cm) {\fontsize{30}{30}\selectfont\uppercase{#1}};
 	\end{tikzpicture}
 }
 
-\titleformat{\chapter}{}{}{0pt}{\newchapter{#1}}
+\titleformat{\section}{\sffamily\Large\bfseries}{\huge{\thesection}}{1em}{\xdotfill[1ex]{1pt}[xdotted]\newline\hspace{-5cm}\uppercase{#1}}
+
+\titleformat{\subsection}{\sffamily\large\bfseries}{}{0em}{\uppercase{#1}}
 
 %---------%
 % HEADERS %
@@ -102,7 +139,7 @@
 			colframe=white,
 			arc=0pt,
 			outer arc=0pt},
-		separator sign={:~},},
+		separator sign={~~},},
 	defstyle/.style={
 		common,
 		colframe=xpurple,
@@ -162,8 +199,8 @@
 \captionsetup{labelfont={color=xblue,bf}, figurename=Figure, labelsep=doublespace}
 
 % Refs format
-\newcommand{\figref}[1]{
-	\color{figtextcolor}\textbf{Figure}~\ref{fig:#1} \color{normaltextcolor}
+\newcommand{\xref}[2][fig]{
+	\color{figtextcolor}\textbf{\pgfkeysvalueof{/xref dict/#1}}~\ref{#1:#2} \color{normaltextcolor}
 }
 
 %-------------------%
@@ -173,7 +210,7 @@
 \usepackage{imakeidx}
 \usepackage{marginnote}
 \makeindex
-\renewcommand\emph[1]{\color{xpurple}{\textbf{#1}}\color{normaltextcolor}\index{#1}\marginnote[#1]{}}
+\renewcommand\emph[1]{\color{xpurple}{\textbf{#1}}\color{normaltextcolor}\index{#1}}%\marginnote[#1]{}
 
 %-------%
 % MATHS %
@@ -234,7 +271,7 @@ In the middle of this random Lorem Ipsum, there are some other words! This is re
 
 \Blindtext[1]
 
-As you probably learned in school, a \emph{triangle} is a shape with three sides. An example of a triangle can be seen in \figref{triangle}.
+As you probably learned in school, a \emph{triangle} is a shape with three sides. An example of a triangle can be seen in \xref{triangle}.
 
 \begin{figure}[H]
 	\centering
