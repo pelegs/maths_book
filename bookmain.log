@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  28 NOV 2021 00:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  29 NOV 2021 16:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1493,24 +1493,24 @@ File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
 (./chapters/intro.tex
 Chapter 0.
-<figures/chapters/tapir_rainbow.pdf, id=79, 123.26372pt x 95.3452pt>
+<figures/chapters/tapir_rainbow.pdf, id=87, 123.26372pt x 95.3452pt>
 File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_rainbow.pdf>
 Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
  1.
 (pdftex.def)             Requested size: 184.89511pt x 143.01743pt.
-LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 1
-1.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
-File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
-)
-Underfull \vbox (badness 4726) has occurred while \output is active []
-
- [1
+[1
 
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
-es/chapters/tapir_rainbow.pdf>] [2]) [3] [4] [5] [6
+es/chapters/tapir_rainbow.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 1
+5.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
+File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
+) [2]) [3]
+[4] [5] [6
 
 ]
 Chapter 1.
@@ -1572,17 +1572,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 275.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 275.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 275.
 Package rerunfilecheck Info: File `bookmain.out' has not changed.
-(rerunfilecheck)             Checksum: 9EFC9D992533F8AF9B05B3597E161EF1;608.
+(rerunfilecheck)             Checksum: 85134C2C2DDD449960A39B545E37F98D;772.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 32887 strings out of 480997
- 671041 string characters out of 5912179
- 931922 words of memory out of 5000000
- 47715 multiletter control sequences out of 15000+600000
+ 32891 strings out of 480997
+ 671099 string characters out of 5912179
+ 934924 words of memory out of 5000000
+ 47717 multiletter control sequences out of 15000+600000
  641675 words of font info for 260 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,15n,103p,815b,1331s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1600,10 +1600,10 @@ exmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texlive/2019/texmf
 onts/type1/public/kpfonts/jkpsy.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/public/kpfonts/jkpsya.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
 public/kpfonts/jkpsyb.pfb>
-Output written on bookmain.pdf (13 pages, 283761 bytes).
+Output written on bookmain.pdf (13 pages, 285287 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 234 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 
