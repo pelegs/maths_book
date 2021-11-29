@@ -1,35 +1,49 @@
 \begin{theindex}
 
-  \item cosine, 2
+  \item AND, 2
 
   \indexspace
 
-  \item highlighting, 10
+  \item cosine, 4
 
   \indexspace
 
-  \item indexing, 10
+  \item highlighting, 14
 
   \indexspace
 
-  \item Pythagorean theorem, 3
+  \item indexing, 14
 
   \indexspace
 
-  \item Radians, 3
-  \item right triangle, 2
+  \item logical operators, 2
 
   \indexspace
 
-  \item sine, 2
+  \item OR, 2
 
   \indexspace
 
-  \item tangent, 2
-  \item triangle, 11
+  \item proposition, 1
+  \item Pythagorean theorem, 5
 
   \indexspace
 
-  \item unit circle, 3
+  \item Radians, 5
+  \item right triangle, 4
+
+  \indexspace
+
+  \item sine, 4
+
+  \indexspace
+
+  \item tangent, 4
+  \item triangle, 15
+  \item truth table, 2
+
+  \indexspace
+
+  \item unit circle, 5
 
 \end{theindex}

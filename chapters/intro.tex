@@ -7,7 +7,55 @@ In this chapter we will introduce some key concepts that will be used in later c
 
 \section{Mathematical Sybols and Sets}
 \subsection{Logical Statements and their Truth Value}
-\Blindtext[1]
+We start our discussion with the simplest mathematical concept: a \emph{proposition}. A proposition is simply a statement that might be either \true\ or \false.
+\begin{example}{Truth of Propositions}{}
+	\begin{itemize}
+		\item $3>1$ (\true)
+		\item $-2=5-7$ (\true)
+		\item $7<5$ (\false)
+		\item The radius of the earth is bigger than that of the moon. (\true)
+		\item The word `House' starts with the letter `G'. (\false)
+	\end{itemize}
+\end{example}
+
+We can group together propositions using \emph{logical operators}. Two of the most common logical operators are \emph{AND} and \emph{OR}.
+
+The \textbf{AND} operator returns a \true\ statement only if \textbf{both} the statements it groups are themselves \true, otherwise it returns \false.
+
+\begin{example}{The AND operator}{}
+	\begin{itemize}
+		\item $2+4=6$ is \true, $4-2=2$ is \true. $\left(2+4=6\ \text{AND}\ 4-2=2\right)$ is therefore \true.
+		\item $2+4=6$ is \true, $2>6$ is \false. $\left(2+4=6\ \text{AND}\ 2>6\right)$ is therefore \false.
+		\item $\frac{10}{2}=1$ is \false, $2^{4}=16$ is \true. $\left( \frac{10}{2}=1\ \text{AND}\ 2^{4}=16 \right)$ is therefore \false.
+		\item $7<5$ is \false, $10+2=13$ is \false. $\left( 7<5\ \text{AND}\ 10+2=13 \right)$ is therefore \false.
+	\end{itemize}
+\end{example}
+
+The \textbf{OR} operator returns \true\ if \textbf{at least} one of the statements it groups is true.
+\begin{example}{The OR Operator}{}
+	\begin{itemize}
+		\item text
+	\end{itemize}
+\end{example}
+
+The behaviour of both operators can be summarized using a \emph{truth table}:
+\begin{table}[H]
+	\centering
+	\caption{The truth table for the operators AND and OR.}
+	\label{tab:AND_OR_truth_table}
+	\begin{tabular}{llll}
+		\toprule
+		$A$ & $B$ & $A$ AND $B$ & $A$ OR $B$\\
+		\midrule
+		\true & \true & \true & \true \\
+		\true & \false & \false & \true \\
+		\false & \true & \false & \true \\
+		\false & \false & \false & \false \\
+		\midrule
+	\end{tabular}
+\end{table}
+
+\Blindtext
 
 \section{Relations and Functions}
 \section{Trigonometric functions}
@@ -216,5 +264,3 @@ Another advantage which we gain by defining the trigonometric functions using th
 		\bottomrule
 	\end{tabular}
 \end{table}
-
-%\section{Sets}
