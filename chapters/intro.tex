@@ -20,28 +20,31 @@ We start our discussion with the simplest mathematical concept: a \emph{proposit
 
 We can group together propositions using \emph{logical operators}. Two of the most common logical operators are \emph{AND} and \emph{OR}.
 
-The \textbf{AND} operator returns a \true\ statement only if \textbf{both} the statements it groups are themselves \true, otherwise it returns \false.
+The \AND{} operator returns a \true\ statement only if \textbf{both} the statements it groups are themselves \true, otherwise it returns \false.
 
 \begin{example}{The AND operator}{}
 	\begin{itemize}
-		\item $2+4=6$ is \true, $4-2=2$ is \true. $\left(2+4=6\ \text{AND}\ 4-2=2\right)$ is therefore \true.
-		\item $2+4=6$ is \true, $2>6$ is \false. $\left(2+4=6\ \text{AND}\ 2>6\right)$ is therefore \false.
-		\item $\frac{10}{2}=1$ is \false, $2^{4}=16$ is \true. $\left( \frac{10}{2}=1\ \text{AND}\ 2^{4}=16 \right)$ is therefore \false.
-		\item $7<5$ is \false, $10+2=13$ is \false. $\left( 7<5\ \text{AND}\ 10+2=13 \right)$ is therefore \false.
+		\item $2+4=6$ is \true, $4-2=2$ is \true. $\left(2+4=6\ \text{\AND{}}\ 4-2=2\right)$ is therefore \true.
+		\item $2+4=6$ is \true, $2>6$ is \false. $\left(2+4=6\ \text{\AND{}}\ 2>6\right)$ is therefore \false.
+		\item $\frac{10}{2}=1$ is \false, $2^{4}=16$ is \true. $\left( \frac{10}{2}=1\ \text{\AND{}}\ 2^{4}=16 \right)$ is therefore \false.
+		\item $7<5$ is \false, $10+2=13$ is \false. $\left( 7<5\ \text{\AND{}}\ 10+2=13 \right)$ is therefore \false.
 	\end{itemize}
 \end{example}
 
-The \textbf{OR} operator returns \true\ if \textbf{at least} one of the statements it groups is true.
+The \OR{} operator returns \true\ if \textbf{at least} one of the statements it groups is true.
 \begin{example}{The OR Operator}{}
 	\begin{itemize}
-		\item text
+		\item $2+4=6$ is \true, $4-2=2$ is \true. $\left(2+4=6\ \text{\OR{}}\ 4-2=2\right)$ is therefore \true.
+		\item $2+4=6$ is \true, $2>6$ is \false. $\left(2+4=6\ \text{\OR{}}\ 2>6\right)$ is therefore \true.
+		\item $\frac{10}{2}=1$ is \false, $2^{4}=16$ is \true. $\left( \frac{10}{2}=1\ \text{\OR{}}\ 2^{4}=16 \right)$ is therefore \true.
+		\item $7<5$ is \false, $10+2=13$ is \false. $\left( 7<5\ \text{\OR{}}\ 10+2=13 \right)$ is therefore \false.
 	\end{itemize}
 \end{example}
 
-The behaviour of both operators can be summarized using a \emph{truth table}:
+The behaviour of both operators can be summarized using a \emph{truth table} (see \tabref{AND_OR_truth_table} below).
 \begin{table}[H]
 	\centering
-	\caption{The truth table for the operators AND and OR.}
+	\caption{The truth table for the operators \AND{} and \OR{}.}
 	\label{tab:AND_OR_truth_table}
 	\begin{tabular}{llll}
 		\toprule
@@ -55,8 +58,38 @@ The behaviour of both operators can be summarized using a \emph{truth table}:
 	\end{tabular}
 \end{table}
 
-\Blindtext
+When writing, it is convinient to use \emph{notations} to represent operators: the \AND{} operator is denoted by $\opand$, while the \OR{} operator is denoted by $\opor$.
 
+\begin{example}{Using the notations for \AND{} and \OR{}}{}
+	\begin{align*}
+		\falseprop{2+2=5} &\opand \trueprop{1-1=0} \Rightarrow \false\\
+		\falseprop{2+2=5} &\opor \trueprop{1-1=0} \Rightarrow \true
+	\end{align*}
+\end{example}
+
+Several more common mathematical notations are given in \tabref{common_math_notations}.
+  
+\begin{table}[H]
+	\centering
+	\caption{Common Mathematical NotationsUsed in this Book.}
+	\label{tab:common_math_notations}
+	\begin{tabular}{ll}
+		\toprule
+		Symbol & In words\\
+		\midrule
+		$\neg a$ & \textbf{not} $a$\\
+		$a \opand b$ & $a$ \textbf{and} $b$\\
+		$a \opor b$ & $a$ \textbf{or} $b$\\
+		$a \Rightarrow b$ & $a$ \textbf{implies} $b$\\
+		$a \Leftrightarrow b$ & $a$ \textbf{is equivalent to} $b$\\
+		$\forall x$ & \textbf{For all} $x$ (...)\\
+		$\exists x$ & \textbf{There exists} $x$ \textbf{such that} (...)\\
+		$a\defeq b$ & $a$ \textbf{is defined to be} $b$\\
+		\midrule
+	\end{tabular}
+\end{table}
+
+\subsection{Sets}
 \section{Relations and Functions}
 \section{Trigonometric functions}
 \subsection{Basic Definitions}

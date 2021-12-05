@@ -91,6 +91,14 @@
 
 \titleformat{\subsection}{\sffamily\large\bfseries}{}{0em}{\uppercase{#1}}
 
+%------------%
+% REFERENCES %
+%------------%
+
+\newcommand{\tabref}[1]{
+	\textbf{\textcolor{xblue}{Table} \ref{tab:#1}}
+}
+
 %---------%
 % HEADERS %
 %---------%
@@ -211,6 +219,25 @@
 %\newcommand{\false}{\colorbox{xred!25}{false}}
 \newcommand{\true}{\textcolor{xblue}{\textbf{true}}}
 \newcommand{\false}{\textcolor{xred}{\textbf{false}}}
+\newcommand{\AND}{\textbf{AND}}
+\newcommand{\OR}{\textbf{OR}}
+\newcommand{\opand}{\wedge}
+\newcommand{\opor}{\vee}
+\newcommand{\falseprop}[1]{
+	\begingroup
+	\color{xred}
+	\underset{\false}{#1}
+	\endgroup
+}
+\newcommand{\trueprop}[1]{
+	\begingroup
+	\color{xblue}
+	\underset{\true}{#1}
+	\endgroup
+}
+\newcommand{\defeq}{:=}
+\newcommand{\eqdef}{=:}
+
 
 %----------%
 % DOCUMENT %
