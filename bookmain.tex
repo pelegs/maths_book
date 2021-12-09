@@ -98,6 +98,9 @@
 \newcommand{\tabref}[1]{
 	\textbf{\textcolor{xblue}{Table} \ref{tab:#1}}
 }
+\newcommand{\figref}[1]{
+	\textbf{\textcolor{xblue}{Figure} \ref{fig#1}}
+}
 
 %---------%
 % HEADERS %
@@ -302,5 +305,7 @@ As you probably learned in school, a \emph{triangle} is a shape with three sides
 	\caption{This is a triangle.}
 	\label{fig:triangle}
 \end{figure}
+
+\stepcounter{chapter}
 \printindex
 \end{document}

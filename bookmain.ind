@@ -4,15 +4,24 @@
 
   \indexspace
 
-  \item cosine, 4
+  \item cardinality, 5
+  \item conditions, 4
+  \item cosine, 7
 
   \indexspace
 
-  \item highlighting, 12
+  \item elements, 4
+  \item empty set, 5
+  \item equivalent, 3
 
   \indexspace
 
-  \item indexing, 12
+  \item highlighting, 16
+
+  \indexspace
+
+  \item iff, 3
+  \item indexing, 16
 
   \indexspace
 
@@ -29,25 +38,31 @@
   \indexspace
 
   \item proposition, 1
-  \item Pythagorean theorem, 4
+  \item Pythagorean theorem, 8
 
   \indexspace
 
-  \item Radians, 5
-  \item right triangle, 3
+  \item Radians, 8
+  \item right triangle, 7
 
   \indexspace
 
-  \item sine, 4
+  \item sets, 3
+  \item sine, 7
+  \item subset, 5
 
   \indexspace
 
-  \item tangent, 4
-  \item triangle, 13
+  \item tangent, 7
+  \item triangle, 17
   \item truth table, 2
 
   \indexspace
 
-  \item unit circle, 5
+  \item unit circle, 8
+
+  \indexspace
+
+  \item Venn diagrams, 5
 
 \end{theindex}

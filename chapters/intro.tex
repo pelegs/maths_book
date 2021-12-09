@@ -5,10 +5,10 @@ In this chapter we will introduce some key concepts that will be used in later c
 	It is recommended for readers who are familiar with the topics to at least gloss over this chapter and make sure they know and understand all the concept presented here.
 \end{note}
 
-\section{Mathematical Sybols and Sets}
+\section{Mathematical Symbols and Sets}
 \subsection{Logical Statements and their Truth Value}
 We start our discussion with the simplest mathematical concept: a \emph{proposition}. A proposition is simply a statement that might be either \true\ or \false.
-\begin{example}{Truth of Propositions}{}
+\begin{example}{Truth of propositions}{}
 	\begin{itemize}
 		\item $3>1$ (\true)
 		\item $-2=5-7$ (\true)
@@ -32,7 +32,7 @@ The \AND{} operator returns a \true\ statement only if \textbf{both} the stateme
 \end{example}
 
 The \OR{} operator returns \true\ if \textbf{at least} one of the statements it groups is true.
-\begin{example}{The OR Operator}{}
+\begin{example}{The OR operator}{}
 	\begin{itemize}
 		\item $2+4=6$ is \true, $4-2=2$ is \true. $\left(2+4=6\ \text{\OR{}}\ 4-2=2\right)$ is therefore \true.
 		\item $2+4=6$ is \true, $2>6$ is \false. $\left(2+4=6\ \text{\OR{}}\ 2>6\right)$ is therefore \true.
@@ -62,8 +62,8 @@ When writing, it is convinient to use \emph{notations} to represent operators: t
 
 \begin{example}{Using the notations for \AND{} and \OR{}}{}
 	\begin{align*}
-		\falseprop{2+2=5} &\opand \trueprop{1-1=0} \Rightarrow \false\\
-		\falseprop{2+2=5} &\opor \trueprop{1-1=0} \Rightarrow \true
+		(\falseprop{2+2=5}) &\opand (\trueprop{1-1=0}) \Rightarrow \false\\
+		(\falseprop{2+2=5}) &\opor  (\trueprop{1-1=0}) \Rightarrow \true
 	\end{align*}
 \end{example}
 
@@ -89,7 +89,127 @@ Several more common mathematical notations are given in \tabref{common_math_nota
 	\end{tabular}
 \end{table}
 
+The notation $\Rightarrow$ need a bit of clarification: implication means that we can directly derive a proposition from another proposition. For example, if $x=3$ then $x>2$. The opposite implication can be a \false{} statemt, i.e. for the example above $x>2$ does not imply $x=3$ (denoted as $x>2 \nRightarrow x=3$). Sometimes implication is expressed by using the word \textit{if}: in the above example $x>2$ if $x=3$, but the other way around is not \true{}.
+
+We say that two propositions are \emph{equivalent} when they imply each other. For example: $x=2$ implies that $\frac{x}{2}=1$, while $\frac{x}{2}=1$ implies that $x=2$. We can write this as
+\[
+	\frac{x}{2}=1 \Leftrightarrow x=2.
+\]
+Instead of the word \textit{equivalent}, the phrase \textit{if and only if} (sometimes shortened to \emph{iff}) is commonly used, e.g.
+\[
+	x=2\ \text{iff}\ \frac{x}{2}=1.
+\]
+
 \subsection{Sets}
+The concept of \emph{sets} is perhaps one of the most basic ideas in modern mathematics. Much of the material convered in this book will be built upon sets and their properties. However, as with the rest of the material presented here - our description of sets will not be thorough nor percise.
+
+For our purposes, a set is a collection of \emph{elements}. These elements can be any concept - be it physical (a chair, a bicycle, a tapir) or abstract (a number, an idea). However, we will consider only sets comprised of numbers. Sets can have finite of infinite number of elements in them.
+
+We denote sets by using curly brackets, and if the number of elements in them is not too big - we display the elements, separated by commas, inside the brackets. In other cases we can express the sets as a sentence or a mathematical proposition.
+
+\begin{example}{Simple sets}{}
+	\[
+		\left\{ 1,2,3,4 \right\}\qquad\left\{ -4,\frac{3}{7},0,\pi,0.13,-2.5,\frac{e}{3},2^{-\pi} \right\}\qquad\left\{ \text{all even numbers} \right\}
+	\]
+\end{example}
+
+Sets have two important properties:
+\begin{enumerate}
+	\item Elements in a set do not repeat.
+	\item The order of elements in a set does not matter.
+\end{enumerate}
+
+\begin{example}{Important set properties}{}
+	Examples demonstrating the two afforementioned important properties of sets:
+	\begin{enumerate}
+		\item The following is not a proper set:
+		\[
+			\left\{ 1,1,0,1,0,0,-1,0,0,-1,-1,1 \right\}
+	\]
+
+		\item The following sets are all identical:
+		\[
+			\left\{ 1,2,3,4 \right\}\qquad\left\{ 1,3,2,4  \right\}\qquad\left\{ 3,4,1,2 \right\}\qquad\left\{ 1,3,2,4 \right\}\qquad\left\{ 4,3,2,1 \right\}
+		\]
+	\end{enumerate}
+	
+\end{example}
+
+Sets can be denoted using \emph{conditions}, with the symbol $|$ representing the phrase "such that".
+
+\begin{example}{Defining a set using a condition}
+	The following set contains all the odd whole numbers between $0$ and $10$, including both:
+	\[
+		\left\{ 0 < x < 10 \mid x\ \text{is an odd number}\right\}.
+	\]
+	The definition of this set can be read as
+
+	\vspace{3mm}
+	\centering
+	\textit{all numbers $x$ that are bigger than $0$ and are smaller than $10$, such that $x$ is odd.}
+
+	\flushleft{}
+	(note that the requirement of $x$ to be an odd number means that it is neccessarily a whole number as well)
+
+	\vspace{1em}
+	This set can be written explicitly as
+	\[
+		\left\{ 1,3,5,7,9 \right\}.
+	\]
+\end{example}
+
+Sets are usually denoted with an uppercase latin letter ($A,B,C,\dots$), while their elements are denoted as lowercase letters ($a,b,\alpha,\phi,\dots$). When we want to denote that an element belongs to a set we use the following symbol: $\in$. Conversly, $\notin$ is used to denote that an element \textit{does not} belong to a set.
+	
+\begin{example}{Elements in sets}{}
+	For the two sets
+	\[
+		A = \left\{ 1,2,5,7 \right\},\quad B=\left\{ \text{even numbers} \right\},
+	\]
+	all the following propostions are \true{}:
+	\begin{align*}
+		&1\in A,\quad 2\in A,\quad 5\in A,\quad 7\in A,\\
+		&2\in B,\quad 1\notin B,\quad 5\notin B,\quad 7\notin B.
+	\end{align*}
+\end{example}
+
+The number of elements in a set, also called its \emph{cardinality} is denoted using two vertical bars (similar to the way absolute values are denoted).
+
+\begin{example}{Cardinality}{}
+	For $S=\left\{ -3,0,-2,7,1,\frac{1}{2},5 \right\},\ |S|=7$.
+\end{example}
+
+An important special set is the \emph{empty set}, which is the set containing no elements. It is denoted by $\emptyset$, and has the unique property that $|\emptyset|=0$.
+(note that there is only one such set)
+
+Two sets are equal if they both contain the exact same elemnts and only these elements, i.e.
+\[
+	A = B \Longleftrightarrow x\in A \Leftrightarrow x\in B.
+\]
+This proposition reads `The sets $A$ and $B$ are equal \underline{\textit{if and only if}} any element $x$ in $A$ is also in $B$, and any element $x$ in $B$ is also in $A$'.
+
+When all the elements of a set $B$ are also elements of another set $A$, we say that $B$ is a \emph{subset} of $A$, and we denote that as $B\subset A$. A very useful way of illustrating the relationship beyween two or more sets is by using \emph{Venn diagrams}.
+
+\begin{example}{Subsets and Venn diagrams}{}
+	A Venn diagram depicting $B$ as a subset of $A$:
+
+	  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \def\firstcircle{(0,0) circle (2)}
+      \def\secondcircle{(0.5,1) circle (0.75)}
+      \begin{scope}
+        \fill[xred!50]\firstcircle;
+        \fill[xblue!50]\secondcircle;
+        \draw \firstcircle node[below] {$A$};
+        \draw \secondcircle node [above] {$B$};
+      \end{scope}
+    \end{tikzpicture}
+  \end{figure}
+
+\end{example}
+
+\Blindtext{}
+
 \section{Relations and Functions}
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
@@ -297,3 +417,5 @@ Another advantage which we gain by defining the trigonometric functions using th
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\section{Exponential and Logarithmic Functions}
