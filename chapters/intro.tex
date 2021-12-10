@@ -182,12 +182,13 @@ An important special set is the \emph{empty set}, which is the set containing no
 (note that there is only one such set)
 
 Two sets are equal if they both contain the exact same elemnts and only these elements, i.e.
-\[
+\begin{equation}
 	A = B \Longleftrightarrow x\in A \Leftrightarrow x\in B.
-\]
-This proposition reads `The sets $A$ and $B$ are equal \underline{\textit{if and only if}} any element $x$ in $A$ is also in $B$, and any element $x$ in $B$ is also in $A$'.
+	\label{eq:set_equality}
+\end{equation}
+This proposition reads `The sets $A$ and $B$ are equal \underline{\textit{if and only if}} any element $x$ in $A$ is also in $B$, and any element $x$ in $B$ is also in $A$'. When all the elements of a set $B$ are also elements of another set $A$, we say that $B$ is a \emph{subset} of $A$, and we denote that as $B\subset A$.
 
-When all the elements of a set $B$ are also elements of another set $A$, we say that $B$ is a \emph{subset} of $A$, and we denote that as $B\subset A$. A very useful way of illustrating the relationship beyween two or more sets is by using \emph{Venn diagrams}.
+A very useful way of illustrating the relationship beyween two or more sets is by using \emph{Venn diagrams}, where sets are represented by circles (or other 2D shapes).
 
 \begin{example}{Subsets and Venn diagrams}{}
 	A Venn diagram depicting the set $\textcolor{xblue}{B=\left\{ 0,2 \right\}}$ as a subset of $\textcolor{xred}{A=\left\{ 0,1,2,3,4,\dots,9 \right\}}$:
@@ -204,9 +205,7 @@ When all the elements of a set $B$ are also elements of another set $A$, we say 
 
 			% Elements
 			\small
-			\tikzset{
-				node distance={5mm},
-			}
+			\tikzset{node distance={5mm}}
 			\node at (0.57,1.02) {0};
 			\node at (-1.04,-1.25) {1};
 			\node at (0.16,0.4) {2};
@@ -227,7 +226,11 @@ If for two sets $A,B$ both $A\subset B$ and $B\subset A$, then $A=B$. We can wri
 	\label{eq:subset_equal}
 \end{equation}
 
-The \emph{intersection} of two sets $A$ and $B$, denoted $A\cup B$, is the set of all elements $x$ such that $x\in A$ \AND{} $x\in B$.
+The \emph{intersection} of two sets $A$ and $B$, denoted $A\cup B$, is the set of all elements $x$ such that $x\in A$ \AND{} $x\in B$:
+\begin{equation}
+	A\cup B = \left\{ x \mid x\in A \opand x\in B \right\}.
+	\label{eq:intersection}
+\end{equation}
 
 \begin{example}{Intersection of sets}{}
 	The intersection of the sets $A=\left\{ 1,2,3,4 \right\}$ and $B=\left\{ 3,4,5,6 \right\}$ is the set $A\cup B=\left\{ 3,4 \right\}$.
@@ -235,23 +238,94 @@ The \emph{intersection} of two sets $A$ and $B$, denoted $A\cup B$, is the set o
 	The intersection of the sets $C=\left\{ 0,1,2,6,7 \right\}$ and $D=\left\{ 3,9,-4,5 \right\}$ is the empty set $\emptyset$, since no element is in both sets.
 \end{example}
   
-The following Venn diagram depicts the intersection of two sets:
+The following Venn diagram depicts the intersection of two sets (the green area):
 \begin{figure}[H]
-    \centering
-    \begin{tikzpicture}
-      \def\firstcircle{(0,0) circle (2)}
-      \def\secondcircle{(2.3,0) circle (1.5)}
-      \fill[xred!50]\firstcircle;
-      \fill[xblue!50]\secondcircle;
-      \begin{scope}
-        \clip \firstcircle;
-        \fill[xgreen!50]\secondcircle;
-      \end{scope}
-      \draw\firstcircle node[left] {$A$};
-      \draw\secondcircle node[right] {$B$};
-      \draw (1.4,-0.2) node[above] {$A\cap B$};
-    \end{tikzpicture}
-  \end{figure}
+	\centering
+	\begin{tikzpicture}
+		\def\firstcircle{(0,0) circle (2)}
+		\def\secondcircle{(2.3,0) circle (1.5)}
+		\fill[xred!50]\firstcircle;
+		\fill[xblue!50]\secondcircle;
+		\begin{scope}
+			\clip \firstcircle;
+			\fill[xgreen!50]\secondcircle;
+		\end{scope}
+		\draw\firstcircle node[left] {$A$};
+		\draw\secondcircle node[right] {$B$};
+		\draw (1.4,-0.2) node[above] {$A\cap B$};
+	\end{tikzpicture}
+\end{figure}
+
+\begin{note}{Disjoint sets}{}
+	When the intersection of two sets is the empty set, we say that the set is \emph{disjoint}.
+\end{note}
+
+The \emph{union} of two sets (denoted using the symbol $\cup$) is the set composed of all the elements that belong to any of the sets, including elements that are in both sets:
+\begin{equation}
+	A\cup B = \left\{ x \mid x\in A \opor x\in B \right\}.
+	\label{eq:union}
+\end{equation}
+
+\begin{example}{Union of sets}{}
+	The union of the sets $A=\left\{ 1,2,3,4 \right\}$ and $B=\left\{ 3,4,5,6 \right\}$ is the set $A\cup B=\left\{ 1,2,3,4,5,6 \right\}$.
+
+	The union of the sets $C=\left\{ 0,1,2,6,7 \right\}$ and $D=\left\{ 3,9,-4,5 \right\}$ is the set $C\cup D=\left\{ 0,1,2,3,-4,5,6,7,9 \right\}$.
+\end{example}
+
+The following Venn diagram depicts the union of two sets (the purple area):
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\def\firstcircle{(0,0) circle (2)}
+		\def\secondcircle{(2.3,0) circle (1.5)}
+		\fill[xpurple!50, draw=black]\firstcircle;
+		\fill[xpurple!50, draw=black]\secondcircle;
+		\draw\firstcircle node {$A$};
+		\draw\secondcircle node {$B$};
+		\node[text=xpurple,font=\Large] at (1.5cm,2.5cm) {$A\cup B$};
+	\end{tikzpicture}
+\end{figure}
+
+Naively, the number of elements of a union $A\cup B$ is simply the sum of the number of elements in $A$ and the number of elements in $B$. However, this naive approach might count the elements in both sets twice: once for $A$ and once for $B$ (see \figref{union_counting}) - this is exactly the set $A\cap B$. We therefore subtract the number of elements in $A\cap B$ and get
+\begin{equation}
+	|A\cup B| = |A|+|B|-|A\cap B|.
+	\label{eq:number_of_elements_in_union}
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\Large
+		\tikzset{node distance=18mm}
+		\draw[xred] (-1cm,0) circle (2) node (A) {};
+		\draw[xblue] (1cm,0) circle (1.5) node (B) {};
+		\node[xred, above of=A, yshift=5mm] {$A$};
+		\node[xblue, above of=B]{$B$};
+
+		% A
+		\fill[xred] (-1.15,-0.12) circle (0.05);
+		\fill[xred] (-1.82,-1.01) circle (0.05);
+		\fill[xred] (-1.28,-1.03) circle (0.05);
+		\fill[xred] (-1.68,+0.05) circle (0.05);
+		\fill[xred] (-0.51,-1.25) circle (0.05);
+		\fill[xred] (-1.41,+0.25) circle (0.05);
+		\fill[xred] (-1.60,+1.25) circle (0.05);
+		%	B
+		\fill[xblue] (1.70,0.54) circle (0.05);
+		\fill[xblue] (1.48,0.06) circle (0.05);
+		\fill[xblue] (1.51,-0.94) circle (0.05);
+		%fill[
+		\fill[xgreen!75] (-0.16,0.24) circle (0.05);
+		\fill[xgreen!75] (0.13,0.53) circle (0.05);
+		\fill[xgreen!75] (0.06,-0.78) circle (0.05);
+	\end{tikzpicture}
+	\caption{Counting the number of elements in the union of two sets: \textcolor{xred}{$A$} has 10 elements (\textcolor{xred}{red} + \textcolor{xgreen}{green} dots), while \textcolor{xblue}{$B$} has 6 elements (\textcolor{xblue}{blue} + \textcolor{xgreen}{green} dots). If we count both we get 16 elements, but this counts the joint elements (\textcolor{xgreen}{green dots}) twice. Therefore we should subtract the number of joint points, and get that there are only 13 elements in the union.}
+	\label{fig:union_counting}
+\end{figure}
+
+When two sets $A,B$ are disjoint, then $|A\cap B|=0$, and so $|A\cup B| = |A|+|B|$.
+
+(intersection/union of $n$ sets?)
 
 \Blindtext{}
 
