@@ -332,7 +332,7 @@ When two sets $A,B$ are disjoint, then $|A\cap B|=0$, and so $|A\cup B| = |A|+|B
 
 The definitions of intersections and unions can be easily extended to any whole number of sets.
 
-\begin{example}{Intersection of 3 sets}{}
+\begin{example}{Intersection and union of 3 sets}{}
 	The intersection of 3 sets $A=\left\{ 1,2,3,4,5 \right\},\ B=\left\{ -2,-1,0,1,2 \right\}$ and $C=\left\{ 2,3,4,5,6 \right\}$ is the set of all elements that are in $A$ and in $B$ and in $C$, i.e.\ the set $A\cap B\cap C = \left\{2\right\}$.
 
 	The union of these sets is the set of all elements that are in either of the sets, i.e. $A\cup B\cup C = \left\{ -2,-1,0,1,2,3,4,5,6 \right\}$.
@@ -359,7 +359,41 @@ Similarily, the union of $n$ different set is defined as
 \end{align}
 
 \begin{example}{Venn diagrams: intersection and union of 3 sets}{}
-	Text
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\tikzset{
+				every node/.style={text=black, text opacity=1},
+			}
+			\def\sq{1.15}
+			\Large
+			\begin{scope}[blend group=hard light]
+				\fill[xred!40!white] (-\sq,\sq) circle (2) node (A) {$A$};
+				\fill[xblue!40!white] (\sq,\sq) circle (2) node (B) {$B$};
+				\fill[xgreen!40!white] (0,-\sq) circle (2) node (C) {$C$};
+			\end{scope}
+			\footnotesize
+			\node[yshift=5mm, rotate=90] at ($(A)!0.5!(B)$) {$A\cap B$};
+			\node[xshift=-4mm, yshift=-2mm, rotate=+30] at ($(A)!0.5!(C)$) {$A\cap C$};
+			\node[xshift=+4mm, yshift=-2mm, rotate=-30] at ($(B)!0.5!(C)$) {$B\cap C$};
+			\node[align=center] at (0,4mm) {$A\cap B\cap C$};
+
+		\end{tikzpicture}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\tikzset{
+				every node/.style={text=black, text opacity=1},
+			}
+			\def\sq{1.15}
+			\Large
+			\fill[xpurple!40!white] (-\sq,-\sq) circle (2) node (A) {$A$};
+			\fill[xpurple!40!white] (\sq,-\sq) circle (2) node (B) {$B$};
+			\fill[xpurple!40!white] (0,\sq) circle (2) node (C) {$C$};
+		\end{tikzpicture}
+	\end{figure}
 \end{example}
 
 TBW: difference, complement.
