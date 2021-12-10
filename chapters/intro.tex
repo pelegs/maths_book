@@ -306,22 +306,23 @@ Naively, the number of elements of a union $A\cup B$ is simply the sum of the nu
 		\node[xred, above of=A, yshift=5mm] {$A$};
 		\node[xblue, above of=B]{$B$};
 
+		\def\rdot{0.1}
 		% A
-		\fill[xred] (-1.15,-0.12) circle (0.05);
-		\fill[xred] (-1.82,-1.01) circle (0.05);
-		\fill[xred] (-1.28,-1.03) circle (0.05);
-		\fill[xred] (-1.68,+0.05) circle (0.05);
-		\fill[xred] (-0.51,-1.25) circle (0.05);
-		\fill[xred] (-1.41,+0.25) circle (0.05);
-		\fill[xred] (-1.60,+1.25) circle (0.05);
+		\fill[xred] (-1.15,-0.12) circle (\rdot);
+		\fill[xred] (-1.82,-1.01) circle (\rdot);
+		\fill[xred] (-1.28,-1.03) circle (\rdot);
+		\fill[xred] (-1.68,+\rdot) circle (\rdot);
+		\fill[xred] (-0.51,-1.25) circle (\rdot);
+		\fill[xred] (-1.41,+0.25) circle (\rdot);
+		\fill[xred] (-1.60,+1.25) circle (\rdot);
 		%	B
-		\fill[xblue] (1.70,0.54) circle (0.05);
-		\fill[xblue] (1.48,0.06) circle (0.05);
-		\fill[xblue] (1.51,-0.94) circle (0.05);
+		\fill[xblue] (1.70,0.54) circle (\rdot);
+		\fill[xblue] (1.48,0.06) circle (\rdot);
+		\fill[xblue] (1.51,-0.94) circle (\rdot);
 		%fill[
-		\fill[xgreen!75] (-0.16,0.24) circle (0.05);
-		\fill[xgreen!75] (0.13,0.53) circle (0.05);
-		\fill[xgreen!75] (0.06,-0.78) circle (0.05);
+		\fill[xgreen!75] (-0.16,0.24) circle (\rdot);
+		\fill[xgreen!75] (0.13,0.53) circle (\rdot);
+		\fill[xgreen!75] (0.06,-0.78) circle (\rdot);
 	\end{tikzpicture}
 	\caption{Counting the number of elements in the union of two sets: \textcolor{xred}{$A$} has 10 elements (\textcolor{xred}{red} + \textcolor{xgreen}{green} dots), while \textcolor{xblue}{$B$} has 6 elements (\textcolor{xblue}{blue} + \textcolor{xgreen}{green} dots). If we count both we get 16 elements, but this counts the joint elements (\textcolor{xgreen}{green dots}) twice. Therefore we should subtract the number of joint points, and get that there are only 13 elements in the union.}
 	\label{fig:union_counting}
