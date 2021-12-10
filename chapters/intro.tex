@@ -330,7 +330,36 @@ Naively, the number of elements of a union $A\cup B$ is simply the sum of the nu
 
 When two sets $A,B$ are disjoint, then $|A\cap B|=0$, and so $|A\cup B| = |A|+|B|$.
 
-(intersection/union of $n$ sets?)
+The definitions of intersections and unions can be easily extended to any whole number of sets.
+
+\begin{example}{Intersection of 3 sets}{}
+	The intersection of 3 sets $A=\left\{ 1,2,3,4,5 \right\},\ B=\left\{ -2,-1,0,1,2 \right\}$ and $C=\left\{ 2,3,4,5,6 \right\}$ is the set of all elements that are in $A$ and in $B$ and in $C$, i.e.\ the set $A\cap B\cap C = \left\{2\right\}$.
+
+	The union of these sets is the set of all elements that are in either of the sets, i.e. $A\cup B\cup C = \left\{ -2,-1,0,1,2,3,4,5,6 \right\}$.
+\end{example}
+
+The most general definition of an intersection of $n$ sets (where $n$ is a whole number), which we will call $A_{1},A_{2},A_{3},\cdots,A_{n}$ is
+\begin{equation}
+	A_{1}\cap A_{2}\cap A_{3}\cap \cdots \cap A_{n} = \left\{ x \mid (x\in A_{1}) \opand (x\in A_{2}) \opand (x\in A_{3}) \opand \cdots \opand (x \in A_{n})\right\}.
+	\label{eq:intersection_n_sets}
+\end{equation}
+
+the left hand side of \eqref{intersection_n_sets} can be written as
+\begin{equation}
+	A_{1}\cap A_{2}\cap A_{3}\cap \cdots \cap A_{n} = \bigcap\limits_{i=1}^{n}A_{i}.
+	\label{eq:intersection_n_sets_big_notation}
+\end{equation}
+(clarifying the notation?)
+
+Similarily, the union of $n$ different set is defined as
+\begin{align}
+	\bigcup\limits_{i=1}^{n}A_{i} &= A_{1}\cup A_{2}\cup A_{3}\cup \cdots \cup A_{n}\nonumber\\
+	&= \left\{ x \mid (x\in A_{1}) \opor (x\in A_{2}) \opor (x\in A_{3}) \opor \cdots \opor (x\in A_{n})\right\}.
+	\label{eq:union_n_sets}
+\end{align}
+
+TBW: difference, complement.
+
 
 \Blindtext{}
 
