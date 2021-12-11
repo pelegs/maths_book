@@ -100,7 +100,7 @@ Instead of the word \textit{equivalent}, the phrase \textit{if and only if} (som
 	x=2\ \text{iff}\ \frac{x}{2}=1.
 \]
 
-\subsection{Sets}
+\subsection{Sets, subsets and cartesian products}
 The concept of \emph{sets} is perhaps one of the most basic ideas in modern mathematics. Much of the material convered in this book will be built upon sets and their properties. However, as with the rest of the material presented here - our description of sets will not be thorough nor percise.
 
 For our purposes, a set is a collection of \emph{elements}. These elements can be any concept - be it physical (a chair, a bicycle, a tapir) or abstract (a number, an idea). However, we will consider only sets comprised of numbers. Sets can have finite of infinite number of elements in them.
@@ -180,17 +180,30 @@ The number of elements in a set, also called its \emph{cardinality} is denoted u
 
 An important special set is the \emph{empty set}, which is the set containing no elements. It is denoted by $\emptyset$, and has the unique property that $|\emptyset|=0$.
 
-Two sets are equal if they both contain the exact same elemnts and only these elements, i.e.
+Two sets are equal if they both contain the exact same elements and only these elements, i.e.
 \begin{equation}
 	A = B \Longleftrightarrow x\in A \Leftrightarrow x\in B.
 	\label{eq:set_equality}
 \end{equation}
-This proposition reads `The sets $A$ and $B$ are equal \underline{\textit{if and only if}} any element $x$ in $A$ is also in $B$, and any element $x$ in $B$ is also in $A$'. When all the elements of a set $B$ are also elements of another set $A$, we say that $B$ is a \emph{subset} of $A$, and we denote that as $B\subset A$.
+This proposition reads `The sets $A$ and $B$ are equal \underline{\textit{if and only if}} any element $x$ in $A$ is also in $B$, and any element $x$ in $B$ is also in $A$'. When all the elements of a set $B$ are also elements of another set $A$, we say that $B$ is a \emph{subset} of $A$, and we denote that as $B\subset A$. In mathematical notation, we write
+
+\begin{equation}
+	B\subset A \Leftrightarrow \forall x\in B, x\in A.
+	\label{eq:subset_def}
+\end{equation}
+i.e. $B$ is a subset of $A$ \textbf{iff} the following is true: any element in $B$ is also an element in $A$.
+
+\begin{note}{(not so) Surprising properties of subsets}{refref}
+	The definion of a subset (\eqref{subset_def}) gives rise to two interesting properties:
+	\begin{itemize}
+		\item The empty set $\emptyset$ is a subset of any set.
+		\item Any set is a subset of itself.
+	\end{itemize}
+\end{note}
 
 \begin{note}{The uniqeness of $\emptyset$}{}
 	There is only a single empty set, as any set that has no elements is equivalent to any other set with no elements (i.e. they have the same elements). Due to the way subsets are defined, the empty set is a subset of any set (including itself!).
 \end{note}
-
 
 A very useful way of illustrating the relationship beyween two or more sets is by using \emph{Venn diagrams}, where sets are represented by circles (or other 2D shapes).
 
@@ -349,9 +362,9 @@ the left hand side of \eqref{intersection_n_sets} can be written as
 	A_{1}\cap A_{2}\cap A_{3}\cap \cdots \cap A_{n} = \bigcap\limits_{i=1}^{n}A_{i}.
 	\label{eq:intersection_n_sets_big_notation}
 \end{equation}
-(clarifying the notation?)
+(clarifying the notation? i.e. indexing, etc.)
 
-Similarily, the union of $n$ different set is defined as
+Similarily, the union of $n$ different sets is defined as
 \begin{align}
 	\bigcup\limits_{i=1}^{n}A_{i} &= A_{1}\cup A_{2}\cup A_{3}\cup \cdots \cup A_{n}\nonumber\\
 	&= \left\{ x \mid (x\in A_{1}) \opor (x\in A_{2}) \opor (x\in A_{3}) \opor \cdots \opor (x\in A_{n})\right\}.
@@ -359,6 +372,7 @@ Similarily, the union of $n$ different set is defined as
 \end{align}
 
 \begin{example}{Venn diagrams: intersection and union of 3 sets}{}
+	The following Venn diagram shows all possible intersections between three sets:
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
@@ -381,6 +395,7 @@ Similarily, the union of $n$ different set is defined as
 		\end{tikzpicture}
 	\end{figure}
 
+	...and this Venn diagram depicts the union of the same three sets:
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
@@ -389,15 +404,30 @@ Similarily, the union of $n$ different set is defined as
 			}
 			\def\sq{1.15}
 			\Large
-			\fill[xpurple!40!white] (-\sq,-\sq) circle (2) node (A) {$A$};
-			\fill[xpurple!40!white] (\sq,-\sq) circle (2) node (B) {$B$};
-			\fill[xpurple!40!white] (0,\sq) circle (2) node (C) {$C$};
+			\fill[xpurple!40!white] (-\sq,+\sq) circle (2) node (A) {$A$};
+			\fill[xpurple!40!white] (\sq,+\sq) circle (2) node (B) {$B$};
+			\fill[xpurple!40!white] (0,-\sq) circle (2) node (C) {$C$};
+
+			\node at (0,0) {$A\cup B\cup C$};
 		\end{tikzpicture}
 	\end{figure}
 \end{example}
 
 TBW: difference, complement.
 
+Given a set $A$ with $|A|$ elements - how many different subsets does it have? We'll start by looking at a practical example: $A=\left\{ 1,2,3 \right\}$. We can immidetly see that any set which contains just one of the elements of $A$ is a subset of $A$, i.e. $\{1\},\{2\},\{3\}$ are all subsets of $A$. In addition, any set which contains only two elements from $A$ is a subset of $A$, i.e. $\left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}$. Of course, we must not forget the empty set and $A$ itself - both subsets of $A$ (see \noteref{refref}). Thus altogether $A$ has $8$ subsets:
+\[
+	\emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 3 \right\}, \left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}, \left\{ 1,2,3 \right\}.
+\]
+
+Generaly, any set $A$ with $|A|$ elements has $2^{|A|}$ different subsets. The set of all these subsets is called the \emph{power set} of $A$, and is denoted as $P(A)$.
+
+\begin{example}{Power set}{power_set}
+	The power set of $A=\left\{ 1,2,3 \right\}$ is
+	\[
+		P(A) = \left\{ \emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 3 \right\}, \left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}, \left\{ 1,2,3 \right\}\right\}.
+	\]
+\end{example}
 
 \Blindtext{}
 
