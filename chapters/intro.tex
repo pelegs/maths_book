@@ -458,16 +458,49 @@ For some combinations of $a$ and $b$ the ratio $\frac{a}{b}$ is an integer. For 
 	\label{eq:integers_subset_rationals}
 \end{equation}
 
-About 2500 years ago it was discovered that some numbers are not rational (and thus also not integers). The most famous example is the number $\sqrt{2}$ - there are not two integers $a,b$ such that $\frac{a}{b}=\sqrt{2}$. Such numbers are solutions to \emph{polynomial equations}, which we will not define yet (see section xxx). We will instead give an example for a 2nd order polynomial equation (called a \emph{quadratic equation}):
+About 2500 years ago it was discovered that some numbers are not rational (and thus also not integers). The most famous example is the number $\sqrt{2}$ - there are not two integers $a,b$ such that $\frac{a}{b}=\sqrt{2}$. We call some of these numbers \emph{algebraic numbers} (denoted by $\mathbb{A}$), and what makes them special is that they are solutions to \emph{polynomial equations}, which we will not define yet (see section xxx). Instead, here is an example for a 2nd order polynomial equation (called a \emph{quadratic equation}):
 \begin{equation}
 	x^{2} - 2x - 1 = 0.
 	\label{eq:quadratic_equation}
 \end{equation}
 
+Similar to what we saw before, the rational numbers are a subset of the algebraic numbers, i.e.
+\begin{equation}
+	\mathbb{Q}\subset\mathbb{A}.
+	\label{eq:rationals_subset_algebraic}
+\end{equation}
+
+The algebraic numbers together with other non-rational numbers, such as $\pi$ and $e$, form the set of \emph{real numbers}, denoted as $\mathbb{R}$. The definition of real numbers is way beyond the scope of this book, but it is important to understand that the progression we used so far still holds, i.e.
+\begin{equation}
+	\mathbb{A}\subset\mathbb{R}.
+	\label{eq:algebraic_subset_reals}
+\end{equation}
+
+The final set of numbers we will touch upon here is the set of \emph{complex numbers}, denoted $\mathbb{C}$, which we can define as
+\begin{equation}
+	\mathbb{C} = \left\{ a+ib \mid a,b\in\mathbb{R},\ i=\sqrt{-1} \right\}.
+	\label{eq:complex_numbers_def}
+\end{equation}
+
+When $b=0$, \eqref{complex_numbers_def} becomes just a single real number - and so
+\begin{equation}
+	\mathbb{R}\subset\mathbb{C}.
+	\label{eq:reals_subset_complex}
+\end{equation}
+(chapter xxx is dedicated to complex numbers)
+
+Equations \ref{eq:naturals_subset_integers}-\ref{eq:reals_subset_complex} can be merged together to the following single equation:
+\begin{equation}
+	\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{A} \subset \mathbb{R} \subset \mathbb{C}.
+	\label{eq:numbers_subsets}
+\end{equation}
+
+There are more advanced constructions that generalize the complex numbers (i.e. create supersets of the complex number set). These include \emph{quaternions} and \emph{Clifford algebras}. However, as stated before, we will not consider them in this book.
 
 \Blindtext{}
 
 \section{Relations and Functions}
+\section{Polynomial functions}
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
 Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
