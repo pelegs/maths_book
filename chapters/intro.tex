@@ -91,6 +91,8 @@ When writing, it is convinient to use \emph{notations} to represent operators: t
 	\end{align*}
 \end{example}
 
+\subsection{Common mathematical notations}
+
 Several more common mathematical notations are given in \tabref{common_math_notations}.
   
 \begin{table}[H]
@@ -124,7 +126,7 @@ Instead of the word \textit{equivalent}, the phrase \textit{if and only if} (som
 	x=2\ \text{iff}\ \frac{x}{2}=1.
 \]
 
-\subsection{Sets, subsets and cartesian products}
+\subsection{Sets and subsets}
 The concept of \emph{sets} is perhaps one of the most basic ideas in modern mathematics. Much of the material convered in this book will be built upon sets and their properties. However, as with the rest of the material presented here - our description of sets will not be thorough nor percise.
 
 For our purposes, a set is a collection of \emph{elements}. These elements can be any concept - be it physical (a chair, a bicycle, a tapir) or abstract (a number, an idea). However, we will consider only sets comprised of numbers. Sets can have finite of infinite number of elements in them.
@@ -203,6 +205,8 @@ The number of elements in a set, also called its \emph{cardinality} is denoted u
 \end{example}
 
 An important special set is the \emph{empty set}, which is the set containing no elements. It is denoted by $\emptyset$, and has the unique property that $|\emptyset|=0$.
+
+\subsection{Intersection, union, difference and complement sets}
 
 Two sets are equal if they both contain the exact same elements and only these elements, i.e.
 \begin{equation}
@@ -455,6 +459,7 @@ Generaly, any set $A$ with $|A|$ elements has $2^{|A|}$ different subsets. The s
 	\]
 \end{example}
 
+\subsection{Important number sets}
 It is now time to introduce some important number sets. We begin with the simplest of these sets: the \emph{natural numbers}, denoted by $\mathbb{N}$. These are the numbers $1,2,3,4,\dots$. Adding the opposites to the natural numbers and adding $0$ to the set yields the \emph{integers}, denoted by $\mathbb{Z}$. Loosley speaking, we can define the integers as
 \begin{equation}
 	\mathbb{Z}=\left\{ 0,\pm1,\pm2,\pm3,\pm4,\dots \right\}.
@@ -521,6 +526,7 @@ Equations \ref{eq:naturals_subset_integers}-\ref{eq:reals_subset_complex} can be
 
 There are more advanced constructions that generalize the complex numbers (i.e. create supersets of the complex number set). These include \emph{quaternions} and \emph{Clifford algebras}. However, as stated before, we will not consider them in this book.
 
+\subsection{Intervals on the real number line}
 An important concept that is easily defined over the set $\mathbb{R}$ is an \emph{interval}. A \emph{closed interval} $\left[ a,b \right]$ is a subset of $\mathbb{R}$ which is defined as
 \begin{equation}
 	\left[ a,b \right] = \left\{ x\in\mathbb{R} \mid a\leq x\leq b \right\}.
@@ -535,8 +541,8 @@ An \emph{open interval} $\left( a,b \right)$ is a subset of $\mathbb{R}$ which i
 
 The difference between closed and open intervals is the inclusion and exclusion, respectyively, of the edge point: in a closed interval the points $a,b$ are included, while they are not included in an open interval. Of course, we can also create \emph{half open intervals}, i.e.
 \begin{align}
-	\left[ a,b \right) = \left\{ x\in\mathbb{R} \mid a\leq x < b \right\},\nonumber\\
-	\left( a,b \right] = \left\{ x\in\mathbb{R} \mid a < x\leq b \right\},
+	\left[ a,b \right) &= \left\{ x\in\mathbb{R} \mid a\leq x < b \right\},\nonumber\\
+	\left( a,b \right] &= \left\{ x\in\mathbb{R} \mid a < x\leq b \right\},
 	\label{eq:half_open_intervals}
 \end{align}
 where the first interval includes $a$ but not $b$, and the second interval includes $b$ but not $a$.
@@ -571,6 +577,17 @@ where the first interval includes $a$ but not $b$, and the second interval inclu
 
 	Note how a full point denotes a closed edge, while an empty point denotes an open edge.
 \end{example}
+
+In some cases, it is necessary to use intervals that are infinite in one side, i.e. the left or the right edge are at infinity. In these cases, we use the symbol $\infty$ to denote infinity, and always keep the interval open at that end:
+\begin{align}
+	\left( -\infty,b \right) &= \left\{ x \mid x<b \right\},\nonumber\\
+	\left( -\infty,b \right] &= \left\{ x \mid x\leq b \right\},\nonumber\\
+	\left( a,\infty \right) &= \left\{ x \mid x>a \right\},\nonumber\\
+	\left[ a,\infty \right) &= \left\{ x \mid x\geq a \right\}.
+	\label{eq:infinite_intervals}
+\end{align}
+
+\subsection{Cartesian Products}
 
 \Blindtext{}
 
