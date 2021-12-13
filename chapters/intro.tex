@@ -1,3 +1,27 @@
+\pgfkeys{/pgfplots/Interval/.style={
+		axis x line=middle,
+		axis y line=none,
+		every axis x label/.style={
+			at={(ticklabel* cs:1.05)},
+			anchor=west,
+		},
+		axis line style={stealth-stealth, thick},
+		label style={font=\large},
+		tick label style={font=\small},
+		samples=200,
+		xmin=-5, xmax=5,
+		ymin=0, ymax=5,
+		domain=-5:5,
+		y=0.5cm,
+		restrict y to domain=0:4,
+		axis lines=left,
+		enlarge x limits=upper,
+		scatter/classes={o={mark=*,fill=white}},
+		scatter,
+		scatter src=explicit symbolic,
+		every axis plot post/.style={mark=*,thick},
+}}
+
 \chapter{Introduction}
 In this chapter we will introduce some key concepts that will be used in later chapters.
 
@@ -496,6 +520,57 @@ Equations \ref{eq:naturals_subset_integers}-\ref{eq:reals_subset_complex} can be
 \end{equation}
 
 There are more advanced constructions that generalize the complex numbers (i.e. create supersets of the complex number set). These include \emph{quaternions} and \emph{Clifford algebras}. However, as stated before, we will not consider them in this book.
+
+An important concept that is easily defined over the set $\mathbb{R}$ is an \emph{interval}. A \emph{closed interval} $\left[ a,b \right]$ is a subset of $\mathbb{R}$ which is defined as
+\begin{equation}
+	\left[ a,b \right] = \left\{ x\in\mathbb{R} \mid a\leq x\leq b \right\}.
+	\label{eq:closed_interval}
+\end{equation}
+
+An \emph{open interval} $\left( a,b \right)$ is a subset of $\mathbb{R}$ which is defined as
+\begin{equation}
+	\left( a,b \right) = \left\{ x\in\mathbb{R} \mid a<x<b \right\}.
+	\label{eq:open_interval}
+\end{equation}
+
+The difference between closed and open intervals is the inclusion and exclusion, respectyively, of the edge point: in a closed interval the points $a,b$ are included, while they are not included in an open interval. Of course, we can also create \emph{half open intervals}, i.e.
+\begin{align}
+	\left[ a,b \right) = \left\{ x\in\mathbb{R} \mid a\leq x < b \right\},\nonumber\\
+	\left( a,b \right] = \left\{ x\in\mathbb{R} \mid a < x\leq b \right\},
+	\label{eq:half_open_intervals}
+\end{align}
+where the first interval includes $a$ but not $b$, and the second interval includes $b$ but not $a$.
+
+\vspace{2em}
+\begin{example}{Intervals}{intervals}
+	Intervals can be drawn as colored line segments on top of the real number line:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[node distance=15mm]
+			\begin{axis}[Interval]
+				% NOTE: there must be a way to set this globally!
+				\addplot[xred] table[y expr=4, meta index=1, header=false] {
+				-2 c
+				3 c
+				} node [right] {$\left[ -2,3 \right]$};
+				\addplot[xblue] table[y expr=3, meta index=1, header=false] {
+				-4 o
+				0 o
+				} node [right] {$\left( -4,0 \right)$};
+				\addplot[xgreen] table[y expr=2, meta index=1, header=false] {
+				-1 c
+				4 o
+				} node [right] {$\left[ -1,4 \right)$};
+				\addplot[xpurple] table[y expr=1, meta index=1, header=false] {
+				1 o
+				3 c
+				} node [right] {$\left( 1,3 \right]$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+
+	Note how a full point denotes a closed edge, while an empty point denotes an open edge.
+\end{example}
 
 \Blindtext{}
 
