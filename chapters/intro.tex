@@ -588,9 +588,55 @@ In some cases, it is necessary to use intervals that are infinite in one side, i
 \end{align}
 
 \subsection{Cartesian Products}
-The \textbf{cartesian product}\index{Cartesian product} of two sets $A,B$ (denoted $A\times B$) is the set of all possible \textbf{ordered} pairs, where the first component is an element of $A$ and the second component is an element of $B$.
+The \emph{cartesian product}\index{Cartesian product} of two sets $A,B$ (denoted $A\times B$) is the set of all possible \emph{ordered} pairs, where the first component is an element of $A$ and the second component is an element of $B$:
+\begin{equation}
+	A\times B = \left\{ (a,b) \mid a\in A,\ b\in B \right\}.
+	\label{eq:cartesian_product}
+\end{equation}
 
-\Blindtext{}
+\begin{example}{Cartesian products}{cartesian_products}
+	Consider $A=\left\{ 1,2,3 \right\},\ B=\left\{ x, y \right\}$. Then
+	\[
+		A\times B = \left\{ \left( 1,x \right),\ \left( 1,y \right),\ \left( 2,x \right),\ \left( 2,y \right),\ \left( 3,x \right),\ \left( 3,y \right) \right\}
+	\]
+\end{example}
+
+The concept of `ordered pairs' is paramount: if we reverse the order of the elements in a pair the result might not be in the cartesian product. We therefore say that the cartesian product is \emph{not commutative}.
+
+\begin{example}{Non-commutivity of the cartesian product}{}
+	The elements $(x,1),\ (y,1),\ (x,2)$ and so on \textbf{are not} in the cartesian product $A\times B$ as defined in the previous example, since in each one of the pairs the first element is from $B$ and the second element is from $A$.
+\end{example}
+
+The number of elements in a cartesian product is the product of the number of elements in each of the sets it is composed of, i.e.
+\begin{equation}
+	|A\times B| = |A|\cdot|B|.
+	\label{eq:number_of_elements_cartesian_product}
+\end{equation}
+
+\begin{example}{Number of elements in a cartesian product}{}
+	The cartesian product described in the previous two examples has in total $3\cdot2=6$ elements, as seen in \exampleref{cartesian_products}.
+\end{example}
+
+As with intersections and unions, the definition of a cartesian product can be expanded into any natural number of sets:
+\begin{equation}
+	A_{1}\times A_{2}\times \cdots \times A_{n} = \left\{ \left( x_{1},x_{2},\dots,x_{n} \right) \mid x_{1}\in A_{1},\ x_{2}\in A_{2},\ \dots, x_{n}\in A_{n} \right\}.
+	\label{eq:cartesian_product_multiple_sets}
+\end{equation}
+
+\begin{example}{Cartesian product of three sets}{}
+	The cartesian product of the sets $A=\{1,2,3\},\ B=\{x,y\},\ C=\{\alpha,\beta\}$ is
+	\begin{align*}
+		A\times B\times C = \{
+			&(1,x,\alpha),\ (1,x,\beta),\ (1,y,\alpha),\ (1,y,\beta)\\
+			&(2,x,\alpha),\ (2,x,\beta),\ (2,y,\alpha),\ (2,y,\beta)\\
+			&(3,x,\alpha),\ (3,x,\beta),\ (3,y,\alpha),\ (3,y,\beta)
+		\}.
+	\end{align*}
+\end{example}
+
+A special case of cartesian products are those products for which all the sets composing them are the same set. We denote these as the respective integer power, for example the cartesian product $\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{2}$, the cartesian product $\mathbb{R}\times\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{3}$, etc.
+
+Specifically, the cartesian product $\Rs{2}$ can be interpreted as the two-dimensional \emph{Euclidean space}, which is the space used to draw graphs in one-dimensional calculus and shapes in two-dimensional analytican geometry. We will explore this idea (and higher dimensional spaces) in more details in upcoming chapters.
 
 \section{Relations and Functions}
 \section{Polynomial functions}
