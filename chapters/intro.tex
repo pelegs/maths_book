@@ -588,43 +588,43 @@ In some cases, it is necessary to use intervals that are infinite in one side, i
 \end{align}
 
 \subsection{Cartesian Products}
-The \emph{cartesian product}\index{Cartesian product} of two sets $A,B$ (denoted $A\times B$) is the set of all possible \emph{ordered} pairs, where the first component is an element of $A$ and the second component is an element of $B$:
+The \emph{Cartesian product}\index{Cartesian product} of two sets $A,B$ (denoted $A\times B$) is the set of all possible \emph{ordered} pairs, where the first component is an element of $A$ and the second component is an element of $B$:
 \begin{equation}
 	A\times B = \left\{ (a,b) \mid a\in A,\ b\in B \right\}.
-	\label{eq:cartesian_product}
+	\label{eq:Cartesian_product}
 \end{equation}
 
-\begin{example}{Cartesian products}{cartesian_products}
+\begin{example}{Cartesian products}{Cartesian_products}
 	Consider $A=\left\{ 1,2,3 \right\},\ B=\left\{ x, y \right\}$. Then
 	\[
 		A\times B = \left\{ \left( 1,x \right),\ \left( 1,y \right),\ \left( 2,x \right),\ \left( 2,y \right),\ \left( 3,x \right),\ \left( 3,y \right) \right\}
 	\]
 \end{example}
 
-The concept of `ordered pairs' is paramount: if we reverse the order of the elements in a pair the result might not be in the cartesian product. We therefore say that the cartesian product is \emph{not commutative}.
+The concept of `ordered pairs' is paramount: if we reverse the order of the elements in a pair the result might not be in the Cartesian product. We therefore say that the Cartesian product is \emph{not commutative}.
 
-\begin{example}{Non-commutivity of the cartesian product}{}
-	The elements $(x,1),\ (y,1),\ (x,2)$ and so on \textbf{are not} in the cartesian product $A\times B$ as defined in the previous example, since in each one of the pairs the first element is from $B$ and the second element is from $A$.
+\begin{example}{Non-commutivity of the Cartesian product}{}
+	The elements $(x,1),\ (y,1),\ (x,2)$ and so on \textbf{are not} in the Cartesian product $A\times B$ as defined in the previous example, since in each one of the pairs the first element is from $B$ and the second element is from $A$.
 \end{example}
 
-The number of elements in a cartesian product is the product of the number of elements in each of the sets it is composed of, i.e.
+The number of elements in a Cartesian product is the product of the number of elements in each of the sets it is composed of, i.e.
 \begin{equation}
 	|A\times B| = |A|\cdot|B|.
-	\label{eq:number_of_elements_cartesian_product}
+	\label{eq:number_of_elements_Cartesian_product}
 \end{equation}
 
-\begin{example}{Number of elements in a cartesian product}{}
-	The cartesian product described in the previous two examples has in total $3\cdot2=6$ elements, as seen in \exampleref{cartesian_products}.
+\begin{example}{Number of elements in a Cartesian product}{}
+	The Cartesian product described in the previous two examples has in total $3\cdot2=6$ elements, as seen in \exampleref{Cartesian_products}.
 \end{example}
 
-As with intersections and unions, the definition of a cartesian product can be expanded into any natural number of sets:
+As with intersections and unions, the definition of a Cartesian product can be expanded into any natural number of sets:
 \begin{equation}
 	A_{1}\times A_{2}\times \cdots \times A_{n} = \left\{ \left( x_{1},x_{2},\dots,x_{n} \right) \mid x_{1}\in A_{1},\ x_{2}\in A_{2},\ \dots, x_{n}\in A_{n} \right\}.
-	\label{eq:cartesian_product_multiple_sets}
+	\label{eq:Cartesian_product_multiple_sets}
 \end{equation}
 
 \begin{example}{Cartesian product of three sets}{}
-	The cartesian product of the sets $A=\{1,2,3\},\ B=\{x,y\},\ C=\{\alpha,\beta\}$ is
+	The Cartesian product of the sets $A=\{1,2,3\},\ B=\{x,y\},\ C=\{\alpha,\beta\}$ is
 	\begin{align*}
 		A\times B\times C = \{
 			&(1,x,\alpha),\ (1,x,\beta),\ (1,y,\alpha),\ (1,y,\beta)\\
@@ -634,11 +634,95 @@ As with intersections and unions, the definition of a cartesian product can be e
 	\end{align*}
 \end{example}
 
-A special case of cartesian products are those products for which all the sets composing them are the same set. We denote these as the respective integer power, for example the cartesian product $\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{2}$, the cartesian product $\mathbb{R}\times\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{3}$, etc.
+A special case of Cartesian products are those products for which all the sets composing them are the same set. We denote these as the respective integer power, for example the Cartesian product $\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{2}$, the Cartesian product $\mathbb{R}\times\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{3}$, etc.
 
-Specifically, the cartesian product $\Rs{2}$ can be interpreted as the two-dimensional \emph{Euclidean space}, which is the space used to draw graphs in one-dimensional calculus and shapes in two-dimensional analytican geometry. We will explore this idea (and higher dimensional spaces) in more details in upcoming chapters.
+Specifically, the Cartesian product $\Rs{2}$ can be interpreted as the two-dimensional \emph{Euclidean space}, which is the space used to draw graphs in one-dimensional calculus and shapes in two-dimensional analytican geometry. We will explore this idea (and higher dimensional spaces) in more details in upcoming chapters.
 
 \section{Relations and Functions}
+Cartesian products of two sets can be viewed as describing all possible connections between the elements of the first set to the elements of the second set, and thus any subset of a Cartesian product forms a specific \emph{relation} between the sets.
+
+\begin{example}{Relations as subsets of Cartesian products}{relation}
+	Given the following two sets:
+	\[
+		A=\{1,2,3,4\},\ B=\{x,y,z\},
+	\]
+	then
+	\begin{align*}
+		A\times B = \left\{ (1,x),\ (1,y),\ (1,z), \right.\\
+												(2,x),\ (2,y),\ (2,z),\\
+												(3,x),\ (3,y),\ (3,z),\\
+							  \left.	(4,x),\ (4,y),\ (4,z) \right\}.
+	\end{align*}
+
+	We can choose the following pairs to form a subset of $A\times B$:
+	\[
+		R = \left\{ (1,y),\ (2,x),\ (3,x),\ (3,y), (4,z)  \right\}.
+	\]
+	$R$ is thus a relation between $A$ and $B$. We can graphically illustrate $R$ as follows:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\Large
+			
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1) at (0,1.5cm) {$1$};
+			\node (2) at (0,0.5cm) {$2$};
+			\node (3) at (0,-0.5cm) {$3$};
+			\node (4) at (0,-1.5cm) {$4$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (x) at (2.5cm,1cm) {$x$};
+			\node (y) at (2.5cm,0cm) {$y$};
+			\node (z) at (2.5cm,-1cm) {$z$};
+
+			\draw[arrow] (1) -- (y);
+			\draw[arrow] (2) -- (x);
+			\draw[arrow] (3) -- (x);
+			\draw[arrow] (3) -- (z);
+			\draw[arrow] (4) -- (y);
+
+			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$R$};
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+Relations can be inversed by reversing the order of each of its pairs.
+
+\begin{example}{Inverse relation}{inv_relation}
+	The inverse relation to the relation in \exampleref{relation} is
+	\[
+		R^{-1} = \left\{ (y,1),\ (x,2),\ (x,3),\ (y,3), (z,4)  \right\}.
+	\]
+	Graphically:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\Large
+			
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1) at (0,1.5cm) {$1$};
+			\node (2) at (0,0.5cm) {$2$};
+			\node (3) at (0,-0.5cm) {$3$};
+			\node (4) at (0,-1.5cm) {$4$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (x) at (2.5cm,1cm) {$x$};
+			\node (y) at (2.5cm,0cm) {$y$};
+			\node (z) at (2.5cm,-1cm) {$z$};
+
+			\draw[arrow] (y) -- (1);
+			\draw[arrow] (x) -- (2);
+			\draw[arrow] (x) -- (3);
+			\draw[arrow] (z) -- (3);
+			\draw[arrow] (y) -- (4);
+
+			\draw[arrow] (Blbl) -- (Albl) node[midway, above] {$R^{-1}$};
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+\Blindtext{}
+
 \section{Polynomial functions}
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
