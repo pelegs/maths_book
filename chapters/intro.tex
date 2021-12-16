@@ -721,6 +721,71 @@ Relations can be inversed by reversing the order of each of its pairs.
 	\end{figure}
 \end{example}
 
+A \emph{function} $f$ from a set $A$ to a set $B$ is a relation for which any element in $A$ is connected to a single element in $B$.
+
+\begin{example}{Functions}{functions}
+	The following are two functions from the set $A$ to the set $B$ defined in \exampleref{relation}:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\Large
+		
+			% f
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1) at (0,1.5cm) {$1$};
+			\node (2) at (0,0.5cm) {$2$};
+			\node (3) at (0,-0.5cm) {$3$};
+			\node (4) at (0,-1.5cm) {$4$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (x) at (2.5cm,1cm) {$x$};
+			\node (y) at (2.5cm,0cm) {$y$};
+			\node (z) at (2.5cm,-1cm) {$z$};
+
+			\draw[arrow] (1) -- (x);
+			\draw[arrow] (2) -- (y);
+			\draw[arrow] (3) -- (z);
+			\draw[arrow] (4) -- (z);
+
+			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$f$};
+			
+			% g
+			\draw[thick, xred, fill=xred!20] (0,-6.0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1) at (0,-4.5cm) {$1$};
+			\node (2) at (0,-5.5cm) {$2$};
+			\node (3) at (0,-6.5cm) {$3$};
+			\node (4) at (0,-7.5cm) {$4$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,-6.0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (x) at (2.5cm,-5.0cm) {$x$};
+			\node (y) at (2.5cm,-6.0cm) {$y$};
+			\node (z) at (2.5cm,-7.0cm) {$z$};
+
+			\draw[arrow] (1) -- (x);
+			\draw[arrow] (2) -- (z);
+			\draw[arrow] (3) -- (y);
+			\draw[arrow] (4) -- (x);
+
+			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$g$};
+		\end{tikzpicture}
+	\end{figure}
+		
+	The pairs making up $f$ are $(1,x),\ (2,y),\ (3,z)$ and $(4,z)$, and the pairs making up $g$ are $(1,x),\ (2,z),\ (3,y)$ and $(4,x)$.
+\end{example}
+
+\begin{note}{Relations which are not functions}{}
+	Note that the relation in \exampleref{relation} is \textbf{not} a function, since the element $3\in A$ is connected to more than one element in $B$, namely $x$ and $z$.
+\end{note}
+
+Different names are used in some branches of mathematics to describe functions, such as \emph{maps} and \emph{transformations}. Baring context, they all mean the same thing.
+
+A common way to denote that a function $f$ is connecting elements in $A$ to elements in $B$ is
+\begin{equation}
+	f: A\to B.
+	\label{eq:function_basics}
+\end{equation}
+$A$ is called the \emph{domain} of $f$, and $B$ its \emph{image}.
+
 \Blindtext{}
 
 \section{Polynomial functions}
