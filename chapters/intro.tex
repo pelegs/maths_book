@@ -1,25 +1,26 @@
-\pgfkeys{/pgfplots/Interval/.style={
-		axis x line=middle,
-		axis y line=none,
-		every axis x label/.style={
-			at={(ticklabel* cs:1.05)},
-			anchor=west,
-		},
-		axis line style={stealth-stealth, thick},
-		label style={font=\large},
-		tick label style={font=\small},
-		samples=200,
-		xmin=-5, xmax=5,
-		ymin=0, ymax=5,
-		domain=-5:5,
-		y=0.5cm,
-		restrict y to domain=0:4,
-		axis lines=left,
-		enlarge x limits=upper,
-		scatter/classes={o={mark=*,fill=white}},
-		scatter,
-		scatter src=explicit symbolic,
-		every axis plot post/.style={mark=*,thick},
+\pgfkeys{
+	/pgfplots/Interval/.style={
+	axis x line=middle,
+	axis y line=none,
+	every axis x label/.style={
+		at={(ticklabel* cs:1.05)},
+		anchor=west,
+	},
+	axis line style={stealth-stealth, thick},
+	label style={font=\large},
+	tick label style={font=\small},
+	samples=200,
+	xmin=-5, xmax=5,
+	ymin=0, ymax=5,
+	domain=-5:5,
+	y=0.5cm,
+	restrict y to domain=0:4,
+	axis lines=left,
+	enlarge x limits=upper,
+	scatter/classes={o={mark=*,fill=white}},
+	scatter,
+	scatter src=explicit symbolic,
+	every axis plot post/.style={mark=*,thick},
 }}
 
 \chapter{Introduction}
@@ -644,19 +645,19 @@ Cartesian products of two sets can be viewed as describing all possible connecti
 \begin{example}{Relations as subsets of Cartesian products}{relation}
 	Given the following two sets:
 	\[
-		A=\{1,2,3,4\},\ B=\{x,y,z\},
+		A=\{1,2,3,4\},\ B=\{\alpha,\beta,\gamma\},
 	\]
 	then
 	\begin{align*}
-		A\times B = \left\{ (1,x),\ (1,y),\ (1,z), \right.\\
-												(2,x),\ (2,y),\ (2,z),\\
-												(3,x),\ (3,y),\ (3,z),\\
-							  \left.	(4,x),\ (4,y),\ (4,z) \right\}.
+		A\times B = \left\{ (1,\alpha),\ (1,\beta),\ (1,\gamma), \right.\\
+												(2,\alpha),\ (2,\beta),\ (2,\gamma),\\
+												(3,\alpha),\ (3,\beta),\ (3,\gamma),\\
+							  \left.	(4,\alpha),\ (4,\beta),\ (4,\gamma) \right\}.
 	\end{align*}
 
 	We can choose the following pairs to form a subset of $A\times B$:
 	\[
-		R = \left\{ (1,y),\ (2,x),\ (3,x),\ (3,y), (4,z)  \right\}.
+		R = \left\{ (1,\beta),\ (2,\alpha),\ (3,\alpha),\ (3,\beta), (4,\gamma)  \right\}.
 	\]
 	$R$ is thus a relation between $A$ and $B$. We can graphically illustrate $R$ as follows:
 	\begin{figure}[H]
@@ -671,15 +672,15 @@ Cartesian products of two sets can be viewed as describing all possible connecti
 			\node (4) at (0,-1.5cm) {$4$};
 			
 			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
-			\node (x) at (2.5cm,1cm) {$x$};
-			\node (y) at (2.5cm,0cm) {$y$};
-			\node (z) at (2.5cm,-1cm) {$z$};
+			\node (alpha) at (2.5cm,1cm) {$\alpha$};
+			\node (beta) at (2.5cm,0cm) {$\beta$};
+			\node (gamma) at (2.5cm,-1cm) {$\gamma$};
 
-			\draw[arrow] (1) -- (y);
-			\draw[arrow] (2) -- (x);
-			\draw[arrow] (3) -- (x);
-			\draw[arrow] (3) -- (z);
-			\draw[arrow] (4) -- (y);
+			\draw[arrow] (1) -- (beta);
+			\draw[arrow] (2) -- (alpha);
+			\draw[arrow] (3) -- (alpha);
+			\draw[arrow] (3) -- (gamma);
+			\draw[arrow] (4) -- (beta);
 
 			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$R$};
 		\end{tikzpicture}
@@ -691,7 +692,7 @@ Relations can be inversed by reversing the order of each of its pairs.
 \begin{example}{Inverse relation}{inv_relation}
 	The inverse relation to the relation in \exampleref{relation} is
 	\[
-		R^{-1} = \left\{ (y,1),\ (x,2),\ (x,3),\ (y,3), (z,4)  \right\}.
+		R^{-1} = \left\{ (\beta,1),\ (\alpha,2),\ (\alpha,3),\ (\beta,3), (\gamma,4)  \right\}.
 	\]
 	Graphically:
 	\begin{figure}[H]
@@ -706,15 +707,15 @@ Relations can be inversed by reversing the order of each of its pairs.
 			\node (4) at (0,-1.5cm) {$4$};
 			
 			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
-			\node (x) at (2.5cm,1cm) {$x$};
-			\node (y) at (2.5cm,0cm) {$y$};
-			\node (z) at (2.5cm,-1cm) {$z$};
+			\node (alpha) at (2.5cm,1cm) {$\alpha$};
+			\node (beta) at (2.5cm,0cm) {$\beta$};
+			\node (gamma) at (2.5cm,-1cm) {$\gamma$};
 
-			\draw[arrow] (y) -- (1);
-			\draw[arrow] (x) -- (2);
-			\draw[arrow] (x) -- (3);
-			\draw[arrow] (z) -- (3);
-			\draw[arrow] (y) -- (4);
+			\draw[arrow] (beta) -- (1);
+			\draw[arrow] (alpha) -- (2);
+			\draw[arrow] (alpha) -- (3);
+			\draw[arrow] (gamma) -- (3);
+			\draw[arrow] (beta) -- (4);
 
 			\draw[arrow] (Blbl) -- (Albl) node[midway, above] {$R^{-1}$};
 		\end{tikzpicture}
@@ -738,14 +739,14 @@ A \emph{function} $f$ from a set $A$ to a set $B$ is a relation for which any el
 			\node (4) at (0,-1.5cm) {$4$};
 			
 			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
-			\node (x) at (2.5cm,1cm) {$x$};
-			\node (y) at (2.5cm,0cm) {$y$};
-			\node (z) at (2.5cm,-1cm) {$z$};
+			\node (alpha) at (2.5cm,1cm) {$\alpha$};
+			\node (beta) at (2.5cm,0cm) {$\beta$};
+			\node (gamma) at (2.5cm,-1cm) {$\gamma$};
 
-			\draw[arrow] (1) -- (x);
-			\draw[arrow] (2) -- (y);
-			\draw[arrow] (3) -- (z);
-			\draw[arrow] (4) -- (z);
+			\draw[arrow] (1) -- (alpha);
+			\draw[arrow] (2) -- (beta);
+			\draw[arrow] (3) -- (gamma);
+			\draw[arrow] (4) -- (gamma);
 
 			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$f$};
 			
@@ -757,24 +758,24 @@ A \emph{function} $f$ from a set $A$ to a set $B$ is a relation for which any el
 			\node (4) at (0,-7.5cm) {$4$};
 			
 			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,-6.0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
-			\node (x) at (2.5cm,-5.0cm) {$x$};
-			\node (y) at (2.5cm,-6.0cm) {$y$};
-			\node (z) at (2.5cm,-7.0cm) {$z$};
+			\node (alpha) at (2.5cm,-5.0cm) {$\alpha$};
+			\node (beta) at (2.5cm,-6.0cm) {$\beta$};
+			\node (gamma) at (2.5cm,-7.0cm) {$\gamma$};
 
-			\draw[arrow] (1) -- (x);
-			\draw[arrow] (2) -- (z);
-			\draw[arrow] (3) -- (y);
-			\draw[arrow] (4) -- (x);
+			\draw[arrow] (1) -- (alpha);
+			\draw[arrow] (2) -- (gamma);
+			\draw[arrow] (3) -- (beta);
+			\draw[arrow] (4) -- (alpha);
 
 			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$g$};
 		\end{tikzpicture}
 	\end{figure}
 		
-	The pairs making up $f$ are $(1,x),\ (2,y),\ (3,z)$ and $(4,z)$, and the pairs making up $g$ are $(1,x),\ (2,z),\ (3,y)$ and $(4,x)$.
+	The pairs making up $f$ are $(1,\alpha),\ (2,\beta),\ (3,\gamma)$ and $(4,\gamma)$, and the pairs making up $g$ are $(1,\alpha),\ (2,\gamma),\ (3,\beta)$ and $(4,\alpha)$.
 \end{example}
 
 \begin{note}{Relations which are not functions}{}
-	Note that the relation in \exampleref{relation} is \textbf{not} a function, since the element $3\in A$ is connected to more than one element in $B$, namely $x$ and $z$.
+	Note that the relation in \exampleref{relation} is \textbf{not} a function, since the element $3\in A$ is connected to more than one element in $B$, namely $\alpha$ and $\gamma$.
 \end{note}
 
 Different names are used in some branches of mathematics to describe functions, such as \emph{maps} and \emph{transformations}. Baring context, they all mean the same thing.
@@ -784,7 +785,63 @@ A common way to denote that a function $f$ is connecting elements in $A$ to elem
 	f: A\to B.
 	\label{eq:function_basics}
 \end{equation}
-$A$ is called the \emph{domain} of $f$, and $B$ its \emph{image}.
+$A$ is called the \emph{domain} of $f$, and $B$ its \emph{image}. In this book and many other sources, the following notation is used: $f(x)=y$, which means that when we apply the function $f$ to an element $x\in A$, the result is the element it is connected to, i.e. $y\in B$. We write this as $x\mapsto y$ (the special symbol $\mapsto$ is called a \emph{mapping notation}).
+
+\begin{example}{Value $\mapsto$ value notation for functions}{}
+	For the functions $f,g$ as defined in \exampleref{functions}:
+	\begin{align*}
+		&f(1)=\alpha,\ f(2)=\beta,\ f(3)=f(4)=\gamma.\\
+		&g(1)=g(4)=\alpha,\ g(2)=\gamma,\ g(3)=\beta.
+	\end{align*}
+\end{example}
+
+In suitable cases, a function is defined via a general mapping rule. This should be very familiar to anyone who learned mathematics in highschool, where many times functions are defined this way, e.g.
+\begin{equation}
+	f(x) = x^{2}+3x-4.
+	\label{eq:function_by_formula}
+\end{equation}
+
+In mapping notation we can write \eqref{function_by_formula} as $f:x\mapsto x^{2}+3x-4$. In highschool mathematics, both the domain and image of such functions is $\mathbb{R}$, although it is almost never specified explicetly.
+
+\begin{example}{Functions defined using a mapping rule}{}
+	The following functions are of the type $f:\mathbb{R}\to\mathbb{R}$:
+	\[
+		f_{1}(x) = 2x^{2}-5,\quad f_{2}(x)=\sin\left( \frac{x}{3} \right),\quad f_{3}(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{\sigma^{2}}}.
+	\]
+
+	Note that these functions can also be defined using different sets, for example $f_{1}:\mathbb{N}\to\mathbb{Z},\quad f_{2}:\mathbb{N}\to[-1,1],\quad$ etc.
+\end{example}
+
+Functions of the type $f:\mathbb{R}\to\mathbb{R}$ can be easily plotted in a \emph{Cartesian coordinate system} by drawing all the points $\left( x,f(x) \right)$ (i.e. all the points $\left( x,y \right)$, where $x,y\in\mathbb{R}$ and $x\mapsto y$). We call these points the \emph{graph} of $f$ over $\mathbb{R}$.
+
+\begin{example}{Graphs of functions over $\mathbb{R}$}{graph_of_functions}
+	The following two functions are plotted on the domain $\left[ -9,9 \right]$:
+
+	\begin{minipage}{0.3\textwidth}
+		\begin{itemize}
+			\item \textcolor{xred}{$f(x)=x^{2}-2x-3$},
+			\item \textcolor{xgreen}{$g(x)=4e^{x}/\left( e^{x}+1 \right)$}.
+		\end{itemize}
+	\end{minipage}%
+	\begin{minipage}[c]{0.7\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					width=9cm, height=6cm,
+					xmin=-9, xmax=9,
+					ymin=-5, ymax=5,
+					domain=-9:9,
+					restrict y to domain=-5:5,
+					declare function={f(\x)=\x^2-2*\x-3;},
+					declare function={g(\x)=4*exp(\x)/(1+exp(\x));},
+				]
+				\addplot[function, color=xred] {f(x)};
+				\addplot[function, color=xgreen] {g(x)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{minipage}
+\end{example}
 
 \Blindtext{}
 
