@@ -796,6 +796,132 @@ $A$ is called the \emph{domain} of $f$, and $B$ its \emph{image}. In this book a
 	\end{align*}
 \end{example}
 
+\subsection{Injective, surjective and bijective functions}
+A function is \emph{injective} if each of the elements in its \textbf{image} is connected to by at most a single element in its \textbf{domain}. An injective function is also known as an \emph{injection}.
+
+\begin{example}{Injective function}{injective}
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+% Injective function
+		\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1) at (0,1.5) {$1$};
+		\node (A2) at (0,0.5) {$2$};
+		\node (A3) at (0,-0.5) {$3$};
+		\node (A4) at (0,-1.5) {$4$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (2,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1) at (2,1.2) {$\alpha$};
+		\node (B2) at (2,0.4) {$\beta$};
+		\node (B3) at (2,-0.4) {$\gamma$};
+		\node (B4) at (2,-1.2) {$\delta$};
+
+		\draw[arrow] (A1) -- (B2);
+		\draw[arrow] (A2) -- (B3);
+		\draw[arrow] (A3) -- (B1);
+		\draw[arrow] (A4) -- (B4);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Injective} (B);
+
+% Non injective function
+		\fill[xred!20, draw=xred, thick] (6,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1b) at (6,1.5) {$1$};
+		\node (A2b) at (6,0.75) {$2$};
+		\node (A3b) at (6,0) {$3$};
+		\node (A4b) at (6,-0.75) {$4$};
+		\node (A5b) at (6,-1.5) {$5$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (8,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1b) at (8,1.2) {$\alpha$};
+		\node (B2b) at (8,0.4) {$\beta$};
+		\node (B3b) at (8,-0.4) {$\gamma$};
+		\node (B4b) at (8,-1.2) {$\delta$};
+
+		\draw[arrow] (A1b) -- (B1b);
+		\draw[arrow, red] (A2b) -- (B2b);
+		\draw[arrow, red] (A3b) -- (B2b);
+		\draw[arrow] (A4b) -- (B3b);
+		\draw[arrow] (A5b) -- (B4b);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Non-injective} (B);
+	\end{tikzpicture}
+
+	\flushleft
+	The function on the right in non-injective because the element $\beta\in B$ is connected to by two elements in $A$ ($2$ and $3$, red arrows).
+\end{example}
+
+A function is \emph{surjective} if every element in its image is connected to by at least a single element in its domain (see \exampleref{surjective}). As with injective functions, a surjective function is also known as a \emph{surjection}. A non surjective function can be made into surjective function by excluding from its image any element that is not connected to by any element from its domain (see \exampleref{surjectification}).
+
+A function $f:A\to B$ that is both surjective and bijective is called a \emph{bijective function} (also a \emph{bijection}). All elements in the image of a bijection are connected to by exactly a single element in its domain. This means that the direction of the connections can be flipped, yielding the \emph{inverse} of the original function (denoted $f^{-1}$).
+
+The reason only bijective functions have inverses is as follows: Given a function $f:A\to B$,
+\begin{itemize}
+	\item if $f$ is non-injective, then there is at least one element $y_{1}\in B$ which is connected to by at least two elements from $A$. We can name these elements $x_{1}$ and $x_{2}$. When inverted, $f^{-1}:B\to A$ has an element $y_{1}\in B$ (note that for $f^{-1}$, $B$ is its domain), which is connected to two or more elements in $A$, the image of $f^{-1}$. These are of course $x_{1},x_{2}$. This fact disqualifies $f^{-1}$ from being a function.
+	\item If $f$ is non-surgetive, then there exists at least one element $y_{2}\in B$ that is not connected to by any element from $A$. When inverted, $y_{2}$ in the domain $B$ of $f^{-1}$ is not connected to any element in its image $A$. This fact disqualifies $f^{-1}$ from being a function.
+\end{itemize}
+
+\begin{example}{Surjective function}{surjective}
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+		% Surjection
+		\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1) at (0,1.5) {$1$};
+		\node (A2) at (0,0.5) {$2$};
+		\node (A3) at (0,-0.5) {$3$};
+		\node (A4) at (0,-1.5) {$4$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (2,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1) at (2,1.2) {$\alpha$};
+		\node (B2) at (2,0.4) {$\beta$};
+		\node (B3) at (2,-0.4) {$\gamma$};
+		\node (B4) at (2,-1.2) {$\delta$};
+
+		\draw[arrow] (A1) -- (B2);
+		\draw[arrow] (A2) -- (B3);
+		\draw[arrow] (A3) -- (B1);
+		\draw[arrow] (A4) -- (B4);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Surjective} (B);
+
+		% Non surjection
+		\fill[xred!20, draw=xred, thick] (6,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1b) at (6,1.5) {$1$};
+		\node (A2b) at (6,0.75) {$2$};
+		\node (A3b) at (6,0) {$3$};
+		\node (A4b) at (6,-0.75) {$4$};
+		\node (A5b) at (6,-1.5) {$5$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (8,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1b) at (8,1.2) {$\alpha$};
+		\node (B2b) at (8,0.4) {$\beta$};
+		\node (B3b) at (8,-0.4) {$\gamma$};
+		\node (B4b) at (8,-1.2) {$\delta$};
+
+		\draw[arrow] (A1b) -- (B1b);
+		\draw[arrow, red] (A2b) -- (B2b);
+		\draw[arrow, red] (A3b) -- (B2b);
+		\draw[arrow] (A4b) -- (B3b);
+		\draw[arrow] (A5b) -- (B4b);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Non-surjective} (B);
+	\end{tikzpicture}
+\end{example}
+
+\begin{example}{Making a non-surjective function into a surjection}{surjectification}
+	Given the two sets $A=\{1,2,3,4\}$ and $B=\{\alpha,\beta,\gamma,\delta\}$, the following non-surjective function $f:A\to B$ is defined:
+	\[
+		f = \left\{ (1,\alpha),\ (2,\beta),\ (3,\gamma),\ (4,\gamma) \right\}.
+	\]
+
+	By removing $\delta$ from $B$, the function $f$ becomes surjective (though it remains non-injective).
+\end{example}
+
+TBW: an example of all four possible combinations (injective non-surjective, surjective non-injective, bijective, non-injective non-surjective) and their inverses.
+
+\begin{note}{Other names for bijections}{bijections}
+	Bijections are also called \emph{one-to-one correspondences} and \emph{invertible functions}.
+\end{note}
+
+\subsection{Real functions}
 In suitable cases, a function is defined via a general mapping rule. This should be very familiar to anyone who learned mathematics in highschool, where many times functions are defined this way, e.g.
 \begin{equation}
 	f(x) = x^{2}+3x-4.
@@ -844,57 +970,11 @@ Real functions can be easily plotted in a \emph{Cartesian coordinate system} by 
 	\end{minipage}
 \end{example}
 
-\subsection{Injective, surgective and bijective functions}
-A function is \emph{injective} if each of the elements in its \textbf{image} is connected to by at most a single element in its \textbf{domain}. An injective function is also known as an \emph{injection}.
+TBW: injections and surjections in real functions.
 
-\begin{example}{Injective function}{injective}
-			\centering
-			\begin{tikzpicture}[scale=0.9]
-% Injective function
-				\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm) node [above, yshift=2cm, text=xred] {$A$};
-				\node (A1) at (0,1.5) {$1$};
-				\node (A2) at (0,0.5) {$2$};
-				\node (A3) at (0,-0.5) {$3$};
-				\node (A4) at (0,-1.5) {$4$};
+\Blindtext{}
 
-				\fill[xgreen!20, draw=xgreen, thick] (2,0) circle (0.75cm and 1.75cm) node [above, yshift=2cm, text=xgreen] {$B$};
-				\node (B1) at (2,1.2) {$\alpha$};
-				\node (B2) at (2,0.4) {$\beta$};
-				\node (B3) at (2,-0.4) {$\gamma$};
-				\node (B4) at (2,-1.2) {$\delta$};
-
-				\draw[arrow] (A1) -- (B2);
-				\draw[arrow] (A2) -- (B3);
-				\draw[arrow] (A3) -- (B1);
-				\draw[arrow] (A4) -- (B4);
-
-				\node at (1,3.5) {\underline{Injective}};
-
-% Non injective function
-				\fill[xred!20, draw=xred, thick] (6,0) circle (0.75cm and 2cm) node [above, yshift=2cm, text=xred] {$A$};
-				\node (A1b) at (6,1.5) {$1$};
-				\node (A2b) at (6,0.75) {$2$};
-				\node (A3b) at (6,0) {$3$};
-				\node (A4b) at (6,-0.75) {$4$};
-				\node (A5b) at (6,-1.5) {$5$};
-
-				\fill[xgreen!20, draw=xgreen, thick] (8,0) circle (0.75cm and 1.75cm) node [above, yshift=2cm, text=xgreen] {$B$};
-				\node (B1b) at (8,1.2) {$\alpha$};
-				\node (B2b) at (8,0.4) {$\beta$};
-				\node (B3b) at (8,-0.4) {$\gamma$};
-				\node (B4b) at (8,-1.2) {$\delta$};
-
-				\draw[arrow] (A1b) -- (B1b);
-				\draw[arrow, red] (A2b) -- (B2b);
-				\draw[arrow, red] (A3b) -- (B2b);
-				\draw[arrow] (A4b) -- (B3b);
-				\draw[arrow] (A5b) -- (B4b);
-
-				\node at (7,3.5) {\underline{Not injective}};
-			\end{tikzpicture}
-\end{example}
-
-In the case of real functions...
+\subsection{Composition of functions}
 
 \Blindtext{}
 
