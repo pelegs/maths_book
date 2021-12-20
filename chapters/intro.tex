@@ -640,6 +640,7 @@ A special case of Cartesian products are those products for which all the sets c
 Specifically, the Cartesian product $\Rs{2}$ can be interpreted as the two-dimensional \emph{Euclidean space}, which is the space used to draw graphs in one-dimensional calculus and shapes in two-dimensional analytican geometry. We will explore this idea (and higher dimensional spaces) in more details in upcoming chapters.
 
 \section{Relations and Functions}
+\subsection{Basics}
 Cartesian products of two sets can be viewed as describing all possible connections between the elements of the first set to the elements of the second set, and thus any subset of a Cartesian product forms a specific \emph{relation} between the sets.
 
 \begin{example}{Relations as subsets of Cartesian products}{relation}
@@ -801,10 +802,10 @@ In suitable cases, a function is defined via a general mapping rule. This should
 	\label{eq:function_by_formula}
 \end{equation}
 
-In mapping notation we can write \eqref{function_by_formula} as $f:x\mapsto x^{2}+3x-4$. In highschool mathematics, both the domain and image of such functions is $\mathbb{R}$, although it is almost never specified explicetly.
+In mapping notation we can write \eqref{function_by_formula} as $f:x\mapsto x^{2}+3x-4$. In highschool mathematics, both the domain and image of such functions is $\mathbb{R}$, although it is almost never specified explicetly. Such functions are commonly refered to as \emph{real functions}, a convention used in this book as well.
 
 \begin{example}{Functions defined using a mapping rule}{}
-	The following functions are of the type $f:\mathbb{R}\to\mathbb{R}$:
+	The following are real functions:
 	\[
 		f_{1}(x) = 2x^{2}-5,\quad f_{2}(x)=\sin\left( \frac{x}{3} \right),\quad f_{3}(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{\sigma^{2}}}.
 	\]
@@ -812,9 +813,9 @@ In mapping notation we can write \eqref{function_by_formula} as $f:x\mapsto x^{2
 	Note that these functions can also be defined using different sets, for example $f_{1}:\mathbb{N}\to\mathbb{Z},\quad f_{2}:\mathbb{N}\to[-1,1],\quad$ etc.
 \end{example}
 
-Functions of the type $f:\mathbb{R}\to\mathbb{R}$ can be easily plotted in a \emph{Cartesian coordinate system} by drawing all the points $\left( x,f(x) \right)$ (i.e. all the points $\left( x,y \right)$, where $x,y\in\mathbb{R}$ and $x\mapsto y$). We call these points the \emph{graph} of $f$ over $\mathbb{R}$.
+Real functions can be easily plotted in a \emph{Cartesian coordinate system} by drawing all the points $\left( x,f(x) \right)$ (i.e. all the points $\left( x,y \right)$, where $x,y\in\mathbb{R}$ and $x\mapsto y$). We call these points the \emph{graph} of $f$ over $\mathbb{R}$.
 
-\begin{example}{Graphs of functions over $\mathbb{R}$}{graph_of_functions}
+\begin{example}{Graphs of real functions}{graph_of_functions}
 	The following two functions are plotted on the domain $\left[ -9,9 \right]$:
 
 	\begin{minipage}{0.3\textwidth}
@@ -842,6 +843,58 @@ Functions of the type $f:\mathbb{R}\to\mathbb{R}$ can be easily plotted in a \em
 		\end{tikzpicture}
 	\end{minipage}
 \end{example}
+
+\subsection{Injective, surgective and bijective functions}
+A function is \emph{injective} if each of the elements in its \textbf{image} is connected to by at most a single element in its \textbf{domain}. An injective function is also known as an \emph{injection}.
+
+\begin{example}{Injective function}{injective}
+			\centering
+			\begin{tikzpicture}[scale=0.9]
+% Injective function
+				\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm) node [above, yshift=2cm, text=xred] {$A$};
+				\node (A1) at (0,1.5) {$1$};
+				\node (A2) at (0,0.5) {$2$};
+				\node (A3) at (0,-0.5) {$3$};
+				\node (A4) at (0,-1.5) {$4$};
+
+				\fill[xgreen!20, draw=xgreen, thick] (2,0) circle (0.75cm and 1.75cm) node [above, yshift=2cm, text=xgreen] {$B$};
+				\node (B1) at (2,1.2) {$\alpha$};
+				\node (B2) at (2,0.4) {$\beta$};
+				\node (B3) at (2,-0.4) {$\gamma$};
+				\node (B4) at (2,-1.2) {$\delta$};
+
+				\draw[arrow] (A1) -- (B2);
+				\draw[arrow] (A2) -- (B3);
+				\draw[arrow] (A3) -- (B1);
+				\draw[arrow] (A4) -- (B4);
+
+				\node at (1,3.5) {\underline{Injective}};
+
+% Non injective function
+				\fill[xred!20, draw=xred, thick] (6,0) circle (0.75cm and 2cm) node [above, yshift=2cm, text=xred] {$A$};
+				\node (A1b) at (6,1.5) {$1$};
+				\node (A2b) at (6,0.75) {$2$};
+				\node (A3b) at (6,0) {$3$};
+				\node (A4b) at (6,-0.75) {$4$};
+				\node (A5b) at (6,-1.5) {$5$};
+
+				\fill[xgreen!20, draw=xgreen, thick] (8,0) circle (0.75cm and 1.75cm) node [above, yshift=2cm, text=xgreen] {$B$};
+				\node (B1b) at (8,1.2) {$\alpha$};
+				\node (B2b) at (8,0.4) {$\beta$};
+				\node (B3b) at (8,-0.4) {$\gamma$};
+				\node (B4b) at (8,-1.2) {$\delta$};
+
+				\draw[arrow] (A1b) -- (B1b);
+				\draw[arrow, red] (A2b) -- (B2b);
+				\draw[arrow, red] (A3b) -- (B2b);
+				\draw[arrow] (A4b) -- (B3b);
+				\draw[arrow] (A5b) -- (B4b);
+
+				\node at (7,3.5) {\underline{Not injective}};
+			\end{tikzpicture}
+\end{example}
+
+In the case of real functions...
 
 \Blindtext{}
 
