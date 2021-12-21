@@ -972,11 +972,87 @@ Real functions can be easily plotted in a \emph{Cartesian coordinate system} by 
 
 TBW: injections and surjections in real functions.
 
-\Blindtext{}
-
 \subsection{Composition of functions}
+Functions can be \emph{composed} together, generating new functions. Given two functions $f:A\to B$ and $g:B\to C$, their composition is denoted as $f\circ g$. For the composition to work, the \textbf{domain} of the $g$ must be the same as the \textbf{image} of $f$, i.e. $f\circ g:A\to C$.
 
-\Blindtext{}
+\begin{example}{Composition of functions}{composition}
+	Consider the functions
+	\[
+		f(x)=x^{2},\quad g(x)=\sin(x).
+	\]
+	Using these functions, the two possible compositions are
+	\begin{itemize}
+		\item $f\circ g = f\left( g(x) \right) = \left[ \sin(x) \right]^{2}$, and
+		\item $g\circ f = g\left( f(x) \right) = \sin\left( x^{2} \right)$.
+	\end{itemize}
+\end{example}
+
+\begin{example}{Graphical representation of function composition}{}
+	A graphical representation of composing two functions:
+	\[
+		f:\{1,2,3,4\}\to\{\alpha,\beta,\gamma,\delta\},\quad g:\{\alpha,\beta,\gamma,\delta\}\to\{a,b,c\}.
+	\]
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.9]
+			\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm);
+			\node (A1) at (0,1.5) {$1$};
+			\node (A2) at (0,0.5) {$2$};
+			\node (A3) at (0,-0.5) {$3$};
+			\node (A4) at (0,-1.5) {$4$};
+
+			\fill[xpurple!20, draw=xpurple, thick] (3,0) circle (0.75cm and 2cm);
+			\node (B1) at (3,1.2) {$\alpha$};
+			\node (B2) at (3,0.4) {$\beta$};
+			\node (B3) at (3,-0.4) {$\gamma$};
+			\node (B4) at (3,-1.2) {$\delta$};
+
+			\draw[arrow, thick] (1,2) -- node [midway, above] {$f$} ++(1,0);
+			\draw[arrow, thick] (4,2) -- node [midway, above] {$g$} ++(1,0);
+
+			\fill[xgreen!20, draw=xgreen, thick] (6,0) circle (0.75cm and 1.75cm);
+			\node (C1) at (6,1) {$a$};
+			\node (C2) at (6,0) {$b$};
+			\node (C3) at (6,-1) {$c$};
+
+			\draw[arrow] (A1) -- (B2);
+			\draw[arrow] (A2) -- (B4);
+			\draw[arrow] (A3) -- (B1);
+			\draw[arrow] (A4) -- (B3);
+			\draw[arrow] (B1) -- (C2);
+			\draw[arrow] (B2) -- (C3);
+			\draw[arrow] (B3) -- (C1);
+			\draw[arrow] (B4) -- (C3);
+		\end{tikzpicture}
+	\end{figure}
+	
+	The composition results in the following function
+	\[
+		f\circ g:\{1,2,3,4\}\to\{a,b,c,\}.
+	\]
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.9]
+			\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm);
+			\node (A1) at (0,1.5) {$1$};
+			\node (A2) at (0,0.5) {$2$};
+			\node (A3) at (0,-0.5) {$3$};
+			\node (A4) at (0,-1.5) {$4$};
+
+			\draw[arrow, thick] (1,2) -- node [midway, above] {$f\circ g$} ++(1,0);
+
+			\fill[xgreen!20, draw=xgreen, thick] (3,0) circle (0.75cm and 1.75cm);
+			\node (C1) at (3,1) {$a$};
+			\node (C2) at (3,0) {$b$};
+			\node (C3) at (3,-1) {$c$};
+
+			\draw[arrow] (A1) -- (C3);
+			\draw[arrow] (A2) -- (C3);
+			\draw[arrow] (A3) -- (C2);
+			\draw[arrow] (A4) -- (C1);
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
 
 \section{Polynomial functions}
 \section{Trigonometric functions}
