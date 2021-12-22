@@ -1054,6 +1054,7 @@ Functions can be \emph{composed} together, generating new functions. Given two f
 	\end{figure}
 \end{example}
 
+
 \section{Polynomial functions}
 A very useful family of real functions can be derived using only three fundamental operations: addition, multiplication and exponentiation: the (real) \emph{polynomial functions}. These are functions of the form
 \begin{equation}
@@ -1122,6 +1123,29 @@ In the special case $n=0$, i.e. when $P=a_{0}$, the function is constant. When $
 				\addplot[function, xred] {p0(x)} node[flbl=xred, below, pos=0.15, yshift=-1mm] {$P_{0}(x)=1$};
 				\addplot[function, xblue] {p1(x)} node[flbl=xblue, below, pos=0.1, rotate=45, yshift=-1mm] {$P_{1}(x)=1+x$};
 				\addplot[function, xgreen] {p2(x)} node[flbl=xgreen, right, pos=0.2, xshift=-3mm, yshift=5mm] {$P_{2}(x)=1+x+\frac{1}{2}x^{2}$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+The values $x\in\mathbb{R}$ for which $P(x)=0$ are called the \emph{roots} of the polynomial function.
+
+\begin{example}{Roots of a polynomial function}{}
+	The polynomial function $P(x) = 24x - 50x^{2} + 35x^{3} - 10x^{4} + x^{5}$ has the following $5$ roots: $x_{0}=0,\ x_{1}=1,\ x_{2}=2,\ x_{3}=3,\ x_{4}=4$.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					width=10cm, height=6cm,
+					xmin=-2, xmax=5,
+					ymin=-5, ymax=5,
+					domain=-2:5,
+					restrict y to domain=-6:6,
+					declare function={P(\x)=\x*(\x-1)*(\x-2)*(\x-3)*(\x-4);},
+				]
+				\addplot[function, ultra thick, xred] {P(x)};
+				\addplot[black, only marks, mark=*, samples at={0,1,...,4}] {P(x)};
 			\end{axis}
 		\end{tikzpicture}
 	\end{figure}
