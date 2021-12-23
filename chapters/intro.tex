@@ -1100,6 +1100,18 @@ where $a_{0},a_{1},\dots,a_{n}$ are real numbers called the \emph{coefficients} 
 	Note that $a_{3}$ is missing from the polynomial function (i.e. there is no $x^{3}$ term). This means that $a_{3}=0$.
 \end{example}
 
+A shorthand way to write the general form of a polynomial function is by using the \emph{summation notation}:
+\begin{equation}
+	P(x) = \sum\limits_{k=0}^{n}a_{k}x^{k}.
+	\label{eq:summation_notation}
+\end{equation}
+This notation, called the \emph{Capital-sigma notation}, essentially represents addition of $n$ elements (in the case shown here), each with its own \emph{index of summation}, in this case $i$. The most general form of the summation notation is
+\begin{equation}
+	\sum\limits_{i=k}^{n}a_{i} = a_{k} + a_{k+1} + a_{k+2} + \cdots + a_{n-1} + a_{n},
+	\label{eq:summation_notation_general}
+\end{equation}
+i.e. the notation tells us to add those elements $a_{i}$ for which $k\geq i\geq n$. Note that in the case of \eqref{summation_notation}, when $k=0,\ x^{k}=x^{0}=1$ and the first term of the polynomial function has no $x$ power (i.e. it is simply $a_{0}$), and when $k=1,\ x^{k}=x^{1}=x$ and thus the second term is $a_{1}x$.
+
 In the special case $n=0$, i.e. when $P=a_{0}$, the function is constant. When $n=1$ the function $P(x)=a_{0}+a_{1}x$ is a line, and when $n=2,\ P(x)=a_{0}+a_{1}x+a_{2}x^{2}$ is a quadratic function.
 
 \begin{example}{Polynomial functions for $n=0,1,2$}{special_polynomials}
