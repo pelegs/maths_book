@@ -1061,7 +1061,7 @@ A very useful family of real functions can be derived using only three fundament
 	P_{n}(x) = a_{0} + a_{1}x + a_{2}x^{2} + a_{3}x^{3} + \cdots + a_{n}x^{n},
 	\label{eq:polynomial_function}
 \end{equation}
-where $a_{0},a_{1},\dots,a_{n}$ are real numbers called the \emph{coefficients} of the polynomial function (note that $a_{n}\neq0$). We call $n$ the \emph{degree} or \emph{order} of the polynomial function.
+where $a_{0},a_{1},\dots,a_{n}$ are real numbers called the \emph{coefficients} of the polynomial function. Note that $a_{n}\neq0$, i.e. the \emph{degree} of the polynomial function is the index of the highest non-zero coefficient (and thus the highest power in the expression). We also call this the \emph{order} of the polynomial function.
 
 \begin{example}{Polynomial}{}
 	The following is a polynomial function of degree $n=6$:
@@ -1128,16 +1128,16 @@ In the special case $n=0$, i.e. when $P=a_{0}$, the function is constant. When $
 	\end{figure}
 \end{example}
 
-The values $x\in\mathbb{R}$ for which $P(x)=0$ are called the \emph{roots} of the polynomial function.
+The values $x\in\mathbb{R}$ for which $P(x)=0$ are called the \emph{roots} (also: \emph{zeros}) of the polynomial function.
 
 \begin{example}{Roots of a polynomial function}{}
-	The polynomial function $P(x) = 24x - 50x^{2} + 35x^{3} - 10x^{4} + x^{5}$ has the following $5$ roots: $x_{0}=0,\ x_{1}=1,\ x_{2}=2,\ x_{3}=3,\ x_{4}=4$.
+	The polynomial function $P(x) = 24x - 50x^{2} + 35x^{3} - 10x^{4} + x^{5}$ has the following $5$ roots: $x_{0}=0,\ x_{1}=1,\ x_{2}=2,\ x_{3}=3,\ x_{4}=4$. In the following graph of $P(x)$ the roots are shown as black dots.
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
 					graph2d,
-					width=10cm, height=6cm,
+					width=10cm, height=7cm,
 					xmin=-2, xmax=5,
 					ymin=-5, ymax=5,
 					domain=-2:5,
@@ -1150,6 +1150,12 @@ The values $x\in\mathbb{R}$ for which $P(x)=0$ are called the \emph{roots} of th
 		\end{tikzpicture}
 	\end{figure}
 \end{example}
+
+The maximum number of \textbf{real} roots of a polynomial function with degree $n\geq1$ is $n$, e.g. a polynomial of degree $n=4$ has at most $4$ real roots. This statement is a consequence of a very important theorem called \emph{the fundamental theorem of algebra}, which we will mention here without proof:
+
+\begin{theorem}{The fundamental theorem of algebra}{fundamental}
+	For any $n\geq1$, the polynomial function $P(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{n}z^{n}$, where $a_{0},a_{1},a_{2},\dots,a_{n}$ are all \textbf{complex numbers} and $a_{n}\neq0$, has at least one root $z\in\mathbb{C}$.
+\end{theorem}
 
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
