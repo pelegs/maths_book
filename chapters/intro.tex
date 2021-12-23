@@ -1110,9 +1110,9 @@ This notation, called the \emph{Capital-sigma notation}, essentially represents 
 	\sum\limits_{i=k}^{n}a_{i} = a_{k} + a_{k+1} + a_{k+2} + \cdots + a_{n-1} + a_{n},
 	\label{eq:summation_notation_general}
 \end{equation}
-i.e. the notation tells us to add those elements $a_{i}$ for which $k\geq i\geq n$. Note that in the case of \eqref{summation_notation}, when $k=0,\ x^{k}=x^{0}=1$ and the first term of the polynomial function has no $x$ power (i.e. it is simply $a_{0}$), and when $k=1,\ x^{k}=x^{1}=x$ and thus the second term is $a_{1}x$.
+i.e. the notation tells us to add those elements $a_{i}$ for which $k\geq i\geq n$. Note that in the case of \eqref{summation_notation}, when $k=0,\ x^{k}=x^{0}=1$ and the first term of the polynomial function has no $x$ power (i.e. it is simply $a_{0}$), and when $k=1,\ x^{k}=x^{1}=x$ and thus the second term is $a_{1}x$. We will encounter the summation notation in more details later in the book.
 
-In the special case $n=0$, i.e. when $P=a_{0}$, the function is constant. When $n=1$ the function $P(x)=a_{0}+a_{1}x$ is a line, and when $n=2,\ P(x)=a_{0}+a_{1}x+a_{2}x^{2}$ is a quadratic function.
+In the special case $n=0$, i.e. when $P(x)=a_{0}$, the function is constant. When $n=1$ the function $P(x)=a_{0}+a_{1}x$ is a line, and when $n=2,\ P(x)=a_{0}+a_{1}x+a_{2}x^{2}$ is a quadratic function.
 
 \begin{example}{Polynomial functions for $n=0,1,2$}{special_polynomials}
 	The following graphs represent the polynomial functions of degrees $n=0,1,2$ with coefficients $a_{0}=2,\ a_{1}=1,\ a_{2}=\frac{1}{2}$:
@@ -1156,18 +1156,20 @@ The values $x\in\mathbb{R}$ for which $P(x)=0$ are called the \emph{roots} (also
 					restrict y to domain=-6:6,
 					declare function={P(\x)=\x*(\x-1)*(\x-2)*(\x-3)*(\x-4);},
 				]
-				\addplot[function, ultra thick, xred] {P(x)};
+				\addplot[function, xred] {P(x)};
 				\addplot[black, only marks, mark=*, samples at={0,1,...,4}] {P(x)};
 			\end{axis}
 		\end{tikzpicture}
 	\end{figure}
 \end{example}
 
-The maximum number of \textbf{real} roots of a polynomial function with degree $n\geq1$ is $n$, e.g. a polynomial of degree $n=4$ has at most $4$ real roots. This statement is a consequence of a very important theorem called \emph{the fundamental theorem of algebra}, which we will mention here without proof:
+The maximum number of \textbf{real} roots of a polynomial function with degree $n\geq1$ is $n$, e.g. a polynomial of degree $n=4$ has at most $4$ real roots. This statement is a consequence of a very important theorem called \emph{the fundamental theorem of algebra}, which due to its importance we will mention here without proof:
 
 \begin{theorem}{The fundamental theorem of algebra}{fundamental}
-	For any $n\geq1$, the polynomial function $P(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{n}z^{n}$, where $a_{0},a_{1},a_{2},\dots,a_{n}$ are all \textbf{complex numbers} and $a_{n}\neq0$, has at least one root $z\in\mathbb{C}$.
+	For any $n\geq1$, the polynomial function $P(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{n}z^{n}$, where $a_{0},a_{1},a_{2},\dots,a_{n}$ are all \textbf{complex numbers} and $a_{n}\neq0$, has $n$ complex roots.
 \end{theorem}
+
+TBW: bands in polynomial graphs.
 
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
