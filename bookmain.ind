@@ -1,27 +1,70 @@
 \begin{theindex}
 
+  \item algebraic numbers, 10
   \item AND, 2
 
   \indexspace
 
+  \item base, 23
+  \item bijection, 16
+  \item bijective function, 16
+
+  \indexspace
+
+  \item Capital-sigma notation, 20
   \item cardinality, 5
+  \item Cartesian coordinate system, 18
+  \item Cartesian product, 12
+  \item Clifford algebras, 11
+  \item closed interval, 11
+  \item coefficients, 20
+  \item complex numbers, 11
+  \item composed, 18
   \item conditions, 4
-  \item cosine, 7
+  \item cosine, 26
+
+  \indexspace
+
+  \item decreasing, 18
+  \item degree, 20
+  \item disjoint, 7
+  \item domain, 16
 
   \indexspace
 
   \item elements, 4
   \item empty set, 5
   \item equivalent, 3
+  \item Euclidean space, 13
+  \item exponential function, 23
 
   \indexspace
 
-  \item highlighting, 16
+  \item function, 15
+
+  \indexspace
+
+  \item graph, 18
+
+  \indexspace
+
+  \item half open intervals, 11
+  \item highlighting, 34
 
   \indexspace
 
   \item iff, 3
-  \item indexing, 16
+  \item image, 16
+  \item increasing, 18
+  \item index of summation, 20
+  \item indexing, 34
+  \item injection, 16
+  \item injective, 16
+  \item integers, 10
+  \item intersection, 6
+  \item interval, 11
+  \item inverse, 16
+  \item invertible functions, 17
 
   \indexspace
 
@@ -29,40 +72,75 @@
 
   \indexspace
 
+  \item mapping notation, 16
+  \item maps, 15
+
+  \indexspace
+
+  \item natural numbers, 10
+  \item not commutative, 12
   \item notations, 3
 
   \indexspace
 
+  \item one-to-one correspondences, 17
+  \item open interval, 11
   \item OR, 2
+  \item order, 20
+  \item ordered, 12
 
   \indexspace
 
+  \item polynomial equations, 10
+  \item polynomial functions, 20
+  \item power set, 10
   \item proposition, 1
-  \item Pythagorean theorem, 8
+  \item Pythagorean theorem, 26
 
   \indexspace
 
-  \item Radians, 8
-  \item right triangle, 7
+  \item quadratic equation, 10
+  \item quaternions, 11
 
   \indexspace
 
-  \item sets, 3
-  \item sine, 7
+  \item Radians, 27
+  \item rational numbers, 10
+  \item real functions, 18
+  \item real numbers, 11
+  \item relation, 13
+  \item right triangle, 25
+  \item roots, 21
+
+  \indexspace
+
+  \item sets, 4
+  \item sine, 26
   \item subset, 5
+  \item summation notation, 20
+  \item superset, 6
+  \item surjection, 16
+  \item surjective, 16
 
   \indexspace
 
-  \item tangent, 7
-  \item triangle, 17
+  \item tangent, 26
+  \item the fundamental theorem of algebra, 22
+  \item transformations, 15
+  \item triangle, 35
   \item truth table, 2
 
   \indexspace
 
-  \item unit circle, 8
+  \item union, 7
+  \item unit circle, 27
 
   \indexspace
 
-  \item Venn diagrams, 5
+  \item Venn diagrams, 6
+
+  \indexspace
+
+  \item zeros, 21
 
 \end{theindex}

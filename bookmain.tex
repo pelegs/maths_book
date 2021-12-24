@@ -27,13 +27,48 @@
 % GRAPHICS %
 %----------%
 
+\usepackage{caption}
+\usepackage{subcaption}
+
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
-\usetikzlibrary{calc, decorations.pathreplacing, decorations.text}
+\usetikzlibrary{positioning, calc, decorations.pathreplacing, decorations.text}
 
 \tikzset{
 	arrow/.style={thick, ->, >=stealth},
 	vector/.style={very thick, ->, >=stealth},
+}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween, colormaps, colorbrewer}
+\pgfplotsset{
+		compat=1.16,
+		every axis/.append style={
+			font=\small,
+		},
+		graph2d/.style={
+		axis x line=middle,
+		axis y line=middle,
+		every axis x label/.style={
+			at={(ticklabel* cs:1.01)},
+			anchor=west,
+		},
+		every axis y label/.style={
+			at={(ticklabel* cs:1.01)},
+			anchor=south,
+		},
+		axis line style={stealth-stealth, thick},
+		label style={font=\large},
+		xlabel=$x$,
+		ylabel=$y$,
+		tick label style={font=\small},
+		samples=200,
+		grid=both,
+		grid style={line width=.1pt, draw=gray!20},
+		major grid style={line width=.2pt,draw=gray!50},
+		minor tick num=4,
+	},
+	function/.style={line width=1.5pt},
 }
 
 %-------%
@@ -94,12 +129,23 @@
 %------------%
 % REFERENCES %
 %------------%
-
+\usepackage{chngcntr}
+\counterwithin{table}{chapter}
+\counterwithin{figure}{chapter}
+\renewcommand{\eqref}[1]{
+	Equation \ref{eq:#1}
+}
 \newcommand{\tabref}[1]{
 	\textbf{\textcolor{xblue}{Table} \ref{tab:#1}}
 }
 \newcommand{\figref}[1]{
-	\textbf{\textcolor{xblue}{Figure} \ref{fig#1}}
+	\textbf{\textcolor{xblue}{Figure} \ref{fig:#1}}
+}
+\newcommand{\noteref}[1]{
+	\textbf{\textcolor{xred}{Note} \ref{note:#1}}
+}
+\newcommand{\exampleref}[1]{
+	\textbf{\textcolor{xblue}{Example} \ref{example:#1}}
 }
 
 %---------%
@@ -133,13 +179,13 @@
 		before skip=8pt,
 		attach boxed title to top left={
 			yshift=-0.25cm,
-			xshift=0.38cm},
+		xshift=0.38cm},
 		boxed title style={
 			boxrule=0pt,
 			colframe=white,
 			arc=0pt,
-			outer arc=0pt},
-		separator sign={~~},},
+		outer arc=0pt},
+	separator sign={~~},},
 	defstyle/.style={
 		common,
 		colframe=xpurple,
@@ -147,7 +193,7 @@
 		colbacktitle=xpurple,
 		overlay unbroken and last={
 			\node[anchor=south east, outer sep=0pt] at (\linewidth-width, 0) {
-				\textcolor{xpurple}{$\pi$}};}},
+	\textcolor{xpurple}{$\pi$}};}},
 	exmplstyle/.style={
 		common,
 		colframe=xblue,
@@ -155,7 +201,7 @@
 		colbacktitle=xblue,
 		overlay unbroken and last={
 			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
-				\textcolor{xblue}{\faArrowCircleDown}};}},
+	\textcolor{xblue}{\faArrowCircleDown}};}},
 	notestyle/.style={
 		common,
 		colframe=xred,
@@ -163,7 +209,7 @@
 		colbacktitle=xred,
 		overlay unbroken and last={
 			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
-				\textcolor{xred}{!}};}},
+	\textcolor{xred}{!}};}},
 	chllngstyle/.style={
 		common,
 		colframe=xgreen,
@@ -171,7 +217,7 @@
 		colbacktitle=xgreen,
 		overlay unbroken and last={
 			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 0) {
-				\textcolor{xgreen}{?}};}},
+	\textcolor{xgreen}{?}};}},
 	thmstyle/.style={
 		common,
 		colframe=second,
@@ -179,12 +225,21 @@
 		colbacktitle=second,
 		overlay unbroken and last={
 			\node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-				\textcolor{second}{$\heartsuit$}};}},
-	}
+	\textcolor{second}{$\heartsuit$}};}},
+	theoremstyle/.style={
+		common,
+		colframe=xpurple,
+		colback=xpurple!5,
+		colbacktitle=xpurple,
+		overlay unbroken and last={
+			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
+	\textcolor{xpurple}{$\multimapdotbothA$}};}},
+}
 \newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
 \newtcbtheorem[auto counter, number within=chapter]{example}{Example}{exmplstyle}{example}
 \newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
 \newtcbtheorem[auto counter, number within=chapter]{challange}{Challange}{chllngstyle}{challange}
+\newtcbtheorem[auto counter, number within=chapter]{theorem}{Theorem}{theoremstyle}{theorem}
 
 %---------%
 % FIGURES %
@@ -217,7 +272,9 @@
 %-------%
 
 \usepackage{amsmath, bm}
+\numberwithin{equation}{chapter}
 \usepackage{siunitx}
+\newcommand{\Rs}[1]{\mathbb{R}^{#1}}
 %\newcommand{\true}{\colorbox{xblue!25}{true}}
 %\newcommand{\false}{\colorbox{xred!25}{false}}
 \newcommand{\true}{\textcolor{xblue}{\textbf{true}}}

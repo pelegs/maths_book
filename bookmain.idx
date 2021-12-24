@@ -6,20 +6,78 @@
 \indexentry{notations}{3}
 \indexentry{equivalent}{3}
 \indexentry{iff}{3}
-\indexentry{sets}{3}
+\indexentry{sets}{4}
 \indexentry{elements}{4}
 \indexentry{conditions}{4}
 \indexentry{cardinality}{5}
 \indexentry{empty set}{5}
 \indexentry{subset}{5}
-\indexentry{Venn diagrams}{5}
-\indexentry{right triangle}{7}
-\indexentry{sine}{7}
-\indexentry{cosine}{7}
-\indexentry{tangent}{7}
-\indexentry{Pythagorean theorem}{8}
-\indexentry{unit circle}{8}
-\indexentry{Radians}{8}
-\indexentry{highlighting}{16}
-\indexentry{indexing}{16}
-\indexentry{triangle}{17}
+\indexentry{superset}{6}
+\indexentry{Venn diagrams}{6}
+\indexentry{intersection}{6}
+\indexentry{disjoint}{7}
+\indexentry{union}{7}
+\indexentry{power set}{10}
+\indexentry{natural numbers}{10}
+\indexentry{integers}{10}
+\indexentry{rational numbers}{10}
+\indexentry{algebraic numbers}{10}
+\indexentry{polynomial equations}{10}
+\indexentry{quadratic equation}{10}
+\indexentry{real numbers}{11}
+\indexentry{complex numbers}{11}
+\indexentry{quaternions}{11}
+\indexentry{Clifford algebras}{11}
+\indexentry{interval}{11}
+\indexentry{closed interval}{11}
+\indexentry{open interval}{11}
+\indexentry{half open intervals}{11}
+\indexentry{Cartesian product}{12}
+\indexentry{Cartesian product}{12}
+\indexentry{ordered}{12}
+\indexentry{not commutative}{12}
+\indexentry{Euclidean space}{13}
+\indexentry{relation}{13}
+\indexentry{function}{15}
+\indexentry{maps}{15}
+\indexentry{transformations}{15}
+\indexentry{domain}{16}
+\indexentry{image}{16}
+\indexentry{mapping notation}{16}
+\indexentry{injective}{16}
+\indexentry{injection}{16}
+\indexentry{surjective}{16}
+\indexentry{surjection}{16}
+\indexentry{bijective function}{16}
+\indexentry{bijection}{16}
+\indexentry{inverse}{16}
+\indexentry{one-to-one correspondences}{17}
+\indexentry{invertible functions}{17}
+\indexentry{real functions}{18}
+\indexentry{Cartesian coordinate system}{18}
+\indexentry{graph}{18}
+\indexentry{increasing}{18}
+\indexentry{decreasing}{18}
+\indexentry{composed}{18}
+\indexentry{polynomial functions}{20}
+\indexentry{coefficients}{20}
+\indexentry{degree}{20}
+\indexentry{order}{20}
+\indexentry{summation notation}{20}
+\indexentry{Capital-sigma notation}{20}
+\indexentry{index of summation}{20}
+\indexentry{roots}{21}
+\indexentry{zeros}{21}
+\indexentry{the fundamental theorem of algebra}{22}
+\indexentry{exponential function}{23}
+\indexentry{base}{23}
+\indexentry{right triangle}{25}
+\indexentry{sine}{26}
+\indexentry{cosine}{26}
+\indexentry{tangent}{26}
+\indexentry{Pythagorean theorem}{26}
+\indexentry{unit circle}{27}
+\indexentry{Radians}{27}
+\indexentry{highlighting}{34}
+\indexentry{indexing}{34}
+\indexentry{triangle}{35}
