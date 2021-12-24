@@ -1169,13 +1169,12 @@ The maximum number of \textbf{real} roots of a polynomial function with degree $
 	For any $n\geq1$, the polynomial function $P(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{n}z^{n}$, where $a_{0},a_{1},a_{2},\dots,a_{n}$ are all \textbf{complex numbers} and $a_{n}\neq0$, has $n$ complex roots.
 \end{theorem}
 
-Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n}$, the function can be written as a product of terms of the form $x-r_{i}$ (up to a sign), e.g. the polynomial function of degree $n=3$ with roots $-1,1,2$ can be written as
+Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n}$, the function can be written as a product of terms of the form $x-r_{i}$ (up to a constant), e.g. the polynomial function of degree $n=3$ with roots $-1,1,2$ can be written as
 \begin{equation}
 	P(x) = (x+1)(x-1)(x-2) = x^{3}-2x^{2}-x+2.
 	\label{eq:roots_form}
 \end{equation}
-
-TBW:\@ bands in polynomial graphs.
+(Is this true?)
 
 \begin{example}{Higher order polynomial functions}{high_order_polynomials}
 	The following are the graphs of high-order polynomial functions ($n=3,4,5,6$):
@@ -1219,7 +1218,6 @@ TBW:\@ bands in polynomial graphs.
 			\caption{\textcolor{xblue}{$\bm{x^{4}-3x^{2}+x+1}$}}
 		\end{subfigure}
 
-		\vskip\baselineskip
 		\begin{subfigure}[b]{0.475\textwidth}
 			\centering
 			\begin{tikzpicture}
@@ -1257,6 +1255,44 @@ TBW:\@ bands in polynomial graphs.
 		\end{subfigure}
 	\end{figure}
 \end{example}
+
+As can be seen in \exampleref{high_order_polynomials}, the maximal number of `bends' in a polynomial function of order $n$ is $n-1$ (i.e. one less than the order of the function).
+
+We will continue to explore polynomial functions in more details in future chapters.
+
+\section{Exponential and Logarithmic Functions}
+In the previous section we dealt with functions composed of integer powers of $x$. We will now shortly focus on functions where $x$ is in the power itself and their inverse functions.
+
+An \emph{exponential function} is a real function of the type
+\begin{equation}
+	f(x) = b^{x},
+	\label{eq:exponent}
+\end{equation}
+where $b>0$ is called the \emph{base} of the exponentiation, and $x$ the exponent. All exponential functions, regardless of base, are always positive. In addition, all exponential functions pass through the point $(0,1)$ since $b^{0}=1$ for any real positive number, and through the point $(1,b)$ since $b^{1}=b$.
+
+\begin{example}{Exponential functions}{exponents}
+	The following are graphs of the exponential functions: \textcolor{xred}{$1.5^{x}$}, \textcolor{xblue}{$2^{x}$} and \textcolor{xgreen}{$3.5^{x}$}:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					y axis line style={-stealth, thick},
+					width=10cm, height=10cm,
+					xmin=-5, xmax=3,
+					ymin=0, ymax=4,
+					domain=-5:3,
+					restrict y to domain=0:5,
+				]
+				\addplot[function, xred] {(1.5)^\x};
+				\addplot[function, xblue] {2^\x};
+				\addplot[function, xgreen] {3.5^\x};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+\Blindtext{}
 
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
@@ -1465,5 +1501,4 @@ Another advantage which we gain by defining the trigonometric functions using th
 	\end{tabular}
 \end{table}
 
-\section{Exponential and Logarithmic Functions}
 \section{Complex Numbers}
