@@ -1169,7 +1169,94 @@ The maximum number of \textbf{real} roots of a polynomial function with degree $
 	For any $n\geq1$, the polynomial function $P(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{n}z^{n}$, where $a_{0},a_{1},a_{2},\dots,a_{n}$ are all \textbf{complex numbers} and $a_{n}\neq0$, has $n$ complex roots.
 \end{theorem}
 
-TBW: bands in polynomial graphs.
+Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n}$, the function can be written as a product of terms of the form $x-r_{i}$ (up to a sign), e.g. the polynomial function of degree $n=3$ with roots $-1,1,2$ can be written as
+\begin{equation}
+	P(x) = (x+1)(x-1)(x-2) = x^{3}-2x^{2}-x+2.
+	\label{eq:roots_form}
+\end{equation}
+
+TBW:\@ bands in polynomial graphs.
+
+\begin{example}{Higher order polynomial functions}{high_order_polynomials}
+	The following are the graphs of high-order polynomial functions ($n=3,4,5,6$):
+
+	\begin{figure}[H]
+		\captionsetup[subfigure]{labelformat=empty}
+		\centering
+		\begin{subfigure}[b]{0.475\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+						graph2d,
+						width=7cm, height=7cm,
+						xmin=-3, xmax=3,
+						ymin=-3, ymax=3,
+						domain=-3:3,
+						restrict y to domain=-3:3,
+						declare function={P3(\x)=\x^3-\x^2-\x;},
+					]
+					\addplot[function, xred] {P3(x)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{\textcolor{xred}{$\bm{x^{3}-x^{2}-x}$}}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.475\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+						graph2d,
+						width=7cm, height=7cm,
+						xmin=-3, xmax=3,
+						ymin=-3, ymax=3,
+						domain=-3:3,
+						restrict y to domain=-10:10,
+						declare function={P4(\x)=\x^4-3*\x^2+\x+1;},
+					]
+					\addplot[function, xblue] {P4(x)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{\textcolor{xblue}{$\bm{x^{4}-3x^{2}+x+1}$}}
+		\end{subfigure}
+
+		\vskip\baselineskip
+		\begin{subfigure}[b]{0.475\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+						graph2d,
+						width=7cm, height=7cm,
+						xmin=-5, xmax=5,
+						ymin=-5, ymax=5,
+						domain=-5:5,
+						restrict y to domain=-10:10,
+						declare function={P5(\x)=0.03*(\x^5+3*\x^4-11*\x^3-27*\x^2+10*\x+24);},
+					]
+					\addplot[function, xgreen] {P5(x)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{\textcolor{xgreen}{$\bm{\frac{3}{100}\left( x^{5}+3x^{4}-11x^{3}-27x^{2}+10x+24 \right)}$}}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.475\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+						graph2d,
+						width=7cm, height=7cm,
+						xmin=-5, xmax=5,
+						ymin=-5, ymax=5,
+						domain=-5:5,
+						restrict y to domain=-15:15,
+						declare function={P6(\x)=0.01*(x^6-x^5-26*x^4+15*x^3+150*x^2-25*x-5);},
+					]
+					\addplot[function, xpurple] {P6(x)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{\textcolor{xpurple}{$\bm{\frac{1}{100}\left( x^{6}-x^{5}-26x^{4}+15x^{3}+150x^{2}-25x-5\right)}$}}
+		\end{subfigure}
+	\end{figure}
+\end{example}
 
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
