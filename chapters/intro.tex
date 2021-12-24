@@ -944,13 +944,13 @@ Real functions can be easily plotted in a \emph{Cartesian coordinate system} by 
 \begin{example}{Graphs of real functions}{graph_of_functions}
 	The following two functions are plotted on the domain $\left[ -9,9 \right]$:
 
-	\begin{minipage}{0.3\textwidth}
+	\begin{minipage}{0.35\textwidth}
 		\begin{itemize}
-			\item \textcolor{xred}{$f(x)=x^{2}-2x-3$},
-			\item \textcolor{xgreen}{$g(x)=4e^{x}/\left( e^{x}+1 \right)$}.
+			\item \textcolor{xred}{$\bm{f(x)=x^{2}-2x-3}$},
+			\item \textcolor{xgreen}{$\bm{g(x)=4e^{x}/\left( e^{x}+1 \right)}$}.
 		\end{itemize}
 	\end{minipage}%
-	\begin{minipage}[c]{0.7\textwidth}
+	\begin{minipage}[c]{0.65\textwidth}
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
@@ -969,6 +969,8 @@ Real functions can be easily plotted in a \emph{Cartesian coordinate system} by 
 		\end{tikzpicture}
 	\end{minipage}
 \end{example}
+
+In \exampleref{graph_of_functions}, the function $g(x)$ always increases in value from left to right. Let's give this notion a more formal tone: a function $f$ is said to be \emph{increasing} on an interval $I$ if for any $x_{1},x_{2}\in I$, if $x_{2}>x_{1}$ then $f\left( x_{2} \right) > f\left( x_{1} \right)$. We can similarily define the idea of \emph{decreasing} on an interval.
 
 TBW: injections and surjections in real functions.
 
@@ -1149,7 +1151,7 @@ The values $x\in\mathbb{R}$ for which $P(x)=0$ are called the \emph{roots} (also
 		\begin{tikzpicture}
 			\begin{axis}[
 					graph2d,
-					width=10cm, height=7cm,
+					width=9cm, height=6cm,
 					xmin=-2, xmax=5,
 					ymin=-5, ymax=5,
 					domain=-2:5,
@@ -1174,7 +1176,6 @@ Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n
 	P(x) = (x+1)(x-1)(x-2) = x^{3}-2x^{2}-x+2.
 	\label{eq:roots_form}
 \end{equation}
-(Is this true?)
 
 \begin{example}{Higher order polynomial functions}{high_order_polynomials}
 	The following are the graphs of high-order polynomial functions ($n=3,4,5,6$):
@@ -1187,7 +1188,7 @@ Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n
 			\begin{tikzpicture}
 				\begin{axis}[
 						graph2d,
-						width=7cm, height=7cm,
+						width=6cm, height=6cm,
 						xmin=-3, xmax=3,
 						ymin=-3, ymax=3,
 						domain=-3:3,
@@ -1205,7 +1206,7 @@ Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n
 			\begin{tikzpicture}
 				\begin{axis}[
 						graph2d,
-						width=7cm, height=7cm,
+						width=6cm, height=6cm,
 						xmin=-3, xmax=3,
 						ymin=-3, ymax=3,
 						domain=-3:3,
@@ -1223,7 +1224,7 @@ Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n
 			\begin{tikzpicture}
 				\begin{axis}[
 						graph2d,
-						width=7cm, height=7cm,
+						width=6cm, height=6cm,
 						xmin=-5, xmax=5,
 						ymin=-5, ymax=5,
 						domain=-5:5,
@@ -1241,7 +1242,7 @@ Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n
 			\begin{tikzpicture}
 				\begin{axis}[
 						graph2d,
-						width=7cm, height=7cm,
+						width=6cm, height=6cm,
 						xmin=-5, xmax=5,
 						ymin=-5, ymax=5,
 						domain=-5:5,
@@ -1268,10 +1269,10 @@ An \emph{exponential function} is a real function of the type
 	f(x) = b^{x},
 	\label{eq:exponent}
 \end{equation}
-where $b>0$ is called the \emph{base} of the exponentiation, and $x$ the exponent. All exponential functions, regardless of base, are always positive. In addition, all exponential functions pass through the point $(0,1)$ since $b^{0}=1$ for any real positive number, and through the point $(1,b)$ since $b^{1}=b$.
+where $b>0$ is called the \emph{base} of the exponentiation, and $x$ the exponent. All exponential functions, regardless of base, are always positive. In addition, all exponential functions pass through the point $(0,1)$ since $b^{0}=1$ for any real positive number, and through the point $(1,b)$ since $b^{1}=b$. When $b>1$ the function is increasing on $\mathbb{R}$, while for $b<1$ the function is descending on $\mathbb{R}$.
 
 \begin{example}{Exponential functions}{exponents}
-	The following are graphs of the exponential functions: \textcolor{xred}{$1.5^{x}$}, \textcolor{xblue}{$2^{x}$} and \textcolor{xgreen}{$3.5^{x}$}:
+	The following are graphs of the exponential functions: \textcolor{xred}{$\bm{1.5^{x}}$}, \textcolor{xblue}{$\bm{2^{x}}$} and \textcolor{xgreen}{$\bm{3.5^{x}}$}:
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
@@ -1287,6 +1288,26 @@ where $b>0$ is called the \emph{base} of the exponentiation, and $x$ the exponen
 				\addplot[function, xred] {(1.5)^\x};
 				\addplot[function, xblue] {2^\x};
 				\addplot[function, xgreen] {3.5^\x};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+
+	And the following are graphs of the exponential functions \textcolor{xpurple}{$\bm{0.7^{x}}$}, \textcolor{xorange}{$\bm{0.5^{x}}$} and $\bm{0.2^{x}}$:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					y axis line style={-stealth, thick},
+					width=10cm, height=10cm,
+					xmin=-5, xmax=3,
+					ymin=0, ymax=4,
+					domain=-5:3,
+					restrict y to domain=0:5,
+				]
+				\addplot[function, xpurple] {0.7^\x};
+				\addplot[function, xorange] {0.5^\x};
+				\addplot[function, black] {0.2^\x};
 			\end{axis}
 		\end{tikzpicture}
 	\end{figure}
