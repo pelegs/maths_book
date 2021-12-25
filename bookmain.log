@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  24 DEC 2021 22:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  25 DEC 2021 15:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1658,50 +1658,64 @@ LaTeX Font Warning: Font shape `U/fontawesometwo/b/n' undefined
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Underfull \vbox (badness 5607) has occurred while \output is active []
+[3]
+Underfull \vbox (badness 1137) has occurred while \output is active []
 
- [3]
-[4] [5] [6] [7] [8]
+ [4]
+Underfull \vbox (badness 3547) has occurred while \output is active []
+
+ [5]
+[6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+[8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-[10]
+[10] [11]
 
 Package pgfplots Warning: scatter/classes: can't find class for 'c'!? Please ma
 ke sure you have specified 'scatter src=explicit symbolic'. Ignoring class 'c' 
 (this message will not come again). on input line 575.
 
  [warning /pgfplots/warning/scatter classes no such class]
-[11] [12] [13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[12] [13]
+Underfull \vbox (badness 6641) has occurred while \output is active []
 
  [14]
-Underfull \vbox (badness 1264) has occurred while \output is active []
-
- [15]
-[16] [17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+[17] [18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
-[20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-Overfull \hbox (7.24295pt too wide) in paragraph at lines 1255--1255
+[22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+Overfull \hbox (7.24295pt too wide) in paragraph at lines 1292--1292
 [][][][][]|[]$[] []$[]| 
  []
 
-[22] [23]
+[24] [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
+ [26]
 Underfull \vbox (badness 1052) has occurred while \output is active []
 
- [25]
-[26]) [27] [28] [29] [30]
+ [27]
+[28]) [29] [30] [31] [32]
 Chapter 1.
 File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_rainbow.pdf>
@@ -1711,7 +1725,7 @@ Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31
+ [33
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@defi
 nition.1}) has been already used, duplicate ignored
@@ -1721,7 +1735,7 @@ l.317 \begin{definition}{The Foo}{}
                                    
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@
+ [34]pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@
 example.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1737,11 +1751,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 334--338
 
  []
 
-[33]
+[35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-[35] [36
+ [36]
+[37] [38
 
 ]
 runsystem(makeindex bookmain.idx)...executed.
@@ -1752,9 +1766,9 @@ File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
  1.
 (pdftex.def)             Requested size: 184.89511pt x 143.01743pt.
- [37
+ [39
 
-]) [38]
+]) [40]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 368.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 368.
  (./bookmain.aux)
@@ -1768,10 +1782,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45985 strings out of 480997
- 1089323 string characters out of 5912179
- 1711493 words of memory out of 5000000
- 60500 multiletter control sequences out of 15000+600000
+ 46017 strings out of 480997
+ 1089919 string characters out of 5912179
+ 1713999 words of memory out of 5000000
+ 60528 multiletter control sequences out of 15000+600000
  666049 words of font info for 321 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,15n,127p,815b,2828s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1794,10 +1808,10 @@ kpfonts/jkpsy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfont
 s/jkpsya.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkp
 syb.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.p
 fb>
-Output written on bookmain.pdf (38 pages, 456569 bytes).
+Output written on bookmain.pdf (40 pages, 467815 bytes).
 PDF statistics:
- 594 PDF objects out of 1000 (max. 8388607)
- 494 compressed objects within 5 object streams
- 184 named destinations out of 1000 (max. 500000)
+ 606 PDF objects out of 1000 (max. 8388607)
+ 503 compressed objects within 6 object streams
+ 188 named destinations out of 1000 (max. 500000)
  360 words of extra memory for PDF output out of 10000 (max. 10000000)
 

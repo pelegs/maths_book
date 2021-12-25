@@ -1,32 +1,33 @@
 \begin{theindex}
 
-  \item algebraic numbers, 10
+  \item algebraic numbers, 11
   \item AND, 2
+  \item anti-symmetric, 19
 
   \indexspace
 
-  \item base, 23
-  \item bijection, 16
-  \item bijective function, 16
+  \item base, 25
+  \item bijection, 17
+  \item bijective function, 17
 
   \indexspace
 
-  \item Capital-sigma notation, 20
+  \item Capital-sigma notation, 22
   \item cardinality, 5
-  \item Cartesian coordinate system, 18
-  \item Cartesian product, 12
-  \item Clifford algebras, 11
-  \item closed interval, 11
-  \item coefficients, 20
+  \item Cartesian coordinate system, 19
+  \item Cartesian product, 13
+  \item Clifford algebras, 12
+  \item closed interval, 12
+  \item coefficients, 22
   \item complex numbers, 11
-  \item composed, 18
+  \item composed, 20
   \item conditions, 4
-  \item cosine, 26
+  \item cosine, 28
 
   \indexspace
 
-  \item decreasing, 18
-  \item degree, 20
+  \item decreasing, 19
+  \item degree, 22
   \item disjoint, 7
   \item domain, 16
 
@@ -35,8 +36,8 @@
   \item elements, 4
   \item empty set, 5
   \item equivalent, 3
-  \item Euclidean space, 13
-  \item exponential function, 23
+  \item Euclidean space, 14
+  \item exponential function, 25
 
   \indexspace
 
@@ -44,27 +45,27 @@
 
   \indexspace
 
-  \item graph, 18
+  \item graph, 19
 
   \indexspace
 
-  \item half open intervals, 11
-  \item highlighting, 34
+  \item half open intervals, 12
+  \item highlighting, 36
 
   \indexspace
 
-  \item iff, 3
+  \item iff, 4
   \item image, 16
-  \item increasing, 18
-  \item index of summation, 20
-  \item indexing, 34
-  \item injection, 16
-  \item injective, 16
+  \item increasing, 19
+  \item index of summation, 22
+  \item indexing, 36
+  \item injection, 17
+  \item injective, 17
   \item integers, 10
   \item intersection, 6
-  \item interval, 11
-  \item inverse, 16
-  \item invertible functions, 17
+  \item interval, 12
+  \item inverse, 17
+  \item invertible functions, 18
 
   \indexspace
 
@@ -73,67 +74,68 @@
   \indexspace
 
   \item mapping notation, 16
-  \item maps, 15
+  \item maps, 16
 
   \indexspace
 
   \item natural numbers, 10
-  \item not commutative, 12
+  \item not commutative, 13
   \item notations, 3
 
   \indexspace
 
-  \item one-to-one correspondences, 17
-  \item open interval, 11
+  \item one-to-one correspondences, 18
+  \item open interval, 12
   \item OR, 2
-  \item order, 20
-  \item ordered, 12
+  \item order, 22
+  \item ordered, 13
 
   \indexspace
 
-  \item polynomial equations, 10
-  \item polynomial functions, 20
+  \item polynomial equations, 11
+  \item polynomial functions, 22
   \item power set, 10
-  \item proposition, 1
-  \item Pythagorean theorem, 26
+  \item proposition, 2
+  \item Pythagorean theorem, 28
 
   \indexspace
 
-  \item quadratic equation, 10
-  \item quaternions, 11
+  \item quadratic equation, 11
+  \item quaternions, 12
 
   \indexspace
 
-  \item Radians, 27
-  \item rational numbers, 10
-  \item real functions, 18
+  \item Radians, 29
+  \item rational numbers, 11
+  \item real functions, 19
   \item real numbers, 11
-  \item relation, 13
-  \item right triangle, 25
-  \item roots, 21
+  \item relation, 14
+  \item right triangle, 27
+  \item roots, 23
 
   \indexspace
 
   \item sets, 4
-  \item sine, 26
-  \item subset, 5
-  \item summation notation, 20
+  \item sine, 28
+  \item subset, 6
+  \item summation notation, 22
   \item superset, 6
-  \item surjection, 16
-  \item surjective, 16
+  \item surjection, 17
+  \item surjective, 17
+  \item symmetric, 19
 
   \indexspace
 
-  \item tangent, 26
-  \item the fundamental theorem of algebra, 22
-  \item transformations, 15
-  \item triangle, 35
+  \item tangent, 28
+  \item the fundamental theorem of algebra, 24
+  \item transformations, 16
+  \item triangle, 37
   \item truth table, 2
 
   \indexspace
 
   \item union, 7
-  \item unit circle, 27
+  \item unit circle, 29
 
   \indexspace
 
@@ -141,6 +143,6 @@
 
   \indexspace
 
-  \item zeros, 21
+  \item zeros, 23
 
 \end{theindex}
