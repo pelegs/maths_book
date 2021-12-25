@@ -24,8 +24,9 @@
 }}
 
 \chapter{Introduction}
-In this chapter we will introduce some key concepts that will be used in later chapters.
+In this chapter we introduce key concepts that will be used in later chapters. For this reason, unlike other chapters it contains many statements, sometimes given without thorough explainations or reasoning. While all of these statements are grounded in deep ideas and can be formulated in a rigorous manner, it is adviced to first get an intuitive understanding of the ideas before diving into their more formal construction.
 
+\vspace{2em}
 \begin{note}{In case you are already familiar with the topics}{}
 	It is recommended for readers who are familiar with the topics to at least gloss over this chapter and make sure they know and understand all the concept presented here.
 \end{note}
@@ -972,10 +973,47 @@ Real functions can be easily plotted in a \emph{Cartesian coordinate system} by 
 
 In \exampleref{graph_of_functions}, the function $g(x)$ always increases in value from left to right. Let's give this notion a more formal tone: a function $f$ is said to be \emph{increasing} on an interval $I$ if for any $x_{1},x_{2}\in I$, if $x_{2}>x_{1}$ then $f\left( x_{2} \right) > f\left( x_{1} \right)$. We can similarily define the idea of \emph{decreasing} on an interval.
 
-TBW: injections and surjections in real functions.
+A property of some functions which is visualy easy to depict is symmetry. A real function $f$ is said to be \emph{symmetric} if for any $x\in\mathbb{R},\ f(-x)=f(x)$. This essentially means that the $y$-axis mirrors the function's plot. If for any $x\in\mathbb{R},\ f(-x)=-f(x)$, we say that the function is \emph{anti-symmetric}. A function can be neither, but there's only a single function which is both: the zero function, i.e. $f(x)=0$.
+
+\begin{example}{Symmetric and anti-symmetric functions}{function_symmetry}
+	In the following graphs, the function on the top is symmetric, while the function on the bottom is anti-symmetric:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					width=13cm, height=8cm,
+					xmin=-5, xmax=5,
+					ymin=-1.5, ymax=1.5,
+					domain=-6:6,
+					restrict y to domain=-1.5:1.5,
+				]
+				\addplot[function, xred] {(2*\x^2-2)*exp(-1/\x^2)/\x^4};
+				%\addplot[function, xblue] {(2*\x^2-2)*exp(-1/\x^2)/\x^5};
+
+					%\left(2x^{2}-2\right)\cdot\frac{\exp\left(-\frac{1}{x^{2}}\right)}{x^{4}}
+			\end{axis}
+		\end{tikzpicture}
+
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					width=13cm, height=8cm,
+					xmin=-4, xmax=4,
+					ymin=-2, ymax=2,
+					domain=-4:4,
+					restrict y to domain=-2:2,
+				]
+				\addplot[function, xblue] {(2*\x^2-2)*exp(-1/\x^2)/\x^5};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+(injections/surjections of real functions?)
 
 \subsection{Composition of functions}
-Functions can be \emph{composed} together, generating new functions. Given two functions $f:A\to B$ and $g:B\to C$, their composition is denoted as $f\circ g$. For the composition to work, the \textbf{domain} of the $g$ must be the same as the \textbf{image} of $f$, i.e. $f\circ g:A\to C$.
+Functions can be \emph{composed} together, generating new functions. Given two functions $f:A\to B$ and $g:B\to C$, their composition is denoted as $f\circ g$. For the composition to be well defined, the \textbf{image} of $f$ must be the same as the \textbf{domain} of $g$, and the resulting composition would have $A$ as its domain and $C$ as its image, i.e. $f\circ g:A\to C$.
 
 \begin{example}{Composition of functions}{composition}
 	Consider the functions
