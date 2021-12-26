@@ -22,7 +22,7 @@
   \item complex numbers, 11
   \item composed, 20
   \item conditions, 4
-  \item cosine, 28
+  \item cosine, 30
 
   \indexspace
 
@@ -37,6 +37,8 @@
   \item empty set, 5
   \item equivalent, 3
   \item Euclidean space, 14
+  \item Euler's number, 26
+  \item exponential, 25
   \item exponential function, 25
 
   \indexspace
@@ -50,7 +52,7 @@
   \indexspace
 
   \item half open intervals, 12
-  \item highlighting, 36
+  \item highlighting, 40
 
   \indexspace
 
@@ -58,7 +60,7 @@
   \item image, 16
   \item increasing, 19
   \item index of summation, 22
-  \item indexing, 36
+  \item indexing, 40
   \item injection, 17
   \item injective, 17
   \item integers, 10
@@ -69,6 +71,9 @@
 
   \indexspace
 
+  \item logarithm tables, 29
+  \item logarithms, 26
+  \item logatithmic functions, 26
   \item logical operators, 2
 
   \indexspace
@@ -78,6 +83,8 @@
 
   \indexspace
 
+  \item natural base, 26
+  \item natural logarithm, 30
   \item natural numbers, 10
   \item not commutative, 13
   \item notations, 3
@@ -96,7 +103,7 @@
   \item polynomial functions, 22
   \item power set, 10
   \item proposition, 2
-  \item Pythagorean theorem, 28
+  \item Pythagorean theorem, 31
 
   \indexspace
 
@@ -105,18 +112,18 @@
 
   \indexspace
 
-  \item Radians, 29
+  \item Radians, 31
   \item rational numbers, 11
   \item real functions, 19
   \item real numbers, 11
   \item relation, 14
-  \item right triangle, 27
+  \item right triangle, 30
   \item roots, 23
 
   \indexspace
 
   \item sets, 4
-  \item sine, 28
+  \item sine, 30
   \item subset, 6
   \item summation notation, 22
   \item superset, 6
@@ -126,16 +133,16 @@
 
   \indexspace
 
-  \item tangent, 28
+  \item tangent, 30
   \item the fundamental theorem of algebra, 24
   \item transformations, 16
-  \item triangle, 37
+  \item triangle, 41
   \item truth table, 2
 
   \indexspace
 
   \item union, 7
-  \item unit circle, 29
+  \item unit circle, 31
 
   \indexspace
 

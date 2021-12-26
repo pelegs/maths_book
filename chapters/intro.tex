@@ -1302,15 +1302,15 @@ We will continue to explore polynomial functions in more details in future chapt
 \section{Exponential and Logarithmic Functions}
 In the previous section we dealt with functions composed of integer powers of $x$. We will now shortly focus on functions where $x$ is in the power itself and their inverse functions.
 
-An \emph{exponential function} is a real function of the type
+An \emph{exponential function}, or simply an \emph{exponential}, is a real function of the type
 \begin{equation}
 	f(x) = b^{x},
 	\label{eq:exponent}
 \end{equation}
-where $b>0$ is called the \emph{base} of the exponentiation, and $x$ the exponent. All exponential functions, regardless of base, are always positive. In addition, all exponential functions pass through the point $(0,1)$ since $b^{0}=1$ for any real positive number, and through the point $(1,b)$ since $b^{1}=b$. When $b>1$ the function is increasing on $\mathbb{R}$, while for $b<1$ the function is descending on $\mathbb{R}$.
+where $b>0$ is called the \emph{base} of the exponentiation, and $x$ the exponential. All exponents, regardless of base, are always positive. In addition, all exponents pass through the point $(0,1)$ since $b^{0}=1$ for any real positive number, and through the point $(1,b)$ since $b^{1}=b$. When $b>1$ the function is increasing on $\mathbb{R}$, while for $b<1$ the function is descending on $\mathbb{R}$.
 
 \begin{example}{Exponential functions}{exponents}
-	The following are graphs of the exponential functions: \textcolor{xred}{$\bm{1.5^{x}}$}, \textcolor{xblue}{$\bm{2^{x}}$} and \textcolor{xgreen}{$\bm{3.5^{x}}$}:
+	The following are graphs of the exponential functions \textcolor{xred}{$\bm{1.5^{x}}$}, \textcolor{xblue}{$\bm{2^{x}}$} and \textcolor{xgreen}{$\bm{3.5^{x}}$}:
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
@@ -1351,7 +1351,123 @@ where $b>0$ is called the \emph{base} of the exponentiation, and $x$ the exponen
 	\end{figure}
 \end{example}
 
-\Blindtext{}
+As a reminder, the following are two well known properties of exponents: given a base $b>0$,
+\begin{align}
+	b^{-x} &= \frac{1}{b^{x}},\\
+	b^{x}b^{y} &= b^{x+y}.
+	\label{eq:exponents_properties}
+\end{align}
+
+A special base for exponential functions is the real, non-aglebric number $e$. This number has many names, among them is \emph{Euler's number}, but in the constant of exponentials it is known as the \emph{natural base}. Its exact value is not entirely important for the moment: it is about $2.718$, and in any case it is not possible to write it as there it has infinitely many digits after the period.
+
+The inverse function to exponentials are the \emph{logatithmic functions} (or simply \emph{logarithms}), i.e.\ for any real $b>0,\ b\neq1$,
+\begin{equation}
+	\log_{b}\left( b^{x} \right) = b^{\log_{b}(x)} = x.
+	\label{eq:logarithms}
+\end{equation}
+In essence, the logarithm in base $b$ of a number $x$ answers the question \textit{``what is the number $a$ for which $b^{a}=x$?''}. Being the inverses of exponential functions, all logarithms go through the point $(1,0)$, and each also passes through its own point $(b,1)$.
+
+\begin{example}{Logarighmic functions}{logarithms}
+	The following are graphs of the logatithmic functions \textcolor{xred}{${\log_{1.5}(x)}$}, \textcolor{xblue}{${\log_{2}(x)}$} and \textcolor{xgreen}{${\log_{3.5}(x)}$}:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					x axis line style={-stealth, thick},
+					width=10cm, height=10cm,
+					xmin=0, xmax=4,
+					ymin=-5, ymax=3,
+					domain=0:4,
+					restrict y to domain=-10:4,
+				]
+				\addplot[function, xred] {ln(\x)/ln(1.5)};
+				\addplot[function, xblue] {ln(\x)/ln(2)};
+				\addplot[function, xgreen] {ln(\x)/ln(3.5)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+
+	...and the following are graphs of the exponential functions \textcolor{xpurple}{$\log_{0.75}(x)$}, \textcolor{xorange}{$\log_{0.5}(x)$} and $\log_{0.2}(x)$:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					x axis line style={-stealth, thick},
+					width=10cm, height=10cm,
+					xmin=0, xmax=4,
+					ymin=-3, ymax=5,
+					domain=0:4,
+					restrict y to domain=-4:10,
+				]
+				\addplot[function, xpurple] {ln(\x)/ln(0.75)};
+				\addplot[function, xorange] {ln(\x)/ln(0.5)};
+				\addplot[function, black] {ln(\x)/ln(0.2)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+A useful property of logarithms is that they can help reduce ranges spanning several orders of magnitude to numebrs humans can deal with. The easiest way to see this is using $b=10$: $10^{1}=10$, and so $\log_{10}(10)=1$. $10^{2}=100$, and so $\log_{10}(100)=2$. $10^{3}=1000$, and so $\log_{10}(1000)=3$, etc. The value of the logarithm goes by $1$ for each raise in order of magnitude of its argument.
+
+Therefore, if we have some measurement $x$ which can hold values spanning severl orders of magnitude (say $x\in[3,1500000000]$), then it can sometimes be useful to use instead the logarithmic value of $x$ (which in our case would span the range $\log_{10}(x)\in[0.477,9.176]$). This is done in many fields of science, for example some definitions of entropy\footnote{$S=k_{\text{B}}\log\left( \Omega \right)$}, acid disociation constants\footnote{$\text{p}K_{a}=-\log\left( K_{\text{diss}} \right)$}, pH\footnote{$\text{pH}=-\log\left(\ce{[H+]}\right)$} and more.
+
+\begin{example}{Logarithms as eavluating orders of magnitude}{}
+	In the following graph of $\log_{2}(x)$, each increase by power of two in $x$ (i.e. $x=1,2,4,8,16,\dots$) yields only a single increase in $y$ (i.e. $y=0,1,2,3,4,\dots$). This shows how logarithms shift our perspective from absolute values to orders of magnitude.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					x axis line style={-stealth, thick},
+					width=10cm, height=8cm,
+					xmin=0, xmax=16,
+					ymin=-4, ymax=8,
+					domain=0:16,
+					restrict y to domain=-7:10,
+					grid=major,
+					xtick={0,1,2,4,8,16},
+					ytick={-4,-3,...,8},
+				]
+				\addplot[function, xpurple] {ln(\x)/ln(2)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+Using the definition of the logarithmic function $\log_{b}(x)$ (\eqref{logarithms}) and the product rule for exponentials (\eqref{exponents_properties}), a similar rule can be derived for logarithms. Let $x,y>0$ and $b>0,\ b\neq1$ all be real numbers. We define
+\begin{equation}
+	\log_{b}(x)=M,\ \log_{b}(y)=N,
+	\label{eq:log_addition_rule_step1}
+\end{equation}
+which means
+\begin{equation}
+	b^{M}=x,\ b^{N}=y.
+	\label{eq:log_addition_rule_step2}
+\end{equation}
+From \eqref{exponents_properties} we know that
+\begin{equation}
+	xy = b^{M}b^{N} = b^{M+N},
+	\label{eq:log_addition_rule_step3}
+\end{equation}
+and by re-applying the definition of logarithmic functions we get that
+\begin{equation}
+	\log_{b}(xy) = M+N = \log_{b}(x) + \log_{b}(y).
+	\label{eq:log_addition_rule_step4}
+\end{equation}
+
+Simlilarily to \eqref{log_addition_rule_step4}, division yields subtraction:
+\begin{equation}
+	\log_{b}\left(\frac{x}{y}\right) = \log_{b}(x)-\log_{b}(y).
+	\label{eq:log_subtraction_rule}
+\end{equation}
+
+Equations \ref{eq:log_addition_rule_step4} and \ref{eq:log_subtraction_rule} reveal another valueable property of logarithms: they reduce multiplication to addition (and subsequently division to subtraction). While today this property doesn't seem very impressive, in pre-computers days it helped carrying on complicated calculations, using tables of pre-calculated logarithms (called simply \emph{logarithm tables}) - a sight rarely seen today.
+
+TBW:\@ other properties of logarithms, changing bases.
+
+Much like with exponentials, the number $e$ plays an important role when it comes to logarithms, for reasons that are discussed in the calculus chapter (ref). For now, we will just mention that $\log_{e}(x)$ gets a special notation: $\ln(x)$, which stands for \emph{natural logarithm}. This notation is mainly used in applied mathematics and science, while in pure mathematics the notation is simply $\log(x)$, i.e. without a base \footnote{depending on convention though, this notation can refer to logarithm in any other base, most commonly $\log_{10}(x)$ and $\log_{2}(x)$.}.
 
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
