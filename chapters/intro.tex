@@ -1358,7 +1358,7 @@ As a reminder, the following are two well known properties of exponents: given a
 	\label{eq:exponents_properties}
 \end{align}
 
-A special base for exponential functions is the real, non-aglebric number $e$. This number has many names, among them is \emph{Euler's number}, but in the constant of exponentials it is known as the \emph{natural base}. Its exact value is not entirely important for the moment: it is about $2.718$, and in any case it is not possible to write it as there it has infinitely many digits after the period.
+A special base for exponential functions is the real, non-aglebric number $e$. This number has many names, among them is \emph{Euler's number}, but in the constant of exponentials it is known as the \emph{natural base}. Its exact value is not entirely important for the moment: it is about $2.718$, and in any case it is not possible to write it as there it has infinitely many digits after the period. It is very common across different fields of mathematics and science to write $\exp(x)$ instead of $e^{x}$.
 
 The inverse function to exponentials are the \emph{logatithmic functions} (or simply \emph{logarithms}), i.e.\ for any real $b>0,\ b\neq1$,
 \begin{equation}
@@ -1465,215 +1465,247 @@ Simlilarily to \eqref{log_addition_rule_step4}, division yields subtraction:
 
 Equations \ref{eq:log_addition_rule_step4} and \ref{eq:log_subtraction_rule} reveal another valueable property of logarithms: they reduce multiplication to addition (and subsequently division to subtraction). While today this property doesn't seem very impressive, in pre-computers days it helped carrying on complicated calculations, using tables of pre-calculated logarithms (called simply \emph{logarithm tables}) - a sight rarely seen today.
 
-TBW:\@ other properties of logarithms, changing bases.
+Taking one step forward in regards to reduction of operations, logarithms reduce powers to multiplication:
+\begin{equation}
+	\log_{b}\left( x^{k} \right) = k\log_{b}(x).
+	\label{eq:log_product_rule}
+\end{equation}
+for any $k\in\mathbb{R}$.
 
-Much like with exponentials, the number $e$ plays an important role when it comes to logarithms, for reasons that are discussed in the calculus chapter (ref). For now, we will just mention that $\log_{e}(x)$ gets a special notation: $\ln(x)$, which stands for \emph{natural logarithm}. This notation is mainly used in applied mathematics and science, while in pure mathematics the notation is simply $\log(x)$, i.e. without a base \footnote{depending on convention though, this notation can refer to logarithm in any other base, most commonly $\log_{10}(x)$ and $\log_{2}(x)$.}.
+(TBW:\@ proving this will be in the chapter questions to the reader)
+
+Any logarithm $\log_{b}(x)$ can be expressed using another base, i.e. $\log_{a}(x)$ (where $a>0,\ a\neq1$) using the following formula:
+\begin{equation}
+	\log_{a}(x) = \log_{b}(x)\cdot\log_{a}(b).
+	\label{eq:log_base_change}
+\end{equation}
+(TBW:\@ proving this too will be a question to the reader)
+
+\begin{example}{Changing logarithm base}{}
+	Expressing $\log_{4}(x)$ in terms of $\log_{2}(x)$:
+	\[
+		\log_{4}(x) = \log_{2}(x)\cdot\underbrace{\log_{4}(2)}_{=\frac{1}{2}} = \frac{1}{2}\log_{2}(x).
+	\]
+\end{example}
+
+Much like with exponentials, the number $e$ plays an important role when it comes to logarithms, for reasons that are discussed in the calculus chapter (ref). For now, we will just mention that $\log_{e}(x)$ gets a special notation: $\ln(x)$, which stands for \emph{natural logarithm}. This notation is mainly used in applied mathematics and science, while in pure mathematics the notation is simply $\log(x)$, i.e. without mentioning the base \footnote{Depending on convention and context, this notation can refer to logarithm in any other base, most commonly $\log_{10}(x)$ and $\log_{2}(x)$.}.
+
+For reason we will see in the calculus chapter, it is relatively simple to calculate both the exponential and logarithm in base $e$. Therefore, many operations in modern computations are actually done using these functions, for example calculating logarithms in other bases:
+\begin{equation}
+	\log_{b}(x) = \frac{\ln(x)}{\ln(b)}.
+	\label{eq:ln_base_change}
+\end{equation}
+Another operation commonly using both $e^{x}$ and $\ln(x)$ is raising a real number $a$ to a real power $b$: using the properties of both exponential and logarithmic functions, any such power can be expressed as
+\begin{equation}
+	a^{b} = e^{b\ln(a)}.
+	\label{eq:powers_using_e}
+\end{equation}
 
 \section{Trigonometric functions}
-\subsection{Basic Definitions}
-Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
-
-\centering
-\begin{tikzpicture}[node distance=3mm]
-		\coordinate (A) at (0,0);
-		\coordinate (B) at (4,3);
-		\coordinate (C) at (4,0);
-
-		\node[left of=A] {$A$};
-		\node[above of=B] {$B$};
-		\node[right of=C] {$C$};
-
-		\draw[fill=xblue!30] (A) -- node (c) [midway, above, rotate=36.87] {$c$ (Hypotenous)} (B) -- node (a) [midway, right] {$a$ (Opposite)} (C) -- node (b) [midway, below] {$b$ (Adjacent)} cycle;
-		\draw[thick] ($(C)+(0,0.3)$) rectangle ($(C)-(0.3,0)$);
-		\draw[thick, xpurple!50!black, fill=xpurple!45] (A) -- ($(A)+(1,0)$) arc (0:36.87:1) node [midway, xshift=-3mm, yshift=-2pt] {$\alpha$} -- cycle;
-		%\draw[thick, xblue!50!black, fill=xblue!45] (B) -- ($(B)+(0,-0.8)$) arc (270:216.97:0.8) node [midway, above, xshift=5pt] {$\beta$} -- cycle;
-		\draw[thick] (A) -- (B) -- (C) -- cycle;
-	\end{tikzpicture}
-\flushleft
-
-We use the ratios between the three sides of the triangle to define three functions of $\alpha$:
-\begin{definition}{The basic triginometric functions}{}
-	\vspace{5mm}
-	\begin{enumerate}
-		\item The \emph{sine} of the angle $\alpha$ is $\sin(\alpha)=\frac{a}{c}$,
-		\item the \emph{cosine} of the angle $\alpha$ is $\cos(\alpha)=\frac{b}{c}$, and
-		\item the \emph{tangent} of the angle $\alpha$ is $\tan(\alpha)=\frac{a}{b}$, which in turn is equal to $\frac{\sin(\alpha)}{\cos(\alpha)}$.
-		\end{enumerate}
-	\label{def:basic_trig}
-\end{definition}
-
-We can rearrange the above definitions to yield
-\begin{align}
-	a &= c\sin(\alpha),\nonumber\\
-	b &= c\cos(\alpha).
-	\label{eq:basic_trig_rearrange}
-\end{align}
-
-Normaly, the Hypotenous is the longest side of a right triangle. We will consider here the two edge cases where one of the sides $a,b$ is equal to the Hypotenous (and the other side is thus $0$):
-\begin{itemize}
-	\item if $a=c$ then $\alpha=\ang{90}$,\
-	\item if $b=c$ then $\alpha=0$.
-\end{itemize}
-
-The posssible length of $a$ is therefore in the range $0\leq a \leq c$, which means that $0\leq \frac{a}{c} \leq 1$, or since $\sin(\alpha)=\frac{a}{c}$,
-\begin{equation}
-	0\leq \sin(\alpha) \leq1.
-	\label{eq:img_sin}
-\end{equation}
-
-The same is of course true for $b$, and thus
-\begin{equation}
-	0\leq \cos(\alpha) \leq1
-	\label{eq:img_cos}
-\end{equation}
-as well.
-
-As a reminder, the \emph{Pythagorean theorem}\footnote{It's worth mentioning that no three positive integers $a, b$, and $c$ satisfy the equation $a^{n}+b^{n}=c^{n}$ for any integer value of $n>2$. \href{https://en.wikipedia.org/wiki/Fermat\%27s_Last_Theorem}{This can be proven, however the proof is too large to fit in the footnotes}.} states that for a right triangle like the one here,
-\begin{equation}
-	a^{2} + b^{2} = c^{2}.
-	\label{eq:pythagorean_theorem}
-\end{equation}
-By substituting \xref[eq]{basic_trig_rearrange} into the above we get
-\begin{equation*}
-	c^{2} = a^{2}+b^{2} = \left( c\sin(\alpha) \right)^{2} + \left( c\cos(\alpha) \right)^{2} = c^{2}\sin^{2}(\alpha) + c^{2}\cos^{2}(\alpha) = c^{2}\left[ \sin^{2}(\alpha) + \cos^{2}(\alpha) \right],
-\end{equation*}
-and cancelling $c^{2}$ on both sides simply yields
-\begin{equation}
-	\sin^{2}(\alpha) + \cos^{2}(\alpha) = 1.
-	\label{eq:sin2_cos2_1}
-\end{equation}
-
-\subsection{The Unit Circle}
-The range of the trigonometric functions can be extended by using the \emph{unit circle}: a circle of radius $R=1$ is placed such that its center lies at the origin of a 2-dimensional axis system, i.e. at the point $\bm{O}=(0,0)$. A radius to a point $\bm{P}=(x,y)$ on the circle's circumference is the drawn. This radius has an angle $\theta$ to the $x$-axis. A line from $\bm{P}$ perpendicular to the $x$-axis intersecting at the point $\bm{D}$ is drawn (see \xref{unit_circle}).
-
-The triangle $\triangle OPD$ is a right triangle. Therefore, we can use the trigonometic functions to calculate the coordinates of the point $\bm{P}=(x,y)$:
-\begin{align}
-	x &= R\cos(\theta) = \cos(\theta),\nonumber\\
-	y &= R\sin(\theta) = \sin(\theta).
-	\label{eq:xy_P}
-\end{align}
-
-We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$, respectively, as a function of $\theta$.
-
-We will switch to measuring angles in \emph{Radians} instead of degrees: $\theta$ radians are equal to the length of an arc on a unit circle, which corresponds to the angle $\theta$ (\xref{radians}). This allows us to use the same units as $x$ and $y$: for example, when length is measured in [\si{meter}], an angle in radians is measured in [\si{meter}] as well. The full circumference of a circle equals $2\pi$ radians, and therefore a single radian is equivalent to $\frac{180}{\pi} \approx \ang{57.3}$. \xref[tab]{rad_degs} shows some common angles in radians.
-
-\begin{table}
-	\caption{Common angles in radians.}
-	\label{tab:rad_degs}
-	\centering
-	\begin{tabular}{ll}
-		\toprule
-		Degrees & Radians \\
-		\midrule
-		\ang{0} & 0 \\
-		\ang{45} & $\frac{\pi}{4}$ \\
-		\ang{90} & $\frac{\pi}{2}$ \\
-		\ang{180} & $\pi$ \\
-		\ang{270} & $\frac{3\pi}{2}$ \\
-		\ang{360} & $2\pi$ \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-
-Another advantage which we gain by defining the trigonometric functions using the unit circle is the extension of their domain to all of $\mathbb{R}$: an angle of size $2\frac{1}{2}\pi$ (equivalent to $\ang{450}$), for example is the same as an angle of size $\frac{1}{2}\pi$ ($\ang{90}$), and an angle of $-\frac{1}{6}\pi$ ($-\ang{30}$) is the same as $\frac{5}{6}\pi$ ($\ang{330}$).
-
-\begin{figure}
-	\centering
-	\begin{tikzpicture}
-		\pgfmathsetmacro{\ax}{4.5}
-		\pgfmathsetmacro{\un}{3.5}
-		\pgfmathsetmacro{\th}{35}
-		\coordinate (D) at ({\un*cos(\th)},0);
-
-		\draw[thick, fill=black!5] (A) circle (\un);
-		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
-		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
-		\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
-		\draw[ultra thick, densely dotted, xpurple] (B.center) -- ({\un*cos(\th)},0);
-		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
-		\draw[thick] ($(D)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
-
-		\filldraw (A) circle (2pt) node[below left] {$(0,0)=\bm{O}$};
-		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
-		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
-		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
-		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
-		\filldraw (D) circle (2pt) node[below, anchor=north east, xshift=2mm] {$(x,0)=\bm{D}$};
-		\filldraw (B) circle (2pt) node[right, xshift=1mm, yshift=1mm] {$\bm{P}=(x,y)$};
-	\end{tikzpicture}
-	\caption{A unit circle with (...)}
-	\label{fig:unit_circle}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\begin{tikzpicture}
-		\pgfmathsetmacro{\ax}{4.5}
-		\pgfmathsetmacro{\un}{3.5}
-		\pgfmathsetmacro{\th}{35}
-		\coordinate (D) at ({\un*cos(\th)},0);
-
-		\draw[thick, fill=black!5] (A) circle (\un);
-		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
-		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
-		%\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
-		\draw[xred, fill=xred!15] (A) -- (\un,0) arc (0:\th:\un) -- cycle;
-		\draw[xred, ultra thick]  (\un,0) arc (0:\th:\un) node [midway, right] {\Large$\theta$ radians};
-		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
-
-		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
-		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
-		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
-		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
-	\end{tikzpicture}
-	\caption{Radians}
-	\label{fig:radians}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\begin{tikzpicture}
-		\pgfmathsetmacro{\ax}{4.5}
-		\pgfmathsetmacro{\un}{3.5}
-		\pgfmathsetmacro{\th}{35}
-		\coordinate (D) at ({\un*cos(\th)},0);
-
-		\filldraw[xred!35] (A) -- (\un,0) arc (0:90:\un);
-		\filldraw[xblue!35] (A) -- (0,\un) arc (90:180:\un);
-		\filldraw[xgreen!35] (A) -- (-\un,0) arc (180:270:\un);
-		\filldraw[xorange!35] (A) -- (0,-\un) arc (270:360:\un);
-		\node at ({ \un/2.5},{ \un/2.5}) {\Huge$1$};
-		\node at ({-\un/2.5},{ \un/2.5}) {\Huge$2$};
-		\node at ({-\un/2.5},{-\un/2.5}) {\Huge$3$};
-		\node at ({ \un/2.5},{-\un/2.5}) {\Huge$4$};
-		
-		\draw[thick] (A) circle (\un);
-		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
-		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
-		\filldraw (A) circle (2pt) node[below right] {$(0,0)$};
-		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
-		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
-		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
-		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
-	\end{tikzpicture}
-	\caption{The different quadrants of the unit circle.}
-	\label{fig:unit_circle_quadrants}
-\end{figure}
-
-\begin{table}
-	\caption{Text}
-	\label{tab:quadrants_trig_vals}
-	\centering
-	\begin{tabular}{lll}
-		\toprule
-		Quadrant & $\cos(\theta)=x$ & $\sin(\theta)=y$\\
-		\midrule
-		\rowcolor{xred!35}1 & $\left[ 0,1 \right]$ & $\left[ 0,1 \right]$\\
-		\rowcolor{xblue!35}2 & $\left[-1,0 \right]$ & $\left[ 0,1 \right]$\\
-		\rowcolor{xgreen!35}3 & $\left[-1,0 \right]$ & $\left[-1,0 \right]$\\
-		\rowcolor{xorange!35}4 & $\left[ 0,1 \right]$ & $\left[-1,0 \right]$\\
-		\bottomrule
-	\end{tabular}
-\end{table}
-
+%\subsection{Basic Definitions}
+%Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
+%
+%\centering
+%\begin{tikzpicture}[node distance=3mm]
+%		\coordinate (A) at (0,0);
+%		\coordinate (B) at (4,3);
+%		\coordinate (C) at (4,0);
+%
+%		\node[left of=A] {$A$};
+%		\node[above of=B] {$B$};
+%		\node[right of=C] {$C$};
+%
+%		\draw[fill=xblue!30] (A) -- node (c) [midway, above, rotate=36.87] {$c$ (Hypotenous)} (B) -- node (a) [midway, right] {$a$ (Opposite)} (C) -- node (b) [midway, below] {$b$ (Adjacent)} cycle;
+%		\draw[thick] ($(C)+(0,0.3)$) rectangle ($(C)-(0.3,0)$);
+%		\draw[thick, xpurple!50!black, fill=xpurple!45] (A) -- ($(A)+(1,0)$) arc (0:36.87:1) node [midway, xshift=-3mm, yshift=-2pt] {$\alpha$} -- cycle;
+%		%\draw[thick, xblue!50!black, fill=xblue!45] (B) -- ($(B)+(0,-0.8)$) arc (270:216.97:0.8) node [midway, above, xshift=5pt] {$\beta$} -- cycle;
+%		\draw[thick] (A) -- (B) -- (C) -- cycle;
+%	\end{tikzpicture}
+%\flushleft
+%
+%We use the ratios between the three sides of the triangle to define three functions of $\alpha$:
+%\begin{definition}{The basic triginometric functions}{}
+%	\vspace{5mm}
+%	\begin{enumerate}
+%		\item The \emph{sine} of the angle $\alpha$ is $\sin(\alpha)=\frac{a}{c}$,
+%		\item the \emph{cosine} of the angle $\alpha$ is $\cos(\alpha)=\frac{b}{c}$, and
+%		\item the \emph{tangent} of the angle $\alpha$ is $\tan(\alpha)=\frac{a}{b}$, which in turn is equal to $\frac{\sin(\alpha)}{\cos(\alpha)}$.
+%		\end{enumerate}
+%	\label{def:basic_trig}
+%\end{definition}
+%
+%We can rearrange the above definitions to yield
+%\begin{align}
+%	a &= c\sin(\alpha),\nonumber\\
+%	b &= c\cos(\alpha).
+%	\label{eq:basic_trig_rearrange}
+%\end{align}
+%
+%Normaly, the Hypotenous is the longest side of a right triangle. We will consider here the two edge cases where one of the sides $a,b$ is equal to the Hypotenous (and the other side is thus $0$):
+%\begin{itemize}
+%	\item if $a=c$ then $\alpha=\ang{90}$,\
+%	\item if $b=c$ then $\alpha=0$.
+%\end{itemize}
+%
+%The posssible length of $a$ is therefore in the range $0\leq a \leq c$, which means that $0\leq \frac{a}{c} \leq 1$, or since $\sin(\alpha)=\frac{a}{c}$,
+%\begin{equation}
+%	0\leq \sin(\alpha) \leq1.
+%	\label{eq:img_sin}
+%\end{equation}
+%
+%The same is of course true for $b$, and thus
+%\begin{equation}
+%	0\leq \cos(\alpha) \leq1
+%	\label{eq:img_cos}
+%\end{equation}
+%as well.
+%
+%As a reminder, the \emph{Pythagorean theorem}\footnote{It's worth mentioning that no three positive integers $a, b$, and $c$ satisfy the equation $a^{n}+b^{n}=c^{n}$ for any integer value of $n>2$. \href{https://en.wikipedia.org/wiki/Fermat\%27s_Last_Theorem}{This can be proven, however the proof is too large to fit in the footnotes}.} states that for a right triangle like the one here,
+%\begin{equation}
+%	a^{2} + b^{2} = c^{2}.
+%	\label{eq:pythagorean_theorem}
+%\end{equation}
+%By substituting \xref[eq]{basic_trig_rearrange} into the above we get
+%\begin{equation*}
+%	c^{2} = a^{2}+b^{2} = \left( c\sin(\alpha) \right)^{2} + \left( c\cos(\alpha) \right)^{2} = c^{2}\sin^{2}(\alpha) + c^{2}\cos^{2}(\alpha) = c^{2}\left[ \sin^{2}(\alpha) + \cos^{2}(\alpha) \right],
+%\end{equation*}
+%and cancelling $c^{2}$ on both sides simply yields
+%\begin{equation}
+%	\sin^{2}(\alpha) + \cos^{2}(\alpha) = 1.
+%	\label{eq:sin2_cos2_1}
+%\end{equation}
+%
+%\subsection{The Unit Circle}
+%The range of the trigonometric functions can be extended by using the \emph{unit circle}: a circle of radius $R=1$ is placed such that its center lies at the origin of a 2-dimensional axis system, i.e. at the point $\bm{O}=(0,0)$. A radius to a point $\bm{P}=(x,y)$ on the circle's circumference is the drawn. This radius has an angle $\theta$ to the $x$-axis. A line from $\bm{P}$ perpendicular to the $x$-axis intersecting at the point $\bm{D}$ is drawn (see \xref{unit_circle}).
+%
+%The triangle $\triangle OPD$ is a right triangle. Therefore, we can use the trigonometic functions to calculate the coordinates of the point $\bm{P}=(x,y)$:
+%\begin{align}
+%	x &= R\cos(\theta) = \cos(\theta),\nonumber\\
+%	y &= R\sin(\theta) = \sin(\theta).
+%	\label{eq:xy_P}
+%\end{align}
+%
+%We can now define $\cos(\theta)$ and $\sin(\theta)$ as the values of $x$ and $y$, respectively, as a function of $\theta$.
+%
+%We will switch to measuring angles in \emph{Radians} instead of degrees: $\theta$ radians are equal to the length of an arc on a unit circle, which corresponds to the angle $\theta$ (\xref{radians}). This allows us to use the same units as $x$ and $y$: for example, when length is measured in [\si{meter}], an angle in radians is measured in [\si{meter}] as well. The full circumference of a circle equals $2\pi$ radians, and therefore a single radian is equivalent to $\frac{180}{\pi} \approx \ang{57.3}$. \xref[tab]{rad_degs} shows some common angles in radians.
+%
+%\begin{table}
+%	\caption{Common angles in radians.}
+%	\label{tab:rad_degs}
+%	\centering
+%	\begin{tabular}{ll}
+%		\toprule
+%		Degrees & Radians \\
+%		\midrule
+%		\ang{0} & 0 \\
+%		\ang{45} & $\frac{\pi}{4}$ \\
+%		\ang{90} & $\frac{\pi}{2}$ \\
+%		\ang{180} & $\pi$ \\
+%		\ang{270} & $\frac{3\pi}{2}$ \\
+%		\ang{360} & $2\pi$ \\
+%		\bottomrule
+%	\end{tabular}
+%\end{table}
+%
+%Another advantage which we gain by defining the trigonometric functions using the unit circle is the extension of their domain to all of $\mathbb{R}$: an angle of size $2\frac{1}{2}\pi$ (equivalent to $\ang{450}$), for example is the same as an angle of size $\frac{1}{2}\pi$ ($\ang{90}$), and an angle of $-\frac{1}{6}\pi$ ($-\ang{30}$) is the same as $\frac{5}{6}\pi$ ($\ang{330}$).
+%
+%\begin{figure}
+%	\centering
+%	\begin{tikzpicture}
+%		\pgfmathsetmacro{\ax}{4.5}
+%		\pgfmathsetmacro{\un}{3.5}
+%		\pgfmathsetmacro{\th}{35}
+%		\coordinate (D) at ({\un*cos(\th)},0);
+%
+%		\draw[thick, fill=black!5] (A) circle (\un);
+%		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
+%		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
+%		\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
+%		\draw[ultra thick, densely dotted, xpurple] (B.center) -- ({\un*cos(\th)},0);
+%		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
+%		\draw[thick] ($(D)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
+%
+%		\filldraw (A) circle (2pt) node[below left] {$(0,0)=\bm{O}$};
+%		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
+%		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
+%		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
+%		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
+%		\filldraw (D) circle (2pt) node[below, anchor=north east, xshift=2mm] {$(x,0)=\bm{D}$};
+%		\filldraw (B) circle (2pt) node[right, xshift=1mm, yshift=1mm] {$\bm{P}=(x,y)$};
+%	\end{tikzpicture}
+%	\caption{A unit circle with (...)}
+%	\label{fig:unit_circle}
+%\end{figure}
+%
+%\begin{figure}
+%	\centering
+%	\begin{tikzpicture}
+%		\pgfmathsetmacro{\ax}{4.5}
+%		\pgfmathsetmacro{\un}{3.5}
+%		\pgfmathsetmacro{\th}{35}
+%		\coordinate (D) at ({\un*cos(\th)},0);
+%
+%		\draw[thick, fill=black!5] (A) circle (\un);
+%		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
+%		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
+%		%\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
+%		\draw[xred, fill=xred!15] (A) -- (\un,0) arc (0:\th:\un) -- cycle;
+%		\draw[xred, ultra thick]  (\un,0) arc (0:\th:\un) node [midway, right] {\Large$\theta$ radians};
+%		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
+%
+%		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
+%		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
+%		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
+%		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
+%	\end{tikzpicture}
+%	\caption{Radians}
+%	\label{fig:radians}
+%\end{figure}
+%
+%\begin{figure}
+%	\centering
+%	\begin{tikzpicture}
+%		\pgfmathsetmacro{\ax}{4.5}
+%		\pgfmathsetmacro{\un}{3.5}
+%		\pgfmathsetmacro{\th}{35}
+%		\coordinate (D) at ({\un*cos(\th)},0);
+%
+%		\filldraw[xred!35] (A) -- (\un,0) arc (0:90:\un);
+%		\filldraw[xblue!35] (A) -- (0,\un) arc (90:180:\un);
+%		\filldraw[xgreen!35] (A) -- (-\un,0) arc (180:270:\un);
+%		\filldraw[xorange!35] (A) -- (0,-\un) arc (270:360:\un);
+%		\node at ({ \un/2.5},{ \un/2.5}) {\Huge$1$};
+%		\node at ({-\un/2.5},{ \un/2.5}) {\Huge$2$};
+%		\node at ({-\un/2.5},{-\un/2.5}) {\Huge$3$};
+%		\node at ({ \un/2.5},{-\un/2.5}) {\Huge$4$};
+%		
+%		\draw[thick] (A) circle (\un);
+%		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
+%		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
+%		\filldraw (A) circle (2pt) node[below right] {$(0,0)$};
+%		\filldraw (\un,0) circle (2pt) node[below right] {$(1,0)$};
+%		\filldraw (0,\un) circle (2pt) node[above right] {$(0,1)$};
+%		\filldraw (-\un,0) circle (2pt) node[below left] {$(-1,0)$};
+%		\filldraw (0,-\un) circle (2pt) node[below right] {$(0,-1)$};
+%	\end{tikzpicture}
+%	\caption{The different quadrants of the unit circle.}
+%	\label{fig:unit_circle_quadrants}
+%\end{figure}
+%
+%\begin{table}
+%	\caption{Text}
+%	\label{tab:quadrants_trig_vals}
+%	\centering
+%	\begin{tabular}{lll}
+%		\toprule
+%		Quadrant & $\cos(\theta)=x$ & $\sin(\theta)=y$\\
+%		\midrule
+%		\rowcolor{xred!35}1 & $\left[ 0,1 \right]$ & $\left[ 0,1 \right]$\\
+%		\rowcolor{xblue!35}2 & $\left[-1,0 \right]$ & $\left[ 0,1 \right]$\\
+%		\rowcolor{xgreen!35}3 & $\left[-1,0 \right]$ & $\left[-1,0 \right]$\\
+%		\rowcolor{xorange!35}4 & $\left[ 0,1 \right]$ & $\left[-1,0 \right]$\\
+%		\bottomrule
+%	\end{tabular}
+%\end{table}
+%
 \section{Complex Numbers}
