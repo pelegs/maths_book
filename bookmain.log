@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  27 DEC 2021 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  27 DEC 2021 18:10
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1467,48 +1467,48 @@ Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
 (./bookmain.aux)
 \openout1 = `bookmain.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 310.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 327.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 3
-10.
+27.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 310.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 310.
+LaTeX Font Info:    ... okay on input line 327.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 327.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 3
-10.
+27.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 310.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 310.
-LaTeX Font Info:    ... okay on input line 310.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 310.
-LaTeX Font Info:    ... okay on input line 310.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 310.
-LaTeX Font Info:    ... okay on input line 310.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 310.
+LaTeX Font Info:    ... okay on input line 327.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 327.
+LaTeX Font Info:    ... okay on input line 327.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 327.
+LaTeX Font Info:    ... okay on input line 327.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 327.
+LaTeX Font Info:    ... okay on input line 327.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 327.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 3
-10.
+27.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 310.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 310.
+LaTeX Font Info:    ... okay on input line 327.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 327.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-310.
+327.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 310.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 310.
-LaTeX Font Info:    ... okay on input line 310.
+LaTeX Font Info:    ... okay on input line 327.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 327.
+LaTeX Font Info:    ... okay on input line 327.
 LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 3
-10.
+27.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
@@ -1585,7 +1585,7 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@posthook=\toks50
 )
 \AtBeginShipoutBox=\box135
-Package hyperref Info: Link coloring ON on input line 310.
+Package hyperref Info: Link coloring ON on input line 327.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1599,9 +1599,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count399
 )
-LaTeX Info: Redefining \ref on input line 310.
-LaTeX Info: Redefining \pageref on input line 310.
-LaTeX Info: Redefining \nameref on input line 310.
+LaTeX Info: Redefining \ref on input line 327.
+LaTeX Info: Redefining \pageref on input line 327.
+LaTeX Info: Redefining \nameref on input line 327.
  (./bookmain.out) (./bookmain.out)
 \@outlinefile=\write7
 \openout7 = `bookmain.out'.
@@ -1616,46 +1616,46 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 
-Package chemgreek Info: Activating mapping `kpfonts' on line 310.
+Package chemgreek Info: Activating mapping `kpfonts' on line 327.
 
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
-310.
+327.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-310.
+327.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
-310.
+327.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
-310.
+327.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for OT1+jkpss on input line
- 310.
+ 327.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkpss.fd
 File: ot1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for OT1/jkpss.
 )
 LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
- 310.
+ 327.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
 (./chapters/intro.tex
 Chapter 0.
-<figures/chapters/tapir_rainbow.pdf, id=131, 123.26372pt x 95.3452pt>
+<figures/chapters/tapir_rainbow.pdf, id=135, 123.26372pt x 95.3452pt>
 File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_rainbow.pdf>
 Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
@@ -1747,41 +1747,49 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-[29]) [30]
+[29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+[31]) [32]
 Chapter 1.
 File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_rainbow.pdf>
 Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
- 317.
+ 334.
 (pdftex.def)             Requested size: 184.89511pt x 143.01743pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31
+ [33
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@exam
 ple.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.329 \begin{example}{A Bla which is not a Foo}{}
+l.346 \begin{example}{A Bla which is not a Foo}{}
                                                  
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@
+ [34]pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@
 note.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.337 \begin{note}{Something to Consider}{}
+l.354 \begin{note}{Something to Consider}{}
                                            
-Underfull \hbox (badness 10000) in paragraph at lines 338--342
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
-[33]
+[35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-[35] [36
+ [36]
+[37] [38
 
 ]
 runsystem(makeindex bookmain.idx)...executed.
@@ -1792,26 +1800,26 @@ File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
  1.
 (pdftex.def)             Requested size: 184.89511pt x 143.01743pt.
- [37
+ [39
 
-]) [38]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 372.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 372.
+]) [40]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 389.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 389.
  (./bookmain.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 372.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 372.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 389.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 389.
 Package rerunfilecheck Info: File `bookmain.out' has not changed.
-(rerunfilecheck)             Checksum: F877CDCCAC7948D1455DCE40A3490702;1643.
+(rerunfilecheck)             Checksum: 076D4E5AD1959D71E612D3878D0A0CAB;1715.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 46593 strings out of 480997
- 1105189 string characters out of 5912179
- 1796388 words of memory out of 5000000
- 61095 multiletter control sequences out of 15000+600000
+ 46658 strings out of 480997
+ 1106520 string characters out of 5912179
+ 1797166 words of memory out of 5000000
+ 61149 multiletter control sequences out of 15000+600000
  621298 words of font info for 223 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,15n,127p,815b,2828s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1834,10 +1842,10 @@ onts/jkpmne.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/
 jkpssbn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jk
 psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb>
-Output written on bookmain.pdf (38 pages, 496675 bytes).
+Output written on bookmain.pdf (40 pages, 501634 bytes).
 PDF statistics:
- 605 PDF objects out of 1000 (max. 8388607)
- 503 compressed objects within 6 object streams
- 191 named destinations out of 1000 (max. 500000)
- 344 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 629 PDF objects out of 1000 (max. 8388607)
+ 525 compressed objects within 6 object streams
+ 202 named destinations out of 1000 (max. 500000)
+ 352 words of extra memory for PDF output out of 10000 (max. 10000000)
 
