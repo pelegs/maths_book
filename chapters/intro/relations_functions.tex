@@ -1,0 +1,453 @@
+\section{Relations and Functions}
+\subsection{Basics}
+Cartesian products of two sets can be viewed as describing all possible connections between the elements of the first set to the elements of the second set, and thus any subset of a Cartesian product forms a specific \emph{relation} between the sets.
+
+\begin{example}{Relations as subsets of Cartesian products}{relation}
+	Given the following two sets:
+	\[
+		A=\{1,2,3,4\},\ B=\{\alpha,\beta,\gamma\},
+	\]
+	then
+	\begin{align*}
+		A\times B = \left\{ (1,\alpha),\ (1,\beta),\ (1,\gamma), \right.\\
+												(2,\alpha),\ (2,\beta),\ (2,\gamma),\\
+												(3,\alpha),\ (3,\beta),\ (3,\gamma),\\
+							  \left.	(4,\alpha),\ (4,\beta),\ (4,\gamma) \right\}.
+	\end{align*}
+
+	We can choose the following pairs to form a subset of $A\times B$:
+	\[
+		R = \left\{ (1,\beta),\ (2,\alpha),\ (3,\alpha),\ (3,\beta), (4,\gamma)  \right\}.
+	\]
+	$R$ is thus a relation between $A$ and $B$. We can graphically illustrate $R$ as follows:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\Large
+			
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1) at (0,1.5cm) {$1$};
+			\node (2) at (0,0.5cm) {$2$};
+			\node (3) at (0,-0.5cm) {$3$};
+			\node (4) at (0,-1.5cm) {$4$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (alpha) at (2.5cm,1cm) {$\alpha$};
+			\node (beta) at (2.5cm,0cm) {$\beta$};
+			\node (gamma) at (2.5cm,-1cm) {$\gamma$};
+
+			\draw[arrow] (1) -- (beta);
+			\draw[arrow] (2) -- (alpha);
+			\draw[arrow] (3) -- (alpha);
+			\draw[arrow] (3) -- (gamma);
+			\draw[arrow] (4) -- (beta);
+
+			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$R$};
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+Relations can be inversed by reversing the order of each of its pairs.
+
+\begin{example}{Inverse relation}{inv_relation}
+	The inverse relation to the relation in \exampleref{relation} is
+	\[
+		R^{-1} = \left\{ (\beta,1),\ (\alpha,2),\ (\alpha,3),\ (\beta,3), (\gamma,4)  \right\}.
+	\]
+	Graphically:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\Large
+			
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1) at (0,1.5cm) {$1$};
+			\node (2) at (0,0.5cm) {$2$};
+			\node (3) at (0,-0.5cm) {$3$};
+			\node (4) at (0,-1.5cm) {$4$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (alpha) at (2.5cm,1cm) {$\alpha$};
+			\node (beta) at (2.5cm,0cm) {$\beta$};
+			\node (gamma) at (2.5cm,-1cm) {$\gamma$};
+
+			\draw[arrow] (beta) -- (1);
+			\draw[arrow] (alpha) -- (2);
+			\draw[arrow] (alpha) -- (3);
+			\draw[arrow] (gamma) -- (3);
+			\draw[arrow] (beta) -- (4);
+
+			\draw[arrow] (Blbl) -- (Albl) node[midway, above] {$R^{-1}$};
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+A \emph{function} $f$ from a set $A$ to a set $B$ is a relation for which any element in $A$ is connected to a single element in $B$.
+
+\begin{example}{Functions}{functions}
+	The following are two functions from the set $A$ to the set $B$ defined in \exampleref{relation}:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\Large
+		
+			% f
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1) at (0,1.5cm) {$1$};
+			\node (2) at (0,0.5cm) {$2$};
+			\node (3) at (0,-0.5cm) {$3$};
+			\node (4) at (0,-1.5cm) {$4$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (alpha) at (2.5cm,1cm) {$\alpha$};
+			\node (beta) at (2.5cm,0cm) {$\beta$};
+			\node (gamma) at (2.5cm,-1cm) {$\gamma$};
+
+			\draw[arrow] (1) -- (alpha);
+			\draw[arrow] (2) -- (beta);
+			\draw[arrow] (3) -- (gamma);
+			\draw[arrow] (4) -- (gamma);
+
+			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$f$};
+			
+			% g
+			\draw[thick, xred, fill=xred!20] (0,-6.0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1) at (0,-4.5cm) {$1$};
+			\node (2) at (0,-5.5cm) {$2$};
+			\node (3) at (0,-6.5cm) {$3$};
+			\node (4) at (0,-7.5cm) {$4$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,-6.0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (alpha) at (2.5cm,-5.0cm) {$\alpha$};
+			\node (beta) at (2.5cm,-6.0cm) {$\beta$};
+			\node (gamma) at (2.5cm,-7.0cm) {$\gamma$};
+
+			\draw[arrow] (1) -- (alpha);
+			\draw[arrow] (2) -- (gamma);
+			\draw[arrow] (3) -- (beta);
+			\draw[arrow] (4) -- (alpha);
+
+			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$g$};
+		\end{tikzpicture}
+	\end{figure}
+		
+	The pairs making up $f$ are $(1,\alpha),\ (2,\beta),\ (3,\gamma)$ and $(4,\gamma)$, and the pairs making up $g$ are $(1,\alpha),\ (2,\gamma),\ (3,\beta)$ and $(4,\alpha)$.
+\end{example}
+
+\begin{note}{Relations which are not functions}{}
+	Note that the relation in \exampleref{relation} is \textbf{not} a function, since the element $3\in A$ is connected to more than one element in $B$, namely $\alpha$ and $\gamma$.
+\end{note}
+
+Different names are used in some branches of mathematics to describe functions, such as \emph{maps} and \emph{transformations}. Baring context, they all mean the same thing.
+
+A common way to denote that a function $f$ is connecting elements in $A$ to elements in $B$ is
+\begin{equation}
+	f: A\to B.
+	\label{eq:function_basics}
+\end{equation}
+$A$ is called the \emph{domain} of $f$, and $B$ its \emph{image}. In this book and many other sources, the following notation is used: $f(x)=y$, which means that when we apply the function $f$ to an element $x\in A$, the result is the element it is connected to, i.e. $y\in B$. We write this as $x\mapsto y$ (the special symbol $\mapsto$ is called a \emph{mapping notation}).
+
+\begin{example}{Value $\mapsto$ value notation for functions}{}
+	For the functions $f,g$ as defined in \exampleref{functions}:
+	\begin{align*}
+		&f(1)=\alpha,\ f(2)=\beta,\ f(3)=f(4)=\gamma.\\
+		&g(1)=g(4)=\alpha,\ g(2)=\gamma,\ g(3)=\beta.
+	\end{align*}
+\end{example}
+
+\subsection{Injective, surjective and bijective functions}
+A function is \emph{injective} if each of the elements in its \textbf{image} is connected to by at most a single element in its \textbf{domain}. An injective function is also known as an \emph{injection}.
+
+\begin{example}{Injective function}{injective}
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+% Injective function
+		\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1) at (0,1.5) {$1$};
+		\node (A2) at (0,0.5) {$2$};
+		\node (A3) at (0,-0.5) {$3$};
+		\node (A4) at (0,-1.5) {$4$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (2,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1) at (2,1.2) {$\alpha$};
+		\node (B2) at (2,0.4) {$\beta$};
+		\node (B3) at (2,-0.4) {$\gamma$};
+		\node (B4) at (2,-1.2) {$\delta$};
+
+		\draw[arrow] (A1) -- (B2);
+		\draw[arrow] (A2) -- (B3);
+		\draw[arrow] (A3) -- (B1);
+		\draw[arrow] (A4) -- (B4);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Injective} (B);
+
+% Non injective function
+		\fill[xred!20, draw=xred, thick] (6,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1b) at (6,1.5) {$1$};
+		\node (A2b) at (6,0.75) {$2$};
+		\node (A3b) at (6,0) {$3$};
+		\node (A4b) at (6,-0.75) {$4$};
+		\node (A5b) at (6,-1.5) {$5$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (8,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1b) at (8,1.2) {$\alpha$};
+		\node (B2b) at (8,0.4) {$\beta$};
+		\node (B3b) at (8,-0.4) {$\gamma$};
+		\node (B4b) at (8,-1.2) {$\delta$};
+
+		\draw[arrow] (A1b) -- (B1b);
+		\draw[arrow, red] (A2b) -- (B2b);
+		\draw[arrow, red] (A3b) -- (B2b);
+		\draw[arrow] (A4b) -- (B3b);
+		\draw[arrow] (A5b) -- (B4b);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Non-injective} (B);
+	\end{tikzpicture}
+
+	\flushleft
+	The function on the right in non-injective because the element $\beta\in B$ is connected to by two elements in $A$ ($2$ and $3$, red arrows).
+\end{example}
+
+A function is \emph{surjective} if every element in its image is connected to by at least a single element in its domain (see \exampleref{surjective}). As with injective functions, a surjective function is also known as a \emph{surjection}. A non surjective function can be made into surjective function by excluding from its image any element that is not connected to by any element from its domain (see \exampleref{surjectification}).
+
+A function $f:A\to B$ that is both surjective and bijective is called a \emph{bijective function} (also a \emph{bijection}). All elements in the image of a bijection are connected to by exactly a single element in its domain. This means that the direction of the connections can be flipped, yielding the \emph{inverse} of the original function (denoted $f^{-1}$).
+
+The reason only bijective functions have inverses is as follows: Given a function $f:A\to B$,
+\begin{itemize}
+	\item if $f$ is non-injective, then there is at least one element $y_{1}\in B$ which is connected to by at least two elements from $A$. We can name these elements $x_{1}$ and $x_{2}$. When inverted, $f^{-1}:B\to A$ has an element $y_{1}\in B$ (note that for $f^{-1}$, $B$ is its domain), which is connected to two or more elements in $A$, the image of $f^{-1}$. These are of course $x_{1},x_{2}$. This fact disqualifies $f^{-1}$ from being a function.
+	\item If $f$ is non-surgetive, then there exists at least one element $y_{2}\in B$ that is not connected to by any element from $A$. When inverted, $y_{2}$ in the domain $B$ of $f^{-1}$ is not connected to any element in its image $A$. This fact disqualifies $f^{-1}$ from being a function.
+\end{itemize}
+
+\begin{example}{Surjective function}{surjective}
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+		% Surjection
+		\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1) at (0,1.5) {$1$};
+		\node (A2) at (0,0.5) {$2$};
+		\node (A3) at (0,-0.5) {$3$};
+		\node (A4) at (0,-1.5) {$4$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (2,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1) at (2,1.2) {$\alpha$};
+		\node (B2) at (2,0.4) {$\beta$};
+		\node (B3) at (2,-0.4) {$\gamma$};
+		\node (B4) at (2,-1.2) {$\delta$};
+
+		\draw[arrow] (A1) -- (B2);
+		\draw[arrow] (A2) -- (B3);
+		\draw[arrow] (A3) -- (B1);
+		\draw[arrow] (A4) -- (B4);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Surjective} (B);
+
+		% Non surjection
+		\fill[xred!20, draw=xred, thick] (6,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1b) at (6,1.5) {$1$};
+		\node (A2b) at (6,0.75) {$2$};
+		\node (A3b) at (6,0) {$3$};
+		\node (A4b) at (6,-0.75) {$4$};
+		\node (A5b) at (6,-1.5) {$5$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (8,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1b) at (8,1.2) {$\alpha$};
+		\node (B2b) at (8,0.4) {$\beta$};
+		\node (B3b) at (8,-0.4) {$\gamma$};
+		\node (B4b) at (8,-1.2) {$\delta$};
+
+		\draw[arrow] (A1b) -- (B1b);
+		\draw[arrow, red] (A2b) -- (B2b);
+		\draw[arrow, red] (A3b) -- (B2b);
+		\draw[arrow] (A4b) -- (B3b);
+		\draw[arrow] (A5b) -- (B4b);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Non-surjective} (B);
+	\end{tikzpicture}
+\end{example}
+
+\begin{example}{Making a non-surjective function into a surjection}{surjectification}
+	Given the two sets $A=\{1,2,3,4\}$ and $B=\{\alpha,\beta,\gamma,\delta\}$, the following non-surjective function $f:A\to B$ is defined:
+	\[
+		f = \left\{ (1,\alpha),\ (2,\beta),\ (3,\gamma),\ (4,\gamma) \right\}.
+	\]
+
+	By removing $\delta$ from $B$, the function $f$ becomes surjective (though it remains non-injective).
+\end{example}
+
+TBW: an example of all four possible combinations (injective non-surjective, surjective non-injective, bijective, non-injective non-surjective) and their inverses.
+
+\begin{note}{Other names for bijections}{bijections}
+	Bijections are also called \emph{one-to-one correspondences} and \emph{invertible functions}.
+\end{note}
+
+\subsection{Real functions}
+In suitable cases, a function is defined via a general mapping rule. This should be very familiar to anyone who learned mathematics in highschool, where many times functions are defined this way, e.g.
+\begin{equation}
+	f(x) = x^{2}+3x-4.
+	\label{eq:function_by_formula}
+\end{equation}
+
+In mapping notation we can write \eqref{function_by_formula} as $f:x\mapsto x^{2}+3x-4$. In highschool mathematics, both the domain and image of such functions is $\mathbb{R}$, although it is almost never specified explicetly. Such functions are commonly refered to as \emph{real functions}, a convention used in this book as well.
+
+\begin{example}{Functions defined using a mapping rule}{}
+	The following are real functions:
+	\[
+		f_{1}(x) = 2x^{2}-5,\quad f_{2}(x)=\sin\left( \frac{x}{3} \right),\quad f_{3}(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{\sigma^{2}}}.
+	\]
+
+	Note that these functions can also be defined using different sets, for example $f_{1}:\mathbb{N}\to\mathbb{Z},\quad f_{2}:\mathbb{N}\to[-1,1],\quad$ etc.
+\end{example}
+
+Real functions can be easily plotted in a \emph{Cartesian coordinate system} by drawing all the points $\left( x,f(x) \right)$ (i.e. all the points $\left( x,y \right)$, where $x,y\in\mathbb{R}$ and $x\mapsto y$). We call these points the \emph{graph} of $f$ over $\mathbb{R}$.
+
+\begin{example}{Graphs of real functions}{graph_of_functions}
+	The following two functions are plotted on the domain $\left[ -9,9 \right]$:
+
+	\begin{minipage}{0.35\textwidth}
+		\begin{itemize}
+			\item \textcolor{xred}{$\bm{f(x)=x^{2}-2x-3}$},
+			\item \textcolor{xgreen}{$\bm{g(x)=4e^{x}/\left( e^{x}+1 \right)}$}.
+		\end{itemize}
+	\end{minipage}%
+	\begin{minipage}[c]{0.65\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					width=9cm, height=6cm,
+					xmin=-9, xmax=9,
+					ymin=-5, ymax=5,
+					domain=-9:9,
+					restrict y to domain=-5:5,
+					declare function={f(\x)=\x^2-2*\x-3;},
+					declare function={g(\x)=4*exp(\x)/(1+exp(\x));},
+				]
+				\addplot[function, color=xred] {f(x)};
+				\addplot[function, color=xgreen] {g(x)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{minipage}
+\end{example}
+
+In \exampleref{graph_of_functions}, the function $g(x)$ always increases in value from left to right. Let's give this notion a more formal tone: a function $f$ is said to be \emph{increasing} on an interval $I$ if for any $x_{1},x_{2}\in I$, if $x_{2}>x_{1}$ then $f\left( x_{2} \right) > f\left( x_{1} \right)$. We can similarily define the idea of \emph{decreasing} on an interval.
+
+A property of some functions which is visualy easy to depict is symmetry. A real function $f$ is said to be \emph{symmetric} if for any $x\in\mathbb{R},\ f(-x)=f(x)$. This essentially means that the $y$-axis mirrors the function's plot. If for any $x\in\mathbb{R},\ f(-x)=-f(x)$, we say that the function is \emph{anti-symmetric}. A function can be neither, but there's only a single function which is both: the zero function, i.e. $f(x)=0$.
+
+\begin{example}{Symmetric and anti-symmetric functions}{function_symmetry}
+	In the following graphs, the function on the top is symmetric, while the function on the bottom is anti-symmetric:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					width=13cm, height=8cm,
+					xmin=-5, xmax=5,
+					ymin=-1.5, ymax=1.5,
+					domain=-6:6,
+					restrict y to domain=-1.5:1.5,
+				]
+				\addplot[function, xred] {(2*\x^2-2)*exp(-1/\x^2)/\x^4};
+				%\addplot[function, xblue] {(2*\x^2-2)*exp(-1/\x^2)/\x^5};
+
+					%\left(2x^{2}-2\right)\cdot\frac{\exp\left(-\frac{1}{x^{2}}\right)}{x^{4}}
+			\end{axis}
+		\end{tikzpicture}
+
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					width=13cm, height=8cm,
+					xmin=-4, xmax=4,
+					ymin=-2, ymax=2,
+					domain=-4:4,
+					restrict y to domain=-2:2,
+				]
+				\addplot[function, xblue] {(2*\x^2-2)*exp(-1/\x^2)/\x^5};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+(injections/surjections of real functions?)
+
+\subsection{Composition of functions}
+Functions can be \emph{composed} together, generating new functions. Given two functions $f:A\to B$ and $g:B\to C$, their composition is denoted as $f\circ g$. For the composition to be well defined, the \textbf{image} of $f$ must be the same as the \textbf{domain} of $g$, and the resulting composition would have $A$ as its domain and $C$ as its image, i.e. $f\circ g:A\to C$.
+
+\begin{example}{Composition of functions}{composition}
+	Consider the functions
+	\[
+		f(x)=x^{2},\quad g(x)=\sin(x).
+	\]
+	Using these functions, the two possible compositions are
+	\begin{itemize}
+		\item $f\circ g = f\left( g(x) \right) = \left[ \sin(x) \right]^{2}$, and
+		\item $g\circ f = g\left( f(x) \right) = \sin\left( x^{2} \right)$.
+	\end{itemize}
+\end{example}
+
+\begin{example}{Graphical representation of function composition}{}
+	A graphical representation of composing two functions:
+	\[
+		f:\{1,2,3,4\}\to\{\alpha,\beta,\gamma,\delta\},\quad g:\{\alpha,\beta,\gamma,\delta\}\to\{a,b,c\}.
+	\]
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.9]
+			\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm);
+			\node (A1) at (0,1.5) {$1$};
+			\node (A2) at (0,0.5) {$2$};
+			\node (A3) at (0,-0.5) {$3$};
+			\node (A4) at (0,-1.5) {$4$};
+
+			\fill[xpurple!20, draw=xpurple, thick] (3,0) circle (0.75cm and 2cm);
+			\node (B1) at (3,1.2) {$\alpha$};
+			\node (B2) at (3,0.4) {$\beta$};
+			\node (B3) at (3,-0.4) {$\gamma$};
+			\node (B4) at (3,-1.2) {$\delta$};
+
+			\draw[arrow, thick] (1,2) -- node [midway, above] {$f$} ++(1,0);
+			\draw[arrow, thick] (4,2) -- node [midway, above] {$g$} ++(1,0);
+
+			\fill[xgreen!20, draw=xgreen, thick] (6,0) circle (0.75cm and 1.75cm);
+			\node (C1) at (6,1) {$a$};
+			\node (C2) at (6,0) {$b$};
+			\node (C3) at (6,-1) {$c$};
+
+			\draw[arrow] (A1) -- (B2);
+			\draw[arrow] (A2) -- (B4);
+			\draw[arrow] (A3) -- (B1);
+			\draw[arrow] (A4) -- (B3);
+			\draw[arrow] (B1) -- (C2);
+			\draw[arrow] (B2) -- (C3);
+			\draw[arrow] (B3) -- (C1);
+			\draw[arrow] (B4) -- (C3);
+		\end{tikzpicture}
+	\end{figure}
+	
+	The composition results in the following function
+	\[
+		f\circ g:\{1,2,3,4\}\to\{a,b,c,\}.
+	\]
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.9]
+			\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm);
+			\node (A1) at (0,1.5) {$1$};
+			\node (A2) at (0,0.5) {$2$};
+			\node (A3) at (0,-0.5) {$3$};
+			\node (A4) at (0,-1.5) {$4$};
+
+			\draw[arrow, thick] (1,2) -- node [midway, above] {$f\circ g$} ++(1,0);
+
+			\fill[xgreen!20, draw=xgreen, thick] (3,0) circle (0.75cm and 1.75cm);
+			\node (C1) at (3,1) {$a$};
+			\node (C2) at (3,0) {$b$};
+			\node (C3) at (3,-1) {$c$};
+
+			\draw[arrow] (A1) -- (C3);
+			\draw[arrow] (A2) -- (C3);
+			\draw[arrow] (A3) -- (C2);
+			\draw[arrow] (A4) -- (C1);
+		\end{tikzpicture}
+	\end{figure}
+\end{example}

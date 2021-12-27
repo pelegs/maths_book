@@ -1,0 +1,203 @@
+\section{Polynomial functions}
+A very useful family of real functions can be derived using only three fundamental operations: addition, multiplication and exponentiation: the (real) \emph{polynomial functions}. These are functions of the form
+\begin{equation}
+	P_{n}(x) = a_{0} + a_{1}x + a_{2}x^{2} + a_{3}x^{3} + \cdots + a_{n}x^{n},
+	\label{eq:polynomial_function}
+\end{equation}
+where $a_{0},a_{1},\dots,a_{n}$ are real numbers called the \emph{coefficients} of the polynomial function. Note that $a_{n}\neq0$, i.e. the \emph{degree} of the polynomial function is the index of the highest non-zero coefficient (and thus the highest power in the expression). We also call this the \emph{order} of the polynomial function.
+
+\begin{example}{Polynomial}{}
+	The following is a polynomial function of degree $n=6$:
+	\[
+		P(x) = 4 + 2x - 3x^{2} + 7x^{4} - x^{5} + 3x^{6}.
+	\]
+
+	Breaking down this polynomial to its constituent terms:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[node distance=15mm]
+			\node (P) {$P(x)=$};
+			\node[right of=P]  (x0) {$4$};
+			\node[right of=x0] (x1) {$+2x$};
+			\node[right of=x1] (x2) {$-3x^{2}$};
+			\node[right of=x2] (x4) {$+7x^{4}$};
+			\node[right of=x4] (x5) {$-x^{5}$};
+			\node[right of=x5] (x6) {$+3x^{6}$};
+			
+			\node[below of=x0] (a0) {$a_{0}=4$};
+			\node[below of=x1] (a1) {$a_{1}=2$};
+			\node[below of=x2] (a2) {$a_{2}=-3$};
+			\node[below of=x4] (a4) {$a_{4}=7$};
+			\node[below of=x5] (a5) {$a_{5}=-1$};
+			\node[below of=x6] (a6) {$a_{6}=3$};
+
+			\draw[arrow, thin] (x0) -- (a0);
+			\draw[arrow, thin] (x1) -- (a1);
+			\draw[arrow, thin] (x2) -- (a2);
+			\draw[arrow, thin] (x4) -- (a4);
+			\draw[arrow, thin] (x5) -- (a5);
+			\draw[arrow, thin] (x6) -- (a6);
+		\end{tikzpicture}
+	\end{figure}
+
+	Note that $a_{3}$ is missing from the polynomial function (i.e. there is no $x^{3}$ term). This means that $a_{3}=0$.
+\end{example}
+
+A shorthand way to write the general form of a polynomial function is by using the \emph{summation notation}:
+\begin{equation}
+	P(x) = \sum\limits_{k=0}^{n}a_{k}x^{k}.
+	\label{eq:summation_notation}
+\end{equation}
+This notation, called the \emph{Capital-sigma notation}, essentially represents addition of $n$ elements (in the case shown here), each with its own \emph{index of summation}, in this case $i$. The most general form of the summation notation is
+\begin{equation}
+	\sum\limits_{i=k}^{n}a_{i} = a_{k} + a_{k+1} + a_{k+2} + \cdots + a_{n-1} + a_{n},
+	\label{eq:summation_notation_general}
+\end{equation}
+i.e. the notation tells us to add those elements $a_{i}$ for which $k\geq i\geq n$. Note that in the case of \eqref{summation_notation}, when $k=0,\ x^{k}=x^{0}=1$ and the first term of the polynomial function has no $x$ power (i.e. it is simply $a_{0}$), and when $k=1,\ x^{k}=x^{1}=x$ and thus the second term is $a_{1}x$. We will encounter the summation notation in more details later in the book.
+
+In the special case $n=0$, i.e. when $P(x)=a_{0}$, the function is constant. When $n=1$ the function $P(x)=a_{0}+a_{1}x$ is a line, and when $n=2,\ P(x)=a_{0}+a_{1}x+a_{2}x^{2}$ is a quadratic function.
+
+\begin{example}{Polynomial functions for $n=0,1,2$}{special_polynomials}
+	The following graphs represent the polynomial functions of degrees $n=0,1,2$ with coefficients $a_{0}=2,\ a_{1}=1,\ a_{2}=\frac{1}{2}$:
+
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\tikzset{flbl/.style={draw=#1, thick, fill=white, rounded corners}}
+			\begin{axis}[
+					graph2d,
+					width=9cm, height=9cm,
+					xmin=-9, xmax=9,
+					ymin=-9, ymax=9,
+					domain=-9:9,
+					restrict y to domain=-9:9,
+					declare function={p0(\x)=2;},
+					declare function={p1(\x)=2+\x;},
+					declare function={p2(\x)=2+\x+0.5*\x^2;},
+				]
+				\addplot[function, xred] {p0(x)} node[flbl=xred, below, pos=0.15, yshift=-1mm] {$P_{0}(x)=1$};
+				\addplot[function, xblue] {p1(x)} node[flbl=xblue, below, pos=0.1, rotate=45, yshift=-1mm] {$P_{1}(x)=1+x$};
+				\addplot[function, xgreen] {p2(x)} node[flbl=xgreen, right, pos=0.2, xshift=-3mm, yshift=5mm] {$P_{2}(x)=1+x+\frac{1}{2}x^{2}$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+The values $x\in\mathbb{R}$ for which $P(x)=0$ are called the \emph{roots} (also: \emph{zeros}) of the polynomial function.
+
+\begin{example}{Roots of a polynomial function}{}
+	The polynomial function $P(x) = 24x - 50x^{2} + 35x^{3} - 10x^{4} + x^{5}$ has the following $5$ roots: $x_{0}=0,\ x_{1}=1,\ x_{2}=2,\ x_{3}=3,\ x_{4}=4$. In the following graph of $P(x)$ the roots are shown as black dots.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					graph2d,
+					width=9cm, height=6cm,
+					xmin=-2, xmax=5,
+					ymin=-5, ymax=5,
+					domain=-2:5,
+					restrict y to domain=-6:6,
+					declare function={P(\x)=\x*(\x-1)*(\x-2)*(\x-3)*(\x-4);},
+				]
+				\addplot[function, xred] {P(x)};
+				\addplot[black, only marks, mark=*, samples at={0,1,...,4}] {P(x)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+The maximum number of \textbf{real} roots of a polynomial function with degree $n\geq1$ is $n$, e.g. a polynomial of degree $n=4$ has at most $4$ real roots. This statement is a consequence of a very important theorem called \emph{the fundamental theorem of algebra}, which due to its importance we will mention here without proof:
+
+\begin{theorem}{The fundamental theorem of algebra}{fundamental}
+	For any $n\geq1$, the polynomial function $P(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{n}z^{n}$, where $a_{0},a_{1},a_{2},\dots,a_{n}$ are all \textbf{complex numbers} and $a_{n}\neq0$, has $n$ complex roots.
+\end{theorem}
+
+Given a polynomial function $P(x)$ with $n$ roots $r_{1},\ r_{2},\ \cdots,\ r_{n}$, the function can be written as a product of terms of the form $x-r_{i}$ (up to a constant), e.g. the polynomial function of degree $n=3$ with roots $-1,1,2$ can be written as
+\begin{equation}
+	P(x) = (x+1)(x-1)(x-2) = x^{3}-2x^{2}-x+2.
+	\label{eq:roots_form}
+\end{equation}
+
+\begin{example}{Higher order polynomial functions}{high_order_polynomials}
+	The following are the graphs of high-order polynomial functions ($n=3,4,5,6$):
+
+	\begin{figure}[H]
+		\captionsetup[subfigure]{labelformat=empty}
+		\centering
+		\begin{subfigure}[b]{0.475\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+						graph2d,
+						width=6cm, height=6cm,
+						xmin=-3, xmax=3,
+						ymin=-3, ymax=3,
+						domain=-3:3,
+						restrict y to domain=-3:3,
+						declare function={P3(\x)=\x^3-\x^2-\x;},
+					]
+					\addplot[function, xred] {P3(x)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{\textcolor{xred}{$\bm{x^{3}-x^{2}-x}$}}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.475\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+						graph2d,
+						width=6cm, height=6cm,
+						xmin=-3, xmax=3,
+						ymin=-3, ymax=3,
+						domain=-3:3,
+						restrict y to domain=-10:10,
+						declare function={P4(\x)=\x^4-3*\x^2+\x+1;},
+					]
+					\addplot[function, xblue] {P4(x)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{\textcolor{xblue}{$\bm{x^{4}-3x^{2}+x+1}$}}
+		\end{subfigure}
+
+		\begin{subfigure}[b]{0.475\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+						graph2d,
+						width=6cm, height=6cm,
+						xmin=-5, xmax=5,
+						ymin=-5, ymax=5,
+						domain=-5:5,
+						restrict y to domain=-10:10,
+						declare function={P5(\x)=0.03*(\x^5+3*\x^4-11*\x^3-27*\x^2+10*\x+24);},
+					]
+					\addplot[function, xgreen] {P5(x)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{\textcolor{xgreen}{$\bm{\frac{3}{100}\left( x^{5}+3x^{4}-11x^{3}-27x^{2}+10x+24 \right)}$}}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.475\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+						graph2d,
+						width=6cm, height=6cm,
+						xmin=-5, xmax=5,
+						ymin=-5, ymax=5,
+						domain=-5:5,
+						restrict y to domain=-15:15,
+						declare function={P6(\x)=0.01*(x^6-x^5-26*x^4+15*x^3+150*x^2-25*x-5);},
+					]
+					\addplot[function, xpurple] {P6(x)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{\textcolor{xpurple}{$\bm{\frac{1}{100}\left( x^{6}-x^{5}-26x^{4}+15x^{3}+150x^{2}-25x-5\right)}$}}
+		\end{subfigure}
+	\end{figure}
+\end{example}
+
+As can be seen in \exampleref{high_order_polynomials}, the maximal number of `bends' in a polynomial function of order $n$ is $n-1$ (i.e. one less than the order of the function).
+
+We will continue to explore polynomial functions in more details in future chapters.

@@ -1,0 +1,32 @@
+\pgfkeys{
+	/pgfplots/Interval/.style={
+	axis x line=middle,
+	axis y line=none,
+	every axis x label/.style={
+		at={(ticklabel* cs:1.05)},
+		anchor=west,
+	},
+	axis line style={stealth-stealth, thick},
+	label style={font=\large},
+	tick label style={font=\small},
+	samples=200,
+	xmin=-5, xmax=5,
+	ymin=0, ymax=5,
+	domain=-5:5,
+	y=0.5cm,
+	restrict y to domain=0:4,
+	axis lines=left,
+	enlarge x limits=upper,
+	scatter/classes={o={mark=*,fill=white}},
+	scatter,
+	scatter src=explicit symbolic,
+	every axis plot post/.style={mark=*,thick},
+}}
+
+\chapter{Introduction}
+In this chapter we introduce key concepts that will be used in later chapters. For this reason, unlike other chapters it contains many statements, sometimes given without thorough explainations or reasoning. While all of these statements are grounded in deep ideas and can be formulated in a rigorous manner, it is adviced to first get an intuitive understanding of the ideas before diving into their more formal construction.
+
+\vspace{2em}
+\begin{note}{In case you are already familiar with the topics}{}
+	It is recommended for readers who are familiar with the topics to at least gloss over this chapter and make sure they know and understand all the concept presented here.
+\end{note}

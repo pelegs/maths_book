@@ -1,0 +1,103 @@
+\pgfkeys{
+	/pgfplots/complex plane/.style={
+	axis x line=middle,
+	axis y line=middle,
+	xlabel=$\Re$,
+	ylabel=$\Im$,
+	every axis x label/.style={
+		at={(ticklabel* cs:1.02)},
+		anchor=west,
+	},
+	every axis y label/.style={
+		at={(ticklabel* cs:1.02)},
+		anchor=south,
+	},
+	axis line style={stealth-stealth, thick},
+	label style={font=\large},
+	tick label style={font=\large},
+	samples=100,
+	xmin=-3, xmax=3,
+	ymin=-3, ymax=3,
+	domain=-3:3,
+	grid=both,
+	major grid style={black!5},
+}}
+
+\section{Complex Numbers}
+\subsection{Algebraic approach}
+Real numbers, while being extremely useful, are not complete - they can't solve all equations involving numbers. For example, the equation
+\begin{equation}
+	x^{2} + 1 = 0
+	\label{eq:no_real_solutions}
+\end{equation}
+has no real solutions, since there can be no real number $x$ such that $x^{2}=-1$. However, we can choose to define a new number, $i=\sqrt{-1}$ and using it to build a new number system. This system is of course the set of complex numbers, $\mathbb{C}$. It is defined as the set of all $z$ such that
+\begin{equation}
+	z = a+ib,
+	\label{eq:complex_number}
+\end{equation}
+where $a,b\in\mathbb{R}$ and $i=\sqrt{-1}$. We call $a$ the \emph{real component} of $z$, and $b$ its \emph{imaginary component}\footnote{There is nothing more ``real'' about real numbers than imaginary numbers, but unfortunately that's the terminology we're stuck with \shrug}. These numbers appear a lot all throughout the exact sciences (but especially in physics and engineering), so we must at the very least learn their basic properties.
+
+It is not so obvious that we can add two different kinds of numbers together, but it works (the linear algebra chapter sheds more light on this idea). What is important is that we always keep these two parts separated. We see this when we add together two complex numbers $z_{1},z_{2}$:
+\begin{equation}
+	z = z_{1}+z_{2} = \left( a_{1}+b_{1}i \right) + \left( a_{2}+b_{2}i \right) = \left( a_{1}+a_{2} \right) + \left( b_{1}+b_{2} \right)i.
+	\label{eq:complex_addition}
+\end{equation}
+The real part of $z$ is therefore $a_{1}+b_{1}$, and its imaginary part is $b_{1}+b_{2}$.
+
+What happens when we multiply two complex numbers? Let's check:
+\begin{align}
+	z = z_{1}z_{2} &= \left( a_{1}+b_{1}i \right)\left( a_{2}+b_{2}i \right)\nonumber\\
+	&= a_{1}a_{2} + a_{1}b_{2}i + a_{2}b_{1}i + b_{1}b_{2}i^{2}\nonumber\\
+	&= a_{1}a_{2} + a_{1}b_{2}i + a_{2}b_{1}i - b_{1}b_{2}\nonumber\\
+	&= \left( a_{1}a_{2} - b_{1}b_{2} \right) + \left( a_{1}b_{2} + a_{2}b_{1} \right)i.
+	\label{eq:complex_product}
+\end{align}
+We see that we can still separate the real part and imaginary part of the result. What happens in the case of two real numbers? For real numbers $b=0$, and thus \eqref{complex_product} devolves to $z=a_{1}a_{2}\in\mathbb{R}$, which is exactly what we expect: multiplying two real numbers yields their product, which is a real number. Notice that this doesn't happen with purely imaginary numbers: multiplying together two imaginary numbers (i.e. numbers for which $a=0$) results in a real number. Will get to understand why this happens very soon.
+
+When discussing real numbers sometimes we like to refer to their \textit{magniture}, i.e. their absolute value. With complex numbers this is defined as
+\begin{equation}
+	|z| = \sqrt{a^{2}+b^{2}},
+	\label{eq:complex_magnitude}
+\end{equation}
+i.e. in a sense, to get the magnitude of a complex number we imagine its two components as being perpendicular and calculate the length of the resulting hypotenous (cf.\ the Pythagorean theorem). In fact, this is one very useful interpertation of complex numbers, which we will explore in depth in the next subsection.
+
+A very important operation that can be applied to complex numbers is \emph{conjugation}. The conjugate of a complex number $z=a+bi$ is defined as
+\begin{equation}
+	\conj{z} = a-bi,
+	\label{eq:complex_conjugation}
+\end{equation}
+i.e. conjugating a number is simply negating its imaginary part. When we multiply a complex number by its own complex conjugate we get
+\begin{equation}
+	z\conj{z} = (a+bi)(a-bi) = a^{2} + abi - abi - b^{2}i^{2} = a^{2}+b^{2},
+	\label{eq:conjugate_product}
+\end{equation}
+i.e. $z\conj{z} = |z|^{2}$. The inverse of a complex number can be expressed as
+\begin{equation}
+	z^{-1} = \frac{\conj{z}}{|z|^{2}}.
+	\label{eq:complex_inverse}
+\end{equation}
+
+\subsection{Geometric approach}
+As alluded to in the previous subsection, we can interpret a complex number $z=a+bi$ as two components in a 2-dimentional space, in which the horizontal axis represents real components, and the vertical access represents imaginary components:
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\pgfmathsetmacro{\a}{2}
+		\pgfmathsetmacro{\b}{1.5}
+		\pgfmathsetmacro{\t}{atan2(\b,\a)}
+		\begin{axis}[
+			complex plane,
+			width=10cm, height=10cm,
+			xtick={-3,-2.5,...,3},
+			xticklabels={},
+			extra x ticks={\a},
+			extra x tick labels={$a$},
+			ytick={-3,-2.5,...,3},
+			yticklabels={},
+			extra y ticks={\b},
+			extra y tick labels={$b$},
+		]
+		\draw[vector, xred] (0,0) -- node[midway, above, rotate=\t] {$|z|=\sqrt{a^{2}+b^{2}}$} (\a,\b) node[right] {$z=a+bi$};
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}

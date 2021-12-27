@@ -328,62 +328,14 @@
 
 % Chapters
 \setcounter{chapter}{-1}
-\input{chapters/intro.tex}
 
-% For tests
-\chapter{This is a Test Title}
-\section{The Foo and the Bar}
-\subsection{The Foo; or: Why Does a Fish?}
-\Blindtext
-\begin{definition}{The Foo}{}
-	A Foo is simply a thing, i.e.
-	\begin{equation}
-		e^{i\pi} = -e^{i\tau} = -1.
-		\label{eq:a thing}
-	\end{equation}
-\end{definition}
-\Blindtext[1]
-\begin{example}{A Bla which is not a Foo}{}
-	Is there even such a thing? Consider
-	\begin{equation*}
-		f(x) = \sin(x)+5x^{2}.
-	\end{equation*}
-\end{example}
-\subsection{The Bar, the One and Only}
-\Blindtext[3]
-\begin{note}{Something to Consider}{}
-	Bla bla bla, yada yada yada.
-	~\\
-	~\\
-	More lines.
-\end{note}
-\Blindtext[2]
+% Introduction
+\input{chapters/intro/preface.tex}
+%\input{chapters/intro/math_symbols_sets.tex}
+%\input{chapters/intro/relations_functions.tex}
+%\input{chapters/intro/polynomials.tex}
+%\input{chapters/intro/exponentials_logarithms.tex}
+%\input{chapters/intro/trigonomentry.tex}
+\input{chapters/intro/complex_numbers.tex}
 
-In the middle of this random Lorem Ipsum, there are some other words! This is refreshing, isn't it? Any way, this is used to test some \emph{highlighting} and \emph{indexing} of words. I hope it works. Well, it doesn't. I need to check how to make the marginnotes to go to the left side in odd pages.
-
-\Blindtext[2]
-\begin{challange}{Generalize this thing}{}
-	In 2D, the distance between two points $\bm{A}=(A_{x},A_{y})$ and $\bm{B}=(B_{x},B_{y})$ is
-	\begin{equation}
-		|AB| = \sqrt{(A_{x}-B_{x})^{2} + (A_{y}-B_{y})^{2}}.
-		\label{eq:dist2D}
-	\end{equation}
-	Generalize this to 3D and to $N$D, where $N\in\mathbb{N}$.
-\end{challange}
-
-\Blindtext[1]
-
-As you probably learned in school, a \emph{triangle} is a shape with three sides. An example of a triangle can be seen in \xref{triangle}.
-
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}
-		\draw[thick, fill=xblue!50] (0,0) node [left] {$A$} -- (1,2) node [above] {$B$} -- (2,-1) node [right] {$C$} -- cycle;
-	\end{tikzpicture}
-	\caption{This is a triangle.}
-	\label{fig:triangle}
-\end{figure}
-
-\stepcounter{chapter}
-\printindex
 \end{document}

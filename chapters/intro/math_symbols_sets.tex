@@ -1,0 +1,608 @@
+\section{Mathematical Symbols and Sets}
+\subsection{Logical Statements and their Truth Value}
+We start our discussion with the simplest mathematical concept: a \emph{proposition}. A proposition is simply a statement that might be either \true\ or \false.
+\begin{example}{Truth of propositions}{}
+	\begin{itemize}
+		\item $3>1$ (\true)
+		\item $-2=5-7$ (\true)
+		\item $7<5$ (\false)
+		\item The radius of the earth is bigger than that of the moon. (\true)
+		\item The word `House' starts with the letter `G'. (\false)
+	\end{itemize}
+\end{example}
+
+We can group together propositions using \emph{logical operators}. Two of the most common logical operators are \emph{AND} and \emph{OR}.
+
+The \AND{} operator returns a \true\ statement only if \textbf{both} the statements it groups are themselves \true, otherwise it returns \false.
+
+\begin{example}{The AND operator}{}
+	\begin{itemize}
+		\item $2+4=6$ is \true, $4-2=2$ is \true. $\left(2+4=6\ \text{\AND{}}\ 4-2=2\right)$ is therefore \true.
+		\item $2+4=6$ is \true, $2>6$ is \false. $\left(2+4=6\ \text{\AND{}}\ 2>6\right)$ is therefore \false.
+		\item $\frac{10}{2}=1$ is \false, $2^{4}=16$ is \true. $\left( \frac{10}{2}=1\ \text{\AND{}}\ 2^{4}=16 \right)$ is therefore \false.
+		\item $7<5$ is \false, $10+2=13$ is \false. $\left( 7<5\ \text{\AND{}}\ 10+2=13 \right)$ is therefore \false.
+	\end{itemize}
+\end{example}
+
+The \OR{} operator returns \true\ if \textbf{at least} one of the statements it groups is true.
+\begin{example}{The OR operator}{}
+	\begin{itemize}
+		\item $2+4=6$ is \true, $4-2=2$ is \true. $\left(2+4=6\ \text{\OR{}}\ 4-2=2\right)$ is therefore \true.
+		\item $2+4=6$ is \true, $2>6$ is \false. $\left(2+4=6\ \text{\OR{}}\ 2>6\right)$ is therefore \true.
+		\item $\frac{10}{2}=1$ is \false, $2^{4}=16$ is \true. $\left( \frac{10}{2}=1\ \text{\OR{}}\ 2^{4}=16 \right)$ is therefore \true.
+		\item $7<5$ is \false, $10+2=13$ is \false. $\left( 7<5\ \text{\OR{}}\ 10+2=13 \right)$ is therefore \false.
+	\end{itemize}
+\end{example}
+
+The behaviour of both operators can be summarized using a \emph{truth table} (see \tabref{AND_OR_truth_table} below).
+\begin{table}[H]
+	\centering
+	\caption{The truth table for the operators \AND{} and \OR{}.}
+	\label{tab:AND_OR_truth_table}
+	\begin{tabular}{llll}
+		\toprule
+		$A$ & $B$ & $A$ AND $B$ & $A$ OR $B$\\
+		\midrule
+		\true & \true & \true & \true \\
+		\true & \false & \false & \true \\
+		\false & \true & \false & \true \\
+		\false & \false & \false & \false \\
+		\midrule
+	\end{tabular}
+\end{table}
+
+When writing, it is convinient to use \emph{notations} to represent operators: the \AND{} operator is denoted by $\opand$, while the \OR{} operator is denoted by $\opor$.
+
+\begin{example}{Using the notations for \AND{} and \OR{}}{}
+	\begin{align*}
+		(\falseprop{2+2=5}) &\opand (\trueprop{1-1=0}) \Rightarrow \false\\
+		(\falseprop{2+2=5}) &\opor  (\trueprop{1-1=0}) \Rightarrow \true
+	\end{align*}
+\end{example}
+
+\subsection{Common mathematical notations}
+
+Several more common mathematical notations are given in \tabref{common_math_notations}.
+  
+\begin{table}[H]
+	\centering
+	\caption{Common Mathematical NotationsUsed in this Book.}
+	\label{tab:common_math_notations}
+	\begin{tabular}{ll}
+		\toprule
+		Symbol & In words\\
+		\midrule
+		$\neg a$ & \textbf{not} $a$\\
+		$a \opand b$ & $a$ \textbf{and} $b$\\
+		$a \opor b$ & $a$ \textbf{or} $b$\\
+		$a \Rightarrow b$ & $a$ \textbf{implies} $b$\\
+		$a \Leftrightarrow b$ & $a$ \textbf{is equivalent to} $b$\\
+		$\forall x$ & \textbf{For all} $x$ (...)\\
+		$\exists x$ & \textbf{There exists} $x$ \textbf{such that} (...)\\
+		$a\defeq b$ & $a$ \textbf{is defined to be} $b$\\
+		\midrule
+	\end{tabular}
+\end{table}
+
+The notation $\Rightarrow$ need a bit of clarification: implication means that we can directly derive a proposition from another proposition. For example, if $x=3$ then $x>2$. The opposite implication can be a \false{} statemt, i.e. for the example above $x>2$ does not imply $x=3$ (denoted as $x>2 \nRightarrow x=3$). Sometimes implication is expressed by using the word \textit{if}: in the above example $x>2$ if $x=3$, but the other way around is not \true{}.
+
+We say that two propositions are \emph{equivalent} when they imply each other. For example: $x=2$ implies that $\frac{x}{2}=1$, while $\frac{x}{2}=1$ implies that $x=2$. We can write this as
+\[
+	\frac{x}{2}=1 \Leftrightarrow x=2.
+\]
+Instead of the word \textit{equivalent}, the phrase \textit{if and only if} (sometimes shortened to \emph{iff}) is commonly used, e.g.
+\[
+	x=2\ \text{iff}\ \frac{x}{2}=1.
+\]
+
+\subsection{Sets and subsets}
+The concept of \emph{sets} is perhaps one of the most basic ideas in modern mathematics. Much of the material convered in this book will be built upon sets and their properties. However, as with the rest of the material presented here - our description of sets will not be thorough nor percise.
+
+For our purposes, a set is a collection of \emph{elements}. These elements can be any concept - be it physical (a chair, a bicycle, a tapir) or abstract (a number, an idea). However, we will consider only sets comprised of numbers. Sets can have finite of infinite number of elements in them.
+
+We denote sets by using curly brackets, and if the number of elements in them is not too big - we display the elements, separated by commas, inside the brackets. In other cases we can express the sets as a sentence or a mathematical proposition.
+
+\begin{example}{Simple sets}{}
+	\[
+		\left\{ 1,2,3,4 \right\}\qquad\left\{ -4,\frac{3}{7},0,\pi,0.13,-2.5,\frac{e}{3},2^{-\pi} \right\}\qquad\left\{ \text{all even numbers} \right\}
+	\]
+\end{example}
+
+Sets have two important properties:
+\begin{enumerate}
+	\item Elements in a set do not repeat.
+	\item The order of elements in a set does not matter.
+\end{enumerate}
+
+\begin{example}{Important set properties}{}
+	Examples demonstrating the two afforementioned important properties of sets:
+	\begin{enumerate}
+		\item The following is not a proper set:
+		\[
+			\left\{ 1,1,0,1,0,0,-1,0,0,-1,-1,1 \right\}
+	\]
+
+		\item The following sets are all identical:
+		\[
+			\left\{ 1,2,3,4 \right\}\qquad\left\{ 1,3,2,4  \right\}\qquad\left\{ 3,4,1,2 \right\}\qquad\left\{ 1,3,2,4 \right\}\qquad\left\{ 4,3,2,1 \right\}
+		\]
+	\end{enumerate}
+	
+\end{example}
+
+Sets can be denoted using \emph{conditions}, with the symbol $|$ representing the phrase "such that".
+
+\begin{example}{Defining a set using a condition}
+	The following set contains all the odd whole numbers between $0$ and $10$, including both:
+	\[
+		\left\{ 0 < x < 10 \mid x\ \text{is an odd number}\right\}.
+	\]
+	The definition of this set can be read as
+
+	\vspace{3mm}
+	\centering
+	\textit{all numbers $x$ that are bigger than $0$ and are smaller than $10$, such that $x$ is odd.}
+
+	\flushleft{}
+	(note that the requirement of $x$ to be an odd number means that it is neccessarily a whole number as well)
+
+	\vspace{1em}
+	This set can be written explicitly as
+	\[
+		\left\{ 1,3,5,7,9 \right\}.
+	\]
+\end{example}
+
+Sets are usually denoted with an uppercase latin letter ($A,B,C,\dots$), while their elements are denoted as lowercase letters ($a,b,\alpha,\phi,\dots$). When we want to denote that an element belongs to a set we use the following symbol: $\in$. Conversly, $\notin$ is used to denote that an element \textit{does not} belong to a set.
+	
+\begin{example}{Elements in sets}{}
+	For the two sets
+	\[
+		A = \left\{ 1,2,5,7 \right\},\quad B=\left\{ \text{even numbers} \right\},
+	\]
+	all the following propostions are \true{}:
+	\begin{align*}
+		&1\in A,\quad 2\in A,\quad 5\in A,\quad 7\in A,\\
+		&2\in B,\quad 1\notin B,\quad 5\notin B,\quad 7\notin B.
+	\end{align*}
+\end{example}
+
+The number of elements in a set, also called its \emph{cardinality} is denoted using two vertical bars (similar to the way absolute values are denoted).
+
+\begin{example}{Cardinality}{}
+	For $S=\left\{ -3,0,-2,7,1,\frac{1}{2},5 \right\},\ |S|=7$.
+\end{example}
+
+An important special set is the \emph{empty set}, which is the set containing no elements. It is denoted by $\emptyset$, and has the unique property that $|\emptyset|=0$.
+
+\subsection{Intersection, union, difference and complement sets}
+
+Two sets are equal if they both contain the exact same elements and only these elements, i.e.
+\begin{equation}
+	A = B \Longleftrightarrow x\in A \Leftrightarrow x\in B.
+	\label{eq:set_equality}
+\end{equation}
+This proposition reads `The sets $A$ and $B$ are equal \underline{\textit{if and only if}} any element $x$ in $A$ is also in $B$, and any element $x$ in $B$ is also in $A$'. When all the elements of a set $B$ are also elements of another set $A$, we say that $B$ is a \emph{subset} of $A$, and we denote that as $B\subset A$. In mathematical notation, we write
+
+\begin{equation}
+	B\subset A \Leftrightarrow \forall x\in B, x\in A.
+	\label{eq:subset_def}
+\end{equation}
+i.e. $B$ is a subset of $A$ \textbf{iff} the following is true: any element in $B$ is also an element in $A$.
+
+\begin{note}{(not so) Surprising properties of subsets}{subset_properties}
+	The definion of a subset (\eqref{subset_def}) gives rise to two interesting properties:
+	\begin{itemize}
+		\item The empty set $\emptyset$ is a subset of any set.
+		\item Any set is a subset of itself.
+	\end{itemize}
+\end{note}
+
+\begin{note}{The uniqeness of $\emptyset$}{}
+	There is only a single empty set, as any set that has no elements is equivalent to any other set with no elements (i.e. they have the same elements). Due to the way subsets are defined, the empty set is a subset of any set (including itself!).
+\end{note}
+
+Of course, since we have a definition for a subset, the opposite concept also exists: if $B$ is a subset of $A$, then we say that $A$ is a \emph{superset} of $B$.
+
+A very useful way of illustrating the relationship beyween two or more sets is by using \emph{Venn diagrams}, where sets are represented by circles (or other 2D shapes).
+
+\begin{example}{Subsets and Venn diagrams}{}
+	A Venn diagram depicting the set $\textcolor{xblue}{B=\left\{ 0,2 \right\}}$ as a subset of $\textcolor{xred}{A=\left\{ 0,1,2,3,4,\dots,9 \right\}}$:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\def\firstcircle{(0,0) circle (2)}
+			\def\secondcircle{(0.3,0.8) circle (1)}
+			\fill[xred!50]\firstcircle;
+			\fill[xblue!50]\secondcircle;
+			\Large
+			\draw \firstcircle node[below left, xshift=-18mm, yshift=11mm] (A) {};
+			\draw \secondcircle node[right of=A, xshift=7mm] (B) {};
+
+			% Elements
+			\small
+			\tikzset{node distance={5mm}}
+			\node at (0.57,1.02) {0};
+			\node at (-1.04,-1.25) {1};
+			\node at (0.16,0.4) {2};
+			\node at (-0.1,-0.82) {3};
+			\node at (-0.92,-0.49) {4};
+			\node at (-1.36,0.06) {5};
+			\node at (1.13,-1.16) {6};
+			\node at (1.50,0.62) {7};
+			\node at (-1.08,1.3) {8};
+			\node at (1.32,-0.79) {9};
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+If for two sets $A,B$ both $A\subset B$ and $B\subset A$, then $A=B$. We can write this fact as a methematical proposition:
+\begin{equation}
+	(A\subset B) \opand (B\subset A) \Leftrightarrow A=B.
+	\label{eq:subset_equal}
+\end{equation}
+
+The \emph{intersection} of two sets $A$ and $B$, denoted $A\cup B$, is the set of all elements $x$ such that $x\in A$ \AND{} $x\in B$:
+\begin{equation}
+	A\cup B = \left\{ x \mid x\in A \opand x\in B \right\}.
+	\label{eq:intersection}
+\end{equation}
+
+\begin{example}{Intersection of sets}{}
+	The intersection of the sets $A=\left\{ 1,2,3,4 \right\}$ and $B=\left\{ 3,4,5,6 \right\}$ is the set $A\cup B=\left\{ 3,4 \right\}$.
+
+	The intersection of the sets $C=\left\{ 0,1,2,6,7 \right\}$ and $D=\left\{ 3,9,-4,5 \right\}$ is the empty set $\emptyset$, since no element is in both sets.
+\end{example}
+  
+The following Venn diagram depicts the intersection of two sets (the green area):
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\def\firstcircle{(0,0) circle (2)}
+		\def\secondcircle{(2.3,0) circle (1.5)}
+		\fill[xred!50]\firstcircle;
+		\fill[xblue!50]\secondcircle;
+		\begin{scope}
+			\clip \firstcircle;
+			\fill[xgreen!50]\secondcircle;
+		\end{scope}
+		\draw\firstcircle node[left] {$A$};
+		\draw\secondcircle node[right] {$B$};
+		\draw (1.4,-0.2) node[above] {$A\cap B$};
+	\end{tikzpicture}
+\end{figure}
+
+\begin{note}{Disjoint sets}{}
+	When the intersection of two sets is the empty set, we say that the set is \emph{disjoint}.
+\end{note}
+
+The \emph{union} of two sets (denoted using the symbol $\cup$) is the set composed of all the elements that belong to any of the sets, including elements that are in both sets:
+\begin{equation}
+	A\cup B = \left\{ x \mid x\in A \opor x\in B \right\}.
+	\label{eq:union}
+\end{equation}
+
+\begin{example}{Union of sets}{}
+	The union of the sets $A=\left\{ 1,2,3,4 \right\}$ and $B=\left\{ 3,4,5,6 \right\}$ is the set $A\cup B=\left\{ 1,2,3,4,5,6 \right\}$.
+
+	The union of the sets $C=\left\{ 0,1,2,6,7 \right\}$ and $D=\left\{ 3,9,-4,5 \right\}$ is the set $C\cup D=\left\{ 0,1,2,3,-4,5,6,7,9 \right\}$.
+\end{example}
+
+The following Venn diagram depicts the union of two sets (the purple area):
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\def\firstcircle{(0,0) circle (2)}
+		\def\secondcircle{(2.3,0) circle (1.5)}
+		\fill[xpurple!50, draw=black]\firstcircle;
+		\fill[xpurple!50, draw=black]\secondcircle;
+		\draw\firstcircle node {$A$};
+		\draw\secondcircle node {$B$};
+		\node[text=xpurple,font=\Large] at (1.5cm,2.5cm) {$A\cup B$};
+	\end{tikzpicture}
+\end{figure}
+
+Naively, the number of elements of a union $A\cup B$ is simply the sum of the number of elements in $A$ and the number of elements in $B$. However, this naive approach might count the elements in both sets twice: once for $A$ and once for $B$ (see \figref{union_counting}) - this is exactly the set $A\cap B$. We therefore subtract the number of elements in $A\cap B$ and get
+\begin{equation}
+	|A\cup B| = |A|+|B|-|A\cap B|.
+	\label{eq:number_of_elements_in_union}
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\Large
+		\tikzset{node distance=18mm}
+		\draw[xred] (-1cm,0) circle (2) node (A) {};
+		\draw[xblue] (1cm,0) circle (1.5) node (B) {};
+		\node[xred, above of=A, yshift=5mm] {$A$};
+		\node[xblue, above of=B]{$B$};
+
+		\def\rdot{0.1}
+		% A
+		\fill[xred] (-1.15,-0.12) circle (\rdot);
+		\fill[xred] (-1.82,-1.01) circle (\rdot);
+		\fill[xred] (-1.28,-1.03) circle (\rdot);
+		\fill[xred] (-1.68,+\rdot) circle (\rdot);
+		\fill[xred] (-0.51,-1.25) circle (\rdot);
+		\fill[xred] (-1.41,+0.25) circle (\rdot);
+		\fill[xred] (-1.60,+1.25) circle (\rdot);
+		%	B
+		\fill[xblue] (1.70,0.54) circle (\rdot);
+		\fill[xblue] (1.48,0.06) circle (\rdot);
+		\fill[xblue] (1.51,-0.94) circle (\rdot);
+		%fill[
+		\fill[xgreen!75] (-0.16,0.24) circle (\rdot);
+		\fill[xgreen!75] (0.13,0.53) circle (\rdot);
+		\fill[xgreen!75] (0.06,-0.78) circle (\rdot);
+	\end{tikzpicture}
+	\caption{Counting the number of elements in the union of two sets: \textcolor{xred}{$A$} has 10 elements (\textcolor{xred}{red} + \textcolor{xgreen}{green} dots), while \textcolor{xblue}{$B$} has 6 elements (\textcolor{xblue}{blue} + \textcolor{xgreen}{green} dots). If we count both we get 16 elements, but this counts the joint elements (\textcolor{xgreen}{green dots}) twice. Therefore we should subtract the number of joint points, and get that there are only 13 elements in the union.}
+	\label{fig:union_counting}
+\end{figure}
+
+When two sets $A,B$ are disjoint, then $|A\cap B|=0$, and so $|A\cup B| = |A|+|B|$.
+
+The definitions of intersections and unions can be easily extended to any whole number of sets.
+
+\begin{example}{Intersection and union of 3 sets}{}
+	The intersection of 3 sets $A=\left\{ 1,2,3,4,5 \right\},\ B=\left\{ -2,-1,0,1,2 \right\}$ and $C=\left\{ 2,3,4,5,6 \right\}$ is the set of all elements that are in $A$ and in $B$ and in $C$, i.e.\ the set $A\cap B\cap C = \left\{2\right\}$.
+
+	The union of these sets is the set of all elements that are in either of the sets, i.e. $A\cup B\cup C = \left\{ -2,-1,0,1,2,3,4,5,6 \right\}$.
+\end{example}
+
+The most general definition of an intersection of $n$ sets (where $n$ is a whole number), which we will call $A_{1},A_{2},A_{3},\cdots,A_{n}$ is
+\begin{equation}
+	A_{1}\cap A_{2}\cap A_{3}\cap \cdots \cap A_{n} = \left\{ x \mid (x\in A_{1}) \opand (x\in A_{2}) \opand (x\in A_{3}) \opand \cdots \opand (x \in A_{n})\right\}.
+	\label{eq:intersection_n_sets}
+\end{equation}
+
+the left hand side of \eqref{intersection_n_sets} can be written as
+\begin{equation}
+	A_{1}\cap A_{2}\cap A_{3}\cap \cdots \cap A_{n} = \bigcap\limits_{i=1}^{n}A_{i}.
+	\label{eq:intersection_n_sets_big_notation}
+\end{equation}
+(clarifying the notation? i.e. indexing, etc.)
+
+Similarily, the union of $n$ different sets is defined as
+\begin{align}
+	\bigcup\limits_{i=1}^{n}A_{i} &= A_{1}\cup A_{2}\cup A_{3}\cup \cdots \cup A_{n}\nonumber\\
+	&= \left\{ x \mid (x\in A_{1}) \opor (x\in A_{2}) \opor (x\in A_{3}) \opor \cdots \opor (x\in A_{n})\right\}.
+	\label{eq:union_n_sets}
+\end{align}
+
+\begin{example}{Venn diagrams: intersection and union of 3 sets}{}
+	The following Venn diagram shows all possible intersections between three sets:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\tikzset{
+				every node/.style={text=black, text opacity=1},
+			}
+			\def\sq{1.15}
+			\Large
+			\begin{scope}[blend group=hard light]
+				\fill[xred!40!white] (-\sq,\sq) circle (2) node (A) {$A$};
+				\fill[xblue!40!white] (\sq,\sq) circle (2) node (B) {$B$};
+				\fill[xgreen!40!white] (0,-\sq) circle (2) node (C) {$C$};
+			\end{scope}
+			\footnotesize
+			\node[yshift=5mm, rotate=90] at ($(A)!0.5!(B)$) {$A\cap B$};
+			\node[xshift=-4mm, yshift=-2mm, rotate=+30] at ($(A)!0.5!(C)$) {$A\cap C$};
+			\node[xshift=+4mm, yshift=-2mm, rotate=-30] at ($(B)!0.5!(C)$) {$B\cap C$};
+			\node[align=center] at (0,4mm) {$A\cap B\cap C$};
+
+		\end{tikzpicture}
+	\end{figure}
+
+	...and this Venn diagram depicts the union of the same three sets:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\tikzset{
+				every node/.style={text=black, text opacity=1},
+			}
+			\def\sq{1.15}
+			\Large
+			\fill[xpurple!40!white] (-\sq,+\sq) circle (2) node (A) {$A$};
+			\fill[xpurple!40!white] (\sq,+\sq) circle (2) node (B) {$B$};
+			\fill[xpurple!40!white] (0,-\sq) circle (2) node (C) {$C$};
+
+			\node at (0,0) {$A\cup B\cup C$};
+		\end{tikzpicture}
+	\end{figure}
+\end{example}
+
+TBW: difference, complement.
+
+Given a set $A$ with $|A|$ elements - how many different subsets does it have? We'll start by looking at a practical example: $A=\left\{ 1,2,3 \right\}$. We can immidetly see that any set which contains just one of the elements of $A$ is a subset of $A$, i.e. $\{1\},\{2\},\{3\}$ are all subsets of $A$. In addition, any set which contains only two elements from $A$ is a subset of $A$, i.e. $\left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}$. Of course, we must not forget the empty set and $A$ itself - both subsets of $A$ (see \noteref{subset_properties}). Thus altogether $A$ has $8$ subsets:
+\[
+	\emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 3 \right\}, \left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}, \left\{ 1,2,3 \right\}.
+\]
+
+Generaly, any set $A$ with $|A|$ elements has $2^{|A|}$ different subsets. The set of all these subsets is called the \emph{power set} of $A$, and is denoted as $P(A)$.
+
+\begin{example}{Power set}{power_set}
+	The power set of $A=\left\{ 1,2,3 \right\}$ is
+	\[
+		P(A) = \left\{ \emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 3 \right\}, \left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}, \left\{ 1,2,3 \right\}\right\}.
+	\]
+\end{example}
+
+\subsection{Important number sets}
+It is now time to introduce some important number sets. We begin with the simplest of these sets: the \emph{natural numbers}, denoted by $\mathbb{N}$. These are the numbers $1,2,3,4,\dots$. Adding the opposites to the natural numbers and adding $0$ to the set yields the \emph{integers}, denoted by $\mathbb{Z}$. Loosley speaking, we can define the integers as
+\begin{equation}
+	\mathbb{Z}=\left\{ 0,\pm1,\pm2,\pm3,\pm4,\dots \right\}.
+	\label{eq:integers}
+\end{equation}
+
+This makes the integers a superset of the natual numbers, i.e.
+\begin{equation}
+	\mathbb{N} \subset \mathbb{Z}.
+	\label{eq:naturals_subset_integers}
+\end{equation}
+
+One can think of the integers as all the number needed for solving an equation of the form $a+x=b$, where $a$ and $b$ are integers themselves, and $x$ is an unknown. No matter which integer values we put in $a$ and $b$, the unknown $x$ will always be an integer as well (whether it be positive, negative or zero depends on the values of $a$ and $b$). However, when one wishes to solve an equation fo the sort $ax=b$, the integers are not longer sufficient: for example, if $a=2$ and $b=1$, then $x$ is not an integer.
+
+To solve $ax=b$ (where $a,b\in\mathbb{Z}$) we must introduce the \emph{rational numbers}: numbers with values that are ratios of two integers. We denote the set of rational numbers with the symbol $\mathbb{Q}$, and write
+\begin{equation}
+	\mathbb{Q} = \left\{ \frac{a}{b} \ \middle\vert\ a,b\in\mathbb{Z} \opand b\neq0  \right\}.
+	\label{eq:rationals}
+\end{equation}
+(TBW: discuss briefly why $b\neq0$)
+
+For some combinations of $a$ and $b$ the ratio $\frac{a}{b}$ is an integer. For example: $\frac{3}{1},\ \frac{8}{4},\ \frac{-2}{2}$. This makes the integers a subset of the rational numbers, i.e.
+\begin{equation}
+	\mathbb{Z}\subset\mathbb{Q}.
+	\label{eq:integers_subset_rationals}
+\end{equation}
+
+About 2500 years ago it was discovered that some numbers are not rational (and thus also not integers). The most famous example is the number $\sqrt{2}$ - there are not two integers $a,b$ such that $\frac{a}{b}=\sqrt{2}$. We call some of these numbers \emph{algebraic numbers} (denoted by $\mathbb{A}$), and what makes them special is that they are solutions to \emph{polynomial equations}, which we will not define yet (see section xxx). Instead, here is an example for a 2nd order polynomial equation (called a \emph{quadratic equation}):
+\begin{equation}
+	x^{2} - 2x - 1 = 0.
+	\label{eq:quadratic_equation}
+\end{equation}
+
+Similar to what we saw before, the rational numbers are a subset of the algebraic numbers, i.e.
+\begin{equation}
+	\mathbb{Q}\subset\mathbb{A}.
+	\label{eq:rationals_subset_algebraic}
+\end{equation}
+
+The algebraic numbers together with other non-rational numbers, such as $\pi$ and $e$, form the set of \emph{real numbers}, denoted as $\mathbb{R}$. The definition of real numbers is way beyond the scope of this book, but it is important to understand that the progression we used so far still holds, i.e.
+\begin{equation}
+	\mathbb{A}\subset\mathbb{R}.
+	\label{eq:algebraic_subset_reals}
+\end{equation}
+
+The final set of numbers we will touch upon here is the set of \emph{complex numbers}, denoted $\mathbb{C}$, which we can define as
+\begin{equation}
+	\mathbb{C} = \left\{ a+ib \mid a,b\in\mathbb{R},\ i=\sqrt{-1} \right\}.
+	\label{eq:complex_numbers_def}
+\end{equation}
+
+When $b=0$, \eqref{complex_numbers_def} becomes just a single real number - and so
+\begin{equation}
+	\mathbb{R}\subset\mathbb{C}.
+	\label{eq:reals_subset_complex}
+\end{equation}
+(chapter xxx is dedicated to complex numbers)
+
+Equations \ref{eq:naturals_subset_integers}-\ref{eq:reals_subset_complex} can be merged together to the following single equation:
+\begin{equation}
+	\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{A} \subset \mathbb{R} \subset \mathbb{C}.
+	\label{eq:numbers_subsets}
+\end{equation}
+
+There are more advanced constructions that generalize the complex numbers (i.e. create supersets of the complex number set). These include \emph{quaternions} and \emph{Clifford algebras}. However, as stated before, we will not consider them in this book.
+
+\subsection{Intervals on the real number line}
+An important concept that is easily defined over the set $\mathbb{R}$ is an \emph{interval}. A \emph{closed interval} $\left[ a,b \right]$ is a subset of $\mathbb{R}$ which is defined as
+\begin{equation}
+	\left[ a,b \right] = \left\{ x\in\mathbb{R} \mid a\leq x\leq b \right\}.
+	\label{eq:closed_interval}
+\end{equation}
+
+An \emph{open interval} $\left( a,b \right)$ is a subset of $\mathbb{R}$ which is defined as
+\begin{equation}
+	\left( a,b \right) = \left\{ x\in\mathbb{R} \mid a<x<b \right\}.
+	\label{eq:open_interval}
+\end{equation}
+
+The difference between closed and open intervals is the inclusion and exclusion, respectyively, of the edge point: in a closed interval the points $a,b$ are included, while they are not included in an open interval. Of course, we can also create \emph{half open intervals}, i.e.
+\begin{align}
+	\left[ a,b \right) &= \left\{ x\in\mathbb{R} \mid a\leq x < b \right\},\nonumber\\
+	\left( a,b \right] &= \left\{ x\in\mathbb{R} \mid a < x\leq b \right\},
+	\label{eq:half_open_intervals}
+\end{align}
+where the first interval includes $a$ but not $b$, and the second interval includes $b$ but not $a$.
+
+\vspace{2em}
+\begin{example}{Intervals}{intervals}
+	Intervals can be drawn as colored line segments on top of the real number line:
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[node distance=15mm]
+			\begin{axis}[Interval]
+				% NOTE: there must be a way to set this globally!
+				\addplot[xred] table[y expr=4, meta index=1, header=false] {
+				-2 c
+				3 c
+				} node [right] {$\left[ -2,3 \right]$};
+				\addplot[xblue] table[y expr=3, meta index=1, header=false] {
+				-4 o
+				0 o
+				} node [right] {$\left( -4,0 \right)$};
+				\addplot[xgreen] table[y expr=2, meta index=1, header=false] {
+				-1 c
+				4 o
+				} node [right] {$\left[ -1,4 \right)$};
+				\addplot[xpurple] table[y expr=1, meta index=1, header=false] {
+				1 o
+				3 c
+				} node [right] {$\left( 1,3 \right]$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+
+	Note how a full point denotes a closed edge, while an empty point denotes an open edge.
+\end{example}
+
+In some cases, it is necessary to use intervals that are infinite in one side, i.e. the left or the right edge are at infinity. In these cases, we use the symbol $\infty$ to denote infinity, and always keep the interval open at that end:
+\begin{align}
+	\left( -\infty,b \right) &= \left\{ x \mid x<b \right\},\nonumber\\
+	\left( -\infty,b \right] &= \left\{ x \mid x\leq b \right\},\nonumber\\
+	\left( a,\infty \right) &= \left\{ x \mid x>a \right\},\nonumber\\
+	\left[ a,\infty \right) &= \left\{ x \mid x\geq a \right\}.
+	\label{eq:infinite_intervals}
+\end{align}
+
+\subsection{Cartesian Products}
+The \emph{Cartesian product}\index{Cartesian product} of two sets $A,B$ (denoted $A\times B$) is the set of all possible \emph{ordered} pairs, where the first component is an element of $A$ and the second component is an element of $B$:
+\begin{equation}
+	A\times B = \left\{ (a,b) \mid a\in A,\ b\in B \right\}.
+	\label{eq:Cartesian_product}
+\end{equation}
+
+\begin{example}{Cartesian products}{Cartesian_products}
+	Consider $A=\left\{ 1,2,3 \right\},\ B=\left\{ x, y \right\}$. Then
+	\[
+		A\times B = \left\{ \left( 1,x \right),\ \left( 1,y \right),\ \left( 2,x \right),\ \left( 2,y \right),\ \left( 3,x \right),\ \left( 3,y \right) \right\}
+	\]
+\end{example}
+
+The concept of `ordered pairs' is paramount: if we reverse the order of the elements in a pair the result might not be in the Cartesian product. We therefore say that the Cartesian product is \emph{not commutative}.
+
+\begin{example}{Non-commutivity of the Cartesian product}{}
+	The elements $(x,1),\ (y,1),\ (x,2)$ and so on \textbf{are not} in the Cartesian product $A\times B$ as defined in the previous example, since in each one of the pairs the first element is from $B$ and the second element is from $A$.
+\end{example}
+
+The number of elements in a Cartesian product is the product of the number of elements in each of the sets it is composed of, i.e.
+\begin{equation}
+	|A\times B| = |A|\cdot|B|.
+	\label{eq:number_of_elements_Cartesian_product}
+\end{equation}
+
+\begin{example}{Number of elements in a Cartesian product}{}
+	The Cartesian product described in the previous two examples has in total $3\cdot2=6$ elements, as seen in \exampleref{Cartesian_products}.
+\end{example}
+
+As with intersections and unions, the definition of a Cartesian product can be expanded into any natural number of sets:
+\begin{equation}
+	A_{1}\times A_{2}\times \cdots \times A_{n} = \left\{ \left( x_{1},x_{2},\dots,x_{n} \right) \mid x_{1}\in A_{1},\ x_{2}\in A_{2},\ \dots, x_{n}\in A_{n} \right\}.
+	\label{eq:Cartesian_product_multiple_sets}
+\end{equation}
+
+\begin{example}{Cartesian product of three sets}{}
+	The Cartesian product of the sets $A=\{1,2,3\},\ B=\{x,y\},\ C=\{\alpha,\beta\}$ is
+	\begin{align*}
+		A\times B\times C = \{
+			&(1,x,\alpha),\ (1,x,\beta),\ (1,y,\alpha),\ (1,y,\beta)\\
+			&(2,x,\alpha),\ (2,x,\beta),\ (2,y,\alpha),\ (2,y,\beta)\\
+			&(3,x,\alpha),\ (3,x,\beta),\ (3,y,\alpha),\ (3,y,\beta)
+		\}.
+	\end{align*}
+\end{example}
+
+A special case of Cartesian products are those products for which all the sets composing them are the same set. We denote these as the respective integer power, for example the Cartesian product $\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{2}$, the Cartesian product $\mathbb{R}\times\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{3}$, etc.
+
+Specifically, the Cartesian product $\Rs{2}$ can be interpreted as the two-dimensional \emph{Euclidean space}, which is the space used to draw graphs in one-dimensional calculus and shapes in two-dimensional analytican geometry. We will explore this idea (and higher dimensional spaces) in more details in upcoming chapters.
