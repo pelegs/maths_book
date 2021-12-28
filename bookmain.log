@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  28 DEC 2021 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  28 DEC 2021 20:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1658,13 +1658,19 @@ File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
 (./chapters/intro/preface.tex
 Chapter 0.
-<figures/chapters/tapir_rainbow.pdf, id=59, 123.26372pt x 95.3452pt>
+<figures/chapters/tapir_rainbow.pdf, id=131, 123.26372pt x 95.3452pt>
 File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_rainbow.pdf>
 Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
  26.
 (pdftex.def)             Requested size: 184.89511pt x 143.01743pt.
-) (./chapters/intro/complex_numbers.tex
+) (./chapters/intro/math_symbols_sets.tex
+LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 6
+.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
+File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -1672,60 +1678,141 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
 es/chapters/tapir_rainbow.pdf>]
+LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
+ut line 12.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
+)
+
+LaTeX Font Warning: Font shape `U/fontawesometwo/b/n' undefined
+(Font)              using `U/fontawesometwo/m/n' instead on input line 12.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+[3]
+Underfull \vbox (badness 1137) has occurred while \output is active []
+
+ [4]
+Underfull \vbox (badness 3547) has occurred while \output is active []
+
+ [5]
+[6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+[10] [11]
+
+Package pgfplots Warning: scatter/classes: can't find class for 'c'!? Please ma
+ke sure you have specified 'scatter src=explicit symbolic'. Ignoring class 'c' 
+(this message will not come again). on input line 543.
+
+ [warning /pgfplots/warning/scatter classes no such class]
+[12] [13]) (./chapters/intro/relations_functions.tex
+Underfull \vbox (badness 6641) has occurred while \output is active []
+
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+[17] [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20])
+(./chapters/intro/polynomials.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+[22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+Overfull \hbox (7.24295pt too wide) in paragraph at lines 196--196
+[][][][][]|[]$[] []$[]| 
+ []
+
+[24]) (./chapters/intro/exponentials_logarithms.tex [25]
+Underfull \vbox (badness 5231) has occurred while \output is active []
+
+ [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+[29]) (./chapters/intro/trigonomentry.tex [30] [31])
+(./chapters/intro/complex_numbers.tex [32] [33]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [2] [3]
+ [34] [35]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `eq:xy_P' on page 4 undefined on input line 141.
-
-
+ [36]
+[37]
 Overfull \hbox (17.97472pt too wide) detected at line 167
 []
  []
 
-
-Underfull \vbox (badness 1472) has occurred while \output is active []
-
- [4])
-[5]
+) [38]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 343.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
  (./bookmain.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 343.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 343.
 Package rerunfilecheck Info: File `bookmain.out' has not changed.
-(rerunfilecheck)             Checksum: A18DE4EC9DD1EC54D083B7603DC1DAA9;250.
+(rerunfilecheck)             Checksum: 29A66ACEFBAC9B0EDE05A912C969CF40;1643.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45480 strings out of 480997
- 1087350 string characters out of 5912179
- 1645744 words of memory out of 5000000
- 60156 multiletter control sequences out of 15000+600000
- 607818 words of font info for 184 fonts, out of 8000000 for 9000
+ 46981 strings out of 480997
+ 1112866 string characters out of 5912179
+ 1799217 words of memory out of 5000000
+ 61430 multiletter control sequences out of 15000+600000
+ 667581 words of font info for 325 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,19n,127p,815b,2424s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2019/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}</usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/kpfonts/jkpexa.pfb></usr/local/texlive/2019/tex
-mf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/2019/texmf-dis
-t/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/local/texlive/2019/texmf-dist/f
-onts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts
-/type1/public/kpfonts/jkpmne.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
-1/public/kpfonts/jkpssbn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
-public/kpfonts/jkpsy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
-/kpfonts/jkpsyb.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
-onts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (5 pages, 268056 bytes).
+ 79i,19n,127p,815b,2828s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.en
+c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
+exlive/2019/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}</usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbex.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbmi.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbne.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/kpfonts/jkpbsy.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/public/kpfonts/jkpexa.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/public/kpfonts/jkpmia.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pub
+lic/kpfonts/jkpmit8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/kpfonts/jkpmn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpf
+onts/jkpmne.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/
+jkpssbn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jk
+psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
+fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
+usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
+Output written on bookmain.pdf (38 pages, 512349 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 667 PDF objects out of 1000 (max. 8388607)
+ 563 compressed objects within 6 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 344 words of extra memory for PDF output out of 10000 (max. 10000000)
 
