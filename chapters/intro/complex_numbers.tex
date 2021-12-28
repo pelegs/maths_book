@@ -82,8 +82,9 @@ As alluded to in the previous subsection, we can interpret a complex number $z=a
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
+		\tikzstyle{every node}=[font=\large]
 		\pgfmathsetmacro{\a}{2}
-		\pgfmathsetmacro{\b}{1.5}
+		\pgfmathsetmacro{\b}{2.5}
 		\pgfmathsetmacro{\t}{atan2(\b,\a)}
 		\begin{axis}[
 			complex plane,
@@ -97,7 +98,54 @@ As alluded to in the previous subsection, we can interpret a complex number $z=a
 			extra y ticks={\b},
 			extra y tick labels={$b$},
 		]
-		\draw[vector, xred] (0,0) -- node[midway, above, rotate=\t] {$|z|=\sqrt{a^{2}+b^{2}}$} (\a,\b) node[right] {$z=a+bi$};
+		\draw[very thick, dashed, xred] (0,0) -- node[midway, above, rotate=\t] {$|z|=\sqrt{a^{2}+b^{2}}$} (\a,\b);
+		\addplot+[black, only marks, mark=*, mark options={scale=0.5, fill=black}, text mark as node=true] coordinates {
+			(\a,\b)
+		} node[above] {$z=a+bi$};
 		\end{axis}
 	\end{tikzpicture}
 \end{figure}
+
+Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We can then define $\theta$ to be the angle near the origin and $r$ the length of the hypotenous:
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\tikzstyle{every node}=[font=\large]
+		\pgfmathsetmacro{\a}{2}
+		\pgfmathsetmacro{\b}{2.5}
+		\pgfmathsetmacro{\t}{atan2(\b,\a)}
+		\begin{axis}[
+			complex plane,
+			width=10cm, height=10cm,
+			xtick={-3,-2.5,...,3},
+			xticklabels={},
+			extra x ticks={\a},
+			extra x tick labels={$a$},
+			ytick={-3,-2.5,...,3},
+			yticklabels={},
+			extra y ticks={\b},
+			extra y tick labels={$b$},
+		]
+		\draw[very thick, xred] (0,0) -- node[midway, above, rotate=\t] {$r$} (\a,\b);
+		\addplot+[black, only marks, mark=*, mark options={scale=0.5, fill=black}, text mark as node=true] coordinates {
+			(\a,\b)
+		} node[right] {$z$};
+		\draw[thick, dashed] (\a,\b) -- (\a,0);
+		\draw[thick] ({\a-0.25},0) -- ({\a-0.25},0.25) -- (\a,0.25);
+		\draw[very thick, xpurple] (0.75,0) arc (0:\t:0.75);
+		\node[xpurple] at ({cos(\t/2)},{sin(\t/2)}) {$\theta$};
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+Using \eqref{xy_P} the real and imaginary components of $z$ are
+\begin{align}
+	a &= r\cos(\theta),\nonumber\\
+	b &= r\sin(\theta),
+	\label{eq:complex_components}
+\end{align}
+and $z$ can be re-written as
+\begin{equation}
+	z = r\left( \cos(\theta) + i\sin(\theta) \right).
+	\label{eq:complex_geometric_form}
+\end{equation}
