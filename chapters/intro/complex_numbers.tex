@@ -47,9 +47,9 @@ The real part of $z$ is therefore $a_{1}+b_{1}$, and its imaginary part is $b_{1
 What happens when we multiply two complex numbers? Let's check:
 \begin{align}
 	z = z_{1}z_{2} &= \left( a_{1}+b_{1}i \right)\left( a_{2}+b_{2}i \right)\nonumber\\
-	&= a_{1}a_{2} + a_{1}b_{2}i + a_{2}b_{1}i + b_{1}b_{2}i^{2}\nonumber\\
-	&= a_{1}a_{2} + a_{1}b_{2}i + a_{2}b_{1}i - b_{1}b_{2}\nonumber\\
-	&= \left( a_{1}a_{2} - b_{1}b_{2} \right) + \left( a_{1}b_{2} + a_{2}b_{1} \right)i.
+	&= a_{1}a_{2} + ia_{1}b_{2} + ia_{2}b_{1} + i^{2}b_{1}b_{2}\nonumber\\
+	&= a_{1}a_{2} + ia_{1}b_{2} + ia_{2}b_{1} - b_{1}b_{2}\nonumber\\
+	&= \left( a_{1}a_{2} - b_{1}b_{2} \right) + i\left( a_{1}b_{2} + a_{2}b_{1} \right).
 	\label{eq:complex_product}
 \end{align}
 We see that we can still separate the real part and imaginary part of the result. What happens in the case of two real numbers? For real numbers $b=0$, and thus \eqref{complex_product} devolves to $z=a_{1}a_{2}\in\mathbb{R}$, which is exactly what we expect: multiplying two real numbers yields their product, which is a real number. Notice that this doesn't happen with purely imaginary numbers: multiplying together two imaginary numbers (i.e. numbers for which $a=0$) results in a real number. Will get to understand why this happens very soon.
@@ -148,4 +148,43 @@ and $z$ can be re-written as
 \begin{equation}
 	z = r\left( \cos(\theta) + i\sin(\theta) \right).
 	\label{eq:complex_geometric_form}
+\end{equation}
+
+Let's examine the same properties of complex numbers shown in Equations \ref{eq:complex_addition}, \ref{eq:complex_product} and \ref{eq:complex_conjugation}, and verify that they work in the geometric form of complex numbers. We start with addition (\eqref{complex_addition}):
+\begin{align}
+	z_{1}+z_{2} &= r_{1}\left[ \cos\left( \theta_{1} \right) + i\sin\left( \theta_{1} \right) \right] + r_{2}\left[ \cos\left( \theta_{2} \right) + i\sin\left( \theta_{2} \right) \right]\nonumber\\
+	&= \underbrace{r_{1}\cos\left( \theta_{1} \right)}_{a_{1}} + \underbrace{r_{2}\cos\left( \theta_{2} \right)}_{a_{2}} + i\underbrace{r_{1}\sin\left( \theta_{1} \right)}_{b_{1}} + i\underbrace{r_{2}\sin\left( \theta_{2} \right)}_{b_{2}}\nonumber\\
+&= \left( a_{1}+a_{2} \right) + i\left( b_{1}+b_{2} \right).
+	\label{eq:complex_addition_geometric}
+\end{align}
+We see that indeed, the geometric form of complex numbers adheres to the addition rule in \eqref{complex_addition}. Next is the product rule:
+\begin{align}
+	z_{1}z_{2} &= r_{1}\left[ \cos\left(\theta_{1}\right) + i\sin\left(\theta_{1}\right) \right] \cdot r_{2}\left[ \cos\left(\theta_{2}\right) + i\sin\left(\theta_{2}\right) \right]\nonumber\\
+	&= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right) + i\cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + i\sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) -\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right)  \right]\nonumber\\
+	&= r_{1}\cos\left( \theta_{1} \right)r_{2}\cos\left( \theta_{2} \right) - r_{1}\sin\left( \theta_{1} \right)r_{2}\sin\left( \theta_{2} \right) + i\left[ r_{1}\cos\left( \theta_{1} \right)r_{2}\sin\left( \theta_{2} \right) + r_{1}\sin\left( \theta_{1} \right)r_{2}\cos\left( \theta_{2} \right) \right]\nonumber\\
+	&= \left( a_{1}a_{2}-b_{1}b_{2} \right) + i\left( a_{1}b_{2} + a_{2}b_{1} \right),
+	\label{eq:complex_product_geometric}
+\end{align}
+which is indeed the result seen in \eqref{complex_product}.
+
+In the geometric form the complex conjugate of a number $z=r\left[ \cos\left( \theta \right) +i\sin\left( \theta \right) \right]$ is
+\begin{equation}
+	\conj{z} = r\left[ \cos(\theta) -i\sin\left( \theta \right) \right],
+	\label{eq:complex_conjugation_geometric}
+\end{equation}
+and it is easy to show that it corresponds to \eqref{complex_conjugation} (see practice question xxx).
+
+Lastly, let's show that \eqref{conjugate_product} can be derived in the geometric form:
+\begin{align}
+	z\conj{z} &= r\left[ \cos\left( \theta \right) + i\sin\left( \theta \right) \right] \cdot r\left[ \cos\left( \theta \right) - i\sin\left( \theta \right) \right]\nonumber\\
+	&= r^{2}\left[ \cos\left( \theta \right)^{2} -\cancel{i\cos\left( \theta \right)\sin\left( \theta \right)} +i\cancel{\sin\left( \theta \right)\cos(\theta)} + \sin\left( \theta \right)^{2}\right]\nonumber\\
+	&= r^{2}\left[ \sin\left( \theta \right)^{2} + \cos\left( \theta \right)^{2} \right]\nonumber\\
+	&= r^{2} = a^{2}+b^{2}.
+	\label{eq:conjugate_product_geometric}
+\end{align}
+
+In 1748 Leonhard Euler published his famous work \textit{Introductio in analysin infinitorum}\footnote{Latin for \textbf{Introduction to the Analysis of the Infinite}.}. In it he introduced the following relation:
+\begin{equation}
+	e^{ix} = \sin(x) + i\cos(x).
+	\label{eq:Euler's_formula}
 \end{equation}
