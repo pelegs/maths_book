@@ -149,6 +149,12 @@ and $z$ can be re-written as
 	z = r\left( \cos(\theta) + i\sin(\theta) \right).
 	\label{eq:complex_geometric_form}
 \end{equation}
+Inversely,
+\begin{align}
+	r &= a^{2}+b^{2},\nonumber\\
+	\theta &= \arctan\left(\frac{b}{a}\right).
+	\label{eq:complex_components_geometric}
+\end{align}
 
 Let's examine the same properties of complex numbers shown in Equations \ref{eq:complex_addition}, \ref{eq:complex_product} and \ref{eq:complex_conjugation}, and verify that they work in the geometric form of complex numbers. We start with addition (\eqref{complex_addition}):
 \begin{align}
@@ -167,24 +173,56 @@ We see that indeed, the geometric form of complex numbers adheres to the additio
 \end{align}
 which is indeed the result seen in \eqref{complex_product}.
 
-In the geometric form the complex conjugate of a number $z=r\left[ \cos\left( \theta \right) +i\sin\left( \theta \right) \right]$ is
-\begin{equation}
-	\conj{z} = r\left[ \cos(\theta) -i\sin\left( \theta \right) \right],
+In the geometric form the complex conjugate of a number $z=r\left[ \cos\left( \theta \right) +i\sin\left( \theta \right) \right]$ can be brought about by substituting $-\theta$ into the arguments of the trigonometric functions:
+\begin{align}
+	\conj{z} &= r\left[ \cos\left( -\theta \right) + i\sin\left( -\theta \right) \right]\nonumber\\
+	&= r\left[ \cos\left( \theta \right) - i\sin\left( \theta \right) \right]\nonumber\\
+	&= r\cos\left( \theta \right) - ir\sin\left( \theta \right)\nonumber\\
+	&= a-ib.
 	\label{eq:complex_conjugation_geometric}
-\end{equation}
-and it is easy to show that it corresponds to \eqref{complex_conjugation} (see practice question xxx).
+\end{align}
 
 Lastly, let's show that \eqref{conjugate_product} can be derived in the geometric form:
 \begin{align}
 	z\conj{z} &= r\left[ \cos\left( \theta \right) + i\sin\left( \theta \right) \right] \cdot r\left[ \cos\left( \theta \right) - i\sin\left( \theta \right) \right]\nonumber\\
-	&= r^{2}\left[ \cos\left( \theta \right)^{2} -\cancel{i\cos\left( \theta \right)\sin\left( \theta \right)} +i\cancel{\sin\left( \theta \right)\cos(\theta)} + \sin\left( \theta \right)^{2}\right]\nonumber\\
-	&= r^{2}\left[ \sin\left( \theta \right)^{2} + \cos\left( \theta \right)^{2} \right]\nonumber\\
+	&= r^{2}\left[ \cos^{2}\left( \theta \right) -\cancel{i\cos\left( \theta \right)\sin\left( \theta \right)} +i\cancel{\sin\left( \theta \right)\cos(\theta)} + \sin^{2}\left( \theta \right) \right]\nonumber\\
+	&= r^{2}\left[ \sin^{2}\left( \theta \right) + \cos^{2}\left( \theta \right) \right]\nonumber\\
 	&= r^{2} = a^{2}+b^{2}.
 	\label{eq:conjugate_product_geometric}
 \end{align}
 
-In 1748 Leonhard Euler published his famous work \textit{Introductio in analysin infinitorum}\footnote{Latin for \textbf{Introduction to the Analysis of the Infinite}.}. In it he introduced the following relation:
+In 1748 Leonhard Euler published his famous work \textit{Introductio in analysin infinitorum}\footnote{Latin for \textbf{Introduction to the Analysis of the Infinite}.}. In it he introduced the following relation, called \emph{Euler's formula}:
 \begin{equation}
 	e^{ix} = \sin(x) + i\cos(x).
 	\label{eq:Euler's_formula}
 \end{equation}
+Using Euler's formula a complex number $z$ can be written as
+\begin{equation}
+	z = re^{i\theta},
+	\label{eq:complex number using Eurler's formula}
+\end{equation}
+where $r$ and $\theta$ are defined as in \eqref{complex_components_geometric}.
+
+In \tabref{complex_exponentials} we can see some usefull complex exponentials $e^{xi}$. Specifically, using the result for $x=\pi$ one gets the famous \emph{Eurler's identity}, considered by many to be one of the most beautiful equations in mathematics, as it binds together five important numbers: $0,1,\pi,e$ and $i$:
+\begin{equation}
+	e^{\pi i} + 1 = 0.
+	\label{eq:Euler's identity}
+\end{equation}
+
+\begin{table}[H]
+	\centering
+	\caption{Values of $e^{ix}$ for some useful values of $x$ (cf. xxxx for the values of $\sin(\theta)$ and $\cos(\theta)$).}
+	\label{tab:complex_exponentials}
+	\begin{tabular}{lccl}
+		\toprule
+		$x$ & $\cos(x)$ & $\sin(x)$ & $z=e^{ix}$\\
+		\midrule
+		$\frac{\pi}{2}$ & $0$ & $1$ & $i$\\
+		$\pi$ & $-1$ & $0$ & $-1$\\
+		$\frac{3\pi}{2}$ & $0$ & $-1$ & $-i$\\
+		$\frac{\pi}{3}$ & $\frac{1}{2}$ & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}\left( 1+i\sqrt{3} \right)$\\
+		$\frac{\pi}{4}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}\left( 1+i \right)$\\
+		$\frac{\pi}{6}$ & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}\left( \sqrt{3}+i \right)$\\
+		\bottomrule
+	\end{tabular}
+\end{table}
