@@ -35,7 +35,7 @@ has no real solutions, since there can be no real number $x$ such that $x^{2}=-1
 	z = a+ib,
 	\label{eq:complex_number}
 \end{equation}
-where $a,b\in\mathbb{R}$ and $i=\sqrt{-1}$. We call $a$ the \emph{real component} of $z$, and $b$ its \emph{imaginary component}\footnote{There is nothing more ``real'' about real numbers than imaginary numbers, but unfortunately that's the terminology we're stuck with \shrug}. These numbers appear a lot all throughout the exact sciences (but especially in physics and engineering), so we must at the very least learn their basic properties.
+where $a,b\in\mathbb{R}$ and $i=\sqrt{-1}$. We call $a$ the \emph{real component} of $z$ or $\Re(z)$, and $b$ its \emph{imaginary component} or $\Im(z)$\footnote{There is nothing more ``real'' about real numbers than imaginary numbers, but unfortunately that's the terminology we're stuck with \shrug}. These numbers appear a lot all throughout the exact sciences (but especially in physics and engineering), so we must at the very least learn their basic properties.
 
 It is not so obvious that we can add two different kinds of numbers together, but it works (the linear algebra chapter sheds more light on this idea). What is important is that we always keep these two parts separated. We see this when we add together two complex numbers $z_{1},z_{2}$:
 \begin{equation}
@@ -78,7 +78,7 @@ i.e. $z\conj{z} = |z|^{2}$. The inverse of a complex number can be expressed as
 \end{equation}
 
 \subsection{Geometric approach}
-As alluded to in the previous subsection, we can interpret a complex number $z=a+bi$ as two components in a 2-dimentional space, in which the horizontal axis represents real components, and the vertical access represents imaginary components:
+As alluded to in the previous subsection, we can interpret a complex number $z=a+bi$ as two components in a 2-dimensional space (called the \emph{complex plane}), in which the horizontal axis represents real components, and the vertical access represents imaginary components:
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -137,6 +137,7 @@ Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We c
 		\end{axis}
 	\end{tikzpicture}
 \end{figure}
+We call $r$ the \emph{magnitude} of $z$, and $\theta$ its \emph{argument}.
 
 Using \eqref{xy_P} the real and imaginary components of $z$ are
 \begin{align}
@@ -171,7 +172,15 @@ We see that indeed, the geometric form of complex numbers adheres to the additio
 	&= \left( a_{1}a_{2}-b_{1}b_{2} \right) + i\left( a_{1}b_{2} + a_{2}b_{1} \right),
 	\label{eq:complex_product_geometric}
 \end{align}
-which is indeed the result seen in \eqref{complex_product}.
+which is indeed the result seen in \eqref{complex_product}. We can also develope further the second row of \eqref{complex_product_geometric} using some trigonometry (specifically the trigonometric identities xx and yy):
+\begin{align}
+	z_{1}z_{2} &= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right) + i\cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + i\sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) -\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right) \right]\nonumber\\
+	&= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right)-\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + i\left[ \cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + \sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) \right] \right]\nonumber\\
+	&= r_{1}r_{2}\left[ \cos\left( \theta_{1}+\theta_{2} \right) + i\sin\left( \theta_{1}+\theta_{2} \right)  \right].
+	\label{eq:complex_product_geometric_insight}
+\end{align}
+This is a very important result: it shows that multiplying a complex number $z_{1}$ by another complex number $z_{2}$ gives a complex number with magnitude $r_{1}r_{2}$, i.e. the product of the magnitudes of the two complex numbers, and argument $\theta_{1}+\theta_{2}$, i.e. the argument of $z_{1}$ rotated by the argument of $z_{2}$ (or vice-versa). We will consider this result in more detail soon.
+
 
 In the geometric form the complex conjugate of a number $z=r\left[ \cos\left( \theta \right) +i\sin\left( \theta \right) \right]$ can be brought about by substituting $-\theta$ into the arguments of the trigonometric functions:
 \begin{align}
@@ -203,7 +212,7 @@ Using Euler's formula a complex number $z$ can be written as
 \end{equation}
 where $r$ and $\theta$ are defined as in \eqref{complex_components_geometric}.
 
-In \tabref{complex_exponentials} we can see some usefull complex exponentials $e^{xi}$. Specifically, using the result for $x=\pi$ one gets the famous \emph{Eurler's identity}, considered by many to be one of the most beautiful equations in mathematics, as it binds together five important numbers: $0,1,\pi,e$ and $i$:
+In \tabref{complex_exponentials} we can see some usefull complex exponentials $e^{xi}$. Specifically, setting $x=\pi$ yields the famous \emph{Eurler's identity}, considered by many to be one of the most beautiful equations in mathematics, as it binds together five important numbers, namely $0,1,\pi,e$ and $i$:
 \begin{equation}
 	e^{\pi i} + 1 = 0.
 	\label{eq:Euler's identity}
