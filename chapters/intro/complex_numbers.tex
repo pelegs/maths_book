@@ -54,7 +54,7 @@ What happens when we multiply two complex numbers? Let's check:
 \end{align}
 We see that we can still separate the real part and imaginary part of the result. What happens in the case of two real numbers? For real numbers $b=0$, and thus \eqref{complex_product} devolves to $z=a_{1}a_{2}\in\mathbb{R}$, which is exactly what we expect: multiplying two real numbers yields their product, which is a real number. Notice that this doesn't happen with purely imaginary numbers: multiplying together two imaginary numbers (i.e. numbers for which $a=0$) results in a real number. Will get to understand why this happens very soon.
 
-When discussing real numbers sometimes we like to refer to their \textit{magniture}, i.e. their absolute value. With complex numbers this is defined as
+When discussing real numbers sometimes we like to refer to their \textit{magnitude}, i.e. their absolute value. With complex numbers this is defined as
 \begin{equation}
 	|z| = \sqrt{a^{2}+b^{2}},
 	\label{eq:complex_magnitude}
@@ -98,12 +98,12 @@ As alluded to in the previous subsection, we can interpret a complex number $z=a
 			extra y ticks={\b},
 			extra y tick labels={$b$},
 		]
-		\draw[very thick, dashed, xred] (0,0) -- node[midway, above, rotate=\t] {$|z|=\sqrt{a^{2}+b^{2}}$} (\a,\b);
-		\addplot+[black, only marks, mark=*, mark options={scale=0.5, fill=black}, text mark as node=true] coordinates {
-			(\a,\b)
-		} node[above] {$z=a+bi$};
+		\draw[very thick, xred] (0,0) -- node[midway, above, rotate=\t] {$|z|=\sqrt{a^{2}+b^{2}}$} (\a,\b) node[complex](zdot){};
+		\node[xred, above of=zdot, yshift=-6mm] {$z=a+bi$};
 		\end{axis}
 	\end{tikzpicture}
+	\caption{Text.}
+	\label{fig:complex number}
 \end{figure}
 
 Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We can then define $\theta$ to be the angle near the origin and $r$ the length of the hypotenous:
@@ -126,16 +126,16 @@ Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We c
 			extra y ticks={\b},
 			extra y tick labels={$b$},
 		]
-		\draw[very thick, xred] (0,0) -- node[midway, above, rotate=\t] {$r$} (\a,\b);
-		\addplot+[black, only marks, mark=*, mark options={scale=0.5, fill=black}, text mark as node=true] coordinates {
-			(\a,\b)
-		} node[right] {$z$};
 		\draw[thick, dashed] (\a,\b) -- (\a,0);
 		\draw[thick] ({\a-0.25},0) -- ({\a-0.25},0.25) -- (\a,0.25);
 		\draw[very thick, xpurple] (0.75,0) arc (0:\t:0.75);
 		\node[xpurple] at ({cos(\t/2)},{sin(\t/2)}) {$\theta$};
+		\draw[very thick, xred] (0,0) -- node[midway, above, rotate=\t] {$r$} (\a,\b) node[complex](zdot){};
+		\node[xred, above of=zdot, yshift=-6mm] {$z$};
 		\end{axis}
 	\end{tikzpicture}
+	\caption{Text.}
+	\label{fig:complex number 2}
 \end{figure}
 We call $r$ the \emph{magnitude} of $z$, and $\theta$ its \emph{argument}.
 
@@ -150,21 +150,23 @@ and $z$ can be re-written as
 	z = r\left( \cos(\theta) + i\sin(\theta) \right).
 	\label{eq:complex_geometric_form}
 \end{equation}
-Inversely,
+Which we call the \emph{polar form} of $z$ (contrasted with $z=a+ib$ being the \emph{cartesian form} of $z$).
+
+Inverting the relations in \eqref{complex_components} yields the relations
 \begin{align}
 	r &= a^{2}+b^{2},\nonumber\\
 	\theta &= \arctan\left(\frac{b}{a}\right).
 	\label{eq:complex_components_geometric}
 \end{align}
 
-Let's examine the same properties of complex numbers shown in Equations \ref{eq:complex_addition}, \ref{eq:complex_product} and \ref{eq:complex_conjugation}, and verify that they work in the geometric form of complex numbers. We start with addition (\eqref{complex_addition}):
+Let's examine the same properties of complex numbers shown in Equations \ref{eq:complex_addition}, \ref{eq:complex_product} and \ref{eq:complex_conjugation}, and verify that they work in the polar form of complex numbers. We start with addition (\eqref{complex_addition}):
 \begin{align}
 	z_{1}+z_{2} &= r_{1}\left[ \cos\left( \theta_{1} \right) + i\sin\left( \theta_{1} \right) \right] + r_{2}\left[ \cos\left( \theta_{2} \right) + i\sin\left( \theta_{2} \right) \right]\nonumber\\
 	&= \underbrace{r_{1}\cos\left( \theta_{1} \right)}_{a_{1}} + \underbrace{r_{2}\cos\left( \theta_{2} \right)}_{a_{2}} + i\underbrace{r_{1}\sin\left( \theta_{1} \right)}_{b_{1}} + i\underbrace{r_{2}\sin\left( \theta_{2} \right)}_{b_{2}}\nonumber\\
 &= \left( a_{1}+a_{2} \right) + i\left( b_{1}+b_{2} \right).
 	\label{eq:complex_addition_geometric}
 \end{align}
-We see that indeed, the geometric form of complex numbers adheres to the addition rule in \eqref{complex_addition}. Next is the product rule:
+We see that indeed, the polar form of complex numbers adheres to the addition rule in \eqref{complex_addition}. Next is the product rule:
 \begin{align}
 	z_{1}z_{2} &= r_{1}\left[ \cos\left(\theta_{1}\right) + i\sin\left(\theta_{1}\right) \right] \cdot r_{2}\left[ \cos\left(\theta_{2}\right) + i\sin\left(\theta_{2}\right) \right]\nonumber\\
 	&= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right) + i\cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + i\sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) -\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right)  \right]\nonumber\\
@@ -182,7 +184,7 @@ which is indeed the result seen in \eqref{complex_product}. We can also develope
 This is a very important result: it shows that multiplying a complex number $z_{1}$ by another complex number $z_{2}$ gives a complex number with magnitude $r_{1}r_{2}$, i.e. the product of the magnitudes of the two complex numbers, and argument $\theta_{1}+\theta_{2}$, i.e. the argument of $z_{1}$ rotated by the argument of $z_{2}$ (or vice-versa). We will consider this result in more detail soon.
 
 
-In the geometric form the complex conjugate of a number $z=r\left[ \cos\left( \theta \right) +i\sin\left( \theta \right) \right]$ can be brought about by substituting $-\theta$ into the arguments of the trigonometric functions:
+In the polar form the complex conjugate of a number $z=r\left[ \cos\left( \theta \right) +i\sin\left( \theta \right) \right]$ can be brought about by substituting $-\theta$ into the arguments of the trigonometric functions:
 \begin{align}
 	\conj{z} &= r\left[ \cos\left( -\theta \right) + i\sin\left( -\theta \right) \right]\nonumber\\
 	&= r\left[ \cos\left( \theta \right) - i\sin\left( \theta \right) \right]\nonumber\\
@@ -191,7 +193,7 @@ In the geometric form the complex conjugate of a number $z=r\left[ \cos\left( \t
 	\label{eq:complex_conjugation_geometric}
 \end{align}
 
-Lastly, let's show that \eqref{conjugate_product} can be derived in the geometric form:
+Lastly, let's show that \eqref{conjugate_product} can be derived in the polar form:
 \begin{align}
 	z\conj{z} &= r\left[ \cos\left( \theta \right) + i\sin\left( \theta \right) \right] \cdot r\left[ \cos\left( \theta \right) - i\sin\left( \theta \right) \right]\nonumber\\
 	&= r^{2}\left[ \cos^{2}\left( \theta \right) -\cancel{i\cos\left( \theta \right)\sin\left( \theta \right)} +i\cancel{\sin\left( \theta \right)\cos(\theta)} + \sin^{2}\left( \theta \right) \right]\nonumber\\
@@ -207,10 +209,9 @@ In 1748 Leonhard Euler published his famous work \textit{Introductio in analysin
 \end{equation}
 Using Euler's formula a complex number $z$ can be written as
 \begin{equation}
-	z = re^{i\theta},
+	z = re^{i\theta}.
 	\label{eq:complex number using Eurler's formula}
 \end{equation}
-where $r$ and $\theta$ are defined as in \eqref{complex_components_geometric}.
 
 In \tabref{complex_exponentials} we can see some usefull complex exponentials $e^{xi}$. Specifically, setting $x=\pi$ yields the famous \emph{Eurler's identity}, considered by many to be one of the most beautiful equations in mathematics, as it binds together five important numbers, namely $0,1,\pi,e$ and $i$:
 \begin{equation}
@@ -235,3 +236,50 @@ In \tabref{complex_exponentials} we can see some usefull complex exponentials $e
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\tabref{complex_exponentials} also shows us the integer behaviours of $i$:
+\begin{equation}
+	i^{2}=-1,\ i^{3}=-i, i^{4}=1,\ i^{5}=i,\ i^{6}=-1,\ i^{7}=-i,\ \dots
+	\label{eq:powers of i}
+\end{equation}
+
+\subsection{Complex roots of polynomial functions}
+Consider the simple equation $z^{3}=1$. We know the solution when $z$ is a real number: $z_{1}=1$. However, on $\mathbb{C}$ there are actually two more solutions: $z_{2}=-\frac{1}{2}+\frac{\sqrt{3}}{2}i$ and $z_{3}=-\frac{1}{2}-\frac{\sqrt{3}}{2}i$. We can verify that $z_{2}$ indeed solves the equation\footnote{Using $(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}$.}:
+\begin{align}
+	\left( -\frac{1}{2}+\frac{\sqrt{3}}{2} \right)^{3} &= -\frac{1}{8} + 3\frac{\sqrt{3}}{8}i - 3\frac{3}{8}i^{2} + \frac{3\sqrt{3}}{8}i^{3}\nonumber\\
+	&= -\frac{1}{8} + \cancel{3i\frac{\sqrt{3}}{8}} + 3\frac{3}{8} - \cancel{3i\frac{\sqrt{3}}{8}}\nonumber\\
+	&= -\frac{1}{8} + \frac{9}{8}\nonumber\\
+	&= 1.
+	\label{eq:bla}
+\end{align}
+Verfying that $z_{3}$ solves the equation as well is left as an excercise to the reader. Let's view all three solutions in polar form: $z_{1}$ has magnitude $r=1$ and argument $\theta=0$. $z_{2}$ also has magnitude $r=1$ and argument $\theta=\frac{\pi}{4}$, and $z_{3}$ has the same magnitude, and argument $\theta=\frac{7\pi}{4}$. Notice how the arguments of $z_{1},z_{2},z_{3}$ are equaly distributed in a circle of radius $r=1$ (\figref{polar_solution}).
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\tikzstyle{every node}=[font=\large]
+		\begin{axis}[
+			complex plane,
+			width=10cm, height=10cm,
+			xmin=-1.25, xmax=1.25,
+			ymin=-1.25, ymax=1.25,
+			xtick={-1.5,-1,...,1.5},
+			ytick={-1.5,-1,...,1.5},
+		]
+		\coordinate (O) at (0,0);
+		\coordinate (z1) at (1,0);
+		\coordinate (z2) at (-0.5,{sqrt(3)/2});
+		\coordinate (z3) at (-0.5,{-sqrt(3)/2});
+		\draw[black!20] (z1) arc (0:360:1);
+		\draw[xblue] (0.25,0) arc (0:120:0.25);
+		\draw[xgreen] (0.2,0) arc (0:240:0.2);
+		\draw[very thick, xred] (O) -- (z1) node[complex, label=above:$z_{1}$]{};
+		\draw[very thick, xblue] (O) -- (z2) node[complex, label=above left:$z_{2}$]{};
+		\draw[very thick, xgreen] (O) -- (z3) node[complex, label=below left:$z_{3}$]{};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Text.}
+	\label{fig:polar_solution}
+\end{figure}
+
+A similar thing happens for any $z^{n}=1$, where $n\in\mathbb{N}$: all solutions lie equidistant from each otheron a circle with $r=1$.
