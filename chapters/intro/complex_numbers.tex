@@ -267,8 +267,8 @@ Therefore, the three solutions to $z^{3}=1$ are (see \figref{third-roots of 1}):
 which correspond to the following Cartesian forms:
 \begin{align}
 	z_{1} &= 1,\nonumber\\
-	z_{2} &= -\frac{1}{2}+\frac{\sqrt{3}}{2},\nonumber\\
-	z_{3} &= -\frac{1}{2}-\frac{\sqrt{3}}{2}.
+	z_{2} &= -\frac{1}{2}+\frac{\sqrt{3}}{2}i,\nonumber\\
+	z_{3} &= -\frac{1}{2}-\frac{\sqrt{3}}{2}i.
 	\label{eq:third-roots of 1, Cartesian form}
 \end{align}
 
@@ -281,22 +281,23 @@ which correspond to the following Cartesian forms:
 			width=10cm, height=10cm,
 			xmin=-1.25, xmax=1.25,
 			ymin=-1.25, ymax=1.25,
-			xtick={-1.5,-1,...,1.5},
-			ytick={-1.5,-1,...,1.5},
+			xtick={-1,0,1},
+			extra x ticks={-0.5,0.5},
+			extra x tick labels={},
+			ytick={-1,0,1},
+			extra y ticks={-0.5,0.5},
+			extra y tick labels={},
 		]
 		\coordinate (O) at (0,0);
 		\coordinate (z1) at (1,0);
 		\coordinate (z2) at (-0.5,{sqrt(3)/2});
 		\coordinate (z3) at (-0.5,{-sqrt(3)/2});
 		\draw[black!20] (z1) arc (0:360:1);
-		\draw[xblue] (0.25,0) arc (0:120:0.25);
-		\draw[xgreen] (0.2,0) arc (0:240:0.2);
-		\draw[very thick, xred] (O) -- (z1) node[complex, label=above:$z_{1}$]{};
-		\draw[very thick, xblue] (O) -- (z2) node[complex, label=above left:$z_{2}$]{};
-		\draw[very thick, xgreen] (O) -- (z3) node[complex, label=below left:$z_{3}$]{};
-		\node[xred] at (0.5,0.1) {$\theta_{1}=0$};
-		\node[xblue, rotate=50] at ({cos(60)/2.5+0.1},{sin(60)/2.5+0.1}) {$\theta_{2}=\frac{2\pi}{3}$};
-		\node[xgreen] at (-0.5,0.1) {$\theta_{3}=\frac{4\pi}{3}$};
+		\draw[xgreen, fill=xgreen!20] (O) -- (0.175,0) arc (0:240:0.175) -- cycle;
+		\draw[xblue, fill=xblue!20] (O) -- (0.125,0) arc (0:120:0.125) -- cycle;
+		\draw[very thick, xred] (O) -- node[above, right, xshift=-20, yshift=8] {$\theta_{1}=0$} (z1) node[complex, label=above:$z_{1}$]{};
+		\draw[very thick, xblue] (O) -- node[below, rotate=-60] {$\theta_{2}=\frac{2\pi}{3}$} (z2) node[complex, label=above left:$z_{2}$]{};
+		\draw[very thick, xgreen] (O) -- node[above, rotate=60] {$\theta_{3}=\frac{4\pi}{3}$}(z3) node[complex, label=below left:$z_{3}$]{};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{The three complex solutions to $z^{3}=1$.}
