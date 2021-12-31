@@ -150,7 +150,7 @@ and $z$ can be re-written as
 	z = r\left( \cos(\theta) + i\sin(\theta) \right).
 	\label{eq:complex_geometric_form}
 \end{equation}
-Which we call the \emph{polar form} of $z$ (contrasted with $z=a+ib$ being the \emph{cartesian form} of $z$).
+Which we call the \emph{polar form} of $z$ (contrasted with $z=a+ib$ being the \emph{Cartesian form} of $z$).
 
 Inverting the relations in \eqref{complex_components} yields the relations
 \begin{align}
@@ -244,15 +244,33 @@ In \tabref{complex_exponentials} we can see some usefull complex exponentials $e
 \end{equation}
 
 \subsection{Complex roots of polynomial functions}
-Consider the simple equation $z^{3}=1$. We know the solution when $z$ is a real number: $z_{1}=1$. However, on $\mathbb{C}$ there are actually two more solutions: $z_{2}=-\frac{1}{2}+\frac{\sqrt{3}}{2}i$ and $z_{3}=-\frac{1}{2}-\frac{\sqrt{3}}{2}i$. We can verify that $z_{2}$ indeed solves the equation\footnote{Using $(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}$.}:
-\begin{align}
-	\left( -\frac{1}{2}+\frac{\sqrt{3}}{2} \right)^{3} &= -\frac{1}{8} + 3\frac{\sqrt{3}}{8}i - 3\frac{3}{8}i^{2} + \frac{3\sqrt{3}}{8}i^{3}\nonumber\\
-	&= -\frac{1}{8} + \cancel{3i\frac{\sqrt{3}}{8}} + 3\frac{3}{8} - \cancel{3i\frac{\sqrt{3}}{8}}\nonumber\\
-	&= -\frac{1}{8} + \frac{9}{8}\nonumber\\
-	&= 1.
+We began this section discussing an equation that can be solved over the real numbers (\eqref{no_real_solutions}). Let us now use similar equations to find roots of complex numbers, focusing on equtions of the type
+\begin{equation}
+	z^{n}=1,
+	\label{eq:power equation complex}
+\end{equation}
+where $n\in\mathbb{N}$. Over the real numbers, depending on the parity of $n$ (i.e. whether it is even or odd) there are either two solutions (namely $z_{1,2}=\pm1$) or a single solution (namely $z=1$). However over the complex numbers there are always exactly $n$ solutions to the equation. Since we already know the solutions to $z^{2}=1$, we move on to $z^{3}=1$. One solution to the equation is pretty obvious: $z_{1}=1$. To find the other two solutions we switch to the polar form, in which $1$ has magnitude $r=1$ and argument $\theta=0$, i.e.
+\begin{equation}
+	1 = \cos(0) + i\sin(0).
 	\label{eq:bla}
+\end{equation}
+
+We saw earlier that multiplying two complex numbers $z_{1}z_{2}$ together results in a number which has magnitude that is the product of the magnitudes of $z_{1}$ and $z_{2}$, and an argument which is the sum of the arguments of $z_{1}$ and $z_{2}$ (\eqref{complex_product_geometric_insight}). This means that the two remaining solutions to $z^{3}=1$ must have magnitude $r=1$, and arguments $\theta$ such that $3\theta=0$. Recall however that we are dealing with a circle of radius $1$, meaning that there are infinitely many angles which corresponds to a full circle, namely $\theta=2\pi k$ where $k\in\mathbb{Z}$. There are exactly two angles in $[0,2\pi)$ which when multipled by $3$ result in a complete circle: $\theta_{2}=\frac{2\pi}{3}$ and $\theta_{3}=\frac{4\pi}{3}$.
+
+Therefore, the three solutions to $z^{3}=1$ are (see \figref{third-roots of 1}):
+\begin{align}
+	z_{1} &= \cos(0) + i\sin(0),\nonumber\\
+	z_{2} &= \cos\left( \frac{2\pi}{3} \right) + i\sin\left( \frac{2\pi}{3} \right),\nonumber\\
+	z_{3} &= \cos\left( \frac{4\pi}{3} \right) + i\sin\left( \frac{4\pi}{3} \right),
+	\label{eq:third-roots of 1, polar form}
 \end{align}
-Verfying that $z_{3}$ solves the equation as well is left as an excercise to the reader. Let's view all three solutions in polar form: $z_{1}$ has magnitude $r=1$ and argument $\theta=0$. $z_{2}$ also has magnitude $r=1$ and argument $\theta=\frac{\pi}{4}$, and $z_{3}$ has the same magnitude, and argument $\theta=\frac{7\pi}{4}$. Notice how the arguments of $z_{1},z_{2},z_{3}$ are equaly distributed in a circle of radius $r=1$ (\figref{polar_solution}).
+which correspond to the following Cartesian forms:
+\begin{align}
+	z_{1} &= 1,\nonumber\\
+	z_{2} &= -\frac{1}{2}+\frac{\sqrt{3}}{2},\nonumber\\
+	z_{3} &= -\frac{1}{2}-\frac{\sqrt{3}}{2}.
+	\label{eq:third-roots of 1, Cartesian form}
+\end{align}
 
 \begin{figure}[H]
 	\centering
@@ -276,10 +294,21 @@ Verfying that $z_{3}$ solves the equation as well is left as an excercise to the
 		\draw[very thick, xred] (O) -- (z1) node[complex, label=above:$z_{1}$]{};
 		\draw[very thick, xblue] (O) -- (z2) node[complex, label=above left:$z_{2}$]{};
 		\draw[very thick, xgreen] (O) -- (z3) node[complex, label=below left:$z_{3}$]{};
+		\node[xred] at (0.5,0.1) {$\theta_{1}=0$};
+		\node[xblue, rotate=50] at ({cos(60)/2.5+0.1},{sin(60)/2.5+0.1}) {$\theta_{2}=\frac{2\pi}{3}$};
+		\node[xgreen] at (-0.5,0.1) {$\theta_{3}=\frac{4\pi}{3}$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Text.}
-	\label{fig:polar_solution}
+	\caption{The three complex solutions to $z^{3}=1$.}
+	\label{fig:third-roots of 1}
 \end{figure}
 
-A similar thing happens for any $z^{n}=1$, where $n\in\mathbb{N}$: all solutions lie equidistant from each otheron a circle with $r=1$.
+We can verify that $z_{2}$ indeed solves the equation\footnote{Using $(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}$.}:
+\begin{align}
+	\left( -\frac{1}{2}+\frac{\sqrt{3}}{2} \right)^{3} &= -\frac{1}{8} + 3\frac{\sqrt{3}}{8}i - 3\frac{3}{8}i^{2} + \frac{3\sqrt{3}}{8}i^{3}\nonumber\\
+	&= -\frac{1}{8} + \cancel{3i\frac{\sqrt{3}}{8}} + 3\frac{3}{8} - \cancel{3i\frac{\sqrt{3}}{8}}\nonumber\\
+	&= -\frac{1}{8} + \frac{9}{8}\nonumber\\
+	&= 1.
+	\label{eq:bla}
+\end{align}
+Verfying that $z_{3}$ solves the equation as well is left as an excercise to the reader.
