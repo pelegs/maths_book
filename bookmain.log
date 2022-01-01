@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  1 JAN 2022 15:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  1 JAN 2022 18:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1768,14 +1768,14 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [34] [35] [36] [37]
-Overfull \hbox (17.97472pt too wide) detected at line 203
+Overfull \hbox (17.97472pt too wide) detected at line 200
 []
  []
 
 [38] [39]
 
 LaTeX Warning: Reference `eq:power_equation_complex' on page 40 undefined on in
-put line 345.
+put line 342.
 
 [40]) [41] [42]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
@@ -1797,10 +1797,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 47249 strings out of 480997
- 1117653 string characters out of 5912179
- 1813542 words of memory out of 5000000
- 61675 multiletter control sequences out of 15000+600000
+ 47263 strings out of 480997
+ 1117857 string characters out of 5912179
+ 1817542 words of memory out of 5000000
+ 61689 multiletter control sequences out of 15000+600000
  667581 words of font info for 325 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,19n,127p,870b,2828s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1825,7 +1825,7 @@ psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (42 pages, 529884 bytes).
+Output written on bookmain.pdf (42 pages, 532076 bytes).
 PDF statistics:
  717 PDF objects out of 1000 (max. 8388607)
  608 compressed objects within 7 object streams

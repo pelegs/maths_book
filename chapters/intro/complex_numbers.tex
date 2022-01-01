@@ -25,14 +25,12 @@
 	/pgfplots/complex solution/.style={
 		complex plane,
 		width=6.5cm, height=6.5cm,
-		xmin=-1.25, xmax=1.25,
-		ymin=-1.25, ymax=1.25,
-		xtick={-1,0,1},
-		extra x ticks={-0.5,0.5},
-		extra x tick labels={},
-		ytick={-1,0,1},
-		extra y ticks={-0.5,0.5},
-		extra y tick labels={},
+		xmin=-1.5, xmax=1.5,
+		ymin=-1.5, ymax=1.5,
+		xtick={-1.5,-1,...,1.5},
+		xticklabels={},
+		ytick={-1.5,-1,...,1.5},
+		yticklabels={},
 	},
 }
 
@@ -42,13 +40,12 @@
 	\pgfmathsetmacro{\dt}{360/#1}
 	\pgfmathsetmacro{\n}{int(#1-1)}
 	\pgfplotsinvokeforeach{\n,...,0}{
-		\pgfmathsetmacro{\k}{int(##1+1)}
-		\draw[very thick, xcol##1] (O) -- ({cos(\dt*##1)},{sin(\dt*##1)}) node[complex]{};
-		\node[xcol##1]  at ({1.2*cos(\dt*##1)},{1.2*sin(\dt*##1)}) {$z_{##1}$};
+		\pgfmathparse{##1+1}
 		\draw[xcol##1, fill=xcol##1!20] (O) -- ({0.1*##1},0) arc (0:{\dt*##1}:{0.1*##1}) -- cycle;
+		\draw[very thick, xcol##1] (O) -- ({cos(\dt*##1)},{sin(\dt*##1)}) node[complex]{};
+		\node[xcol##1, fill=xcol##1!10, rounded corners]  at ({1.23*cos(\dt*##1)},{1.23*sin(\dt*##1)}) {$z_{\the\numexpr##1+1\relax}$};
 	}
 }
-
 
 \section{Complex Numbers}
 \subsection{Algebraic approach}
@@ -361,7 +358,7 @@ where $k=1,2,\dots,n$. See figure xxx for the solutions to several more values o
 				\cmplxsol{4}
 			\end{axis}
 		\end{tikzpicture}
-		\caption{$n=4$}
+		\caption{$n=4,\ \theta_{k}=\frac{\pi}{2}k$}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.475\textwidth}
@@ -373,9 +370,10 @@ where $k=1,2,\dots,n$. See figure xxx for the solutions to several more values o
 				\cmplxsol{5}
 			\end{axis}
 		\end{tikzpicture}
-		\caption{$n=5$}
+		\caption{$n=5,\ \theta_{k}=\frac{2\pi}{5}k$}
 	\end{subfigure}
 
+	\vspace{2em}
 	\begin{subfigure}[b]{0.475\textwidth}
 		\centering
 		\begin{tikzpicture}
@@ -385,7 +383,7 @@ where $k=1,2,\dots,n$. See figure xxx for the solutions to several more values o
 				\cmplxsol{6}
 			\end{axis}
 		\end{tikzpicture}
-		\caption{$n=6$}
+		\caption{$n=6,\ \theta_{k}=\frac{\pi}{3}k$}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.475\textwidth}
@@ -397,9 +395,9 @@ where $k=1,2,\dots,n$. See figure xxx for the solutions to several more values o
 				\cmplxsol{7}
 			\end{axis}
 		\end{tikzpicture}
-		\caption{$n=7$}
+		\caption{$n=7,\ \theta_{k}=\frac{7\pi}{2}k$}
 	\end{subfigure}
-	\caption{Complex solutions for $z^{n}=1$ for $n=4,5,6,7$.}
+	\caption{Complex solutions for $z^{n}=1$ for $n=4,5,6,7$. Note that for all circles $r=1$.}
 \end{figure}
 
 Taking this idea a step forther, the solutions to
