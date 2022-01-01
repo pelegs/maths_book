@@ -1,27 +1,54 @@
 \pgfkeys{
 	/pgfplots/complex plane/.style={
-	axis x line=middle,
-	axis y line=middle,
-	xlabel=$\Re$,
-	ylabel=$\Im$,
-	every axis x label/.style={
-		at={(ticklabel* cs:1.02)},
-		anchor=west,
+		axis x line=middle,
+		axis y line=middle,
+		xlabel=$\Re$,
+		ylabel=$\Im$,
+		every axis x label/.style={
+			at={(ticklabel* cs:1.02)},
+			anchor=west,
+		},
+		every axis y label/.style={
+			at={(ticklabel* cs:1.02)},
+			anchor=south,
+		},
+		axis line style={stealth-stealth, thick},
+		label style={font=\large},
+		tick label style={font=\large},
+		samples=100,
+		xmin=-3, xmax=3,
+		ymin=-3, ymax=3,
+		domain=-3:3,
+		grid=both,
+		major grid style={black!5},
 	},
-	every axis y label/.style={
-		at={(ticklabel* cs:1.02)},
-		anchor=south,
+	/pgfplots/complex solution/.style={
+		complex plane,
+		width=6.5cm, height=6.5cm,
+		xmin=-1.25, xmax=1.25,
+		ymin=-1.25, ymax=1.25,
+		xtick={-1,0,1},
+		extra x ticks={-0.5,0.5},
+		extra x tick labels={},
+		ytick={-1,0,1},
+		extra y ticks={-0.5,0.5},
+		extra y tick labels={},
 	},
-	axis line style={stealth-stealth, thick},
-	label style={font=\large},
-	tick label style={font=\large},
-	samples=100,
-	xmin=-3, xmax=3,
-	ymin=-3, ymax=3,
-	domain=-3:3,
-	grid=both,
-	major grid style={black!5},
-}}
+}
+
+\newcommand{\cmplxsol}[1]{
+	\coordinate (O) at (0,0);
+	\draw[black!20] (1,0) arc (0:360:1);
+	\pgfmathsetmacro{\dt}{360/#1}
+	\pgfmathsetmacro{\n}{int(#1-1)}
+	\pgfplotsinvokeforeach{\n,...,0}{
+		\pgfmathsetmacro{\k}{int(##1+1)}
+		\draw[very thick, xcol##1] (O) -- ({cos(\dt*##1)},{sin(\dt*##1)}) node[complex]{};
+		\node[xcol##1]  at ({1.2*cos(\dt*##1)},{1.2*sin(\dt*##1)}) {$z_{##1}$};
+		\draw[xcol##1, fill=xcol##1!20] (O) -- ({0.1*##1},0) arc (0:{\dt*##1}:{0.1*##1}) -- cycle;
+	}
+}
+
 
 \section{Complex Numbers}
 \subsection{Algebraic approach}
@@ -79,7 +106,7 @@ i.e. $z\conj{z} = |z|^{2}$. The inverse of a complex number can be expressed as
 
 \subsection{Geometric approach}
 As alluded to in the previous subsection, we can interpret a complex number $z=a+bi$ as two components in a 2-dimensional space (called the \emph{complex plane}), in which the horizontal axis represents real components, and the vertical access represents imaginary components:
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{tikzpicture}
 		\tikzstyle{every node}=[font=\large]
@@ -107,7 +134,7 @@ As alluded to in the previous subsection, we can interpret a complex number $z=a
 \end{figure}
 
 Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We can then define $\theta$ to be the angle near the origin and $r$ the length of the hypotenous:
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{tikzpicture}
 		\tikzstyle{every node}=[font=\large]
@@ -137,7 +164,7 @@ Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We c
 	\caption{Text.}
 	\label{fig:complex number 2}
 \end{figure}
-We call $r$ the \emph{magnitude} of $z$, and $\theta$ its \emph{argument}.
+We call $r$ the \emph{magnitude} of $z$, and $\theta$ its \emph{argument}. The ranges for $r$ and $\theta$ are, respetively, $[0,\infty)$ and $[0,2\pi)$.
 
 Using \eqref{xy_P} the real and imaginary components of $z$ are
 \begin{align}
@@ -219,7 +246,7 @@ In \tabref{complex_exponentials} we can see some usefull complex exponentials $e
 	\label{eq:Euler's identity}
 \end{equation}
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{Values of $e^{ix}$ for some useful values of $x$ (cf. xxxx for the values of $\sin(\theta)$ and $\cos(\theta)$).}
 	\label{tab:complex_exponentials}
@@ -272,7 +299,7 @@ which correspond to the following Cartesian forms:
 	\label{eq:third-roots of 1, Cartesian form}
 \end{align}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{tikzpicture}
 		\tikzstyle{every node}=[font=\large]
@@ -288,6 +315,7 @@ which correspond to the following Cartesian forms:
 			extra y ticks={-0.5,0.5},
 			extra y tick labels={},
 		]
+		% NOTE: this should changed to use \cmplxsol{3}.
 		\coordinate (O) at (0,0);
 		\coordinate (z1) at (1,0);
 		\coordinate (z2) at (-0.5,{sqrt(3)/2});
@@ -304,12 +332,89 @@ which correspond to the following Cartesian forms:
 	\label{fig:third-roots of 1}
 \end{figure}
 
-We can verify that $z_{2}$ indeed solves the equation\footnote{Using $(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}$.}:
+We can verify that $z_{2}$ indeed solves the equation using its Cartesian form\footnote{Using $(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}$.}:
 \begin{align}
 	\left( -\frac{1}{2}+\frac{\sqrt{3}}{2} \right)^{3} &= -\frac{1}{8} + 3\frac{\sqrt{3}}{8}i - 3\frac{3}{8}i^{2} + \frac{3\sqrt{3}}{8}i^{3}\nonumber\\
-	&= -\frac{1}{8} + \cancel{3i\frac{\sqrt{3}}{8}} + 3\frac{3}{8} - \cancel{3i\frac{\sqrt{3}}{8}}\nonumber\\
+	&= -\frac{1}{8} + \cancel{3\frac{\sqrt{3}}{8}i} + 3\frac{3}{8} - \cancel{3\frac{\sqrt{3}}{8}i}\nonumber\\
 	&= -\frac{1}{8} + \frac{9}{8}\nonumber\\
 	&= 1.
 	\label{eq:bla}
 \end{align}
 Verfying that $z_{3}$ solves the equation as well is left as an excercise to the reader.
+
+The general formula for the solutions to \eqref{power_equation_complex} all have magnitude $r=1$ and angle
+\begin{equation}
+	\theta_{k} = \frac{2\pi}{n}k,
+	\label{eq:soltions to z^n=1}
+\end{equation}
+where $k=1,2,\dots,n$. See figure xxx for the solutions to several more values of $n$.
+
+\begin{figure}
+	\captionsetup[subfigure]{labelformat=empty}
+	\centering
+	\begin{subfigure}[b]{0.475\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					complex solution,
+				]
+				\cmplxsol{4}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{$n=4$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.475\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					complex solution,
+				]
+				\cmplxsol{5}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{$n=5$}
+	\end{subfigure}
+
+	\begin{subfigure}[b]{0.475\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					complex solution,
+				]
+				\cmplxsol{6}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{$n=6$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.475\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					complex solution,
+				]
+				\cmplxsol{7}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{$n=7$}
+	\end{subfigure}
+	\caption{Complex solutions for $z^{n}=1$ for $n=4,5,6,7$.}
+\end{figure}
+
+Taking this idea a step forther, the solutions to
+\begin{equation}
+	z^{n} = a,
+	\label{eq:}
+\end{equation}
+where $a$ is any complex number would behave in a similar way, with two exceptions: their magnitude would be
+\begin{equation}
+	r = \nroot{n}{a},
+	\label{eq:}
+\end{equation}
+since we expect $r^{n}=a$, and their arguments would be
+\begin{equation}
+	\theta_{k} = \frac{2\pi}{n}k+\theta_{0},
+	\label{eq:}
+\end{equation}
+where $\theta_{0}$ is the argument of $a$ and $k=1,2,\dots,n$.

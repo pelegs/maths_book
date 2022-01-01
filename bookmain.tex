@@ -84,12 +84,22 @@
 
 \usepackage{xcolor}
 \usepackage{colortbl}
-\definecolor{xblue}{HTML}{4268BD}
 \definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
 \definecolor{xgreen}{HTML}{52B256}
 \definecolor{xpurple}{HTML}{7F52B2}
 \definecolor{xorange}{HTML}{FF9F31}
 \definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+
+\colorlet{xcol0}{xred}
+\colorlet{xcol1}{xblue}
+\colorlet{xcol2}{xgreen}
+\colorlet{xcol3}{xpurple}
+\colorlet{xcol4}{xorange}
+\colorlet{xcol5}{xgray}
+\colorlet{xcol6}{xcyan}
 
 % Document-specific colors
 \colorlet{normaltextcolor}{black}
@@ -301,6 +311,9 @@
 \newcommand{\defeq}{:=}
 \newcommand{\eqdef}{=:}
 \newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\nroot}[2]{
+	\sqrt[\leftroot{3}\uproot{3}#1]{#2}
+}
 
 %-------------%
 % OTHER STUFF %
