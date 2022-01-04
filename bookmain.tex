@@ -133,9 +133,12 @@
 	\end{tikzpicture}
 }
 
-\titleformat{\section}{\sffamily\Large\bfseries}{\huge{\thesection}}{1em}{\uppercase{#1}}
-
-\titleformat{\subsection}{\sffamily\large\bfseries}{}{0em}{\uppercase{#1}}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}% format
+  {}% label
+  {0pt}% sep
+	{\titlerule\newline\thetitle~~~\uppercase{#1}}% before code
+  [{\titlerule[0.4pt]}]% after code
 
 %------------%
 % REFERENCES %
@@ -336,6 +339,11 @@
 \end{tikzpicture}
 }
 
+% List enumeration with chapter number
+\usepackage{enumitem}
+\setenumerate[1]{label=\thechapter.\arabic*.}
+\setenumerate[2]{label*=\arabic*.}
+
 %----------%
 % DOCUMENT %
 %----------%
@@ -353,5 +361,6 @@
 \input{chapters/intro/exponentials_logarithms.tex}
 \input{chapters/intro/trigonomentry.tex}
 \input{chapters/intro/complex_numbers.tex}
+\input{chapters/intro/exercises.tex}
 
 \end{document}
