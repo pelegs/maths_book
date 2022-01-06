@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  4 JAN 2022 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  6 JAN 2022 22:54
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1676,7 +1676,7 @@ File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
 (./chapters/intro/preface.tex
 Chapter 0.
-<figures/chapters/tapir_rainbow.pdf, id=139, 123.26372pt x 95.3452pt>
+<figures/chapters/tapir_rainbow.pdf, id=143, 123.26372pt x 95.3452pt>
 File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_rainbow.pdf>
 Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
@@ -1765,29 +1765,59 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-[29]) (./chapters/intro/trigonomentry.tex [30] [31])
-(./chapters/intro/complex_numbers.tex [32] [33]
+[29]) (./chapters/intro/trigonomentry.tex [30] [31] [32]
+\pgf@layerbox@axis background=\box137
+\pgf@layerboxsaved@axis background=\box138
+\pgf@layerbox@axis grid=\box139
+\pgf@layerboxsaved@axis grid=\box140
+\pgf@layerbox@axis ticks=\box141
+\pgf@layerboxsaved@axis ticks=\box142
+\pgf@layerbox@axis tick labels=\box143
+\pgf@layerboxsaved@axis tick labels=\box144
+\pgf@layerbox@pre main=\box145
+\pgf@layerboxsaved@pre main=\box146
+\pgf@layerbox@axis lines=\box147
+\pgf@layerboxsaved@axis lines=\box148
+\pgf@layerbox@axis descriptions=\box149
+\pgf@layerboxsaved@axis descriptions=\box150
+\pgf@layerbox@axis foreground=\box151
+\pgf@layerboxsaved@axis foreground=\box152
+Package pgfplots info on input line 188: Setting layers 'axis background,axis g
+rid,axis ticks,axis tick labels,pre main,main,axis lines,axis descriptions,axis
+ foreground'...
+ [33] [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35])
+(./chapters/intro/complex_numbers.tex [36]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [34] [35] [36] [37]
+ [37] [38]
 Overfull \hbox (17.97472pt too wide) detected at line 200
 []
  []
 
-[38] [39]
 
-LaTeX Warning: Reference `eq:power_equation_complex' on page 40 undefined on in
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+[40] [41]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+
+LaTeX Warning: Reference `eq:power_equation_complex' on page 43 undefined on in
 put line 342.
 
-[40]) (./chapters/intro/exercises.tex [41] [42]) [43]
+) (./chapters/intro/exercises.tex) [43] [44]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 366.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 366.
  (./bookmain.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 366.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 366.
 Package rerunfilecheck Info: File `bookmain.out' has not changed.
-(rerunfilecheck)             Checksum: 862DCC0F26CE2108206D689578F0F254;1790.
+(rerunfilecheck)             Checksum: 28463B65E8C72A2031623A1271FD971F;1851.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1800,11 +1830,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 47589 strings out of 480997
- 1123336 string characters out of 5912179
- 1825354 words of memory out of 5000000
- 62005 multiletter control sequences out of 15000+600000
- 664922 words of font info for 321 fonts, out of 8000000 for 9000
+ 47611 strings out of 480997
+ 1124301 string characters out of 5912179
+ 1816272 words of memory out of 5000000
+ 62032 multiletter control sequences out of 15000+600000
+ 650601 words of font info for 290 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,19n,127p,870b,2828s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.en
@@ -1828,10 +1858,10 @@ psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (43 pages, 531609 bytes).
+Output written on bookmain.pdf (44 pages, 534997 bytes).
 PDF statistics:
- 730 PDF objects out of 1000 (max. 8388607)
+ 731 PDF objects out of 1000 (max. 8388607)
  620 compressed objects within 7 object streams
- 248 named destinations out of 1000 (max. 500000)
- 360 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 244 named destinations out of 1000 (max. 500000)
+ 368 words of extra memory for PDF output out of 10000 (max. 10000000)
 
