@@ -15,22 +15,22 @@
 \pgfkeys{
 	/pgfplots/unit circle/.style={
 		set layers=axis lines on top,
-		width=10cm, height=10cm,
+		width=9cm, height=9cm,
 		axis x line=middle,
 		axis y line=middle,
 		xlabel=$x$,
 		ylabel=$y$,
 		every axis x label/.style={
-			at={(ticklabel* cs:1.02)},
+			at={(ticklabel* cs:1.01)},
 			anchor=west,
 		},
 		every axis y label/.style={
-			at={(ticklabel* cs:1.02)},
+			at={(ticklabel* cs:1.01)},
 			anchor=south,
 		},
 		axis line style={stealth-stealth, thick},
-		label style={font=\large},
-		tick label style={font=\large},
+		label style={font=\Large},
+		tick label style={font=\Large},
 		samples=100,
 		xmin=-1.25, xmax=1.25,
 		ymin=-1.25, ymax=1.25,
@@ -130,9 +130,9 @@ We then define $\cos(\theta)$ and $\sin(\theta)$ as a function of $\theta$:
 Using this definition, the angle $\theta$ can take any value between $\ang{0}$ and $\ang{360}$. In fact, the values of $\theta$ can be extended to any real number in degrees: if it is more than $\ang{360}$\ldots (MUST FINISH THIS PART + QUADRENTS)
 
 \subsection{Radians}
-Using degrees to measure $\theta$ is a somewhat inconvinient: by doing so, the domain and image of the trigonometric functions are not the same. In order to make them the same, we switch to measuring angles on the unit circle in \emph{Radians} instead of degrees: one radian equals the length of a single radius on a circle, and in the case of the unit circle this is always $R=1$. We say that the angle $\theta$ equals one radian if the arc length it represents equals to $R$ (\figref{radians}).
+Using degrees to measure angles in a sphere creates an inconvinience: the domain and image of the trigonometric functions have different units. In order to measure both these magnitudes using the same unit we switch to measuring angles on a circle using \emph{radians} instead of degrees. One radian equals the length of a single radius $R$ of the circle (in the case of the unit circle this is always $R=1$). We define an inner angle $\theta$ to equal one radian if the arc length it represents is equal to $R$ (see \figref{radians}).
 
-The full circumference of any circle with radius $R$ equals $2\pi R$, which means that a single radian $R$ is equivalent to $\frac{\ang{180}}{\pi} \approx \ang{57.3}$. \xref[tab]{rad_degs} shows some common angles and their equivalent value in radians.
+How much is a radian in degrees? The full circumference of any circle with radius $R$ equals $2\pi R$, which means that a single radian $R$ is equivalent to $\frac{\ang{180}}{\pi} \approx \ang{57.3}$. \xref[tab]{rad_degs} shows some common angles and their equivalent value in radians.
 
 \begin{table}[H]
 	\caption{Common angles in radians.}
@@ -154,7 +154,7 @@ The full circumference of any circle with radius $R$ equals $2\pi R$, which mean
 
 \begin{figure}
 	\centering
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.9]
 		\pgfmathsetmacro{\ax}{4.5}
 		\pgfmathsetmacro{\un}{3.5}
 		\pgfmathsetmacro{\th}{35}
@@ -182,28 +182,38 @@ The full circumference of any circle with radius $R$ equals $2\pi R$, which mean
 
 \begin{figure}
 	\centering
-	\begin{tikzpicture}[node distance=3mm]
+	\begin{tikzpicture}[node distance=5mm, every node/.style={font=\large}]
 		\begin{axis}[
 			unit circle,
 		]
+			\def\xcol{xpurple}
 			\def\sr{0.3}
 			\def\rad{57.3}
 			\coordinate (O) at (0,0);
 			\coordinate (A) at (1,0);
 			\coordinate (B) at ({cos(\rad)},{sin(\rad)});
 			\coordinate (C) at ({\sr*cos(\rad)},{\sr*sin(\rad)});
-			\coordinate (T) at ({\sr/2*cos(\rad/2)},{\sr/2*sin(\rad/2)});
-			\draw[very thick, fill=black!10] (A) arc (0:360:1);
-			\def\myshift#1{\raisebox{1.5ex}}
-			\draw[very thick, fill=xred!50, postaction={decorate, decoration={text along path, text align=center, text={|\myshift|$R=1$}}}] (O) -- node[midway, above, rotate=\rad] {$R=1$} (B) arc (\rad:0:1) -- node[midway, below] {$R=1$} cycle;
-			\draw[very thick, fill=xred!20] (O) -- (\sr,0) arc (0:\rad:\sr) -- cycle;
+			\coordinate (T) at ({\sr/1.5*cos(\rad/2)},{\sr/1.5*sin(\rad/2)});
+			\coordinate (L1) at ({0.8*cos(\rad/2)},{0.8*sin(\rad/2)});
+			\coordinate (L2) at ({0.35*cos(\rad/2)},{0.35*sin(\rad/2)});
+			
+			\draw[very thick, fill=\xcol!5] (A) arc (0:360:1);
+			%\draw[line width=5mm, xpurple!75] (A) arc (0:\rad:1);
+			\def\outershift#1{\raisebox{1ex}}
+			\draw[very thick, fill=\xcol!50, postaction={decorate, decoration={text along path, text align=center, text={|\large\outershift|arc length=$R$}}}] (O) -- node[midway, above, rotate=\rad] {$R$} (B) arc (\rad:0:1) -- node[midway, below] {$R$} cycle;
+			\def\innershift#1{\raisebox{-2.5ex}}
+			\draw[postaction={decorate, decoration={text along path, text align=center, text={|\large\innershift|$1$ radians}}}] (B) arc (\rad:0:1);
+			\draw[very thick, fill=\xcol!20] (O) -- (C) arc (\rad:0:\sr) -- cycle;
+			
+			\addplot+[only marks, black] coordinates {(0,0) (1,0) ({cos(\rad)},{sin(\rad)})};
 			\node[below left of=O] {$\bm{O}$};
 			\node[below right of=A] {$\bm{A}$};
-			\node[above right of=B] {$\bm{B}$};
+			\node[above of=B] {$\bm{B}$};
 			\node at (T) {$\theta$};
+			\draw[vector, thin] (L1) -- (L2);
 		\end{axis}
 	\end{tikzpicture}
-	\caption{In this figure the arc $\bm{AB}$ has the same length of the radii $\bm{OA}$ and $\bm{OB}$, and therefore $\theta=1$ radians.}
+	\caption{In this figure the arc $\bm{AB}$ has the same length of the radii $\bm{OA}$ and $\bm{OB}$ (all are equal to $R$), and therefore $\theta=1$ radians.}
 	\label{fig:radians}
 \end{figure}
 
