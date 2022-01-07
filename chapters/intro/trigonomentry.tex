@@ -160,12 +160,13 @@ How much is a radian in degrees? The full circumference of any circle with radiu
 		\pgfmathsetmacro{\th}{35}
 		\coordinate (D) at ({\un*cos(\th)},0);
 
-		\draw[thick, fill=black!5] (A) circle (\un);
+		\def\xcol{xred}
+		\draw[thick, fill=\xcol!5] (A) circle (\un);
 		\draw[vector, <->] (-\ax,0) -- (\ax,0) node [right] {\Large$x$};
 		\draw[vector, <->] (0,-\ax) -- (0,\ax) node [above] {\Large$y$};
-		\draw[ultra thick, xblue, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
-		\draw[ultra thick, densely dotted, xpurple] (B.center) -- ({\un*cos(\th)},0);
-		\draw[thick] ($(A)+(0.8,0)$) arc (0:\th:0.8) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
+		\draw[ultra thick, \xcol, rotate=\th] (A) -- node [midway, above, rotate=\th] {$R=1$} (\un,0) node (B) {};
+		\draw[very thick, densely dotted, black!50] (B.center) -- ({\un*cos(\th)},0);
+		\draw[thick] ($(A)+(1.1,0)$) arc (0:\th:1.1) node [midway, xshift=-2mm, yshift=-2pt] {$\theta$};
 		\draw[thick] ($(D)+(0,0.3)$) -- ++(-0.3,0) -- ++(0,-0.3);
 
 		\filldraw (A) circle (2pt) node[below left] {$(0,0)=\bm{O}$};
@@ -176,7 +177,7 @@ How much is a radian in degrees? The full circumference of any circle with radiu
 		\filldraw (D) circle (2pt) node[below, anchor=north east, xshift=2mm] {$(x,0)=\bm{D}$};
 		\filldraw (B) circle (2pt) node[right, xshift=1mm, yshift=1mm] {$\bm{P}=(x,y)$};
 	\end{tikzpicture}
-	\caption{A unit circle with (...)}
+	\caption{A unit circle with a point $\bm{P}=(x,y)$ on its circumference. The triangle $\triangle \bm{OPD}$ is a right triangle with sides $\bm{OD}=x$, $\bm{OP}=y$ and an angle $\theta$ opposing the side $\bm{DP}$.}
 	\label{fig:unit_circle}
 \end{figure}
 
@@ -219,8 +220,33 @@ How much is a radian in degrees? The full circumference of any circle with radiu
 
 MORE WILL BE WRITTEN HERE!
 
+\subsection{Graphs}
+As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having both the period $T=2\pi$. Their graphs are depicted in \figref{sin and cos graphs}. The value of $\sin(x)$ is always equal to that of $\cos\left(x-\frac{\pi}{2}\right)$: we say that the two functions have a \emph{phase difference} of $\pi/2$.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				graph2d,
+				width=15cm, height=4cm,
+				xmin=-10, xmax=10,
+				ymin=-1.2, ymax=1.2,
+				xtick={-9.425,-7.854,...,9.425,10.996},
+				xticklabels={$-3\pi$, $-\frac{5}{2}\pi$, $-2\pi$, $-\frac{3}{2}\pi$, $-\pi$, $-\frac{1}{2}\pi$, , $\frac{1}{2}\pi$, $\pi$, $\frac{3}{2}\pi$, $2\pi$, $\frac{5}{2}\pi$, $3\pi$},
+				domain=-10:10,
+			]
+			\addplot[function, xred] {sin(\x*180/pi)};
+			\addplot[function, xgreen] {cos(\x*180/pi)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The graphs of \textcolor{xred}{\bm{$\sin(x)$}} and \textcolor{xgreen}{\bm{$\cos(x)$}} for $x\in[-10,10]$. Note how the graph of $\cos(x)$ is ``lagging'' behind the graph of $\sin(x)$ by $\pi/2$.}
+	\label{fig:sin and cos graphs}
+\end{figure}
+
+\subsection{Identities}
 \Blindtext
 
+\subsection{Usefull theorems}
 \Blindtext
 
 %\begin{figure}
