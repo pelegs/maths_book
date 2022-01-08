@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  8 JAN 2022 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  8 JAN 2022 23:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1702,7 +1702,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 [3]
-Underfull \vbox (badness 1137) has occurred while \output is active []
+Underfull \vbox (badness 2680) has occurred while \output is active []
 
  [4]
 Underfull \vbox (badness 3547) has occurred while \output is active []
@@ -1769,7 +1769,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29]
-[30]) (./chapters/intro/trigonomentry.tex [31] [32] [33]
+[30]) (./chapters/intro/trigonomentry.tex [31] [32]
 \pgf@layerbox@axis background=\box137
 \pgf@layerboxsaved@axis background=\box138
 \pgf@layerbox@axis grid=\box139
@@ -1802,20 +1802,16 @@ LaTeX Font Warning: Command \large invalid in math mode on input line 215.
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 215.
 
-
+[33] [34]
 Overfull \hbox (12.4974pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
-
+[35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-Underfull \vbox (badness 1675) has occurred while \output is active []
-
- [35]
-[36]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [36]
+Underfull \vbox (badness 4429) has occurred while \output is active []
 
  [37])
 (./chapters/intro/complex_numbers.tex
@@ -1849,10 +1845,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47821 strings out of 480997
- 1128219 string characters out of 5912179
- 1828757 words of memory out of 5000000
- 62236 multiletter control sequences out of 15000+600000
+ 47818 strings out of 480997
+ 1128176 string characters out of 5912179
+ 1827766 words of memory out of 5000000
+ 62233 multiletter control sequences out of 15000+600000
  650601 words of font info for 290 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,19n,127p,815b,2828s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1877,7 +1873,7 @@ psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (47 pages, 553978 bytes).
+Output written on bookmain.pdf (47 pages, 554340 bytes).
 PDF statistics:
  761 PDF objects out of 1000 (max. 8388607)
  647 compressed objects within 7 object streams
