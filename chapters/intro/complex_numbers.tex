@@ -116,7 +116,7 @@ As alluded to in the previous subsection, we can interpret a complex number $z=a
 		\pgfmathsetmacro{\t}{atan2(\b,\a)}
 		\begin{axis}[
 			complex plane,
-			width=10cm, height=10cm,
+			width=9cm, height=9cm,
 			xtick={-3,-2.5,...,3},
 			xticklabels={},
 			extra x ticks={\a},
@@ -130,7 +130,7 @@ As alluded to in the previous subsection, we can interpret a complex number $z=a
 		\node[xred, above of=zdot, yshift=-6mm] {$z=a+bi$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Text.}
+	\caption{A complex number $z=a+bi$ shown on the complex plane: the horizontal and vertical axes represent the real and imaginary components, respectively.}
 	\label{fig:complex number}
 \end{figure}
 
@@ -144,7 +144,7 @@ Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We c
 		\pgfmathsetmacro{\t}{atan2(\b,\a)}
 		\begin{axis}[
 			complex plane,
-			width=10cm, height=10cm,
+			width=9cm, height=9cm,
 			xtick={-3,-2.5,...,3},
 			xticklabels={},
 			extra x ticks={\a},
@@ -156,13 +156,13 @@ Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We c
 		]
 		\draw[thick, dashed] (\a,\b) -- (\a,0);
 		\draw[thick] ({\a-0.25},0) -- ({\a-0.25},0.25) -- (\a,0.25);
-		\draw[very thick, xpurple] (0.75,0) arc (0:\t:0.75);
-		\node[xpurple] at ({cos(\t/2)},{sin(\t/2)}) {$\theta$};
+		\draw[very thick] (0.75,0) arc (0:\t:0.75);
+		\node[] at ({cos(\t/2)},{sin(\t/2)}) {$\theta$};
 		\draw[very thick, xred] (0,0) -- node[midway, above, rotate=\t] {$r$} (\a,\b) node[complex](zdot){};
 		\node[xred, above of=zdot, yshift=-6mm] {$z$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Text.}
+	\caption{The same complex number $z$ from \figref{complex number} shown with its polar components $r=|z|=\sqrt{a^{2}+b^{2}}$ and $\theta=\arctan\left( \frac{b}{a} \right)$.}
 	\label{fig:complex number 2}
 \end{figure}
 We call $r$ the \emph{magnitude} of $z$, and $\theta$ its \emph{argument}. The ranges for $r$ and $\theta$ are, respetively, $[0,\infty)$ and $[0,2\pi)$.
