@@ -369,6 +369,37 @@ A property of some functions which is visualy easy to depict is symmetry. A real
 \end{example}
 
 (injections/surjections of real functions?)
+ 
+A real function is said to be \emph{periodic} if it repeats its values exactly over and over with increasin $x$. In more precise terms we define a real function $f$ to be periodic if for any integer value $k$,
+\begin{equation}
+	f(x+kT) = f(x).
+	\label{eq:periodic function}
+\end{equation}
+where $T=[a,b]$ is a finite interval of $\mathbb{R}$ which we call the \emph{period} of the function.
+
+\begin{example}{A periodic function}{periodic function}
+	The following graph depicts a periodic function $f$, with its period $T$ shown. Notice that for any $x\ f(x+T)=f(x)$, i.e. you can move the period measure left and right along the $x$-axis and the values of $f(x)$ in both its edges would always be the eqaul.
+
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				graph2d,
+				width=14cm, height=6cm,
+				xmin=-15, xmax=15,
+				ymin=-5, ymax=5,
+				xticklabels={},
+				yticklabels={},
+				domain=-15:15,
+				restrict y to domain=-6:6,
+				samples=350,
+			]
+			\addplot[function, xgreen] {0.5*sin(deg(\x))+3*cos(deg(2*\x))-1};
+			\draw[|-|, thick] ({pi},4) -- node[midway, below] {$T$} ({3*pi},4);
+		\end{axis}
+	\end{tikzpicture}
+\end{example}
+
+Two additional measures that arise from a period $T$ are the \emph{frequency} $f=\frac{1}{T}$, and the \emph{angular frequency} $\omega=2\pi f=\frac{2\pi}{T}$. We will use these measures later in the book.
 
 \subsection{Composition of functions}
 Functions can be \emph{composed} together, generating new functions. Given two functions $f:A\to B$ and $g:B\to C$, their composition is denoted as $f\circ g$. For the composition to be well defined, the \textbf{image} of $f$ must be the same as the \textbf{domain} of $g$, and the resulting composition would have $A$ as its domain and $C$ as its image, i.e. $f\circ g:A\to C$.

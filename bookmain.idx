@@ -60,41 +60,45 @@
 \indexentry{decreasing}{19}
 \indexentry{symmetric}{19}
 \indexentry{anti-symmetric}{19}
-\indexentry{composed}{20}
+\indexentry{periodic}{20}
+\indexentry{period}{20}
+\indexentry{frequency}{21}
+\indexentry{angular frequency}{21}
+\indexentry{composed}{21}
 \indexentry{polynomial functions}{22}
 \indexentry{coefficients}{22}
 \indexentry{degree}{22}
 \indexentry{order}{22}
-\indexentry{summation notation}{22}
-\indexentry{Capital-sigma notation}{22}
-\indexentry{index of summation}{22}
-\indexentry{roots}{23}
-\indexentry{zeros}{23}
+\indexentry{summation notation}{23}
+\indexentry{Capital-sigma notation}{23}
+\indexentry{index of summation}{23}
+\indexentry{roots}{24}
+\indexentry{zeros}{24}
 \indexentry{the fundamental theorem of algebra}{24}
-\indexentry{exponential function}{25}
-\indexentry{exponential}{25}
-\indexentry{base}{25}
-\indexentry{Euler's number}{26}
-\indexentry{natural base}{26}
-\indexentry{logatithmic functions}{26}
-\indexentry{logarithms}{26}
-\indexentry{logarithm tables}{29}
-\indexentry{natural logarithm}{30}
-\indexentry{right triangle}{30}
-\indexentry{sine}{31}
-\indexentry{cosine}{31}
-\indexentry{tangent}{31}
-\indexentry{Pythagorean theorem}{31}
-\indexentry{unit circle}{32}
-\indexentry{radians}{32}
-\indexentry{phase difference}{33}
-\indexentry{real component}{37}
-\indexentry{imaginary component}{37}
-\indexentry{conjugation}{38}
-\indexentry{complex plane}{38}
-\indexentry{magnitude}{40}
-\indexentry{argument}{40}
-\indexentry{polar form}{40}
-\indexentry{Cartesian form}{40}
-\indexentry{Euler's formula}{41}
-\indexentry{Eurler's identity}{41}
+\indexentry{exponential function}{26}
+\indexentry{exponential}{26}
+\indexentry{base}{26}
+\indexentry{Euler's number}{27}
+\indexentry{natural base}{27}
+\indexentry{logatithmic functions}{27}
+\indexentry{logarithms}{27}
+\indexentry{logarithm tables}{30}
+\indexentry{natural logarithm}{31}
+\indexentry{right triangle}{31}
+\indexentry{sine}{32}
+\indexentry{cosine}{32}
+\indexentry{tangent}{32}
+\indexentry{Pythagorean theorem}{32}
+\indexentry{unit circle}{33}
+\indexentry{radians}{33}
+\indexentry{phase difference}{34}
+\indexentry{real component}{38}
+\indexentry{imaginary component}{38}
+\indexentry{conjugation}{39}
+\indexentry{complex plane}{39}
+\indexentry{magnitude}{41}
+\indexentry{argument}{41}
+\indexentry{polar form}{41}
+\indexentry{Cartesian form}{41}
+\indexentry{Euler's formula}{42}
+\indexentry{Eurler's identity}{42}
