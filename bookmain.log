@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  8 JAN 2022 23:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  9 JAN 2022 01:39
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1760,16 +1760,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26]
-Underfull \vbox (badness 5231) has occurred while \output is active []
+Underfull \vbox (badness 2735) has occurred while \output is active []
 
  [27]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29]
-[30]) (./chapters/intro/trigonomentry.tex [31] [32]
+[29]) (./chapters/intro/trigonomentry.tex [30] [31] [32]
 \pgf@layerbox@axis background=\box137
 \pgf@layerboxsaved@axis background=\box138
 \pgf@layerbox@axis grid=\box139
@@ -1802,36 +1799,33 @@ LaTeX Font Warning: Command \large invalid in math mode on input line 215.
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 215.
 
-[33] [34]
+
 Overfull \hbox (12.4974pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
-[35]
+[33] [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
-Underfull \vbox (badness 4429) has occurred while \output is active []
-
- [37])
-(./chapters/intro/complex_numbers.tex
+ [35]
+[36]) (./chapters/intro/complex_numbers.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [38] [39] [40]
+ [37] [38] [39]
 Overfull \hbox (17.97472pt too wide) detected at line 204
 []
  []
 
-[41] [42]
+[40] [41]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43])
-[44]
+ [42])
+[43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
-[46] (./chapters/intro/exercises.tex) [47]
+ [44]
+[45] (./chapters/intro/exercises.tex) [46]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 366.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 366.
  (./bookmain.aux)
@@ -1845,10 +1839,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47818 strings out of 480997
- 1128176 string characters out of 5912179
- 1828030 words of memory out of 5000000
- 62233 multiletter control sequences out of 15000+600000
+ 47816 strings out of 480997
+ 1128152 string characters out of 5912179
+ 1816932 words of memory out of 5000000
+ 62232 multiletter control sequences out of 15000+600000
  650601 words of font info for 290 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,19n,127p,815b,2828s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1873,10 +1867,10 @@ psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (47 pages, 554883 bytes).
+Output written on bookmain.pdf (46 pages, 550756 bytes).
 PDF statistics:
- 763 PDF objects out of 1000 (max. 8388607)
- 648 compressed objects within 7 object streams
- 250 named destinations out of 1000 (max. 500000)
+ 759 PDF objects out of 1000 (max. 8388607)
+ 645 compressed objects within 7 object streams
+ 249 named destinations out of 1000 (max. 500000)
  400 words of extra memory for PDF output out of 10000 (max. 10000000)
 
