@@ -289,7 +289,7 @@ What is the $n$-th order roots of a complex number $z$, i.e. $\nroot{n}{z}$? An 
 	i.e. $z\cdot w$ has magnitude which is the \textbf{product} of the magnitudes of $z$ and $w$, and an argument which is the \textbf{sum} of the arguments of $z$ and $w$.
 
 	\vspace{1em}
-	The figure below depict the arguments of the three numbers $z,w,z\cdot w$. Note that the \textcolor{xgreen}{\textbf{green angle}} is equal to the sum of the \textcolor{xred}{\textbf{red angle}} and the \textcolor{xblue}{\textbf{blue angle}}.
+	The figure below depict the arguments of the three numbers $z,w,z\cdot w$. Note that $\textcolor{xpurple}{\bm{\theta_{z\cdot w}}} = \textcolor{xred}{\bm{\theta_{z}}}+\textcolor{xblue}{\bm{\theta_{w}}}$.
 
 	\vspace{1em}
 		\centering
@@ -297,9 +297,9 @@ What is the $n$-th order roots of a complex number $z$, i.e. $\nroot{n}{z}$? An 
 			\tikzstyle{every node}=[font=\large]
 			\begin{axis}[
 				complex plane,
-				width=7cm, height=7cm,
+				width=7cm, height=5cm,
 				xmin=-1.25, xmax=1.25,
-				ymin=-1.25, ymax=1.25,
+				ymin=-0.25, ymax=1.25,
 				xtick={-1,0,1},
 				xticklabels={},
 				extra x ticks={-0.5,0.5},
@@ -312,16 +312,19 @@ What is the $n$-th order roots of a complex number $z$, i.e. $\nroot{n}{z}$? An 
 			\coordinate (O) at (0,0);
 			\coordinate (A) at (0.707,0.707);
 			\coordinate (B) at (0,1);
-			\draw[black!20] (1,0) arc (0:360:1);
-			\arcc{135}{0.5}{xgreen}
-			\arcc{90}{0.4}{xblue}
-			\arcc{45}{0.3}{xred}
+			\draw[black!20] (1,0) arc (0:180:1);
+			\arcc{135}{0.60}{xpurple}
+			\arcc{90}{0.55}{xblue}
+			\arcc{45}{0.5}{xred}
 			\draw[xred] (0,0) -- (0.707,0.707) node[complex](z){};
 			\draw[xblue] (0,0) -- (0,1) node[complex](w){};
-			\draw[xgreen] (0,0) -- (-0.707,0.707) node[complex](zw){};
+			\draw[xpurple] (0,0) -- (-0.707,0.707) node[complex](zw){};
 			\node[xred, right of=z] {$z$};
 			\node[xblue, left of=w, yshift=2mm] {$w$};
-			\node[xgreen, above left of=zw, xshift=-2mm] {$z\cdot w$};
+			\node[xpurple, above left of=zw, xshift=-2mm] {$z\cdot w$};
+			\node[xred, rotate=22.5] at ({0.35*cos(22.5)},{0.35*sin(22.5)}) {$\theta_{z}$};
+			\node[xblue, rotate=67.5] at ({0.35*cos(67.5)},{0.35*sin(67.5)}) {$\theta_{w}$};
+			\node[xpurple, rotate=-45] at ({0.35*cos(112.5)},{0.35*sin(112.5)}) {$\theta_{z\cdot w}$};
 			\end{axis}
 		\end{tikzpicture}
 \end{example}
