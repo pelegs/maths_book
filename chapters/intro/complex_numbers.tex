@@ -329,6 +329,42 @@ What is the $n$-th order roots of a complex number $z$, i.e. $\nroot{n}{z}$? An 
 		\end{tikzpicture}
 \end{example}
 
+\begin{note}{$\bm{i^{2}=-1}$ from a geometric (polar) viewpoint}{}
+	In polar coordinates $i$ has magnitude $1$ and argument $\frac{\pi}{2}$, i.e. multiplying by $i$ is equivalent to rotation by $\frac{\pi}{2}$ ($\ang{90}$) counter clockwise. Therefore, multiplying $i$ by itself, i.e. $i^{2}$, rotates $i$ itself by $\frac{\pi}{2}$ counter clockwise, bringing it to $-1$.
+	
+	\centering
+	\begin{tikzpicture}[node distance=3mm]
+			\tikzstyle{every node}=[font=\large]
+			\begin{axis}[
+				complex plane,
+				width=7cm, height=5cm,
+				xmin=-1.25, xmax=1.25,
+				ymin=-0.25, ymax=1.25,
+				xtick={-1,0,1},
+				xticklabels={},
+				extra x ticks={-0.5,0.5},
+				extra x tick labels={},
+				ytick={-1,0,1},
+				yticklabels={},
+				extra y ticks={-0.5,0.5},
+				extra y tick labels={},
+			]
+			\coordinate (O) at (0,0);
+			\coordinate (i) at (0,1);
+			\coordinate (-1) at (-1,0);
+			\draw[black!20] (1,0) arc (0:180:1);
+			\arcc{180}{0.6}{xblue}
+			\arcc{90}{0.5}{xdarkgreen}
+			\draw[xdarkgreen] (O) -- (i) node[complex](i){};
+			\draw[xblue] (O) -- (-1) node[complex](-1){};
+			\node[xdarkgreen, above right of=i] {$i$};
+			\node[xblue, below of=-1] {$-1$};
+			\node[xdarkgreen] at ({0.3*cos(45)},{0.3*sin(45)}) {$\frac{\pi}{2}$};
+			\node[xblue] at ({0.3*cos(135)},{0.3*sin(135)}) {$\pi$};
+			\end{axis}
+		\end{tikzpicture}
+\end{note}
+
 In polar form $1=\cos(0)+i\sin(0)$. Finding the arguments of the cube roots of $1$ is therefore done by answering the following question: what angles $\theta$ will equal $0$ (or its equivalent angles $2\pi,4\pi,6\pi,\dots$) when multiplied by $3$? The answer is very simple: the only possible solutions are
 \begin{align}
 	\theta_{1} &= 0,\nonumber\\
