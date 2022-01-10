@@ -22,6 +22,8 @@
 \pgfkeyssetvalue{/xref dict/note}{Note}
 \pgfkeyssetvalue{/xref dict/challange}{Challange}
 \pgfkeyssetvalue{/xref dict/example}{Example}
+\pgfkeyssetvalue{/xref dict/0}{tapir_rainbow}
+\pgfkeyssetvalue{/xref dict/1}{tapir_voronoi}
 
 %----------%
 % GRAPHICS %
@@ -134,7 +136,7 @@
 	\begin{tikzpicture}[font=\sffamily\bfseries]
 		\fill[black!10, rounded corners] (0,0) rectangle (5cm,5cm);
 		\node (chapternum) at (2.5cm,4.5cm) {\fontsize{85}{85}\selectfont\thechapter};
-		\node[below of=chapternum, yshift=-2cm] {\includegraphics[scale=1.5]{figures/chapters/tapir_rainbow.pdf}};
+		\node[below of=chapternum, yshift=-2cm] {\includegraphics[scale=1.5]{figures/chapters/\pgfkeysvalueof{/xref dict/\thechapter}.pdf}};
 		\node[align=center, below of=chapternum, yshift=-5cm] {\fontsize{30}{30}\selectfont\uppercase{#1}};
 		\node[align=center, above of=chapternum, yshift=5mm] {\huge CHAPTER};
 	\end{tikzpicture}
@@ -369,5 +371,8 @@
 \input{chapters/intro/trigonomentry.tex}
 \input{chapters/intro/complex_numbers.tex}
 \input{chapters/intro/exercises.tex}
+
+% Introduction
+\input{chapters/linear_algebra_intuitive/preface.tex}
 
 \end{document}

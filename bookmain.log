@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  10 JAN 2022 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  10 JAN 2022 23:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1479,48 +1479,48 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 (./bookmain.aux)
 \openout1 = `bookmain.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 358.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 360.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 3
-58.
+60.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 358.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 358.
+LaTeX Font Info:    ... okay on input line 360.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 360.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 3
-58.
+60.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 358.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 358.
-LaTeX Font Info:    ... okay on input line 358.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 358.
-LaTeX Font Info:    ... okay on input line 358.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 358.
-LaTeX Font Info:    ... okay on input line 358.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 358.
+LaTeX Font Info:    ... okay on input line 360.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 360.
+LaTeX Font Info:    ... okay on input line 360.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 360.
+LaTeX Font Info:    ... okay on input line 360.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 360.
+LaTeX Font Info:    ... okay on input line 360.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 360.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 3
-58.
+60.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 358.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 358.
+LaTeX Font Info:    ... okay on input line 360.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 360.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-358.
+360.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 358.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 358.
-LaTeX Font Info:    ... okay on input line 358.
+LaTeX Font Info:    ... okay on input line 360.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 360.
+LaTeX Font Info:    ... okay on input line 360.
 LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 3
-58.
+60.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
@@ -1597,7 +1597,7 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@posthook=\toks51
 )
 \AtBeginShipoutBox=\box136
-Package hyperref Info: Link coloring ON on input line 358.
+Package hyperref Info: Link coloring ON on input line 360.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1611,9 +1611,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count401
 )
-LaTeX Info: Redefining \ref on input line 358.
-LaTeX Info: Redefining \pageref on input line 358.
-LaTeX Info: Redefining \nameref on input line 358.
+LaTeX Info: Redefining \ref on input line 360.
+LaTeX Info: Redefining \pageref on input line 360.
+LaTeX Info: Redefining \nameref on input line 360.
  (./bookmain.out) (./bookmain.out)
 \@outlinefile=\write7
 \openout7 = `bookmain.out'.
@@ -1628,46 +1628,46 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 
-Package chemgreek Info: Activating mapping `kpfonts' on line 358.
+Package chemgreek Info: Activating mapping `kpfonts' on line 360.
 
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
-358.
+360.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-358.
+360.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
-358.
+360.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
-358.
+360.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for OT1+jkpss on input line
- 358.
+ 360.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkpss.fd
 File: ot1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for OT1/jkpss.
 )
 LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
- 358.
+ 360.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
 (./chapters/intro/preface.tex
 Chapter 0.
-<figures/chapters/tapir_rainbow.pdf, id=155, 123.26372pt x 95.3452pt>
+<figures/chapters/tapir_rainbow.pdf, id=159, 123.26372pt x 95.3452pt>
 File: figures/chapters/tapir_rainbow.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_rainbow.pdf>
 Package pdftex.def Info: figures/chapters/tapir_rainbow.pdf  used on input line
@@ -1817,26 +1817,40 @@ Overfull \hbox (17.97472pt too wide) detected at line 204
 []
  []
 
-[40] [41] [42]) (./chapters/intro/exercises.tex [43] [44] [45]) [46]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 373.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 373.
+[40] [41] [42]) (./chapters/intro/exercises.tex [43] [44] [45])
+(./chapters/linear_algebra_intuitive/preface.tex [46]
+Chapter 1.
 
-(./bookmain.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 373.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 373.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1.
+
+<figures/chapters/tapir_voronoi.pdf, id=654, 127.11917pt x 78.37502pt>
+File: figures/chapters/tapir_voronoi.pdf Graphic file (type pdf)
+<use figures/chapters/tapir_voronoi.pdf>
+Package pdftex.def Info: figures/chapters/tapir_voronoi.pdf  used on input line
+ 1.
+(pdftex.def)             Requested size: 190.67827pt x 117.56223pt.
+) [47
+
+ <./figures/chapters/tapir_voronoi.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 378.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 378.
+ (./bookmain.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 378.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 378.
 Package rerunfilecheck Info: File `bookmain.out' has not changed.
-(rerunfilecheck)             Checksum: CA5279724E53AB2917B3C51D4603F431;2032.
+(rerunfilecheck)             Checksum: 732C1F658193B6632B6CD0962A872D2A;2104.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47874 strings out of 480997
- 1129002 string characters out of 5912179
- 1818477 words of memory out of 5000000
- 62276 multiletter control sequences out of 15000+600000
- 650601 words of font info for 290 fonts, out of 8000000 for 9000
+ 47892 strings out of 480997
+ 1129486 string characters out of 5912179
+ 1818509 words of memory out of 5000000
+ 62286 multiletter control sequences out of 15000+600000
+ 651364 words of font info for 292 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,19n,127p,815b,2828s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.en
@@ -1860,10 +1874,10 @@ psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (46 pages, 555358 bytes).
+Output written on bookmain.pdf (47 pages, 571456 bytes).
 PDF statistics:
- 773 PDF objects out of 1000 (max. 8388607)
- 659 compressed objects within 7 object streams
- 263 named destinations out of 1000 (max. 500000)
- 392 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 785 PDF objects out of 1000 (max. 8388607)
+ 669 compressed objects within 7 object streams
+ 265 named destinations out of 1000 (max. 500000)
+ 405 words of extra memory for PDF output out of 10000 (max. 10000000)
 
