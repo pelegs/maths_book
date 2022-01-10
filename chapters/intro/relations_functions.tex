@@ -393,8 +393,8 @@ where $T=[a,b]$ is a finite interval of $\mathbb{R}$ which we call the \emph{per
 				restrict y to domain=-6:6,
 				samples=350,
 			]
-			\addplot[function, xgreen] {0.5*sin(deg(\x))+3*cos(deg(2*\x))-1};
-			\draw[|-|, thick] ({pi},4) -- node[midway, below] {$T$} ({3*pi},4);
+			\addplot[function, xgreen] {0.8*sin(deg(2*\x))+1.5*sin(deg(\x))};
+			\draw[|-|, thick] (1,4) -- node[midway, below] {$T$} ({2*pi+1},4);
 		\end{axis}
 	\end{tikzpicture}
 \end{example}

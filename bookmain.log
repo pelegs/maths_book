@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  10 JAN 2022 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  10 JAN 2022 15:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1839,7 +1839,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  47858 strings out of 480997
- 1128848 string characters out of 5912179
+ 1128853 string characters out of 5912179
  1818392 words of memory out of 5000000
  62273 multiletter control sequences out of 15000+600000
  650601 words of font info for 290 fonts, out of 8000000 for 9000
@@ -1866,7 +1866,7 @@ psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (46 pages, 554024 bytes).
+Output written on bookmain.pdf (46 pages, 553968 bytes).
 PDF statistics:
  760 PDF objects out of 1000 (max. 8388607)
  646 compressed objects within 7 object streams
