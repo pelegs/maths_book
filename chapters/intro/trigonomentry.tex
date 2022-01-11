@@ -44,7 +44,6 @@
 	},
 }
 
-
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
 Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
@@ -244,9 +243,74 @@ As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having b
 \end{figure}
 
 \subsection{Identities}
-\Blindtext
+The following are some useful facts and connections between trigonometic functions:
+\begin{itemize}
+	\item Pythagorean identity:
+		\begin{equation}
+			\sin^{2}(\theta) + \cos^{2}(\theta) = 1
+		\end{equation}
+	
+	\item Symmetry/Antisymmetry:
+		\begin{align}
+			\sin(-\theta) &= -\sin(\theta).\\
+			\cos(-\theta) &= \cos(\theta).\\
+			\tan(-\theta) &= -\tan(\theta).
+		\end{align}
+	
+	\item Tangent from sine and cosine:
+		\begin{equation}
+			\tan(\theta)=\frac{\sin(\theta)}{\cos(\theta)}
+		\end{equation}
+	
+	\item Phase between sine and cosine:
+		\begin{align}
+			\sin\left(\theta\pm\frac{\pi}{2}\right) &= \pm\cos(\theta).\\
+			\cos\left(\theta\pm\frac{\pi}{2}\right) &= \mp\sin(\theta).
+		\end{align}
+	
+	\item Half-period shift:
+		\begin{align}
+			\sin(\theta+\pi) &= -\sin(\theta).\\
+			\cos(\theta+\pi) &= -\cos(\theta).
+		\end{align}
+	
+	\item Angle sum:
+		\begin{align}
+			\sin(\alpha\pm\beta) &= \sin(\alpha)\cos(\beta)\pm\cos(\alpha)\sin(\beta).\\
+			\cos(\alpha\pm\beta) &= \cos(\alpha)\cos(\beta)\mp\sin(\alpha)\sin(\beta).
+		\end{align}
+	
+	\item Double angle:
+		\begin{align}
+			\sin(2\theta) &= 2\sin(\theta)\cos(\theta).\\
+			\cos(2\theta) &= 1-2\sin^{2}(\theta).
+		\end{align}
+	
+	\item Half angle:
+		\begin{align}
+			\sin\left( \frac{\theta}{2} \right) &= \pm\sqrt{\frac{1-\cos(\theta)}{2}}.\\
+			\cos\left( \frac{\theta}{2} \right) &= \pm\sqrt{\frac{1+\cos(\theta)}{2}}.\\
+			\tan\left( \frac{\theta}{2} \right) &= \frac{\sin(\theta)}{1+\cos(\theta)}.
+		\end{align}
+	
+	\item Product to sum:
+		\begin{align}
+			\sin(\theta)\sin(\varphi) &= \frac{1}{2}\left[ \cos(\theta-\varphi)-\cos(\theta+\varphi) \right].\\
+			\cos(\theta)\cos(\varphi) &= \frac{1}{2}\left[ \cos(\theta-\varphi)+\cos(\theta+\varphi) \right].\\
+			\sin(\theta)\cos(\varphi) &= \frac{1}{2}\left[ \sin(\theta+\varphi) + \sin(\theta-\varphi) \right]\\.
+			\tan(\theta)\tan(\varphi) &= \frac{\cos(\theta-\varphi)-\cos(\theta+\varphi)}{\cos(\theta-\varphi)+\cos(\theta+\varphi)}.
+		\end{align}
 
-\subsection{Usefull theorems}
+	\item Sum to product:
+		\begin{align}
+			\sin(\theta)\pm\sin(\varphi) &= 2\sin\left( \frac{\theta\pm\varphi}{2} \right)\cos\left( \frac{\theta\mp\varphi}{2} \right).\\
+			\cos(\theta)+\cos(\varphi) &= 2\cos\left( \frac{\theta+\varphi}{2} \right)\cos\left( \frac{\theta-\varphi}{2} \right).\\
+			\cos(\theta)-\cos(\varphi) &= -2\cos\left( \frac{\theta+\varphi}{2} \right)\cos\left( \frac{\theta-\varphi}{2} \right).\\
+			\tan(\theta)\pm\tan(\varphi) &= \frac{\sin(\theta\pm\varphi)}{\cos(\theta)\cos(\varphi)}.
+		\end{align}
+\end{itemize}
+
+\subsection{Useful theorems}
 The area $S$ of a triangle $\triangle ABC$ can be calculated using the length $L$ any side of the triangle (in this context called a \emph{base}) and the height $h$ to its opposing vertex (see \figref{area of a triangle}):
 \begin{equation}
 	S = \frac{1}{2}Lh.
@@ -303,7 +367,7 @@ i.e. in a triangle, the ratio between any side and the sine of its opposing angl
 		\coordinate (C) at (-1,4);
 		% a=3.15, b=5.83, c=4
 		% α=30.79 β=108.67 γ=40.54
-		\draw[very thick, fill=xblue!20] (A) -- (B) node[midway, right] {$c$} -- node[midway, above right] {$a=3.15$} (C) -- cycle node[midway, below left] {$b$};
+		\draw[very thick, fill=xpurple!40] (A) -- (B) node[midway, right] {$c$} -- node[midway, above right] {$a=3.15$} (C) -- cycle node[midway, below left] {$b$};
 
 		% "local bounding box" gives the pic its label
 		\pic[local bounding box=alpha, draw, thick, angle radius=11mm, angle eccentricity=0.7, "$\alpha$"] {angle=B--A--C};
@@ -331,6 +395,62 @@ i.e. in a triangle, the ratio between any side and the sine of its opposing angl
 	\[
 		c = \frac{a}{\sin(\alpha)}\cdot\sin(\gamma) = \frac{3.15}{\sin(\ang{30.79})}\cdot\sin(\ang{40.54}) \approx 4.
 	\]
+\end{example}
+
+\begin{note}{Ambiguity of solutions}{}
+	The above example reveals an issue that might arise due to the symmetrical nature of $\sin(x)$ around $x=\pi$ ($\ang{180}$): say we wanted to calculate $\beta$ using the law of sines instead of by using $\beta=\ang{180}-\alpha-\gamma$. In this case we would solve the equation
+	\[
+		\frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b},
+	\]
+	which would result in $\beta=\arcsin\left( \frac{b\sin(\alpha)}{a}  \right)=\arcsin\left( 0.95 \right)$. However, two angles can fit this requirement: the sines of $\ang{71.34}$ and $\ang{108.67}$ are both equal to $0.95$! Therefore, we must be careful when using the law of sine and make sure we always choose values that make sense (e.g. such that all angles add up to $\ang{180}$).
+\end{note}
+
+Of course, the sine function is not unique in having its own named ``Law'': another useful theorem is the so-called \emph{law of cosines} (also \emph{al-Kashi's theorem}). This theorem states that given a triangle with sides $a,b,c$ and an angle $\gamma$ opposing $c$,
+\begin{equation}
+	c^{2} = a^{2} + b^{2} - 2ab\cos(\gamma).
+	\label{eq:law of cosines}
+\end{equation}
+
+Much like the law of sines, the choice of angle does not matter, as long as we plug the correct sides to the equation: for $\alpha$ and $\beta$ being the angles opposing to $a$ and $b$ respectively,
+\begin{align}
+	a^{2} &= b^{2} + c^{2} - 2bc\cos(\alpha),\nonumber\\
+	b^{2} &= a^{2} + c^{2} - 2ac\cos(\beta).
+\end{align}
+
+If the triangle in question is a right triangle then one of the angles is equal to $\ang{90}$. Without loss of generality, let us assume that this is $\gamma$. Since $\cos(\ang{90})=0$ we get that in the case of a right triangle
+\begin{equation}
+	c^{2} = a^{2} + b^{2},
+	\label{eq:pythagorean theorem from law of cosines}
+\end{equation}
+i.e. we retrieve back the Pythagorean theorem.
+
+\begin{example}{Law of cosines}{}
+	Calculate all angles in the following triangle:
+
+	\vspace{2em}
+	\centering
+	\begin{tikzpicture}
+		\coordinate (A) at (-3,0);
+		\coordinate (B) at (2,-1);
+		\coordinate (C) at (-1,3);
+		% a=5 b=3.61 c=5.1
+		% α=70.55 β=67.58 γ=41.87
+		\draw[very thick, fill=xgreen!50] (A) -- (B) node[midway, below left] {$c=5.1$} -- node[midway, above right] {$a=5$} (C) -- cycle node[midway, above left] {$b=3.61$};
+
+		% "local bounding box" gives the pic its label
+		\pic[local bounding box=alpha, draw, thick, angle radius=9mm, angle eccentricity=0.6, "$\alpha$"] {angle=B--A--C};
+		\pic[local bounding box=beta, draw, thick, angle radius=11mm, angle eccentricity=0.7, "$\beta$"] {angle=C--B--A};
+		\pic[local bounding box=gamma, draw, thick, angle radius=9mm, angle eccentricity=0.6, "$\gamma$"] {angle=A--C--B};
+	\end{tikzpicture}
+
+	\vspace{1em}
+	\flushleft
+	Using the law of cosines:
+	\begin{align*}
+		\cos(\gamma) &= \frac{c^{2}-b^{2}-a^{2}}{-2ab} = \frac{5.1^{2}-3.61^{2}-5^{2}}{-2\cdot5\cdot3.61} \approx 0.33302\Rightarrow \gamma=\ang{70.54},\\
+		\cos(\beta) &= \frac{b^{2}-a^{2}-c^{2}}{-2ac} = \frac{3.61^{2}-5^{2}-5.1^{2}}{-2\cdot5\cdot5.1} \approx 0.74466\Rightarrow \beta=\ang{41.87},\\
+		\cos(\alpha) &= \frac{a^{2}-b^{2}-c^{2}}{-2cb} = \frac{5^{2}-3.61^{2}-5.1^{2}}{-2\cdot5.1\cdot3.61} \approx 0.38135\Rightarrow \alpha=\ang{67.58}.
+	\end{align*}
 \end{example}
 
 %\begin{figure}
