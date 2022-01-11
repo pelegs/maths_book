@@ -247,8 +247,54 @@ As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having b
 \Blindtext
 
 \subsection{Usefull theorems}
-\Blindtext
+The area $S$ of a triangle $\triangle ABC$ can be calculated using the length $L$ any side of the triangle (in this context called a \emph{base}) and the height $h$ to its opposing vertex (see \figref{area of a triangle}):
+\begin{equation}
+	S = \frac{1}{2}Lh.
+	\label{eq:area of a triangle}
+\end{equation}
 
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\coordinate (A) at (-2,1);
+		\coordinate (B) at (1,3.5);
+		\coordinate (C) at (2,1);
+		\coordinate (D) at (B|-C);
+		\draw[very thick, fill=xblue!20] (A) node[left] {$A$} -- (B) node[above] {$B$} node[midway, above left] {$c$} -- node[midway, right] {$a$} (C) node[right] {$C$} -- cycle node[midway, below] {$b$};
+		\draw[thick, dashed] (B) -- (D) node[midway, left] {$h$};
+		\draw[thick] (D) -- ++(0.2,0) -- ++(0,0.2) -- ++(-0.2,0);
+		\pic[draw, thick, angle radius=11mm, angle eccentricity=0.7, "$\alpha$"] {angle=C--A--B};
+	\end{tikzpicture}
+	\caption{The area of a triangle using the side $b$ as a base, and its corresponding height to the point $B$. The angle opposing the side $A$ is marked as $\alpha$.}
+	\label{fig:area of a triangle}
+\end{figure}
+
+The triangle with sides $cbh$ is a right triangle, $c$ being its hypotenous. We can therefore infer the size of $h$ using $\alpha$:
+\begin{equation}
+	h = c\sin(\alpha).
+	\label{eq:first equation in law of sines}
+\end{equation}
+Subtituting this back to \eqref{area of a triangle} yields that the area of the triangle is
+\begin{equation}
+	S = \frac{1}{2}bc\sin(\alpha).
+	\label{eq:area using sin theta}
+\end{equation}
+There is nothing special about choosing the side $b$ as a base: we can also use $a$ or $c$ for the calculation. This will yield, repspectively,
+\begin{align}
+	S &= \frac{1}{2}ac\sin(\gamma),\\
+	S &= \frac{1}{2}ac\sin(\beta),
+	\label{eq:}
+\end{align}
+where $\beta$ is the angle opposing $b$ and $\gamma$ is the angle opposing $c$. Since $S$ is the same in all cases, we simply multiply each of the area equations by $2$ and divide by $abc$, which yields
+\begin{equation}
+	\frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c},
+	\label{eq:law of sines}
+\end{equation}
+i.e. in a triangle, the ratio between any side and the sine of its opposing angle is always the same no matter which side we choose. This theorem is called the \emph{law of sines}.
+
+\begin{example}{Law of sines}{}
+	Here will be an example.
+\end{example}
 %\begin{figure}
 %	\centering
 %	\begin{tikzpicture}
@@ -279,19 +325,19 @@ As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having b
 %	\label{fig:unit_circle_quadrants}
 %\end{figure}
 
-\begin{table}
-	\caption{Text}
-	\label{tab:quadrants_trig_vals}
-	\centering
-	\begin{tabular}{lll}
-		\toprule
-		Quadrant & $\cos(\theta)=x$ & $\sin(\theta)=y$\\
-		\midrule
-		\rowcolor{xred!35}1 & $\left[ 0,1 \right]$ & $\left[ 0,1 \right]$\\
-		\rowcolor{xblue!35}2 & $\left[-1,0 \right]$ & $\left[ 0,1 \right]$\\
-		\rowcolor{xgreen!35}3 & $\left[-1,0 \right]$ & $\left[-1,0 \right]$\\
-		\rowcolor{xorange!35}4 & $\left[ 0,1 \right]$ & $\left[-1,0 \right]$\\
-		\bottomrule
-	\end{tabular}
-\end{table}
+%\begin{table}
+%	\caption{Text}
+%	\label{tab:quadrants_trig_vals}
+%	\centering
+%	\begin{tabular}{lll}
+%		\toprule
+%		Quadrant & $\cos(\theta)=x$ & $\sin(\theta)=y$\\
+%		\midrule
+%		\rowcolor{xred!35}1 & $\left[ 0,1 \right]$ & $\left[ 0,1 \right]$\\
+%		\rowcolor{xblue!35}2 & $\left[-1,0 \right]$ & $\left[ 0,1 \right]$\\
+%		\rowcolor{xgreen!35}3 & $\left[-1,0 \right]$ & $\left[-1,0 \right]$\\
+%		\rowcolor{xorange!35}4 & $\left[ 0,1 \right]$ & $\left[-1,0 \right]$\\
+%		\bottomrule
+%	\end{tabular}
+%\end{table}
 
