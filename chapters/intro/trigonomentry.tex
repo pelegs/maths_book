@@ -293,8 +293,46 @@ where $\beta$ is the angle opposing $b$ and $\gamma$ is the angle opposing $c$. 
 i.e. in a triangle, the ratio between any side and the sine of its opposing angle is always the same no matter which side we choose. This theorem is called the \emph{law of sines}.
 
 \begin{example}{Law of sines}{}
-	Here will be an example.
+	Given the triangle $\triangle ABC$ below, what are $\beta$ and $b$?
+
+	\vspace{2em}
+	\centering
+	\begin{tikzpicture}
+		\coordinate (A) at (2,-1);
+		\coordinate (B) at (2,3);
+		\coordinate (C) at (-1,4);
+		% a=3.15, b=5.83, c=4
+		% α=30.79 β=108.67 γ=40.54
+		\draw[very thick, fill=xblue!20] (A) -- (B) node[midway, right] {$c$} -- node[midway, above right] {$a=3.15$} (C) -- cycle node[midway, below left] {$b$};
+
+		% "local bounding box" gives the pic its label
+		\pic[local bounding box=alpha, draw, thick, angle radius=11mm, angle eccentricity=0.7, "$\alpha$"] {angle=B--A--C};
+		\pic[local bounding box=beta, draw, thick, angle radius=7mm, angle eccentricity=0.6, "$\beta$"] {angle=C--B--A};
+		\pic[local bounding box=gamma, draw, thick, angle radius=11mm, angle eccentricity=0.7, "$\gamma$"] {angle=A--C--B};
+
+		\node[above right of=alpha, xshift=2mm] (alphatxt) {$\ang{30.79}$};
+		\node[below left of=gamma, xshift=-2mm] (gammatxt) {$\ang{40.54}$};
+		\draw[vector, thick] (alphatxt.south) to [out=-90, in=0] (alpha);
+		\draw[vector, thick] (gammatxt.north) to [out=90, in=180] (gamma);
+	\end{tikzpicture}
+
+	\vspace{1em}
+	\flushleft
+	Since all angles in a triangle must add up to $\ang{180}$,
+	\[
+		\beta=\ang{180}-\ang{30.79}-\ang{40.54}=\ang{108.67}.
+	\]
+
+	Using the law of sines,
+	\[
+		b = \frac{a}{\sin(\alpha)}\cdot\sin(\beta) = \frac{3.15}{\sin(\ang{30.79})}\cdot\sin(\ang{108.67}) \approx 5.83,
+	\]
+	and
+	\[
+		c = \frac{a}{\sin(\alpha)}\cdot\sin(\gamma) = \frac{3.15}{\sin(\ang{30.79})}\cdot\sin(\ang{40.54}) \approx 4.
+	\]
 \end{example}
+
 %\begin{figure}
 %	\centering
 %	\begin{tikzpicture}
