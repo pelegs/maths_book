@@ -242,7 +242,7 @@ How much is a radian in degrees? The full circumference of any circle with radiu
 \end{figure}
 
 \subsection{Graphs}
-As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having both the period $T=2\pi$. Their graphs are depicted in \figref{sin and cos graphs}. The value of $\sin(x)$ is always equal to that of $\cos\left(x-\frac{\pi}{2}\right)$: we say that the two functions have a \emph{phase difference} of $\pi/2$.
+As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having both the period $T=2\pi$. Their graphs are depicted in \figref{sin and cos graphs}. The value of $\sin(x)$ is always equal to that of $\cos\left(x-\frac{\pi}{2}\right)$: we say that the two functions have a \emph{phase difference} of $\pi/2$. The graph of $\tan(x)$ is depicted in \figref{tan graph}.
 
 \begin{figure}
 	\centering
@@ -256,11 +256,32 @@ As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having b
 				xticklabels={$-3\pi$, $-\frac{5}{2}\pi$, $-2\pi$, $-\frac{3}{2}\pi$, $-\pi$, $-\frac{1}{2}\pi$, , $\frac{1}{2}\pi$, $\pi$, $\frac{3}{2}\pi$, $2\pi$, $\frac{5}{2}\pi$, $3\pi$},
 				domain=-10:10,
 			]
-			\addplot[function, xred] {sin(\x*180/pi)};
-			\addplot[function, xgreen] {cos(\x*180/pi)};
+			\addplot[function, xred] {sin(deg(\x))};
+			\addplot[function, xgreen] {cos(deg(\x))};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{The graphs of \textcolor{xred}{\bm{$\sin(x)$}} and \textcolor{xgreen}{\bm{$\cos(x)$}} for $x\in[-10,10]$. Note how the graph of $\cos(x)$ is ``lagging'' behind the graph of $\sin(x)$ by $\pi/2$.}
+	\caption{The graphs of \textcolor{xred}{\bm{$\sin(x)$}} and \textcolor{xgreen}{\bm{$\cos(x)$}} for $x\in[-10,10]$. Note how the graph of \textcolor{xgreen}{$\bm{\cos(x)}$} is ``lagging'' behind the graph of \textcolor{xred}{$\bm{\sin(x)}$} by $\pi/2$.}
+	\label{fig:tan graph}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				graph2d,
+				width=15cm, height=8cm,
+				xmin=-10, xmax=10,
+				ymin=-4, ymax=4,
+				xtick={-9.425,-7.854,...,9.425,10.996},
+				xticklabels={$-3\pi$, $-\frac{5}{2}\pi$, $-2\pi$, $-\frac{3}{2}\pi$, $-\pi$, $-\frac{1}{2}\pi$, , $\frac{1}{2}\pi$, $\pi$, $\frac{3}{2}\pi$, $2\pi$, $\frac{5}{2}\pi$, $3\pi$},
+				domain=-10:10,
+				restrict y to domain=-5:5,
+				samples=500,
+			]
+			\addplot[function, xblue] {tan(deg(\x))};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The graphs of $\tan(x)$ on the domain $[-3\pi,3\pi]$.}
 	\label{fig:sin and cos graphs}
 \end{figure}
 

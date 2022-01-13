@@ -395,7 +395,8 @@ Similarily, the union of $n$ different sets is defined as
 		\end{tikzpicture}
 	\end{figure}
 
-	...and this Venn diagram depicts the union of the same three sets:
+	\vspace{2em}
+	...and the following Venn diagram depicts the union of the same three sets:
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
@@ -413,7 +414,22 @@ Similarily, the union of $n$ different sets is defined as
 	\end{figure}
 \end{example}
 
-TBW: difference, complement.
+The \emph{difference} of two sets $A$ and $B$ (written $A-B$ or $A\setminus B$) is, in a sense, the opposite of their intersection: it is the set of all elements in $A$ that are \underline{not} in $B$. Note that $A-B$ doesn't necessarily equal $B-A$, i.e. it is not \emph{commutative}.
+
+\begin{example}{Difference of two sets}{}
+	Given the two sets $A=\{1,2,3,4,5\}$ and $B=\{3,4,5,6,7,8,9\}$,
+	\begin{align*}
+		A-B &= \{1,2\},\\
+		B-A &= \{6,7,8,9\}.
+	\end{align*}
+	(note how in this case $A-B\neq B-A$)
+\end{example}
+
+Given a set $A$ and a subset of $A$, $B\subset A$, we can define the \emph{complement} of $B$ in relation to $A$ (notation: $\stcomp{B}$) as all the elements in $A$ that are \underline{not} in $B$. As the name suggest, the elements of $\stcomp{B}$ complete $B$: $B\cup\stcomp{B}=A$.
+
+\begin{example}{Complement of a set}{}
+	Given the set $A=\mathbb{Z}$ and $B=\{x\in \mathbb{Z} \mid x\ \text{is odd}\}$, the complement $\stcomp{B}$ in relation to $A$ is the set of all even numbers. The reason is that any integer number can be either odd (in which case it belongs in $B$) or even (in which case it belongs in $\stcomp{B}$).
+\end{example}
 
 Given a set $A$ with $|A|$ elements - how many different subsets does it have? We'll start by looking at a practical example: $A=\left\{ 1,2,3 \right\}$. We can immidetly see that any set which contains just one of the elements of $A$ is a subset of $A$, i.e. $\{1\},\{2\},\{3\}$ are all subsets of $A$. In addition, any set which contains only two elements from $A$ is a subset of $A$, i.e. $\left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}$. Of course, we must not forget the empty set and $A$ itself - both subsets of $A$ (see \noteref{subset_properties}). Thus altogether $A$ has $8$ subsets:
 \[

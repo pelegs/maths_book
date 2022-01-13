@@ -90,42 +90,41 @@ A \emph{function} $f$ from a set $A$ to a set $B$ is a relation for which any el
 		\centering
 		\begin{tikzpicture}
 			\Large
-		
 			% f
-			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
-			\node (1) at (0,1.5cm) {$1$};
-			\node (2) at (0,0.5cm) {$2$};
-			\node (3) at (0,-0.5cm) {$3$};
-			\node (4) at (0,-1.5cm) {$4$};
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.5 and 2) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1f) at (0,1.5) {$1$};
+			\node (2f) at (0,0.5) {$2$};
+			\node (3f) at (0,-0.5) {$3$};
+			\node (4f) at (0,-1.5) {$4$};
 			
-			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
-			\node (alpha) at (2.5cm,1cm) {$\alpha$};
-			\node (beta) at (2.5cm,0cm) {$\beta$};
-			\node (gamma) at (2.5cm,-1cm) {$\gamma$};
+			\draw[thick, xgreen, fill=xgreen!20] (2.5,0) ellipse (0.5 and 1.5) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (alpha_f) at (2.5,1) {$\alpha$};
+			\node (beta_f) at (2.5,0) {$\beta$};
+			\node (gamma_f) at (2.5,-1) {$\gamma$};
 
-			\draw[arrow] (1) -- (alpha);
-			\draw[arrow] (2) -- (beta);
-			\draw[arrow] (3) -- (gamma);
-			\draw[arrow] (4) -- (gamma);
+			\draw[arrow] (1f) -- (alpha_f);
+			\draw[arrow] (2f) -- (beta_f);
+			\draw[arrow] (3f) -- (gamma_f);
+			\draw[arrow] (4f) -- (gamma_f);
 
 			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$f$};
 			
 			% g
-			\draw[thick, xred, fill=xred!20] (0,-6.0) ellipse (0.5cm and 2cm) node[above, yshift=2cm] (Albl) {$A$};
-			\node (1) at (0,-4.5cm) {$1$};
-			\node (2) at (0,-5.5cm) {$2$};
-			\node (3) at (0,-6.5cm) {$3$};
-			\node (4) at (0,-7.5cm) {$4$};
+			\draw[thick, xred, fill=xred!20] (6,0) ellipse (0.5 and 2) node[above, yshift=2cm] (Albl) {$A$};
+			\node (1g) at (6,1.5)  {$1$};
+			\node (2g) at (6,0.5)  {$2$};
+			\node (3g) at (6,-0.5) {$3$};
+			\node (4g) at (6,-1.5) {$4$};
 			
-			\draw[thick, xgreen, fill=xgreen!20] (2.5cm,-6.0) ellipse (0.5cm and 1.5cm) node[above, yshift=2cm] (Blbl) {$B$};
-			\node (alpha) at (2.5cm,-5.0cm) {$\alpha$};
-			\node (beta) at (2.5cm,-6.0cm) {$\beta$};
-			\node (gamma) at (2.5cm,-7.0cm) {$\gamma$};
+			\draw[thick, xgreen, fill=xgreen!20] (8.5,0) ellipse (0.5 and 1.5) node[above, yshift=2cm] (Blbl) {$B$};
+			\node (alpha_g) at (8.5,1) {$\alpha$};
+			\node (beta_g) at  (8.5,0) {$\beta$};
+			\node (gamma_g) at (8.5,-1) {$\gamma$};
 
-			\draw[arrow] (1) -- (alpha);
-			\draw[arrow] (2) -- (gamma);
-			\draw[arrow] (3) -- (beta);
-			\draw[arrow] (4) -- (alpha);
+			\draw[arrow] (1g) -- (alpha_g);
+			\draw[arrow] (2g) -- (gamma_g);
+			\draw[arrow] (3g) -- (beta_g);
+			\draw[arrow] (4g) -- (alpha_g);
 
 			\draw[arrow] (Albl) -- (Blbl) node[midway, above] {$g$};
 		\end{tikzpicture}
@@ -218,6 +217,8 @@ The reason only bijective functions have inverses is as follows: Given a functio
 	\item If $f$ is non-surgetive, then there exists at least one element $y_{2}\in B$ that is not connected to by any element from $A$. When inverted, $y_{2}$ in the domain $B$ of $f^{-1}$ is not connected to any element in its image $A$. This fact disqualifies $f^{-1}$ from being a function.
 \end{itemize}
 
+\blindtext
+
 \begin{example}{Surjective function}{surjective}
 	\centering
 	\begin{tikzpicture}[scale=0.9]
@@ -274,7 +275,91 @@ The reason only bijective functions have inverses is as follows: Given a functio
 	By removing $\delta$ from $B$, the function $f$ becomes surjective (though it remains non-injective).
 \end{example}
 
-TBW: an example of all four possible combinations (injective non-surjective, surjective non-injective, bijective, non-injective non-surjective) and their inverses.
+\begin{example}{Cross examples}{}
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+		% Injection not surjection
+		\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1) at (0,1) {$1$};
+		\node (A2) at (0,0)	{$2$};
+		\node (A3) at (0,-1) {$3$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (2,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1) at (2,1.05) {$\alpha$};
+		\node (B2) at (2,0.35) {$\beta$};
+		\node (B3) at (2,-0.35) {$\gamma$};
+		\node (B3) at (2,-1.05) {$\delta$};
+
+		\draw[arrow] (A1) -- (B1);
+		\draw[arrow] (A2) -- (B2);
+		\draw[arrow] (A3) -- (B3);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Injective, non surjective} (B);
+		
+		% Surjection not injection
+		\fill[xred!20, draw=xred, thick] (6,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1) at (6,1.5) {$1$};
+		\node (A2) at (6,0.5)	{$2$};
+		\node (A3) at (6,-0.5) {$3$};
+		\node (A4) at (6,-1.5) {$4$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (8,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1) at (8,1.5) {$\alpha$};
+		\node (B2) at (8,0.5) {$\beta$};
+		\node (B3) at (8,-0.5) {$\gamma$};
+		\node (B4) at (8,-1.5) {$\delta$};
+
+		\draw[arrow] (A1) -- (B1);
+		\draw[arrow] (A2) -- (B2);
+		\draw[arrow] (A3) -- (B3);
+		\draw[arrow] (A4) -- (B3);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Injective, non surjective} (B);
+	\end{tikzpicture}
+
+	\vspace{1em}
+	\begin{tikzpicture}[scale=0.9]
+		% Injection and surjection
+		\fill[xred!20, draw=xred, thick] (0,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1) at (0,1.5) {$1$};
+		\node (A2) at (0,0.5)	{$2$};
+		\node (A3) at (0,-0.5) {$3$};
+		\node (A4) at (0,-1.5) {$4$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (2,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1) at (2,1.05) {$\alpha$};
+		\node (B2) at (2,0.35) {$\beta$};
+		\node (B3) at (2,-0.35) {$\gamma$};
+		\node (B4) at (2,-1.05) {$\delta$};
+
+		\draw[arrow] (A1) -- (B1);
+		\draw[arrow] (A2) -- (B3);
+		\draw[arrow] (A3) -- (B2);
+		\draw[arrow] (A4) -- (B4);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Injective and surjective} (B);
+		
+		% Surjection not injection
+		\fill[xred!20, draw=xred, thick] (6,0) circle (0.75cm and 2cm) node[above, yshift=2cm, text=xred] (A) {$A$};
+		\node (A1) at (6,1.5) {$1$};
+		\node (A2) at (6,0.5)	{$2$};
+		\node (A3) at (6,-0.5) {$3$};
+		\node (A4) at (6,-1.5) {$4$};
+
+		\fill[xgreen!20, draw=xgreen, thick] (8,0) circle (0.75cm and 1.75cm) node[above, yshift=2cm, text=xgreen] (B) {$B$};
+		\node (B1) at (8,1.05) {$\alpha$};
+		\node (B2) at (8,0.35) {$\beta$};
+		\node (B3) at (8,-0.35) {$\gamma$};
+		\node (B4) at (8,-1.05) {$\delta$};
+
+		\draw[arrow] (A1) -- (B1);
+		\draw[arrow] (A2) -- (B1);
+		\draw[arrow] (A3) -- (B2);
+		\draw[arrow] (A4) -- (B3);
+
+		\draw[arrow] (A) to node[midway, above, yshift=2mm] {Neither injective nor surjective} (B);
+	\end{tikzpicture}
+\end{example}
 
 \begin{note}{Other names for bijections}{bijections}
 	Bijections are also called \emph{one-to-one correspondences} and \emph{invertible functions}.
