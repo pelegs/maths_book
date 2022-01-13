@@ -126,7 +126,31 @@ We then define $\cos(\theta)$ and $\sin(\theta)$ as a function of $\theta$:
 	\label{eq:unit circle definition of sin and cos}
 \end{align}
 
-Using this definition, the angle $\theta$ can take any value between $\ang{0}$ and $\ang{360}$. In fact, the values of $\theta$ can be extended to any real number in degrees: if it is more than $\ang{360}$\ldots (MUST FINISH THIS PART + QUADRENTS)
+Using this definition, the angle $\theta$ can take any value between $\ang{0}$ and $\ang{360}$. In fact, the values of $\theta$ can be extended to any real number in degrees: any real value of degrees is equivalent to some value in the range $[\ang{0},\ang{360}]$, the first and most obvious example is that $\ang{360}$ is equivalent to $\ang{0}$. Similarly, $\ang{-30}\equiv\ang{330}$, $-\ang{180}\equiv\ang{180}$, $-\ang{90}\equiv\ang{270}$, etc (see \figref{angles equivalency}). In fact, this property makes the trigonometric functions periodic, with a period $T=\ang{360}$.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[every node/.style={font=\small}]
+		\def\R{3}
+		\draw[very thick, fill=xpurple!15] (0,0) circle (\R);
+		\foreach \th in {0, 45, 90, 135, 180, 200, 270, 330}{
+			\draw[densely dashed, xdarkpurple] (0,0) -- ({1.05*\R*cos(\th)},{1.05*\R*sin(\th)});
+			\draw[very thick] ({0.95*\R*cos(\th)},{0.95*\R*sin(\th)}) -- ({1.05*\R*cos(\th)},{1.05*\R*sin(\th)});
+			\node at ({1.075*\R*cos(\th)},{1.075*\R*sin(\th)}) (\th) {};
+		}
+		\fill[black] (0,0) circle (0.1);
+		\node[right] at (0) {$\ang{0}\equiv\ang{360}\equiv\ang{720}\equiv\ang{-360}\equiv\dots$};
+		\node[right] at (45) {$\ang{45}\equiv\ang{-315}\equiv\ang{395}\equiv\dots$};
+		\node[right] at (90) {$\ang{90}\equiv\ang{-270}\equiv\ang{450}\equiv\dots$};
+		\node[left] at (135) {$\ang{135}\equiv\ang{-225}\equiv\dots$};
+		\node[left] at (180) {$\ang{180}\equiv\ang{-180}\equiv\ang{540}\equiv\dots$};
+		\node[left] at (200) {$\ang{200}\equiv\ang{-160}\equiv\ang{560}\equiv\dots$};
+		\node[right] at (270) {$\ang{270}\equiv\ang{-90}\equiv\dots$};
+		\node[right] at (330) {$\ang{330}\equiv\ang{-30}\equiv\dots$};
+	\end{tikzpicture}
+	\caption{Angles equivalency on a circle.}
+	\label{fig:angles equivalency}
+\end{figure}
 
 \subsection{Radians}
 Using degrees to measure angles in a sphere creates an inconvinience: the domain and image of the trigonometric functions have different units. In order to measure both these magnitudes using the same unit we switch to measuring angles on a circle using \emph{radians} instead of degrees. One radian equals the length of a single radius $R$ of the circle (in the case of the unit circle this is always $R=1$). We define an inner angle $\theta$ to equal one radian if the arc length it represents is equal to $R$ (see \figref{radians}).
@@ -216,8 +240,6 @@ How much is a radian in degrees? The full circumference of any circle with radiu
 	\caption{In this figure the arc $\bm{AB}$ has the same length of the radii $\bm{OA}$ and $\bm{OB}$ (all are equal to $R$), and therefore $\theta=1$ radians.}
 	\label{fig:radians}
 \end{figure}
-
-MORE WILL BE WRITTEN HERE!
 
 \subsection{Graphs}
 As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having both the period $T=2\pi$. Their graphs are depicted in \figref{sin and cos graphs}. The value of $\sin(x)$ is always equal to that of $\cos\left(x-\frac{\pi}{2}\right)$: we say that the two functions have a \emph{phase difference} of $\pi/2$.

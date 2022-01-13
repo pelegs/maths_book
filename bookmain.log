@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  12 JAN 2022 00:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  13 JAN 2022 15:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1774,7 +1774,12 @@ Underfull \vbox (badness 2735) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-[29]) (./chapters/intro/trigonomentry.tex [30] [31] [32]
+[29]) (./chapters/intro/trigonomentry.tex [30] [31]
+Overfull \hbox (28.1189pt too wide) in paragraph at lines 150--151
+ [][] 
+ []
+
+[32]
 \pgf@layerbox@axis background=\box137
 \pgf@layerboxsaved@axis background=\box138
 \pgf@layerbox@axis grid=\box139
@@ -1791,33 +1796,39 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \pgf@layerboxsaved@axis descriptions=\box150
 \pgf@layerbox@axis foreground=\box151
 \pgf@layerboxsaved@axis foreground=\box152
-Package pgfplots info on input line 188: Setting layers 'axis background,axis g
+Package pgfplots info on input line 212: Setting layers 'axis background,axis g
 rid,axis ticks,axis tick labels,pre main,main,axis lines,axis descriptions,axis
  foreground'...
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 214.
+LaTeX Font Warning: Command \large invalid in math mode on input line 238.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 214.
+LaTeX Font Warning: Command \large invalid in math mode on input line 238.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 214.
+LaTeX Font Warning: Command \large invalid in math mode on input line 238.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 214.
+LaTeX Font Warning: Command \large invalid in math mode on input line 238.
 
 
-Overfull \hbox (12.4974pt too wide) in paragraph at lines 240--241
+Overfull \hbox (12.4974pt too wide) in paragraph at lines 262--263
  [][] 
  []
 
-[33] [34] [35] [36] [37] [38]) (./chapters/intro/complex_numbers.tex
+[33] [34] [35] [36] [37]
+Underfull \vbox (badness 1270) has occurred while \output is active []
+
+ [38])
+(./chapters/intro/complex_numbers.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [39]
-[40] [41]
+ [39] [40]
+Underfull \vbox (badness 7030) has occurred while \output is active []
+
+ [41]
 Overfull \hbox (17.97472pt too wide) detected at line 204
 []
  []
@@ -1825,15 +1836,15 @@ Overfull \hbox (17.97472pt too wide) detected at line 204
 [42] [43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44])
-(./chapters/intro/exercises.tex [45] [46] [47])
+ [44]
+[45]) (./chapters/intro/exercises.tex [46] [47])
 (./chapters/linear_algebra_intuitive/preface.tex [48]
 Chapter 1.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-<figures/chapters/tapir_voronoi.pdf, id=700, 127.11917pt x 78.37502pt>
+<figures/chapters/tapir_voronoi.pdf, id=702, 127.11917pt x 78.37502pt>
 File: figures/chapters/tapir_voronoi.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_voronoi.pdf>
 Package pdftex.def Info: figures/chapters/tapir_voronoi.pdf  used on input line
@@ -1855,11 +1866,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 48168 strings out of 480997
- 1137739 string characters out of 5912179
- 1821054 words of memory out of 5000000
- 62526 multiletter control sequences out of 15000+600000
- 651364 words of font info for 292 fonts, out of 8000000 for 9000
+ 48237 strings out of 480997
+ 1138695 string characters out of 5912179
+ 1812124 words of memory out of 5000000
+ 62593 multiletter control sequences out of 15000+600000
+ 652096 words of font info for 294 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,19n,127p,815b,2953s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.en
@@ -1883,10 +1894,10 @@ psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (49 pages, 581775 bytes).
+Output written on bookmain.pdf (49 pages, 583386 bytes).
 PDF statistics:
- 840 PDF objects out of 1000 (max. 8388607)
- 721 compressed objects within 8 object streams
- 303 named destinations out of 1000 (max. 500000)
+ 842 PDF objects out of 1000 (max. 8388607)
+ 723 compressed objects within 8 object streams
+ 304 named destinations out of 1000 (max. 500000)
  405 words of extra memory for PDF output out of 10000 (max. 10000000)
 
