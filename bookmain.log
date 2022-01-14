@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  15 JAN 2022 00:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  15 JAN 2022 00:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1856,7 +1856,7 @@ Chapter 1.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-<figures/chapters/tapir_voronoi.pdf, id=721, 127.11917pt x 78.37502pt>
+<figures/chapters/tapir_voronoi.pdf, id=722, 127.11917pt x 78.37502pt>
 File: figures/chapters/tapir_voronoi.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_voronoi.pdf>
 Package pdftex.def Info: figures/chapters/tapir_voronoi.pdf  used on input line
@@ -1878,7 +1878,7 @@ Chapter 2.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-<figures/chapters/tapir_stars.pdf, id=732, 94.13736pt x 81.80531pt>
+<figures/chapters/tapir_stars.pdf, id=733, 94.13736pt x 81.80531pt>
 File: figures/chapters/tapir_stars.pdf Graphic file (type pdf)
 <use figures/chapters/tapir_stars.pdf>
 Package pdftex.def Info: figures/chapters/tapir_stars.pdf  used on input line 1
@@ -1898,10 +1898,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 48374 strings out of 480997
- 1140950 string characters out of 5912179
- 1822591 words of memory out of 5000000
- 62716 multiletter control sequences out of 15000+600000
+ 48376 strings out of 480997
+ 1140998 string characters out of 5912179
+ 1822681 words of memory out of 5000000
+ 62718 multiletter control sequences out of 15000+600000
  652096 words of font info for 294 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,19n,127p,815b,2953s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1926,10 +1926,10 @@ psy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (53 pages, 615590 bytes).
+Output written on bookmain.pdf (53 pages, 615537 bytes).
 PDF statistics:
- 933 PDF objects out of 1000 (max. 8388607)
- 795 compressed objects within 8 object streams
+ 934 PDF objects out of 1000 (max. 8388607)
+ 796 compressed objects within 8 object streams
  314 named destinations out of 1000 (max. 500000)
  418 words of extra memory for PDF output out of 10000 (max. 10000000)
 
