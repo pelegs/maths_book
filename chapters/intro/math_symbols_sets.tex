@@ -34,7 +34,7 @@ The \OR{} operator returns \true\ if \textbf{at least} one of the statements it 
 	\end{itemize}
 \end{example}
 
-The behaviour of both operators can be summarized using a \emph{truth table} (see \tabref{AND_OR_truth_table} below).
+The behaviour of both operators can be summarized using a \emph{truth table} (see \autoref{tab:AND_OR_truth_table} below).
 \begin{table}
 	\centering
 	\caption{The truth table for the operators \AND{} and \OR{}.}
@@ -62,7 +62,7 @@ When writing, it is convinient to use \emph{notations} to represent operators: t
 
 \subsection{Common mathematical notations}
 
-Several more common mathematical notations are given in \tabref{common_math_notations}.
+Several more common mathematical notations are given in \autoref{tab:common_math_notations}.
   
 \begin{table}
 	\centering
@@ -192,7 +192,7 @@ This proposition reads `The sets $A$ and $B$ are equal \underline{\textit{if and
 i.e. $B$ is a subset of $A$ \textbf{iff} the following is true: any element in $B$ is also an element in $A$.
 
 \begin{note}{(not so) Surprising properties of subsets}{subset_properties}
-	The definion of a subset (\eqref{subset_def}) gives rise to two interesting properties:
+	The definion of a subset (\autoref{eq:subset_def}) gives rise to two interesting properties:
 	\begin{itemize}
 		\item The empty set $\emptyset$ is a subset of any set.
 		\item Any set is a subset of itself.
@@ -303,7 +303,7 @@ The following Venn diagram depicts the union of two sets (the purple area):
 	\end{tikzpicture}
 \end{figure}
 
-Naively, the number of elements of a union $A\cup B$ is simply the sum of the number of elements in $A$ and the number of elements in $B$. However, this naive approach might count the elements in both sets twice: once for $A$ and once for $B$ (see \figref{union_counting}) - this is exactly the set $A\cap B$. We therefore subtract the number of elements in $A\cap B$ and get
+Naively, the number of elements of a union $A\cup B$ is simply the sum of the number of elements in $A$ and the number of elements in $B$. However, this naive approach might count the elements in both sets twice: once for $A$ and once for $B$ (see \autoref{fig:union_counting}) - this is exactly the set $A\cap B$. We therefore subtract the number of elements in $A\cap B$ and get
 \begin{equation}
 	|A\cup B| = |A|+|B|-|A\cap B|.
 	\label{eq:number_of_elements_in_union}
@@ -357,7 +357,7 @@ The most general definition of an intersection of $n$ sets (where $n$ is a whole
 	\label{eq:intersection_n_sets}
 \end{equation}
 
-the left hand side of \eqref{intersection_n_sets} can be written as
+the left hand side of \autoref{eq:intersection_n_sets} can be written as
 \begin{equation}
 	A_{1}\cap A_{2}\cap A_{3}\cap \cdots \cap A_{n} = \bigcap\limits_{i=1}^{n}A_{i}.
 	\label{eq:intersection_n_sets_big_notation}
@@ -431,7 +431,7 @@ Given a set $A$ and a subset of $A$, $B\subset A$, we can define the \emph{compl
 	Given the set $A=\mathbb{Z}$ and $B=\{x\in \mathbb{Z} \mid x\ \text{is odd}\}$, the complement $\stcomp{B}$ in relation to $A$ is the set of all even numbers. The reason is that any integer number can be either odd (in which case it belongs in $B$) or even (in which case it belongs in $\stcomp{B}$).
 \end{example}
 
-Given a set $A$ with $|A|$ elements - how many different subsets does it have? We'll start by looking at a practical example: $A=\left\{ 1,2,3 \right\}$. We can immidetly see that any set which contains just one of the elements of $A$ is a subset of $A$, i.e. $\{1\},\{2\},\{3\}$ are all subsets of $A$. In addition, any set which contains only two elements from $A$ is a subset of $A$, i.e. $\left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}$. Of course, we must not forget the empty set and $A$ itself - both subsets of $A$ (see \noteref{subset_properties}). Thus altogether $A$ has $8$ subsets:
+Given a set $A$ with $|A|$ elements - how many different subsets does it have? We'll start by looking at a practical example: $A=\left\{ 1,2,3 \right\}$. We can immidetly see that any set which contains just one of the elements of $A$ is a subset of $A$, i.e. $\{1\},\{2\},\{3\}$ are all subsets of $A$. In addition, any set which contains only two elements from $A$ is a subset of $A$, i.e. $\left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}$. Of course, we must not forget the empty set and $A$ itself - both subsets of $A$ (see \autoref{:subset_properties}). Thus altogether $A$ has $8$ subsets:
 \[
 	\emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 3 \right\}, \left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}, \left\{ 1,2,3 \right\}.
 \]
@@ -497,7 +497,7 @@ The final set of numbers we will touch upon here is the set of \emph{complex num
 	\label{eq:complex_numbers_def}
 \end{equation}
 
-When $b=0$, \eqref{complex_numbers_def} becomes just a single real number - and so
+When $b=0$, \autoref{eq:complex_numbers_def} becomes just a single real number - and so
 \begin{equation}
 	\mathbb{R}\subset\mathbb{C}.
 	\label{eq:reals_subset_complex}
@@ -600,7 +600,7 @@ The number of elements in a Cartesian product is the product of the number of el
 \end{equation}
 
 \begin{example}{Number of elements in a Cartesian product}{}
-	The Cartesian product described in the previous two examples has in total $3\cdot2=6$ elements, as seen in \exampleref{Cartesian_products}.
+	The Cartesian product described in the previous two examples has in total $3\cdot2=6$ elements, as seen in \autoref{:Cartesian_products}.
 \end{example}
 
 As with intersections and unions, the definition of a Cartesian product can be expanded into any natural number of sets:

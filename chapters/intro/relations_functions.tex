@@ -50,7 +50,7 @@ Cartesian products of two sets can be viewed as describing all possible connecti
 Relations can be inversed by reversing the order of each of its pairs.
 
 \begin{example}{Inverse relation}{inv_relation}
-	The inverse relation to the relation in \exampleref{relation} is
+	The inverse relation to the relation in \autoref{example:relation} is
 	\[
 		R^{-1} = \left\{ (\beta,1),\ (\alpha,2),\ (\alpha,3),\ (\beta,3), (\gamma,4)  \right\}.
 	\]
@@ -85,7 +85,7 @@ Relations can be inversed by reversing the order of each of its pairs.
 A \emph{function} $f$ from a set $A$ to a set $B$ is a relation for which any element in $A$ is connected to a single element in $B$.
 
 \begin{example}{Functions}{functions}
-	The following are two functions from the set $A$ to the set $B$ defined in \exampleref{relation}:
+	The following are two functions from the set $A$ to the set $B$ defined in \autoref{example:relation}:
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
@@ -134,7 +134,7 @@ A \emph{function} $f$ from a set $A$ to a set $B$ is a relation for which any el
 \end{example}
 
 \begin{note}{Relations which are not functions}{}
-	Note that the relation in \exampleref{relation} is \textbf{not} a function, since the element $3\in A$ is connected to more than one element in $B$, namely $\alpha$ and $\gamma$.
+	Note that the relation in \autoref{example:relation} is \textbf{not} a function, since the element $3\in A$ is connected to more than one element in $B$, namely $\alpha$ and $\gamma$.
 \end{note}
 
 Different names are used in some branches of mathematics to describe functions, such as \emph{maps} and \emph{transformations}. Baring context, they all mean the same thing.
@@ -147,7 +147,7 @@ A common way to denote that a function $f$ is connecting elements in $A$ to elem
 $A$ is called the \emph{domain} of $f$, and $B$ its \emph{image}. In this book and many other sources, the following notation is used: $f(x)=y$, which means that when we apply the function $f$ to an element $x\in A$, the result is the element it is connected to, i.e. $y\in B$. We write this as $x\mapsto y$ (the special symbol $\mapsto$ is called a \emph{mapping notation}).
 
 \begin{example}{Value $\mapsto$ value notation for functions}{}
-	For the functions $f,g$ as defined in \exampleref{functions}:
+	For the functions $f,g$ as defined in \autoref{example:functions}:
 	\begin{align*}
 		&f(1)=\alpha,\ f(2)=\beta,\ f(3)=f(4)=\gamma.\\
 		&g(1)=g(4)=\alpha,\ g(2)=\gamma,\ g(3)=\beta.
@@ -207,7 +207,7 @@ A function is \emph{injective} if each of the elements in its \textbf{image} is 
 	The function on the right in non-injective because the element $\beta\in B$ is connected to by two elements in $A$ ($2$ and $3$, red arrows).
 \end{example}
 
-A function is \emph{surjective} if every element in its image is connected to by at least a single element in its domain (see \exampleref{surjective}). As with injective functions, a surjective function is also known as a \emph{surjection}. A non surjective function can be made into surjective function by excluding from its image any element that is not connected to by any element from its domain (see \exampleref{surjectification}).
+A function is \emph{surjective} if every element in its image is connected to by at least a single element in its domain (see \autoref{example:surjective}). As with injective functions, a surjective function is also known as a \emph{surjection}. A non surjective function can be made into surjective function by excluding from its image any element that is not connected to by any element from its domain (see \autoref{example:surjectification}).
 
 A function $f:A\to B$ that is both surjective and bijective is called a \emph{bijective function} (also a \emph{bijection}). All elements in the image of a bijection are connected to by exactly a single element in its domain. This means that the direction of the connections can be flipped, yielding the \emph{inverse} of the original function (denoted $f^{-1}$).
 
@@ -373,7 +373,7 @@ In suitable cases, a function is defined via a general mapping rule. This should
 	\label{eq:function_by_formula}
 \end{equation}
 
-In mapping notation we can write \eqref{function_by_formula} as $f:x\mapsto x^{2}+3x-4$. In highschool mathematics, both the domain and image of such functions is $\mathbb{R}$, although it is almost never specified explicetly. Such functions are commonly refered to as \emph{real functions}, a convention used in this book as well.
+In mapping notation we can write \autoref{eq:function_by_formula} as $f:x\mapsto x^{2}+3x-4$. In highschool mathematics, both the domain and image of such functions is $\mathbb{R}$, although it is almost never specified explicetly. Such functions are commonly refered to as \emph{real functions}, a convention used in this book as well.
 
 \begin{example}{Functions defined using a mapping rule}{}
 	The following are real functions:
@@ -415,7 +415,7 @@ Real functions can be easily plotted in a \emph{Cartesian coordinate system} by 
 	\end{minipage}
 \end{example}
 
-In \exampleref{graph_of_functions}, the function $g(x)$ always increases in value from left to right. Let's give this notion a more formal tone: a function $f$ is said to be \emph{increasing} on an interval $I$ if for any $x_{1},x_{2}\in I$, if $x_{2}>x_{1}$ then $f\left( x_{2} \right) > f\left( x_{1} \right)$. We can similarily define the idea of \emph{decreasing} on an interval.
+In \autoref{example:graph_of_functions}, the function $g(x)$ always increases in value from left to right. Let's give this notion a more formal tone: a function $f$ is said to be \emph{increasing} on an interval $I$ if for any $x_{1},x_{2}\in I$, if $x_{2}>x_{1}$ then $f\left( x_{2} \right) > f\left( x_{1} \right)$. We can similarily define the idea of \emph{decreasing} on an interval.
 
 A property of some functions which is visualy easy to depict is symmetry. A real function $f$ is said to be \emph{symmetric} if for any $x\in\mathbb{R},\ f(-x)=f(x)$. This essentially means that the $y$-axis mirrors the function's plot. If for any $x\in\mathbb{R},\ f(-x)=-f(x)$, we say that the function is \emph{anti-symmetric}. A function can be neither, but there's only a single function which is both: the zero function, i.e. $f(x)=0$.
 

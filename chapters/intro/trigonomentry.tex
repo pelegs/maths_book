@@ -110,7 +110,7 @@ and therefore
 \subsection{The Unit Circle}
 We defined $\sin(\alpha)$ and $\cos(\alpha)$ so far in way such that their domains are both $[\ang{0},\ang{90}]$, and their images are both $[0,1]$. However, there is a simple way to extend these functions such that both their domains are $\mathbb{R}$, and both their images are $[-1,1]$: by using a \emph{unit circle}.
 
-\figref{unit_circle} depicts a unit circle: it is simply a circle of radius $R=1$, which is placed such that its center lies at the origin of a 2-dimensional axis system (i.e. at the point $\bm{O}=(0,0)$. We then draw a line from $\bm{O}$ to a point $\bm{P}=(x,y)$ on the circumference of the unit circle. We call the angle between the line $\bm{OP}$ and the $x$-axis $\theta$. We then draw another line, this time from the point $\bm{P}$ to a point $\bm{D}$ on the $x$-axis, such that $\bm{PD}$ is perpendicular to the $x$-axis.
+\autoref{fig:unit_circle} depicts a unit circle: it is simply a circle of radius $R=1$, which is placed such that its center lies at the origin of a 2-dimensional axis system (i.e. at the point $\bm{O}=(0,0)$. We then draw a line from $\bm{O}$ to a point $\bm{P}=(x,y)$ on the circumference of the unit circle. We call the angle between the line $\bm{OP}$ and the $x$-axis $\theta$. We then draw another line, this time from the point $\bm{P}$ to a point $\bm{D}$ on the $x$-axis, such that $\bm{PD}$ is perpendicular to the $x$-axis.
 
 The triangle $\triangle OPD$ is a right triangle. Therefore, we can use the trigonometic functions to calculate the coordinates of the point $\bm{P}=(x,y)$:
 \begin{align}
@@ -126,7 +126,7 @@ We then define $\cos(\theta)$ and $\sin(\theta)$ as a function of $\theta$:
 	\label{eq:unit circle definition of sin and cos}
 \end{align}
 
-Using this definition, the angle $\theta$ can take any value between $\ang{0}$ and $\ang{360}$. In fact, the values of $\theta$ can be extended to any real number in degrees: any real value of degrees is equivalent to some value in the range $[\ang{0},\ang{360}]$, the first and most obvious example is that $\ang{360}$ is equivalent to $\ang{0}$. Similarly, $\ang{-30}\equiv\ang{330}$, $-\ang{180}\equiv\ang{180}$, $-\ang{90}\equiv\ang{270}$, etc (see \figref{angles equivalency}). In fact, this property makes the trigonometric functions periodic, with a period $T=\ang{360}$.
+Using this definition, the angle $\theta$ can take any value between $\ang{0}$ and $\ang{360}$. In fact, the values of $\theta$ can be extended to any real number in degrees: any real value of degrees is equivalent to some value in the range $[\ang{0},\ang{360}]$, the first and most obvious example is that $\ang{360}$ is equivalent to $\ang{0}$. Similarly, $\ang{-30}\equiv\ang{330}$, $-\ang{180}\equiv\ang{180}$, $-\ang{90}\equiv\ang{270}$, etc (see \autoref{fig:angles equivalency}). In fact, this property makes the trigonometric functions periodic, with a period $T=\ang{360}$.
 
 \begin{figure}
 	\centering
@@ -153,9 +153,9 @@ Using this definition, the angle $\theta$ can take any value between $\ang{0}$ a
 \end{figure}
 
 \subsection{Radians}
-Using degrees to measure angles in a sphere creates an inconvinience: the domain and image of the trigonometric functions have different units. In order to measure both these magnitudes using the same unit we switch to measuring angles on a circle using \emph{radians} instead of degrees. One radian equals the length of a single radius $R$ of the circle (in the case of the unit circle this is always $R=1$). We define an inner angle $\theta$ to equal one radian if the arc length it represents is equal to $R$ (see \figref{radians}).
+Using degrees to measure angles in a sphere creates an inconvinience: the domain and image of the trigonometric functions have different units. In order to measure both these magnitudes using the same unit we switch to measuring angles on a circle using \emph{radians} instead of degrees. One radian equals the length of a single radius $R$ of the circle (in the case of the unit circle this is always $R=1$). We define an inner angle $\theta$ to equal one radian if the arc length it represents is equal to $R$ (see \autoref{fig:radians}).
 
-How much is a radian in degrees? The full circumference of any circle with radius $R$ equals $2\pi R$, which means that a single radian $R$ is equivalent to $\frac{\ang{180}}{\pi} \approx \ang{57.3}$. \xref[tab]{rad_degs} shows some common angles and their equivalent value in radians.
+How much is a radian in degrees? The full circumference of any circle with radius $R$ equals $2\pi R$, which means that a single radian $R$ is equivalent to $\frac{\ang{180}}{\pi} \approx \ang{57.3}$. \autoref{tab:rad_degs} shows some common angles and their equivalent value in radians.
 
 \begin{table}
 	\caption{Common angles in radians.}
@@ -242,7 +242,7 @@ How much is a radian in degrees? The full circumference of any circle with radiu
 \end{figure}
 
 \subsection{Graphs}
-As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having both the period $T=2\pi$. Their graphs are depicted in \figref{sin and cos graphs}. The value of $\sin(x)$ is always equal to that of $\cos\left(x-\frac{\pi}{2}\right)$: we say that the two functions have a \emph{phase difference} of $\pi/2$. The graph of $\tan(x)$ is depicted in \figref{tan graph}.
+As seen previosuly, the functions $\sin(x)$ and $\cos(x)$ are periodic, having both the period $T=2\pi$. Their graphs are depicted in \autoref{fig:sin and cos graphs}. The value of $\sin(x)$ is always equal to that of $\cos\left(x-\frac{\pi}{2}\right)$: we say that the two functions have a \emph{phase difference} of $\pi/2$. The graph of $\tan(x)$ is depicted in \autoref{fig:tan graph}.
 
 \begin{figure}
 	\centering
@@ -356,7 +356,7 @@ The following are some useful facts and connections between trigonometic functio
 \end{itemize}
 
 \subsection{Useful theorems}
-The area $S$ of a triangle $\triangle ABC$ can be calculated using the length $L$ any side of the triangle (in this context called a \emph{base}) and the height $h$ to its opposing vertex (see \figref{area of a triangle}):
+The area $S$ of a triangle $\triangle ABC$ can be calculated using the length $L$ any side of the triangle (in this context called a \emph{base}) and the height $h$ to its opposing vertex (see \autoref{fig:area of a triangle}):
 \begin{equation}
 	S = \frac{1}{2}Lh.
 	\label{eq:area of a triangle}
@@ -383,7 +383,7 @@ The triangle with sides $cbh$ is a right triangle, $c$ being its hypotenous. We 
 	h = c\sin(\alpha).
 	\label{eq:first equation in law of sines}
 \end{equation}
-Subtituting this back to \eqref{area of a triangle} yields that the area of the triangle is
+Subtituting this back to \autoref{eq:area of a triangle} yields that the area of the triangle is
 \begin{equation}
 	S = \frac{1}{2}bc\sin(\alpha).
 	\label{eq:area using sin theta}

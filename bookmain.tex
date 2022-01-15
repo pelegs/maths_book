@@ -153,24 +153,16 @@
 %------------%
 % REFERENCES %
 %------------%
+
 \usepackage{chngcntr}
 \counterwithin{table}{chapter}
 \counterwithin{figure}{chapter}
 \renewcommand{\eqref}[1]{
 	Equation \ref{eq:#1}
 }
-\newcommand{\tabref}[1]{
-	\textbf{\textcolor{xblue}{Table} \ref{tab:#1}}
-}
-\newcommand{\figref}[1]{
-	\textbf{\textcolor{xblue}{Figure} \ref{fig:#1}}
-}
-\newcommand{\noteref}[1]{
-	\textbf{\textcolor{xred}{Note} \ref{note:#1}}
-}
-\newcommand{\exampleref}[1]{
-	\textbf{\textcolor{xblue}{Example} \ref{example:#1}}
-}
+\def\chapterautorefname{Chapter}
+\def\sectionautorefname{Section}
+\newcommand{\exampleautorefname}{Example}
 
 %---------%
 % HEADERS %
@@ -386,13 +378,13 @@
 \makeatother
 \input{preface}
 \input{vectors}
-%\input{linear_trans}
-%\input{matrices}
-%\input{linear_systems}
-%\input{eigenvectors}
-%\input{decompositions}
-%\input{real_life_examples}
-%\input{exercises}
+\input{linear_trans}
+\input{matrices}
+\input{linear_systems}
+\input{eigenvectors}
+\input{decompositions}
+\input{real_life_examples}
+\input{exercises}
 
 % Linear algebra (Rigorous)
 \makeatletter
