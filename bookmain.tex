@@ -137,8 +137,8 @@
 	\begin{tikzpicture}[font=\sffamily\bfseries]
 		\fill[black!10, rounded corners] (0,0) rectangle (5cm,5cm);
 		\node (chapternum) at (2.5cm,4.5cm) {\fontsize{85}{85}\selectfont\thechapter};
-		\node[below of=chapternum, yshift=-2cm] {\includegraphics[scale=1.5]{figures/chapters/\pgfkeysvalueof{/xref dict/\thechapter}.pdf}};
-		\node[align=center, below of=chapternum, yshift=-5cm] {\fontsize{30}{30}\selectfont\uppercase{#1}};
+		\node[below of=chapternum, yshift=-2.5cm] {\includegraphics[scale=1.5]{figures/chapters/\pgfkeysvalueof{/xref dict/\thechapter}.pdf}};
+		\node[align=center, below of=chapternum, yshift=-6cm] {\fontsize{30}{30}\selectfont\uppercase{#1}};
 		\node[align=center, above of=chapternum, yshift=5mm] {\huge CHAPTER};
 	\end{tikzpicture}
 }
@@ -183,6 +183,8 @@
 \fancyhead[RO,LE]{\leftmark}% Chapter details in book
 \fancyfoot[RO,LE]{\thepage}
 \makeatother
+\def\MakeNoNewlines#1{\begingroup\def\\{ }#1\endgroup}
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter:\ \MakeNoNewlines{#1}}{}}
 
 %-------%
 % BOXES %
@@ -370,12 +372,12 @@
 \def\input@path{{./chapters/intro/}}
 \makeatother
 \input{preface}
-\input{math_symbols_sets}
-\input{relations_functions}
-\input{polynomials}
-\input{exponentials_logarithms}
-\input{trigonomentry}
-\input{complex_numbers}
+%\input{math_symbols_sets}
+%\input{relations_functions}
+%\input{polynomials}
+%\input{exponentials_logarithms}
+%\input{trigonomentry}
+%\input{complex_numbers}
 \input{exercises}
 
 % Linear algebra (intuitive)
@@ -383,14 +385,14 @@
 \def\input@path{{./chapters/linear_algebra_intuitive/}}
 \makeatother
 \input{preface}
-%\input{vectors}
-%\input{linear_trans}
-%\input{matrices}
-%\input{linear_systems}
-%\input{eigenvectors}
-%\input{decompositions}
-%\input{real_life_examples}
-%\input{exercises}
+\input{vectors}
+\input{linear_trans}
+\input{matrices}
+\input{linear_systems}
+\input{eigenvectors}
+\input{decompositions}
+\input{real_life_examples}
+\input{exercises}
 
 % Linear algebra (Rigorous)
 \makeatletter
