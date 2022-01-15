@@ -1,0 +1,43 @@
+\section{Fields}
+We begin our dive into the rigorous analysis of linear algebra by defining an algebraic construction call a \emph{field}. In essence, a field has most of the important properties of the real numbers, namely the closure, commutativity, associativity, identity and inverse of addition and multiplication of any two elements in the field (except the product inverse of the field equivalent object for the number $0$). In a later section we will use fields to construct the general notion of \emph{vector spaces}.
+
+\setenumerate[1]{label*=\arabic*.}
+\begin{definition}{Field}{}
+	A field $\mathbb{F}$ is a set of objects together with two operations called \emph{addition} and \emph{multiplication} (denoted $+$ and $\cdot$, respectively), for which the following axioms hold:
+
+	\begin{itemize}
+		\item Closure of under addition and multiplication: for any $a,b\in\mathbb{F}$,
+			\begin{enumerate}
+				\item $(a+b)\in\mathbb{F}$,
+				\item $(a\cdot b)\in\mathbb{F}$.
+			\end{enumerate}
+
+		\item Commutativity under addition multiplication: for any $a,b\in\mathbb{F}$,
+			\begin{enumerate}
+				\item $a+b=b+a$,
+				\item $a\cdot b=b\cdot a$.
+			\end{enumerate}
+
+		\item Associativity under addition and multiplication: for any $a,b,c\in\mathbb{F}$,
+			\begin{enumerate}
+				\item $a+(b+c)=(a+b)+c$,
+				\item $a\cdot(b\cdot c)=(a\cdot b)\cdot c$.
+			\end{enumerate}
+
+		\item Additive and multiplicative identity: there exist an element in $\mathbb{F}$ called the \textit{additive identity} and denoted by $0$, for which $a+0=a$ for any $a\in\mathbb{F}$.
+			
+			Similarily, there exists an element in $\mathbb{F}$ called the \textit{multiplicative identity} and denoted by $1$, for which $a\cdot1=a$ for any $a\in\mathbb{F}$.
+
+		\item Additive and multiplicative inverses: for any element $a\in\mathbb{F}$ (except the additive identity) there exists:
+			\begin{enumerate}
+				\item $b\in\mathbb{F}$ such that $a+b=0$, and
+				\item $c\in\mathbb{F}$ such that $a\cdot c=1$.
+			\end{enumerate}
+			(usualy $b$ is denoted as $-a$, while $c$ is denoted as $a^{-1}$)
+
+		\item Distributivity of multiplication over addition: for any $a,b,c\in\mathbb{F}$,
+			\[
+				a\cdot(b+c) = (a\cdot b) + (a\cdot c).
+			\]
+	\end{itemize}
+\end{definition}
