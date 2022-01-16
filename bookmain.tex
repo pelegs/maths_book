@@ -246,18 +246,27 @@
 	\textcolor{second}{$\heartsuit$}};}},
 	theoremstyle/.style={
 		common,
-		colframe=xpurple,
-		colback=xpurple!5,
-		colbacktitle=xpurple,
+		colframe=xred,
+		colback=xred!5,
+		colbacktitle=xred,
 		overlay unbroken and last={
 			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
-	\textcolor{xpurple}{$\multimapdotbothA$}};}},
+	\textcolor{xred}{$\multimapdotbothA$}};}},
+		proofstyle/.style={
+		common,
+		colframe=xgreen,
+		colback=xgreen!5,
+		colbacktitle=xgreen,
+		overlay unbroken and last={
+			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
+	\textcolor{xgreen}{$\blacksquare$}};}},
 }
 \newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
 \newtcbtheorem[auto counter, number within=chapter]{example}{Example}{exmplstyle}{example}
 \newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
 \newtcbtheorem[auto counter, number within=chapter]{challange}{Challange}{chllngstyle}{challange}
 \newtcbtheorem[auto counter, number within=chapter]{theorem}{Theorem}{theoremstyle}{theorem}
+\newtcbtheorem[auto counter, number within=chapter]{proof}{Proof}{proofstyle}{proof}
 
 %---------%
 % FIGURES %
@@ -348,6 +357,26 @@
 \usepackage{enumitem}
 \setenumerate[1]{label=\thechapter.\arabic*.}
 \setenumerate[2]{label*=\arabic*.}
+
+% Lists that have bold/underline labels
+
+\newcommand{\descitemlabel}[1]{%
+  \textbullet\ \textbf{#1}:%
+}
+
+\newcommand{\listitemlabel}[1]{%
+	% Instead of bullet there should be a counter here,
+	% but it doesn't work :(
+	\textbullet\ \underline{#1}:%
+}
+
+\newenvironment{descitemize}
+{\begin{description}[itemsep=1.5em, before=\let\makelabel\descitemlabel]}
+{\end{description}}
+
+\newenvironment{listitemize}
+{\begin{description}[leftmargin=0pt, itemsep=1.25em, before=\let\makelabel\listitemlabel]}
+{\end{description}}
 
 %----------%
 % DOCUMENT %

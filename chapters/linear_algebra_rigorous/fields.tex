@@ -5,45 +5,153 @@ We begin our dive into the rigorous analysis of linear algebra by defining an al
 \begin{definition}{Field}{}
 	A field $\mathbb{F}$ is a set of objects together with two operations called \emph{addition} and \emph{multiplication} (denoted $+$ and $\cdot$, respectively), for which the following axioms hold:
 
-	\begin{itemize}
-		\item Closure of under addition and multiplication: for any $a,b\in\mathbb{F}$,
+	\begin{descitemize}
+		\item[Closure of under addition and multiplication] for any $a,b\in\mathbb{F}$,
 			\begin{enumerate}
 				\item $(a+b)\in\mathbb{F}$,
 				\item $(a\cdot b)\in\mathbb{F}$.
 			\end{enumerate}
 
-		\item Commutativity under addition multiplication: for any $a,b\in\mathbb{F}$,
+		\item[Commutativity under addition multiplication] for any $a,b\in\mathbb{F}$,
 			\begin{enumerate}
 				\item $a+b=b+a$,
 				\item $a\cdot b=b\cdot a$.
 			\end{enumerate}
 
-		\item Associativity under addition and multiplication: for any $a,b,c\in\mathbb{F}$,
+		\item[Associativity under addition and multiplication] for any $a,b,c\in\mathbb{F}$,
 			\begin{enumerate}
 				\item $a+(b+c)=(a+b)+c$,
 				\item $a\cdot(b\cdot c)=(a\cdot b)\cdot c$.
 			\end{enumerate}
 
-		\item Additive and multiplicative identity: there exist an element in $\mathbb{F}$ called the \textit{additive identity} and denoted by $0$, for which $a+0=a$ for any $a\in\mathbb{F}$.
+		\item[Additive and multiplicative identity] there exist an element in $\mathbb{F}$ called the \textit{additive identity} and denoted by $0$, for which $a+0=a$ for any $a\in\mathbb{F}$.
 			
 			Similarily, there exists an element in $\mathbb{F}$ called the \textit{multiplicative identity} and denoted by $1$, for which $a\cdot1=a$ for any $a\in\mathbb{F}$.
 
-		\item Additive and multiplicative inverses: for any element $a\in\mathbb{F}$ (except the additive identity) there exists:
+		\item[Additive and multiplicative inverses] for any element $a\in\mathbb{F}$ (except the additive identity) there exists:
 			\begin{enumerate}
 				\item $b\in\mathbb{F}$ such that $a+b=0$, and
 				\item $c\in\mathbb{F}$ such that $a\cdot c=1$.
 			\end{enumerate}
 			(usualy $b$ is denoted as $-a$, while $c$ is denoted as $a^{-1}$)
 
-		\item Distributivity of multiplication over addition: for any $a,b,c\in\mathbb{F}$,
+		\item[Distributivity of multiplication over addition] for any $a,b,c\in\mathbb{F}$,
 			\[
 				a\cdot(b+c) = (a\cdot b) + (a\cdot c).
 			\]
-	\end{itemize}
+	\end{descitemize}
 \end{definition}
 
-It should be clear that the real numbers with the usual addition and multiplication operations confirm to the axioms above (as mentioned, these axioms were made to reflect important properties of the real numbers). Therefore, we will prove that the complex numbers, together with their addition and multiplication as defined in \autoref{sec:complex numbers}.
+It should be clear that the real numbers with the usual addition and multiplication operations confirm to the axioms above (as mentioned, these axioms were made to reflect important properties of the real numbers). Therefore, we will prove that the complex numbers, together with their addition and multiplication as defined in \autoref{sec:complex numbers}. Let us first state the theorem preisely:
 
-\begin{example}{The complex numbers}{}
-	Text.
-\end{example}
+\begin{theorem}{$\bm{\mathbb{C}}$ as a field}{C as a field}
+	The set of complex numbers $\mathbb{C}$ forms a field together with the following operations: for any two complex numbers $z_{1}=a+bi$ and $z_{2}=c+di$ (where $a,b,c,d\in\mathbb{R}$ and $i=\sqrt{-1}$),
+	\begin{descitemize}
+		\item[Addition]
+			\[
+				z_{1} + z_{2} = a+c + (b+d)i.
+			\]
+		\item[Multiplication]
+			\[
+				z_{1} \cdot z_{2} = ac-bd + (ad+bc)i.
+			\]
+	\end{descitemize}
+\end{theorem}
+
+\begin{proof}{$\bm{\mathbb{C}}$ as a field}{C as a field}
+	(note: in the following proof, equalities marked with ``$!$'' use the respective propery of the real numbers)
+
+	\begin{descitemize}
+		\item[Closure under both operations] For any two complex numbers $z_{1}=a+bi$ and $z_{2}=c+di$,
+			\begin{listitemize}
+			\item[Addition] Since addition in $\mathbb{R}$ is closed, $(a+c)\in\mathbb{R}$ and $(b+d)\in\mathbb{R}$. Therefore
+				\[
+					z = z_{1}+z_{2} = a+c + (b+d)i
+				\]
+				is also a complex number with $\Re(z)=a+c$ and $\Im(z)=b+d$.
+			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also closed, $(ac-bd)\in\mathbb{R}$ and $(ad+bc)\in\mathbb{R}$. Therefore
+				\[
+					z = z_{1} \cdot z_{2} = ac-bd + (ad+bc)i
+				\]
+				is a complex number with $\Re(z)=ac-bdc$ and $\Im(z)=ad+bc$.
+			\end{listitemize}
+		
+		\item[Commutativity of both operation] For any two complex numbers $z_{1}=a+bi$ and $z_{2}=c+di$,
+			\begin{listitemize}
+			\item[Addition] Since addition in $\mathbb{R}$ is commutative, $a+c=c+a$ and $b+d=d+b$. Therefore
+				\[
+					z_{1} + z_{2} = a+c + (b+d)i \overset{!}{=} c+a + (d+b)i = z_{2}+z_{2}.
+				\]
+			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also commutative, $ac-bd = ca-db$ and $ad+bc=da+cb$. Therefore
+				\[
+					z_{1} \cdot z_{2} = ac-bd + (ad+bc)i \overset{!}{=} ca-db + (da+cb)i = z_{2} \cdot z_{1}.
+				\]
+			\end{listitemize}
+		
+		\item[Associativity of both operation] For any three complex numbers $z_{1}=a+bi,\ z_{2}=c+di$ and $z_{3}=g+hi$ (where $a,b,c,d,g,h\in\mathbb{R}$\footnote{The letters $g$ and $h$ are used instead of $e$ and $f$ to avoid confusion with the Eurler's constant and the common notation for real functions, respectively.}),
+			\begin{listitemize}
+			\item[Addition] Since addition in $\mathbb{R}$ is associative, $a+(c+g)=(a+c)+g$ and $b+(d+h)=(b+d)+h$. Therefore
+				\[
+					z_{1} + (z_{2}+z_{3}) = a+(c+g) + [b+(d+h)]i \overset{!}{=} (a+c)+g + [(b+d)+h]i = (z_{1}+z_{2}) + z_{3}.
+				\]
+			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also associative, the following equalities apply:
+				\begin{align*}
+					a\cdot(c\cdot g) &= (a\cdot c)\cdot g,\\
+					b\cdot(c\cdot h) &= (b\cdot c)\cdot h,\\
+					a\cdot(d\cdot h) &= (a\cdot d)\cdot h,\\
+					b\cdot(d\cdot g) &= (b\cdot d)\cdot g,\\
+					a\cdot(c\cdot h) &= (a\cdot c)\cdot h,\\
+					a\cdot(d\cdot g) &= (a\cdot d)\cdot g,\\
+					b\cdot(c\cdot g) &= (b\cdot c)\cdot g,\\
+					b\cdot(d\cdot h) &= (b\cdot d)\cdot h.\\
+				\end{align*}
+				Therefore,
+				\begin{align*}
+					z_{1}\cdot(z_{2} \cdot z_{3}) &= a\cdot(c\cdot g) - a\cdot(d\cdot h) - b\cdot(c\cdot h) - b\cdot(d\cdot g)\\ &+[a\cdot(c\cdot h) + a\cdot(d\cdot g) + b\cdot(c\cdot g) - b\cdot(d\cdot h)]i\\
+					&\overset{!}{=} (a\cdot c)\cdot g - (a\cdot d)\cdot h - (b\cdot c)\cdot h - (b\cdot d)\cdot g\\ &+[(a\cdot c)\cdot h + (a\cdot d)\cdot g + (b\cdot c)\cdot g - (b\cdot d)\cdot h]i\\
+					&= (z_{1} \cdot z_{2}) \cdot z_{3}.
+				\end{align*}
+			\end{listitemize}
+
+		\item[Identity for both operations]~\\
+			\begin{listitemize}
+			\item[Addition] The complex number $0=0+0i$ is the complex addition identity: for any real number $x\in\mathbb{R},\ x+0=x$. Therefore, for any complex number $z=a+bi$,
+				\[
+					z+0 = a+bi + 0+0i = a+0 + (b+0)i \overset{!}{=} a+bi.
+				\]
+			\item[Multiplication] The complex number $1=1+0i$ is the complex multiplication identity: for any real number $x\in\mathbb{R},\ x\cdot1=x$ and $x\cdot0=0$. Therefore, for any complex number $z=a+bi$,
+				\[
+					z\cdot1 = (a+bi)\cdot(1+0i) \overset{!}{=}a\cdot1-\cancel{b\cdot0i^{2}} + (\cancel{a\cdot0i}+b\cdot1)i = a+bi.
+				\]
+
+			\end{listitemize}
+		
+		\item[Inverse for both operations]~\\
+			\begin{listitemize}
+			\item[Addition] For any complex number $z_{1}=a+bi$, the number $z_{2}=-a-bi$ is also a complex number for which
+				\[
+					z_{1} + z_{2} = a+bi + -a-bi \overset{!}{=} a-a + (b-b)i = 0 + 0i = 0.
+				\]
+			\item[Multiplication] For any complex number $z=re^{\theta i}$ where $r\neq0$, the number $z^{-1}=\frac{1}{r}e^{-\theta i}$ is also a complex number for which
+				\[
+					z \cdot z^{-1} = re^{\theta i} \cdot \frac{1}{r}e^{-\theta i} \overset{!}{=} \frac{r}{r}e^{\theta i - \theta i} = 1\cdot1 = 1.
+				\]
+				
+			Note: for $z=a+bi$,
+			\[
+				z^{-1} = \frac{1}{r}e^{-\theta i} = \frac{1}{|z|}\cdot\frac{a-bi}{|z|} = \frac{1}{|z|}\cdot\frac{\conj{z}}{|z|} = \frac{\conj{z}}{|z|^{2}}.
+			\]
+			Therefore, for any $z\neq0,\ z^{-1} = \frac{\conj{z}}{|z|^{2}}$.
+			\end{listitemize}
+
+		\item[Distributivity of of multiplication over addition] For any $z_{1}=a+bi,\ z_{2}=c+di$ and $z_{3}=g+hi$,
+			\begin{align*}
+				z_{1}\cdot(z_{2}+z_{3}) &= (a+bi)\cdot(c+di + g+hi) = (a+bi)\cdot(c+g + [d+h]i)\\
+				&= ac + ag + (bd)i^{2} + (bh)i^{2}\\
+				&+ (ad)i + (ah)i + (bc)i + (bg)i\\
+				&= ac + ag - bd - bh + (ad + ah + bc + bg)i\\
+				&= ac-bd + (ad+bc)i + ag-bh + (ah+bg)i\\
+				&= (z_{1}\cdot z_{2}) + (z_{1}\cdot z_{3}).
+			\end{align*}
+	\end{descitemize}
+\end{proof}
