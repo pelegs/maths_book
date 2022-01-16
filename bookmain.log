@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  16 JAN 2022 18:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  16 JAN 2022 18:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2013,7 +2013,7 @@ pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></usr/
 local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/local
 /texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (59 pages, 641603 bytes).
+Output written on bookmain.pdf (59 pages, 641606 bytes).
 PDF statistics:
  1015 PDF objects out of 1200 (max. 8388607)
  869 compressed objects within 9 object streams
