@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  16 JAN 2022 18:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  16 JAN 2022 21:28
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -604,7 +604,19 @@ ts.colormaps.code.tex)
 s.colorbrewer.code.tex
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarycolorb
 rewer.code.tex))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/kpfonts.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+Package: fontawesome 2016/05/15 v4.6.3.1 font awesome icons
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-ge
+neric.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pd
+ftex.tex)) (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/kpfonts.sty
 Package: kpfonts  2010/08/20 v3.31
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/textcomp.sty
@@ -1000,19 +1012,6 @@ s
 \f@nch@O@olf=\skip67
 \f@nch@O@orf=\skip68
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/fontawesome.sty
-Package: fontawesome 2016/05/15 v4.6.3.1 font awesome icons
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-ge
-neric.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pd
-ftex.tex))
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2019/11/15 version 4.22 text color boxes
 
@@ -1175,11 +1174,11 @@ File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 Library (tcolorbox): 'tcbposter.code.tex' version '4.22'
 ))
 \c@tcb@cnt@definition=\count342
-\c@tcb@cnt@example=\count343
-\c@tcb@cnt@note=\count344
-\c@tcb@cnt@challange=\count345
-\c@tcb@cnt@theorem=\count346
-\c@tcb@cnt@proof=\count347
+\c@tcb@cnt@theorem=\count343
+\c@tcb@cnt@proof=\count344
+\c@tcb@cnt@example=\count345
+\c@tcb@cnt@note=\count346
+\c@tcb@cnt@challange=\count347
  (/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count348
@@ -1488,48 +1487,48 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 (./bookmain.aux)
 \openout1 = `bookmain.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 385.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 369.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 3
-85.
+69.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 385.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 369.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 3
-85.
+69.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 385.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 369.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 3
-85.
+69.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 385.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 369.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-385.
+369.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
 LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 3
-85.
+69.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
@@ -1606,7 +1605,7 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@posthook=\toks51
 )
 \AtBeginShipoutBox=\box136
-Package hyperref Info: Link coloring ON on input line 385.
+Package hyperref Info: Link coloring ON on input line 369.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1620,9 +1619,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count402
 )
-LaTeX Info: Redefining \ref on input line 385.
-LaTeX Info: Redefining \pageref on input line 385.
-LaTeX Info: Redefining \nameref on input line 385.
+LaTeX Info: Redefining \ref on input line 369.
+LaTeX Info: Redefining \pageref on input line 369.
+LaTeX Info: Redefining \nameref on input line 369.
  (./bookmain.out) (./bookmain.out)
 \@outlinefile=\write7
 \openout7 = `bookmain.out'.
@@ -1637,39 +1636,39 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 
-Package chemgreek Info: Activating mapping `kpfonts' on line 385.
+Package chemgreek Info: Activating mapping `kpfonts' on line 369.
 
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
-385.
+369.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-385.
+369.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
-385.
+369.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
-385.
+369.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for OT1+jkpss on input line
- 385.
+ 369.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkpss.fd
 File: ot1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for OT1/jkpss.
 )
 LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
- 385.
+ 369.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
@@ -1696,25 +1695,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
 es/chapters/tapir_rainbow.pdf>]
-LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 12.
+LaTeX Font Info:    Trying to load font information for U+fontawesomethree on i
+nput line 12.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
-File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 )
-
-LaTeX Font Warning: Font shape `U/fontawesometwo/b/n' undefined
-(Font)              using `U/fontawesometwo/m/n' instead on input line 12.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6332) has occurred while \output is active []
 
  [2]
-[3]
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
- [4]
-Underfull \vbox (badness 3547) has occurred while \output is active []
+[3] [4]
+Underfull \vbox (badness 2486) has occurred while \output is active []
 
  [5]
 [6]
@@ -1730,7 +1721,7 @@ LaTeX Warning: Reference `:subset_properties' on page 10 undefined on input lin
 e 434.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5592) has occurred while \output is active []
 
  [10]
 [11]
@@ -1746,7 +1737,7 @@ LaTeX Warning: Reference `:Cartesian_products' on page 14 undefined on input li
 ne 603.
 
 ) (./chapters/intro/relations_functions.tex
-Underfull \vbox (badness 3977) has occurred while \output is active []
+Underfull \vbox (badness 3503) has occurred while \output is active []
 
  [14]
 
@@ -1765,10 +1756,7 @@ Package hyperref Warning: No autoref name for `tcb@cnt@example' on input line 8
 Package hyperref Warning: No autoref name for `tcb@cnt@example' on input line 1
 37.
 
-
-Underfull \vbox (badness 2310) has occurred while \output is active []
-
- [16]
+[16]
 
 Package hyperref Warning: No autoref name for `tcb@cnt@example' on input line 1
 50.
@@ -1785,7 +1773,7 @@ Package hyperref Warning: No autoref name for `tcb@cnt@example' on input line 2
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
-Underfull \vbox (badness 6876) has occurred while \output is active []
+Underfull \vbox (badness 6001) has occurred while \output is active []
 
  [19]
 
@@ -1796,7 +1784,7 @@ Package hyperref Warning: No autoref name for `tcb@cnt@example' on input line 4
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-Overfull \hbox (12.9912pt too wide) in paragraph at lines 485--486
+Overfull \hbox (13.9912pt too wide) in paragraph at lines 485--486
  [][] 
  []
 
@@ -1811,7 +1799,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
-Overfull \hbox (7.24295pt too wide) in paragraph at lines 196--196
+Overfull \hbox (7.71796pt too wide) in paragraph at lines 196--196
 [][][][][]|[]$[] []$[]| 
  []
 
@@ -1826,7 +1814,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [27]
-Underfull \vbox (badness 2735) has occurred while \output is active []
+Underfull \vbox (badness 2111) has occurred while \output is active []
 
  [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1949,17 +1937,26 @@ he same identifier (name{tcb@cnt@theorem.1}) has been already used, duplicate i
 gnored
 <to be read again> 
                    \relax 
-l.47 ...\bm{\mathbb{C}}$ as a field}{C as a field}
+l.47 ...\bm{\mathbb{R}}$ as a field}{R as a field}
                                                   
+
+Package hyperref Warning: No autoref name for `tcb@cnt@theorem' on input line 5
+1.
+
+
+Package hyperref Warning: No autoref name for `tcb@cnt@theorem' on input line 5
+1.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [56]
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
@@ -1968,55 +1965,52 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [57]
 [58]) [59]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 425.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 425.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 409.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 409.
  (./bookmain.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 425.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 425.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 409.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 409.
 Package rerunfilecheck Info: File `bookmain.out' has not changed.
 (rerunfilecheck)             Checksum: 1B5DDB376D2E6583A6B2544A8F148EFE;2755.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 48487 strings out of 480997
- 1143201 string characters out of 5912179
- 1823722 words of memory out of 5000000
- 62781 multiletter control sequences out of 15000+600000
- 655636 words of font info for 300 fonts, out of 8000000 for 9000
+ 48480 strings out of 480997
+ 1143012 string characters out of 5912179
+ 1822550 words of memory out of 5000000
+ 62774 multiletter control sequences out of 15000+600000
+ 655498 words of font info for 300 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,19n,127p,815b,2955s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 79i,19n,127p,807b,2955s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.en
 c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2019/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}</usr/loc
-al/texlive/2019/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbex.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbmi.pfb></usr/local/tex
-live/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbne.pfb></usr/local/texlive/2019
-/texmf-dist/fonts/type1/public/kpfonts/jkpbsy.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/kpfonts/jkpbsyb.pfb></usr/local/texlive/2019/texmf-di
-st/fonts/type1/public/kpfonts/jkpex.pfb></usr/local/texlive/2019/texmf-dist/fon
-ts/type1/public/kpfonts/jkpexa.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
-pe1/public/kpfonts/jkpmi.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
-blic/kpfonts/jkpmia.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
-kpfonts/jkpmit8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpf
-onts/jkpmn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts
-/jkpmne.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkps
-sbn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsy.
-pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/local
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
-Output written on bookmain.pdf (59 pages, 641606 bytes).
+exlive/2019/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}</usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbex.pfb></usr/lo
+cal/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbmi.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbne.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/kpfonts/jkpbsy.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/kpfonts/jkpbsyb.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/kpfonts/jkpexa.pfb></usr/local/texlive/2019/texmf-dist/fonts/
+type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
+public/kpfonts/jkpmia.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
+c/kpfonts/jkpmit8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/k
+pfonts/jkpmn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfon
+ts/jkpmne.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jk
+pssbn8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkps
+y.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsya.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb></us
+r/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/latxfont/linew10.pfb>
+Output written on bookmain.pdf (59 pages, 654615 bytes).
 PDF statistics:
- 1015 PDF objects out of 1200 (max. 8388607)
- 869 compressed objects within 9 object streams
- 340 named destinations out of 1000 (max. 500000)
+ 1021 PDF objects out of 1200 (max. 8388607)
+ 875 compressed objects within 9 object streams
+ 341 named destinations out of 1000 (max. 500000)
  490 words of extra memory for PDF output out of 10000 (max. 10000000)
 

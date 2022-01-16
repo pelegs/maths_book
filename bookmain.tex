@@ -79,6 +79,7 @@
 % FONTS %
 %-------%
 
+\usepackage{fontawesome}
 \usepackage{kpfonts}
 
 %--------%
@@ -91,10 +92,12 @@
 \definecolor{xblue}{HTML}{4268BD}
 \definecolor{xgreen}{HTML}{52B256}
 \definecolor{xpurple}{HTML}{7F52B2}
-\definecolor{xorange}{HTML}{FF9F31}
+\definecolor{xorange}{HTML}{FD9337}
 \definecolor{xdotted}{HTML}{999999}
 \definecolor{xgray}{HTML}{777777}
 \definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{f690ea}
+\definecolor{xgraycyan}{HTML}{82bceb}
 
 \colorlet{xcol0}{xred}
 \colorlet{xcol1}{xblue}
@@ -182,14 +185,26 @@
 % BOXES %
 %-------%
 
-\usepackage{fontawesome}
 \usepackage[most]{tcolorbox}
+
+\tikzset{
+	second box/.style={
+		anchor=east,
+		text=white,
+		rounded corners,
+		fill=#1,
+		xshift=-4mm,
+	},
+}
+		
 \tcbset{
-	common/.style={
+	common/.style n args={2}{
+		colframe={#1},
+		colback={#1!5},
+		colbacktitle={#1},
 		lower separated=false,
 		coltitle=white,
-		colback=gray!5,
-		boxrule=0.5pt,
+		boxrule=1pt,
 		fonttitle=\bfseries,
 		enhanced,
 		breakable,
@@ -197,76 +212,45 @@
 		before skip=8pt,
 		attach boxed title to top left={
 			yshift=-0.25cm,
-		xshift=0.38cm},
+			xshift=0.38cm,
+		},
 		boxed title style={
 			boxrule=0pt,
 			colframe=white,
-			arc=0pt,
-		outer arc=0pt},
-	separator sign={~~},},
+			arc=5pt,
+			outer arc=4pt,
+		},
+		separator sign={~~},
+		overlay unbroken and last={
+			\node[text=white, align=right, rounded corners, fill=#1, xshift=-4mm, minimum height=6mm, anchor=east] at (frame.south east) {#2};
+		}
+	},
 	defstyle/.style={
-		common,
-		colframe=xpurple,
-		colback=xpurple!5,
-		colbacktitle=xpurple,
-		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt] at (\linewidth-width, 0) {
-	\textcolor{xpurple}{$\pi$}};}},
-	exmplstyle/.style={
-		common,
-		colframe=xblue,
-		colback=xblue!5,
-		colbacktitle=xblue,
-		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
-	\textcolor{xblue}{\faArrowCircleDown}};}},
-	notestyle/.style={
-		common,
-		colframe=xred,
-		colback=xred!5,
-		colbacktitle=xred,
-		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
-	\textcolor{xred}{!}};}},
-	chllngstyle/.style={
-		common,
-		colframe=xgreen,
-		colback=xgreen!5,
-		colbacktitle=xgreen,
-		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 0) {
-	\textcolor{xgreen}{?}};}},
-	thmstyle/.style={
-		common,
-		colframe=second,
-		colback=second!5,
-		colbacktitle=second,
-		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-	\textcolor{second}{$\heartsuit$}};}},
+		common={xpurple}{$\bm{\pi}$},
+	},
 	theoremstyle/.style={
-		common,
-		colframe=xred,
-		colback=xred!5,
-		colbacktitle=xred,
-		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
-	\textcolor{xred}{$\multimapdotbothA$}};}},
-		proofstyle/.style={
-		common,
-		colframe=xgreen,
-		colback=xgreen!5,
-		colbacktitle=xgreen,
-		overlay unbroken and last={
-			\node[anchor=south east, outer sep=0pt, font=\large\bfseries] at (\linewidth-width, 1) {
-	\textcolor{xgreen}{$\blacksquare$}};}},
+		common={xgraycyan}{$\multimapdotbothA$},
+	},
+	proofstyle/.style={
+		common={xgreen}{\textbf{QED}},
+	},
+	examplestyle/.style={
+		common={xblue}{\faStar},
+	},
+	notestyle/.style={
+		common={xred}{\textbf{!}},
+	},
+	challangestyle/.style={
+		common={xorange}{\textbf{?}},
+	},
 }
+
 \newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
-\newtcbtheorem[auto counter, number within=chapter]{example}{Example}{exmplstyle}{example}
-\newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
-\newtcbtheorem[auto counter, number within=chapter]{challange}{Challange}{chllngstyle}{challange}
 \newtcbtheorem[auto counter, number within=chapter]{theorem}{Theorem}{theoremstyle}{theorem}
 \newtcbtheorem[auto counter, number within=chapter]{proof}{Proof}{proofstyle}{proof}
+\newtcbtheorem[auto counter, number within=chapter]{example}{Example}{examplestyle}{example}
+\newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
+\newtcbtheorem[auto counter, number within=chapter]{challange}{Challange}{challangestyle}{challange}
 
 %---------%
 % FIGURES %

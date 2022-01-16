@@ -42,24 +42,20 @@ We begin our dive into the rigorous analysis of linear algebra by defining an al
 	\end{descitemize}
 \end{definition}
 
-It should be clear that the real numbers with the usual addition and multiplication operations confirm to the axioms above (as mentioned, these axioms were made to reflect important properties of the real numbers). Therefore, we will prove that the complex numbers, together with their addition and multiplication as defined in \autoref{sec:complex numbers}. Let us first state the theorem preisely:
+We start with one of the most obvious examples of a field: the real numbers together with the standard addition and product.
 
-\begin{theorem}{$\bm{\mathbb{C}}$ as a field}{C as a field}
-	The set of complex numbers $\mathbb{C}$ forms a field together with the following operations: for any two complex numbers $z_{1}=a+bi$ and $z_{2}=c+di$ (where $a,b,c,d\in\mathbb{R}$ and $i=\sqrt{-1}$),
-	\begin{descitemize}
-		\item[Addition]
-			\[
-				z_{1} + z_{2} = a+c + (b+d)i.
-			\]
-		\item[Multiplication]
-			\[
-				z_{1} \cdot z_{2} = ac-bd + (ad+bc)i.
-			\]
-	\end{descitemize}
+\begin{theorem}{$\bm{\mathbb{R}}$ as a field}{R as a field}
+	The set of real numbers $\mathbb{R}$ forms a field together with the standard addition and product.
+\end{theorem}
+
+We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pretty straight forward using the known properties of the standard addition and product over $\mathbb{R}$ (and rather uninteresting). Instead, we jump forward to using \autoref{theorem:R as a field} for proving the same idea about the complex numbers:
+
+\begin{theorem}{$\bm{\mathbb{C}}$ as a field and more more more}{C as a field}
+	The set of complex numbers $\mathbb{C}$ forms a field together with the addition and product operations as defined in \autoref{sec:complex numbers} (namely \autoref{eq:complex_addition}, \autoref{eq:complex_product} and \autoref{eq:complex_product_geometric}).
 \end{theorem}
 
 \begin{proof}{$\bm{\mathbb{C}}$ as a field}{C as a field}
-	(note: in the following proof, equalities marked with ``$!$'' use the respective propery of the real numbers)
+	(note: in the following proof, equalities marked with $!$ use the respective propery of the real numbers)
 
 	\begin{descitemize}
 		\item[Closure under both operations] For any two complex numbers $z_{1}=a+bi$ and $z_{2}=c+di$,
