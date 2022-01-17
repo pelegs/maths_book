@@ -153,3 +153,42 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 \end{proof}
 
 The sets $\mathbb{R}$ and $\mathbb{C}$ are examples of \emph{infinite fields}, since they each have infinite number of elements. The set $\mathbb{Q}$ (rational numbers) can be shown to also be an infinite field, however unlike $\mathbb{R}$ and $\mathbb{C}$ it has \textbf{countable} number of elements, i.e. each number in $\mathbb{Q}$ can be assigned an index $1,2,3,\dots$\footnote{For proof, see \ldots}.
+
+\begin{challange}{$\bm{\mathbb{Q}}$ as a field}{Q as a field}
+	Prove that $\mathbb{Q}$ (together with the usual addition and product operation) is indeed a field.
+\end{challange}
+
+While all three examples of fields we encountered so far have each an infinite number of elements, some fields only have a finite number of elements (called their \emph{order}). For example, consider the set $S=\{0,1,a,b\}$ and the addition and product operations described using the following tables (left table describes addition, right table describes multiplication):
+
+\centering
+\begin{tabular}[]{c|cccc}
+	+ & 0 & 1 & a & b\\
+	\midrule
+	0 & 0 & 1 & a & b\\
+	1 & 1 & 0 & b & a\\
+	a & a & b & 0 & 1\\
+	b & b & a & 1 & 0\\
+\end{tabular}\hspace{2cm}
+\begin{tabular}[]{c|cccc}
+	$\cdot$ & 0 & 1 & a & b\\
+	\midrule
+	0 & 0 & 0 & 0 & 0\\
+	1 & 0 & 1 & a & b\\
+	a & 0 & a & b & 1\\
+	b & 0 & b & 1 & a\\
+\end{tabular}
+
+\flushleft
+By examining the tables above, several points become clear:
+\begin{itemize}
+	\item all the possible combinations of operands in both addition and multiplication give elements from $S$ itself, meaning that the set is closed under both these operations.
+	\item both tables are symmetric around their main diagonal, meaning that both addition and multiplication are commutative operations.
+	\item in the addition table, the first row and first column both show that $x+0=x$ for any $x\in S$, meaning that $0$ is the additive identity in $S$.
+	\item in the product table, the second row and second column both show that $x\cdot1=x$ for any $x\in S$, meaning that $1$ is the multiplicative identity in $S$.
+	\item in the addition table, the element $0$ appears in each row and each column exactly once. This means that every element $x$ has a single additive inverse $y\in S$.
+	\item in the product table, the element $1$ appears in each row and each column exactly once, except for the first row and first column. This means that every element $x\neq 0$ has a single multiplicative inverse $z\in S$.
+\end{itemize}
+
+We therefore only need to prove two points to show that $S$ is a field together with the operations described by the above tables: associativity of both operations and distributivity of multiplication over addition. We leave these proofs as a challange to the reader. Such a field is sometime denoted as $\mathbb{F}_{4}$. There are, of course, infinitely many finite fields.
+
+Another example of finite fields are sets of integers wich have the form $\{0,1,2,3,\dots,n\}$ where $n$ is a prime, together with \emph{modular addition} and \emph{modular product}. Modular arithmetics is similar to hours, minutes or seconds on a clock: if the time now is 11am (11:00 in 24-hour format), then the time 3 hours from now will be 2pm
