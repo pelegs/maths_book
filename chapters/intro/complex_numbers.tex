@@ -58,26 +58,26 @@ Real numbers, while being extremely useful, are not complete - they can't solve 
 	x^{2} + 1 = 0
 	\label{eq:no_real_solutions}
 \end{equation}
-has no real solutions, since there can be no real number $x$ such that $x^{2}=-1$. However, we can choose to define a new number, $i=\sqrt{-1}$ and using it to build a new number system. This system is of course the set of complex numbers, $\mathbb{C}$. It is defined as the set of all $z$ such that
+has no real solutions, since there can be no real number $x$ such that $x^{2}=-1$. However, we can choose to define a new number, $\iu=\sqrt{-1}$ and using it to build a new number system. This system is of course the set of complex numbers, $\mathbb{C}$. It is defined as the set of all $z$ such that
 \begin{equation}
-	z = a+ib,
+	z = a+\iu b,
 	\label{eq:complex_number}
 \end{equation}
-where $a,b\in\mathbb{R}$ and $i=\sqrt{-1}$. We call $a$ the \emph{real component} of $z$ or $\Re(z)$, and $b$ its \emph{imaginary component} or $\Im(z)$\footnote{There is nothing more ``real'' about real numbers than imaginary numbers, but unfortunately that's the terminology we're stuck with \shrug}. These numbers appear a lot all throughout the exact sciences (but especially in physics and engineering), so we must at the very least learn their basic properties.
+where $a,b\in\mathbb{R}$ and $\iu=\sqrt{-1}$. We call $a$ the \emph{real component} of $z$ or $\Re(z)$, and $b$ its \emph{imaginary component} or $\Im(z)$\footnote{There is nothing more ``real'' about real numbers than imaginary numbers, but unfortunately that's the terminology we're stuck with \shrug}. These numbers appear a lot all throughout the exact sciences (but especially in physics and engineering), so we must at the very least learn their basic properties.
 
 It is not so obvious that we can add two different kinds of numbers together, but it works (the linear algebra chapter sheds more light on this idea). What is important is that we always keep these two parts separated. We see this when we add together two complex numbers $z_{1},z_{2}$:
 \begin{equation}
-	z = z_{1}+z_{2} = \left( a_{1}+b_{1}i \right) + \left( a_{2}+b_{2}i \right) = \left( a_{1}+a_{2} \right) + \left( b_{1}+b_{2} \right)i.
+	z = z_{1}+z_{2} = \left( a_{1}+b_{1}\iu \right) + \left( a_{2}+b_{2}\iu \right) = \left( a_{1}+a_{2} \right) + \left( b_{1}+b_{2} \right)\iu.
 	\label{eq:complex_addition}
 \end{equation}
 The real part of $z$ is therefore $a_{1}+b_{1}$, and its imaginary part is $b_{1}+b_{2}$.
 
 What happens when we multiply two complex numbers? Let's check:
 \begin{align}
-	z = z_{1}z_{2} &= \left( a_{1}+b_{1}i \right)\left( a_{2}+b_{2}i \right)\nonumber\\
-	&= a_{1}a_{2} + ia_{1}b_{2} + ia_{2}b_{1} + i^{2}b_{1}b_{2}\nonumber\\
-	&= a_{1}a_{2} + ia_{1}b_{2} + ia_{2}b_{1} - b_{1}b_{2}\nonumber\\
-	&= \left( a_{1}a_{2} - b_{1}b_{2} \right) + i\left( a_{1}b_{2} + a_{2}b_{1} \right).
+	z = z_{1}z_{2} &= \left( a_{1}+b_{1}\iu \right)\left( a_{2}+b_{2}\iu \right)\nonumber\\
+	&= a_{1}a_{2} + \iu a_{1}b_{2} + \iu a_{2}b_{1} + \iu^{2}b_{1}b_{2}\nonumber\\
+	&= a_{1}a_{2} + \iu a_{1}b_{2} + \iu a_{2}b_{1} - b_{1}b_{2}\nonumber\\
+	&= \left( a_{1}a_{2} - b_{1}b_{2} \right) + \iu\left( a_{1}b_{2} + a_{2}b_{1} \right).
 	\label{eq:complex_product}
 \end{align}
 We see that we can still separate the real part and imaginary part of the result. What happens in the case of two real numbers? For real numbers $b=0$, and thus \autoref{eq:complex_product} devolves to $z=a_{1}a_{2}\in\mathbb{R}$, which is exactly what we expect: multiplying two real numbers yields their product, which is a real number. Notice that this doesn't happen with purely imaginary numbers: multiplying together two imaginary numbers (i.e. numbers for which $a=0$) results in a real number. Will get to understand why this happens very soon.
@@ -89,14 +89,14 @@ When discussing real numbers sometimes we like to refer to their \textit{magnitu
 \end{equation}
 i.e. in a sense, to get the magnitude of a complex number we imagine its two components as being perpendicular and calculate the length of the resulting hypotenous (cf.\ the Pythagorean theorem). In fact, this is one very useful interpertation of complex numbers, which we will explore in depth in the next subsection.
 
-A very important operation that can be applied to complex numbers is \emph{conjugation}. The conjugate of a complex number $z=a+bi$ is defined as
+A very important operation that can be applied to complex numbers is \emph{conjugation}. The conjugate of a complex number $z=a+\iu b$ is defined as
 \begin{equation}
-	\conj{z} = a-bi,
+	\conj{z} = a-\iu b,
 	\label{eq:complex_conjugation}
 \end{equation}
 i.e. conjugating a number is simply negating its imaginary part. When we multiply a complex number by its own complex conjugate we get
 \begin{equation}
-	z\conj{z} = (a+bi)(a-bi) = a^{2} + abi - abi - b^{2}i^{2} = a^{2}+b^{2},
+	z\conj{z} = (a+\iu b)(a-\iu b) = a^{2} + \cancel{ab\iu}  - \cancel{ab\iu}  - b^{2}\iu^{2} = a^{2}+b^{2},
 	\label{eq:conjugate_product}
 \end{equation}
 i.e. $z\conj{z} = |z|^{2}$. The inverse of a complex number can be expressed as
@@ -106,7 +106,7 @@ i.e. $z\conj{z} = |z|^{2}$. The inverse of a complex number can be expressed as
 \end{equation}
 
 \subsection{Geometric approach}
-As alluded to in the previous subsection, we can interpret a complex number $z=a+bi$ as two components in a 2-dimensional space (called the \emph{complex plane}), in which the horizontal axis represents real components, and the vertical access represents imaginary components:
+As alluded to in the previous subsection, we can interpret a complex number $z=a+\iu b$ as two components in a 2-dimensional space (called the \emph{complex plane}), in which the horizontal axis represents real components, and the vertical access represents imaginary components:
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -127,10 +127,10 @@ As alluded to in the previous subsection, we can interpret a complex number $z=a
 			extra y tick labels={$b$},
 		]
 		\draw[very thick, xred] (0,0) -- node[midway, above, rotate=\t] {$|z|=\sqrt{a^{2}+b^{2}}$} (\a,\b) node[complex](zdot){};
-		\node[xred, above of=zdot, yshift=-6mm] {$z=a+bi$};
+		\node[xred, above of=zdot, yshift=-6mm] {$z=a+\iu b$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{A complex number $z=a+bi$ shown on the complex plane: the horizontal and vertical axes represent the real and imaginary components, respectively.}
+	\caption{A complex number $z=a+\iu b$ shown on the complex plane: the horizontal and vertical axes represent the real and imaginary components, respectively.}
 	\label{fig:complex number}
 \end{figure}
 
@@ -175,10 +175,10 @@ Using \autoref{eq:xy_P} the real and imaginary components of $z$ are
 \end{align}
 and $z$ can be re-written as
 \begin{equation}
-	z = r\left( \cos(\theta) + i\sin(\theta) \right).
+	z = r\left( \cos(\theta) + \iu\sin(\theta) \right).
 	\label{eq:complex_geometric_form}
 \end{equation}
-Which we call the \emph{polar form} of $z$ (contrasted with $z=a+ib$ being the \emph{Cartesian form} of $z$).
+Which we call the \emph{polar form} of $z$ (contrasted with $z=a+\iu b$ being the \emph{Cartesian form} of $z$).
 
 Inverting the relations in \autoref{eq:complex_components} yields the relations
 \begin{align}
@@ -189,42 +189,42 @@ Inverting the relations in \autoref{eq:complex_components} yields the relations
 
 Let's examine the same properties of complex numbers shown in Equations \ref{eq:complex_addition}, \ref{eq:complex_product} and \ref{eq:complex_conjugation}, and verify that they work in the polar form of complex numbers. We start with addition (\autoref{eq:complex_addition}):
 \begin{align}
-	z_{1}+z_{2} &= r_{1}\left[ \cos\left( \theta_{1} \right) + i\sin\left( \theta_{1} \right) \right] + r_{2}\left[ \cos\left( \theta_{2} \right) + i\sin\left( \theta_{2} \right) \right]\nonumber\\
-	&= \underbrace{r_{1}\cos\left( \theta_{1} \right)}_{a_{1}} + \underbrace{r_{2}\cos\left( \theta_{2} \right)}_{a_{2}} + i\underbrace{r_{1}\sin\left( \theta_{1} \right)}_{b_{1}} + i\underbrace{r_{2}\sin\left( \theta_{2} \right)}_{b_{2}}\nonumber\\
-&= \left( a_{1}+a_{2} \right) + i\left( b_{1}+b_{2} \right).
+	z_{1}+z_{2} &= r_{1}\left[ \cos\left( \theta_{1} \right) + \iu\sin\left( \theta_{1} \right) \right] + r_{2}\left[ \cos\left( \theta_{2} \right) + \iu\sin\left( \theta_{2} \right) \right]\nonumber\\
+	&= \underbrace{r_{1}\cos\left( \theta_{1} \right)}_{a_{1}} + \underbrace{r_{2}\cos\left( \theta_{2} \right)}_{a_{2}} + \iu\underbrace{r_{1}\sin\left( \theta_{1} \right)}_{b_{1}} + \iu\underbrace{r_{2}\sin\left( \theta_{2} \right)}_{b_{2}}\nonumber\\
+&= \left( a_{1}+a_{2} \right) + \iu\left( b_{1}+b_{2} \right).
 	\label{eq:complex_addition_geometric}
 \end{align}
 We see that indeed, the polar form of complex numbers adheres to the addition rule in \autoref{eq:complex_addition}. Next is the product rule:
 \begin{align}
-	z_{1}z_{2} &= r_{1}\left[ \cos\left(\theta_{1}\right) + i\sin\left(\theta_{1}\right) \right] \cdot r_{2}\left[ \cos\left(\theta_{2}\right) + i\sin\left(\theta_{2}\right) \right]\nonumber\\
-	&= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right) + i\cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + i\sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) -\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right)  \right]\nonumber\\
-	&= r_{1}\cos\left( \theta_{1} \right)r_{2}\cos\left( \theta_{2} \right) - r_{1}\sin\left( \theta_{1} \right)r_{2}\sin\left( \theta_{2} \right) + i\left[ r_{1}\cos\left( \theta_{1} \right)r_{2}\sin\left( \theta_{2} \right) + r_{1}\sin\left( \theta_{1} \right)r_{2}\cos\left( \theta_{2} \right) \right]\nonumber\\
-	&= \left( a_{1}a_{2}-b_{1}b_{2} \right) + i\left( a_{1}b_{2} + a_{2}b_{1} \right),
+	z_{1}z_{2} &= r_{1}\left[ \cos\left(\theta_{1}\right) + \iu\sin\left(\theta_{1}\right) \right] \cdot r_{2}\left[ \cos\left(\theta_{2}\right) + \iu\sin\left(\theta_{2}\right) \right]\nonumber\\
+	&= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right) + \iu\cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + \iu\sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) -\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right)  \right]\nonumber\\
+	&= r_{1}\cos\left( \theta_{1} \right)r_{2}\cos\left( \theta_{2} \right) - r_{1}\sin\left( \theta_{1} \right)r_{2}\sin\left( \theta_{2} \right) + \iu\left[ r_{1}\cos\left( \theta_{1} \right)r_{2}\sin\left( \theta_{2} \right) + r_{1}\sin\left( \theta_{1} \right)r_{2}\cos\left( \theta_{2} \right) \right]\nonumber\\
+	&= \left( a_{1}a_{2}-b_{1}b_{2} \right) + \iu\left( a_{1}b_{2} + a_{2}b_{1} \right),
 	\label{eq:complex_product_geometric}
 \end{align}
 which is indeed the result seen in \autoref{eq:complex_product}. We can also develope further the second row of \autoref{eq:complex_product_geometric} using some trigonometry (specifically the trigonometric identities in \autoref{eq:trig product to sum}):
 \begin{align}
-	z_{1}z_{2} &= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right) + i\cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + i\sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) -\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right) \right]\nonumber\\
+	z_{1}z_{2} &= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right) + \iu\cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + \iu\sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) -\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right) \right]\nonumber\\
 	&= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right)-\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + i\left[ \cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + \sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) \right] \right]\nonumber\\
-	&= r_{1}r_{2}\left[ \cos\left( \theta_{1}+\theta_{2} \right) + i\sin\left( \theta_{1}+\theta_{2} \right)  \right].
+	&= r_{1}r_{2}\left[ \cos\left( \theta_{1}+\theta_{2} \right) + \iu\sin\left( \theta_{1}+\theta_{2} \right)  \right].
 	\label{eq:complex_product_geometric_insight}
 \end{align}
 This is a very important result: it shows that multiplying a complex number $z_{1}$ by another complex number $z_{2}$ gives a complex number with magnitude $r_{1}r_{2}$, i.e. the product of the magnitudes of the two complex numbers, and argument $\theta_{1}+\theta_{2}$, i.e. the argument of $z_{1}$ rotated by the argument of $z_{2}$ (or vice-versa). We will consider this result in more detail soon.
 
 
-In the polar form the complex conjugate of a number $z=r\left[ \cos\left( \theta \right) +i\sin\left( \theta \right) \right]$ can be brought about by substituting $-\theta$ into the arguments of the trigonometric functions:
+In the polar form the complex conjugate of a number $z=r\left[ \cos\left( \theta \right) + \iu\sin\left( \theta \right) \right]$ can be brought about by substituting $-\theta$ into the arguments of the trigonometric functions:
 \begin{align}
-	\conj{z} &= r\left[ \cos\left( -\theta \right) + i\sin\left( -\theta \right) \right]\nonumber\\
-	&= r\left[ \cos\left( \theta \right) - i\sin\left( \theta \right) \right]\nonumber\\
-	&= r\cos\left( \theta \right) - ir\sin\left( \theta \right)\nonumber\\
-	&= a-ib.
+	\conj{z} &= r\left[ \cos\left( -\theta \right) + \iu\sin\left( -\theta \right) \right]\nonumber\\
+	&= r\left[ \cos\left( \theta \right) - \iu\sin\left( \theta \right) \right]\nonumber\\
+	&= r\cos\left( \theta \right) - \iu r\sin\left( \theta \right)\nonumber\\
+	&= a-\iu b.
 	\label{eq:complex_conjugation_geometric}
 \end{align}
 
 Lastly, let's show that \autoref{eq:conjugate_product} can be derived in the polar form:
 \begin{align}
-	z\conj{z} &= r\left[ \cos\left( \theta \right) + i\sin\left( \theta \right) \right] \cdot r\left[ \cos\left( \theta \right) - i\sin\left( \theta \right) \right]\nonumber\\
-	&= r^{2}\left[ \cos^{2}\left( \theta \right) -\cancel{i\cos\left( \theta \right)\sin\left( \theta \right)} +i\cancel{\sin\left( \theta \right)\cos(\theta)} + \sin^{2}\left( \theta \right) \right]\nonumber\\
+	z\conj{z} &= r\left[ \cos\left( \theta \right) + \iu\sin\left( \theta \right) \right] \cdot r\left[ \cos\left( \theta \right) - \iu\sin\left( \theta \right) \right]\nonumber\\
+	&= r^{2}\left[ \cos^{2}\left( \theta \right) -\cancel{\iu\cos\left( \theta \right)\sin\left( \theta \right)} +\iu\cancel{\sin\left( \theta \right)\cos(\theta)} + \sin^{2}\left( \theta \right) \right]\nonumber\\
 	&= r^{2}\left[ \sin^{2}\left( \theta \right) + \cos^{2}\left( \theta \right) \right]\nonumber\\
 	&= r^{2} = a^{2}+b^{2}.
 	\label{eq:conjugate_product_geometric}
@@ -232,42 +232,42 @@ Lastly, let's show that \autoref{eq:conjugate_product} can be derived in the pol
 
 In 1748 Leonhard Euler published his famous work \textit{Introductio in analysin infinitorum}\footnote{Latin for \textbf{Introduction to the Analysis of the Infinite}.}. In it he introduced the following relation, called \emph{Euler's formula}:
 \begin{equation}
-	e^{ix} = \sin(x) + i\cos(x).
+	\eu^{\iu x} = \sin(x) + \iu\cos(x).
 	\label{eq:Euler's_formula}
 \end{equation}
 Using Euler's formula a complex number $z$ can be written as
 \begin{equation}
-	z = re^{i\theta}.
+	z = r\eu^{\iu\theta}.
 	\label{eq:complex number using Eurler's formula}
 \end{equation}
 
-In \autoref{tab:complex_exponentials} we can see some usefull complex exponentials $e^{xi}$. Specifically, setting $x=\pi$ yields the famous \emph{Eurler's identity}, considered by many to be one of the most beautiful equations in mathematics, as it binds together five important numbers, namely $0,1,\pi,e$ and $i$:
+In \autoref{tab:complex_exponentials} we can see some usefull complex exponentials $\eu^{\iu x}$. Specifically, setting $x=\pi$ yields the famous \emph{Eurler's identity}, considered by many to be one of the most beautiful equations in mathematics, as it binds together five important numbers, namely $0,1,\pi,e$ and $\iu$:
 \begin{equation}
-	e^{\pi i} + 1 = 0.
+	\eu^{\iu\pi} + 1 = 0.
 	\label{eq:Euler's identity}
 \end{equation}
 
 \begin{table}
 	\centering
-	\caption{Values of $e^{ix}$ for some useful values of $x$ (cf. xxxx for the values of $\sin(\theta)$ and $\cos(\theta)$).}
+	\caption{Values of $\eu^{ix}$ for some useful values of $x$ (cf. \autoref{tab:rad_degs} for the values of $\sin(\theta)$ and $\cos(\theta)$).}
 	\label{tab:complex_exponentials}
 	\begin{tabular}{lccl}
 		\toprule
-		$x$ & $\cos(x)$ & $\sin(x)$ & $z=e^{ix}$\\
+		$x$ & $\cos(x)$ & $\sin(x)$ & $z=\eu^{\iu x}$\\
 		\midrule
-		$\frac{\pi}{2}$ & $0$ & $1$ & $i$\\
+		$\frac{\pi}{2}$ & $0$ & $1$ & $\iu$\\
 		$\pi$ & $-1$ & $0$ & $-1$\\
-		$\frac{3\pi}{2}$ & $0$ & $-1$ & $-i$\\
-		$\frac{\pi}{3}$ & $\frac{1}{2}$ & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}\left( 1+i\sqrt{3} \right)$\\
-		$\frac{\pi}{4}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}\left( 1+i \right)$\\
-		$\frac{\pi}{6}$ & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}\left( \sqrt{3}+i \right)$\\
+		$\frac{3\pi}{2}$ & $0$ & $-1$ & $-\iu$\\
+		$\frac{\pi}{3}$ & $\frac{1}{2}$ & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}\left( 1+\iu\sqrt{3} \right)$\\
+		$\frac{\pi}{4}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}\left( 1+\iu \right)$\\
+		$\frac{\pi}{6}$ & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}\left( \sqrt{3}+\iu \right)$\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-\autoref{tab:complex_exponentials} also shows us the integer behaviours of $i$:
+\autoref{tab:complex_exponentials} also shows us the integer behaviours of $\iu$:
 \begin{equation}
-	i^{2}=-1,\ i^{3}=-i, i^{4}=1,\ i^{5}=i,\ i^{6}=-1,\ i^{7}=-i,\ \dots
+	\iu^{2}=-1,\ \iu^{3}=-\iu, \iu^{4}=1,\ \iu^{5}=\iu,\ \iu^{6}=-1,\ \iu^{7}=-\iu,\ \dots
 	\label{eq:powers of i}
 \end{equation}
 
@@ -277,11 +277,11 @@ What is the $n$-th order roots of a complex number $z$, i.e. $\nroot{n}{z}$? An 
 \autoref{eq:complex_product_geometric_insight} taught us that complex numbers not only scale other numbers, but also rotate them: with real numbers the product $x \cdot y$ is equivalent to a scaling of $x$ by $y$. With complex numbers the product has two components: its magnitude is the scale of $x$ by $y$, and its argument is the argument of $x$ rotated by the argument of $y$\footnote{Due to the commutativity of the complex product we can switch the order of $z$ and $w$ and get the same result.}.
 
 \begin{example}{Rotation using complex numbers}{}
-	Let $z=2+2i$ and $w=3i$. Their polar forms are $z=2\sqrt{2}\left[ \cos(\pi/4) +i\sin(\pi/4) \right]$ and $w=3\left[ \cos(\pi/2) + i\sin(\pi/2) \right]$. Their product is
+	Let $z=2+2\iu$ and $w=3\iu$. Their polar forms are $z=2\sqrt{2}\left[ \cos(\pi/4) +\iu\sin(\pi/4) \right]$ and $w=3\left[ \cos(\pi/2) + \iu\sin(\pi/2) \right]$. Their product is
 	\begin{align*}
-		z\cdot w &= (2+2i)\cdot3i = 6i + 6i^{2} = -6+6i,
+		z\cdot w &= (2+2\iu)\cdot3\iu = 6\iu + 6\iu^{2} = -6+6\iu,
 	\end{align*}
-	which in polar form is $6\sqrt{2}\left[ \cos(3\pi/4) + i\sin(3\pi/4) \right]$. Note that
+	which in polar form is $6\sqrt{2}\left[ \cos(3\pi/4) + \iu\sin(3\pi/4) \right]$. Note that
 	\begin{align*}
 		2\sqrt{2}\cdot3 &= 6\sqrt{2},\text{ and}\\
 		\frac{\pi}{4} + \frac{\pi}{2} &= \frac{3\pi}{4},
@@ -329,8 +329,8 @@ What is the $n$-th order roots of a complex number $z$, i.e. $\nroot{n}{z}$? An 
 		\end{tikzpicture}
 \end{example}
 
-\begin{note}{$\bm{i^{2}=-1}$ from a geometric (polar) viewpoint}{}
-	In polar coordinates $i$ has magnitude $1$ and argument $\frac{\pi}{2}$, i.e. multiplying by $i$ is equivalent to rotation by $\frac{\pi}{2}$ ($\ang{90}$) counter clockwise. Therefore, multiplying $i$ by itself, i.e. $i^{2}$, rotates $i$ itself by $\frac{\pi}{2}$ counter clockwise, bringing it to $-1$.
+\begin{note}{$\bm{\iu^{2}=-1}$ from a geometric (polar) viewpoint}{}
+	In polar coordinates $\iu$ has magnitude $1$ and argument $\frac{\pi}{2}$, i.e. multiplying by $\iu$ is equivalent to rotation by $\frac{\pi}{2}$ ($\ang{90}$) counter clockwise. Therefore, multiplying $\iu$ by itself, i.e. $\iu^{2}$, rotates $\iu$ itself by $\frac{\pi}{2}$ counter clockwise, bringing it to $-1$.
 	
 	\centering
 	\begin{tikzpicture}[node distance=3mm]
@@ -357,7 +357,7 @@ What is the $n$-th order roots of a complex number $z$, i.e. $\nroot{n}{z}$? An 
 			\arcc{90}{0.5}{xdarkgreen}
 			\draw[xdarkgreen] (O) -- (i) node[complex](i){};
 			\draw[xblue] (O) -- (-1) node[complex](-1){};
-			\node[xdarkgreen, above right of=i] {$i$};
+			\node[xdarkgreen, above right of=i] {$\iu$};
 			\node[xblue, below of=-1] {$-1$};
 			\node[xdarkgreen] at ({0.3*cos(45)},{0.3*sin(45)}) {$\frac{\pi}{2}$};
 			\node[xblue] at ({0.3*cos(135)},{0.3*sin(135)}) {$\pi$};
@@ -365,7 +365,7 @@ What is the $n$-th order roots of a complex number $z$, i.e. $\nroot{n}{z}$? An 
 		\end{tikzpicture}
 \end{note}
 
-In polar form $1=\cos(0)+i\sin(0)$. Finding the arguments of the cube roots of $1$ is therefore done by answering the following question: what angles $\theta$ will equal $0$ (or its equivalent angles $2\pi,4\pi,6\pi,\dots$) when multiplied by $3$? The answer is very simple: the only possible solutions are
+In polar form $1=\cos(0)+\iu\sin(0)$. Finding the arguments of the cube roots of $1$ is therefore done by answering the following question: what angles $\theta$ will equal $0$ (or its equivalent angles $2\pi,4\pi,6\pi,\dots$) when multiplied by $3$? The answer is very simple: the only possible solutions are
 \begin{align}
 	\theta_{1} &= 0,\nonumber\\
 	\theta_{2} &= \frac{2\pi}{3},\nonumber\\
@@ -376,9 +376,9 @@ In polar form $1=\cos(0)+i\sin(0)$. Finding the arguments of the cube roots of $
 
 Therefore, the three cube roots of $1$ are \footnote{recall that $\nroot{3}{1}=1$, and therefore all roots have magnitude $1$.} (\autoref{fig:cube roots of 1})
 \begin{align}
-	z_{1} &= \cos\left( \theta_{1} \right) + i\sin\left( \theta_{1} \right) = \cos(0) + i\sin(0) = 1,\nonumber\\
-	z_{2} &= \cos\left( \theta_{2} \right) + i\sin\left( \theta_{2} \right) = \cos\left( \frac{2\pi}{3} \right) + i\sin\left( \frac{2\pi}{3} \right) = -0.5+\frac{\sqrt{3}}{2}i,\nonumber\\
-	z_{3} &= \cos\left( \theta_{3} \right) + i\sin\left( \theta_{1} \right) = \cos\left( \frac{4\pi}{3} \right) + i\sin\left( \frac{4\pi}{3} \right) = -0.5-\frac{\sqrt{3}}{2}i.
+	z_{1} &= \cos\left( \theta_{1} \right) + \iu\sin\left( \theta_{1} \right) = \cos(0) + \iu\sin(0) = 1,\nonumber\\
+	z_{2} &= \cos\left( \theta_{2} \right) + \iu\sin\left( \theta_{2} \right) = \cos\left( \frac{2\pi}{3} \right) + \iu\sin\left( \frac{2\pi}{3} \right) = -0.5+\frac{\sqrt{3}}{2}\iu,\nonumber\\
+	z_{3} &= \cos\left( \theta_{3} \right) + \iu\sin\left( \theta_{1} \right) = \cos\left( \frac{4\pi}{3} \right) + \iu\sin\left( \frac{4\pi}{3} \right) = -0.5-\frac{\sqrt{3}}{2}\iu.
 	\label{eq:cube roots of 1}
 \end{align}
 
@@ -421,7 +421,7 @@ The $n$-th degree roots of $1$ will follow the same pattern for $n\in\mathbb{N}$
 	\label{eq:nth roots of 1}
 \end{equation}
 
-Finding the $n$-th degree roots of a general complex number $z=r\left[ \cos(\theta) +i\sin(\theta) \right]$ can be done in a similar fashion: all roots will have the magnitude $\nroot{n}{r}$, and their argument $\theta_{k}$ will be such that multiplying it by $n$ gives $\theta+2\pi m$ for some integer value $m$, i.e.
+Finding the $n$-th degree roots of a general complex number $z=r\left[ \cos(\theta) +\iu\sin(\theta) \right]$ can be done in a similar fashion: all roots will have the magnitude $\nroot{n}{r}$, and their argument $\theta_{k}$ will be such that multiplying it by $n$ gives $\theta+2\pi m$ for some integer value $m$, i.e.
 \begin{equation}
 	\theta_{k} = \frac{\theta+2\pi m}{n}.
 	\label{eq:sofds}

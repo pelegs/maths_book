@@ -134,11 +134,11 @@ Using this definition, the angle $\theta$ can take any value between $\ang{0}$ a
 		\def\R{3}
 		\draw[very thick, fill=xpurple!15] (0,0) circle (\R);
 		\foreach \th in {0, 45, 90, 135, 180, 200, 270, 330}{
-			\draw[densely dashed, xdarkpurple] (0,0) -- ({1.05*\R*cos(\th)},{1.05*\R*sin(\th)});
+			\draw[ultra thick, densely dashed, white] (0,0) -- ({1.05*\R*cos(\th)},{1.05*\R*sin(\th)});
 			\draw[very thick] ({0.95*\R*cos(\th)},{0.95*\R*sin(\th)}) -- ({1.05*\R*cos(\th)},{1.05*\R*sin(\th)});
 			\node at ({1.075*\R*cos(\th)},{1.075*\R*sin(\th)}) (\th) {};
 		}
-		\fill[black] (0,0) circle (0.1);
+		\fill[black] (0,0) circle (0.15);
 		\node[right] at (0) {$\ang{0}\equiv\ang{360}\equiv\ang{720}\equiv\ang{-360}\equiv\dots$};
 		\node[right] at (45) {$\ang{45}\equiv\ang{-315}\equiv\ang{395}\equiv\dots$};
 		\node[right] at (90) {$\ang{90}\equiv\ang{-270}\equiv\ang{450}\equiv\dots$};
@@ -158,19 +158,22 @@ Using degrees to measure angles in a sphere creates an inconvinience: the domain
 How much is a radian in degrees? The full circumference of any circle with radius $R$ equals $2\pi R$, which means that a single radian $R$ is equivalent to $\frac{\ang{180}}{\pi} \approx \ang{57.3}$. \autoref{tab:rad_degs} shows some common angles and their equivalent value in radians.
 
 \begin{table}
-	\caption{Common angles in radians.}
+	\caption{Common angles in radians, and their respective images for the three main trigonometic functions.}
 	\label{tab:rad_degs}
 	\centering
-	\begin{tabular}{ll}
+	\begin{tabular}{lcccc}
 		\toprule
-		Degrees & Radians \\
+		\multicolumn{2}{c}{$\theta$} & $\sin(\theta)$ & $\cos(\theta)$ & $\tan(\theta)$\\
+		degrees & radians & & &\\
 		\midrule
-		\ang{0} & 0 \\
-		\ang{45} & $\frac{\pi}{4}$ \\
-		\ang{90} & $\frac{\pi}{2}$ \\
-		\ang{180} & $\pi$ \\
-		\ang{270} & $\frac{3\pi}{2}$ \\
-		\ang{360} & $2\pi$ \\
+		\ang{0}   & 0								 & $0$									& $1$									 & $0$\\
+		\ang{30}  & $\frac{\pi}{6}$	 & $\frac{1}{2}$				& $\frac{\sqrt{3}}{2}$ & $\frac{1}{\sqrt{3}}$\\
+		\ang{45}  & $\frac{\pi}{4}$  & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}$ & $1$\\
+		\ang{60}  & $\frac{\pi}{3}$  & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}$				 & $\sqrt{3}$\\
+		\ang{90}  & $\frac{\pi}{2}$  & $1$									& $0$									 & undefined\\
+		\ang{180} & $\pi$						 & $0$									& $-1$								 & $0$\\
+		\ang{270} & $\frac{3\pi}{2}$ & $-1$									& $0$									 & undefined\\
+		\ang{360} & $2\pi$					 & $0$									& $1$ 								 & $0$\\
 		\bottomrule
 	\end{tabular}
 \end{table}

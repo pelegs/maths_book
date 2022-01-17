@@ -58,37 +58,37 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 	(note: in the following proof, equalities marked with $!$ use the respective propery of the real numbers)
 
 	\begin{descitemize}
-		\item[Closure under both operations] For any two complex numbers $z_{1}=a+bi$ and $z_{2}=c+di$,
+		\item[Closure under both operations] For any two complex numbers $z_{1}=a+\iu b$ and $z_{2}=c+\iu d$,
 			\begin{listitemize}
 			\item[Addition] Since addition in $\mathbb{R}$ is closed, $(a+c)\in\mathbb{R}$ and $(b+d)\in\mathbb{R}$. Therefore
 				\[
-					z = z_{1}+z_{2} = a+c + (b+d)i
+					z = z_{1}+z_{2} = a+c + (b+d)\iu
 				\]
 				is also a complex number with $\Re(z)=a+c$ and $\Im(z)=b+d$.
 			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also closed, $(ac-bd)\in\mathbb{R}$ and $(ad+bc)\in\mathbb{R}$. Therefore
 				\[
-					z = z_{1} \cdot z_{2} = ac-bd + (ad+bc)i
+					z = z_{1} \cdot z_{2} = ac-bd + (ad+bc)\iu
 				\]
 				is a complex number with $\Re(z)=ac-bdc$ and $\Im(z)=ad+bc$.
 			\end{listitemize}
 		
-		\item[Commutativity of both operation] For any two complex numbers $z_{1}=a+bi$ and $z_{2}=c+di$,
+		\item[Commutativity of both operation] For any two complex numbers $z_{1}=a+\iu b$ and $z_{2}=c+\iu d$,
 			\begin{listitemize}
 			\item[Addition] Since addition in $\mathbb{R}$ is commutative, $a+c=c+a$ and $b+d=d+b$. Therefore
 				\[
-					z_{1} + z_{2} = a+c + (b+d)i \overset{!}{=} c+a + (d+b)i = z_{2}+z_{2}.
+					z_{1} + z_{2} = a+c + (b+d)\iu \overset{!}{=} c+a + (d+b)\iu = z_{2}+z_{2}.
 				\]
 			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also commutative, $ac-bd = ca-db$ and $ad+bc=da+cb$. Therefore
 				\[
-					z_{1} \cdot z_{2} = ac-bd + (ad+bc)i \overset{!}{=} ca-db + (da+cb)i = z_{2} \cdot z_{1}.
+					z_{1} \cdot z_{2} = ac-bd + (ad+bc)\iu \overset{!}{=} ca-db + (da+cb)\iu = z_{2} \cdot z_{1}.
 				\]
 			\end{listitemize}
 		
-		\item[Associativity of both operation] For any three complex numbers $z_{1}=a+bi,\ z_{2}=c+di$ and $z_{3}=g+hi$ (where $a,b,c,d,g,h\in\mathbb{R}$\footnote{The letters $g$ and $h$ are used instead of $e$ and $f$ to avoid confusion with Eurler's constant and the common notation for real functions, respectively.}),
+		\item[Associativity of both operation] For any three complex numbers $z_{1}=a+\iu b,\ z_{2}=c+\iu d$ and $z_{3}=g+\iu h$ (where $a,b,c,d,g,h\in\mathbb{R}$\footnote{The letters $g$ and $h$ are used instead of $e$ and $f$ to avoid confusion with Eurler's constant and the common notation for real functions, respectively.}),
 			\begin{listitemize}
 			\item[Addition] Since addition in $\mathbb{R}$ is associative, $a+(c+g)=(a+c)+g$ and $b+(d+h)=(b+d)+h$. Therefore
 				\[
-					z_{1} + (z_{2}+z_{3}) = a+(c+g) + [b+(d+h)]i \overset{!}{=} (a+c)+g + [(b+d)+h]i = (z_{1}+z_{2}) + z_{3}.
+					z_{1} + (z_{2}+z_{3}) = a+(c+g) + [b+(d+h)]\iu \overset{!}{=} (a+c)+g + [(b+d)+h]\iu = (z_{1}+z_{2}) + z_{3}.
 				\]
 			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also associative, the following equalities apply:
 				\begin{align*}
@@ -103,50 +103,50 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 				\end{align*}
 				Therefore,
 				\begin{align*}
-					z_{1}\cdot(z_{2} \cdot z_{3}) &= a\cdot(c\cdot g) - a\cdot(d\cdot h) - b\cdot(c\cdot h) - b\cdot(d\cdot g)\\ &+[a\cdot(c\cdot h) + a\cdot(d\cdot g) + b\cdot(c\cdot g) - b\cdot(d\cdot h)]i\\
-					&\overset{!}{=} (a\cdot c)\cdot g - (a\cdot d)\cdot h - (b\cdot c)\cdot h - (b\cdot d)\cdot g\\ &+[(a\cdot c)\cdot h + (a\cdot d)\cdot g + (b\cdot c)\cdot g - (b\cdot d)\cdot h]i\\
+					z_{1}\cdot(z_{2} \cdot z_{3}) &= a\cdot(c\cdot g) - a\cdot(d\cdot h) - b\cdot(c\cdot h) - b\cdot(d\cdot g)\\ &+[a\cdot(c\cdot h) + a\cdot(d\cdot g) + b\cdot(c\cdot g) - b\cdot(d\cdot h)]\iu\\
+					&\overset{!}{=} (a\cdot c)\cdot g - (a\cdot d)\cdot h - (b\cdot c)\cdot h - (b\cdot d)\cdot g\\ &+[(a\cdot c)\cdot h + (a\cdot d)\cdot g + (b\cdot c)\cdot g - (b\cdot d)\cdot h]\iu\\
 					&= (z_{1} \cdot z_{2}) \cdot z_{3}.
 				\end{align*}
 			\end{listitemize}
 
 		\item[Identity for both operations]~\\
 			\begin{listitemize}
-			\item[Addition] The complex number $0=0+0i$ is the complex addition identity: for any real number $x\in\mathbb{R},\ x+0=x$. Therefore, for any complex number $z=a+bi$,
+			\item[Addition] The complex number $0=0+0i$ is the complex addition identity: for any real number $x\in\mathbb{R},\ x+0=x$. Therefore, for any complex number $z=a+\iu b$,
 				\[
-					z+0 = a+bi + 0+0i = a+0 + (b+0)i \overset{!}{=} a+bi.
+					z+0 = a+\iu b + 0+0i = a+0 + (b+0)\iu \overset{!}{=} a+\iu b.
 				\]
-			\item[Multiplication] The complex number $1=1+0i$ is the complex multiplication identity: for any real number $x\in\mathbb{R},\ x\cdot1=x$ and $x\cdot0=0$. Therefore, for any complex number $z=a+bi$,
+			\item[Multiplication] The complex number $1=1+0\iu$ is the complex multiplication identity: for any real number $x\in\mathbb{R},\ x\cdot1=x$ and $x\cdot0=0$. Therefore, for any complex number $z=a+\iu b$,
 				\[
-					z\cdot1 = (a+bi)\cdot(1+0i) \overset{!}{=}a\cdot1-\cancel{b\cdot0i^{2}} + (\cancel{a\cdot0i}+b\cdot1)i = a+bi.
+					z\cdot1 = (a+\iu b)\cdot(1+0\iu) \overset{!}{=}a\cdot1-\cancel{b\cdot0\iu^{2}} + (\cancel{a\cdot0\iu}+b\cdot1)\iu = a+\iu b.
 				\]
 
 			\end{listitemize}
 		
 		\item[Inverse for both operations]~\\
 			\begin{listitemize}
-			\item[Addition] For any complex number $z_{1}=a+bi$, the number $z_{2}=-a-bi$ is also a complex number for which
+			\item[Addition] For any complex number $z_{1}=a+\iu b$, the number $z_{2}=-a-\iu b$ is also a complex number for which
 				\[
-					z_{1} + z_{2} = a+bi + -a-bi \overset{!}{=} a-a + (b-b)i = 0 + 0i = 0.
+					z_{1} + z_{2} = a+\iu b + -a-\iu b \overset{!}{=} a-a + (b-b)\iu = 0 + 0\iu = 0.
 				\]
-			\item[Multiplication] For any complex number $z=re^{\theta i}$ where $r\neq0$, the number $z^{-1}=\frac{1}{r}e^{-\theta i}$ is also a complex number for which
+			\item[Multiplication] For any complex number $z=r\eu^{\theta i}$ where $r\neq0$, the number $z^{-1}=\frac{1}{r}\eu^{-\iu\theta}$ is also a complex number for which
 				\[
-					z \cdot z^{-1} = re^{\theta i} \cdot \frac{1}{r}e^{-\theta i} \overset{!}{=} \frac{r}{r}e^{\theta i - \theta i} = 1\cdot1 = 1.
+					z \cdot z^{-1} = r\eu^{\iu\theta} \cdot \frac{1}{r}\eu^{-\iu\theta} \overset{!}{=} \frac{r}{r}\eu^{\cancel{\iu\theta - \iu\theta}} = 1\cdot1 = 1.
 				\]
 				
-			Note: for $z=a+bi$,
+			Note: for $z=a+\iu b$,
 			\[
-				z^{-1} = \frac{1}{r}e^{-\theta i} = \frac{1}{|z|}\cdot\frac{a-bi}{|z|} = \frac{1}{|z|}\cdot\frac{\conj{z}}{|z|} = \frac{\conj{z}}{|z|^{2}}.
+				z^{-1} = \frac{1}{r}\eu^{-\iu\theta} = \frac{1}{|z|}\cdot\frac{a-\iu b}{|z|} = \frac{1}{|z|}\cdot\frac{\conj{z}}{|z|} = \frac{\conj{z}}{|z|^{2}}.
 			\]
 			Therefore, for any $z\neq0,\ z^{-1} = \frac{\conj{z}}{|z|^{2}}$.
 			\end{listitemize}
 
-		\item[Distributivity of of multiplication over addition] For any $z_{1}=a+bi,\ z_{2}=c+di$ and $z_{3}=g+hi$,
+		\item[Distributivity of of multiplication over addition] For any $z_{1}=a+\iu b,\ z_{2}=c+\iu d$ and $z_{3}=g+\iu h$,
 			\begin{align*}
-				z_{1}\cdot(z_{2}+z_{3}) &= (a+bi)\cdot(c+di + g+hi) = (a+bi)\cdot(c+g + [d+h]i)\\
-				&= ac + ag + (bd)i^{2} + (bh)i^{2}\\
-				&+ (ad)i + (ah)i + (bc)i + (bg)i\\
-				&= ac + ag - bd - bh + (ad + ah + bc + bg)i\\
-				&= ac-bd + (ad+bc)i + ag-bh + (ah+bg)i\\
+				z_{1}\cdot(z_{2}+z_{3}) &= (a+\iu b)\cdot(c+\iu d + g+\iu h) = (a+\iu b)\cdot(c+g + [d+h]\iu)\\
+				&= ac + ag + (bd)\iu^{2} + (bh)\iu^{2}\\
+				&+ (ad)\iu + (ah)\iu + (bc)\iu + (bg)\iu\\
+				&= ac + ag - bd - bh + (ad + ah + bc + bg)\iu\\
+				&= ac-bd + (ad+bc)\iu + ag-bh + (ah+bg)\iu\\
 				&= (z_{1}\cdot z_{2}) + (z_{1}\cdot z_{3}).
 			\end{align*}
 	\end{descitemize}
