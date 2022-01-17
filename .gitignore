@@ -7,4 +7,5 @@
 *.log
 *.out
 *.pdf
+*.synctex*
 /svg-inkscape/
