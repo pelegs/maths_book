@@ -46,7 +46,7 @@
 
 \section{Trigonometric functions}
 \subsection{Basic Definitions}
-Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenous $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
+Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenuse $c$, where the angle $\angle ACB$ is $\ang{90}$, and the angle $\angle BAC$ is denoted as $\alpha$:
 
 \centering
 \begin{tikzpicture}[node distance=3mm]
@@ -58,7 +58,7 @@ Consider a \emph{right triangle} $\triangle ABC$ with sides $a,b$, and Hypotenou
 		\node[above of=B] {$B$};
 		\node[right of=C] {$C$};
 
-		\draw[fill=xblue!30] (A) -- node (c) [midway, above, rotate=36.87] {$c$ (Hypotenous)} (B) -- node (a) [midway, right] {$a$ (Opposite)} (C) -- node (b) [midway, below] {$b$ (Adjacent)} cycle;
+		\draw[fill=xblue!30] (A) -- node (c) [midway, above, rotate=36.87] {$c$ (Hypotenuse)} (B) -- node (a) [midway, right] {$a$ (Opposite)} (C) -- node (b) [midway, below] {$b$ (Adjacent)} cycle;
 		\draw[thick] ($(C)+(0,0.3)$) rectangle ($(C)-(0.3,0)$);
 		\draw[thick, xpurple!50!black, fill=xpurple!45] (A) -- ($(A)+(1,0)$) arc (0:36.87:1) node [midway, xshift=-3mm, yshift=-2pt] {$\alpha$} -- cycle;
 		%\draw[thick, xblue!50!black, fill=xblue!45] (B) -- ($(B)+(0,-0.8)$) arc (270:216.97:0.8) node [midway, above, xshift=5pt] {$\beta$} -- cycle;
@@ -81,13 +81,13 @@ We can rearrange the above definitions:
 	\label{eq:basic_trig_rearrange}
 \end{align}
 
-Normaly, the Hypotenous is the longest side of a right triangle. We will consider here the two edge cases where one of the sides $a$ or $b$ is equal to the Hypotenous (and the other side is thus $0$):
+Normally, the Hypotenuse is the longest side of a right triangle. We will consider here the two edge cases where one of the sides $a$ or $b$ is equal to the Hypotenuse (and the other side is thus $0$):
 \begin{itemize}
 	\item if $a=c$ then $\alpha=\ang{90}$,\
 	\item if $b=c$ then $\alpha=\ang{0}$.
 \end{itemize}
 
-The posssible length of $a$ is therefore in the range $0\leq a \leq c$, which means that $0\leq \frac{a}{c} \leq 1$. Since $\sin(\alpha)=\frac{a}{c}$ this means that the image of $\sin(\alpha)$ is $[0,1]$. The same idea is also true for $b$, and therefore $[0,1]$ is the image of $\cos(\alpha)$ as well.
+The possible length of $a$ is therefore in the range $0\leq a \leq c$, which means that $0\leq \frac{a}{c} \leq 1$. Since $\sin(\alpha)=\frac{a}{c}$ this means that the image of $\sin(\alpha)$ is $[0,1]$. The same idea is also true for $b$, and therefore $[0,1]$ is the image of $\cos(\alpha)$ as well.
 
 As a reminder, the \emph{Pythagorean theorem}\footnote{It's worth mentioning that no three positive integers $a, b$, and $c$ satisfy the equation $a^{n}+b^{n}=c^{n}$ for any integer value of $n>2$. \href{https://en.wikipedia.org/wiki/Fermat\%27s_Last_Theorem}{This can be proven, however the proof is too large to fit in the footnotes}.} states that for a right triangle with sides $a, b$ and $c$,
 \begin{equation}
@@ -378,7 +378,7 @@ The area $S$ of a triangle $\triangle ABC$ can be calculated using the length $L
 	\label{fig:area of a triangle}
 \end{figure}
 
-The triangle with sides $cbh$ is a right triangle, $c$ being its hypotenous. We can therefore infer the size of $h$ using $\alpha$:
+The triangle with sides $cbh$ is a right triangle, $c$ being its hypotenuse. We can therefore infer the size of $h$ using $\alpha$:
 \begin{equation}
 	h = c\sin(\alpha).
 	\label{eq:first equation in law of sines}
