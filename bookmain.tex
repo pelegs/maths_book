@@ -158,9 +158,9 @@
 % TABLES %
 %--------%
 
-\newcolumntype{!}{>{\global\let\currentrowstyle\relax}}
+\usepackage{array}
+\newcolumntype{+}{>{\global\let\currentrowstyle\relax}}
 \newcolumntype{^}{>{\currentrowstyle}}
-\newcolumntype{@}{>{\textbf}}
 \newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
   #1\ignorespaces
 }
