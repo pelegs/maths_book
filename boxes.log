@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  17 JAN 2022 02:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  17 JAN 2022 02:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -898,49 +898,49 @@ Library (tcolorbox): 'tcbposter.code.tex' version '4.22'
 \c@tcb@cnt@example=\count303
 \c@tcb@cnt@note=\count304
 \c@tcb@cnt@challange=\count305
-
-No file boxes.aux.
+ (./boxes.aux)
 \openout1 = `boxes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 75.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 77.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 7
-5.
+7.
+
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 77.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 7
-5.
+7.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 77.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 7
-5.
+7.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 77.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-75.
+77.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    ... okay on input line 77.
 LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 7
-5.
+7.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
@@ -976,62 +976,57 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@posthook=\toks40
 )
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
-78.
+80.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-78.
+80.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
-78.
+80.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
-78.
+80.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 87.
+LaTeX Font Info:    Trying to load font information for U+fontawesomethree on i
+nput line 89.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
-File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
-)
-[1
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
+) [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./boxes.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./boxes.aux) ) 
 Here is how much of TeX's memory you used:
- 22588 strings out of 480997
- 459176 string characters out of 5912179
- 723108 words of memory out of 5000000
+ 22590 strings out of 480997
+ 459216 string characters out of 5912179
+ 724666 words of memory out of 5000000
  37704 multiletter control sequences out of 15000+600000
- 551646 words of font info for 68 fonts, out of 8000000 for 9000
+ 551508 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,7n,103p,804b,1326s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/local/texlive/2019/texmf-di
-st/fonts/type1/public/kpfonts/jkpsya.pfb></usr/local/texlive/2019/texmf-dist/fo
-nts/type1/public/kpfonts/jkpsyc.pfb>
-Output written on boxes.pdf (1 page, 35018 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/fontawesome/
+fontawesomethree.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/fontawesome/FontAw
+esome.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbmi
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb>
+Output written on boxes.pdf (1 page, 41337 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

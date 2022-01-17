@@ -39,38 +39,40 @@
 			boxrule=0pt,
 			colframe=white,
 			arc=5pt,
-			outer arc=0pt,
+			outer arc=4pt,
 		},
 		separator sign={~~},
 		overlay unbroken and last={
-			\node[text=white, rounded corners, fill=#1, xshift=-4mm] at (frame.north east) {$#2$};
+			\node[text=white, align=right, rounded corners, fill=#1, xshift=-4mm, minimum height=6mm, anchor=east] at (frame.south east) {#2};
 		}
 	},
 	defstyle/.style={
-		common={xpurple}{\pi},
+		common={xpurple}{$\bm{\pi}$},
 	},
 	theoremstyle/.style={
-		common={xgraycyan}{\multimapdotbothA},
+		common={xgraycyan}{$\multimapdotbothA$},
 	},
 	proofstyle/.style={
-		common={xgreen}{\blacksquare},
+		common={xgreen}{\textbf{QED}},
 	},
 	examplestyle/.style={
-		common={xblue}{\faArrowCircleDown},
+		common={xblue}{\faStar},
 	},
 	notestyle/.style={
-		common={xred}{!},
+		common={xred}{\textbf{!}},
 	},
 	challangestyle/.style={
-		common={xorange}{?},
+		common={xorange}{\textbf{?}},
 	},
 }
-\newtcbtheorem[]{definition}{Definition}{defstyle}{def}
-\newtcbtheorem[]{theorem}{Theorem}{theoremstyle}{theorem}
-\newtcbtheorem[]{proof}{Proof}{proofstyle}{proof}
-\newtcbtheorem[]{example}{Example}{examplestyle}{example}
-\newtcbtheorem[]{note}{Note}{notestyle}{note}
-\newtcbtheorem[]{challange}{Challange}{challangestyle}{challange}
+
+\newtcbtheorem{definition}{Definition}{defstyle}{def}
+\newtcbtheorem{theorem}{Theorem}{theoremstyle}{theorem}
+\newtcbtheorem{proof}{Proof}{proofstyle}{proof}
+\newtcbtheorem{example}{Example}{examplestyle}{example}
+\newtcbtheorem{note}{Note}{notestyle}{note}
+\newtcbtheorem{challange}{Challange}{challangestyle}{challange}
+
 
 \begin{document}
 \begin{definition}{Test}{test}
