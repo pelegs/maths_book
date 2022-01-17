@@ -1,7 +1,11 @@
-.aux
-.log
-.ilg
-.ind
-.idx
-.out
+*.aux
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.pdf
 *.synctex*
+/svg-inkscape/
