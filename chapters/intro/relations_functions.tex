@@ -1,6 +1,6 @@
 \section{Relations and Functions}
 \subsection{Basics}
-Cartesian products of two sets can be viewed as describing all possible connections between the elements of the first set to the elements of the second set, and thus any subset of a Cartesian product forms a specific \emph{relation} between the sets.
+The Cartesian product of two sets can be viewed as describing all possible connections between the elements of the first set to the elements of the second set, and thus any subset of a Cartesian product forms a specific \emph{relation} between the sets.
 
 \begin{example}{Relations as subsets of Cartesian products}{relation}
 	Given the following two sets:
@@ -137,7 +137,7 @@ A \emph{function} $f$ from a set $A$ to a set $B$ is a relation for which any el
 	Note that the relation in \autoref{example:relation} is \textbf{not} a function, since the element $3\in A$ is connected to more than one element in $B$, namely $\alpha$ and $\gamma$.
 \end{note}
 
-Different names are used in some branches of mathematics to describe functions, such as \emph{maps} and \emph{transformations}. Baring context, they all mean the same thing.
+Different names are used in some branches of mathematics to describe functions, such as \emph{maps} and \emph{transformations}. Barring context, they all mean the same thing.
 
 A common way to denote that a function $f$ is connecting elements in $A$ to elements in $B$ is
 \begin{equation}
@@ -373,7 +373,7 @@ In suitable cases, a function is defined via a general mapping rule. This should
 	\label{eq:function_by_formula}
 \end{equation}
 
-In mapping notation we can write \autoref{eq:function_by_formula} as $f:x\mapsto x^{2}+3x-4$. In highschool mathematics, both the domain and image of such functions is $\mathbb{R}$, although it is almost never specified explicetly. Such functions are commonly refered to as \emph{real functions}, a convention used in this book as well.
+In mapping notation we can write \autoref{eq:function_by_formula} as $f:x\mapsto x^{2}+3x-4$. In highschool mathematics, both the domain and image of such functions is $\mathbb{R}$, although it is almost never specified explicitly. Such functions are commonly referred to as \emph{real functions}, a convention used in this book as well.
 
 \begin{example}{Functions defined using a mapping rule}{}
 	The following are real functions:
@@ -417,7 +417,7 @@ Real functions can be easily plotted in a \emph{Cartesian coordinate system} by 
 
 In \autoref{example:graph_of_functions}, the function $g(x)$ always increases in value from left to right. Let's give this notion a more formal tone: a function $f$ is said to be \emph{increasing} on an interval $I$ if for any $x_{1},x_{2}\in I$, if $x_{2}>x_{1}$ then $f\left( x_{2} \right) > f\left( x_{1} \right)$. We can similarily define the idea of \emph{decreasing} on an interval.
 
-A property of some functions which is visualy easy to depict is symmetry. A real function $f$ is said to be \emph{symmetric} if for any $x\in\mathbb{R},\ f(-x)=f(x)$. This essentially means that the $y$-axis mirrors the function's plot. If for any $x\in\mathbb{R},\ f(-x)=-f(x)$, we say that the function is \emph{anti-symmetric}. A function can be neither, but there's only a single function which is both: the zero function, i.e. $f(x)=0$.
+A property of some functions which is visually easy to depict is symmetry. A real function $f$ is said to be \emph{symmetric} if for any $x\in\mathbb{R},\ f(-x)=f(x)$. This essentially means that the $y$-axis mirrors the function's plot. If for any $x\in\mathbb{R},\ f(-x)=-f(x)$, we say that the function is \emph{anti-symmetric}. A function can be neither, but there's only a single function which is both: the zero function, i.e. $f(x)=0$.
 
 \begin{example}{Symmetric and anti-symmetric functions}{function_symmetry}
 	In the following graphs, the function on the top is symmetric, while the function on the bottom is anti-symmetric:
@@ -456,7 +456,7 @@ A property of some functions which is visualy easy to depict is symmetry. A real
 
 (injections/surjections of real functions?)
  
-A real function is said to be \emph{periodic} if it repeats its values exactly over and over with increasin $x$. In more precise terms we define a real function $f$ to be periodic if for any integer value $k$,
+A real function is said to be \emph{periodic} if it repeats its values exactly over and over with increasing $x$. In more precise terms we define a real function $f$ to be periodic if for any integer value $k$,
 \begin{equation}
 	f(x+kT) = f(x).
 	\label{eq:periodic function}
@@ -464,7 +464,7 @@ A real function is said to be \emph{periodic} if it repeats its values exactly o
 where $T=[a,b]$ is a finite interval of $\mathbb{R}$ which we call the \emph{period} of the function.
 
 \begin{example}{A periodic function}{periodic function}
-	The following graph depicts a periodic function $f$, with its period $T$ shown. Notice that for any $x\ f(x+T)=f(x)$, i.e. you can move the period measure left and right along the $x$-axis and the values of $f(x)$ in both its edges would always be the eqaul.
+	The following graph depicts a periodic function $f$, with its period $T$ shown. Notice that for any $x\ f(x+T)=f(x)$, i.e. you can move the period measure left and right along the $x$-axis and the values of $f(x)$ in both its edges would always be the equal.
 
 	\centering
 	\begin{tikzpicture}
@@ -489,7 +489,7 @@ Two additional measures that arise from a period $T$ are the \emph{frequency} $f
 
 \vspace{2em}
 \begin{note}{Units of period and frequency}{}
-	In a periodic function such as the one in the above example, the units for the period are the same one used for thehorizontal axis, while the units of both frequency and angular frequency are both 1 over the unit used for the horizontal axis/period. For example, if the unit of the horizontal axis is that of seconds, then the frequency units are 1/seconds, i.e. Hertz (SI symbol: \si{Hz}).
+	In a periodic function such as the one in the above example, the units for the period are the same one used for the horizontal axis, while the units of both frequency and angular frequency are both 1 over the unit used for the horizontal axis/period. For example, if the unit of the horizontal axis is that of seconds, then the frequency units are 1/seconds, i.e. Hertz (SI symbol: \si{Hz}).
 \end{note}
 
 \subsection{Composition of functions}

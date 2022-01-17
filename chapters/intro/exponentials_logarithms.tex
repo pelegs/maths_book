@@ -57,9 +57,9 @@ As a reminder, the following are two well known properties of exponents: given a
 	\label{eq:exponents_properties}
 \end{align}
 
-A special base for exponential functions is the real, non-aglebric number $e$. This number has many names, among them is \emph{Euler's number}, but in the constant of exponentials it is known as the \emph{natural base}. Its exact value is not entirely important for the moment: it is about $2.718$, and in any case it is not possible to write it as there it has infinitely many digits after the period. It is very common across different fields of mathematics and science to write $\exp(x)$ instead of $e^{x}$.
+A special base for exponential functions is the real, non-algebraic number $e$. This number has many names, among them is \emph{Euler's number}, but in the constant of exponentials it is known as the \emph{natural base}. Its exact value is not entirely important for the moment: it is about $2.718$, and in any case it is not possible to write it as there it has infinitely many digits after the period. It is very common across different fields of mathematics and science to write $\exp(x)$ instead of $e^{x}$.
 
-The inverse function to exponentials are the \emph{logatithmic functions} (or simply \emph{logarithms}), i.e.\ for any real $b>0,\ b\neq1$,
+The inverse function to exponentials are the \emph{logarithmic functions} (or simply \emph{logarithms}), i.e.\ for any real $b>0,\ b\neq1$,
 \begin{equation}
 	\log_{b}\left( b^{x} \right) = b^{\log_{b}(x)} = x.
 	\label{eq:logarithms}
@@ -67,7 +67,7 @@ The inverse function to exponentials are the \emph{logatithmic functions} (or si
 In essence, the logarithm in base $b$ of a number $x$ answers the question \textit{``what is the number $a$ for which $b^{a}=x$?''}. Being the inverses of exponential functions, all logarithms go through the point $(1,0)$, and each also passes through its own point $(b,1)$.
 
 \begin{example}{Logarighmic functions}{logarithms}
-	The following are graphs of the logatithmic functions \textcolor{xred}{${\log_{1.5}(x)}$}, \textcolor{xblue}{${\log_{2}(x)}$} and \textcolor{xgreen}{${\log_{3.5}(x)}$}:
+	The following are graphs of the logarithmic functions \textcolor{xred}{${\log_{1.5}(x)}$}, \textcolor{xblue}{${\log_{2}(x)}$} and \textcolor{xgreen}{${\log_{3.5}(x)}$}:
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
@@ -108,11 +108,11 @@ In essence, the logarithm in base $b$ of a number $x$ answers the question \text
 	\end{figure}
 \end{example}
 
-A useful property of logarithms is that they can help reduce ranges spanning several orders of magnitude to numebrs humans can deal with. The easiest way to see this is using $b=10$: $10^{1}=10$, and so $\log_{10}(10)=1$. $10^{2}=100$, and so $\log_{10}(100)=2$. $10^{3}=1000$, and so $\log_{10}(1000)=3$, etc. The value of the logarithm goes by $1$ for each raise in order of magnitude of its argument.
+A useful property of logarithms is that they can help reduce ranges spanning several orders of magnitude to numbers humans can deal with. The easiest way to see this is using $b=10$: $10^{1}=10$, and so $\log_{10}(10)=1$. $10^{2}=100$, and so $\log_{10}(100)=2$. $10^{3}=1000$, and so $\log_{10}(1000)=3$, etc. The value of the logarithm goes by $1$ for each raise in order of magnitude of its argument.
 
-Therefore, if we have some measurement $x$ which can hold values spanning severl orders of magnitude (say $x\in[3,1500000000]$), then it can sometimes be useful to use instead the logarithmic value of $x$ (which in our case would span the range $\log_{10}(x)\in[0.477,9.176]$). This is done in many fields of science, for example some definitions of entropy\footnote{$S=k_{\text{B}}\log\left( \Omega \right)$}, acid disociation constants\footnote{$\text{p}K_{a}=-\log\left( K_{\text{diss}} \right)$}, pH\footnote{$\text{pH}=-\log\left(\ce{[H+]}\right)$} and more.
+Therefore, if we have some measurement $x$ which can hold values spanning several orders of magnitude (say $x\in[3,1500000000]$), then it can sometimes be useful to use instead the logarithmic value of $x$ (which in our case would span the range $\log_{10}(x)\in[0.477,9.176]$). This is done in many fields of science, for example some definitions of entropy\footnote{$S=k_{\text{B}}\log\left( \Omega \right)$}, acid dissociation constants\footnote{$\text{p}K_{a}=-\log\left( K_{\text{diss}} \right)$}, pH\footnote{$\text{pH}=-\log\left(\ce{[H+]}\right)$} and more.
 
-\begin{example}{Logarithms as eavluating orders of magnitude}{}
+\begin{example}{Logarithms as evaluating orders of magnitude}{}
 	In the following graph of $\log_{2}(x)$, each increase by power of two in $x$ (i.e. $x=1,2,4,8,16,\dots$) yields only a single increase in $y$ (i.e. $y=0,1,2,3,4,\dots$). This shows how logarithms shift our perspective from absolute values to orders of magnitude.
 	\begin{figure}[H]
 		\centering
@@ -162,7 +162,7 @@ Simlilarily to \autoref{eq:log_addition_rule_step4}, division yields subtraction
 	\label{eq:log_subtraction_rule}
 \end{equation}
 
-Equations \ref{eq:log_addition_rule_step4} and \ref{eq:log_subtraction_rule} reveal another valueable property of logarithms: they reduce multiplication to addition (and subsequently division to subtraction). While today this property doesn't seem very impressive, in pre-computers days it helped carrying on complicated calculations, using tables of pre-calculated logarithms (called simply \emph{logarithm tables}) - a sight rarely seen today.
+Equations \ref{eq:log_addition_rule_step4} and \ref{eq:log_subtraction_rule} reveal another valuable property of logarithms: they reduce multiplication to addition (and subsequently division to subtraction). While today this property doesn't seem very impressive, in pre-computers days it helped carrying on complicated calculations, using tables of pre-calculated logarithms (called simply \emph{logarithm tables}) - a sight rarely seen today.
 
 Taking one step forward in regards to reduction of operations, logarithms reduce powers to multiplication:
 \begin{equation}
