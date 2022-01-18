@@ -42,6 +42,7 @@ We begin our dive into the rigorous analysis of linear algebra by defining an al
 	\end{descitemize}
 \end{definition}
 
+\subsection{Infinite fields}
 We start with one of the most obvious examples of a field: the real numbers together with the standard addition and product.
 
 \begin{theorem}{$\bm{\mathbb{R}}$ as a field}{R as a field}
@@ -158,6 +159,7 @@ The sets $\mathbb{R}$ and $\mathbb{C}$ are examples of \emph{infinite fields}, s
 	Prove that $\mathbb{Q}$ (together with the usual addition and product operation) is indeed a field.
 \end{challange}
 
+\subsection{Finite fields}
 While all three examples of fields we encountered so far have each an infinite number of elements, some fields only have a finite number of elements (called their \emph{order}). For example, consider the set $S=\{0,1,a,b\}$ and the addition and product operations described using the following tables (left table describes addition, right table describes multiplication):
 
 \centering
@@ -195,4 +197,156 @@ By examining the tables above, several points become clear:
 
 We therefore only need to prove two points to show that $S$ is a field together with the operations described by the above tables: associativity of both operations and distributivity of multiplication over addition. We leave these proofs as a challange to the reader. Such a field is sometime denoted as $\mathbb{F}_{4}$. There are, of course, infinitely many finite fields.
 
-Another example of finite fields are sets of integers wich have the form $\{0,1,2,3,\dots,n\}$ where $n$ is a prime, together with \emph{modular addition} and \emph{modular product}. Modular arithmetics is similar to hours, minutes or seconds on a clock: if the time now is 11am (11:00 in 24-hour format), then the time 3 hours from now will be 2pm
+\subsection{Modulo fields}
+Another example of finite fields are sets of integers of the form $\{0,1,2,3,\dots,n\}$ where $n$ is a prime, together with \emph{modular addition} and \emph{modular product}. To understand modular arithemetics, we recall the fact that on a circle, an angle can have a negative value but also greater than $\ang{360}$ values are possible (see \autoref{fig:angles equivalency}): $\ang{390}$ is equivalent to $\ang{30}$, $\ang{-30}$ is equivalent to $\ang{330}$, etc. The set of integer values $\ang{0},\ang{1},\ang{2},\dots,\ang{359}$ on a circle is an example of a modular set: if for example we add together two angles of values $\deg{100}$ and $\ang{300}$ we get the equivalent angle $\deg{60}$. If we subtract $\deg{300}$ from $\deg{100}$ the result is an angle of $\deg{160}$.
+
+We say that on a circle, the values $\ang{360}, \ang{720}, -\ang{360}$ etc. are all \emph{cungruent} to $0$ modulo $360$. In mathematical notation we represent this fact as e.g.
+\begin{equation}
+	720 \equiv 0 \pmod{360}.
+	\label{eq:mod 360}
+\end{equation}
+
+Note that from this point forward we drop the degrees unit, and deal with pure integers.
+The notation for the set $\{0,1,2,\dots,359\}$ is $\mathbb{Z}_{360}$. Generally speaking, the set $\{0,1,2,\dots,n\}$ is denoted as $\Z{n}$.
+
+\begin{note}{About modulo set notation}{}
+	It is not common to use the notation $\Z{n}$ for the modulo-$n$ set, since it is also used for a different algebraic construct, namely the $n$-adic ring. However, due to the simplicity of the notation, and the fact that we don't discuss rings in this chapter we are using it in this book. Common notations for the set are $\mathbb{Z}\mathbin{/} n\mathbb{Z}$ and $\mathbb{Z}\mathbin{/} n$.
+\end{note}
+
+Addition and multiplication on $\Z{n}$ is done by the following rather straight forward definition:
+\begin{definition}{Operations in $\bm{\Z{n}}$}{operations in Zn}
+	In the set $\Z{n}$ addition and multiplication are defined as the following:
+	\begin{descitemize}
+	\item[Addition] For any two elements $a,b\in\Z{n},\ a+b\coloneqq(a+b)\pmod{n}$.
+	\item[Multiplication] For any two elements $a,b\in\Z{n},\ a\cdot b\coloneqq(a\cdot b)\pmod{n}$.
+	\end{descitemize}
+\end{definition}
+
+\begin{example}{Operations in $\bm{\Z{n}}$}{}
+	The tables below show addition and multiplication results of numbers in different modulo sets $\Z{n}$ for some values of $n$:
+
+	\vspace{1em}
+	\centering
+	\begin{tabular}[]{lll}
+		\toprule
+		$n$ & $2+3$ & $2\cdot3$\\
+		\midrule
+		$4$  & $1$ & $2$\\
+		$5$  & $0$ & $1$\\
+		$6$  & $5$ & $0$\\
+		$7$  & $5$ & $6$\\
+		$8$  & $5$ & $6$\\
+		$9$  & $5$ & $6$\\
+		$10$ & $5$ & $6$\\
+		$11$ & $5$ & $6$\\
+		\bottomrule
+	\end{tabular}
+	\hspace{1cm}
+	\begin{tabular}[]{lll}
+		\toprule
+		$n$ & $4+7$ & $4\cdot7$\\
+		\midrule
+		$8$  & $3$  & $4$\\
+		$9$  & $2$  & $1$\\
+		$10$ & $1$  & $8$\\
+		$15$ & $11$ & $13$\\
+		$20$ & $11$ & $8$\\
+		$27$ & $11$ & $1$\\
+		$28$ & $11$ & $0$\\
+		$30$ & $11$ & $28$\\
+		\bottomrule
+	\end{tabular}
+\end{example}
+
+\autoref{fig:Z5 periodic} shows the equivalency between integers and the elements of $\Z{5}$.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\pgfmathsetmacro{\d}{1.75}
+		\pgfmathsetmacro{\h}{-1.3}
+		\foreach \k in {-10,-9,...,9}{
+			\pgfmathsetmacro{\kp}{int(mod(\k+20,5))}
+			\node (\k) at ({\k/\d},0) {$\k$};
+			\node (z5\k) at ({\k/\d},\h) {$\kp$};
+			\draw[->, >=stealth, densely dashed, xblue] (\k.south) -- (z5\k.north);
+		}
+		\node (Zdots) at ({-11/\d},0) {$\dots$};
+		\node (Z5dots) at ({-11/\d},\h) {$\dots$};
+		\node at ({10/\d},0) {$\dots$};
+		\node at ({10/\d},\h) {$\dots$};
+		\node[left of=Zdots] (Z) {$\mathbb{Z}$};
+		\node[left of=Z5dots] (Z5) {$\Z{5}$};
+		\draw[->, >=stealth, densely dashed, xblue] (Z.south) -- (Z5.north);
+	\end{tikzpicture}
+	\caption{An example of the periodicity of $\Z{5}$: the top numbers are the ordinary integers, each showing their respective congruent modulo $5$ below (blue dashed arrow).}
+	\label{fig:Z5 periodic}
+\end{figure}
+
+Only the sets $\Z{n}$ for which $n$ is a prime number are also fields. Let's define this property precisely:
+
+\begin{theorem}{$\bm{\Z{p}}$ is a field}{Zp is a field}
+	Any modulo set $\Z{p}$ where $p$ is a prime number greater than $1$ is also a field together with the operations as defined in \autoref{def:operations in Zn}.
+\end{theorem}
+
+In order to prove \autoref{theorem:Zp is a field} we use two lemmas: the first is known as \emph{B\'ezout’s lemma}:
+\begin{lemma}{B\'ezout's lemma}{bezout}
+	For any two positive integers $a,b$ there exist two integers $x,y$ such that
+	\[
+		\gcd{a}{b} = xa+yb.
+	\]
+\end{lemma}
+
+\begin{note}{$\bm{\gcd{a}{b}}$}{gcd}
+	$\gcd{a}{b}$ is the \emph{greatest common devisor} of the two integers $a$ and $b$. For example, $\gcd{36}{24}=12$ since the divisors of $36$ are $1,\ 2,\ 3,\ 4,\ 6,\ 9,\ 12,\ 18,\ 36$,\ and the divisors of $24$ are $1,\ 2,\ 3,\ 4,\ 6,\ 8,\ 12,\ 24$.
+\end{note}
+
+An example of B\'ezout's lemma is the following:
+
+\begin{example}{B\'ezout's lemma in action}{bezout}
+	For the two positive integers $a=60,\ y=114$
+	\[
+		\gcd{60}{114}=6.
+	\]
+	Therefore, B\'ezout's lemma says that there exist two integers $x,y$ such that
+	\[
+		6 = 60x + 114y.
+	\]
+	Indeed, two such integers exist: $x=2$ and $y=-1$.
+\end{example}
+(SHOULD WE PROVE THE LEMMA?..)
+
+The second lemma we use is the following:
+\begin{lemma}{$\bm{\gcd{n,p}=1}$}{gcd(n,p)=1}
+	Given a positive prime number $p$, then for any positive integer $n<p$,
+	\[
+		\gcd{p}{n}=1.
+	\]
+\end{lemma}
+
+Proving the lemma:
+\begin{proof}{$\bm{\gcd{n,p}=1}$}{gcd(n,p)=1}
+	We assume that $\gcd{p}{n} \neq 1$. Then there exist an integer $a\leq n<p$ which divides both $n$ and $p$, meaning that $p$ has a divider, contrary to the suumption that $p$ is a prime number. Therefore $\gcd{n}{p}$ must equal $1$.
+\end{proof}
+
+Now we can proceed to the proof of \autoref{theorem:Zp is a field}:
+
+\begin{proof}{$\bm{\Z{p}}$ is a field}{}
+	\begin{descitemize}
+	\item[Closure under both operations] The definition of the modulo operator limit any $M\pmod{p}$ (where $M\in\mathbb{Z}$) to be in $[0,p-1]$. Therefore the result of using the operators given in \autoref{def:operations in Zn} must be within the same range, and thus in $\Z{p}$.
+
+	\item[Commutativity and associativity of both operations] For any two numbers $a,b\in\Z{p}$ the result $a+b$ and $a\cdot b$ under $\mathbb{Z}$ is both commutative and associative. Therefore the result modulo $n$ is the same no matter the order of operations.
+
+	\item[Additive identity] The number $0\in\Z{p}$ is the additive identity, since for each $a\in\Z{p},\ a+0=a$.
+	
+	\item[Multiplicative identity] The number $1\in\Z{p}$ is the additive identity, since for each $a\in\Z{p},\ a\cdot1=a$.
+
+	\item[Additive inverse] \ldots
+	
+	\item[Multiplicative inverse] \ldots
+	
+	\item[Distributivity of multiplication over addition] \ldots
+	\end{descitemize}
+\end{proof}
+
+\Blindtext

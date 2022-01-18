@@ -97,8 +97,9 @@
 \definecolor{xdotted}{HTML}{999999}
 \definecolor{xgray}{HTML}{777777}
 \definecolor{xcyan}{HTML}{80F5DC}
-\definecolor{xpink}{HTML}{f690ea}
-\definecolor{xgraycyan}{HTML}{82bceb}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
 
 \colorlet{xcol0}{xred}
 \colorlet{xcol1}{xblue}
@@ -243,6 +244,9 @@
 	theoremstyle/.style={
 		common={xgraycyan}{$\multimapdotbothA$},
 	},
+	lemmastyle/.style={
+		common={xgrayblue}{$\multimap$},
+	},
 	proofstyle/.style={
 		common={xgreen}{\textbf{QED}},
 	},
@@ -259,6 +263,7 @@
 
 \newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
 \newtcbtheorem[auto counter, number within=chapter]{theorem}{Theorem}{theoremstyle}{theorem}
+\newtcbtheorem[auto counter, number within=chapter]{lemma}{Lemma}{lemmastyle}{lemma}
 \newtcbtheorem[auto counter, number within=chapter]{proof}{Proof}{proofstyle}{proof}
 \newtcbtheorem[auto counter, number within=chapter]{example}{Example}{examplestyle}{example}
 \newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
@@ -329,6 +334,8 @@
 }
 \newcommand{\iu}{\mathrm{i}\mkern1mu}
 \newcommand{\eu}{\mathrm{e}}
+\newcommand{\Z}[1]{\mathbb{Z}_{#1}}
+\renewcommand{\gcd}[2]{\text{gcd}\left(#1,#2\right)}
 
 %-------------%
 % OTHER STUFF %
