@@ -317,7 +317,7 @@ An example of B\'ezout's lemma is the following:
 (SHOULD WE PROVE THE LEMMA?..)
 
 The second lemma we use is the following:
-\begin{lemma}{$\bm{\gcd{n,p}=1}$}{gcd(n,p)=1}
+\begin{lemma}{$\bm{\gcd{n}{p}=1}$}{gcd(n,p)=1}
 	Given a positive prime number $p$, then for any positive integer $n<p$,
 	\[
 		\gcd{p}{n}=1.
@@ -325,7 +325,7 @@ The second lemma we use is the following:
 \end{lemma}
 
 Proving the lemma:
-\begin{proof}{$\bm{\gcd{n,p}=1}$}{gcd(n,p)=1}
+\begin{proof}{$\bm{\gcd{n}{p}=1}$}{gcd(n,p)=1}
 	We assume that $\gcd{p}{n} \neq 1$. Then there exist an integer $a\leq n<p$ which divides both $n$ and $p$, meaning that $p$ has a divider, contrary to the suumption that $p$ is a prime number. Therefore $\gcd{n}{p}$ must equal $1$.
 \end{proof}
 
@@ -341,7 +341,10 @@ Now we can proceed to the proof of \autoref{theorem:Zp is a field}:
 	
 	\item[Multiplicative identity] The number $1\in\Z{p}$ is the additive identity, since for each $a\in\Z{p},\ a\cdot1=a$.
 
-	\item[Additive inverse] \ldots
+	\item[Additive inverse] For each $a\in\Z{p}$ the element $n=p-a$ is in $\Z{p}$ since $p>a$. Adding $n$ to $a$ results in $0$:
+		\[
+			a+n = a+(p-a) = p \equiv 0\pmod{p}.
+		\]
 	
 	\item[Multiplicative inverse] \ldots
 	
@@ -349,4 +352,10 @@ Now we can proceed to the proof of \autoref{theorem:Zp is a field}:
 	\end{descitemize}
 \end{proof}
 
-\Blindtext
+The only part of the proof that uses the fact that $p$ is a prime number is the multiplicative inverse. When $n$ is not a prime, $\Z{n}$ is not a field.
+
+\begin{challange}{$\bm{\Z{n}}$ is not a field when $n$ is not a prime number}{}
+	Prove that the modulo set $\Z{n}$ where $n$ is \textbf{not} a prime number, is not a field.
+
+	(hint: what property of prime numbers is used in the above proof to show that there is always a multiplicative inverse in $\Z{p}$ where $p$ is prime?)
+\end{challange}
