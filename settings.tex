@@ -1,0 +1,374 @@
+\usepackage{booktabs}
+\usepackage{blindtext}
+
+%-----------%
+% XREF DICT %
+%-----------%
+
+\usepackage{pgfkeys}
+\pgfkeyssetvalue{/xref dict/fig}{Figure}
+\pgfkeyssetvalue{/xref dict/eq}{Equation}
+\pgfkeyssetvalue{/xref dict/eqs}{Equations}
+\pgfkeyssetvalue{/xref dict/tab}{Table}
+\pgfkeyssetvalue{/xref dict/def}{Definition}
+\pgfkeyssetvalue{/xref dict/note}{Note}
+\pgfkeyssetvalue{/xref dict/challange}{Challange}
+\pgfkeyssetvalue{/xref dict/example}{Example}
+\pgfkeyssetvalue{/xref dict/0}{tapir_rainbow}
+\pgfkeyssetvalue{/xref dict/1}{tapir_voronoi}
+\pgfkeyssetvalue{/xref dict/2}{tapir_stars}
+
+%----------%
+% GRAPHICS %
+%----------%
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes}
+
+\tikzset{
+	arrow/.style={thick, ->, >=stealth},
+	vector/.style={very thick, ->, >=stealth},
+	complex/.style={circle, minimum size=5pt, fill, inner sep=0pt},
+}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween, colormaps, colorbrewer}
+\pgfplotsset{
+		compat=1.16,
+		every axis/.append style={
+			font=\small,
+		},
+		graph2d/.style={
+		axis x line=middle,
+		axis y line=middle,
+		every axis x label/.style={
+			at={(ticklabel* cs:1.01)},
+			anchor=west,
+		},
+		every axis y label/.style={
+			at={(ticklabel* cs:1.01)},
+			anchor=south,
+		},
+		axis line style={stealth-stealth, thick},
+		label style={font=\large},
+		xlabel=$x$,
+		ylabel=$y$,
+		tick label style={font=\small},
+		samples=200,
+		grid=both,
+		grid style={line width=.1pt, draw=gray!20},
+		major grid style={line width=.2pt,draw=gray!50},
+		minor tick num=4,
+	},
+	function/.style={line width=1.5pt},
+}
+\usepackage{svg}
+
+%-------%
+% FONTS %
+%-------%
+
+\usepackage{fontawesome}
+\usepackage{kpfonts}
+
+%--------%
+% COLORS %
+%--------%
+
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+\colorlet{xcol0}{xred}
+\colorlet{xcol1}{xblue}
+\colorlet{xcol2}{xgreen}
+\colorlet{xcol3}{xpurple}
+\colorlet{xcol4}{xorange}
+\colorlet{xcol5}{xgray}
+\colorlet{xcol6}{xcyan}
+
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\colorlet{xdarkcyan}{xcyan!85!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+%------- %
+% XHFILL %
+%------- %
+
+\usepackage{xhfill}
+
+%---------------%
+% CHAPTER TITLE %
+%---------------%
+
+% Used to set chapter title look.
+% "explicit" is there so we can
+% use the first parameter (#1).
+\usepackage[explicit]{titlesec}
+\newcommand{\chapternumsize}{\fontsize{70}{70}\selectfont}
+\newcommand{\chaptertitlesize}{\fontsize{30}{30}\selectfont}
+
+\titleformat{\chapter}{\sffamily\bfseries}{}{0pt}{
+	\centering
+	\begin{tikzpicture}[font=\sffamily\bfseries]
+		\fill[black!10, rounded corners] (0,0) rectangle (5cm,5cm);
+		\node (chapternum) at (2.5cm,4.5cm) {\fontsize{85}{85}\selectfont\thechapter};
+		\node[below of=chapternum, yshift=-2.5cm] {\includesvg[scale=1.5]{figures/chapters/\pgfkeysvalueof{/xref dict/\thechapter}}};
+		\node[align=center, below of=chapternum, yshift=-6cm] {\fontsize{30}{30}\selectfont\uppercase{#1}};
+		\node[align=center, above of=chapternum, yshift=5mm] {\huge CHAPTER};
+	\end{tikzpicture}
+}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}% format
+  {}% label
+  {0pt}% sep
+	{\titlerule\newline\thetitle~~~\uppercase{#1}}% before code
+  [{\titlerule[0.4pt]}]% after code
+
+%--------%
+% TABLES %
+%--------%
+
+\usepackage{array}
+\newcolumntype{+}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+%------------%
+% REFERENCES %
+%------------%
+
+\usepackage{chngcntr}
+\counterwithin{table}{chapter}
+\counterwithin{figure}{chapter}
+\def\chapterautorefname{Chapter}
+\def\sectionautorefname{Section}
+\newcommand{\exampleautorefname}{Example}
+
+%---------%
+% HEADERS %
+%---------%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}% Clear header/footer
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter:\ #1}{}}
+\fancyhead[RO,LE]{\leftmark}% Chapter details in book
+\fancyfoot[RO,LE]{\thepage}
+\makeatother
+\def\MakeNoNewlines#1{\begingroup\def\\{ }#1\endgroup}
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter:\ \MakeNoNewlines{#1}}{}}
+
+%-------%
+% BOXES %
+%-------%
+
+\usepackage[most]{tcolorbox}
+
+\tikzset{
+	second box/.style={
+		anchor=east,
+		text=white,
+		rounded corners,
+		fill=#1,
+		xshift=-4mm,
+	},
+}
+
+\tcbset{
+	common/.style n args={2}{
+		colframe={#1},
+		colback={#1!5},
+		colbacktitle={#1},
+		lower separated=false,
+		coltitle=white,
+		boxrule=1pt,
+		fonttitle=\bfseries,
+		enhanced,
+		breakable,
+		top=8pt,
+		before skip=1em,
+		after skip=2em,
+		attach boxed title to top left={
+			yshift=-0.25cm,
+			xshift=0.38cm,
+		},
+		boxed title style={
+			boxrule=0pt,
+			colframe=white,
+			arc=5pt,
+			outer arc=4pt,
+		},
+		separator sign={~~},
+		overlay unbroken and last={
+			\node[text=white, align=right, rounded corners, fill=#1, xshift=-4mm, minimum height=6mm, anchor=east] at (frame.south east) {#2};
+		}
+	},
+	defstyle/.style={
+		common={xpurple}{$\bm{\pi}$},
+	},
+	theoremstyle/.style={
+		common={xgraycyan}{$\multimapdotbothA$},
+	},
+	lemmastyle/.style={
+		common={xgrayblue}{$\multimap$},
+	},
+	proofstyle/.style={
+		common={xgreen}{\textbf{QED}},
+	},
+	examplestyle/.style={
+		common={xblue}{\faStar},
+	},
+	notestyle/.style={
+		common={xred}{\textbf{!}},
+	},
+	challangestyle/.style={
+		common={xorange}{\textbf{?}},
+	},
+}
+
+\newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
+\newtcbtheorem[auto counter, number within=chapter]{theorem}{Theorem}{theoremstyle}{theorem}
+\newtcbtheorem[auto counter, number within=chapter]{lemma}{Lemma}{lemmastyle}{lemma}
+\newtcbtheorem[auto counter, number within=chapter]{proof}{Proof}{proofstyle}{proof}
+\newtcbtheorem[auto counter, number within=chapter]{example}{Example}{examplestyle}{example}
+\newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
+\newtcbtheorem[auto counter, number within=chapter]{challange}{Challange}{challangestyle}{challange}
+
+%---------%
+% FIGURES %
+%---------%
+
+\usepackage{float}
+\usepackage{caption}
+\usepackage[colorlinks=true, linkcolor=xblue]{hyperref}
+
+% Caption label
+\DeclareCaptionLabelSeparator{doublespace}{\ \ }
+\captionsetup{labelfont={color=xblue,bf}, figurename=Figure, labelsep=doublespace}
+
+% Refs format
+\newcommand{\xref}[2][fig]{
+	\color{figtextcolor}\textbf{\pgfkeysvalueof{/xref dict/#1}}~\ref{#1:#2} \color{normaltextcolor}
+}
+
+%-------------------%
+% HIGHLIGHTED WORDS %
+%-------------------%
+
+\usepackage{imakeidx}
+\usepackage{marginnote}
+\makeindex
+\renewcommand\emph[1]{\color{xpurple}{\textbf{#1}}\color{normaltextcolor}\index{#1}}%\marginnote[#1]{}
+
+%-------%
+% MATHS %
+%-------%
+
+\usepackage{amsmath, bm}
+\numberwithin{equation}{section}
+\usepackage{siunitx}
+\usepackage[thicklines]{cancel}
+\renewcommand\CancelColor{\color{xred}}
+\newcommand{\Rs}[1]{\mathbb{R}^{#1}}
+\newcommand{\stcomp}[1]{{#1}^\complement}
+%\newcommand{\true}{\colorbox{xblue!25}{true}}
+%\newcommand{\false}{\colorbox{xred!25}{false}}
+\newcommand{\true}{\textcolor{xblue}{\textbf{true}}}
+\newcommand{\false}{\textcolor{xred}{\textbf{false}}}
+\newcommand{\AND}{\textbf{AND}}
+\newcommand{\OR}{\textbf{OR}}
+\newcommand{\opand}{\wedge}
+\newcommand{\opor}{\vee}
+\newcommand{\falseprop}[1]{
+	\begingroup
+	\color{xred}
+	\underset{\false}{#1}
+	\endgroup
+}
+\newcommand{\trueprop}[1]{
+	\begingroup
+	\color{xblue}
+	\underset{\true}{#1}
+	\endgroup
+}
+\newcommand{\defeq}{:=}
+\newcommand{\eqdef}{=:}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\nroot}[2]{
+	\sqrt[\leftroot{3}\uproot{3}#1]{#2}
+}
+\newcommand{\iu}{\mathrm{i}\mkern1mu}
+\newcommand{\eu}{\mathrm{e}}
+\newcommand{\Z}[1]{\mathbb{Z}_{#1}}
+\renewcommand{\gcd}[2]{\text{gcd}\left(#1,#2\right)}
+
+%-------------%
+% OTHER STUFF %
+%-------------%
+
+\usepackage[version=4]{mhchem} % for chemistry
+\newcommand{\shrug}[1][]{% shrug emoji
+	\begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
+		\def\arm{(-2.5,0.95) to (-2,0.95) (-1.9,1) to (-1.5,0) (-1.35,0) to (-0.8,0)};
+		\draw \arm;
+		\draw[xscale=-1] \arm;
+		\def\headpart{(0.6,0) arc[start angle=-40, end angle=40,x radius=0.6,y radius=0.8]};
+		\draw \headpart;
+		\draw[xscale=-1] \headpart;
+		\def\eye{(-0.075,0.15) .. controls (0.02,0) .. (0.075,-0.15)};
+		\draw[shift={(-0.3,0.8)}] \eye;
+		\draw[shift={(0,0.85)}] \eye;
+% draw mouth
+		\draw (-0.1,0.2) to [out=15,in=-100] (0.4,0.95);
+\end{tikzpicture}
+}
+
+% List enumeration with chapter number
+\usepackage{enumitem}
+\setenumerate[1]{label=\thechapter.\arabic*.}
+\setenumerate[2]{label*=\arabic*.}
+
+% Lists that have bold/underline labels
+
+\newcommand{\descitemlabel}[1]{%
+  \textbullet\ \textbf{#1}:%
+}
+
+\newcommand{\listitemlabel}[1]{%
+	% Instead of bullet there should be a counter here,
+	% but it doesn't work :(
+	\textbullet\ \underline{#1}:%
+}
+
+\newenvironment{descitemize}
+{\begin{description}[itemsep=1.5em, before=\let\makelabel\descitemlabel]}
+{\end{description}}
+
+\newenvironment{listitemize}
+{\begin{description}[leftmargin=0pt, itemsep=1.25em, before=\let\makelabel\listitemlabel]}
+{\end{description}}

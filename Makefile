@@ -1,10 +1,12 @@
+TESTFOLDER=tests
+
 all: bookmain
 all: boxes
 
 bookmain:
 	latexmk $(LATEXMKSWITCHES) $@.tex
 boxes:
-	latexmk $(LATEXMKSWITCHES) $@.tex
+	latexmk $(LATEXMKSWITCHES) -jobname=$(TESTFOLDER)/$@ $(TESTFOLDER)/$@.tex
 
 force:
 	$(MAKE) LATEXMKSWITCHES=-gg all

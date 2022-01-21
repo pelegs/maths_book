@@ -1,2 +1,61 @@
 \section{Vector spaces}
-\Blindtext
+As we've seen in \autoref{chapter:linear algebra intuitive} vectors are found at the heart of linear algebra. We first defined them in a geometric way as objects with magnitude and direction, and later as lists of real numbers, analyzing the connections between these two mostly parallel defintions. We also spoke about vector spaces of the type $\Rs{n}$ as the structures vectors exist in. However, we haven't defined vectors nor vector spaces formally - which is exactly what we do in this section, by defining the concept of \emph{vector spaces}.
+
+\begin{note}{$\bm{\Rs{n}}$ as a guide to general vector spaces}{}
+	While reading the definition below, it is worthwhile to reflect on each of the given axioms as it relates to the familiar vector space $\Rs{n}$.
+\end{note}
+
+\begin{definition}{Vector space}{vector space}
+	A vector space over a field $\mathbb{F}$ is a set $V$ which, together with two operations described below, fullfils a list of axioms. The two operations are
+	\begin{listitemize}
+	\item[Vector addition] an operation which takes two elements of $V$ and returns a single element of $V$, i.e. $+:V\times V\to V$.
+	\item[Scalar multiplication] an operation which takes a single element of $\mathbb{F}$ and a single element of $V$ and returns a single element of $V$, i.e. $\cdot:\mathbb{F},V \to V$.
+	\end{listitemize}
+
+	The axioms to be fullfiled are:
+	\begin{descitemize}
+		\item[Commutativity of vector addition] for any $u,v\in V$,
+			\[
+				u+v=v+u.
+			\]
+
+		\item[Associativity of vector addition] for any $u,v,w\in V$,
+			\[
+				u+(v+w) = (u+v)+w.
+			\]
+		
+		\item[Additive identity] there exist an element $0\in V$ for which, for any $v\in V$,
+			\[
+				v+0 = v.
+			\]
+		
+		\item[Scalar multiplicative identity] for any $v\in V$
+			\[
+				1\cdot v = v,
+			\]
+			where $1$ is the multiplicative identity in $\mathbb{F}$.
+
+		\item[Additive inverse] for any $v\in V$ there exist an element $u\in V$ for which
+			\[
+				v+u = 0.
+			\]
+
+		\item[Associativity of scalar multiplication] for any $\alpha,\beta\in\mathbb{F}$ and $v\in V$
+			\[
+				\alpha\cdot(\beta\cdot v) = (\alpha\beta)\cdot v,
+			\]
+			where $\alpha\beta$ is the multiplication defined for $\mathbb{F}$.
+
+		\item[Distributivity of vector addition] for any $\alpha\in\mathbb{F}$ and $u,v\in V$,
+			\[
+				\alpha\cdot(u+v) = (\alpha\cdot u) + (\alpha\cdot v).
+			\]
+		
+		\item[Distributivity of scalar addition] for any $\alpha,\beta\in\mathbb{F}$ and $v\in V$,
+			\[
+				(\alpha+\beta)\cdot v = (\alpha\cdot v) + (\beta\cdot v).
+			\]
+	\end{descitemize}
+
+	The elements of $V$ are then called \emph{vectors}, and the elements of $\mathbb{F}$ are called \emph{scalars}.
+\end{definition}

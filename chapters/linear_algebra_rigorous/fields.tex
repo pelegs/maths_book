@@ -59,39 +59,39 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 	(note: in the following proof, equalities marked with $!$ use the respective propery of the real numbers)
 
 	\begin{descitemize}
-		\item[Closure under both operations] For any two complex numbers $z_{1}=a+\iu b$ and $z_{2}=c+\iu d$,
+		\item[Closure under both operations] for any two complex numbers $z_{1}=a+\iu b$ and $z_{2}=c+\iu d$,
 			\begin{listitemize}
-			\item[Addition] Since addition in $\mathbb{R}$ is closed, $(a+c)\in\mathbb{R}$ and $(b+d)\in\mathbb{R}$. Therefore
+			\item[Addition] since addition in $\mathbb{R}$ is closed, $(a+c)\in\mathbb{R}$ and $(b+d)\in\mathbb{R}$. Therefore
 				\[
 					z = z_{1}+z_{2} = a+c + (b+d)\iu
 				\]
 				is also a complex number with $\Re(z)=a+c$ and $\Im(z)=b+d$.
-			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also closed, $(ac-bd)\in\mathbb{R}$ and $(ad+bc)\in\mathbb{R}$. Therefore
+			\item[Multiplication] since multiplication in $\mathbb{R}$ is also closed, $(ac-bd)\in\mathbb{R}$ and $(ad+bc)\in\mathbb{R}$. Therefore
 				\[
 					z = z_{1} \cdot z_{2} = ac-bd + (ad+bc)\iu
 				\]
 				is a complex number with $\Re(z)=ac-bdc$ and $\Im(z)=ad+bc$.
 			\end{listitemize}
 		
-		\item[Commutativity of both operation] For any two complex numbers $z_{1}=a+\iu b$ and $z_{2}=c+\iu d$,
+		\item[Commutativity of both operation] for any two complex numbers $z_{1}=a+\iu b$ and $z_{2}=c+\iu d$,
 			\begin{listitemize}
-			\item[Addition] Since addition in $\mathbb{R}$ is commutative, $a+c=c+a$ and $b+d=d+b$. Therefore
+			\item[Addition] since addition in $\mathbb{R}$ is commutative, $a+c=c+a$ and $b+d=d+b$. Therefore
 				\[
 					z_{1} + z_{2} = a+c + (b+d)\iu \overset{!}{=} c+a + (d+b)\iu = z_{2}+z_{2}.
 				\]
-			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also commutative, $ac-bd = ca-db$ and $ad+bc=da+cb$. Therefore
+			\item[Multiplication] since multiplication in $\mathbb{R}$ is also commutative, $ac-bd = ca-db$ and $ad+bc=da+cb$. Therefore
 				\[
 					z_{1} \cdot z_{2} = ac-bd + (ad+bc)\iu \overset{!}{=} ca-db + (da+cb)\iu = z_{2} \cdot z_{1}.
 				\]
 			\end{listitemize}
 		
-		\item[Associativity of both operation] For any three complex numbers $z_{1}=a+\iu b,\ z_{2}=c+\iu d$ and $z_{3}=g+\iu h$ (where $a,b,c,d,g,h\in\mathbb{R}$\footnote{The letters $g$ and $h$ are used instead of $e$ and $f$ to avoid confusion with Eurler's constant and the common notation for real functions, respectively.}),
+		\item[Associativity of both operation] for any three complex numbers $z_{1}=a+\iu b,\ z_{2}=c+\iu d$ and $z_{3}=g+\iu h$ (where $a,b,c,d,g,h\in\mathbb{R}$\footnote{The letters $g$ and $h$ are used instead of $e$ and $f$ to avoid confusion with Eurler's constant and the common notation for real functions, respectively.}),
 			\begin{listitemize}
-			\item[Addition] Since addition in $\mathbb{R}$ is associative, $a+(c+g)=(a+c)+g$ and $b+(d+h)=(b+d)+h$. Therefore
+			\item[Addition] since addition in $\mathbb{R}$ is associative, $a+(c+g)=(a+c)+g$ and $b+(d+h)=(b+d)+h$. Therefore
 				\[
 					z_{1} + (z_{2}+z_{3}) = a+(c+g) + [b+(d+h)]\iu \overset{!}{=} (a+c)+g + [(b+d)+h]\iu = (z_{1}+z_{2}) + z_{3}.
 				\]
-			\item[Multiplication] Since multiplication in $\mathbb{R}$ is also associative, the following equalities apply:
+			\item[Multiplication] since multiplication in $\mathbb{R}$ is also associative, the following equalities apply:
 				\begin{align*}
 					a\cdot(c\cdot g) &= (a\cdot c)\cdot g,\\
 					b\cdot(c\cdot h) &= (b\cdot c)\cdot h,\\
@@ -112,11 +112,11 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 
 		\item[Identity for both operations]~\\
 			\begin{listitemize}
-			\item[Addition] The complex number $0=0+0i$ is the complex addition identity: for any real number $x\in\mathbb{R},\ x+0=x$. Therefore, for any complex number $z=a+\iu b$,
+			\item[Addition] the complex number $0=0+0i$ is the complex addition identity: for any real number $x\in\mathbb{R},\ x+0=x$. Therefore, for any complex number $z=a+\iu b$,
 				\[
 					z+0 = a+\iu b + 0+0i = a+0 + (b+0)\iu \overset{!}{=} a+\iu b.
 				\]
-			\item[Multiplication] The complex number $1=1+0\iu$ is the complex multiplication identity: for any real number $x\in\mathbb{R},\ x\cdot1=x$ and $x\cdot0=0$. Therefore, for any complex number $z=a+\iu b$,
+			\item[Multiplication] the complex number $1=1+0\iu$ is the complex multiplication identity: for any real number $x\in\mathbb{R},\ x\cdot1=x$ and $x\cdot0=0$. Therefore, for any complex number $z=a+\iu b$,
 				\[
 					z\cdot1 = (a+\iu b)\cdot(1+0\iu) \overset{!}{=}a\cdot1-\cancel{b\cdot0\iu^{2}} + (\cancel{a\cdot0\iu}+b\cdot1)\iu = a+\iu b.
 				\]
@@ -125,11 +125,11 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 		
 		\item[Inverse for both operations]~\\
 			\begin{listitemize}
-			\item[Addition] For any complex number $z_{1}=a+\iu b$, the number $z_{2}=-a-\iu b$ is also a complex number for which
+			\item[Addition] for any complex number $z_{1}=a+\iu b$, the number $z_{2}=-a-\iu b$ is also a complex number for which
 				\[
 					z_{1} + z_{2} = a+\iu b + -a-\iu b \overset{!}{=} a-a + (b-b)\iu = 0 + 0\iu = 0.
 				\]
-			\item[Multiplication] For any complex number $z=r\eu^{\theta i}$ where $r\neq0$, the number $z^{-1}=\frac{1}{r}\eu^{-\iu\theta}$ is also a complex number for which
+			\item[Multiplication] for any complex number $z=r\eu^{\theta i}$ where $r\neq0$, the number $z^{-1}=\frac{1}{r}\eu^{-\iu\theta}$ is also a complex number for which
 				\[
 					z \cdot z^{-1} = r\eu^{\iu\theta} \cdot \frac{1}{r}\eu^{-\iu\theta} \overset{!}{=} \frac{r}{r}\eu^{\cancel{\iu\theta - \iu\theta}} = 1\cdot1 = 1.
 				\]
@@ -141,7 +141,7 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 			Therefore, for any $z\neq0,\ z^{-1} = \frac{\conj{z}}{|z|^{2}}$.
 			\end{listitemize}
 
-		\item[Distributivity of of multiplication over addition] For any $z_{1}=a+\iu b,\ z_{2}=c+\iu d$ and $z_{3}=g+\iu h$,
+		\item[Distributivity of of multiplication over additiof] for any $z_{1}=a+\iu b,\ z_{2}=c+\iu d$ and $z_{3}=g+\iu h$,
 			\begin{align*}
 				z_{1}\cdot(z_{2}+z_{3}) &= (a+\iu b)\cdot(c+\iu d + g+\iu h) = (a+\iu b)\cdot(c+g + [d+h]\iu)\\
 				&= ac + ag + (bd)\iu^{2} + (bh)\iu^{2}\\
@@ -217,8 +217,8 @@ Addition and multiplication on $\Z{n}$ is done by the following rather straight 
 \begin{definition}{Operations in $\bm{\Z{n}}$}{operations in Zn}
 	In the set $\Z{n}$ addition and multiplication are defined as the following:
 	\begin{descitemize}
-	\item[Addition] For any two elements $a,b\in\Z{n},\ a+b\coloneqq(a+b)\pmod{n}$.
-	\item[Multiplication] For any two elements $a,b\in\Z{n},\ a\cdot b\coloneqq(a\cdot b)\pmod{n}$.
+	\item[Addition] for any two elements $a,b\in\Z{n},\ a+b\coloneqq(a+b)\pmod{n}$.
+	\item[Multiplication] for any two elements $a,b\in\Z{n},\ a\cdot b\coloneqq(a\cdot b)\pmod{n}$.
 	\end{descitemize}
 \end{definition}
 
@@ -333,20 +333,28 @@ Now we can proceed to the proof of \autoref{theorem:Zp is a field}:
 
 \begin{proof}{$\bm{\Z{p}}$ is a field}{}
 	\begin{descitemize}
-	\item[Closure under both operations] The definition of the modulo operator limit any $M\pmod{p}$ (where $M\in\mathbb{Z}$) to be in $[0,p-1]$. Therefore the result of using the operators given in \autoref{def:operations in Zn} must be within the same range, and thus in $\Z{p}$.
+	\item[Closure under both operations] the definition of the modulo operator limit any $M\pmod{p}$ (where $M\in\mathbb{Z}$) to be in $[0,p-1]$. Therefore the result of using the operators given in \autoref{def:operations in Zn} must be within the same range, and thus in $\Z{p}$.
 
-	\item[Commutativity and associativity of both operations] For any two numbers $a,b\in\Z{p}$ the result $a+b$ and $a\cdot b$ under $\mathbb{Z}$ is both commutative and associative. Therefore the result modulo $n$ is the same no matter the order of operations.
+	\item[Commutativity and associativity of both operations] for any two numbers $a,b\in\Z{p}$ the result $a+b$ and $a\cdot b$ under $\mathbb{Z}$ is both commutative and associative. Therefore the result modulo $n$ is the same no matter the order of operations.
 
-	\item[Additive identity] The number $0\in\Z{p}$ is the additive identity, since for each $a\in\Z{p},\ a+0=a$.
+	\item[Additive identity] the number $0\in\Z{p}$ is the additive identity, since for each $a\in\Z{p},\ a+0=a$.
 	
-	\item[Multiplicative identity] The number $1\in\Z{p}$ is the additive identity, since for each $a\in\Z{p},\ a\cdot1=a$.
+	\item[Multiplicative identity] the number $1\in\Z{p}$ is the additive identity, since for each $a\in\Z{p},\ a\cdot1=a$.
 
-	\item[Additive inverse] For each $a\in\Z{p}$ the element $n=p-a$ is in $\Z{p}$ since $p>a$. Adding $n$ to $a$ results in $0$:
+	\item[Additive inverse] for each $a\in\Z{p}$ the element $n=p-a$ is in $\Z{p}$ since $p>a$. Adding $n$ to $a$ results in $0$:
 		\[
 			a+n = a+(p-a) = p \equiv 0\pmod{p}.
 		\]
 	
-	\item[Multiplicative inverse] \ldots
+	\item[Multiplicative inverse] let $a\in\Z{p}$ and $a\neq0$. Since $p$ is a prime, $\gcd{a}{p}=1$ and from B\'ezout's theorem we know that there exist two integers $x,y$ such that
+		\[
+			xa + yp = 1.
+		\]
+		Rearrangment gives $p = \frac{1-xa}{y}$ meaning that $p$ divises $1-xa$, and thus
+		\[
+			xa\equiv1\pmod{p}.
+		\]
+		Therefore $x$ is the multiplicative inverse of $a$.
 	
 	\item[Distributivity of multiplication over addition] \ldots
 	\end{descitemize}
@@ -357,5 +365,5 @@ The only part of the proof that uses the fact that $p$ is a prime number is the 
 \begin{challange}{$\bm{\Z{n}}$ is not a field when $n$ is not a prime number}{}
 	Prove that the modulo set $\Z{n}$ where $n$ is \textbf{not} a prime number, is not a field.
 
-	(hint: what property of prime numbers is used in the above proof to show that there is always a multiplicative inverse in $\Z{p}$ where $p$ is prime?)
+	(\textbf{hint}: what property of prime numbers is used in the above proof to show that there is always a multiplicative inverse in $\Z{p}$ where $p$ is prime?)
 \end{challange}
