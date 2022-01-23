@@ -1,18 +1,18 @@
 \section{Vector spaces}
-As we've seen in \autoref{chapter:linear algebra intuitive} vectors are found at the heart of linear algebra. We first defined them in a geometric way as objects with magnitude and direction, and later as lists of real numbers, analyzing the connections between these two mostly parallel defintions. We also spoke about vector spaces of the type $\Rs{n}$ as the structures vectors exist in. However, we haven't defined vectors nor vector spaces formally - which is exactly what we do in this section, by defining the concept of \emph{vector spaces}.
+As we've seen in \autoref{chapter:linear algebra intuitive} vectors are found at the heart of linear algebra. We first defined them in a geometric way as objects with magnitude and direction, and later as lists of real numbers, analyzing the connections between these two mostly parallel definitions. We also spoke about vector spaces of the type $\Rs{n}$ as the structures vectors exist in. However, we haven't defined vectors nor vector spaces formally - which is exactly what we do in this section, by defining the concept of \emph{vector spaces}.
 
 \begin{note}{$\bm{\Rs{n}}$ as a guide to general vector spaces}{}
 	While reading the definition below, it is worthwhile to reflect on each of the given axioms as it relates to the familiar vector space $\Rs{n}$.
 \end{note}
 
 \begin{definition}{Vector space}{vector space}
-	A vector space over a field $\mathbb{F}$ is a set $V$ which, together with two operations described below, fullfils a list of axioms. The two operations are
+	A vector space over a field $\mathbb{F}$ is a set $V$ which, together with two operations described below, fulfils a list of axioms. The two operations are
 	\begin{listitemize}
 	\item[Vector addition] an operation which takes two elements of $V$ and returns a single element of $V$, i.e. $+:V\times V\to V$.
 	\item[Scalar multiplication] an operation which takes a single element of $\mathbb{F}$ and a single element of $V$ and returns a single element of $V$, i.e. $\cdot:\mathbb{F},V \to V$.
 	\end{listitemize}
 
-	The axioms to be fullfiled are:
+	The axioms to be fulfilled are:
 	\begin{descitemize}
 		\item[Commutativity of vector addition] for any $u,v\in V$,
 			\[
@@ -80,8 +80,8 @@ Since we discussed $\Rs{n}$ thoroughly in \autoref{chapter:linear algebra intuit
 	\end{descitemize}
 \end{theorem}
 
-...and then the proof:
+Second, the proof:
 
 \begin{proof}{$\bm{\Rs{n}}$ is a vector space}{Rn vector space}
-	Proofy proof.
+	Since the result of both operations defined for $\Rs{n}$ only depend on the respective components of a vector $v\in\Rs{n}$, all the axioms of a vector space apply, since they derive directly from the fact that $\mathbb{R}$ is a field.
 \end{proof}

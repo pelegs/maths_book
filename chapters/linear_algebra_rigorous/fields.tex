@@ -26,14 +26,14 @@ We begin our dive into the rigorous analysis of linear algebra by defining an al
 
 		\item[Additive and multiplicative identity] there exist an element in $\mathbb{F}$ called the \textit{additive identity} and denoted by $0$, for which $a+0=a$ for any $a\in\mathbb{F}$.
 			
-			Similarily, there exists an element in $\mathbb{F}$ called the \textit{multiplicative identity} and denoted by $1$, for which $a\cdot1=a$ for any $a\in\mathbb{F}$.
+			Similarity, there exists an element in $\mathbb{F}$ called the \textit{multiplicative identity} and denoted by $1$, for which $a\cdot1=a$ for any $a\in\mathbb{F}$.
 
 		\item[Additive and multiplicative inverses] for any element $a\in\mathbb{F}$ (except the additive identity) there exists:
 			\begin{enumerate}
 				\item $b\in\mathbb{F}$ such that $a+b=0$, and
 				\item $c\in\mathbb{F}$ such that $a\cdot c=1$.
 			\end{enumerate}
-			(usualy $b$ is denoted as $-a$, while $c$ is denoted as $a^{-1}$)
+			(usually $b$ is denoted as $-a$, while $c$ is denoted as $a^{-1}$)
 
 		\item[Distributivity of multiplication over addition] for any $a,b,c\in\mathbb{F}$,
 			\[
@@ -56,7 +56,7 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 \end{theorem}
 
 \begin{proof}{$\bm{\mathbb{C}}$ as a field}{C as a field}
-	(note: in the following proof, equalities marked with $!$ use the respective propery of the real numbers)
+	(note: in the following proof, equalities marked with $!$ use the respective property of the real numbers)
 
 	\begin{descitemize}
 		\item[Closure under both operations] for any two complex numbers $z_{1}=a+\iu b$ and $z_{2}=c+\iu d$,
@@ -141,7 +141,7 @@ We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pre
 			Therefore, for any $z\neq0,\ z^{-1} = \frac{\conj{z}}{|z|^{2}}$.
 			\end{listitemize}
 
-		\item[Distributivity of of multiplication over additiof] for any $z_{1}=a+\iu b,\ z_{2}=c+\iu d$ and $z_{3}=g+\iu h$,
+		\item[Distributivity of multiplication over addition] for any $z_{1}=a+\iu b,\ z_{2}=c+\iu d$ and $z_{3}=g+\iu h$,
 			\begin{align*}
 				z_{1}\cdot(z_{2}+z_{3}) &= (a+\iu b)\cdot(c+\iu d + g+\iu h) = (a+\iu b)\cdot(c+g + [d+h]\iu)\\
 				&= ac + ag + (bd)\iu^{2} + (bh)\iu^{2}\\
@@ -195,12 +195,12 @@ By examining the tables above, several points become clear:
 	\item in the product table, the element $1$ appears in each row and each column exactly once, except for the first row and first column. This means that every element $x\neq 0$ has a single multiplicative inverse $z\in S$.
 \end{itemize}
 
-We therefore only need to prove two points to show that $S$ is a field together with the operations described by the above tables: associativity of both operations and distributivity of multiplication over addition. We leave these proofs as a challange to the reader. Such a field is sometime denoted as $\mathbb{F}_{4}$. There are, of course, infinitely many finite fields.
+We therefore only need to prove two points to show that $S$ is a field together with the operations described by the above tables: associativity of both operations and distributivity of multiplication over addition. We leave these proofs as a challenge to the reader. Such a field is sometime denoted as $\mathbb{F}_{4}$. There are, of course, infinitely many finite fields.
 
 \subsection{Modulo fields}
-Another example of finite fields are sets of integers of the form $\{0,1,2,3,\dots,n\}$ where $n$ is a prime, together with \emph{modular addition} and \emph{modular product}. To understand modular arithemetics, we recall the fact that on a circle, an angle can have a negative value but also greater than $\ang{360}$ values are possible (see \autoref{fig:angles equivalency}): $\ang{390}$ is equivalent to $\ang{30}$, $\ang{-30}$ is equivalent to $\ang{330}$, etc. The set of integer values $\ang{0},\ang{1},\ang{2},\dots,\ang{359}$ on a circle is an example of a modular set: if for example we add together two angles of values $\deg{100}$ and $\ang{300}$ we get the equivalent angle $\deg{60}$. If we subtract $\deg{300}$ from $\deg{100}$ the result is an angle of $\deg{160}$.
+Another example of finite fields are sets of integers of the form $\{0,1,2,3,\dots,n\}$ where $n$ is a prime, together with \emph{modular addition} and \emph{modular product}. To understand modular arithmetics, we recall the fact that on a circle, an angle can have a negative value but also greater than $\ang{360}$ values are possible (see \autoref{fig:angles equivalency}): $\ang{390}$ is equivalent to $\ang{30}$, $\ang{-30}$ is equivalent to $\ang{330}$, etc. The set of integer values $\ang{0},\ang{1},\ang{2},\dots,\ang{359}$ on a circle is an example of a modular set: if for example we add together two angles of values $\deg{100}$ and $\ang{300}$ we get the equivalent angle $\deg{60}$. If we subtract $\deg{300}$ from $\deg{100}$ the result is an angle of $\deg{160}$.
 
-We say that on a circle, the values $\ang{360}, \ang{720}, -\ang{360}$ etc. are all \emph{cungruent} to $0$ modulo $360$. In mathematical notation we represent this fact as e.g.
+We say that on a circle, the values $\ang{360}, \ang{720}, -\ang{360}$ etc. are all \emph{congruent} to $0$ modulo $360$. In mathematical notation we represent this fact as e.g.
 \begin{equation}
 	720 \equiv 0 \pmod{360}.
 	\label{eq:mod 360}
@@ -298,7 +298,7 @@ In order to prove \autoref{theorem:Zp is a field} we use two lemmas: the first i
 \end{lemma}
 
 \begin{note}{$\bm{\gcd{a}{b}}$}{gcd}
-	$\gcd{a}{b}$ is the \emph{greatest common devisor} of the two integers $a$ and $b$. For example, $\gcd{36}{24}=12$ since the divisors of $36$ are $1,\ 2,\ 3,\ 4,\ 6,\ 9,\ 12,\ 18,\ 36$,\ and the divisors of $24$ are $1,\ 2,\ 3,\ 4,\ 6,\ 8,\ 12,\ 24$.
+	$\gcd{a}{b}$ is the \emph{greatest common deviser} of the two integers $a$ and $b$. For example, $\gcd{36}{24}=12$ since the divisors of $36$ are $1,\ 2,\ 3,\ 4,\ 6,\ 9,\ 12,\ 18,\ 36$,\ and the divisors of $24$ are $1,\ 2,\ 3,\ 4,\ 6,\ 8,\ 12,\ 24$.
 \end{note}
 
 An example of B\'ezout's lemma is the following:
@@ -326,7 +326,7 @@ The second lemma we use is the following:
 
 Proving the lemma:
 \begin{proof}{$\bm{\gcd{n}{p}=1}$}{gcd(n,p)=1}
-	We assume that $\gcd{p}{n} \neq 1$. Then there exist an integer $a\leq n<p$ which divides both $n$ and $p$, meaning that $p$ has a divider, contrary to the suumption that $p$ is a prime number. Therefore $\gcd{n}{p}$ must equal $1$.
+	We assume that $\gcd{p}{n} \neq 1$. Then there exist an integer $a\leq n<p$ which divides both $n$ and $p$, meaning that $p$ has a divider, contrary to the assumption that $p$ is a prime number. Therefore $\gcd{n}{p}$ must equal $1$.
 \end{proof}
 
 Now we can proceed to the proof of \autoref{theorem:Zp is a field}:
@@ -350,7 +350,7 @@ Now we can proceed to the proof of \autoref{theorem:Zp is a field}:
 		\[
 			xa + yp = 1.
 		\]
-		Rearrangment gives $p = \frac{1-xa}{y}$ meaning that $p$ divises $1-xa$, and thus
+		Rearrangement gives $p = \frac{1-xa}{y}$ meaning that $p$ divides $1-xa$, and thus
 		\[
 			xa\equiv1\pmod{p}.
 		\]

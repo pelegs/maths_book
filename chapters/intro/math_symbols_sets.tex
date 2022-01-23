@@ -66,7 +66,7 @@ Several more common mathematical notations are given in \autoref{tab:common_math
   
 \begin{table}
 	\centering
-	\caption{Common Mathematical NotationsUsed in this Book.}
+	\caption{Common mathematical notations used in this Book.}
 	\label{tab:common_math_notations}
 	\begin{tabular}{ll}
 		\toprule
@@ -85,7 +85,7 @@ Several more common mathematical notations are given in \autoref{tab:common_math
 	\end{tabular}
 \end{table}
 
-The notation $\Rightarrow$ need a bit of clarification: implication means that we can directly derive a proposition from another proposition. For example, if $x=3$ then $x>2$. The opposite implication can be a \false{} statemt, i.e. for the example above $x>2$ does not imply $x=3$ (denoted as $x>2 \nRightarrow x=3$). Sometimes implication is expressed by using the word \textit{if}: in the above example $x>2$ if $x=3$, but the other way around is not \true{}.
+The notation $\Rightarrow$ need a bit of clarification: implication means that we can directly derive a proposition from another proposition. For example, if $x=3$ then $x>2$. The opposite implication can be a \false{} statement, i.e. for the example above $x>2$ does not imply $x=3$ (denoted as $x>2 \nRightarrow x=3$). Sometimes implication is expressed by using the word \textit{if}: in the above example $x>2$ if $x=3$, but the other way around is not \true{}.
 
 We say that two propositions are \emph{equivalent} when they imply each other. For example: $x=2$ implies that $\frac{x}{2}=1$, while $\frac{x}{2}=1$ implies that $x=2$. We can write this as
 \[
@@ -97,7 +97,7 @@ Instead of the word \textit{equivalent}, the phrase \textit{if and only if} (som
 \]
 
 \subsection{Sets and subsets}
-The concept of \emph{sets} is perhaps one of the most basic ideas in modern mathematics. Much of the material convered in this book will be built upon sets and their properties. However, as with the rest of the material presented here - our description of sets will not be thorough nor percise.
+The concept of \emph{sets} is perhaps one of the most basic ideas in modern mathematics. Much of the material covered in this book will be built upon sets and their properties. However, as with the rest of the material presented here - our description of sets will not be thorough nor precise.
 
 For our purposes, a set is a collection of \emph{elements}. These elements can be any concept - be it physical (a chair, a bicycle, a tapir) or abstract (a number, an idea). However, we will consider only sets comprised of numbers. Sets can have finite of infinite number of elements in them.
 
@@ -116,7 +116,7 @@ Sets have two important properties:
 \end{enumerate}
 
 \begin{example}{Important set properties}{}
-	Examples demonstrating the two afforementioned important properties of sets:
+	Examples demonstrating the two aforementioned important properties of sets:
 	\begin{enumerate}
 		\item The following is not a proper set:
 		\[
@@ -145,7 +145,7 @@ Sets can be denoted using \emph{conditions}, with the symbol $|$ representing th
 	\textit{all numbers $x$ that are bigger than $0$ and are smaller than $10$, such that $x$ is odd.}
 
 	\flushleft{}
-	(note that the requirement of $x$ to be an odd number means that it is neccessarily a whole number as well)
+	(note that the requirement of $x$ to be an odd number means that it is necessarily a whole number as well)
 
 	\vspace{1em}
 	This set can be written explicitly as
@@ -154,14 +154,14 @@ Sets can be denoted using \emph{conditions}, with the symbol $|$ representing th
 	\]
 \end{example}
 
-Sets are usually denoted with an uppercase latin letter ($A,B,C,\dots$), while their elements are denoted as lowercase letters ($a,b,\alpha,\phi,\dots$). When we want to denote that an element belongs to a set we use the following symbol: $\in$. Conversly, $\notin$ is used to denote that an element \textit{does not} belong to a set.
+Sets are usually denoted with an uppercase Latin letter ($A,B,C,\dots$), while their elements are denoted as lowercase letters ($a,b,\alpha,\phi,\dots$). When we want to denote that an element belongs to a set we use the following symbol: $\in$. Conversely, $\notin$ is used to denote that an element \textit{does not} belong to a set.
 	
 \begin{example}{Elements in sets}{}
 	For the two sets
 	\[
 		A = \left\{ 1,2,5,7 \right\},\quad B=\left\{ \text{even numbers} \right\},
 	\]
-	all the following propostions are \true{}:
+	all the following propositions are \true{}:
 	\begin{align*}
 		&1\in A,\quad 2\in A,\quad 5\in A,\quad 7\in A,\\
 		&2\in B,\quad 1\notin B,\quad 5\notin B,\quad 7\notin B.
@@ -192,20 +192,20 @@ This proposition reads `The sets $A$ and $B$ are equal \underline{\textit{if and
 i.e. $B$ is a subset of $A$ \textbf{iff} the following is true: any element in $B$ is also an element in $A$.
 
 \begin{note}{(not so) Surprising properties of subsets}{subset_properties}
-	The definion of a subset (\autoref{eq:subset_def}) gives rise to two interesting properties:
+	The definition of a subset (\autoref{eq:subset_def}) gives rise to two interesting properties:
 	\begin{itemize}
 		\item The empty set $\emptyset$ is a subset of any set.
 		\item Any set is a  subset of itself.  %perhaps clarification of a proper vs improper subset? Unless that is outside the scope of the work. 
 	\end{itemize}
 \end{note}
 
-\begin{note}{The uniqeness of $\emptyset$}{}
+\begin{note}{The uniqueness of $\emptyset$}{}
 	There is only a single empty set, as any set that has no elements is equivalent to any other set with no elements (i.e. they have the same elements). Due to the way subsets are defined, the empty set is a subset of any set (including itself!).
 \end{note}
 
 Of course, since we have a definition for a subset, the opposite concept also exists: if $B$ is a subset of $A$, then we say that $A$ is a \emph{superset} of $B$.
 
-A very useful way of illustrating the relationship beyween two or more sets is by using \emph{Venn diagrams}, where sets are represented by circles (or other 2D shapes).
+A very useful way of illustrating the relationship between two or more sets is by using \emph{Venn diagrams}, where sets are represented by circles (or other 2D shapes).
 
 \begin{example}{Subsets and Venn diagrams}{}
 	A Venn diagram depicting the set $\textcolor{xblue}{B=\left\{ 0,2 \right\}}$ as a subset of $\textcolor{xred}{A=\left\{ 0,1,2,3,4,\dots,9 \right\}}$:
@@ -237,7 +237,7 @@ A very useful way of illustrating the relationship beyween two or more sets is b
 	\end{figure}
 \end{example}
 
-If for two sets $A,B$ both $A\subset B$ and $B\subset A$, then $A=B$. We can write this fact as a methematical proposition:
+If for two sets $A,B$ both $A\subset B$ and $B\subset A$, then $A=B$. We can write this fact as a mathematical proposition:
 \begin{equation}
 	(A\subset B) \opand (B\subset A) \Leftrightarrow A=B.
 	\label{eq:subset_equal}
@@ -357,14 +357,14 @@ The most general definition of an intersection of $n$ sets (where $n$ is a whole
 	\label{eq:intersection_n_sets}
 \end{equation}
 
-the left hand side of \autoref{eq:intersection_n_sets} can be written as
+The left hand side of \autoref{eq:intersection_n_sets} can be written as
 \begin{equation}
 	A_{1}\cap A_{2}\cap A_{3}\cap \cdots \cap A_{n} = \bigcap\limits_{i=1}^{n}A_{i}.
 	\label{eq:intersection_n_sets_big_notation}
 \end{equation}
 (clarifying the notation? i.e. indexing, etc.)
 
-Similarily, the union of $n$ different sets is defined as
+Similarly, the union of $n$ different sets is defined as
 \begin{align}
 	\bigcup\limits_{i=1}^{n}A_{i} &= A_{1}\cup A_{2}\cup A_{3}\cup \cdots \cup A_{n}\nonumber\\
 	&= \left\{ x \mid (x\in A_{1}) \opor (x\in A_{2}) \opor (x\in A_{3}) \opor \cdots \opor (x\in A_{n})\right\}.
@@ -431,12 +431,12 @@ Given a set $A$ and a subset of $A$, $B\subset A$, we can define the \emph{compl
 	Given the set $A=\mathbb{Z}$ and $B=\{x\in \mathbb{Z} \mid x\ \text{is odd}\}$, the complement $\stcomp{B}$ in relation to $A$ is the set of all even numbers. The reason is that any integer number can be either odd (in which case it belongs in $B$) or even (in which case it belongs in $\stcomp{B}$).
 \end{example}
 
-Given a set $A$ with $|A|$ elements - how many different subsets does it have? We'll start by looking at a practical example: $A=\left\{ 1,2,3 \right\}$. We can immidetly see that any set which contains just one of the elements of $A$ is a subset of $A$, i.e. $\{1\},\{2\},\{3\}$ are all subsets of $A$. In addition, any set which contains only two elements from $A$ is a subset of $A$, i.e. $\left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}$. Of course, we must not forget the empty set and $A$ itself - both subsets of $A$ (see \autoref{:subset_properties}). Thus altogether $A$ has $8$ subsets:
+Given a set $A$ with $|A|$ elements - how many different subsets does it have? We'll start by looking at a practical example: $A=\left\{ 1,2,3 \right\}$. We can imminently see that any set which contains just one of the elements of $A$ is a subset of $A$, i.e. $\{1\},\{2\},\{3\}$ are all subsets of $A$. In addition, any set which contains only two elements from $A$ is a subset of $A$, i.e. $\left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}$. Of course, we must not forget the empty set and $A$ itself - both subsets of $A$ (see \autoref{:subset_properties}). Thus altogether $A$ has $8$ subsets:
 \[
 	\emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 3 \right\}, \left\{ 1,2 \right\}, \left\{ 1,3 \right\}, \left\{ 2,3 \right\}, \left\{ 1,2,3 \right\}.
 \]
 
-Generaly, any set $A$ with $|A|$ elements has $2^{|A|}$ different subsets. The set of all these subsets is called the \emph{power set} of $A$, and is denoted as $P(A)$.
+Generally, any set $A$ with $|A|$ elements has $2^{|A|}$ different subsets. The set of all these subsets is called the \emph{power set} of $A$, and is denoted as $P(A)$.
 
 \begin{example}{Power set}{power_set}
 	The power set of $A=\left\{ 1,2,3 \right\}$ is
@@ -446,7 +446,7 @@ Generaly, any set $A$ with $|A|$ elements has $2^{|A|}$ different subsets. The s
 \end{example}
 
 \subsection{Important number sets}
-It is now time to introduce some important number sets. We begin with the simplest of these sets: the \emph{natural numbers}, denoted by $\mathbb{N}$. These are the numbers $1,2,3,4,\dots$. Adding the opposites to the natural numbers and adding $0$ to the set yields the \emph{integers}, denoted by $\mathbb{Z}$. Loosley speaking, we can define the integers as
+It is now time to introduce some important number sets. We begin with the simplest of these sets: the \emph{natural numbers}, denoted by $\mathbb{N}$. These are the numbers $1,2,3,4,\dots$. Adding the opposites to the natural numbers and adding $0$ to the set yields the \emph{integers}, denoted by $\mathbb{Z}$. Loosely speaking, we can define the integers as
 \begin{equation}
 	\mathbb{Z}=\left\{ 0,\pm1,\pm2,\pm3,\pm4,\dots \right\}.
 	\label{eq:integers}
@@ -458,7 +458,7 @@ This makes the integers a superset of the natural numbers, i.e.
 	\label{eq:naturals_subset_integers}
 \end{equation}
 
-One can think of the integers as all the number needed for solving an equation of the form $a+x=b$, where $a$ and $b$ are integers themselves, and $x$ is an unknown. No matter which integer values we put in $a$ and $b$, the unknown $x$ will always be an integer as well (whether it be positive, negative or zero depends on the values of $a$ and $b$). However, when one wishes to solve an equation fo the sort $ax=b$, the integers are not longer sufficient: for example, if $a=2$ and $b=1$, then $x$ is not an integer.
+One can think of the integers as all the number needed for solving an equation of the form $a+x=b$, where $a$ and $b$ are integers themselves, and $x$ is an unknown. No matter which integer values we put in $a$ and $b$, the unknown $x$ will always be an integer as well (whether it be positive, negative or zero depends on the values of $a$ and $b$). However, when one wishes to solve an equation of the sort $ax=b$, the integers are not longer sufficient: for example, if $a=2$ and $b=1$, then $x$ is not an integer.
 
 To solve $ax=b$ (where $a,b\in\mathbb{Z}$) we must introduce the \emph{rational numbers}: numbers with values that are ratios of two integers. We denote the set of rational numbers with the symbol $\mathbb{Q}$, and write
 \begin{equation}
@@ -589,7 +589,7 @@ The \emph{Cartesian product}\index{Cartesian product} of two sets $A,B$ (denoted
 
 The concept of `ordered pairs' is paramount: if we reverse the order of the elements in a pair the result might not be in the Cartesian product. We therefore say that the Cartesian product is \emph{not commutative}.
 
-\begin{example}{Non-commutivity of the Cartesian product}{}
+\begin{example}{Non-commutativity of the Cartesian product}{}
 	The elements $(x,1),\ (y,1),\ (x,2)$ and so on \textbf{are not} in the Cartesian product $A\times B$ as defined in the previous example, since in each one of the pairs the first element is from $B$ and the second element is from $A$.
 \end{example}
 
@@ -622,4 +622,4 @@ As with intersections and unions, the definition of a Cartesian product can be e
 
 A special case of Cartesian products are those products for which all the sets composing them are the same set. We denote these as the respective integer power, for example the Cartesian product $\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{2}$, the Cartesian product $\mathbb{R}\times\mathbb{R}\times\mathbb{R}$ is denoted as $\Rs{3}$, etc.
 
-Specifically, the Cartesian product $\Rs{2}$ can be interpreted as the two-dimensional \emph{Euclidean space}, which is the space used to draw graphs in one-dimensional calculus and shapes in two-dimensional analytican geometry. We will explore this idea (and higher dimensional spaces) in more details in upcoming chapters.
+Specifically, the Cartesian product $\Rs{2}$ can be interpreted as the two-dimensional \emph{Euclidean space}, which is the space used to draw graphs in one-dimensional calculus and shapes in two-dimensional analytical geometry. We will explore this idea (and higher dimensional spaces) in more details in upcoming chapters.

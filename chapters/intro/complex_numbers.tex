@@ -87,7 +87,7 @@ When discussing real numbers sometimes we like to refer to their \textit{magnitu
 	|z| = \sqrt{a^{2}+b^{2}},
 	\label{eq:complex_magnitude}
 \end{equation}
-i.e. in a sense, to get the magnitude of a complex number we imagine its two components as being perpendicular and calculate the length of the resulting hypotenous (cf.\ the Pythagorean theorem). In fact, this is one very useful interpertation of complex numbers, which we will explore in depth in the next subsection.
+i.e. in a sense, to get the magnitude of a complex number we imagine its two components as being perpendicular and calculate the length of the resulting hypotenuse (cf.\ the Pythagorean theorem). In fact, this is one very useful interpretation of complex numbers, which we will explore in depth in the next subsection.
 
 A very important operation that can be applied to complex numbers is \emph{conjugation}. The conjugate of a complex number $z=a+\iu b$ is defined as
 \begin{equation}
@@ -134,7 +134,7 @@ As alluded to in the previous subsection, we can interpret a complex number $z=a
 	\label{fig:complex number}
 \end{figure}
 
-Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We can then define $\theta$ to be the angle near the origin and $r$ the length of the hypotenous:
+Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We can then define $\theta$ to be the angle near the origin and $r$ the length of the hypotenuse:
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -165,7 +165,7 @@ Drawing a line from $z$ to $a$ (on the real axis) creates a right triangle. We c
 	\caption{The same complex number $z$ from \autoref{fig:complex number} shown with its polar components $r=|z|=\sqrt{a^{2}+b^{2}}$ and $\theta=\arctan\left( \frac{b}{a} \right)$.}
 	\label{fig:complex number 2}
 \end{figure}
-We call $r$ the \emph{magnitude} of $z$, and $\theta$ its \emph{argument}. The ranges for $r$ and $\theta$ are, respetively, $[0,\infty)$ and $[0,2\pi)$.
+We call $r$ the \emph{magnitude} of $z$, and $\theta$ its \emph{argument}. The ranges for $r$ and $\theta$ are, respectively, $[0,\infty)$ and $[0,2\pi)$.
 
 Using \autoref{eq:xy_P} the real and imaginary components of $z$ are
 \begin{align}
@@ -202,7 +202,7 @@ We see that indeed, the polar form of complex numbers adheres to the addition ru
 	&= \left( a_{1}a_{2}-b_{1}b_{2} \right) + \iu\left( a_{1}b_{2} + a_{2}b_{1} \right),
 	\label{eq:complex_product_geometric}
 \end{align}
-which is indeed the result seen in \autoref{eq:complex_product}. We can also develope further the second row of \autoref{eq:complex_product_geometric} using some trigonometry (specifically the trigonometric identities in \autoref{eq:trig product to sum}):
+which is indeed the result seen in \autoref{eq:complex_product}. We can also develop further the second row of \autoref{eq:complex_product_geometric} using some trigonometry (specifically the trigonometric identities in \autoref{eq:trig product to sum}):
 \begin{align}
 	z_{1}z_{2} &= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right) + \iu\cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + \iu\sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) -\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right) \right]\nonumber\\
 	&= r_{1}r_{2}\left[ \cos\left( \theta_{1} \right)\cos\left( \theta_{2} \right)-\sin\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + i\left[ \cos\left( \theta_{1} \right)\sin\left( \theta_{2} \right) + \sin\left( \theta_{1} \right)\cos\left( \theta_{2} \right) \right] \right]\nonumber\\
@@ -230,7 +230,7 @@ Lastly, let's show that \autoref{eq:conjugate_product} can be derived in the pol
 	\label{eq:conjugate_product_geometric}
 \end{align}
 
-In 1748 Leonhard Euler published his famous work \textit{Introductio in analysin infinitorum}\footnote{Latin for \textbf{Introduction to the Analysis of the Infinite}.}. In it he introduced the following relation, called \emph{Euler's formula}:
+In 1748 Leonhard Euler published his famous work \textit{Introduction to analysis of the infinite}\footnote{Latin for \textbf{Introduction to the Analysis of the Infinite}.}. In it he introduced the following relation, called \emph{Euler's formula}:
 \begin{equation}
 	\eu^{\iu x} = \sin(x) + \iu\cos(x).
 	\label{eq:Euler's_formula}
@@ -241,7 +241,7 @@ Using Euler's formula a complex number $z$ can be written as
 	\label{eq:complex number using Eurler's formula}
 \end{equation}
 
-In \autoref{tab:complex_exponentials} we can see some usefull complex exponentials $\eu^{\iu x}$. Specifically, setting $x=\pi$ yields the famous \emph{Eurler's identity}, considered by many to be one of the most beautiful equations in mathematics, as it binds together five important numbers, namely $0,1,\pi,e$ and $\iu$:
+In \autoref{tab:complex_exponentials} we can see some useful complex exponentials $\eu^{\iu x}$. Specifically, setting $x=\pi$ yields the famous \emph{Eurler's identity}, considered by many to be one of the most beautiful equations in mathematics, as it binds together five important numbers, namely $0,1,\pi,e$ and $\iu$:
 \begin{equation}
 	\eu^{\iu\pi} + 1 = 0.
 	\label{eq:Euler's identity}
