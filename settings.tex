@@ -327,6 +327,27 @@
 \newcommand{\Z}[1]{\mathbb{Z}_{#1}}
 \renewcommand{\gcd}[2]{\text{gcd}\left(#1,#2\right)}
 
+% Column vectors
+\makeatletter
+\newcommand{\colvec}[2][c]{%
+	\gdef\@VORNE{1}
+	\left[\hskip-\arraycolsep%
+		\begin{array}{#1}\vekSp@lten{#2}\end{array}%
+\hskip-\arraycolsep\right]}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+	\ifx\temp\vekL@stLine
+	\else
+		\ifnum\@VORNE=1\gdef\@VORNE{0}
+		\else\@arraycr\fi%
+			#1%
+			\expandafter\xvekSp@lten
+	\fi}
+\makeatother
+
+
 %-------------%
 % OTHER STUFF %
 %-------------%
