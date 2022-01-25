@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.4548876mm"
+   height="3.454864mm"
+   viewBox="0 0 3.4548876 3.454864"
+   version="1.1"
+   id="svg52750"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="comics_tile.svg"
+   inkscape:export-filename="/home/pelegs/Documents/latex/books/maths/figures/ideas/comicdot_black.png"
+   inkscape:export-xdpi="292.75482"
+   inkscape:export-ydpi="292.75482"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview52752"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="5.6568543"
+     inkscape:cx="-19.357048"
+     inkscape:cy="15.114407"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs52747">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern58234"
+       id="pattern59202"
+       patternTransform="scale(0.19818162)" />
+    <linearGradient
+       id="linearGradient58345"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#aa0000;stop-opacity:1;"
+         offset="0"
+         id="stop58343" />
+    </linearGradient>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern57936"
+       id="pattern57941"
+       patternTransform="matrix(0.08034062,0,0,0.08034062,-7.2237125e-7,-2.3878049e-6)" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="19.986347"
+       height="19.986347"
+       patternTransform="translate(-60.493175,-17.993206)"
+       id="pattern57936">
+      <image
+         width="19.986347"
+         height="19.986347"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA9CAYAAAAeYmHpAAAACXBIWXMAAC0FAAAtBQFZIP69AAAA GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABMxJREFUaIHtmt8rtGkYx7/Pw9Rj mDETvRKmdWBLr0yNGo1RElO0Zf0qdhIHEw6cOCH8AXIgjrbQJDnQktg5eKPGgcIYRKak8ZZaSqY3 NBg/irlnD7Y0bHbu553L7h48n+Pr/jzXl+fHfV8NoKCgoKCgoKCg8N8i8BYODg5ab25uunhqLRbL V7PZ/O372/qL7e3tT5ubmz/y1Gq12l8HBgY2eGoTeRu4v7//ye12/8JTa7VaEYlEeNXvIggC3G43 V211dfUfALhCi3H09C7p6en/K89byEPrdDrk5OSQuAwGA/R6PYkrGvLQFosFokijFUURxcXFJK5X XkpZYmIi6urqKJVobGyESqUidZKGbmhoQGZmJqUSGRkZqK2tJXWShTaZTLDb7VS6V7S0tMBsNpP5 SEKXlpaiv7+f7Fl+iyiK6OnpQUlJCY0vnsUajQadnZ3o7e2FJEmy1j48PMiqlyQJfX19aG9vh0aj kbX2Ldybk5cFiYnIz89HcXExKisrkZycHHNNJBLB/v4+PB4PfD4fLi4u8PT0BJVKhbS0NBiNRlgs FphMJgjC+5tEQRBQU1ODiooKrKyswOv1wu/34/n5WVYG7m3o7u5ukyRJv+l0un9s7C1+vx9OpxNH R0cxa/Py8uBwOPD582dufyQSQTAYxOPjY3NRUdEszxru7s/Ozn4WBOF37m4ALC8vY3x8XNZ/QhRF tLa2oqGhQc6lEIlEarOyslw8tbJvb15cLhecTqfsdYwxTE1NAYDs4Lx8yOvW5/NhcnIyLsf09DR2 d3eJOnoNeWjGGCYmJsAYi9szNjYm+yXFA3notbU1nJ6ekrgCgQBWV1dJXNGQh15fXyf1bWxwHZFl QR7a5/OR++J9VN5CGvr29lb2TisWT09PCAaDpE7y0B/Bzc0NqY80dLx74vfQarWkPtLQKSkpsg8e sVCpVNDpdKRO0tCCIMBoNFIqUVhYSH5kJX97W61WUh/VGToa8tBlZWUwGAwkroyMDJSXl5O4oiEP LYoiHA5H3LekIAjo6OggHwoCH3TgMJlMaGtri8tht9tJ52LRfMxQC0B9fT26urqQkJAga50gCLDb 7WhqavqgzmScpwOBgCRJElJTU7lv3aqqKmRnZ8PpdOL4+DhmfW5uLhwOh6wvAGMM19fXeHx85P5W codeXFw0Li0tISEh4WVGZrPZYs7ICgoKMDo6ip2dHWxubmJ/fx9XV1dgjEEURej1+pcZmdls5vqD hkIhuN1ubG1twe/3IxwOo7q62giAa1wke3ISDodxcHCAg4MDzM7Oorm5GTU1NTEHemaz+eUZZYzh 7u4OarVa1u3PGIPL5cLc3BxCoZDc1l+Ia1wUCoXgdDpxeHiI7u5uJCUlca0TRVH2lvXh4QEjIyPw er3f0+rr68dtAODxeDA0NIRwOEyh+xuMMQwPD5MEBgjf3nt7e5iZmaHSvWJ6ehrb29tkPtJP1sLC As7PzymVCAQCcLm4JrvckIZ+fn7GwsICpRLz8/Pkw0HyzYnX6yUb7zDGyJ7jaMhDB4NBsmnoyckJ rq+vSVzRfMg29PLyksRzcXFB4nkL93darVZ/sdlsP/DUMsa+CoIQ9+/IAHyy2WxcvyNTq9VfCK6n oKCgoKCgoKDwr/AnWZuK1hBenGMAAAAASUVORK5CYII= "
+         id="image57852"
+         x="0"
+         y="0" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="1.605715"
+       height="1.605715"
+       patternTransform="translate(52.823445,35.133064)"
+       id="pattern57943">
+      <rect
+         style="fill:url(#pattern57941);stroke:none;stroke-width:0.0803406"
+         width="1.605715"
+         height="1.605715"
+         x="0"
+         y="0"
+         id="rect57939" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="2.0345135"
+       height="2.0345135"
+       patternTransform="translate(-14.873657,-3.2621285)"
+       id="pattern58234">
+      <image
+         width="2.0345135"
+         height="2.0345135"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAC0FAAAtBQFZIP69AAAA GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA6hJREFUWIW1mE1LKmEYhu/xjAbV Jo1CwbIokBYNFEnRB0EbW0UQhVlgQZt+QkScRT+hTRu1FtMHBQUupG1CLSIZclWSFiVJ5CwiSouZ s/Icj2eO88yMXUu553kvh5l35h6mt7dXBgGO47C+vk6JqrK6ugpBEEhZE3WozWbTLVROQ0MDOUsW bG1t1SWjRFtbGzlLFuzv79clo8TAwAA5SxLkOA4Oh0O3UDl2ux3d3d2krKqgyWTC4uKiYalyAoEA TCb186OamJubQ3t7e1WkSuns7MTs7KxqrqLg+Pg4pqamqiZVzvT0NLxeb8XMD4fD8bP8R7PZjKWl Jfj9fjAM811+YBgGHo8H9fX1uLq6giRJ/2ZKN2qLxYKRkRH4fD40NTWRFikUChAEAff398jlcpBl GVarFS0tLeA4DjU1NaQ52WwWPM8jFouhUCj8EVxbW5OtVitcLpemgc/Pz+B5Hqenp8jn84oZi8WC 4eFh+Hw+NDc3k+bm83kIgoB0Oo1cLgcmk8mQHnWlRCIRBINBfH5+kvIsyyIQCGBiYkLrUtoFNzc3 EYlENC8EAF6vF8vLy5qua/KTBAAODw91ywFANBrF3t6epmPIgqlUCtvb25qlyuF5Hjc3N+Q8WTAU CiluA1qRZRnBYJCcJwlms1nE43HdUuUkEgk8PDyQsiTB8/NzQ0JGZpIEU6mUIRklbm9vSTmS4MvL iyEZJURRJOU0bTPVRJZp2y9JsJp9pIjVaiXlSILV7CNFXC4XKUcSrGYfKULtJSRBu90OjuMMCZXS 1dUFp9NJypJvEmqHUINhGCwsLJDz5BU7OjpIHUKNmZkZuN1ucl7TKaF0iEqMjY1p/pO6XliPj48R Dofx9fVFyrMsi/n5eUxOTmruOD/q6up+JpNJvL29obGxESzLqh7kdrsxOjqK19dXPD4+/vcth2VZ DA4OYmVlBR6PhyT38fGBi4sLxGIxxGKxv0uT2WzG0NAQ/H4/uUO8v78jHo8jnU5DFEXIsgybzQan 04menh7U1taS5jw9Pf0uTaVVglH6/GakQ+jh6OgIW1tbipeMYi+WJAmXl5cQRRF9fX3f1o1lWcbG xgYODg7+e5lUvIuj0Sj29/e/RQ4AdnZ2cHJyUjGjus3wPI9kMlk1qSLX19fY3d1VzakKSpKEcDhc Dae/CIVCpFcu0kYtCAIymYxhqSKZTAaJRIKUJT9Jzs7OdAsZmUUWvLu70yWjhJaOQxbM5XK6ZJSg 9hEA+AUimEmt3lHuBgAAAABJRU5ErkJggg== "
+         id="image58230"
+         x="0"
+         y="0" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="2.0345134"
+       height="2.0345134"
+       patternTransform="translate(-14.873656,-3.2621335)"
+       id="pattern59368">
+      <rect
+         style="fill:url(#pattern59202);stroke:none"
+         width="2.0345135"
+         height="2.0345135"
+         x="-2.1316282e-14"
+         y="-2.5313085e-14"
+         id="rect58237" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="13.057845"
+       height="13.057804"
+       patternTransform="translate(-8.5070727e-7)"
+       id="pattern62582">
+      <g
+         id="g54917"
+         transform="matrix(16.465401,0,0,16.465401,135.63105,-1219.1681)">
+        <rect
+           style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+           id="rect54625"
+           width="0.79304737"
+           height="0.79304194"
+           x="-8.2373362"
+           y="74.044235"
+           inkscape:export-filename="/home/pelegs/Documents/latex/books/maths/figures/ideas/comicdot_black.png"
+           inkscape:export-xdpi="292.75482"
+           inkscape:export-ydpi="292.75482" />
+        <ellipse
+           style="opacity:1;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+           id="path53887"
+           cx="-7.8404613"
+           cy="74.441109"
+           rx="0.21400906"
+           ry="0.21081159" />
+        <path
+           id="ellipse56815"
+           style="opacity:1;fill:#333333;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+           d="m -8.0233271,74.044235 a 0.21400906,0.21081159 0 0 1 -0.2140091,0.210812 v -0.210812 z" />
+        <path
+           id="path56921"
+           style="opacity:1;fill:#333333;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+           transform="scale(-1)"
+           d="m 7.6582978,-74.83728 a 0.21400906,0.21081159 0 0 1 -0.2140091,0.210811 v -0.210811 z" />
+        <path
+           id="path62555"
+           style="opacity:1;fill:#333333;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+           d="m -7.6582978,74.044235 a 0.21400906,0.21081159 0 0 0 0.2140091,0.210812 v -0.210812 z" />
+        <path
+           id="path62557"
+           style="opacity:1;fill:#333333;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+           d="M -8.0233271,74.83728 A 0.21400906,0.21081159 0 0 0 -8.2373362,74.626468 V 74.83728 Z" />
+      </g>
+    </pattern>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(7.5189924,-74.751329)">
+    <rect
+       style="fill:none;stroke:none"
+       width="13.057845"
+       height="13.057804"
+       x="-8.5070729e-07"
+       y="-4.9669115e-06"
+       id="rect62591"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.5189924,74.751329)" />
+    <g
+       id="g83782"
+       transform="matrix(4.3564706,0,0,4.3564706,28.366722,-247.82023)">
+      <rect
+         style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+         id="rect83770"
+         width="0.79304737"
+         height="0.79304194"
+         x="-8.2373362"
+         y="74.044235"
+         inkscape:export-filename="/home/pelegs/Documents/latex/books/maths/figures/ideas/comicdot_black.png"
+         inkscape:export-xdpi="292.75482"
+         inkscape:export-ydpi="292.75482" />
+      <ellipse
+         style="opacity:1;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+         id="ellipse83772"
+         cx="-7.8404613"
+         cy="74.441109"
+         rx="0.21400906"
+         ry="0.21081159" />
+      <path
+         id="path83774"
+         style="opacity:1;fill:#333333;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+         d="m -8.0233271,74.044235 a 0.21400906,0.21081159 0 0 1 -0.2140091,0.210812 v -0.210812 z" />
+      <path
+         id="path83776"
+         style="opacity:1;fill:#333333;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+         transform="scale(-1)"
+         d="m 7.6582978,-74.83728 a 0.21400906,0.21081159 0 0 1 -0.2140091,0.210811 v -0.210811 z" />
+      <path
+         id="path83778"
+         style="opacity:1;fill:#333333;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+         d="m -7.6582978,74.044235 a 0.21400906,0.21081159 0 0 0 0.2140091,0.210812 v -0.210812 z" />
+      <path
+         id="path83780"
+         style="opacity:1;fill:#333333;stroke-width:0.00560036;stroke-linecap:round;stroke-linejoin:round"
+         d="M -8.0233271,74.83728 A 0.21400906,0.21081159 0 0 0 -8.2373362,74.626468 V 74.83728 Z" />
+    </g>
+  </g>
+</svg>
