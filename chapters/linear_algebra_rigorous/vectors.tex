@@ -83,5 +83,21 @@ Since we discussed $\Rs{n}$ thoroughly in \autoref{chapter:linear algebra intuit
 The proof itself is pretty easy, based on the fact that $\mathbb{R}$ is a field:
 
 \begin{proof}{$\bm{\Rs{n}}$ is a vector space}{Rn vector space}
-	Since the result of both operations defined for $\Rs{n}$ only depend on the respective components of a vector $v\in\Rs{n}$, all the axioms of a vector space apply, since they derive directly from the fact that $\mathbb{R}$ is a field.
+	Since the results of both operations defined for $\Rs{n}$ only depend on the respective components of a vector $v\in\Rs{n}$, all the axioms of a vector space apply, since they derive directly from the fact that $\mathbb{R}$ is a field. As an example, we will elaborate on two of the axioms:
+	\begin{descitemize}
+	\item[Additive inverse] Given a vector $\vec{v}\in\Rs{n}$, each of its components $v_{i}$ has an inverse under $\mathbb{R}$, namely $-v_{i}$. Therefore,
+		\[
+			\colvec{v_{1};v_{2};\vdots;v_{n}} + \colvec{-v_{1};-v_{2};\vdots;-v_{n}} = \colvec{v_{1}-v_{1};v_{2}-v_{2};\vdots;v_{n}-v_{n}} = \colvec{0;0;\vdots;0} = \vec{0},
+		\]
+		which is the additive identity in $\Rs{n}$.
+
+	\item[Distributivity of vector addition] for each component of two vectors $\vec{u},\vec{v}\in\Rs{n}$, given the rules for vector addition and scalar multiplication, together with the distributivity of numbers in $\mathbb{R}$:
+		\begin{align*}
+			\alpha (\vec{u}+\vec{v}) &= \alpha\left(\colvec{u_{1};u_{2};\vdots;u_{n}} + \colvec{v_{1};v_{2};\vdots;v_{n}}\right) = \alpha\colvec{u_{1}+v_{1};u_{2}+v_{2};\vdots;u_{n}+v_{n}}\\
+			&= \colvec{\alpha u_{1}+\alpha v_{1};\alpha u_{2} + \alpha v_{2};\vdots;\alpha u_{n} + \alpha v_{n}} = \colvec{\alpha u_{1};\alpha u_{2};\vdots;\alpha u_{n}} + \colvec{\alpha v_{1};\alpha v_{2};\vdots;\alpha v_{n}} = \alpha\vec{u} + \alpha\vec{v}.
+		\end{align*}
+	\end{descitemize}
 \end{proof}
+(it is adviceable for the reader to go over the rest of the axioms and prove them for $\Rs{n}$)
+
+
