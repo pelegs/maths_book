@@ -1,4 +1,5 @@
 \section{Vectors}
+\subsection{Basics}
 \emph{Vectors} are the fundamental objects of linear algebra: the entire field revolves around manipulation of vectors. In this chapter we deal with the so-called \emph{real vectors}, which can be be defined in a geometric way:
 
 \begin{definition}{Real vectors}{real vectors}
@@ -55,7 +56,7 @@ When discussing vectors in a single context, we always consider them starting at
 A vector can be scaled by a real number $\alpha$: when this happens, its magnitude is multiplied by $\alpha$ while its direction stays the same. We call $\alpha$ a \emph{scalar}.
   
 \begin{example}{Scaling vectors}{scaling vectors}
-	The vector $\vec{v}$ scaled by different scalars $\alpha=2,2.5,-1,-2$:
+	The following vector $\vec{v}$ scaled by different scalars $\alpha=2,2.5,-1,-2$:
 
 	\centering
 	\begin{tikzpicture}[every node/.style={midway, left, xshift=-2mm}]
@@ -71,3 +72,94 @@ A vector can be scaled by a real number $\alpha$: when this happens, its magnitu
 \begin{note}{Negative scale}{negative scale}
 	As can be seen in the example above, when scaling a vector by a negative amount its direction reverses. However, we consider two opposing direction (i.e. directions that are $\ang{180}$ apart) as being the same direction.
 \end{note}
+
+Two vectors can be added together to yield a third vector: $\vu+\vv=\vw$. To find $\vw$ we use the following procedure (depicted in \autoref{fig:vector addition geometric}):
+% The items need to be typeset without the chapter number
+\begin{enumerate}
+	\item Move (translate) $\vv$ such that its origin lies on the head of $\vu$.
+	\item The vector $\vw$ is the vector drawn from the origin of $\vu$ to the head of $\vv$.
+\end{enumerate}
+
+\renewcommand\thesubfigure{\arabic{subfigure}}
+\begin{figure}[h]
+	\centering
+	 \begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\coordinate (O) at (0,0);
+			\coordinate (u) at (-2,1);
+			\coordinate (v) at (1.5,1);
+			\coordinate (w) at ($(u)+(v)$);
+			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+			\draw[vector, xblue] (O) -- (v) node[above right] {$\vec{v}$};
+			\draworigin
+		\end{tikzpicture}
+		\caption{The vectors $\vu$ and $\vv$.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+			\draw[vector, xblue] (u) -- ++(v) node[above right] {$\vec{v}$};
+			\draworigin
+		\end{tikzpicture}
+		\caption{Translating $\vv$ such that its origin lies at the head of $\vu$.}
+	\end{subfigure}
+
+	\vspace{3em}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+			\draw[vector, xblue] (u) -- ++(v) node[above right] {$\vec{v}$};
+			\draw[vector, xpurple] (O) -- (w) node[right, yshift=-2mm] {$\vec{w}$};
+			\draworigin
+		\end{tikzpicture}
+		\caption{Drawing the vector $\vw$ from the origin to the head of $\vv$.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+			\draw[vector, xblue] (O) -- (v) node[above right] {$\vec{v}$};
+			\draw[vector, xpurple] (O) -- (w) node[above] {$\vec{w}$};
+			\draworigin
+		\end{tikzpicture}
+		\caption{Showing all three vectors.}
+	\end{subfigure}
+	\label{fig:vector addition geometric}
+	\caption{Vector addition: TEXT.}
+\end{figure}
+
+The addition of vectors as depicted here is commutative, i.e. $\vu+\vv = \vv+\vu$. This can be seen by using the \emph{parallogram law of vector addition} as depicted in \autoref{fig:parallelogram law of vector addition}: drawing the two vectors $\vu, \vv$ and their translated copies (each such that its origin lies on the other vector's head) results in a parallelogram.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+		\draw[vector, xblue] (O) -- (v) node[above right] {$\vec{v}$};
+		\draw[vector, xred] (v) -- ++(u);
+		\draw[vector, xblue] (u) -- ++(v);
+		\draw[vector, xpurple] (O) -- (w) node[above] {$\vec{w}$};
+		\draworigin
+	\end{tikzpicture}
+	\label{fig:parallelogram law of vector addition}
+	\caption{The parallogram law of vector addition.}
+\end{figure}
+
+An important vector is the \emph{zero-vector}, denoted as $\vec{0}$. The zero-vector has a unique property: it is neutral in respect to vector addition, i.e. for any vector $\vec{v}$,
+\begin{equation}
+	\vec{v} + \vec{0} = \vec{v}.
+	\label{eq:zero-vector}
+\end{equation}
+(we also say that $\vec{0}$ is an \emph{additive identity}.)
+
+Any vector $\vec{v}$ always has an \emph{opposite} vector, denoted $-\vec{v}$. The addition of a vector and its opposite always result in the zero-vector, i.e.
+\begin{equation}
+	\vec{v} + \left( -\vec{v} \right) = \vec{0}.
+	\label{eq:opposite vector}
+\end{equation}
+
+\subsection{Components}

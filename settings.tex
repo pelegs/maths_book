@@ -36,8 +36,11 @@
 
 \tikzset{
 	arrow/.style={thick, ->, >=stealth},
-	vector/.style={very thick, ->, >=stealth},
+	vector/.style={very thick, ->, >=stealth, cap=round},
 	complex/.style={circle, minimum size=5pt, fill, inner sep=0pt},
+}
+\newcommand{\draworigin}{
+	\fill (0,0) circle (0.075);
 }
 
 \usepackage{pgfplots}
@@ -351,6 +354,11 @@
 			\expandafter\xvekSp@lten
 	\fi}
 \makeatother
+
+% Colored (common) vectors I use
+\newcommand{\vu}{\textcolor{xred}{\bm{\vec{u}}}}
+\newcommand{\vv}{\textcolor{xblue}{\bm{\vec{v}}}}
+\newcommand{\vw}{\textcolor{xpurple}{\bm{\vec{w}}}}
 
 
 %-------------%
