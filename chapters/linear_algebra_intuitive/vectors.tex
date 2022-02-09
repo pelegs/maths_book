@@ -163,7 +163,43 @@ Any vector $\vec{v}$ always has an \emph{opposite} vector, denoted $-\vec{v}$. T
 \end{equation}
 
 \subsection{Components}
-Vectors can be placed in a Cartesian coordinate system. Doing so\ldots
+Vectors can be decomposed to their components, the number of components depending on the dimension of space the vectors exist in: 2-dimensional vectors can be decomposed to 2 components, 3-dimensional vectors can be decomposed to 3 components, etc.
+
+To decompose a vector, we first need to choose a coordinate system: the most commonly used system, and the one we will use for most of this chapter, is the Cartesian coordinate system. We place a vector $\vec{v}$ in the system such that its origin lies at the origin of the system. We then draw a line from its head to each of the axes in the system, such that the lines intercept the respective axis at $\ang{90}$ (see \autoref{fig:vector components}), the point of interception on each axis (labeled $v_{x},v_{y},v_{z}$ - or more generally $v_{1},v_{2},v_{3},\dots$) is the component of the vector in that axis. The vector can then be written as a column with its components:
+\begin{equation}
+	\vec{v} = \colvec{v_{1};v_{2};\vdots;v_{n}}.
+	\label{eq:column vector}
+\end{equation}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[every node/.style={font=\large}]
+		\pgfmathsetmacro{\ux}{2.5}
+		\pgfmathsetmacro{\uy}{2}
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=10cm,
+			xmin=-1, xmax=3,
+			ymin=-1, ymax=3,
+			xticklabels={,},
+			yticklabels={,},
+			extra x ticks={\ux},
+			extra x tick labels={$u_{x}$},
+			extra x tick style={color=xred},
+			extra y ticks={\uy},
+			extra y tick labels={$u_{y}$},
+			extra y tick style={color=xred},
+			]
+			\draw[dashed, black!50] (0,\uy) -- (\ux,\uy) -- (\ux,0);
+			\draw (\ux,0.1) -- ({\ux+0.1},0.1) -- ({\ux+0.1},0);
+			\draw (0.1,\uy) -- (0.1,{\uy+0.1}) -- (0,{\uy+0.1});
+			\draw[vector, xred] (0,0) -- (\ux,\uy) node[above] {$\vec{u}=\colvec{u_{x};u_{y}}$};
+			\draw[fill] (0,0) circle[radius=2pt];
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Placing a 2-dimensional vector $\vu$ on the 2-dimensional Cartesian coordinate system, showing its $x$- and $y$-components.}
+	\label{fig:vector components}
+\end{figure}
 
 \begin{figure}[h]
 	\centering
