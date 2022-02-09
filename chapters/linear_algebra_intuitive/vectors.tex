@@ -129,11 +129,11 @@ Two vectors can be added together to yield a third vector: $\vu+\vv=\vw$. To fin
 		\end{tikzpicture}
 		\caption{Showing all three vectors.}
 	\end{subfigure}
-	\label{fig:vector addition geometric}
 	\caption{Vector addition: TEXT.}
+	\label{fig:vector addition geometric}
 \end{figure}
 
-The addition of vectors as depicted here is commutative, i.e. $\vu+\vv = \vv+\vu$. This can be seen by using the \emph{parallogram law of vector addition} as depicted in \autoref{fig:parallelogram law of vector addition}: drawing the two vectors $\vu, \vv$ and their translated copies (each such that its origin lies on the other vector's head) results in a parallelogram.
+The addition of vectors as depicted here is commutative, i.e. $\vu+\vv = \vv+\vu$. This can be seen by using the \emph{parallogram law of vector addition} as depicted in \autoref{fig:parallelogram}: drawing the two vectors $\vu, \vv$ and their translated copies (each such that its origin lies on the other vector's head) results in a parallelogram.
 
 \begin{figure}[h]
 	\centering
@@ -145,8 +145,8 @@ The addition of vectors as depicted here is commutative, i.e. $\vu+\vv = \vv+\vu
 		\draw[vector, xpurple] (O) -- (w) node[above] {$\vec{w}$};
 		\draworigin
 	\end{tikzpicture}
-	\label{fig:parallelogram law of vector addition}
 	\caption{The parallogram law of vector addition.}
+	\label{fig:parallelogram}
 \end{figure}
 
 An important vector is the \emph{zero-vector}, denoted as $\vec{0}$. The zero-vector has a unique property: it is neutral in respect to vector addition, i.e. for any vector $\vec{v}$,
@@ -154,7 +154,7 @@ An important vector is the \emph{zero-vector}, denoted as $\vec{0}$. The zero-ve
 	\vec{v} + \vec{0} = \vec{v}.
 	\label{eq:zero-vector}
 \end{equation}
-(we also say that $\vec{0}$ is an \emph{additive identity}.)
+(we also say that $\vec{0}$ is the \emph{additive identity} in respect to vectors.)
 
 Any vector $\vec{v}$ always has an \emph{opposite} vector, denoted $-\vec{v}$. The addition of a vector and its opposite always result in the zero-vector, i.e.
 \begin{equation}
@@ -163,3 +163,28 @@ Any vector $\vec{v}$ always has an \emph{opposite} vector, denoted $-\vec{v}$. T
 \end{equation}
 
 \subsection{Components}
+Vectors can be placed in a Cartesian coordinate system. Doing so\ldots
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=10cm,
+			xmin=-3, xmax=3,
+			ymin=-3, ymax=3,
+			minor tick num=1,
+			]
+			\veccomp{u}{-2}{1}{xred}
+			\veccomp{v}{1.5}{1}{xblue}
+			\veccomp{w}{-0.5}{2}{xpurple}
+			\veccomp{a}{0.5}{-2}{xgreen}
+			\veccomp{b}{-1}{-2}{xorange}
+			\draw[fill] (0,0) circle[radius=2pt];
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Some vectors on a cartesian coordinate system, showing their $x$- and $y$-components.}
+	\label{fig:parallelogram}
+\end{figure}
+
+\Blindtext
