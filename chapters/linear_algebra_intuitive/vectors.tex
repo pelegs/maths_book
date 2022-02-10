@@ -3,7 +3,7 @@
 \emph{Vectors} are the fundamental objects of linear algebra: the entire field revolves around manipulation of vectors. In this chapter we deal with the so-called \emph{real vectors}, which can be be defined in a geometric way:
 
 \begin{definition}{Real vectors}{real vectors}
-	A \textit{real vector} is an object with a \emph{magnitude} and a \emph{direction}.
+	A \textit{real vector} is an object with a \emph{magnitude} (also called \emph{norm}) and a \emph{direction}.
 \end{definition}
 
 In this chapter we refer to real vectors simply as \textit{vectors}.
@@ -35,7 +35,7 @@ Vectors are usually denoted in one of the following ways:
 
 In this book we use the first notation style, i.e. an arrow above the letter. In addition vectors will almost always be denoted using lowercase Lating script.
 
-When discussing vectors in a single context, we always consider them starting at the same point, called the \emph{origin}, and \emph{translating} (moving) vectors around in space does not change their properties: only their magnitudes and directions matter.
+When discussing vectors in a single context, we always consider them starting at the same point, called the \emph{origin}, and \emph{translating} (moving) vectors around in space does not change their properties: only their norms and directions matter.
 
 \begin{example}{Real vectors}{real vectors}
 	The vectors from the previous translated (moved) such that their origins all lie on the same point:
@@ -53,7 +53,7 @@ When discussing vectors in a single context, we always consider them starting at
 	\end{tikzpicture}
 \end{example}
 
-A vector can be scaled by a real number $\alpha$: when this happens, its magnitude is multiplied by $\alpha$ while its direction stays the same. We call $\alpha$ a \emph{scalar}.
+A vector can be scaled by a real number $\alpha$: when this happens, its norm is multiplied by $\alpha$ while its direction stays the same. We call $\alpha$ a \emph{scalar}.
   
 \begin{example}{Scaling vectors}{scaling vectors}
 	The following vector $\vec{v}$ scaled by different scalars $\alpha=2,2.5,-1,-2$:
@@ -72,6 +72,8 @@ A vector can be scaled by a real number $\alpha$: when this happens, its magnitu
 \begin{note}{Negative scale}{negative scale}
 	As can be seen in the example above, when scaling a vector by a negative amount its direction reverses. However, we consider two opposing direction (i.e. directions that are $\ang{180}$ apart) as being the same direction.
 \end{note}
+
+In this book we use the following notation for the norm of a vector $\vec{v}$: $\norm{v}$.
 
 Two vectors can be added together to yield a third vector: $\vu+\vv=\vw$. To find $\vw$ we use the following procedure (depicted in \autoref{fig:vector addition geometric}):
 % The items need to be typeset without the chapter number
@@ -163,9 +165,7 @@ Any vector $\vec{v}$ always has an \emph{opposite} vector, denoted $-\vec{v}$. T
 \end{equation}
 
 \subsection{Components}
-Vectors can be decomposed to their components, the number of components depending on the dimension of space the vectors exist in: 2-dimensional vectors can be decomposed to 2 components, 3-dimensional vectors can be decomposed to 3 components, etc.
-
-To decompose a vector, we first need to choose a coordinate system: the most commonly used system, and the one we will use for most of this chapter, is the Cartesian coordinate system. We place a vector $\vec{v}$ in the system such that its origin lies at the origin of the system. We then draw a line from its head to each of the axes in the system, such that the lines intercept the respective axis at $\ang{90}$ (see \autoref{fig:vector components}), the point of interception on each axis (labeled $v_{x},v_{y},v_{z}$ - or more generally $v_{1},v_{2},v_{3},\dots$) is the component of the vector in that axis. The vector can then be written as a column with its components:
+Vectors can be decomposed to their components, the number of which depends on the dimension of space we're using: 2-dimensional vectors can be decomposed into 2 components, 3-dimensional vectors can be decomposed into 3 components, etc. To decompose a vector, say $\vec{v}$, we first choose a coordinate system: the most commonly used system, and the one we will use for most of this chapter, is the Cartesian coordinate system. We place the vector in the coordinate system such that its origin lies at the origin of the system. We then draw a perpendicular line from its head to each of the axes in the system (see \autoref{fig:vector components}), the point of interception on each axis is the component of the vector in that axis (we label these points $v_{x},v_{y},v_{z}$ in the case of 2- or 3-dimensional spaces, and generally $v_{1},v_{2},v_{3},\dots$). The vector can then be written as a column using these components:
 \begin{equation}
 	\vec{v} = \colvec{v_{1};v_{2};\vdots;v_{n}}.
 	\label{eq:column vector}
@@ -201,7 +201,13 @@ To decompose a vector, we first need to choose a coordinate system: the most com
 	\label{fig:vector components}
 \end{figure}
 
-\begin{figure}[h]
+\begin{note}{Order of components}{}
+	The order of the components of a vector is important, and should always be consistent. In the case of $2$- and $3$-dimensional the order is always $v_{x},v_{y},v_{z}$.
+\end{note}
+
+\begin{example}{Vector components in two dimensions}{}
+	The following five $2$-dimensional vectors are decomposed each into its $x$- and $y$-components:
+
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
@@ -219,8 +225,63 @@ To decompose a vector, we first need to choose a coordinate system: the most com
 			\draw[fill] (0,0) circle[radius=2pt];
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Some vectors on a cartesian coordinate system, showing their $x$- and $y$-components.}
-	\label{fig:parallelogram}
+\end{example}
+
+\begin{example}{Vector components in three dimensions}{}
+	The following $3$-dimensional vector is decomposed into its $x$-, $y$- and $z$-components:
+	(THIS NEEDS TO BE IMPROVED AND FINISHED)
+
+	\centering
+	\begin{tikzpicture}
+		\pgfmathsetmacro{\vx}{3}
+		\pgfmathsetmacro{\vy}{1.5}
+		\pgfmathsetmacro{\vz}{2}
+		\coordinate (v) at (\vx,\vy,\vz);
+		\draw[vector] (0,0,0) -- (4,0,0) node[right] {$x$};
+		\draw[vector] (0,0,0) -- (0,4,0) node[above] {$y$};
+		\draw[vector] (0,0,0) -- (0,0,4) node[below left] {$z$};
+		\draw[vector, gray] (0,0,0) -- (v) node [above left] {$\vec{v}$};
+		\draw[dashed, xred]   (v) -- (\vx,0,0);
+		\draw[dashed, xblue]  (v) -- (0,\vy,0);
+		\draw[dashed, xgreen] (v) -- (0,0,\vz);
+	\end{tikzpicture}
+\end{example}
+
+Looking at 2-dimensional vectors, it is rather straight-forward to calculate their norm: since the origin, the head of the vector and the point $v_{x}$ form a right triangle, we can use the Pythagorean theorem to calculate the norm of the vector, which is equal to the hypotenous of said triangle (see \autoref{fig:norm 2D vector}):
+\begin{equation}
+	\norm{v} = \sqrt{v_{x}^{2} + v_{y}^{2}}.
+	\label{eq:2D vector norm}
+\end{equation}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[every node/.style={font=\large}]
+		\pgfmathsetmacro{\vx}{2.5}
+		\pgfmathsetmacro{\vy}{2}
+		\pgfmathsetmacro{\an}{atan(\vy/\vx)}
+		\begin{axis}[
+			vector plane,
+			width=8cm, height=8cm,
+			xmin=-1, xmax=3,
+			ymin=-1, ymax=3,
+			xticklabels={,},
+			yticklabels={,},
+			]
+			\fill[xgreen, fill opacity=0.07] (0,0) -- (\vx,\vy) -- (\vx,0);
+			\draw[dashed, black!50] (\vx,\vy) -- (\vx,0);
+			\draw (\vx,0.1) -- ({\vx-0.1},0.1) -- ({\vx-0.1},0);
+			\draw[vector, black] (0,0) -- node[midway, above, rotate=\an] {$\norm{v}=\sqrt{v_{x}^{2}+v_{y}^{2}}$} (\vx,\vy) node[above] {$\vec{v}=\colvec{v_{x};v_{y}}$};
+			\draw[fill] (0,0) circle[radius=2pt];
+			\draw[xgreen, ultra thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+			(0,0) -- (\vx,0) node[midway, below, yshift=-7pt]{$v_{x}$};
+			\draw[xgreen, ultra thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+			(\vx,0) -- (\vx,\vy) node[midway, right, xshift=7pt]{$v_{y}$};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Calculating the norm of a 2-dimensional column vector.}
+	\label{fig:norm 2D vector}
 \end{figure}
+
+(TBW: extending to 3D + challange to the reader, and to nD)
 
 \Blindtext
