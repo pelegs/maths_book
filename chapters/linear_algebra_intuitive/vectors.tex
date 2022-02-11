@@ -247,7 +247,17 @@ Vectors can be decomposed to their components, the number of which depends on th
 	\end{tikzpicture}
 \end{example}
 
-Looking at 2-dimensional vectors, it is rather straight-forward to calculate their norm: since the origin, the head of the vector and the point $v_{x}$ form a right triangle, we can use the Pythagorean theorem to calculate the norm of the vector, which is equal to the hypotenous of said triangle (see \autoref{fig:norm 2D vector}):
+The column form of a vector is essentially equivalent to an order list of $n$ real numbers, i.e. $(v_{1},v_{2},\dots,v_{n})$. Why then are we using the column form and not the list form (mostly known as \emph{row vectors})? In fact, we could use either form - and even using both interchangeably - and with only minor adjusments the entire chapter would stay the same as it is now. However, there are some advantages of using only a single form, and consider the other form as a different object altogether. This idea will become clear in future chapters, when discussing \emph{covariant vectors}, \emph{contravarient vectors}, and \emph{tensors}. For now, we stick with the column form of vectors to stay consistent with common notation.
+
+However, the row form of vectors highlights the space in which they exist: $n$-dimensional vectors live in a space we call $\Rs{n}$. Recall from \autoref{chapter:intro} that the set $\Rs{n}$ is a Cartesian product made up of $n$ times the set of real numbers, i.e.
+\begin{equation}
+	\Rs{n} = \underbrace{\mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}}_{n}.
+	\label{eq:Rn}
+\end{equation}
+
+Each member of this set is a list of $n$ real numbers, and their order inside the list matters - very similar to vectors, be they in row or column form. For this reason, we refer to $\Rs{n}$ as the space of $n$-dimensional real vectors. As mentioned, in this chapter we use $\Rs{2}$ (the 2-dimensional real space) and $\Rs{3}$ (the 3-dimensional real space) for most ideas and examples.
+
+Looking at vectors in $\Rs{2}$, it is rather straight-forward to calculate their norm: since the origin, the head of the vector and the point $v_{x}$ form a right triangle (see \autoref{fig:norm 2D vector}), we can use the Pythagorean theorem to calculate the norm of the vector, which is equal to the hypotenous of said triangle:
 \begin{equation}
 	\norm{v} = \sqrt{v_{x}^{2} + v_{y}^{2}}.
 	\label{eq:2D vector norm}
@@ -261,7 +271,7 @@ Looking at 2-dimensional vectors, it is rather straight-forward to calculate the
 		\pgfmathsetmacro{\an}{atan(\vy/\vx)}
 		\begin{axis}[
 			vector plane,
-			width=8cm, height=8cm,
+			width=9cm, height=9cm,
 			xmin=-1, xmax=3,
 			ymin=-1, ymax=3,
 			xticklabels={,},
@@ -282,6 +292,82 @@ Looking at 2-dimensional vectors, it is rather straight-forward to calculate the
 	\label{fig:norm 2D vector}
 \end{figure}
 
-(TBW: extending to 3D + challange to the reader, and to nD)
+In $\Rs{3}$ the norm of a vector $\vec{v}$ is similarily
+\begin{equation}
+	\norm{v} = \sqrt{v_{x}^{2} + v_{y}^{2} + v_{z}^{2}}.
+	\label{eq:norm 3D vector}
+\end{equation}
 
+\begin{challange}{Norm of a 3D vector}{}
+	Show why \autoref{eq:norm 3D vector} is valid, by calculating the length $AB$ in the following figure, depicting a box of sides $\textcolor{xblue}{\bm{a}},\textcolor{xgreen}{\bm{b}}$ and $\textcolor{xpurple}{\bm{c}}$:
+
+	\centering
+	\begin{tikzpicture}[every path/.style={very thick}, node distance=1mm]
+		\pgfmathsetmacro{\xside}{4};
+		\pgfmathsetmacro{\yside}{2};
+		\pgfmathsetmacro{\zside}{3};
+
+		\coordinate (1) at (0,0,0);
+		\coordinate (2) at (\xside,0,0);
+		\coordinate (3) at (0,\yside,0);
+		\coordinate (4) at (\xside,\yside,0);
+		\coordinate (5) at (0,0,\zside);
+		\coordinate (6) at (\xside,0,\zside);
+		\coordinate (7) at (0,\yside,\zside);
+		\coordinate (8) at (\xside,\yside,\zside);
+
+		\draw (1) -- (2);
+		\draw (1) -- (3);
+		\draw (1) -- (5);
+		\draw[densely dotted, red] (5) -- (4);
+		\draw (5) -- (7);
+		\draw (6) -- (8);
+		\draw (2) -- (4);
+		\draw (2) -- (6);
+		\draw (3) -- (4);
+		\draw (3) -- (7);
+		\draw (4) -- (8);
+		\draw (5) -- (6);
+		\draw (7) -- (8);
+
+		\node[left=of 5] {$A$};
+		\node[above=of 4] {$B$};
+
+		\draw[xblue, thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+		(5) -- (6) node[midway, below, yshift=-5pt]{$a$};
+		\draw[xgreen, thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+		(6) -- (2) node[midway, right, xshift=2pt, yshift=-8pt]{$b$};
+		\draw[xpurple, thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+		(2) -- (4) node[midway, right, xshift=5pt]{$c$};
+	\end{tikzpicture}
+\end{challange}
+
+Generalizing the vector norms in $\Rs{2}$ and $\Rs{3}$ to $\Rs{n}$ yields the following form:
+\begin{equation}
+	\norm{v} = \sqrt{v_{1}^{2} + v_{2}^{2} + v_{3}^{2} + \dots + v_{n}^{2}} = \sqrt{\sum\limits_{i=1}^{n}v_{i}^{2}}.
+	\label{eq:norm nD vector}
+\end{equation}
+
+\begin{note}{Other norms}{}
+	The norm shown here is called the $2$-norm. There are other possible norm that can be defined, and are used in different situations, such as the $1$-norm (also the called \emph{taxicab norm}), general $p$-norm where $p\geq1$ is a real number, the zero-norm, the max-norm, and many others. However, for the purpose of this chapter we use only the standard $2$-norm, since it is the most useful for describing basic concepts of linear algebra and its uses.
+\end{note}
+
+Scaling a vector $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ by a real number $\alpha$ is done by multiplying each of its components by $\alpha$, i.e.
+\begin{equation}
+	\alpha\vec{v} = \colvec{\alpha v_{1};\alpha v_{2};\vdots;\alpha v_{n}}.
+	\label{eq:scaling vectors}
+\end{equation}
+
+Let's prove this idea using what we already know by directly calculating the norm of a scaled vector:
+\begin{proof}{Scaling a column vector}{}
+	The vector $\vec{w}=\colvec{\alpha v_{1};\alpha v_{2};\vdots;\alpha v_{n}}$ has the following norm:
+	\begin{align*}
+		\norm{w} &= \sqrt{\sum\limits_{i=1}^{n}(\alpha v_{i})^{2}}\\
+		&= \sqrt{(\alpha v_{1})^{2} + (\alpha v_{2})^{2} + \dots + (\alpha v_{1})^{2}}\\
+		&= \sqrt{\alpha^{2}v_{1}^{2} + \alpha^{2}v_{2}^{2} + \dots + \alpha^{2}v_{n}^{2}}\\
+		&= \sqrt{\alpha^{2}\left( v_{1}^{2} + v_{2}^{2} + \dots + v_{n}^{2} \right)}\\
+		&= \alpha\sqrt{v_{1}^{2} + v_{2}^{2} + \dots + v_{n}^{2}}\\
+		&= \alpha\norm{v}.
+	\end{align*}
+\end{proof}
 \Blindtext
