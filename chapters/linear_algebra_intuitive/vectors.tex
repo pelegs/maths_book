@@ -54,7 +54,7 @@ When discussing vectors in a single context, we always consider them starting at
 \end{example}
 
 A vector can be scaled by a real number $\alpha$: when this happens, its norm is multiplied by $\alpha$ while its direction stays the same. We call $\alpha$ a \emph{scalar}.
-  
+
 \begin{example}{Scaling vectors}{scaling vectors}
 	The following vector $\vec{v}$ scaled by different scalars $\alpha=2,2.5,-1,-2$:
 
@@ -74,6 +74,13 @@ A vector can be scaled by a real number $\alpha$: when this happens, its norm is
 \end{note}
 
 In this book we use the following notation for the norm of a vector $\vec{v}$: $\norm{v}$.
+
+A vector $\vec{v}$ with norm $\norm{v}=1$ is called a \emph{unit vector}, and is usually denoted by replacing the arrow symbol by a hat symbol: $\hat{v}$. Any vector (except $\vec{0}$) can be scaled into a unit vector by scaling  the vector by $1$ over its own norm, i.e.
+\begin{equation}
+	\hat{v} = \frac{1}{\norm{v}}\vec{v}.
+	\label{eq:normalized vector}
+\end{equation}
+The result of normalization is a vector of unit norm which points in the same direction of the original vector.
 
 Two vectors can be added together to yield a third vector: $\vu+\vv=\vw$. To find $\vw$ we use the following procedure (depicted in \autoref{fig:vector addition geometric}):
 % The items need to be typeset without the chapter number
@@ -131,7 +138,7 @@ Two vectors can be added together to yield a third vector: $\vu+\vv=\vw$. To fin
 		\end{tikzpicture}
 		\caption{Showing all three vectors.}
 	\end{subfigure}
-	\caption{Vector addition: TEXT.}
+	\caption{Vector addition.}
 	\label{fig:vector addition geometric}
 \end{figure}
 
@@ -178,7 +185,7 @@ Vectors can be decomposed to their components, the number of which depends on th
 		\pgfmathsetmacro{\uy}{2}
 		\begin{axis}[
 			vector plane,
-			width=10cm, height=10cm,
+			width=8cm, height=8cm,
 			xmin=-1, xmax=3,
 			ymin=-1, ymax=3,
 			xticklabels={,},
@@ -212,7 +219,7 @@ Vectors can be decomposed to their components, the number of which depends on th
 	\begin{tikzpicture}
 		\begin{axis}[
 			vector plane,
-			width=10cm, height=10cm,
+			width=8cm, height=8cm,
 			xmin=-3, xmax=3,
 			ymin=-3, ymax=3,
 			minor tick num=1,
@@ -358,9 +365,9 @@ Scaling a vector $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ by a real number $\
 	\label{eq:scaling vectors}
 \end{equation}
 
-Let's prove this idea using what we already know by directly calculating the norm of a scaled vector:
+We can prove \autoref{eq:scaling vectors} by directly calculating the norm of a scaled vector $\vec{w}=\alpha\vec{v}$:
 \begin{proof}{Scaling a column vector}{}
-	The vector $\vec{w}=\colvec{\alpha v_{1};\alpha v_{2};\vdots;\alpha v_{n}}$ has the following norm:
+	Let $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ and $\vec{w}=\colvec{\alpha v_{1};\alpha v_{2};\vdots;\alpha v_{n}}$, where $\alpha\in\mathbb{R}$. Then $\vec{w}$ has the following norm:
 	\begin{align*}
 		\norm{w} &= \sqrt{\sum\limits_{i=1}^{n}(\alpha v_{i})^{2}}\\
 		&= \sqrt{(\alpha v_{1})^{2} + (\alpha v_{2})^{2} + \dots + (\alpha v_{1})^{2}}\\
@@ -369,5 +376,35 @@ Let's prove this idea using what we already know by directly calculating the nor
 		&= \alpha\sqrt{v_{1}^{2} + v_{2}^{2} + \dots + v_{n}^{2}}\\
 		&= \alpha\norm{v}.
 	\end{align*}
+
+	This shows that indeed $\vec{w}=\alpha\vec{v}$.
 \end{proof}
+
+Another idea we can prove in column form is vector normalization (\autoref{eq:normalized vector}), by showing that dividing each component of a vector by its norm gives a vector of unit norm:
+\begin{proof}
+	Let $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$. Its norm is then $\norm{v}=\sqrt{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}}$. Scaling $\vec{v}$ by $\frac{1}{\norm{v}}$ yields
+	\begin{equation*}
+		\hat{v} = \frac{1}{\norm{v}}\colvec{v_{1};v_{2};\vdots;v_{n}} = \frac{1}{\sqrt{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}}}\colvec{v_{1};v_{2};\vdots;v_{n}}
+	\end{equation*}
+
+	The norm of $\hat{v}$ is therefore
+	\begin{align*}
+		\left\| \hat{v} \right\| &= \sqrt{\frac{v_{1}^{2}}{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}} + \frac{v_{2}^{2}}{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}} + \dots + \frac{v_{n}^{2}}{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}}}\\
+		&= \sqrt{\frac{1}{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}}\left(v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2} \right)}\\
+		&= \sqrt{1} = 1,
+	\end{align*}
+
+	i.e. $\hat{v}$ is indeed a unit vector.
+\end{proof}
+
+The addition of two column vectors $\vec{u}=\colvec{u_{1};u_{2};\vdots;u_{n}}$ and $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ is done by adding their respective components together, i.e.
+\begin{equation}
+	\vec{u} + \vec{v} = \colvec{u_{1}+v_{1};u_{2}+v_{2};\vdots;u_{n}+v_{n}}.
+	\label{eq:adding vectors}
+\end{equation}
+
+TBW: how this addition is the same as the one shown in \autoref{fig:vector addition geometric}.
+
+\subsection{Linear combination of vectors}
+
 \Blindtext
