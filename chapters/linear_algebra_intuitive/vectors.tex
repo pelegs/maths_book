@@ -397,6 +397,22 @@ Another idea we can prove in column form is vector normalization (\autoref{eq:no
 	i.e. $\hat{v}$ is indeed a unit vector.
 \end{proof}
 
+\begin{example}{Normalizing a vector}{normalizing a vector}
+	Let's normalize the vector $\vec{v}=\colvec{0;4;-3}$. Its norm is
+	\[
+		\norm{v} = \sqrt{0^{2}+4^{2}+(-3)^{2}} = \sqrt{0+16+9} = \sqrt{25} = 5.
+	\]
+	Therefore $\hat{v}$ (the normalized $\vec{v}$) is
+	\[
+		\hat{v} = \colvec{0;\frac{4}{5};-\frac{3}{5}}.
+	\]
+
+	By calculating the norm of $\hat{v}$ directly, we can see that it is indeed a unit vector:
+	\begin{align*}
+		\left\|\hat{v}\right\| = \sqrt{0^{2} + \frac{4^{2}}{5^{2}} + \frac{3^{2}}{5^{2}}} = \sqrt{\frac{0^{2}+4^{2}+3^{2}}{5^{2}}} = \sqrt{\frac{16+9}{25}} = \sqrt{\frac{25}{25}} = \sqrt{1} = 1.
+	\end{align*}
+\end{example}
+
 The addition of two column vectors $\vec{u}=\colvec{u_{1};u_{2};\vdots;u_{n}}$ and $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ is done by adding their respective components together, i.e.
 \begin{equation}
 	\vec{u} + \vec{v} = \colvec{u_{1}+v_{1};u_{2}+v_{2};\vdots;u_{n}+v_{n}}.
@@ -405,6 +421,44 @@ The addition of two column vectors $\vec{u}=\colvec{u_{1};u_{2};\vdots;u_{n}}$ a
 
 TBW: how this addition is the same as the one shown in \autoref{fig:vector addition geometric}.
 
-\subsection{Linear combination of vectors}
+\begin{note}{No addition of vectors of different number of components!}{}
+	Two vectors can only be added together if they have the same number of components. The addition of vectors with different number of components is undefined.
+\end{note}
+
+\subsection{Linear combinations}
+As seen above, scaling a vector by a scalar results in a vector that has the same number of dimensions as the original vector. The same is true for adding two vectors: both of them must be of the same dimension, and the result is also a vector of the same dimension. Therefore, any combination of scaling and addition of vectors results in a vector of the same dimension as the original vector(s). This kind of combination is called a \emph{linear combination}.
+
+Let's define linear combinations a little more formaly:
+
+\begin{definition}{Linear combinations}{}
+	A linear combination of $n$ vectors $\vec{v}_{1}, \vec{v}_{2}, \dots, \vec{v}_{n}$ of the same dimension, using $n$ scalars $\alpha_{1},\alpha_{2},\dots,\alpha_{n}$, is an expression of the form
+	\begin{equation}
+		\vec{w} = \alpha_{1}\vec{v}_{1} + \alpha_{2}\vec{v}_{2} + \dots + \alpha_{n}\vec{v}_{n} = \sum\limits_{i=1}^{n}\alpha_{i}\vec{v}_{i}.
+		\label{eq:linear combination}
+	\end{equation}
+\end{definition}
+
+Linear combinations of real vectors have geometric meanings. To understand this, recall that in in two dimensions any two points that are not the same represent a single line (see \autoref{fig:line in 2D}). The same is true in three dimensions, and in addition any three points that are not on the same line represent a single plane (see \autoref{fig:plane in 3D}).
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				domain=-1:1,
+				y domain=-1:1,
+				grid=major,
+				z buffer=sort,
+		]
+			\addplot3[surf, xblue, opacity=0.5, shader=flat] {y};
+			\coordinate (A) at (-0.7,0.4,0.4);
+			\coordinate (B) at (0.3,0.4,0.4);
+			\coordinate (C) at (0,-0.5,-0.5);
+			\path[fill=xgreen, fill opacity=0.75] (A) -- (B) -- (C) -- cycle;
+			\draw plot[mark=*, mark size=2] coordinates {(A) (B) (C) (A)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The three points $A,B,C$ define a plane in 3D space (blue color). The triangle formed by the points is filled in green to make their poisition more visible.}
+	\label{fig:plane in 3D}
+\end{figure}
 
 \Blindtext

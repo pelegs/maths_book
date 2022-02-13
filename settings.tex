@@ -32,19 +32,20 @@
 
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
-\usetikzlibrary{positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes}
+\usetikzlibrary{positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective}
 
 \tikzset{
 	arrow/.style={thick, ->, >=stealth},
 	vector/.style={ultra thick, ->, >=stealth, cap=round},
 	complex/.style={circle, minimum size=5pt, fill, inner sep=0pt},
+	axisline/.style={ultra thick, stealth-stealth}
 }
 \newcommand{\draworigin}{
 	\fill (0,0) circle (0.075);
 }
 
 \usepackage{pgfplots}
-\usepgfplotslibrary{fillbetween, colormaps, colorbrewer}
+\usepgfplotslibrary{fillbetween, colormaps, colorbrewer, patchplots}
 \pgfplotsset{
 		compat=1.16,
 		every axis/.append style={
