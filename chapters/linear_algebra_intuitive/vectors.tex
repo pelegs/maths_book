@@ -507,13 +507,14 @@ The set $V$ represents a line in the direction of $\vec{v}$ going through the or
 					zmin=-4, zmax=4,
 					xtick=\empty,
 					ytick=\empty,
-					ztick=\empty, % no z ticks here
+					ztick=\empty,
 				]
 				\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
 				\draw[axisline] (0,-4,0) -- (0,4,0) node[pos=1.05] {$y$};
 				\draw[axisline] (0,0,-4) -- (0,0,4) node[pos=1.05] {$z$};
-				\draw[thick, dashed, black] (-4,-2.67,-3.34) -- (4,2.67,3.34);
-				\draw[vector, xgreen] (0,0,0) -- (3,2,2.5) node[above] {$\vec{v}$};
+				\draw[thick, dashed, black] (-2.67,1.34,4.0) -- (2.67,-1.34,-4.0);
+				\draw[vector, xgreen] (0,0,0) -- (2,-1,-3) node[right] {$\vec{v}$};
+				\addplot3[mesh, black, opacity=.075, domain=-4:4, samples=5] {0};
 			\end{axis}
 		\end{tikzpicture}
 		\caption{$\Rs{3}$}
@@ -528,5 +529,32 @@ Similarily, the set of all linear combinations of two vectors $\vec{u},\vec{v}\i
 	\label{eq:span of a two vectors}
 \end{equation}
 is a plane that goes through the origin (see \autoref{fig:span of two vectors}).
+	
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				width=9cm, height=9cm,
+				axis lines=center,
+				axis on top,
+				xmin=-4, xmax=4,
+				ymin=-4, ymax=4,
+				zmin=-4, zmax=4,
+				xtick=\empty,
+				ytick=\empty,
+				ztick=\empty,
+			]
+			\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
+			\draw[axisline] (0,-4,0) -- (0,4,0) node[pos=1.05] {$y$};
+			\draw[axisline] (0,0,-4) -- (0,0,4) node[pos=1.05] {$z$};
+			\draw[thick, dashed, black] (-2.67,1.34,4.0) -- (2.67,-1.34,-4.0);
+			\draw[vector, xgreen] (0,0,0) -- (2,-1,-3) node[right] {$\vec{v}$};
+			\addplot3[surf, domain=-4:4] {x+y};
+			\addplot3[mesh, black, opacity=.075, domain=-4:4, samples=5] {0};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{$\Rs{3}$}
+	\label{fig:span of two vectors}
+\end{figure}
 
 \Blindtext
