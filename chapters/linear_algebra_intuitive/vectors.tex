@@ -460,57 +460,73 @@ Let's define linear combinations a little more formaly:
 	\end{equation}
 \end{definition}
 
-Linear combinations of real vectors have geometric meanings. To understand this, recall that in in two dimensions any two points that are not the same represent a single line (see \autoref{fig:line in 2D}). The same is true in three dimensions, and in addition any three points that are not on the same line represent a single plane (see \autoref{fig:plane in 3D}).
+Linear combinations of real vectors have geometric meaningsc: we start with the set of all linear combinations of a single vector $\vec{v}\in\Rs{n}$, i.e.
+\begin{equation}
+	V = \left\{\alpha\vec{v} \mid \alpha\in\mathbb{R} \right\}.
+	\label{eq:span of a single vector}
+\end{equation}
+The set $V$ represents a line in the direction of $\vec{v}$ going through the origin (see \autoref{fig:span of a single vector}). The set $V$ is itself a vector space of dimension $1$, and as such a \emph{subspace} of $\Rs{n}$. We say that it is the \emph{span} of the vector $\vec{v}$ (i.e. the $\vec{v}$ \emph{spans} the subspace $V$).
 
 \begin{figure}[h]
 	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-				vector plane,
-				width=7cm, height=7cm,
-				xticklabels={,},
-				yticklabels={,},
-				declare function={
-					ax=2; ay=1;
-					bx=-2; by=-2;
-					f(\x)=(by-ay)/(bx-ax)*(\x-ax)+ay;
-				},
-			]
-			\tikzset{
-				point/.style={circle, fill=black, inner sep=0pt, minimum size=3pt},
-				line/.style={ultra thick, xgreen},
-				dline/.style={line, dashed},
-			}
-			\node[point, label=above:{$A$}] (A) at ({ax}, {ay}) {};
-			\node[point, label=below:{$B$}] (B) at ({bx}, {by}) {};
-			\draw[line] (A) -- (B);
-			\draw[dline] (A) -- (6,{f(6)});
-			\draw[dline] (B) -- (-6,{f(-6)});
-		\end{axis}
-	\end{tikzpicture}
-	\caption{The two point $A,B$ define a single line in the 2D plane: $y=\frac{B_{y}-A_{y}}{B_{x}-A_{x}}(x-A_{x})+A_{y}$.}
-	\label{fig:line in 2D}
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					vector plane,
+					width=7cm, height=7cm,
+					xticklabels={,},
+					yticklabels={,},
+					declare function={
+						ax=2; ay=1;
+						bx=0; by=0;
+						f(\x)=(by-ay)/(bx-ax)*(\x-ax)+ay;
+					},
+				]
+				\tikzset{
+					dline/.style={thick, dashed, black},
+				}
+				\coordinate (A) at ({ax}, {ay});
+				\coordinate (B) at ({bx}, {by});
+				\draw[vector, xred] (0,0) -- (A) node [above] {$\vec{v}$};
+				\draw[dline] (A) -- (6,{f(6)});
+				\draw[dline] (B) -- (-6,{f(-6)});
+			\end{axis}
+		\end{tikzpicture}
+		\caption{$\Rs{2}$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					width=9cm, height=9cm,
+					axis lines=center,
+					axis on top,
+					xmin=-4, xmax=4,
+					ymin=-4, ymax=4,
+					zmin=-4, zmax=4,
+					xtick=\empty,
+					ytick=\empty,
+					ztick=\empty, % no z ticks here
+				]
+				\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
+				\draw[axisline] (0,-4,0) -- (0,4,0) node[pos=1.05] {$y$};
+				\draw[axisline] (0,0,-4) -- (0,0,4) node[pos=1.05] {$z$};
+				\draw[thick, dashed, black] (-4,-2.67,-3.34) -- (4,2.67,3.34);
+				\draw[vector, xgreen] (0,0,0) -- (3,2,2.5) node[above] {$\vec{v}$};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{$\Rs{3}$}
+	\end{subfigure}
+	\caption{The span of a single vector, shown as dashed lines: in $\Rs{2}$ (left) and $\Rs{3}$ (right).}
+	\label{fig:span of a single vector}
 \end{figure}
 
-\begin{figure}[h]
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-				domain=-1:1,
-				y domain=-1:1,
-				grid=major,
-				z buffer=sort,
-		]
-			\addplot3[surf, xblue, opacity=0.5, shader=flat] {y};
-			\coordinate (A) at (-0.7,0.4,0.4);
-			\coordinate (B) at (0.3,0.4,0.4);
-			\coordinate (C) at (0,-0.5,-0.5);
-			\path[fill=xgreen, fill opacity=0.75] (A) -- (B) -- (C) -- cycle;
-			\draw plot[mark=*, mark size=2] coordinates {(A) (B) (C) (A)};
-		\end{axis}
-	\end{tikzpicture}
-	\caption{The three points $A,B,C$ define a plane in 3D space (blue color). The triangle formed by the points is filled in green to make their poisition more visible.}
-	\label{fig:plane in 3D}
-\end{figure}
+Similarily, the set of all linear combinations of two vectors $\vec{u},\vec{v}\in\Rs{n}$ that are not on the same line (i.e. there is no such $\alpha\in\mathbb{R}$ for which $\vec{v}=\alpha\vec{u}$), mathematically written as
+\begin{equation}
+	V = \left\{\alpha\vec{u}+\beta\vec{v} \mid \alpha,\beta\in\mathbb{R} \right\},
+	\label{eq:span of a two vectors}
+\end{equation}
+is a plane that goes through the origin (see \autoref{fig:span of two vectors}).
 
 \Blindtext
