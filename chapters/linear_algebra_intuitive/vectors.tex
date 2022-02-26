@@ -447,7 +447,7 @@ TBW: how this addition is the same as the one shown in \autoref{fig:vector addit
 	Two vectors can only be added together if they have the same number of components. The addition of vectors with different number of components is undefined.
 \end{note}
 
-\subsection{Linear combinations}
+\subsection{Linear combinations, spans and linear dependency}
 As seen above, scaling a vector by a scalar results in a vector that has the same number of dimensions as the original vector. The same is true for adding two vectors: both of them must be of the same dimension, and the result is also a vector of the same dimension. Therefore, any combination of scaling and addition of vectors results in a vector of the same dimension as the original vector(s). This kind of combination is called a \emph{linear combination}.
 
 Let's define linear combinations a little more formaly:
@@ -465,11 +465,15 @@ Linear combinations of real vectors have geometric meaningsc: we start with the 
 	V = \left\{\alpha\vec{v} \mid \alpha\in\mathbb{R} \right\}.
 	\label{eq:span of a single vector}
 \end{equation}
-The set $V$ represents a line in the direction of $\vec{v}$ going through the origin (see \autoref{fig:span of a single vector}). The set $V$ is itself a vector space of dimension $1$, and as such a \emph{subspace} of $\Rs{n}$. We say that it is the \emph{span} of the vector $\vec{v}$ (i.e. the $\vec{v}$ \emph{spans} the subspace $V$).
+The set $V$ represents a line in the direction of $\vec{v}$ going through the origin (see \autoref{fig:span of a single vector}). The set $V$ is itself a vector space of dimension $1$, and as such a \emph{subspace} of $\Rs{n}$. We say that it is the \emph{span} of the vector $\vec{v}$ (i.e. the vector $\vec{v}$ \emph{spans} the subspace $V$).
 
+\def\veccolor{xred}
+\tikzset{
+	dline/.style={densely dotted, thick, \veccolor!50!gray},
+}
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[b]{0.47\textwidth}
+	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
@@ -483,38 +487,45 @@ The set $V$ represents a line in the direction of $\vec{v}$ going through the or
 						f(\x)=(by-ay)/(bx-ax)*(\x-ax)+ay;
 					},
 				]
-				\tikzset{
-					dline/.style={thick, dashed, black},
-				}
 				\coordinate (A) at ({ax}, {ay});
 				\coordinate (B) at ({bx}, {by});
-				\draw[vector, xred] (0,0) -- (A) node [above] {$\vec{v}$};
+				\draw[vector, \veccolor] (0,0) -- (A) node [above] {$\vec{v}$};
 				\draw[dline] (A) -- (6,{f(6)});
 				\draw[dline] (B) -- (-6,{f(-6)});
 			\end{axis}
 		\end{tikzpicture}
 		\caption{$\Rs{2}$}
 	\end{subfigure}
-	\begin{subfigure}[b]{0.47\textwidth}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
-					width=9cm, height=9cm,
+					width=8cm, height=8cm,
 					axis lines=center,
-					axis on top,
+					z buffer=sort,
 					xmin=-4, xmax=4,
 					ymin=-4, ymax=4,
 					zmin=-4, zmax=4,
 					xtick=\empty,
 					ytick=\empty,
 					ztick=\empty,
+					view={330}{20},
 				]
+				% Below surface
+				\draw[stealth-, thick] (0,0,-4) -- (0,0,0);
+				\draw[dline] (-4,-2.67,-4) -- (0,0,0);
+
+				% Surface
+				\addplot3[surf, faceted color=xblue!50!black!50, fill=xblue!20, opacity=0.5, domain=-4:4, samples=7] {0};
+
+				% Above surface
 				\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
-				\draw[axisline] (0,-4,0) -- (0,4,0) node[pos=1.05] {$y$};
-				\draw[axisline] (0,0,-4) -- (0,0,4) node[pos=1.05] {$z$};
-				\draw[thick, dashed, black] (-2.67,1.34,4.0) -- (2.67,-1.34,-4.0);
-				\draw[vector, xgreen] (0,0,0) -- (2,-1,-3) node[right] {$\vec{v}$};
-				\addplot3[mesh, black, opacity=.075, domain=-4:4, samples=5] {0};
+				\draw[axisline] (0,-4,0) -- (0,4,0) node[pos=1.075] {$y$};
+				\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
+				\draw[dline] (3,2,3) -- (4,2.67,4);
+				\draw[vector, \veccolor] (0,0,0) -- (3,2,3) node[above, right] {$\vec{v}$};
+				\draw[dashed, black!50] (3,2,3) -- (3,2,0) -- (0,0,0);
 			\end{axis}
 		\end{tikzpicture}
 		\caption{$\Rs{3}$}
@@ -523,37 +534,137 @@ The set $V$ represents a line in the direction of $\vec{v}$ going through the or
 	\label{fig:span of a single vector}
 \end{figure}
 
-Similarily, the set of all linear combinations of two vectors $\vec{u},\vec{v}\in\Rs{n}$ that are not on the same line (i.e. there is no such $\alpha\in\mathbb{R}$ for which $\vec{v}=\alpha\vec{u}$), mathematically written as
+Similarily, the set of all linear combinations of two vectors $\vec{u},\vec{v}\in\Rs{n}$ that are not scales of each other (i.e. there is no such $\alpha\in\mathbb{R}$ for which $\vec{v}=\alpha\vec{u}$),
 \begin{equation}
 	V = \left\{\alpha\vec{u}+\beta\vec{v} \mid \alpha,\beta\in\mathbb{R} \right\},
 	\label{eq:span of a two vectors}
 \end{equation}
-is a plane that goes through the origin (see \autoref{fig:span of two vectors}).
+is a plane that goes through the origin (see \autoref{fig:span of two vectors}). Such vectors are also said to be \emph{non-collinear}.
+
+\begin{example}{Spanning $\bm{\Rs{2}}$ using two non-collinear vectors}{}
+	Since any two non-collinear vectors span a 2-dimensional subspace of $\Rs{n}$, in $\Rs{2}$ this means that any vector $\vec{w}$ can be written as a linear combination of any two vectors $\vec{u},\vec{v}$ that are not a scale of each other. For example, we can take the vector
+	\[
+		\vec{w} = \colvec{7;-1},
+	\]
+	and write it as a linear combination of any two non-collinear vectors, say
+	\[
+		\vec{u}=\colvec{2;-3},\ \vec{v}=\colvec{0;5}.
+	\]
+
+	The equation which forces the relation is
+	\[
+		\colvec{7;-1} = \alpha\colvec{2;-3} + \beta\colvec{0;5},
+	\]
+	and we should solve it for $\alpha$ and $\beta$. This is possible since the equation above is actually a system of two equations in two variables (namely $\alpha$ and $\beta$):
+	\[
+		\begin{cases}
+			\ 7  = 2\alpha,\\
+			\ -1 = -3\alpha + 5\beta.
+		\end{cases}
+	\]
+	The solution for the system is $\alpha=3.5$ and $\beta=1.9$, and therefore
+	\[
+		\colvec{7;-1} = 3.5\colvec{2;-3} + 1.9\colvec{0;5}.
+	\]
 	
+	As the reader, you should verify for yourself the above equation.
+\end{example}
+
+Generalizing the example above, any vector $\vec{w}=\colvec{w_{x};w_{y}}$ can be written as a linear combination of two vectors $\vec{u}=\colvec{u_{x};u_{y}}$ and $\vec{v}=\colvec{v_{x};v_{y}}$, as long as $\vec{u}$ and $\vec{v}$ are non-collinear. Let's prove this:
+\begin{proof}{$\bm{\Rs{2}}$ is spanned by any two non-collinear vectors in $\bm{\Rs{2}}$}{fd}
+	Let $\vec{u},\vec{v}\in\Rs{2}$ be two non-collinear vectors. Their non-collinearity means that the equation
+	\begin{equation}
+		\vec{u} = \alpha\vec{v}
+		\label{eq:collinear vectors}
+	\end{equation}
+	has no solution, i.e. the system
+	\begin{equation}
+		\begin{cases}
+			&u_{x} = \alpha v_{x}\\
+			&u_{y} = \alpha v_{y}
+		\end{cases}
+		\label{eq:collinear system}
+	\end{equation}
+	has no solution. The system has solution only when $u_{x}v_{y} = u_{y}v_{x}$, and so the restriction is translated to the simple equation
+	\begin{equation}
+		u_{x}v_{y} \neq u_{y}v_{x}.
+		\label{eq:restriction}
+	\end{equation}
+
+	The system which defines $\vec{w}$ as a linear combination of $\vec{u}$ and $\vec{v}$ is
+	\begin{equation}
+		\begin{cases}
+			w_{x} = \alpha u_{x} + \beta v_{x}\\
+			w_{y} = \alpha u_{y} + \beta v_{y}\\
+		\end{cases}
+		\label{eq:linear combination of two vectors}
+	\end{equation}
+
+	Isolating $\alpha$ using the first equation yields
+	\begin{equation}
+		\alpha = \frac{w_{x}-\beta v_{x}}{u_{x}},
+		\label{eq:isolation1}
+	\end{equation}
+	and subtituting it into the second equation yields
+	\begin{equation}
+		\beta = \frac{w_{y}-\alpha u_{y}}{v_{y}} = \frac{w_{y}-\frac{w_{x}-\beta v_{x}}{u_{x}}}{v_{y}},
+		\label{eq:isolation2}
+	\end{equation}
+	which rearranges into
+	\begin{equation}
+		\beta = \frac{u_{x} w_{y} - u_{y} w_{x}}{u_{x} v_{y} - u_{y} v_{x}},
+		\label{eq:test}
+	\end{equation}
+	and thus
+	\begin{equation}
+		\alpha = \frac{- v_{x} w_{y} + v_{y} w_{x}}{u_{x} v_{y} - u_{y} v_{x}}.
+		\label{eq:test2}
+	\end{equation}
+
+	We can see that $\alpha$ and $\beta$ exist iff $u_{x}v_{y}\neq u_{y}v_{x}$, which is guaranteed by \autoref{eq:restriction}. Therefore, $\alpha$ and $\beta$ always exist when $\vec{u}$ and $\vec{v}$ are non-collinear, and thus any vector in $\Rs{2}$ can be written as a linear combination of any two non-collinear vectors in $\Rs{2}$, i.e. any two non-collinear vectors in $\Rs{2}$ span $\Rs{2}$.
+\end{proof}
+
+Expanding this idea to higher dimensions, any three vectors $\vec{u},\vec{v},\vec{w}\in\Rs{n}$ that are not co-planar (i.e. that don't lie on the same plane) span a 3-dimensional subspace of $\Rs{n}$.
+
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-				width=9cm, height=9cm,
+				width=8cm, height=8cm,
 				axis lines=center,
-				axis on top,
+				z buffer=sort,
 				xmin=-4, xmax=4,
 				ymin=-4, ymax=4,
 				zmin=-4, zmax=4,
 				xtick=\empty,
 				ytick=\empty,
 				ztick=\empty,
+				view={50}{20},
 			]
+			% Behind surface at z=0
+			\draw[stealth-, thick] (0,0,-4) -- (0,0,0);
+			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=-4:0, samples=7] {0.4*y};
+
+			% Surface at z=0
+			\addplot3[surf, faceted color=xblue!50!black!50, fill=xblue!20, opacity=0.9, domain=-4:4, samples=7] {0};
+
+			% Back axis line
+			\draw[axisline] (0,0,0) -- (0,4,0) node[pos=1.075] {$y$};
+			
+			% Infront of surface at z=0
+			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=0:4, samples=7] {0.4*y};
+
+			% Vectors
+			\draw[vector, xgreen!75!gray] (0,0,0) -- (-2,3,1.2);
+			\draw[vector, xgreen!75!gray] (0,0,0) -- (+3,3,1.2);
+
+			% Front axis lines
 			\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
-			\draw[axisline] (0,-4,0) -- (0,4,0) node[pos=1.05] {$y$};
-			\draw[axisline] (0,0,-4) -- (0,0,4) node[pos=1.05] {$z$};
-			\draw[thick, dashed, black] (-2.67,1.34,4.0) -- (2.67,-1.34,-4.0);
-			\draw[vector, xgreen] (0,0,0) -- (2,-1,-3) node[right] {$\vec{v}$};
-			\addplot3[surf, domain=-4:4] {x+y};
-			\addplot3[mesh, black, opacity=.075, domain=-4:4, samples=5] {0};
+			\draw[stealth-, thick] (0,-4,0) -- (0,0,0);
+			\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{$\Rs{3}$}
+	\caption{Two vectors (colored green) span a plane (also colored green) in $\Rs{3}$. The $xy$-plane (i.e. $z=0$) is shown in blue.}
 	\label{fig:span of two vectors}
 \end{figure}
 
