@@ -530,7 +530,7 @@ The set $V$ represents a line in the direction of $\vec{v}$ going through the or
 		\end{tikzpicture}
 		\caption{$\Rs{3}$}
 	\end{subfigure}
-	\caption{The span of a single vector, shown as dashed lines: in $\Rs{2}$ (left) and $\Rs{3}$ (right).}
+	\caption{The span of a single vector $\color{xred}{\bm{\vec{v}}}$, shown as a dashed line: in $\Rs{2}$ (left) and $\Rs{3}$ (right).}
 	\label{fig:span of a single vector}
 \end{figure}
 
@@ -540,6 +540,48 @@ Similarily, the set of all linear combinations of two vectors $\vec{u},\vec{v}\i
 	\label{eq:span of a two vectors}
 \end{equation}
 is a plane that goes through the origin (see \autoref{fig:span of two vectors}). Such vectors are also said to be \emph{non-collinear}.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				width=8cm, height=8cm,
+				axis lines=center,
+				z buffer=sort,
+				xmin=-4, xmax=4,
+				ymin=-4, ymax=4,
+				zmin=-4, zmax=4,
+				xtick=\empty,
+				ytick=\empty,
+				ztick=\empty,
+				view={50}{20},
+			]
+			% Behind surface at z=0
+			\draw[stealth-, thick] (0,0,-4) -- (0,0,0);
+			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=-4:0, samples=7] {0.4*y};
+
+			% Surface at z=0
+			\addplot3[surf, faceted color=xblue!50!black!50, fill=xblue!20, opacity=0.9, domain=-4:4, samples=7] {0};
+
+			% Back axis line
+			\draw[axisline] (0,0,0) -- (0,4,0) node[pos=1.075] {$y$};
+			
+			% Infront of surface at z=0
+			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=0:4, samples=7] {0.4*y};
+
+			% Vectors
+			\draw[vector, xgreen!75!gray] (0,0,0) -- (-2,3,1.2);
+			\draw[vector, xgreen!75!gray] (0,0,0) -- (+3,3,1.2);
+
+			% Front axis lines
+			\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
+			\draw[stealth-, thick] (0,-4,0) -- (0,0,0);
+			\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Two vectors (colored green) span a plane (also colored green) in $\Rs{3}$. The $xy$-plane (i.e. $z=0$) is shown in blue for emphasis.}
+	\label{fig:span of two vectors}
+\end{figure}
 
 \begin{example}{Spanning $\bm{\Rs{2}}$ using two non-collinear vectors}{}
 	Since any two non-collinear vectors span a 2-dimensional subspace of $\Rs{n}$, in $\Rs{2}$ this means that any vector $\vec{w}$ can be written as a linear combination of any two vectors $\vec{u},\vec{v}$ that are not a scale of each other. For example, we can take the vector
@@ -594,8 +636,8 @@ Generalizing the example above, any vector $\vec{w}=\colvec{w_{x};w_{y}}$ can be
 	The system which defines $\vec{w}$ as a linear combination of $\vec{u}$ and $\vec{v}$ is
 	\begin{equation}
 		\begin{cases}
-			w_{x} = \alpha u_{x} + \beta v_{x}\\
-			w_{y} = \alpha u_{y} + \beta v_{y}\\
+			&w_{x} = \alpha u_{x} + \beta v_{x}\\
+			&w_{y} = \alpha u_{y} + \beta v_{y}\\
 		\end{cases}
 		\label{eq:linear combination of two vectors}
 	\end{equation}
@@ -624,48 +666,68 @@ Generalizing the example above, any vector $\vec{w}=\colvec{w_{x};w_{y}}$ can be
 	We can see that $\alpha$ and $\beta$ exist iff $u_{x}v_{y}\neq u_{y}v_{x}$, which is guaranteed by \autoref{eq:restriction}. Therefore, $\alpha$ and $\beta$ always exist when $\vec{u}$ and $\vec{v}$ are non-collinear, and thus any vector in $\Rs{2}$ can be written as a linear combination of any two non-collinear vectors in $\Rs{2}$, i.e. any two non-collinear vectors in $\Rs{2}$ span $\Rs{2}$.
 \end{proof}
 
-Expanding this idea to higher dimensions, any three vectors $\vec{u},\vec{v},\vec{w}\in\Rs{n}$ that are not co-planar (i.e. that don't lie on the same plane) span a 3-dimensional subspace of $\Rs{n}$.
+Going a step further, any three vectors $\vec{u},\vec{v},\vec{w}\in\Rs{n}$ that are not coplanar span a 3-dimensional subspace of $\Rs{n}$ going through the origin. To generalize the notion of collinear and coplanar vectors to higher dimensions we introduct the concept of \emph{linear dependency} of a set of vectors:
 
-\begin{figure}
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-				width=8cm, height=8cm,
-				axis lines=center,
-				z buffer=sort,
-				xmin=-4, xmax=4,
-				ymin=-4, ymax=4,
-				zmin=-4, zmax=4,
-				xtick=\empty,
-				ytick=\empty,
-				ztick=\empty,
-				view={50}{20},
-			]
-			% Behind surface at z=0
-			\draw[stealth-, thick] (0,0,-4) -- (0,0,0);
-			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=-4:0, samples=7] {0.4*y};
+\begin{definition}{Linear dependent set of vectors}{linear dependency}
+	A set of $n$ vectors
+	\begin{equation}
+		S = \left\{ \vec{v}_{1}, \vec{v}_{2}, \dots, \vec{v}_{n} \right\}
+		\label{eq:set of n vectors}
+	\end{equation}
+	is said to be linearly dependent if there exist a linear combination
+	\begin{equation}
+		\alpha_{1}\vec{v}_{1} + \alpha_{2}\vec{v}_{2} + \dots + \alpha_{n}\vec{v}_{n} = \vec{0},
+		\label{eq:set of n vectors}
+	\end{equation}
+	and \textbf{at least} one the coefficients $\alpha_{i}\neq0$.
+\end{definition}
 
-			% Surface at z=0
-			\addplot3[surf, faceted color=xblue!50!black!50, fill=xblue!20, opacity=0.9, domain=-4:4, samples=7] {0};
+The following examples shows that the definition above reduces to colinarity and coplanary in the case of $2$ and $3$ vectors:
+\begin{example}{Linear dependency of $2$ vectors}{}
+	Let $\vec{u}$ and $\vec{v}$ be two linearly dependent vectors in $\Rs{n}$. Then there exist a linear combination
+	\[
+		\alpha\vec{u} + \beta\vec{v} = \vec{0},
+	\]
+	with either $\alpha\neq0$ or $\beta\neq0$ (or both). We can look at the different possible cases:
+	\begin{itemize}
+		\item $\alpha\neq0,\ \beta=0$: in this case $\alpha\vec{u}=\vec{0}$, i.e. $\vec{u}=0$.
+		\item $\alpha=0,\ \beta\neq0$: in this case $\beta\vec{v}=\vec{0}$, i.e. $\vec{v}=0$.
+		\item $\alpha\neq0,\ \beta\neq0$: in this case we can rearrange the equation and get
+			\[
+				\vec{u} = -\frac{\beta}{\alpha}\vec{v},
+			\]
+			i.e. $\vec{u}$ and $\vec{v}$ are scales of each other and thus are collinear.
+	\end{itemize}
+	What we learn from this is that two vectors form a linearly dependent set if at least one of the is the zero vector, or if they are collinear.
 
-			% Back axis line
-			\draw[axisline] (0,0,0) -- (0,4,0) node[pos=1.075] {$y$};
-			
-			% Infront of surface at z=0
-			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=0:4, samples=7] {0.4*y};
+\end{example}
 
-			% Vectors
-			\draw[vector, xgreen!75!gray] (0,0,0) -- (-2,3,1.2);
-			\draw[vector, xgreen!75!gray] (0,0,0) -- (+3,3,1.2);
+\begin{example}{Linear dependency of $3$ vectors}{}
+	Now, let $\vec{u},\vec{v}$ and $\vec{w}$ be three linearly dependent vectors in $\Rs{n}$. Then there exists a linear combination
+	\[
+		\alpha\vec{u} + \beta\vec{v} + \gamma\vec{w} = \vec{0},
+	\]
+	with either $\alpha\neq0$ or $\beta\neq0$ or $\gamma\neq0$ or any combination where two of the coefficients are non-zero, or all of the coefficients are non-zero. Again, we look at all the possible cases:
+	\begin{itemize}
+		\item $\alpha\neq0,\ \beta=\gamma=0$: we get $\alpha\vec{u} = \vec{0}$, thus $\vec{u}=\vec{0}$.
+		\item $\alpha=0,\ \beta\neq0,\ \gamma=0$: we get $\beta\vec{v} = \vec{0}$, thus $\vec{v}=\vec{0}$.
+		\item $\alpha=\beta=0,\ \gamma\neq0$: we get $\gamma\vec{w} = \vec{0}$, thus $\vec{w}=\vec{0}$.
+		\item $\alpha\neq0,\ \beta\neq0, \gamma=0$: we get that $\vec{u}$ and $\vec{v}$ are collinear, since this is exactly as the case for two linearly dependent vectors.
+		\item $\alpha\neq0,\ \beta=0, \gamma\neq0$: similar to the previous case, this time $\vec{u}$ and $\vec{w}$ are collinear.
+		\item $\alpha=0,\ \beta\neq0, \gamma\neq0$: similar to the previous case, this time $\vec{v}$ and $\vec{w}$ are collinear.
+		\item $\alpha\neq0,\ \beta\neq0,\ \gamma\neq0$: by rearranging we get
+			\[
+				\vec{w} = -\frac{1}{\gamma}\left( \alpha\vec{u} + \beta\vec{v} \right),
+			\]
+			i.e. $\vec{w}$ lies on the the plane spanned by $\vec{u}$ and $\vec{v}$. If we isolate $\vec{u}$ or $\vec{v}$ instead, we get the same result: the isolated vector is a lienar combination of the other two vectors, and thus lies on the plan spanned by these vectors.
+	\end{itemize}
+	From this example we learn that three vectors form a linearly dependent set if one or more of the vectors is the zero vector, or if any two vectors in the set are collinear, or if all three vectors are coplanar.
+\end{example}
 
-			% Front axis lines
-			\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
-			\draw[stealth-, thick] (0,-4,0) -- (0,0,0);
-			\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
-		\end{axis}
-	\end{tikzpicture}
-	\caption{Two vectors (colored green) span a plane (also colored green) in $\Rs{3}$. The $xy$-plane (i.e. $z=0$) is shown in blue.}
-	\label{fig:span of two vectors}
-\end{figure}
+Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vectors in $\Rs{n}$ that are \textbf{not} linearly dependent span an $m$-dimensional subspace of $\Rs{n}$ (which goes throught the origin) - i.e. any vector $\vec{v}\in\Rs{n}$ can be written as a linear combination of these vectors. We call such a set a \emph{basis set} of the space.
+
+\begin{example}{Basis sets in $n$ dimensions}{}
+	Text.
+\end{example}
 
 \Blindtext
