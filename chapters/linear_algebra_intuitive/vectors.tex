@@ -724,10 +724,42 @@ The following examples shows that the definition above reduces to colinarity and
 	From this example we learn that three vectors form a linearly dependent set if one or more of the vectors is the zero vector, or if any two vectors in the set are collinear, or if all three vectors are coplanar.
 \end{example}
 
-Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vectors in $\Rs{n}$ that are \textbf{not} linearly dependent span an $m$-dimensional subspace of $\Rs{n}$ (which goes throught the origin) - i.e. any vector $\vec{v}\in\Rs{n}$ can be written as a linear combination of these vectors. We call such a set a \emph{basis set} of the space.
+Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vectors in $\Rs{n}$ that are \textbf{not} linearly dependent span an $m$-dimensional subspace of $\Rs{n}$ (which goes throught the origin) - i.e. any vector $\vec{v}\in\Rs{n}$ can be written as a linear combination of these vectors. We call such a set a \emph{basis set} of $\Rs{n}$.
 
 \begin{example}{Basis sets in $n$ dimensions}{}
-	Text.
+	The following three vectors are non coplanar (i.e. they are linearly independent), and thus form a basis set of $\Rs{3}$:
+	\[
+		B = \left\{ \colvec{0;4;5},\ \colvec{4;2;-2},\ \colvec{1;0;-5} \right\}.
+	\]
+	This means that any vector in $\Rs{3}$ can be written as a linear combination of these vectors. We can show this by writing a generic vector $\vec{v}=\colvec{x;y;z}\in\Rs{3}$ as a linear combination of the vectors:
+	\[
+		\vec{v} = \colvec{x;y;z} = \alpha\colvec{0;4;5} + \beta\colvec{4;2;-2} + \gamma\colvec{1;0;-5},
+	\]
+	which can be expanded to the system of equations
+	\[
+		\begin{cases}
+			& x = \cancel{0\alpha}+4\beta+1\gamma,\\
+			& y = 4\alpha+2\beta+\cancel{0\gamma},\\
+			& z = 5\alpha-2\beta-5\gamma.
+		\end{cases}
+	\]
+
+	The solution of the above system gives the coefficients of the linear combination to yield any vector in $\Rs{3}$:
+	\begin{align*}
+		\alpha &= -\frac{5x}{31} + \frac{9y}{31} - \frac{z}{31},\\
+		\beta  &= \frac{10x}{31} - \frac{5y}{62} + \frac{2z}{31},\\
+		\gamma &= -\frac{9x}{31} + \frac{10y}{31} - \frac{8z}{31}.
+	\end{align*}
+
+	For example, to yield the vector $\vec{v}=\colvec{1;-1;0}$ we sustitute $x=1,\ y=-1,\ z=0$ into the above solutions, and get that the following coefficients are needed:
+	\[
+		\alpha=-\frac{28}{62},\ \beta=\frac{25}{62},\ \gamma=-\frac{38}{62},
+	\]
+	i.e.
+	\[
+		-\frac{28}{62}\colvec{0;4;5} + \frac{25}{62}\colvec{4;2;-2} -\frac{38}{62}\colvec{1;0;-5} = \colvec{1;-1;0}.
+	\]
+	(you, the reader, should verify this!)
 \end{example}
 
 \Blindtext
