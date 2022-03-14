@@ -762,4 +762,26 @@ Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vecto
 	(you, the reader, should verify this!)
 \end{example}
 
+Having described basis sets in somewhat general terms, we can now define them a bit more precisely:
+
+\begin{definition}{Basis sets}{basis sets}
+	Let $B$ be a \textbf{linearly independent set} of vectors in $\Rs{n}$. If any vector $\vec{v}\in\mathbb{\Rs{n}}$ can be written as a linear combination of the vectors in $B$, then $B$ is called a basis set of $\Rs{n}$. The \emph{dimension} of $B$ is the number of vectors in $B$.
+\end{definition}
+
+The dimension of a basis set $B$ of $\Rs{n}$ is always $n$. In fact, in a later chapter we will see that the dimension of a vector space is defined by the dimension of its basis sets, i.e. given a vector space $V$ and a basis set $B\subseteq V$, the dimension of $V$ is equal to $|B|$, or mathematically
+\begin{equation}
+	\dim(V) = |B|.
+	\label{eq:dimension of a vector space}
+\end{equation}
+
+It can be easily shown that any set of vectors in $\Rs{n}$ which has more than $n$ vectors must be a linearly dependent set:
+
+\begin{proof}{Sets with more than $\bm{n}$ vectors in $\bm{\Rs{n}}$}{label}
+	Let $S$ be a set of $m\in\mathbb{N}$ vectors in $\Rs{n}$, where $m>n$. Given a vector $\vec{v}\in S$ and the set of all vectors in $S$ except $\vec{v}$ (call this set $\tilde{S}$), there are two possibilities:
+	\begin{itemize}
+		\item $\tilde{S}$ is a linearly dependent set in $\Rs{n}$. In this case, the addition of $\vec{v}$ doesn't change this fact, i.e. the set $S$ as a whole is linearly dependent.
+		\item The set $\tilde{S}$ is linearly independent, and since it has $n$ vectors it forms a basis set of $\Rs{n}$. Therefore, $\vec{v}$ can be written as a linear combination of the vectors in $\tilde{S}$, and thus the inclusion of $\vec{v}$ in $S$ makes $S$ a linearly dependent set.
+	\end{itemize}
+\end{proof}
+
 \Blindtext
