@@ -1,5 +1,6 @@
 \usepackage{booktabs}
 \usepackage{blindtext}
+\usepackage{xargs}
 
 %-----------%
 % XREF DICT %
@@ -357,13 +358,22 @@
 	\fi}
 \makeatother
 
-% Colored (common) vectors I use
-\newcommand{\vu}{\textcolor{xred}{\bm{\vec{u}}}}
-\newcommand{\vv}{\textcolor{xblue}{\bm{\vec{v}}}}
-\newcommand{\vw}{\textcolor{xpurple}{\bm{\vec{w}}}}
+% Colored (common) vectors and angles I use
+\newcommand{\vu}{\textcolor{xred}{\vec{u}}}
+\newcommand{\vv}{\textcolor{xblue}{\vec{v}}}
+\newcommand{\vw}{\textcolor{xpurple}{\vec{w}}}
+\newcommand{\ath}{\textcolor{xpurple}{\theta}}
+
+% Norm of a whatever
+\newcommand{\gnorm}[1]{\left\|\,  #1 \, \right\|}
 
 % Norm of a vector
 \newcommand{\norm}[1]{\left\|\,  \vec{#1} \, \right\|}
+
+% Projection
+\newcommandx*{\projection}[4][1=u, 2=v, 3=xred, 4=xblue]{
+  \text{proj}_{\textcolor{#4}{\vec{#2}}}\textcolor{#3}{\vec{#1}}
+}
 
 %-------------%
 % OTHER STUFF %
