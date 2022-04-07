@@ -570,8 +570,8 @@ is a plane that goes through the origin (see \autoref{fig:span of two vectors}).
 			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=0:4, samples=7] {0.4*y};
 
 			% Vectors
-			\draw[vector, xgreen!75!gray] (0,0,0) -- (-2,3,1.2);
-			\draw[vector, xgreen!75!gray] (0,0,0) -- (+3,3,1.2);
+			\draw[vector] (0,0,0) -- (-2,3,1.2) node[pos=1.15, fill=white, rounded corners] {$\vec{a}$};
+			\draw[vector] (0,0,0) -- (+3,3,1.2) node[pos=1.12, fill=white, rounded corners] {$\vec{b}$};
 
 			% Front axis lines
 			\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
@@ -579,7 +579,7 @@ is a plane that goes through the origin (see \autoref{fig:span of two vectors}).
 			\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Two vectors (colored green) span a plane (also colored green) in $\Rs{3}$. The $xy$-plane (i.e. $z=0$) is shown in blue for emphasis.}
+	\caption{Two vectors $\vec{a}$ and $\vec{b}$ span a plane (colored green) in $\Rs{3}$. The $xy$-plane (i.e. $z=0$) is shown in blue for emphasis.}
 	\label{fig:span of two vectors}
 \end{figure}
 
@@ -874,5 +874,63 @@ Subtituting \autoref{eq:cos from projection} into \autoref{eq:scalar product} gi
 	\cos\left( \ath \right) = \frac{\vu\cdot\vv}{\gnorm{\vu}\gnorm{\vv}}.
 	\label{eq:cos defined via scalar product}
 \end{equation}
+The angle between the two vectors is then isolated by applying the $\arccos$ function on the right-hand side of \autoref{eq:cos defined via scalar product}. A common form of this equation is the following:
+\begin{equation}
+	\vu\cdot\vv = \gnorm{\vu}\gnorm{\vv}\cos\left( \ath \right).
+	\label{eq:scalar product via cos}
+\end{equation}
+
+Note that the scalar product returns a number, i.e. in the terms of linear algebra - a scalar, and hence its name. Since it is commonly denoted with a dot between the two vectors, it is sometimes refered to as the \emph{dot product}. A common notation for the scalar product is the so-called \emph{bracket notation}:
+\[
+	\langle \vec{a},\vec{b} \rangle.
+\]
+Sometimes the comma in the notation is replaced by a vertical separator line:
+\[
+	\langle \vec{a}\mid\vec{b} \rangle.
+\]
+This notation is very common in physics, and especially quantum physics where it is very useful and helps in simplifying many calculations. This will be discussed in more details in chapter/section TBD.
+
+Later we will examine some common properties of the scalar product, and see how we can calculate it directly from the vectors in their column form. Beofre we do that, we use what we learned about the product so far to solve some easy problems in the examples below.
+
+\begin{example}{Angle between two vectors}{}
+	Find the scalar product of the vectors
+	\[
+		\vec{a} = \colvec{1;1},\ \vec{b}=\colvec{-1;1}.
+	\]
+
+	\textbf{Solution}:
+
+	We first find the angles of both $\vec{a}$ and $\vec{b}$ in relation to the $x$-axis.
+
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					vector plane,
+					width=7cm, height=5cm,
+					xmin=-1.5, xmax=1.5,
+					ymin=-0.5, ymax=1.5,
+					xtick={-1,...,1},
+					ytick={1},
+				]
+				\draw[thick, fill=xred!20] (0,0) -- (0.6,0) arc (0:45:0.6) -- cycle;
+				\draw[thick, fill=xblue!20] (0,0) -- (-0.6,0) arc (180:135:0.6) -- cycle;
+				\draw[vector] (0,0) -- (1,1) node[pos=1.1] {$\vec{a}$};
+				\draw[vector] (0,0) -- (-1,1) node[pos=1.1] {$\vec{b}$};
+				\node at (0.4,0.14) {$\theta_{a}$};
+				\node at (-0.4,0.14) {$\theta_{b}$};
+			\end{axis}
+			\end{tikzpicture}
+	\end{figure}
+
+	For both $\vec{a}$ and $\vec{b}$, this angle is $\ang{45}$ since both vectors have the same absolute value for their $x$- and $y$-axes. From the figure it is clear that the angle between the vectors is thus $\ang{90}$ (since $90=180-45-45$), i.e. $\frac{\pi}{2}$ radians.
+
+	The norm of both vectors is also equal: $\norm{a}=\norm{b}=\sqrt{1^{2}+1^{2}}=\sqrt{2}$. Subtituting all this into \autoref{eq:scalar product via cos} yields
+	\begin{align*}
+		\vec{a}\cdot\vec{b} &= \norm{a}\norm{b}\cos\left(\theta\right)\\
+		&= \sqrt{2}\sqrt{2}\cos\left( \frac{\pi}{2} \right)\\
+		&= 2\cdot0 = 0.
+	\end{align*}
+\end{example}
 
 \Blindtext

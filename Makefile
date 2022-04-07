@@ -4,7 +4,7 @@ all: bookmain
 all: boxes
 
 bookmain:
-	latexmk $(LATEXMKSWITCHES) $@.tex
+	latexmk $(LATEXMKSWITCHES) -pretex="\def\all{1}" $@.tex
 boxes:
 	latexmk $(LATEXMKSWITCHES) -jobname=$(TESTFOLDER)/$@ $(TESTFOLDER)/$@.tex
 
