@@ -949,6 +949,38 @@ The scalar product of any two vectors $\vec{u},\vec{v}$ has two important proper
 
 When the angle between two vectors is $\frac{\pi}{2}$ (remember: this is equivalent to $\ang{90}$), we say that the two vectors are \emph{orhtogonal} to eacth other. Note that in the special case of 2- and 3-dimensional we say that the vectors are \emph{perpendicular} to each other.
 
-TBW: the importance of orthogonality/dot product equaling zero.
+This is such an important fact that we will put effort into framing it nicely, so you (the reader) could memorize it well. How well should you memorize this? Such that if someone wakes you up in the middle of the night and asked you, you could easily repeat it\footnote{For a humble fee, I'm willing to do this - just write me an email and we can discuss the terms ;)}.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[
+			%background rectangle/.style={fill=olive!2},
+			%show background rectangle,
+			every node/.style={inner sep=0pt, text=xverydarkblue},
+			node distance=12mm
+		]
+		\Large
+
+		% Text
+		\node[text width=8cm, align=center] (u dot v){
+			$\vec{u}\cdot\vec{v} = 0$
+		};
+		\node[align=center, below of=u dot v](equiv) {$\Updownarrow$};
+		\node[align=center, below of=equiv](orthogonal) {$\vec{u}$ and $\vec{v}$ are orthogonal};
+
+		% Corners
+		\node[shift={(-1cm,1cm)}, anchor=north west](CNW) at (u dot v.north west) {\pgfornament[width=1.75cm, color=xverydarkblue]{63}};
+		\node[shift={(1cm,1cm)}, anchor=north east](CNE) at (u dot v.north east) {\pgfornament[width=1.75cm, symmetry=v, color=xverydarkblue]{63}};
+		\node[shift={(-1cm,-3.7cm)}, anchor=south west](CSW) at (u dot v.south west) {\pgfornament[width=1.75cm, symmetry=h, color=xverydarkblue]{37}};
+		\node[shift={(1cm,-3.7cm)}, anchor=south east](CSE) at (u dot v.south east) {\pgfornament[width=1.75cm, symmetry=c, color=xverydarkblue]{41}};
+
+		% Frames
+		\color{xverydarkblue}
+		\pgfornamenthline{CNW}{CNE}{north}{86}
+		\pgfornamenthline{CSW}{CSE}{south}{86}
+		\pgfornamentvline{CNW}{CSW}{west}{86}
+		\pgfornamentvline{CNE}{CSE}{east}{86}
+	\end{tikzpicture}
+\end{figure}
 
 \Blindtext

@@ -34,7 +34,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usepackage{tikzpagenodes}
-\usetikzlibrary{positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective}
+\usetikzlibrary{backgrounds, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective}
 
 \tikzset{
 	arrow/.style={thick, ->, >=stealth},
@@ -119,6 +119,7 @@
 \colorlet{xdarkorange}{xorange!85!black}
 \colorlet{xdarkcyan}{xcyan!85!black}
 
+\colorlet{xverydarkblue}{xblue!50!black}
 % Document-specific colors
 \colorlet{normaltextcolor}{black}
 \colorlet{figtextcolor}{xblue}
@@ -420,3 +421,6 @@
 \newenvironment{listitemize}
 {\begin{description}[leftmargin=0pt, itemsep=1.25em, before=\let\makelabel\listitemlabel]}
 {\end{description}}
+
+% Ornaments
+\usepackage{pgfornament}
