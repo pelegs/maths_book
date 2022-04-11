@@ -784,7 +784,9 @@ It can be easily shown that any set of vectors in $\Rs{n}$ which has more than $
 	\end{itemize}
 \end{proof}
 
-\Blindtext
+MORE TEXT: orthogonal and orthonormal basis sets, the standard basis sets.
+
+\blindtext
 
 \subsection{Products}
 When given two vectors $\vu,\vv\in\Rs{n}$ it is often useful to know the angle between them: if the two vectors are linearly dependent then the angle is either $\ath=0$ if they point in the same direction, or $\ath=\pi$ if the point in opposite directions (remember: we measure angles in radians). Otherwise, the angle $\ath$ can take any value in $(0,\pi)$. Angles are always measured on a plane, and in the case of two linearly independent vectors that plane is of course the one spanned by the two vectors (\autoref{fig:angle between two vectors}).
@@ -933,7 +935,7 @@ Later in the section we will examine some common properties of the scalar produc
 	\end{align*}
 \end{example}
 
-\begin{example}{Scalr product of two vectors}{}
+\begin{example}{Scalar product of two vectors}{}
 	Another example.
 \end{example}
 
@@ -983,4 +985,112 @@ This is such an important fact that we will put effort into framing it nicely, s
 	\end{tikzpicture}
 \end{figure}
 
-\Blindtext
+Calculating the scalar product of two vectors in $\Rs{n}$ using their column form is extremely straight-forward: it is nothing more than the sum of the component-wise product of the two vectors, i.e. given
+\[
+	\vec{u}=\colvec{u_{1};u_{2};\vdots;u_{n}},\ \vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}},
+\]
+the scalar product $\vec{u}\cdot\vec{v}$ is
+\begin{equation}
+	\vec{u}\cdot\vec{v} = u_{1}v_{1} + u_{2}v_{2} + \cdots + u_{n}v_{n} = \sum\limits_{k=1}^{n}u_{i}v_{i}.
+	\label{eq:scalar product in column form}
+\end{equation}
+
+\begin{example}{Angle between two vectors}{ }
+	Calculate the scalar product of the two vectors $\vec{a}=\colvec{1;1}$ and $\vec{b}=\colvec{-1;1}$ using the above formula (\autoref{eq:scalar product in column form}).
+
+	\textbf{Solution}:
+	
+	We simply substitute $\vec{a}$ and $\vec{b}$ into the equation:
+	\[
+		\vec{a}\cdot\vec{b} = 1\cdot(-1) + 1\cdot1 = -1+1 = 0,
+	\]
+	which is exactly the result we got using the previous method.
+\end{example}
+
+The norm of a vector can be calculated using the scalar product: given a vector $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$,
+\begin{equation}
+	\vec{v}\cdot\vec{v} = v_{1}v_{1} + v_{2}v_{2} + \cdots + v_{n}v_{n} = v_{1}^{2} + v_{2}^{2} + \cdots + v_{n}^{2} = \norm{v}^{2}.
+	\label{eq:scalar product to norm}
+\end{equation}
+
+We therefore usually define the norm in terms of the scalar product:
+\begin{equation}
+	\norm{v} = \sqrt{\vec{v}\cdot\vec{v}}.
+	\label{eq:norm from scalar product}
+\end{equation}
+This might seem unconsequential at the moment, but it will become very useful when we generalize linear algebra to more abstract vector spaces (\autoref{chapter:linear algebra rigorous}).
+
+Another commonly used product of two vectors is the so-called \emph{cross product}. Unlike the scalar product, it is only really valid in $\Rs{2},\ \Rs{3}$ and $\Rs{7}$, of which we will focus on $\Rs{3}$ and touch a bit on its uses in $\Rs{2}$. Also in contrast to the scalar product, the cross product in $\Rs{3}$ results in a vector rather than a scalar - therefore the product is sometimes known as the \emph{vector product}. The cross product uses the notation $\vec{a}\times\vec{b}$, from which it derives its name.
+
+Geometrically, the cross product of two vectors $\vu,\vv\in\Rs{3}$ is defined as a vector $\vw\in\Rs{3}$ which is \textbf{orthogonal to both} $\vu$ and $\vv$, and has a magnitude
+\begin{equation}
+	\gnorm{\vw} = \gnorm{\vu}\gnorm{\vv}\sin\left(\ath\right),
+	\label{eq:cross product geometry}
+\end{equation}
+where, like with the scalar product, $\ath$ is the angle between $\vu$ and $\vv$.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\huge
+
+	% Plane
+		\draw[-, dashed, very thick, fill=xgreen!30] (0,0,0) -- (0,0,7) -- (7,0,7) -- (7,0,0) -- cycle;
+
+	% Coordinates
+		\coordinate (o) at (1,0,3);
+		\coordinate (u) at (2,0,2.5);
+		\coordinate (v) at (4,0,-2);
+		\coordinate (w) at (0,3,0);
+
+	% Angle
+		\draw[very thick, xpurple, cap=round] (2,0,4.2) arc [start angle=-70, end angle=33, x radius=0.7, y radius=0.4];
+		\node[text=xpurple] at ($(o)+(0.5,-0.13,0)$) {\large$\theta$};
+
+	% Vectors
+		\draw[vector, xred] (o) -- ++(u) node [pos=1.1, xshift=3pt] {$\vec{u}$};
+		\draw[vector, xblue] (o) -- ++(v) node [pos=1.1, xshift=-5pt] {$\vec{v}$};
+		\draw[vector, xpurple] (o) -- ++(w) node [pos=1.1, xshift=1cm] {$\vw=\vu\times\vv$};
+
+	% Perpendiculars
+		\tikzset{rightangle/.style={-, thick, fill=gray!50, fill opacity=0.5}}
+		\draw[rightangle] (o) -- ++(0.3,0,-0.15) -- ++(0,0.3,0) -- ++(-0.3,0,0.15) -- cycle;
+		\draw[rightangle] (o) -- ++(0.4,0,0.5) -- ++(0,0.3,0) -- ++(-0.4,0,-0.5) -- cycle;
+	\end{tikzpicture}
+	\caption{The cross product of the vectors $\vu$ and $\vv$ relative to the plane spanned by the two vectors.}
+	\label{fig:cross product}
+\end{figure}
+
+The direction of $\vu\times\vv$ is determined by the \emph{right-hand rule}: using a person's right hand, when $\vu$ points in the direction of their index finger and $\vv$ points in the direction of their middle finger, then vector $\vw=\vu\times\vv$ points in the direction of their thumb:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{figures/linear_algebra/rhr.pdf}
+\end{figure}
+
+The cross product is \textbf{anti-commutative}, i.e. changing the order of the vectors results in inverting the product:
+  \begin{equation*}
+  \vu\times\vv = -\left( \vv\times\vu \right).
+  \end{equation*}
+
+When the vectors are given as column vectors $\vu=\colvec{\textcolor{xred}{u_{x}};\textcolor{xred}{u_{y}};\textcolor{xred}{u_{z}}},\ \vv=\colvec{\textcolor{xblue}{v_{x}};\textcolor{xblue}{v_{y}};\textcolor{xblue}{v_{z}}}$, the resulting cross product is
+
+\begin{equation}
+	\vu\times\vv = \begin{pmatrix}\textcolor{xred}{u_{y}}\textcolor{xblue}{v_{z}}-\textcolor{xred}{u_{z}}\textcolor{xblue}{v_{y}}\\\textcolor{xred}{u_{z}}\textcolor{xblue}{v_{x}}-\textcolor{xred}{u_{x}}\textcolor{xblue}{v_{z}}\\\textcolor{xred}{u_{x}}\textcolor{xblue}{v_{y}}-\textcolor{xred}{u_{y}}\textcolor{xblue}{v_{x}}\end{pmatrix}
+	\label{eq:cross product calculation}
+\end{equation}
+
+\begin{note}{The cross product of the standard basis vectors}{}
+	The cross product of two of the standard basis vectors in $\Rs{3}$ is the third basis vector. Its sign ($\pm$) is determined by a cyclic rule:
+	\begin{equation*}
+		\text{sign}\left( \eb{i}\times\eb{j} \right) =
+		\begin{cases}
+			1 & \text{if } (i,j)\in \left\{(1,2),\ (2,3),\ (3,1)\right\},\\
+			-1 & \text{if } (i,j)\in \left\{(3,2),\ (2,1),\ (1,3)\right\},\\
+			0 & \text{otherwise}.
+		\end{cases}
+	\end{equation*}
+\end{note}
+\begin{challange}{Orthogonalily of the cross product}{}
+	Using component calculation and utilizing the dot product, show that $\vec{a}\times\vec{v}$ is indeed orthogonal to both $\vec{a}$ and $\vec{b}$.
+\end{challange}
