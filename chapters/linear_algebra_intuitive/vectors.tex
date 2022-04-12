@@ -784,9 +784,22 @@ It can be easily shown that any set of vectors in $\Rs{n}$ which has more than $
 	\end{itemize}
 \end{proof}
 
-MORE TEXT: orthogonal and orthonormal basis sets, the standard basis sets.
+Let's take a vector, for example the vector $\vec{v}=\colvec{1;-3;7}$, and span it by three different basis sets:
 
-\blindtext
+\centering
+\begin{tikzpicture}[node distance=2cm]
+	\node (1-37) {$\colvec{1;-3;7}$};
+	\node[above right of=1-37, xshift=3cm] (std) {$1\colvec{1;0;0} -3\colvec{0;1;0} +7\colvec{0;0;1}$};
+	\node[below=of std.west, anchor=west] (b1) {$9\colvec{5;1;2} -23\colvec{0;1;0} -11\colvec{4;-1;1}$};
+	\node[below=of b1.west, anchor=west] (b2) {$1.4\colvec{-1;0;2} +0.3\colvec{0;2;-3} +1.2\colvec{2;2;3}$};
+	% !!!!!!!!!! LAST BASIS SET IS SOMEHOW WRONG - CHECK !!!!!!!!!! %
+
+	\draw[-stealth, thick] (1-37.east) to [out=0, in=180, looseness=0.7] (std.west);
+	\draw[-stealth, thick] (1-37.east) to [out=0, in=180, looseness=0.7] (b1.west);
+	\draw[-stealth, thick] (1-37.east) to [out=0, in=180, looseness=0.7] (b2.west);
+\end{tikzpicture}
+
+\flushleft
 
 \subsection{Products}
 When given two vectors $\vu,\vv\in\Rs{n}$ it is often useful to know the angle between them: if the two vectors are linearly dependent then the angle is either $\ath=0$ if they point in the same direction, or $\ath=\pi$ if the point in opposite directions (remember: we measure angles in radians). Otherwise, the angle $\ath$ can take any value in $(0,\pi)$. Angles are always measured on a plane, and in the case of two linearly independent vectors that plane is of course the one spanned by the two vectors (\autoref{fig:angle between two vectors}).
