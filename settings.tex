@@ -289,6 +289,10 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage[colorlinks=true, linkcolor=xblue]{hyperref}
+\usepackage{subcaption}
+\usepackage{cleveref}
+\captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+\renewcommand\thesubfigure{(\alph{subfigure})}
 
 % Caption label
 \DeclareCaptionLabelSeparator{doublespace}{\ \ }
