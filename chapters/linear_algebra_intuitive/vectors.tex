@@ -1374,7 +1374,7 @@ To wrap up the vectors section, we present and solve a single problem in the fol
 		\node[text=xblue!50!black] at (4,2.5,1.5) {$\mathbf{P}$};
 	\end{axis}
 \end{tikzpicture}
-(note: this figure needs to be converted into pespective view or something, right now its a bit meh)
+%note: this figure needs to be converted into pespective view or something, right now its a bit meh
 
 \flushleft
 We can rotate our viewpoint of the problem, looking at $\mathbf{P}$ from the side and in such a way that we look head-on at the plane spanned by $\normalVec{n}{P}$ and $\vec{d}$:
@@ -1389,11 +1389,13 @@ We can rotate our viewpoint of the problem, looking at $\mathbf{P}$ from the sid
 	\draw[ultra thick, xblue] (2,0) -- (-2,0) node[above] {$\mathbf{P}$};
 	\draw[vector] (0,0) -- (0,2.5) node[pos=1.1] {$\normalVec{n}{P}$};
 	\draw[vector, xred] (-2,2) -- (0,0) node[pos=-0.1] {$\vec{d}$};
-	\draw[vector, xred, densely dashed] (0,0) -- (2,-2) node[pos=1.1] {$\vec{d}$};
+	\draw[vector, xred, dashed] (0,0) -- (2,-2) node[pos=1.1] {$\vec{d}$};
 	\draw[vector, xpurple] (0,0) -- (2,2) node[pos=1.05] {$\vec{r}$};
 \end{tikzpicture}
 
 \flushleft
+(the dashed red vector in the above figure represents the vector incident ray, $\vec{d}$, moved such that its origin lies at the origin of the other vectors)
+
 As with any vector, we can decompose $\vec{d}$ to its projections on the vectors of an orthonormal basis set (\autoref{eq:vector decomposition in orthonormal basis set}). Since we reduced the problem to two dimensions, we need a basis of two orthonormal directions: we choose one to be $\normalVec{n}{P}$, and the other orthogonal to it (in the figure above it is in the horizontal direction) which we call $\hat{p}$. The decomposition of $\vec{d}$ then reads:
 \[
 	\vec{d} = \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} + \left( \vec{d}\cdot\hat{p} \right)\hat{p}.
