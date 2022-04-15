@@ -1128,8 +1128,20 @@ We therefore usually define the norm in terms of the scalar product:
 \end{equation}
 This might seem unconsequential at the moment, but it will become very useful when we generalize linear algebra to more abstract vector spaces (\autoref{chapter:linear algebra rigorous}).
 
-Any vector can be \emph{decomposed} into its projection on $n$ orthogonal directions.
-PELEG: WRITE HERE FIRST!
+Any vector can be \emph{decomposed} into its projection on $n$ orthogonal directions. In fact, this is exactly what we do when we write a vector as a linear combination of basis set vectors: consider the vector
+\[
+	\vec{v} = \colvec{v_{1};v_{2};\vdots;v_{n}}.
+\]
+It can be written as the linear combination
+\[
+	\vec{v} = v_{1}\eb{1} + v_{2}\eb{2} + \cdots + v_{n}\eb{n} = \sum\limits_{i=1}^{n}v_{i}\eb{i},
+\]
+where in turn any element $v_{i}$ is the projection of $\vec{v}$ on the basis vector $\eb{i}$:
+\begin{equation}
+	v_{i} = \proj{\eb{i}}{\vec{v}},
+	\label{eq:}
+\end{equation}
+and thus the component $v_{i}\eb{i}=\left(\proj{\eb{i}}{\vec{v}}\right)\eb{i}$ is in itself a vector of norm $v_{i}$ pointing at the direction $\en{i}$.
 
 \begin{equation}
 	\vec{v} = \sum\limits_{i=1}^{n}\hat{b}_{i}\cdot\proj{\hat{b}_{i}}{\vec{v}}.
