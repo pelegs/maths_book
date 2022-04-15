@@ -1128,7 +1128,7 @@ We therefore usually define the norm in terms of the scalar product:
 \end{equation}
 This might seem unconsequential at the moment, but it will become very useful when we generalize linear algebra to more abstract vector spaces (\autoref{chapter:linear algebra rigorous}).
 
-Any vector can be \emph{decomposed} into its projection on $n$ orthogonal directions. In fact, this is exactly what we do when we write a vector as a linear combination of basis set vectors: consider the vector
+Any vector can be \emph{decomposed} into its projections on $n$ orthogonal directions. In fact, this is exactly what we do when we write a vector as a linear combination of the vectors of an orthogonal basis: consider for example the vector
 \[
 	\vec{v} = \colvec{v_{1};v_{2};\vdots;v_{n}}.
 \]
@@ -1141,11 +1141,16 @@ where in turn any element $v_{i}$ is the projection of $\vec{v}$ on the basis ve
 	v_{i} = \proj{\eb{i}}{\vec{v}},
 	\label{eq:}
 \end{equation}
-and thus the component $v_{i}\eb{i}=\left(\proj{\eb{i}}{\vec{v}}\right)\eb{i}$ is in itself a vector of norm $v_{i}$ pointing at the direction $\en{i}$.
-
+and thus the component $v_{i}\eb{i}=\left(\proj{\eb{i}}{\vec{v}}\right)\eb{i}$ is itself a vector of norm $v_{i}$ pointing at the direction $\eb{i}$. In general, given an orthogonal basis set $B=\left\{ \vec{b}_{1},\ \vec{b}_{2},\ \cdots,\ \vec{b}_{n} \right\}$, any vector in $\Rs{n}$ can be decomposed as follows:
 \begin{equation}
-	\vec{v} = \sum\limits_{i=1}^{n}\hat{b}_{i}\cdot\proj{\hat{b}_{i}}{\vec{v}}.
+	\vec{v} = \sum\limits_{i=1}^{n}\left(\proj{\hat{b}_{i}}{\vec{v}}\right)\hat{b}_{i}.
 	\label{eq:vector decomposition to orthogonal directions}
+\end{equation}
+
+In the case where $B$ is an orthonormal basis set, we know that each of its vector is a unit vector (i.e. $\norm{b_{i}}=1$), and using \autoref{eq:scalar product} we can re-write \autoref{eq:vector decomposition to orthogonal directions} as
+\begin{equation}
+	\vec{v} = \sum\limits_{i=1}^{n}\left( \vec{v}\cdot\hat{b}_{i} \right)\hat{b}_{i}.
+	\label{eq:vector decomposition in orthonormal basis set}
 \end{equation}
 
 \subsection{The cross product}
@@ -1360,14 +1365,16 @@ To wrap up the vectors section, we present and solve a single problem in the fol
 			xtick=\empty,
 			ytick=\empty,
 			ztick=\empty,
-			view={50}{10},
+			view={75}{15},
 		]
 		\addplot3[surf, faceted color=xblue!50, fill=xblue!20, opacity=0.9, domain=-4:4, y domain=-4:4, samples=7] {0.4*y};
 		\draw[vector] (0,0,0) -- (0,-0.6,1.5) node[pos=1.2] {$\normalVec{n}{P}$};
 		\draw[vector, xred] (-3,-2,1) -- (0,0,0) node[midway, below] {$\vec{d}$};
+		\draw[vector, xpurple] (0,0,0) -- (3,0.76,2.1) node[midway, below] {$\vec{r}$};
 		\node[text=xblue!50!black] at (4,2.5,1.5) {$\mathbf{P}$};
 	\end{axis}
 \end{tikzpicture}
+(note: this figure needs to be converted into pespective view or something, right now its a bit meh)
 
 \flushleft
 We can rotate our viewpoint of the problem, looking at $\mathbf{P}$ from the side and in such a way that we look head-on at the plane spanned by $\normalVec{n}{P}$ and $\vec{d}$:
@@ -1377,14 +1384,31 @@ We can rotate our viewpoint of the problem, looking at $\mathbf{P}$ from the sid
 \begin{tikzpicture}
 	\draw[thick, xred, fill=xred!20] (0,0) -- (0,1) arc (90:135:1) -- cycle;
 	\draw[thick, xpurple, fill=xpurple!20] (0,0) -- (0,1) arc (90:45:1);
-	\node[xred] at (-0.25,0.6) {$\theta$};
+	\node[xred] at (0.25,0.6) {$\theta$};
 	\node[xpurple] at (0.25,0.6) {$\theta$};
-	\draw[ultra thick, xblue] (2.0,0) -- (-2.0,0) node[above] {$\mathbf{P}$};
-	\draw[vector] (-0.0,0) -- (-0.0,2.5) node[pos=1.1] {$\normalVec{n}{P}$};
-	\draw[vector, xred] (-2.0,2) -- (-0.0,0) node[pos=-0.1] {$\vec{d}$};
-	\draw[vector, xpurple] (-0.0,0) -- (2.0,2) node[pos=1.05] {$\vec{r}$};
+	\draw[ultra thick, xblue] (2,0) -- (-2,0) node[above] {$\mathbf{P}$};
+	\draw[vector] (0,0) -- (0,2.5) node[pos=1.1] {$\normalVec{n}{P}$};
+	\draw[vector, xred] (-2,2) -- (0,0) node[pos=-0.1] {$\vec{d}$};
+	\draw[vector, xred, densely dashed] (0,0) -- (2,-2) node[pos=1.1] {$\vec{d}$};
+	\draw[vector, xpurple] (0,0) -- (2,2) node[pos=1.05] {$\vec{r}$};
 \end{tikzpicture}
 
 \flushleft
-As with any vector, we can dicompose $\vec{d}$ to its projections on orthogonal directions (\autoref{eq:vector decomposition to orthogonal directions}). Since we reduced the problem to two dimensions, we need two orthogonal directions. We choose one to be $\normalVec{n}{P}$, and the other orthogonal to it (which in the figure above is the horizontal direction).
+As with any vector, we can decompose $\vec{d}$ to its projections on the vectors of an orthonormal basis set (\autoref{eq:vector decomposition in orthonormal basis set}). Since we reduced the problem to two dimensions, we need a basis of two orthonormal directions: we choose one to be $\normalVec{n}{P}$, and the other orthogonal to it (in the figure above it is in the horizontal direction) which we call $\hat{p}$. The decomposition of $\vec{d}$ then reads:
+\[
+	\vec{d} = \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} + \left( \vec{d}\cdot\hat{p} \right)\hat{p}.
+\]
+Since there are only two vectors in the basis set $\left\{ \normalVec{n}{P},\hat{p} \right\}$, we can actually write the component $\left( \vec{d}\cdot\hat{p} \right)\hat{p}$ as $\vec{d}-\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P}$, yielding a rather silly looking expression for $\vec{d}$:
+\[
+	\vec{d} = \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} + \left[ \vec{d}-\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} \right].
+\]
+However, in closer inspection the above expression is not at all silly, and is actually very similar to the reflected vector $\vec{r}$: since they are both of same norm and oposing directions with respect to the direction $\normalVec{n}{P}$, we can write $\vec{r}$ as
+\[
+	\vec{r} = -\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} + \left[ \vec{d}-\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} \right].
+\]
+From the above expressions for $\vec{d}$ and $\vec{r}$ we can isolate an expression for $\vec{r}$ as a function of $\vec{d}$ and $\normalVec{n}{P}$:
+\begin{align*}
+	\vec{r} &= d - \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} - \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P}\\
+	&= d-2\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P}.
+\end{align*}
 \end{example}
