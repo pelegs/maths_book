@@ -1341,7 +1341,7 @@ The normal vector $\hat{n}_{\bm{p}}$ must be orthogonal to both $\vec{v}_{pq}$ a
 	\label{eq:normal to plane}
 \end{equation}
 
-Normalizing $\vec{n}_{\mathbf{P}}$ will then yield the normal vector $\normalVec{n}{P}$\footnote{I leave this as a "challange" to the reader, because I'm lazy.}.
+Normalizing $\vec{n}_{\mathbf{P}}$ will then yield the normal vector $\normalVec{n}{P}$\footnote{I leave this as a challange to the reader, because I'm lazy.}.
 
 \begin{note}{Sign of normal vectors}{}
 	The vector $\vec{m}=-\normalVec{n}{P}$ has all the properties of $\normalVec{n}{P}$, and is indeed a normal vector to $\mathbf{P}$. The choice of which of the two vectors to use depends on the application. For now, we do not elaborate on this further.
@@ -1365,12 +1365,12 @@ To wrap up the vectors section, we present and solve a single problem in the fol
 			xtick=\empty,
 			ytick=\empty,
 			ztick=\empty,
-			view={75}{15},
+			view={80}{15},
 		]
 		\addplot3[surf, faceted color=xblue!50, fill=xblue!20, opacity=0.9, domain=-4:4, y domain=-4:4, samples=7] {0.4*y};
 		\draw[vector] (0,0,0) -- (0,-0.6,1.5) node[pos=1.2] {$\normalVec{n}{P}$};
-		\draw[vector, xred] (-3,-2,1) -- (0,0,0) node[midway, below] {$\vec{d}$};
-		\draw[vector, xpurple] (0,0,0) -- (3,0.76,2.1) node[midway, below] {$\vec{r}$};
+		\draw[vector, xred] (0,-2,1) -- (0,0,0) node[pos=-0.1] {$\vec{d}$};
+		\draw[vector, xgreen] (0,0,0) -- (0,0.76,2.1) node[pos=1.1] {$\vec{r}$};
 		\node[text=xblue!50!black] at (4,2.5,1.5) {$\mathbf{P}$};
 	\end{axis}
 \end{tikzpicture}
@@ -1383,14 +1383,14 @@ We can rotate our viewpoint of the problem, looking at $\mathbf{P}$ from the sid
 \centering
 \begin{tikzpicture}
 	\draw[thick, xred, fill=xred!20] (0,0) -- (0,1) arc (90:135:1) -- cycle;
-	\draw[thick, xpurple, fill=xpurple!20] (0,0) -- (0,1) arc (90:45:1);
-	\node[xred] at (0.25,0.6) {$\theta$};
-	\node[xpurple] at (0.25,0.6) {$\theta$};
-	\draw[ultra thick, xblue] (2,0) -- (-2,0) node[above] {$\mathbf{P}$};
+	\draw[thick, xgreen, fill=xgreen!20] (0,0) -- (0,1) arc (90:45:1);
+	\node[xred] at (-0.25,0.6) {$\theta$};
+	\node[xgreen] at (0.25,0.6) {$\theta$};
+	\draw[line width=2pt, xblue] (-2,0) -- (2,0) node[above] {$\mathbf{P}$};
 	\draw[vector] (0,0) -- (0,2.5) node[pos=1.1] {$\normalVec{n}{P}$};
 	\draw[vector, xred] (-2,2) -- (0,0) node[pos=-0.1] {$\vec{d}$};
 	\draw[vector, xred, dashed] (0,0) -- (2,-2) node[pos=1.1] {$\vec{d}$};
-	\draw[vector, xpurple] (0,0) -- (2,2) node[pos=1.05] {$\vec{r}$};
+	\draw[vector, xgreen] (0,0) -- (2,2) node[pos=1.05] {$\vec{r}$};
 \end{tikzpicture}
 
 \flushleft
