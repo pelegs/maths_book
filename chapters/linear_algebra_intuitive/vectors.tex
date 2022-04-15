@@ -921,7 +921,7 @@ i.e. in the $n$-th basis vector the $n$-th component is $1$ while the rest are $
 
 In $\Rs{2}$ and $\Rs{3}$ we give $\eb{1},\ \eb{2}$ and $\eb{3}$ special notations: $\hat{x},\ \hat{y}$ and $\hat{z}$, respectively (obviously $\hat{z}$ doesn't exists in $\Rs{2}$). For historical reasons, these vectors are sometimes denoted in physics textbooks as $\hat{i},\ \hat{j}$ and $\hat{k}$.
 
-\subsection{Products}
+\subsection{The scalar product}
 When given two vectors $\vu,\vv\in\Rs{n}$ it is often useful to know the angle between them: if the two vectors are linearly dependent then the angle is either $\ath=0$ if they point in the same direction, or $\ath=\pi$ if the point in opposite directions (remember: we measure angles in radians). Otherwise, the angle $\ath$ can take any value in $(0,\pi)$. Angles are always measured on a plane, and in the case of two linearly independent vectors that plane is of course the one spanned by the two vectors (\autoref{fig:angle between two vectors}).
 
 \begin{figure}
@@ -1128,6 +1128,15 @@ We therefore usually define the norm in terms of the scalar product:
 \end{equation}
 This might seem unconsequential at the moment, but it will become very useful when we generalize linear algebra to more abstract vector spaces (\autoref{chapter:linear algebra rigorous}).
 
+Any vector can be \emph{decomposed} into its projection on $n$ orthogonal directions.
+PELEG: WRITE HERE FIRST!
+
+\begin{equation}
+	\vec{v} = \sum\limits_{i=1}^{n}\hat{b}_{i}\cdot\proj{\hat{b}_{i}}{\vec{v}}.
+	\label{eq:vector decomposition to orthogonal directions}
+\end{equation}
+
+\subsection{The cross product}
 Another commonly used product of two vectors is the so-called \emph{cross product}. Unlike the scalar product, it is only really valid in $\Rs{2},\ \Rs{3}$ and $\Rs{7}$, of which we will focus on $\Rs{3}$ and touch a bit on its uses in $\Rs{2}$. Also in contrast to the scalar product, the cross product in $\Rs{3}$ results in a vector rather than a scalar - therefore the product is sometimes known as the \emph{vector product}. The cross product uses the notation $\vec{a}\times\vec{b}$, from which it derives its name.
 
 Geometrically, the cross product of two vectors $\vu,\vv\in\Rs{3}$ is defined as a vector $\vw\in\Rs{3}$ which is \textbf{orthogonal to both} $\vu$ and $\vv$, and has a magnitude
@@ -1203,14 +1212,15 @@ When the vectors are given as column vectors $\vu=\colvec{\textcolor{xred}{u_{x}
 	Using component calculation and utilizing the dot product, show that $\vec{a}\times\vec{v}$ is indeed orthogonal to both $\vec{a}$ and $\vec{b}$.
 \end{challange}
 
-A special kind of vector in $\Rs{3}$ is the so-called \emph{normal vector} to a plane $\mathbf{P}$: this vector, usually denoted as $\hat{n}_{\mathbf{P}}$, is pointing at the orthogonal direction to any vector of the plane (see XXX). Given one knows three points on the plane, its normal vector can be calculated. Let's see how: say we are given the following three points in $\mathbf{P}$ (for visualizing the following steps see YYY):
+\subsection{Normal vectors}
+
+A special kind of vector in $\Rs{3}$ is the so-called \emph{normal vector} to a plane $\mathbf{P}$: this vector, usually denoted as $\normalVec{n}{P}$, is pointing at the orthogonal direction to any vector of the plane (see XXX). Given one knows three points on the plane, its normal vector can be calculated: say the following three points in $\mathbf{P}$ are given (for visualizing the following steps see YYY):
 \begin{align}
 	p &= (p_{x}, p_{y}, p_{z})\nonumber\\
 	q &= (q_{x}, q_{y}, q_{z})\nonumber\\
 	r &= (r_{x}, r_{y}, r_{z}),
 	\label{eq:three points in a plane}
 \end{align}
-(note: we use the superscripts to tell the points apart - don't get it confused with exponentiation!)
 
 \begin{figure}
 	\centering
@@ -1230,10 +1240,10 @@ A special kind of vector in $\Rs{3}$ is the so-called \emph{normal vector} to a 
 					view={50}{20},
 				]
 				\addplot3[surf, faceted color=xgreen!50!black!25, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=-4:4, samples=7] {0.4*y};
-				\draw[vector] (0,0,0) -- (0,-1.2,3) node[pos=1.3] {$\hat{n}_{\mathbf{P}}$};
+				\draw[vector] (0,0,0) -- (0,-1.2,3) node[pos=1.3] {$\normalVec{n}{P}$};
 				\draw[thick, fill=black!50, fill opacity=0.3] (0,1,0.4) -- (0,0.62860932,1.32847669) -- (0,-0.37139068,0.92847669) -- (0,0,0) -- cycle;
 				\draw[thick, fill=black!50, fill opacity=0.3] (0,0,0) -- (0,-0.37139068,0.92847669) -- (1,-0.37139068,0.92847669) -- (1,0,0) -- cycle;
-				\node[text=green!50!black] at (4,3,3) {$\mathbf{P}$};
+				\node[text=xgreen] at (4,3,3) {$\mathbf{P}$};
 			\end{axis}
 		\end{tikzpicture}
 		\caption{The normal vector to $\mathbf{P}$.}
@@ -1289,11 +1299,11 @@ A special kind of vector in $\Rs{3}$ is the so-called \emph{normal vector} to a 
 		\caption{Finding two vectors on the plane.}
 		\label{fig:normalVec3}
 	\end{subfigure}
-	\caption{A normal vector $\hat{n}_{\mathbf{P}}$ to the plane $\mathbf{P}$.}
+	\caption{A normal vector $\normalVec{n}{P}$ to the plane $\mathbf{P}$.}
 	\label{fig:normalVec}
 \end{figure}
 
-We can calculate two vectors lying on the plane by first considering the points as vectors, i.e.
+We can get two vectors lying on the plane by first considering the points as vectors, i.e.
 \begin{align}
 	\vec{p} &= \colvec{p_{x};p_{y};p_{z}}\nonumber\\
 	\vec{q} &= \colvec{q_{x};q_{y};q_{z}}\nonumber\\
@@ -1314,11 +1324,55 @@ The normal vector $\hat{n}_{\bm{p}}$ must be orthogonal to both $\vec{v}_{pq}$ a
 	\label{eq:normal to plane}
 \end{equation}
 
-Normalizing $\vec{n}_{\mathbf{P}}$ will then yield the normal vector $\hat{n}_{\mathbf{P}}$\footnote{We leave this as a "challange" to the reader, due to laziness.}.
+Normalizing $\vec{n}_{\mathbf{P}}$ will then yield the normal vector $\normalVec{n}{P}$\footnote{I leave this as a "challange" to the reader, because I'm lazy.}.
 
+\begin{note}{Sign of normal vectors}{}
+	The vector $\vec{m}=-\normalVec{n}{P}$ has all the properties of $\normalVec{n}{P}$, and is indeed a normal vector to $\mathbf{P}$. The choice of which of the two vectors to use depends on the application. For now, we do not elaborate on this further.
+\end{note}
 
-To wrap up this section, we present and solve a single promlem in the following example.
+To wrap up the vectors section, we present and solve a single problem in the following example.
 
 \begin{example}{Reflection of light rays}{reflection}
-	
+	A ray light hits a mirror, modelled by the plane $\mathbf{P}$ which is defined by the normal vector $\normalVec{n}{P}$. The direction of the light ray is given by $\vec{d}$. What is the direction of the reflected light ray $\vec{r}$? Recall that both the incident and reflected rays are at the same angle in respect to the normal vector of $\normalVec{n}{P}$, and that the incident ray lie on the plane defined by $\vec{d}$ and $\normalVec{n}{P}$.
+
+\centering
+\begin{tikzpicture}
+	\begin{axis}[
+			width=10cm, height=10cm,
+			axis line style={draw=none},
+			tick style={draw=none},
+			z buffer=sort,
+			xmin=-4, xmax=4,
+			ymin=-4, ymax=4,
+			zmin=-4, zmax=4,
+			xtick=\empty,
+			ytick=\empty,
+			ztick=\empty,
+			view={50}{10},
+		]
+		\addplot3[surf, faceted color=xblue!50, fill=xblue!20, opacity=0.9, domain=-4:4, y domain=-4:4, samples=7] {0.4*y};
+		\draw[vector] (0,0,0) -- (0,-0.6,1.5) node[pos=1.2] {$\normalVec{n}{P}$};
+		\draw[vector, xred] (-3,-2,1) -- (0,0,0) node[midway, below] {$\vec{d}$};
+		\node[text=xblue!50!black] at (4,2.5,1.5) {$\mathbf{P}$};
+	\end{axis}
+\end{tikzpicture}
+
+\flushleft
+We can rotate our viewpoint of the problem, looking at $\mathbf{P}$ from the side and in such a way that we look head-on at the plane spanned by $\normalVec{n}{P}$ and $\vec{d}$:
+
+\vspace{1em}
+\centering
+\begin{tikzpicture}
+	\draw[thick, xred, fill=xred!20] (0,0) -- (0,1) arc (90:135:1) -- cycle;
+	\draw[thick, xpurple, fill=xpurple!20] (0,0) -- (0,1) arc (90:45:1);
+	\node[xred] at (-0.25,0.6) {$\theta$};
+	\node[xpurple] at (0.25,0.6) {$\theta$};
+	\draw[ultra thick, xblue] (2.0,0) -- (-2.0,0) node[above] {$\mathbf{P}$};
+	\draw[vector] (-0.0,0) -- (-0.0,2.5) node[pos=1.1] {$\normalVec{n}{P}$};
+	\draw[vector, xred] (-2.0,2) -- (-0.0,0) node[pos=-0.1] {$\vec{d}$};
+	\draw[vector, xpurple] (-0.0,0) -- (2.0,2) node[pos=1.05] {$\vec{r}$};
+\end{tikzpicture}
+
+\flushleft
+As with any vector, we can dicompose $\vec{d}$ to its projections on orthogonal directions (\autoref{eq:vector decomposition to orthogonal directions}). Since we reduced the problem to two dimensions, we need two orthogonal directions. We choose one to be $\normalVec{n}{P}$, and the other orthogonal to it (which in the figure above is the horizontal direction).
 \end{example}

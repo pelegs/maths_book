@@ -390,9 +390,18 @@
 \newcommandx*{\projection}[4][1=u, 2=v, 3=xred, 4=xblue]{
   \text{proj}_{\textcolor{#4}{\vec{#2}}}\textcolor{#3}{\vec{#1}}
 }
+\newcommand{\proj}[2]{
+	\text{proj}_{#1}{#2}
+}
 
 % Standard basis vectors
 \newcommand{\eb}[1]{\hat{e}_{#1}}
+
+% Normal vector
+\newcommand{\normalVec}[2]{
+	\hat{#1}_{\mathbf{#2}}
+}
+
 
 %-------------%
 % OTHER STUFF %
