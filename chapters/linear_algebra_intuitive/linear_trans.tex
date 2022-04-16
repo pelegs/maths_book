@@ -1,1 +1,18 @@
 \section{Linear transformations}
+In the previous section we introduced real vectors and their most important properties. In this section we explore a special set of operations that can act on vectors, namely \emph{linear transformations}. As mentioned in \autoref{chapter:intro}, a ``transformations`` is simply another name for a function. Thus in this context, linear transformations are some functions that act on vectors: a linear transformation $T$ takes a vector as an input, and outputs another vector, possibly of a different dimension, i.e.
+\begin{equation}
+	T:\Rs{n}\to\Rs{m}.
+	\label{eq:linear transformation signature}
+\end{equation}
+
+What makes linear transformations more ``special'' than other functions is their property of \emph{linearity}, which entails the following two properties:
+\begin{listitemize}
+	\item[Scalability] for any scalar $\alpha$ and vector $\vec{v}$,
+		\[
+			T\left( \alpha\vec{v} \right) = \alpha T\left( \vec{v} \right).
+		\]
+	\item[Additivity] for any two vectors $\vec{u},\vec{v}$
+		\[
+			T\left( \vec{u}+\vec{v} \right) = T\left( \vec{u} \right) + T\left( \vec{v} \right).
+		\]
+\end{listitemize}

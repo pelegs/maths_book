@@ -190,7 +190,10 @@
 \counterwithin{figure}{chapter}
 \def\chapterautorefname{Chapter}
 \def\sectionautorefname{Section}
-\newcommand{\exampleautorefname}{Example}
+\makeatletter
+\def\tcb@cnt@exampleautorefname{Example}
+\def\tcb@cnt@noteautorefname{Note}
+\makeatother
 
 %---------%
 % HEADERS %

@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{xcolor}
+\definecolor{xblue}{HTML}{4268BD}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	common/.style n args={2}{
+		colframe={#1},
+		colback={#1!5},
+		colbacktitle={#1},
+		lower separated=false,
+		coltitle=white,
+		boxrule=1pt,
+		fonttitle=\bfseries,
+		enhanced,
+		breakable,
+		top=8pt,
+		before skip=1em,
+		after skip=2em,
+		attach boxed title to top left={
+			yshift=-0.25cm,
+			xshift=0.38cm,
+		},
+		boxed title style={
+			boxrule=0pt,
+			colframe=white,
+			arc=5pt,
+			outer arc=4pt,
+		},
+		separator sign={~~},
+		overlay unbroken and last={
+			\node[text=white, align=right, rounded corners, fill=#1, xshift=-4mm, minimum height=6mm, anchor=east] at (frame.south east) {#2};
+		}
+	},
+	examplestyle/.style={
+		common={xblue}{!},
+	},
+}
+\newtcbtheorem{example}{Example}{examplestyle}{example}
+
+\usepackage{hyperref}
+\def\equationautorefname{Equation}
+\def\exampleautorefname{Example}
+\makeatletter
+\def\tcb@cnt@exampleautorefname{Example}
+\makeatother
+
+\usepackage{blindtext}
+
+\begin{document}
+This is an example box:
+\begin{example}{This is an example}{myexample}
+	\blindtext[1]
+\end{example}
+
+And here is an equation:
+\begin{equation}
+	a+b=c
+	\label{eq:myeq}
+\end{equation}
+
+\vspace{1em}
+Now I try to autorefence both the equation and the example: \autoref{example:myexample} and \autoref{eq:myeq}. While in the case of the autoref to the equation, it shows ``Eqaution 1``. For the example autoref though, it only shows ``1``. How can I add new categories to autoref so that it instead shows ``Example 1``?
+\end{document}
