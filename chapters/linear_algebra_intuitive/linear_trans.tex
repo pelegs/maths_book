@@ -20,8 +20,41 @@ What makes linear transformations more ``special'' than other functions is their
 \begin{example}{A linear transformation}{linear transformation}
 	\textbf{Claim}: the following $\Rs{3}\to\mathbb{R}$ transformation is linear:
 	\[
-		T\colvec{x;y;z} = 2x+3y-z.
+		T\left(\colvec{x;y;z}\right) = 2x+3y-z.
 	\]
 
-	\textbf{Proof}: ...
+	\textbf{Proof}: We can show this using the properties of linear transformations.
+	\begin{listitemize}
+	\item[Scalability] given a scalar $\alpha\in\mathbb{R}$,
+		\[
+			T\left(\colvec{\alpha x;\alpha y; \alpha z}\right)
+			= 2(\alpha x)+3(\alpha y)-(\alpha z) = \alpha\left( 2x+3y-z \right)
+			= \alpha T\left(\colvec{x;y;z}\right).
+		\]
+	\item[Additivity] given two vectors $\vec{u}=\colvec{u_{x};u_{y};u_{z}}$ and $\vec{v}=\colvec{v_{x};v_{y};v_{z}}$,
+		\begin{align*}
+			T\left( \colvec{u_{x};u_{y};u_{z}} + \colvec{v_{x};v_{y};v_{z}} \right) &= T\left( \colvec{u_{x}+v_{x};u_{y}+v_{y};u_{z}+v_{z}} \right)\\
+			&= 2\left( u_{x}+v_{x} \right) +3\left( u_{y}+v_{y} \right) - \left( u_{z}+v_{z} \right)\\
+			&= T\left( \colvec{u_{x};u_{y};u_{z}} \right) + T\left( \colvec{v_{x};v_{y};v_{z}} \right).
+		\end{align*}
+	\end{listitemize}
 \end{example}
+
+\begin{example}{A non-linear transformation}{non-linear transformation}
+	\textbf{Claim}: the following $\Rs{3}\to\mathbb{R}$ transformation is \textbf{not} a linear transformation:
+	\[
+		T\left(\colvec{x;y;z}\right) = 2x^{2}+3y-z.
+	\]
+
+	\textbf{Proof}: this time we only need to show a single case where linearity breaks - let's choose \textit{scalability}. Given the vector $\vec{v}=\colvec{v_{x};v_{y};v_{z}}$, on one hand
+	\[
+		T\left( \alpha\colvec{u_{x};u_{y};u_{z}} \right) = 2\left(\alpha u_{x}\right)^{2}+3\alpha u_{y}-\alpha u_{z} = 2\alpha^{2}u_{x}^{2}+3\alpha u_{y}-\alpha u_{z}.
+	\]
+	On the other hand
+	\[
+		\alpha T\left( \colvec{u_{x};u_{y};u_{z}} \right) = \alpha\left( 2u_{x}^{2}+3u_{y}-u_{z} \right) = 2\alpha u_{x}^{2}+3\alpha u_{y}-\alpha u_{z}.
+	\]
+	For any $a\notin\left\{ 0,1 \right\}$ we get that $T\left( \alpha\vec{v} \right)\neq\alpha T\left( \vec{v} \right)$. Therefore, $T$ is not linear.
+\end{example}
+
+Before moving on to explore the algebraic properties of linear transformations, we first shift our focus to gain some intuition about them. Much like in the last section, we do this using graphical representations of linear transformations in $\Rs{2}$ and $\Rs{3}$.
