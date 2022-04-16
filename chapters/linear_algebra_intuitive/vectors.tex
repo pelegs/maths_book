@@ -1043,13 +1043,28 @@ Later in the section we will examine some common properties of the scalar produc
 	\end{align*}
 \end{example}
 
-\begin{example}{Scalar product of two vectors}{}
-	Another example.
+\begin{example}{Scalar product of two vectors}{scalar product two vectors}
+	Calculate the scalar product of the two vectors $\vec{u}=\colvec{2;3;-1},\ \vec{v}=\colvec{-1;0;2}$, given that the angle between them is $\theta\approx2.069\approx\ang{118.561}$.
+
+	\vspace{1em}
+	\textbf{Solution}:
+
+	The norms of the two vectors are
+	\begin{align*}
+		\norm{u} &= \sqrt{2^{2}+3^{2}+(-1)^{2}} = \sqrt{4+9+1} = \sqrt{14} \approx 3.742,\\
+		\norm{v} &= \sqrt{(-1)^{2}+0^{2}+2^{2}} = \sqrt{1+4} = \sqrt{5} \approx 2.236.\\
+	\end{align*}
+
+	Therefore, their scalar product is
+	\[
+		\vec{u}\cdot\vec{v} \approx \sqrt{14}\sqrt{5}\cos(2.069) \approx -4.
+	\]
 \end{example}
 
 The scalar product of any two vectors $\vec{u},\vec{v}$ has two important properties:
 \begin{itemize}
 	\item It is commutative, i.e. $\vec{u}\cdot\vec{v} = \vec{v}\cdot\vec{u}$.
+	\item Scalars can be taken out of the product, i.e. $\left(\alpha \vec{v}\right)\cdot\vec{u} = \vec{v}\cdot\left( \alpha\vec{u} \right) = \alpha\left( \vec{u}\cdot\vec{v} \right)$.
 	\item It equals zero in only one of two cases:
 		\begin{enumerate}
 			\item One of the vectors (or both) is the zero vector, or
@@ -1061,7 +1076,7 @@ When the angle between two vectors is $\frac{\pi}{2}$ (remember: this is equival
 
 This is such an important fact that we will put effort into framing it nicely, so you (the reader) could memorize it well. How well should you memorize this? Such that if someone wakes you up in the middle of the night and asked you, you could easily repeat it\footnote{For a humble fee, I'm willing to do this - just write me an email and we can discuss the terms ;)}.
 
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[
 			%background rectangle/.style={fill=olive!2},
@@ -1103,9 +1118,10 @@ the scalar product $\vec{u}\cdot\vec{v}$ is
 	\label{eq:scalar product in column form}
 \end{equation}
 
-\begin{example}{Angle between two vectors}{ }
+\begin{example}{Angle between two vectors}{}
 	Calculate the scalar product of the two vectors $\vec{a}=\colvec{1;1}$ and $\vec{b}=\colvec{-1;1}$ using the above formula (\autoref{eq:scalar product in column form}).
 
+	\vspace{1em}
 	\textbf{Solution}:
 	
 	We simply substitute $\vec{a}$ and $\vec{b}$ into the equation:
@@ -1115,6 +1131,17 @@ the scalar product $\vec{u}\cdot\vec{v}$ is
 	which is exactly the result we got using the previous method.
 \end{example}
 
+\begin{example}{Scalar product of two vectors - algebraicly}{}
+	Calculate the scalar product $\vec{u}\cdot\vec{v}$ from \autoref{example:scalar product two vectors} using \autoref{eq:scalar product in column form}.
+
+	\vspace{1em}
+	\textbf{Solution}:
+
+	\[
+		\vec{u}\cdot\vec{v} = 2\cdot(-1) + 3\cdot0 + (-1)\cdot2 = -2-2 = -4,
+	\]
+	exactly the result we got in \autoref{example:scalar product two vectors}.
+\end{example}
 The norm of a vector can be calculated using the scalar product: given a vector $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$,
 \begin{equation}
 	\vec{v}\cdot\vec{v} = v_{1}v_{1} + v_{2}v_{2} + \cdots + v_{n}v_{n} = v_{1}^{2} + v_{2}^{2} + \cdots + v_{n}^{2} = \norm{v}^{2}.
@@ -1321,12 +1348,10 @@ A special kind of vector in $\Rs{3}$ is the so-called \emph{normal vector} to a 
 \end{figure}
 
 We can get two vectors lying on the plane by first considering the points as vectors, i.e.
-\begin{align}
-	\vec{p} &= \colvec{p_{x};p_{y};p_{z}}\nonumber\\
-	\vec{q} &= \colvec{q_{x};q_{y};q_{z}}\nonumber\\
-	\vec{r} &= \colvec{r_{x};r_{y};r_{z}}.
+\begin{equation}
+	\vec{p} = \colvec{p_{x};p_{y};p_{z}},\ \vec{q} = \colvec{q_{x};q_{y};q_{z}},\ \vec{r} = \colvec{r_{x};r_{y};r_{z}}.
 	\label{eq:three points in a plane as vectors}
-\end{align}
+\end{equation}
 
 Then, we calculate two vectors on the plane by subtraction, e.g.
 \begin{align}
@@ -1355,7 +1380,7 @@ To wrap up the vectors section, we present and solve a single problem in the fol
 \centering
 \begin{tikzpicture}
 	\begin{axis}[
-			width=10cm, height=10cm,
+			width=6.5cm, height=6.5cm,
 			axis line style={draw=none},
 			tick style={draw=none},
 			z buffer=sort,
