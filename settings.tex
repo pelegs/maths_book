@@ -415,6 +415,12 @@
 	\setlength{\pgf@x}{\myX pt}
 	\setlength{\pgf@y}{\myY pt}
 }
+\def\testtransform{%
+	\pgfmathsetmacro{\myX}{\pgf@x}
+	\pgfmathsetmacro{\myY}{\sin(\pgf@x)}
+	\setlength{\pgf@x}{\myX pt}
+	\setlength{\pgf@y}{\myY pt}
+}
 \makeatother
 
 %-------------%
