@@ -1,4 +1,5 @@
 \section{Linear transformations}
+\subsection{Definition}
 In the previous section we introduced real vectors and their most important properties. In this section we explore a special set of operations that can act on vectors, namely \emph{linear transformations}. As mentioned in \autoref{chapter:intro}, a ``transformations`` is simply another name for a function. Thus in this context, linear transformations are some functions that act on vectors: a linear transformation $T$ takes a vector as an input, and outputs another vector, possibly of a different dimension, i.e.
 \begin{equation}
 	T:\Rs{n}\to\Rs{m}.
@@ -57,4 +58,82 @@ What makes linear transformations more ``special'' than other functions is their
 	For any $a\notin\left\{ 0,1 \right\}$ we get that $T\left( \alpha\vec{v} \right)\neq\alpha T\left( \vec{v} \right)$. Therefore, $T$ is not linear.
 \end{example}
 
-Before moving on to explore the algebraic properties of linear transformations, we first shift our focus to gain some intuition about them. Much like in the last section, we do this using graphical representations of linear transformations in $\Rs{2}$ and $\Rs{3}$.
+\subsection{Developing intuition}
+Before moving on to explore the algebraic properties of linear transformations, we first shift our focus to gain some intuition about them. Much like in the last section, we do this using graphical representations of linear transformations in $\Rs{2}$ and $\Rs{3}$. We start with a single vector under transformation: let $\vec{u}=\colvec{2;4}$ and $T:\Rs{2}\to\Rs{2}$ defined by
+\begin{equation}
+	T\left( \colvec{x;y} \right) = \colvec{2x;-y}.
+\end{equation}
+(to the reader: verify that this transformation is indeed linear)
+
+Applying $T$ to $\vec{u}$ yields the vector $\vec{v}=\colvec{4;-4}$ (see \autoref{fig:single vector LT}), i.e. it scaled the $x$-component of $\vec{u}$ by $2$ and flipped over its $y$-component.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{0.45\textwidth}
+		\begin{tikzpicture}[]
+			\begin{axis}[
+				vector plane,
+				width=7cm, height=7cm,
+				xmin=-7, xmax=7,
+				ymin=-7, ymax=7,
+				xtick={-6,-4,...,6},
+				ytick={-6,-4,...,6},
+			]
+			\tikzstyle{every node}=[font=\Large]
+			\draw[vector, xred] (0,0) -- (2,4) node[pos=1.15] (u) {$\vec{u}$};
+			\draw[vector, xblue] (0,0) -- (4,-4) node[pos=1.1] (v) {$\vec{v}$};
+			\draw[vector, dashed, xpurple] (u) to [out=-20, in=70] node[pos=0.35, xshift=9pt] {$T$} (v);
+			\end{axis}
+		\end{tikzpicture}
+		\caption{The vector $\vec{u}=\colvec{2;4}$ is transformed by $T$ yielding the vector $\vec{v}=\colvec{4;-4}$.}
+		\label{fig:single vector LT}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}[]
+			\begin{axis}[
+				vector plane,
+				width=7cm, height=7cm,
+				xmin=-7, xmax=7,
+				ymin=-7, ymax=7,
+				xtick={-6,-4,...,6},
+				ytick={-6,-4,...,6},
+			]
+			\tikzstyle{every node}=[font=\Large]
+			\draw[vector, xred] (0,0) -- (-2,2) node[pos=1.3] (a) {$\vec{a}$};
+			\draw[vector, xblue] (0,0) -- (1,-6) node[pos=0.95, right] (b) {$\vec{b}$};
+			\draw[vector, xred] (0,0) -- (-4,-4) node[pos=1.3] (Ta) {$T\left(\vec{a}\right)$};
+			\draw[vector, xblue] (0,0) -- (2,6) node[pos=0.95, right] (Tb) {$T\left(\vec{b}\right)$};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{The vectors $\vec{a}=\colvec{-2;2}$ and $\vec{b}$ are transformed by the same $T$.}
+		\label{fig:two vectors LT}
+	\end{subfigure}
+\end{figure}
+
+If we take other vectors, e.g. $\vec{a}=\colvec{-2;-2}$ and $\vec{b}=\colvec{1;-6}$ we see that $T$ transforms them in the exact same manner: it scales their $x$-components by $2$ and flipps over their $y$-components (\autoref{fig:two vectors LT}).
+
+Test of a non-linear transformation in pgfplots:
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[]
+		\begin{scope}
+			\pgftransformnonlinear{\mytransformation}
+			\begin{axis}[
+				vector plane,
+				width=10cm, height=10cm,
+				xmin=-1, xmax=1,
+				ymin=-1, ymax=1,
+				xticklabels={,},
+				yticklabels={,},
+			]
+			\fill[xred] (-0.6,-0.4) rectangle (-0.4,-0.2);
+			\fill[xblue] (0.6,0.2) rectangle (0.8,0.4);
+			\end{axis}
+		\end{scope}
+	\end{tikzpicture}
+	\caption{Test of a non-linear transformation.}
+	\label{fig:non-linear transformation}
+\end{figure}

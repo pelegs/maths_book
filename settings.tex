@@ -34,7 +34,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usepackage{tikzpagenodes}
-\usetikzlibrary{backgrounds, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective, tikzmark}
+\usetikzlibrary{backgrounds, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective, tikzmark, fpu}
 
 \tikzset{
 	arrow/.style={thick, ->, >=stealth},
@@ -48,6 +48,7 @@
 
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween, colormaps, colorbrewer, patchplots}
+\usepgfmodule{nonlineartransformations}
 \pgfplotsset{
 		compat=1.16,
 		every axis/.append style={
@@ -406,6 +407,15 @@
 	\hat{#1}_{\mathbf{#2}}
 }
 
+% Non-linear transformations
+\makeatletter
+\def\mytransformation{%
+	\pgfmathsetmacro{\myX}{0.001*(\pgf@y-40)*(\pgf@y-40)+\pgf@x}
+	\pgfmathsetmacro{\myY}{0.001*(\pgf@x-40)*(\pgf@x-40)+\pgf@y}
+	\setlength{\pgf@x}{\myX pt}
+	\setlength{\pgf@y}{\myY pt}
+}
+\makeatother
 
 %-------------%
 % OTHER STUFF %
