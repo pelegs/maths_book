@@ -65,7 +65,7 @@ Before moving on to explore the algebraic properties of linear transformations, 
 \end{equation}
 (to the reader: verify that this transformation is indeed linear)
 
-Applying $T$ to $\vec{u}$ yields the vector $\vec{v}=\colvec{4;-4}$ (see \autoref{fig:single vector LT}), i.e. it scaled the $x$-component of $\vec{u}$ by $2$ and flipped over its $y$-component.
+Applying $T$ to $\vec{u}$ yields the vector $\vec{v}=\colvec{4;-4}$ (see \autoref{fig:single vector LT}), i.e. it scales the $x$-component of $\vec{u}$ by $2$ and flippes over its $y$-component.
 
 \begin{figure}
 	\centering
@@ -103,8 +103,8 @@ Applying $T$ to $\vec{u}$ yields the vector $\vec{v}=\colvec{4;-4}$ (see \autore
 			\tikzstyle{every node}=[font=\Large]
 			\draw[vector, xred] (0,0) -- (-2,2) node[pos=1.3] (a) {$\vec{a}$};
 			\draw[vector, xblue] (0,0) -- (1,-6) node[pos=0.95, right] (b) {$\vec{b}$};
-			\draw[vector, xred] (0,0) -- (-4,-4) node[pos=1.3] (Ta) {$T\left(\vec{a}\right)$};
-			\draw[vector, xblue] (0,0) -- (2,6) node[pos=0.95, right] (Tb) {$T\left(\vec{b}\right)$};
+			\draw[vector, xred, dashed] (0,0) -- (-4,-4) node[pos=1.3] (Ta) {$T\left(\vec{a}\right)$};
+			\draw[vector, xblue, dashed] (0,0) -- (2,6) node[pos=0.95, right] (Tb) {$T\left(\vec{b}\right)$};
 			\end{axis}
 		\end{tikzpicture}
 		\caption{The vectors $\vec{a}=\colvec{-2;2}$ and $\vec{b}$ are transformed by the same $T$.}
@@ -112,28 +112,116 @@ Applying $T$ to $\vec{u}$ yields the vector $\vec{v}=\colvec{4;-4}$ (see \autore
 	\end{subfigure}
 \end{figure}
 
-If we take other vectors, e.g. $\vec{a}=\colvec{-2;-2}$ and $\vec{b}=\colvec{1;-6}$ we see that $T$ transforms them in the exact same manner: it scales their $x$-components by $2$ and flipps over their $y$-components (\autoref{fig:two vectors LT}).
+If we take other vectors, e.g. $\vec{a}=\colvec{-2;-2}$ and $\vec{b}=\colvec{1;-6}$ we see that $T$ transforms them in the exact same manner: it scales their $x$-components by $2$ and flipps over their $y$-components (\autoref{fig:two vectors LT}). This is a fundamental aspect of linear transformations: they always transform all vectors in the exact same manner. We can use this fact to help visualize transformations, by looking at how they transform the entire space. For example, we can draw all grid lines and observe how they are transformed.
 
-Test of a non-linear transformation in pgfplots:
+In \autoref{fig:linear transformation grid} a schematic of $\Rs{2}$ is shown before and after the application of a linear transformation $T$, by placing a transformed grid (blue) ontop of an untouched grid (gray). In this view, one can see how each point in space is transformed: assuming for example that each two adjacent grid points are 1 unit apart, the gray point at $(-2,2)$ is transformed to where the blue point is, i.e. $(-1,1)$ when measured using the original axes. 
+
+\colorlet{xbefore}{black!40}
+\colorlet{xafter}{xblue}
 
 \begin{figure}
 	\centering
-	\begin{tikzpicture}[]
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=8cm, height=8cm,
+			anchor=center,
+			at={(current page.center)},
+			xtick={-4,-2,...,4},
+			ytick={-4,-2,...,4},
+			xticklabels={,,},
+			yticklabels={,,},
+			grid style={line width=.1pt, draw=xbefore!35},
+			major grid style={line width=.2pt, draw=xbefore!50},
+			every tick/.style={xbefore},
+			axis line style={xbefore, very thick},
+		]
+		\addplot[mark=*, mark size=2.5pt] coordinates {(-4,4)};
+		% \fill[gray!50] (2,-2) rectangle (4,-4);
+		\coordinate (p) at (-2,2);
+		\coordinate (xlbl) at (5.5,2.05);
+		\coordinate (ylbl) at (2.6,4.95);
+		% \addplot[mark=*, xblue] coordinates {(-2,2)};
+		\end{axis}
+        \pgftransformcm{1}{0.4}{0.5}{0.9}{\pgfpoint{0cm}{0cm}}
+		\begin{axis}[
+			vector plane,
+			width=8cm, height=8cm,
+			anchor=center,
+			at={(current page.center)},
+			xtick={-4,-2,...,4},
+			ytick={-4,-2,...,4},
+			xticklabels={,,},
+			yticklabels={,,},
+			xlabel={},
+			ylabel={},
+			grid style={line width=.1pt, draw=xafter!35},
+			major grid style={line width=.2pt, draw=xafter!50},
+			every tick/.style={xafter},
+			axis line style={xafter, ultra thick},
+		]
+		% \fill[xblue!50] (2,-2) rectangle (4,-4);
+		\end{axis}
+        \pgftransformreset
+		\fill[xblue] (p) circle (3pt);
+		\large
+		\node[xblue] at (xlbl) {$x$};
+		\node[xblue] at (ylbl) {$y$};
+	\end{tikzpicture}
+	\caption{$\Rs{2}$ after application of a linear transformation (blue), placed ontop of $\Rs{2}$ before the transformation (gray). Note the black point at the top left at $(-2,2)$ transforming into the blue point at $(-1,1)$.}
+	\label{fig:linear transformation grid}
+\end{figure}
+
+For comparison, \autoref{fig:nonlinear transformation grid} shows a non linear transformation applied to $\Rs{2}$.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\large
+		\draw[black!25, step=0.5] (-3,-3) grid (3,3);
+		\draw[stealth-stealth, very thick] (-3,0) -- (3,0) node[pos=1.1] {$x$};
+		\draw[stealth-stealth, very thick] (0,-3) -- (0,3) node[pos=1.1] {$y$};
+		\fill[black!50] (-3,-3) rectangle (-2.5,-2.5);
+		\fill[black!50] (3,3) rectangle (2.5,2.5);
 		\begin{scope}
-			\pgftransformnonlinear{\mytransformation}
-			\begin{axis}[
-				vector plane,
-				width=10cm, height=10cm,
-				xmin=-1, xmax=1,
-				ymin=-1, ymax=1,
-				xticklabels={,},
-				yticklabels={,},
-			]
-			\fill[xred] (-0.6,-0.4) rectangle (-0.4,-0.2);
-			\fill[xblue] (0.6,0.2) rectangle (0.8,0.4);
-			\end{axis}
+			\pgftransformnonlinear{\nltransA}
+			\draw[xblue!25, step=0.5] (-3,-3) grid (3,3);
+			\draw[xblue, stealth-stealth, very thick] (-3,0) -- (3,0) node[pos=1.1] {$x$};
+			\draw[xblue, stealth-stealth, very thick] (0,-3) -- (0,3) node[pos=1.1] {$y$};
+			\fill[xblue!50] (-3,-3) rectangle (-2.5,-2.5);
+			\fill[xblue!50] (3,3) rectangle (2.5,2.5);
 		\end{scope}
 	\end{tikzpicture}
-	\caption{Test of a non-linear transformation.}
-	\label{fig:non-linear transformation}
+	\caption{A non linear transformation applied to $\Rs{2}$ for comparison.}
+	\label{fig:nonlinear transformation grid}
 \end{figure}
+
+\autoref{fig:linear transformation grid} shows some important properties of linear transformation (cf. \autoref{fig:nonlinear transformation grid}):
+\begin{enumerate}
+	\item The origin stays at the same place after application of the transformation, i.e. $T\left(\vec{0}\right) = \vec{0}$.
+	\item Parallel lines remain parallel after application of the transformation.
+	\item All areas are scaled by the same amount.
+\end{enumerate}
+
+It is rather easy to prove the first two properties.
+\begin{proof}{Two properties of linear transformations}{}
+	\begin{enumerate}
+		\item Let $T$ be a transformation that does not perserve the origin, i.e.
+	\[
+		T\left(\vec{0}\right) = \vec{v} \neq \vec{0}.
+	\]
+	We can scale $\vec{0}$ by a scalar $\alpha\neq0$, which would yield
+	\[
+		T\left(\alpha\vec{0}\right) = T\left(\vec{0}\right) = \vec{v}.
+	\]
+	However, for $T$ to be linear we expect (due to scalability)
+	\[
+		T\left(\alpha\vec{0}\right) = \alpha\vec{v},
+	\]
+	but since $\alpha\neq0$ and $\vec{v}\neq\vec{0}$ this does not happen. Therefore, $T$ can not be linear - and in turn linear transformations must preserve the origin.
+
+	\item Let $T$ be a linear transformation...
+	\end{enumerate}
+\end{proof}
+
+\Blindtext

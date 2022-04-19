@@ -409,15 +409,15 @@
 
 % Non-linear transformations
 \makeatletter
-\def\mytransformation{%
-	\pgfmathsetmacro{\myX}{0.001*(\pgf@y-40)*(\pgf@y-40)+\pgf@x}
-	\pgfmathsetmacro{\myY}{0.001*(\pgf@x-40)*(\pgf@x-40)+\pgf@y}
+\def\nltransA{%
+	\pgfmathsetmacro{\myX}{\pgf@x+0.0025*\pgf@y^2}
+	\pgfmathsetmacro{\myY}{\pgf@y+0.0050*\pgf@x^2}
 	\setlength{\pgf@x}{\myX pt}
 	\setlength{\pgf@y}{\myY pt}
 }
-\def\testtransform{%
+\def\nltransB{%
 	\pgfmathsetmacro{\myX}{\pgf@x}
-	\pgfmathsetmacro{\myY}{\sin(\pgf@x)}
+	\pgfmathsetmacro{\myY}{\pgf@y+0.1*abs(\pgf@x)^1.01}
 	\setlength{\pgf@x}{\myX pt}
 	\setlength{\pgf@y}{\myY pt}
 }
