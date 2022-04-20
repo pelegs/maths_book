@@ -410,8 +410,8 @@
 % Non-linear transformations
 \makeatletter
 \def\nltransA{%
-	\pgfmathsetmacro{\myX}{\pgf@x+0.0025*\pgf@y^2}
-	\pgfmathsetmacro{\myY}{\pgf@y+0.0050*\pgf@x^2}
+	\pgfmathsetmacro{\myX}{\pgf@x+0.0025*\pgf@y^2+0.3*\pgf@x+3}
+	\pgfmathsetmacro{\myY}{\pgf@y+0.0050*\pgf@x^2-5}
 	\setlength{\pgf@x}{\myX pt}
 	\setlength{\pgf@y}{\myY pt}
 }
@@ -422,6 +422,30 @@
 	\setlength{\pgf@y}{\myY pt}
 }
 \makeatother
+
+% 2D figure for linear transformations
+\newcommand{\tapirTrans}[5]{
+	\begin{tikzpicture}
+		\pgftransformcm{#1}{#2}{#3}{#4}{\pgfpoint{0}{0}}
+		\begin{axis}[
+			vector plane,
+			anchor=center,
+			width=#5, height=#5,
+			xmin=-1, xmax=1,
+			ymin=-1, ymax=1,
+			xlabel={},
+			ylabel={},
+			xtick={-1,-0.9,...,1},
+			ytick={-1,-0.9,...,1},
+			xticklabels={,,},
+			yticklabels={,,},
+		]
+		\pgfmathsetmacro{\sc}{#5/8cm}
+		\node at (0,0) {\includesvg[scale=\sc]{figures/linear_algebra/tapir_transform}};
+	\end{axis}
+	\pgftransformreset
+	\end{tikzpicture}
+}
 
 %-------------%
 % OTHER STUFF %

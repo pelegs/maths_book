@@ -220,7 +220,7 @@ It is rather easy to prove the first two properties.
 	\]
 	but since $\alpha\neq0$ and $\vec{v}\neq\vec{0}$ this does not happen. Therefore, $T$ can not be linear - and in turn linear transformations must preserve the origin.
 
-\item Let $T$ be a linear transformation. A line is defined using a point $\vec{a}$, and a direction $\vec{v}$ as the set of all the points $\left\{\vec{a}+t\vec{v}\right\}$:
+	\item A line is defined using a point $\vec{a}$, and a direction $\hat{v}$ as the set of all the points $\left\{x=\vec{a}+s\hat{v}, s\in\mathbb{R}\right\}$:
 
 	\begin{center}
 		\begin{tikzpicture}
@@ -230,11 +230,89 @@ It is rather easy to prove the first two properties.
 				xticklabels={,,},
 				yticklabels={,,},
 			]
+			\coordinate (a) at (axis cs:2,2);
+			\coordinate (v) at (axis direction cs:1,-0.5);
+			\draw[black!50, dashed] ($(a)-6*(v)$) -- ($(a)+3*(v)$);
+			\draw[vector, xred] (0,0) -- (a) node[midway, above left] {$\vec{a}$};
+			\draw[vector, xblue] (a) -- ($(a)+(v)$) node[midway, below, xshift=-5pt, yshift=1pt] {$\hat{v}$};
 			\end{axis}
+			\foreach \s in {-6,-3.5,-1,0,1,2}{
+				\fill ($(a)+\s*(v)$) circle (0.05) node[above, anchor=west, yshift=2pt] {\tiny$s=\s$};
+			}
 		\end{tikzpicture}
 	\end{center}
-	   
+	Parallel lines have the same direction $\hat{s}$, i.e. $x_{1}=\vec{a}_{1}+s_{1}\hat{v}$ and $x_{2}=\vec{a}_{2}+s_{2}\hat{v}$ are parallel lines. Applying a linear transformation $T$ to these lines yields (using the two defining properties of linear transformations)
+	\begin{align*}
+		T\left(x_{1}\right) &= T\left(\vec{a}_{1}\right) + s_{1}T\left(\hat{v}\right),\\
+		T\left(x_{2}\right) &= T\left(\vec{a}_{2}\right) + s_{2}T\left(\hat{v}\right).
+	\end{align*}
+	We can see that the two right-hand side equations represent two new lines with the same direction, i.e. $T\left(\hat{v}\right)$. Therefore parallel lines remain parallel under a linear transformation.
 	\end{enumerate}
 \end{proof}
+
+We will prove the the third property (all areas are scaled by the same amount) later in the chapter.
+
+All linear transformations in $\Rs{2}$ can be created by composing transformations from a set of linear transformation which we will refer to as the \emph{fundamental linear transformations}\footnote{not an official name.}. To visualize these fundamental transformations we use the following drawing of a tapir placed on a grid:
+
+\begin{figure}[H]
+	\centering
+	\tapirTrans{1}{0}{0}{1}{8cm}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[c]{0.29\textwidth}
+		\centering
+		\tapirTrans{1}{0}{0}{1}{5cm}
+		\caption{Identity}
+		\label{fig:}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.37\textwidth}
+		\centering
+		\tapirTrans{1.4}{0}{0}{1}{5cm}
+		\caption{Scaling in $x$}
+		\label{fig:}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.29\textwidth}
+		\centering
+		\tapirTrans{1}{0}{0}{1.3}{5cm}
+		\caption{Scaling in $y$}
+		\label{fig:}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[c]{0.3\textwidth}
+		\centering
+		\tapirTrans{1}{0}{0.25}{1}{5cm}
+		\caption{Skewing in $x$}
+		\label{fig:}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.3\textwidth}
+		\centering
+		\tapirTrans{1}{0.5}{0}{1}{5cm}
+		\caption{Skewing in $y$}
+		\label{fig:}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.35\textwidth}
+		\centering
+		\tapirTrans{0.707}{-0.707}{0.707}{0.707}{5cm}
+		\caption{Rotation about origin}
+		\label{fig:}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[c]{0.3\textwidth}
+		\centering
+		\tapirTrans{-1}{0}{0}{1}{5cm}
+		\caption{Reflection about line}
+		\label{fig:}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.3\textwidth}
+		\centering
+		\tapirTrans{-1}{0}{0}{-1}{5cm}
+		\caption{Reflection about origin}
+		\label{fig:}
+	\end{subfigure}
+	\caption{The ``fundamental'' linear transformations, exemplified using a very happy and colorful tapir.}
+	\label{fig:fundLinearTrans}
+\end{figure}
 
 \Blindtext
