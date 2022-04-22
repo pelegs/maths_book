@@ -3,33 +3,6 @@
 	\draw[vector, #4] (0,0) -- (#2,#3);
 	\node[text=#4] at ({1.2*#2},{1.2*#3}) {$\vec{#1}=\colvec{#2;#3}$};
 }
-\pgfkeys{
-	/pgfplots/vector plane/.style={
-		axis x line=middle,
-		axis y line=middle,
-		xlabel=$x$,
-		ylabel=$y$,
-		every axis x label/.style={
-			at={(ticklabel* cs:1.02)},
-			anchor=west,
-		},
-		every axis y label/.style={
-			at={(ticklabel* cs:1.02)},
-			anchor=south,
-		},
-		axis line style={stealth-stealth, thick},
-		label style={font=\large},
-		tick label style={font=\large},
-		samples=100,
-		xmin=-5, xmax=5,
-		ymin=-5, ymax=5,
-		domain=-5:5,
-		grid=both,
-		major grid style={black!5},
-		minor grid style={black!5},
-	},
-}
-
 \chapter{Linear algebra\\(intuitive approach)}\label{chapter:linear algebra intuitive}
 Linear algebra is one of the most important and often used fields, both in theoretical and applied mathematics. It brings together the analysis of systems of linear equations and the analysis of linear functions (in this context usually called linear transformations), and is employed extensively in almost any modern mathematical field, e.g. approximation theory, vector analysis, signal analysis, error correction, 3-dimensional computer graphics and many, many more.
 

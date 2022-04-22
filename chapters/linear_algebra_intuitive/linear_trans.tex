@@ -256,12 +256,12 @@ All linear transformations in $\Rs{2}$ can be created by composing transformatio
 
 \begin{figure}[H]
 	\centering
-	\tapirTrans{1}{0}{0}{1}{8cm}
+	\tapirTrans{1}{0}{0}{1}{12cm}
 \end{figure}
 
 \autoref{fig:fundLinearTrans} shows the fundamental linear transformations applied to our happy tapir.
 
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[c]{0.29\textwidth}
 		\centering
@@ -297,7 +297,7 @@ All linear transformations in $\Rs{2}$ can be created by composing transformatio
 	\begin{subfigure}[c]{0.35\textwidth}
 		\centering
 		\tapirTrans{0.707}{-0.707}{0.707}{0.707}{5cm}
-		\caption{Rotation about origin.}
+		\caption{Rotation around origin.}
 		\label{fig:}
 	\end{subfigure}
 	\hfill
@@ -320,27 +320,28 @@ All linear transformations in $\Rs{2}$ can be created by composing transformatio
 \begin{example}{Composing fundamental linear transformations}{ltcomposing}
 	Given the following two linear transformations:
 	\begin{enumerate}
-		\item Scale by $1.5$ in the $y$-direction,
-		\item Rotate by $\frac{\pi}{4}$ anti-clockwise about the origin,
+		\item Scale by $1.5$ in the $x$-direction,
+		\item Rotate by $\frac{\pi}{4}$ anti-clockwise around the origin,
 	\end{enumerate}
-	two composite linear transformations can be created: $1\circ2$ and $2\circ1$.
+	two composite linear transformations can be created: first scale then rotate, and first rotate then scale. As can be seen in the figure bellow, changing the order of composition results in a different linear transformations all together:
 
 	\begin{center}
 		\begin{tikzpicture}
-			% 12
-			\tapirTransCM{1}{0}{0}{1}{0cm}{0cm}{4cm}
-			\draw[vector] (1.5cm,0) -- ++(1.5cm,0) node[midway, above] {Rotate};
-			\tapirTransCM{0.707}{-0.707}{0.707}{0.707}{4.5cm}{0cm}{4cm}
-			\draw[vector] (6cm,0) -- ++(1.5cm,0) node[midway, above] {Scale};
-			\tapirTransCM{0.707}{-1.414}{0.707}{1.414}{9cm}{0cm}{4cm}
-			% 21
-			\tapirTransCM{1}{0}{0}{1}{0cm}{-4cm}{4cm}
-			\draw[vector] (1.5cm,-4) -- ++(1.5cm,0) node[midway, above] {Rotate};
-			\tapirTransCM{1}{0}{0}{2}{4.5cm}{-4cm}{4cm}
-			\draw[vector] (6cm,-4) -- ++(1.5cm,0) node[midway, above] {Scale};
-			\tapirTransCM{0.707}{-0.707}{1.414}{1.414}{9cm}{-4cm}{4cm}
+			\tapirTransComp{1}{0}{0}{1}{0}{0}{I}
+			
+			\tapirTransComp{0.707}{0.707}{-0.707}{0.707}{1cm}{5cm}{A}
+			\tapirTransComp{0.707}{0.707}{-1.414}{1.414}{7cm}{5cm}{B}
+			\draw[-stealth, thick] (0,1cm) -- ++(0.5cm,2cm) node[midway, above, rotate=75, text width=1.3cm] {first rotate};
+			\draw[-stealth, thick] (2.2cm,4.5cm) -- ++(2.5cm,0cm) node[midway, above, text width=1.5cm] {then scale in $x$};
+			
+			\tapirTransComp{2}{0}{0}{1}{1cm}{-5cm}{C}
+			\tapirTransComp{0.707}{1.414}{-0.707}{1.414}{8cm}{-5cm}{D}
+			\draw[-stealth, thick] (0,-1.5cm) -- ++(0.5cm,-2.5cm) node[midway, above, rotate=-80, text width=1.5cm] {first scale in $x$};
+			\draw[-stealth, thick] (3cm,-5.5cm) -- ++(3cm,0cm) node[midway, above, text width=2cm] {then rotate};
 		\end{tikzpicture}
 	\end{center}
+
+	This is not a suprising result: in \autoref{chapter:intro} we learned that function composition is not a commutative operation.
 \end{example}
 
 \Blindtext
