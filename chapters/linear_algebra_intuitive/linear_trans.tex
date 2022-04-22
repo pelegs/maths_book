@@ -252,12 +252,14 @@ It is rather easy to prove the first two properties.
 
 We will prove the the third property (all areas are scaled by the same amount) later in the chapter.
 
-All linear transformations in $\Rs{2}$ can be created by composing transformations from a set of linear transformation which we will refer to as the \emph{fundamental linear transformations}\footnote{not an official name.}. To visualize these fundamental transformations we apply them on a figure of a tapir\footnote{trans(formation) tapir, if you will.}:
+All linear transformations in $\Rs{2}$ can be created by composing transformations from a set of linear transformation which we will refer to as the \emph{fundamental linear transformations}\footnote{not an official name.}. To visualize these fundamental transformations we apply them on a figure of a tapir\footnote{They are here, they are a trans tapir. Get used to it.}:
 
 \begin{figure}[H]
 	\centering
 	\tapirTrans{1}{0}{0}{1}{8cm}
 \end{figure}
+
+\autoref{fig:fundLinearTrans} shows the fundamental linear transformations applied to our happy tapir.
 
 \begin{figure}
 	\centering
@@ -314,5 +316,31 @@ All linear transformations in $\Rs{2}$ can be created by composing transformatio
 	\caption{The ``fundamental'' linear transformations, exemplified using a very happy tapir.}
 	\label{fig:fundLinearTrans}
 \end{figure}
+
+\begin{example}{Composing fundamental linear transformations}{ltcomposing}
+	Given the following two linear transformations:
+	\begin{enumerate}
+		\item Scale by $1.5$ in the $y$-direction,
+		\item Rotate by $\frac{\pi}{4}$ anti-clockwise about the origin,
+	\end{enumerate}
+	two composite linear transformations can be created: $1\circ2$ and $2\circ1$.
+
+	\begin{center}
+		\begin{tikzpicture}
+			% 12
+			\tapirTransCM{1}{0}{0}{1}{0cm}{0cm}{4cm}
+			\draw[vector] (1.5cm,0) -- ++(1.5cm,0) node[midway, above] {Rotate};
+			\tapirTransCM{0.707}{-0.707}{0.707}{0.707}{4.5cm}{0cm}{4cm}
+			\draw[vector] (6cm,0) -- ++(1.5cm,0) node[midway, above] {Scale};
+			\tapirTransCM{0.707}{-1.414}{0.707}{1.414}{9cm}{0cm}{4cm}
+			% 21
+			\tapirTransCM{1}{0}{0}{1}{0cm}{-4cm}{4cm}
+			\draw[vector] (1.5cm,-4) -- ++(1.5cm,0) node[midway, above] {Rotate};
+			\tapirTransCM{1}{0}{0}{2}{4.5cm}{-4cm}{4cm}
+			\draw[vector] (6cm,-4) -- ++(1.5cm,0) node[midway, above] {Scale};
+			\tapirTransCM{0.707}{-0.707}{1.414}{1.414}{9cm}{-4cm}{4cm}
+		\end{tikzpicture}
+	\end{center}
+\end{example}
 
 \Blindtext
