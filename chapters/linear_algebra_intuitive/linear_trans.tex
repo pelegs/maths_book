@@ -252,14 +252,14 @@ It is rather easy to prove the first two properties.
 
 We will prove the the third property (all areas are scaled by the same amount) later in the chapter.
 
-All linear transformations in $\Rs{2}$ can be created by composing transformations from a set of linear transformation which we will refer to as the \emph{fundamental linear transformations}\footnote{not an official name.}. To visualize these fundamental transformations we apply them on a figure of a tapir\footnote{They are here, they are a trans tapir. Get used to it.}:
+All linear transformations in $\Rs{2}$ can be created by composing transformations from a set of linear transformation which we will refer to as the \emph{basic linear transformations}\footnote{not an official name.}. To visualize these basic transformations we apply them on a figure of a tapir\footnote{They are here, they are a trans tapir. Get used to it.}:
 
 \begin{figure}[H]
 	\centering
 	\tapirTrans{1}{0}{0}{1}{12cm}
 \end{figure}
 
-\autoref{fig:fundLinearTrans} shows the fundamental linear transformations applied to our happy tapir.
+\autoref{fig:fundLinearTrans} shows the basic linear transformations applied to our happy tapir.
 
 \begin{figure}[H]
 	\centering
@@ -313,11 +313,11 @@ All linear transformations in $\Rs{2}$ can be created by composing transformatio
 		\caption{Reflection through origin.}
 		\label{fig:}
 	\end{subfigure}
-	\caption{The ``fundamental'' linear transformations, exemplified using a very happy tapir.}
+	\caption{The basic linear transformations, exemplified using a very happy tapir.}
 	\label{fig:fundLinearTrans}
 \end{figure}
 
-\begin{example}{Composing fundamental linear transformations}{ltcomposing}
+\begin{example}{Composing basic linear transformations}{ltcomposing}
 	Given the following two linear transformations:
 	\begin{enumerate}
 		\item Scale by $1.5$ in the $x$-direction,
@@ -344,4 +344,32 @@ All linear transformations in $\Rs{2}$ can be created by composing transformatio
 	This is not a suprising result: in \autoref{chapter:intro} we learned that function composition is not a commutative operation.
 \end{example}
 
-\Blindtext
+Some of the basic linear transformations can be created as compositions of other basic linear transformations. For example, the composition of reflection across the $y$-axis followed by reflection across the $x$-axis results in a $\ang{180}$ rotation around the origin (see \autoref{fig:two_reflections_rotation}).
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=10cm,
+			xticklabels={,},
+			yticklabels={,},
+		]
+		\node[anchor=east] (A) at (-0.5,2) {\includesvg[scale=0.75]{figures/linear_algebra/tapir_transform2}};
+		\node[anchor=east, xscale=-1] (B) at (0.5,2) {\includesvg[scale=0.75]{figures/linear_algebra/tapir_transform2}};
+		\node[anchor=east, xscale=-1, yscale=-1] (C) at (0.5,-2) {\includesvg[scale=0.75]{figures/linear_algebra/tapir_transform2}};
+
+		\draw[vector, xred] (A) -- (B);
+		\draw[vector, xred] (B) -- (C);
+		\draw[decoration={
+            text along path,
+			text color=xblue,
+            text={Rotation},
+            text align={center},
+            raise=2mm}, decorate] (A.south) to [out=-90, in=180, looseness=0.75] (C.east);
+		\draw[vector, xblue] (A.south) to [out=-90, in=180, looseness=0.75] (C.east);
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Reflection across the $y$-axis (red arrow) followed by a reflection across the $x$-axis (red arrow) results in a rotation by $\ang{180}$ around the origin (blue arrow).}
+	\label{fig:two_reflections_rotation}
+\end{figure}
