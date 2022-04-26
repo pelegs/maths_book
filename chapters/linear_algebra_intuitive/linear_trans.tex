@@ -1,6 +1,10 @@
 \section{Linear transformations}
+In the previous section we introduced real vectors and their most important properties. In this section we explore a special set of operations that can act on vectors, namely \emph{linear transformations}.
+
+Linear transformations are a special set of transformations that are relatively easy to analyze. Their use is extremely widespread all throughout different fields of mathematics and its application, e.g. (just to name a few): in computer graphics, machine learning, quantum physics and engineering.
+
 \subsection{Definition}
-In the previous section we introduced real vectors and their most important properties. In this section we explore a special set of operations that can act on vectors, namely \emph{linear transformations}. As mentioned in \autoref{chapter:intro}, a ``transformations`` is simply another name for a function. Thus in this context, linear transformations are some functions that act on vectors: a linear transformation $T$ takes a vector as an input, and outputs another vector, possibly of a different dimension, i.e.
+As mentioned in \autoref{chapter:intro}, a ``transformation`` is simply another name for a function. Thus in our context, linear transformations are some functions that act on vectors: a linear transformation $T$ takes a vector as an input, and outputs another vector, possibly of a different dimension, i.e.
 \begin{equation}
 	T:\Rs{n}\to\Rs{m}.
 	\label{eq:linear transformation signature}
@@ -373,3 +377,6 @@ Some of the basic linear transformations can be created as compositions of other
 	\caption{Reflection across the $y$-axis (red arrow) followed by a reflection across the $x$-axis (red arrow) results in a rotation by $\ang{180}$ around the origin (blue arrow).}
 	\label{fig:two_reflections_rotation}
 \end{figure}
+
+\subsection{3D Linear transformations}
+The basic linear transformations in $\Rs{3}$ are very much similar to those in $\Rs{2}$ with some small differences worth mentioning. For a start, scaling and skewing can be done in three different directions instead of just two directions (namely, $x,y$ and $z$ instead of just $x$ and $y$). In addition, there are infinetly many axes of rotation: in $\Rs{2}$ there is just a single axis (actually a point) of rotation - the origin. In $\Rs{3}$ any line that goes through the origin can be an axis of rotation (see \autoref{fig:rotation_around_axis}). Lastly, there are three types of reflections: about the origin (a point), across a line going through the origin, and across a plane (see fig?).

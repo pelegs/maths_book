@@ -1,1 +1,22 @@
 \section{Matrices}
+In the previous section we described linear transformations in a rather abstract way: what they are, how they behave qualitatively and how they look like in 2- and 3-dimensions. In this section we introduce a numerical method of representing linear transformations: matrices.
+
+\subsection{Linear transformation of basis vectors}
+Recall that any vector $\vec{v}\in\Rs{n}$ can be written as a linear combination of basis vectors $\vec{b}_{1}, \vec{b}_{2}, \dots, \vec{b}_{n}$:
+\begin{equation}
+	\vec{v} = \sum\limits_{i=1}^{n}\alpha_{i}\vec{b}_{i} = \alpha_{1}\vec{b}_{1} + \alpha_{2}\vec{b}_{2} + \cdots + \alpha_{n}\vec{b}_{n}.
+\end{equation}
+
+Applying a linear transformation $T$ on $\vec{v}$ yields, using the properties of linear transformations,
+\begin{align}
+	T\left(\vec{v}\right) &= T\left(\alpha_{1}\vec{b}_{1} + \alpha_{2}\vec{b}_{2} + \cdots + \alpha_{n}\vec{b}_{n}\right)\nonumber\\
+	\tikz[baseline=-0.5ex]{\draw[-stealth, xred] (0,0) -- (1,0) node[pos=-0.1, anchor=east] {additivity}}
+						  &= T\left(\alpha_{1}\vec{b}_{1}\right) + T\left(\alpha_{2}\vec{b}_{2}\right) + \cdots + T\left(\alpha_{n}\vec{b}_{n}\right)\nonumber\\
+    \tikz[baseline=-0.5ex]{\draw[-stealth, xblue] (0,0) -- (1,0) node[pos=-0.1, anchor=east] {scalability}}
+						  &= \alpha_{1}T\left(\vec{b}_{1}\right) + \alpha_{2}T\left(\vec{b}_{2}\right) + \cdots + \alpha_{n}T\left(\vec{b}_{n}\right).
+\end{align}
+
+This result is pretty neat: it means that by knowing how a linear transformation $T$ changes the basis vectors, we know exactly how any vector is transformed by $T$. This true for any basis, and thus specifically to the standard basis, where the coefficients $\alpha_{1},\alpha_{2},\dots,\alpha_{n}$ are actually the components of the vector, i.e. $v_{1},v_{2},\dots,v_{n}$. Thus in the standard basis:
+\begin{equation}
+	T\left(\vec{v}\right) = v_{1}T\left(\eb{1}\right) + v_{2}T\left(\eb{2}\right) + \cdots + v_{n}T\left(\eb{n}\right).
+\end{equation}
