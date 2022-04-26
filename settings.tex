@@ -36,6 +36,16 @@
 \usepackage{tikzpagenodes}
 \usetikzlibrary{backgrounds, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective, tikzmark, fpu}
 
+\makeatletter
+\tikzoption{canvas is plane}[]{\@setOxy#1}
+\def\@setOxy O(#1,#2,#3)x(#4,#5,#6)y(#7,#8,#9)%
+  {\def\tikz@plane@origin{\pgfpointxyz{#1}{#2}{#3}}%
+   \def\tikz@plane@x{\pgfpointxyz{#4}{#5}{#6}}%
+   \def\tikz@plane@y{\pgfpointxyz{#7}{#8}{#9}}%
+   \tikz@canvas@is@plane
+  }
+\makeatother
+
 \tikzset{
 	arrow/.style={thick, ->, >=stealth},
 	vector/.style={ultra thick, ->, >=stealth, cap=round},

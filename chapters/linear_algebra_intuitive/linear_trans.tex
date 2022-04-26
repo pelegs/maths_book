@@ -380,3 +380,49 @@ Some of the basic linear transformations can be created as compositions of other
 
 \subsection{3D Linear transformations}
 The basic linear transformations in $\Rs{3}$ are very much similar to those in $\Rs{2}$ with some small differences worth mentioning. For a start, scaling and skewing can be done in three different directions instead of just two directions (namely, $x,y$ and $z$ instead of just $x$ and $y$). In addition, there are infinetly many axes of rotation: in $\Rs{2}$ there is just a single axis (actually a point) of rotation - the origin. In $\Rs{3}$ any line that goes through the origin can be an axis of rotation (see \autoref{fig:rotation_around_axis}). Lastly, there are three types of reflections: about the origin (a point), across a line going through the origin, and across a plane (see fig?).
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[c]{0.47\textwidth}
+		\begin{center}
+			\def\angThe{75}
+			\def\angPhi{65}
+			\tdplotsetmaincoords{\angThe}{\angPhi}
+			\begin{tikzpicture}[tdplot_main_coords]
+				\draw[stealth-stealth, very thick] (-3,0,0) -- (3,0,0) node[pos=1.05] {$x$};
+				\draw[stealth-stealth, very thick] (0,-3,0) -- (0,3,0) node[pos=1.05] {$y$};
+				\draw[stealth-stealth, very thick] (0,0,-3) -- (0,0,3) node[pos=1.05] {$z$};
+				\draw[ultra thick, xgreen] (0,0,0) -- (0.267,0.534,0.802);
+				\begin{scope}[canvas is plane={O(0.267,0.535,0.802)x(1.231,0.386,0.549)y(0.267,-0.298,1.356)}]
+					\fill[xgreen, opacity=0.2] (-1,-1) rectangle (1,1);
+					\draw[step=0.5, xdarkgreen] (-1,-1) grid (1,1);
+					\draw[vector, xdarkgreen!80!black, dotted] (0.5,0) arc (0:177:0.5);
+					\draw[vector, xdarkgreen!80!black, dotted] (-0.5,0) arc (180:362:0.5);
+				\end{scope}
+				\draw[vector, xgreen] (0.267,0.534,0.802) -- (0.534,1.069,1.604) node[pos=1.15] {$\hat{r}$};
+			\end{tikzpicture}
+		\end{center}
+	\end{subfigure}%
+	\begin{subfigure}[c]{0.47\textwidth}
+		\begin{center}
+			\def\angThe{75}
+			\def\angPhi{225}
+			\tdplotsetmaincoords{\angThe}{\angPhi}
+			\begin{tikzpicture}[tdplot_main_coords]
+				\draw[stealth-stealth, very thick] (-3,0,0) -- (3,0,0) node[pos=1.05] {$x$};
+				\draw[stealth-stealth, very thick] (0,-3,0) -- (0,3,0) node[pos=1.05] {$y$};
+				\draw[stealth-stealth, very thick] (0,0,-3) -- (0,0,3) node[pos=1.05] {$z$};
+				\draw[ultra thick, xgreen] (0,0,0) -- (0.267,0.534,0.802);
+				\begin{scope}[canvas is plane={O(0.267,0.535,0.802)x(1.231,0.386,0.549)y(0.267,-0.298,1.356)}]
+					\fill[xgreen, opacity=0.2] (-1,-1) rectangle (1,1);
+					\draw[step=0.5, xdarkgreen] (-1,-1) grid (1,1);
+					\draw[vector, xdarkgreen!80!black, dotted] (0.5,0) arc (0:177:0.5);
+					\draw[vector, xdarkgreen!80!black, dotted] (-0.5,0) arc (180:362:0.5);
+				\end{scope}
+				\draw[vector, xgreen] (0.267,0.534,0.802) -- (0.534,1.069,1.604) node[pos=1.1] {$\hat{r}$};
+			\end{tikzpicture}
+		\end{center}
+	\end{subfigure}
+	\caption{Rotation around a direction $\hat{r}$ from two different viewpoints.}
+	\label{fig:rotation_around_axis}
+\end{figure}
