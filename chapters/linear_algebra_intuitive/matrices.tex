@@ -14,9 +14,86 @@ Applying a linear transformation $T$ on $\vec{v}$ yields, using the properties o
 						  &= T\left(\alpha_{1}\vec{b}_{1}\right) + T\left(\alpha_{2}\vec{b}_{2}\right) + \cdots + T\left(\alpha_{n}\vec{b}_{n}\right)\nonumber\\
     \tikz[baseline=-0.5ex]{\draw[-stealth, xblue] (0,0) -- (1,0) node[pos=-0.1, anchor=east] {scalability}}
 						  &= \alpha_{1}T\left(\vec{b}_{1}\right) + \alpha_{2}T\left(\vec{b}_{2}\right) + \cdots + \alpha_{n}T\left(\vec{b}_{n}\right).
+	\label{eq:transfom_by_basis}
 \end{align}
 
 This result is pretty neat: it means that by knowing how a linear transformation $T$ changes the basis vectors, we know exactly how any vector is transformed by $T$. This true for any basis, and thus specifically to the standard basis, where the coefficients $\alpha_{1},\alpha_{2},\dots,\alpha_{n}$ are actually the components of the vector, i.e. $v_{1},v_{2},\dots,v_{n}$. Thus in the standard basis:
 \begin{equation}
 	T\left(\vec{v}\right) = v_{1}T\left(\eb{1}\right) + v_{2}T\left(\eb{2}\right) + \cdots + v_{n}T\left(\eb{n}\right).
 \end{equation}
+
+\begin{example}{Vector transformation via a basis}{}
+	Applying the transformation $T:\Rs{3}\to\Rs{3}$, defined as
+	\[
+		T\left(\colvec{x;y;z}\right)=\colvec{x+y-2z;2x+z;-x-y-z}
+	\]
+	on the vector $\vec{v}=\colvec{2;-1;3}$ yields the following vector:
+	\[
+		T\left(\vec{v}\right) = T\left(\colvec{2;-1;3}\right) = \colvec{2+(-1)-2\cdot3;2\cdot2+3;-2-(-1)-3} = \colvec{2-1-6;4+3;-2+1-3} = \colvec{-5;7;-4}.
+	\]
+
+	Now, let us apply $T$ first to the three standard basis vectors $\hat{x},\hat{y},\hat{z}$:
+	\begin{align*}
+		T\left( \hat{x} \right) &= T\left(\colvec{1;0;0}\right) = \colvec{1+0-2\cdot0;2\cdot1+0;-1-0-0} = \colvec{1;2;-1},\\
+		T\left( \hat{y} \right) &= T\left(\colvec{0;1;0}\right) = \colvec{0+1-2\cdot0;2\cdot0+0;-0-1-0} = \colvec{1;0;-1},\\
+		T\left( \hat{z} \right) &= T\left(\colvec{0;0;1}\right) = \colvec{0+0-2\cdot1;2\cdot0+1;-0-0-1} = \colvec{-2;1;-1}.
+	\end{align*}
+
+	Taking these results and applying \autoref{eq:transfom_by_basis} yields
+	\begin{align*}
+		T\left( \vec{v} \right) &= 2T \left( \hat{x} \right) -T \left( \hat{y} \right) + 3T \left( \hat{z} \right)\\
+								&= 2\colvec{1;2;-1} - \colvec{1;0;-1} + 3\colvec{-2;1;-1}\\
+								&= \colvec{2;4;-2} - \colvec{1;0;-1} + \colvec{-6;3;-3}\\
+								&= \colvec{2-1-6;4-0+3;-2-(-1)+(-3)}\\
+								&= \colvec{-5;7;-4},
+	\end{align*}
+	which is indeed what we got when we applied $T$ directly to $\vec{v}$.
+\end{example}
+
+\subsection{From transformations to matrices}
+The most general linear transformation $T:\Rs{2}\to\Rs{2}$ has the following form:
+\begin{equation}
+	T \left( \colvec{x;y} \right) = \colvec{ax+by;cx+dy},
+	\label{eq:generic_R2_LT}
+\end{equation}
+where $a,b,c,d\in\mathbb{R}$. If we apply this transformation to $\hat{x}$ and $\hat{y}$ we get, respectively,
+\begin{equation}
+	T \left( \hat{x} \right) = \colvec{a;c},\quad T \left( \hat{y} \right) = \colvec{b;d}.
+	\label{eq:}
+\end{equation}
+We can now collect these two vectors to form a new structure, which we call a \emph{matrix} (in this specific casr a $2\times2$ matrix):
+\begin{equation}
+	M = \begin{bmatrix} a&b\\c&d \end{bmatrix}.
+	\label{eq:matrix}
+\end{equation}
+
+We then define the product of $M$ with a vector $\vec{v}=\colvec{x;y}$ to yield $T \left( \vec{v} \right)$, i.e.
+\begin{equation}
+	M\vec{v} = \begin{bmatrix} a&b\\c&d \end{bmatrix} \cdot\colvec{x;y} = \colvec{ax+by;cx+dy}.
+	\label{eq:matrix_vector_product}
+\end{equation}
+This defintion can be re-written as following:
+\begin{equation}
+	M\vec{v} = \begin{bmatrix} a&b\\c&d \end{bmatrix} \cdot\colvec{x;y} = \colvec{M_{1}\cdot\vec{v};M_{2}\cdot\vec{v}},
+	\label{eq:matrix_vector_product_as_dot_product}
+\end{equation}
+i.e. the $i$-th component of the resulting vector is the scalar product of the $i$-th \textbf{row} of the matrix with the vector $\vec{v}$.
+
+\begin{example}{Matrix-vector product}{}
+	Some matrix-vector products:
+
+	\begin{align*}
+		\begin{bmatrix}
+			1 & -2 \\
+			0 & 5
+		\end{bmatrix}\colvec{-3;2} &= \colvec{1\cdot(-3) + (-2)\cdot2;0\cdot(-3)+5\cdot2} = \colvec{-7;10},\\[5mm]
+		\begin{bmatrix}
+			1 & 2 \\
+			1 & 2
+		\end{bmatrix}\colvec{5;-4} &= \colvec{1\cdot5+2\cdot(-4);1\cdot5+2\cdot(-4)} = \colvec{-3;-3},\\[5mm]
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 2
+		\end{bmatrix}\colvec{2;-2} &= \colvec{2\cdot2+0\cdot(-2);0\cdot2+2\cdot(-2)} = \colvec{4;-4}.
+	\end{align*}
+\end{example}

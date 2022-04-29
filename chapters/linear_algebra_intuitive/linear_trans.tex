@@ -392,14 +392,15 @@ The basic linear transformations in $\Rs{3}$ are very much similar to those in $
 				\draw[stealth-stealth, very thick] (-3,0,0) -- (3,0,0) node[pos=1.05] {$x$};
 				\draw[stealth-stealth, very thick] (0,-3,0) -- (0,3,0) node[pos=1.05] {$y$};
 				\draw[stealth-stealth, very thick] (0,0,-3) -- (0,0,3) node[pos=1.05] {$z$};
-				\draw[ultra thick, xgreen] (0,0,0) -- (0.267,0.534,0.802);
+				\draw[ultra thick, xpurple, dotted] (-0.6675,-1.335,-2.005) -- (0,0,0);
+				\draw[ultra thick, xpurple] (0,0,0) -- (0.267,0.534,0.802);
 				\begin{scope}[canvas is plane={O(0.267,0.535,0.802)x(1.231,0.386,0.549)y(0.267,-0.298,1.356)}]
-					\fill[xgreen, opacity=0.2] (-1,-1) rectangle (1,1);
-					\draw[step=0.5, xdarkgreen] (-1,-1) grid (1,1);
-					\draw[vector, xdarkgreen!80!black, dotted] (0.5,0) arc (0:177:0.5);
-					\draw[vector, xdarkgreen!80!black, dotted] (-0.5,0) arc (180:362:0.5);
+					\fill[xpurple!20, opacity=0.2] (-1,-1) rectangle (1,1);
+					\draw[step=0.5, xdarkpurple!30] (-1,-1) grid (1,1);
+					\draw[vector, xpurple!80, dotted] (0.5,0) arc (0:177:0.5);
+					\draw[vector, xpurple!80, dotted] (-0.5,0) arc (180:362:0.5);
 				\end{scope}
-				\draw[vector, xgreen] (0.267,0.534,0.802) -- (0.534,1.069,1.604) node[pos=1.15] {$\hat{r}$};
+				\draw[vector, xpurple] (0.267,0.534,0.802) -- (0.534,1.069,1.604) node[pos=1.2] {$\hat{r}$};
 			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}%
@@ -412,17 +413,19 @@ The basic linear transformations in $\Rs{3}$ are very much similar to those in $
 				\draw[stealth-stealth, very thick] (-3,0,0) -- (3,0,0) node[pos=1.05] {$x$};
 				\draw[stealth-stealth, very thick] (0,-3,0) -- (0,3,0) node[pos=1.05] {$y$};
 				\draw[stealth-stealth, very thick] (0,0,-3) -- (0,0,3) node[pos=1.05] {$z$};
-				\draw[ultra thick, xgreen] (0,0,0) -- (0.267,0.534,0.802);
+				\draw[ultra thick, xpurple, dotted] (-0.6675,-1.335,-2.005) -- (0,0,0);
+				\draw[ultra thick, xpurple] (0,0,0) -- (0.267,0.534,0.802);
 				\begin{scope}[canvas is plane={O(0.267,0.535,0.802)x(1.231,0.386,0.549)y(0.267,-0.298,1.356)}]
-					\fill[xgreen, opacity=0.2] (-1,-1) rectangle (1,1);
-					\draw[step=0.5, xdarkgreen] (-1,-1) grid (1,1);
-					\draw[vector, xdarkgreen!80!black, dotted] (0.5,0) arc (0:177:0.5);
-					\draw[vector, xdarkgreen!80!black, dotted] (-0.5,0) arc (180:362:0.5);
+					\fill[xpurple!20, opacity=0.2] (-1,-1) rectangle (1,1);
+					\draw[step=0.5, xdarkpurple!30] (-1,-1) grid (1,1);
+					\draw[vector, xpurple!80, dotted] (0.5,0) arc (0:177:0.5);
+					\draw[vector, xpurple!80, dotted] (-0.5,0) arc (180:362:0.5);
 				\end{scope}
-				\draw[vector, xgreen] (0.267,0.534,0.802) -- (0.534,1.069,1.604) node[pos=1.1] {$\hat{r}$};
+				\draw[vector, xpurple] (0.267,0.534,0.802) -- (0.534,1.069,1.604) node[pos=1.15] {$\hat{r}$};
 			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
-	\caption{Rotation around a direction $\hat{r}$ from two different viewpoints.}
+	\caption{Rotation around a direction $\hat{r}$ from two different viewpoints, showing an example of a plane orthogonal to $\hat{r}$ on which the rotation happens.}
+
 	\label{fig:rotation_around_axis}
 \end{figure}
