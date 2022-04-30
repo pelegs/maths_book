@@ -136,3 +136,80 @@ Respectively, we define an $\textcolor{xred}{m}\times \textcolor{xblue}{n}$ matr
 	\end{bmatrix}. 
 	\label{eq:mxn_matrix}
 \end{equation}
+The product $M\vec{v}$ (where $\vec{v}\in\Rs{n}$) is then defined as
+\begin{equation}
+	M\vec{v} =
+	\begin{bmatrix}
+		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
+	\end{bmatrix}\colvec{x_{1};x_{2};\vdots;x_{n}} = \colvec{
+	\Ma{1}{1}x_{1}+\Ma{1}{2}x_{2}+\cdots+\Ma{1}{n}x_{n};
+	\Ma{2}{1}x_{1}+\Ma{2}{2}x_{2}+\cdots+\Ma{2}{n}x_{n};
+	\vdots;
+	\Ma{m}{1}x_{1}+\Ma{m}{2}x_{2}+\cdots+\Ma{m}{n}x_{n}
+	}.
+	\label{eq:}
+\end{equation}
+Again, note that the $i$-th component of the resulting vector is the scalar product $M_{i}\cdot\vec{v}$.
+
+\begin{note}{When is a matrix-vector product defined}{}
+	In order for a matrix-vector product to be defined, the vector must be of the same dimension as the number of \textbf{columns} in the matrix - i.e. given an $a\times b$ matrix, a vector must be $b$-dimensional for the product to be defined.
+\end{note}
+
+\begin{example}{Some matrix-vector products}{}
+	\blindtext[2]
+\end{example}
+
+The structure of an $m\times n$ matrix $M$ has a nice property: given that the transformation in represented in some basis $B=\left\{ \vec{b}_{1},\vec{b}_{2},\dots,\vec{b}_{n} \right\}$, the $i$-th column of the matrix always shows how $\vec{b}_{i}$ is transformed by the product $M\vec{b}_{n}$. This is easy to see in the case of the standard basis, which we anyway use througout this chapter:
+
+\vspace{1cm}
+\begin{equation*}
+	\setlength{\arraycolsep}{2.7mm}
+	M =
+	\begin{bNiceMatrix}
+		\tikzmark{A1}\Ma{1}{1} & \tikzmark{B1}\Ma{1}{2} & \cdots & \tikzmark{N1}\Ma{1}{n}\\
+	    \Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		\Ma{m}{1}\tikzmark{A2} & \Ma{m}{2}\tikzmark{B2} & \cdots & \Ma{m}{n}\tikzmark{N2}
+	\end{bNiceMatrix}.
+\end{equation*}
+\tikzset{
+	highlight/.style={thick, draw=#1, rounded corners, draw opacity=1, fill=#1, fill opacity=0.2},
+	hltxt/.style={highlight=#1, draw opacity=1, text=black, text opacity=1, above, yshift=1.5cm},
+	hlarrow/.style={-stealth, thick, #1},
+}
+\tikz[overlay, remember picture, blend mode=multiply]{
+	\draw[highlight={xgreen}]  ($(pic cs:A1)+(-2pt,7pt)$) rectangle node[hltxt={xgreen} ](Atxt){$T \left( \eb{1} \right)$}($(pic cs:A2)+(2pt,-5pt)$);
+	\draw[highlight={xpurple}] ($(pic cs:B1)+(-2pt,7pt)$) rectangle node[hltxt={xpurple}](Btxt){$T \left( \eb{2} \right)$}($(pic cs:B2)+(2pt,-5pt)$);
+	\draw[highlight={xorange}] ($(pic cs:N1)+(-2pt,7pt)$) rectangle node[hltxt={xorange}](Ntxt){$T \left( \eb{n} \right)$}($(pic cs:N2)+(2pt,-5pt)$);
+
+	\draw[hlarrow={xgreen}]  (Atxt.south) -- ++(0,-5mm);
+	\draw[hlarrow={xpurple}] (Btxt.south) -- ++(0,-5mm);
+	\draw[hlarrow={xorange}] (Ntxt.south) -- ++(0,-5mm);
+}
+
+\begin{example}{Matrices}{}
+	The product of the following matrix $M$ with each of the vectors $\eb{1},\eb{2},\eb{3}$ (i.e. $\hat{x},\hat{y}$ and $\hat{z}$, respectively) returns the respective column of the matrix:
+	\begin{align*}
+		M\eb{1}=
+		\begin{bmatrix}
+			 1 & 2 & 0\\
+			-1 & 3 & 4\\
+			 0 & 1 & 3\\
+		 \end{bmatrix}\colvec{1;0;0} &= \colvec{1\cdot1+2\cdot0+0\cdot0;-1\cdot1+3\cdot0+4\cdot0;0\cdot1+1\cdot0+3\cdot0} = \colvec{1;-1;0},\\[3mm]
+		M\eb{2}=
+		\begin{bmatrix}
+			 1 & 2 & 0\\
+			-1 & 3 & 4\\
+			 0 & 1 & 3\\
+		\end{bmatrix}\colvec{0;1;0} &= \colvec{1\cdot0+2\cdot1+0\cdot0;-1\cdot0+3\cdot1+4\cdot0;0\cdot0+1\cdot1+3\cdot0} = \colvec{2;3;1},\\[3mm]
+		M\eb{3}=
+		\begin{bmatrix}
+			 1 & 2 & 0\\
+			-1 & 3 & 4\\
+			 0 & 1 & 3\\
+		\end{bmatrix}\colvec{0;0;1} &= \colvec{1\cdot0+2\cdot0+0\cdot1;-1\cdot0+3\cdot0+4\cdot1;0\cdot0+1\cdot0+3\cdot1} = \colvec{0;4;3}.
+	\end{align*}
+\end{example}
