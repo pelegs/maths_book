@@ -425,6 +425,7 @@ eq:matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix}$/
 eq:matrix_vector_product	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix_vector_product}$/;"	l
 eq:matrix_vector_product_as_dot_product	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix_vector_product_as_dot_product}$/;"	l
 eq:mod 360	chapters/linear_algebra_rigorous/fields.tex	/^	\\label{eq:mod 360}$/;"	l
+eq:mxn_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:mxn_matrix}$/;"	l
 eq:myeq	tests/autoref.tex	/^	\\label{eq:myeq}$/;"	l
 eq:naturals_subset_integers	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:naturals_subset_integers}$/;"	l
 eq:no_real_solutions	chapters/intro/complex_numbers.tex	/^	\\label{eq:no_real_solutions}$/;"	l
