@@ -461,6 +461,14 @@
 	\hat{#1}_{\mathbf{#2}}
 }
 
+% Color-coded matrix elements
+\newcommand{\Matel}[5]{
+	#1_{\textcolor{#2}{#4}\textcolor{#3}{#5}}
+}
+\newcommand{\Ma}[2]{
+	\Matel{a}{xred}{xblue}{#1}{#2}
+}
+
 % Non-linear transformations
 \makeatletter
 \def\nltransA{%

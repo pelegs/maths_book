@@ -97,3 +97,30 @@ i.e. the $i$-th component of the resulting vector is the scalar product of the $
 		\end{bmatrix}\colvec{2;-2} &= \colvec{2\cdot2+0\cdot(-2);0\cdot2+2\cdot(-2)} = \colvec{4;-4}.
 	\end{align*}
 \end{example}
+
+\begin{challange}{Proof of linearity}{}
+	Prove that the transformation $T$ in \autoref{eq:generic_R2_LT} is indeed linear.
+\end{challange}
+
+The most general form of a linear transformation is $T:\Rs{n}\to\Rs{m}$, i.e. a transformation which takes $n$-dimensional vectors as input and returns $m$-dimensional vectors as output:
+\begin{equation}
+	T \left( \colvec{\tikzmark{N}x_{1};x_{2};\vdots;x_{n}} \right) = \colvec{
+		\Ma{1}{1}x_{1}+\Ma{1}{2}x_{2}+\cdots+\Ma{1}{n}x_{n};
+		\Ma{2}{1}x_{1}+\Ma{2}{2}x_{2}+\cdots+\Ma{2}{n}x_{n}\tikzmark{M};
+		\vdots;
+		\Ma{m}{1}x_{1}+\Ma{m}{2}x_{2}+\cdots+\Ma{m}{n}x_{n}
+	},
+	\label{eq:}
+\end{equation}
+\begin{tikzpicture}[overlay, remember picture]
+	\node[xblue] (Ntxt) at ($(pic cs:N)+(-1.5cm,-2mm)$) {$\Rs{n}\ni$};
+	\draw[-stealth, xblue] (Ntxt) to [out=45, in=90] ($(pic cs:N)+(1mm,2.5mm)$);
+	\node[xred] (Mtxt) at ($(pic cs:M)+(2.5cm,5mm)$) {$\in\Rs{m}$};
+	\draw[-stealth, xred] (Mtxt) to [out=180, in=0] ($(pic cs:M)+(2.5mm,0)$);
+\end{tikzpicture}
+
+where $\Ma{i}{j}\in\mathbb{R},\ \textcolor{xred}{i}=1,2,3,\dots,m$ and $\textcolor{xblue}{j}=1,2,3,\dots,n$.
+
+\begin{challange}{Proof of linearity}{}
+	Prove that the above transformation $T$ is indeed linear.
+\end{challange}
