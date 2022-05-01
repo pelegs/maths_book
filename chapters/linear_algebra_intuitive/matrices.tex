@@ -213,3 +213,74 @@ The structure of an $m\times n$ matrix $M$ has a nice property: given that the t
 		\end{bmatrix}\colvec{0;0;1} &= \colvec{1\cdot0+2\cdot0+0\cdot1;-1\cdot0+3\cdot0+4\cdot1;0\cdot0+1\cdot0+3\cdot1} = \colvec{0;4;3}.
 	\end{align*}
 \end{example}
+
+We can now represent all of the basic linear transformations in $\Rs{2}$ mentioned in the previous section (\autoref{fig:basicLinearTrans}) as $2\times2$ matrices. We do this by observing how the basis vectors $\hat{x}$ and $\hat{y}$ change after the application of each transformation.
+
+\begin{descitemize}
+	\item[Identity] both basis vectors remain the same: $\colvec{1;0}\to\colvec{1;0},\ \colvec{0;1}\to\colvec{0;1}$. Therefore the matrix $I$ representing the identity transformation is
+		\begin{equation}
+			I = \begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}.
+		\end{equation}
+
+	\item[Scaling in $x$ by $\alpha$] the basis vector $\hat{x}$ is streched by $\alpha$: $\colvec{1;0}\to\colvec{\alpha;0}$. The basis vector $\hat{y}=\colvec{0;1}$ stays the same. Therefore the matrix $S_{x}$ representing the transformation is
+		\begin{equation}
+			S_{x} = \begin{bmatrix} \alpha&0 \\ 0&1 \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+	
+	\item[Scaling in $y$ by $\beta$] much like with $S_{x}$, now the basis vector $\hat{y}$ is the one getting streched, by $\beta$: $\colvec{0;1}\to\colvec{0;\beta}$. The basis vector $\hat{x}=\colvec{1;0}$ stays the same. Therefore the matrix $S_{y}$ representing the transformation is
+		\begin{equation}
+			S_{y} = \begin{bmatrix} 1&0 \\ 0&\beta \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+
+	\item[Rotating by $\theta$ counter-clockwise about the origin] \autoref{fig:rotationT} shows how do $\hat{x}$ and $\hat{y}$ transformed by the rotation. In the case of $\hat{x}$, the resulting vector is $R_{\theta} \left( \hat{x} \right)=\colvec{\cos(\theta),\sin(\theta)}$, since thiese are the respective sides of a right triangle of hypotenous $1$ and angle $\theta$. The components of $R_{\theta}\left(\hat{y}\right)$ can be calculated by rotating $\hat{x}$ by $\theta+\frac{\pi}{2}$ ($\theta+\ang{90}$): $\cos \left( \theta+\frac{\pi}{2} \right) = -\sin(\theta)$, and $\sin \left( \theta+\frac{\pi}{2} \right) = \cos \left( \theta \right)$. Therefore we get
+		\begin{equation}
+			\colvec{1;0} \to \colvec{\cos(\theta);\sin(\theta)},\ \colvec{0;1} \to \colvec{-\sin(\theta);\cos(\theta)}.
+			\label{eq:}
+		\end{equation}
+
+		Altogether the rotation matrix $R_{\theta}$ is
+		\begin{equation}
+			R_{\theta} = \begin{bmatrix} \cos(\theta)&-\sin(\theta) \\ \sin(\theta)&\cos(\theta) \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+
+		\begin{figure}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					vector plane,
+					width=10cm, height=10cm,
+					xmin=-1.3, xmax=1.3,
+					ymin=-1.3, ymax=1.3,
+					xtick={-1,0,1},
+					ytick={-1,0,1},
+					yticklabel pos=right,
+					yticklabel style={anchor=west},
+				]
+				\pgfmathsetmacro{\t}{30};
+				\draw[black!20] (1,0) arc (0:360:1);
+				\tikzset{point/.style={circle, fill=#1, inner sep=0pt, minimum size=3pt}}
+
+				% x
+				\draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
+				\draw[vector, xred, dashed] (0,0) -- ({cos(\t)},{sin(\t)}) node[midway, above, rotate=\t] {$R \left( \hat{x} \right)$};
+				\fill[xpurple, opacity=0.15] (0,0) -- (1,0) arc (0:\t:1) -- cycle;
+				\draw[vector, xpurple, dashed] (1,0) arc (0:\t:1) node[point={xred}] (rx) {};
+				\node[text=xpurple] at ({1.1*cos(\t/2)},{1.1*sin(\t/2)}) {$\theta$};
+				
+				% y
+				\draw[vector, xblue] (0,0) -- (0,1) node[midway, right] {$\hat{y}$};
+				\draw[vector, xblue, dashed] (0,0) -- ({-sin(\t)},{cos(\t)}) node[midway, below, rotate={\t-90}] {$R \left( \hat{y} \right)$};
+				\fill[xpurple, opacity=0.15] (0,0) -- (0,1) arc (90:{90+\t}:1) -- cycle;
+				\draw[vector, xpurple, dashed] (0,1) arc (90:{90+\t}:1) node[point={xblue}] (ry) {};
+				\node[text=xpurple] at ({-1.1*sin(\t/2)},{1.1*cos(\t/2)}) {$\theta$};
+				\end{axis}
+				\node[xred, anchor=west, yshift=5pt]  at (rx) {$\left(  \Ctrig,\Strig \right)$};
+				\node[xblue, anchor=east, xshift=-4pt] at (ry) {$\left( -\Strig,\Ctrig \right)$};
+			\end{tikzpicture}
+			\caption{Rotation of $\textcolor{xred}{\hat{x}}$ and $\textcolor{xblue}{\hat{y}}$ by an angle $\textcolor{xpurple}{\theta}$ counter-clockwise about the origin. The notations $\Ctrig,\Strig$ stand for $\cos(\textcolor{xpurple}{\theta})$ and $\sin(\textcolor{xpurple}{\theta})$, respectively.}
+			\label{fig:rotationT}
+		\end{figure}
+\end{descitemize}
