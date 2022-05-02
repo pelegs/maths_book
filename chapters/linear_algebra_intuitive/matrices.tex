@@ -213,3 +213,218 @@ The structure of an $m\times n$ matrix $M$ has a nice property: given that the t
 		\end{bmatrix}\colvec{0;0;1} &= \colvec{1\cdot0+2\cdot0+0\cdot1;-1\cdot0+3\cdot0+4\cdot1;0\cdot0+1\cdot0+3\cdot1} = \colvec{0;4;3}.
 	\end{align*}
 \end{example}
+
+We can now represent all of the basic linear transformations in $\Rs{2}$ mentioned in the previous section (\autoref{fig:basicLinearTrans}) as $2\times2$ matrices. We do this by observing how the basis vectors $\hat{x}$ and $\hat{y}$ change after the application of each transformation.
+
+\begin{descitemize}
+	\item[Identity] both basis vectors remain the same: $\colvec{1;0}\to\colvec{1;0},\ \colvec{0;1}\to\colvec{0;1}$. Therefore the matrix $I$ representing the identity transformation is
+		\begin{equation}
+			I = \begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}.
+		\end{equation}
+
+	\item[Scaling by $\bm{s}$ in the $\bm{x}$-direction] the basis vector $\hat{x}$ is streched by $s$: $\colvec{1;0}\to\colvec{s;0}$. The basis vector $\hat{y}=\colvec{0;1}$ stays the same. Therefore the matrix $S_{x}$ representing the transformation is
+		\begin{equation}
+			S_{x} = \begin{bmatrix} s&0 \\ 0&1 \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+	
+	\item[Scaling by $\bm{s}$ in the $\bm{y}$-direction] much like with $S_{x}$, now the basis vector $\hat{y}$ is the one getting streched, by $\beta$: $\colvec{0;1}\to\colvec{0;s}$. The basis vector $\hat{x}=\colvec{1;0}$ stays the same. Therefore the matrix $S_{y}$ representing the transformation is
+		\begin{equation}
+			S_{y} = \begin{bmatrix} 1&0 \\ 0&s \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+
+	\item[Rotating by $\bm{\theta}$ counter-clockwise about the origin] \autoref{fig:rotationT} shows how do $\hat{x}$ and $\hat{y}$ transformed by the rotation. In the case of $\hat{x}$, the resulting vector is $R_{\theta} \left( \hat{x} \right)=\colvec{\cos(\theta),\sin(\theta)}$, since thiese are the respective sides of a right triangle of hypotenous $1$ and angle $\theta$. The components of $R_{\theta}\left(\hat{y}\right)$ can be calculated by rotating $\hat{x}$ by $\theta+\frac{\pi}{2}$ ($\theta+\ang{90}$): $\cos \left( \theta+\frac{\pi}{2} \right) = -\sin(\theta)$, and $\sin \left( \theta+\frac{\pi}{2} \right) = \cos \left( \theta \right)$. Therefore we get
+		\begin{equation}
+			\colvec{1;0} \to \colvec{\cos(\theta);\sin(\theta)},\ \colvec{0;1} \to \colvec{-\sin(\theta);\cos(\theta)}.
+			\label{eq:}
+		\end{equation}
+
+		Altogether the rotation matrix $R_{\theta}$ is
+		\begin{equation}
+			R_{\theta} = \begin{bmatrix} \cos(\theta)&-\sin(\theta) \\ \sin(\theta)&\cos(\theta) \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+
+		\begin{figure}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					vector plane,
+					width=10cm, height=10cm,
+					xmin=-1.3, xmax=1.3,
+					ymin=-1.3, ymax=1.3,
+					xtick={-1,0,1},
+					ytick={-1,0,1},
+					yticklabel pos=right,
+					yticklabel style={anchor=west},
+				]
+				\pgfmathsetmacro{\t}{30};
+				\draw[black!20] (1,0) arc (0:360:1);
+				\tikzset{point/.style={circle, fill=#1, inner sep=0pt, minimum size=3pt}}
+
+				% x
+				\draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
+				\draw[vector, xred, dashed] (0,0) -- ({cos(\t)},{sin(\t)}) node[midway, above, rotate=\t] {$R_{\theta} \left( \hat{x} \right)$};
+				\fill[xpurple, opacity=0.15] (0,0) -- (1,0) arc (0:\t:1) -- cycle;
+				\draw[vector, xpurple, dashed] (1,0) arc (0:\t:1) node[point={xred}] (rx) {};
+				\node[text=xpurple] at ({1.1*cos(\t/2)},{1.1*sin(\t/2)}) {$\theta$};
+				
+				% y
+				\draw[vector, xblue] (0,0) -- (0,1) node[midway, right] {$\hat{y}$};
+				\draw[vector, xblue, dashed] (0,0) -- ({-sin(\t)},{cos(\t)}) node[midway, below, rotate={\t-90}] {$R_{\theta} \left( \hat{y} \right)$};
+				\fill[xpurple, opacity=0.15] (0,0) -- (0,1) arc (90:{90+\t}:1) -- cycle;
+				\draw[vector, xpurple, dashed] (0,1) arc (90:{90+\t}:1) node[point={xblue}] (ry) {};
+				\node[text=xpurple] at ({-1.1*sin(\t/2)},{1.1*cos(\t/2)}) {$\theta$};
+				\end{axis}
+				\node[xred, anchor=west, yshift=5pt]  at (rx) {$\left(  \Ctrig,\Strig \right)$};
+				\node[xblue, anchor=east, xshift=-4pt] at (ry) {$\left( -\Strig,\Ctrig \right)$};
+			\end{tikzpicture}
+			\caption{Rotation of $\textcolor{xred}{\hat{x}}$ and $\textcolor{xblue}{\hat{y}}$ by an angle $\textcolor{xpurple}{\theta}$ counter-clockwise about the origin. The notations $\Ctrig,\Strig$ stand for $\cos(\textcolor{xpurple}{\theta})$ and $\sin(\textcolor{xpurple}{\theta})$, respectively.}
+			\label{fig:rotationT}
+		\end{figure}
+	
+	\item[Skew by $\bm{k}$ in the $\bm{x}$-direction] what differentiates this transformation from scaling in the $x$-direction is that a skew changes only $\hat{y}$ by adding to it some horizontal displacement $\vec{K}=k\hat{x}$ (see \autoref{fig:skew_in_x}). Therefore $\hat{x}$ remains the same while $\hat{y}$ is transformed as $\hat{y}\to\hat{y}+\vec{k}=\hat{y}+k\hat{x}=\colvec{0;1}+\colvec{k;0}=\colvec{k;1}$, and altogether the matrix is
+		\begin{equation}
+			K_{x} = \begin{bmatrix} 1&k \\ 0&1 \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+		
+		\begin{figure}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					vector plane,
+					width=10cm, height=10cm,
+					xmin=-1.3, xmax=1.3,
+					ymin=-1.3, ymax=1.3,
+					ticks=none,
+				]
+				\draw[vector, xred]  (0,0) -- (1,0) node[midway, below] {$\hat{x}, K_{x}\left(\hat{x}\right)$};
+				\draw[vector, xblue] (0,0) -- (0,1) node[midway, right] {$\hat{y}$};
+				\draw[vector, xblue, dashed] (0,0) -- (0.5,1) node[midway, right] {$K_{x}\left( \hat{y} \right)$};
+				\draw[vector, xpurple, dashed] (0,1) -- (0.5,1) node [midway, above] {$\vec{k}=k\hat{x}$};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Skew in the $x$-direction.}
+			\label{fig:skew_in_x}
+		\end{figure}
+
+	\item[Skew by $\bm{k}$ in the $\bm{y}$-direction] same idea, except the roles of the axes are reveresed:
+		\[
+			\colvec{1;0}\to\colvec{1;k},\ \colvec{0;1}\to\colvec{0;1}.
+		\]
+		Thus the matrix is
+		\begin{equation}
+			K_{y} = \begin{bmatrix} 1&0 \\ k&1 \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+
+	\item[Reflections across a line going through the origin] in the case of reflections across the $x$-axis, $\hat{x}$ stays the same, while $\hat{y}$ is flipped (see \autoref{fig:ref_x_axis}), i.e. $\colvec{0;1}\to-\colvec{0;1}=\colvec{0;-1}$. Therefore the matrix is
+		\begin{equation}
+			\Refl_{x} = \begin{bmatrix} 1&0 \\ 0&-1 \end{bmatrix}.
+		\end{equation}
+		
+		Similarily, a reflection across the $y$-axis flipps $\hat{x}$ while keeping $\hat{y}$ the same (see \autoref{fig:ref_y_axis}), i.e.
+		\begin{equation}
+			\Refl_{y} = \begin{bmatrix} -1&0 \\ 0&1 \end{bmatrix}. 
+		\end{equation}
+		
+		Another special case of these kinds of reflections is done across the line rotated by $\frac{\pi}{4}=\ang{45}$ relative to the $x$-axis, i.e the line $y=x$. In this case $\hat{x}$ and $\hat{y}$ are swapped, giving
+		\begin{equation}
+			\Refl_{\frac{\pi}{4}} = \begin{bmatrix} 0&1 \\ 1&0 \end{bmatrix}. 
+		\end{equation}
+
+		The most general reflection is made across a line of angle $\theta$ relative to the $x$-axis (see \autoref{fig:ref_line}):
+		\begin{equation}
+			\Refl_{\theta} = \begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & \cos \left( 2\theta \right) \end{bmatrix}.
+		\end{equation}
+		A way to calculate this matrix will be shown later in the chapter.
+
+		\begin{figure}
+			\centering
+			\begin{subfigure}[c]{0.45\textwidth}
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[
+						vector plane,
+						width=8cm, height=8cm,
+						xmin=-1.5, xmax=1.5,
+						ymin=-1.5, ymax=1.5,
+						ticks=none,
+					]
+					\draw[vector, xred]  (0,0) -- (1,0) node[below] {$\hat{x},\ \Refl_{x}\left(\hat{x}\right)$};
+					\draw[vector, xblue] (0,0) -- (0,1) node[right] {$\hat{y}$};
+					\draw[vector, xblue, dashed] (0,0) -- (0,-1) node[right] {$\Refl_{x}\left(\hat{y}\right)$};
+					\end{axis}
+				\end{tikzpicture}	
+			\end{center}
+			\caption{Reflection across the $x$-axis.}
+			\label{fig:ref_x_axis}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[c]{0.45\textwidth}
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[
+						vector plane,
+						width=8cm, height=8cm,
+						xmin=-1.5, xmax=1.5,
+						ymin=-1.5, ymax=1.5,
+						ticks=none,
+					]
+					\draw[vector, xred]  (0,0) -- (1,0) node[below] {$\hat{x}$};
+					\draw[vector, xred, dashed] (0,0) -- (-1,0) node[below] {$\Refl_{y}\left(\hat{x}\right)$};
+					\draw[vector, xblue] (0,0) -- (0,1) node[right] {$\hat{y},\ \Refl_{y}\left(\hat{y}\right)$};
+					\end{axis}
+				\end{tikzpicture}	
+			\end{center}
+			\caption{Reflection across the $y$-axis.}
+			\label{fig:ref_y_axis}
+			\end{subfigure}
+			\begin{subfigure}[c]{0.45\textwidth}
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[
+						vector plane,
+						width=8cm, height=8cm,
+						xmin=-1.5, xmax=1.5,
+						ymin=-1.5, ymax=1.5,
+						ticks=none,
+					]
+					% original vectors
+					\draw[vector, xred]  (0,0) -- (1,0) node[below] {$\hat{x}$};
+					\draw[vector, xblue] (0,0) -- (0,1) node[right] {$\hat{y}$};
+					
+					% reflection line
+					\draw[thick, black!75, dashed] (-1.5,-0.5) -- (1.5,0.5);
+
+					% reflected vectors
+					\draw[vector, xred, dashed]  (0,0) -- (0.8,0.6) node[below, anchor=west, yshift=5pt] {$\Refl_{\theta}\left(\hat{x}\right)$};
+					\draw[vector, xblue, dashed, anchor=west] (0,0) -- (0.6,-0.8) node[right] {$\Refl_{\theta}\left(\hat{y}\right)$};
+
+					% angles
+					\fill[xpurple, opacity=0.2] (0,0) -- (0.5,0) arc (0:18.435:0.5) node (A) {} -- cycle;
+					\fill[xgreen, opacity=0.2]  (0,0) -- (A) arc (18.435:36.87:0.5) -- (0,0);
+					\fill[xpurple, opacity=0.2] (0,0) -- (0,0.5) arc (90:198.435:0.5) node (B) {} -- cycle;
+					\fill[xgreen, opacity=0.2]  (0,0) -- (B) arc (198.435:306.87:0.5) -- (0,0);
+					\end{axis}
+				\end{tikzpicture}	
+			\end{center}
+			\caption{Reflection across a line going through the origin. Notice how in both cases the purple and green angles are the same: this shows that both $\hat{x}$ and $\hat{y}$ are reflected across the line.}
+			\label{fig:ref_line}
+			\end{subfigure}
+			\caption{Reflections across different lines going through the origin.}
+			\label{fig:reflections}
+		\end{figure}
+		
+	\item[Reflection across the origin] in this case both $\hat{x}$ and $\hat{y}$ are flipped, i.e.
+		\[
+			\colvec{1;0}\to\colvec{-1;0},\ \colvec{0;1}\to\colvec{0;-1},
+		\]
+		and the matrix is essentially a rotation by $\pi$ ($\ang{180}$) around the origin:
+		\begin{equation}
+			R = \begin{bmatrix} -1&0 \\ 0&-1 \end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+\end{descitemize}

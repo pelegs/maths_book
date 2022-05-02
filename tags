@@ -103,10 +103,13 @@ Useful theorems	chapters/intro/trigonomentry.tex	/^\\subsection{Useful theorems}
 Vector spaces	chapters/linear_algebra_rigorous/vectors.tex	/^\\section{Vector spaces}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 \\AND	settings.tex	/^\\newcommand{\\AND}{\\textbf{AND}}$/;"	C
+\\Ctrig	settings.tex	/^\\newcommand{\\Ctrig}{\\text{c}}$/;"	C
 \\Ma	settings.tex	/^\\newcommand{\\Ma}[2]{$/;"	C
 \\Matel	settings.tex	/^\\newcommand{\\Matel}[5]{$/;"	C
 \\OR	settings.tex	/^\\newcommand{\\OR}{\\textbf{OR}}$/;"	C
+\\Refl	settings.tex	/^\\newcommand{\\Refl}{\\text{Ref}}$/;"	C
 \\Rs	settings.tex	/^\\newcommand{\\Rs}[1]{\\mathbb{R}^{#1}}$/;"	C
+\\Strig	settings.tex	/^\\newcommand{\\Strig}{\\text{s}}$/;"	C
 \\Z	settings.tex	/^\\newcommand{\\Z}[1]{\\mathbb{Z}_{#1}}$/;"	C
 \\arcc	chapters/intro/complex_numbers.tex	/^\\newcommand{\\arcc}[3]{$/;"	C
 \\ath	settings.tex	/^\\newcommand{\\ath}{\\textcolor{xpurple}{\\theta}}$/;"	C
@@ -351,6 +354,7 @@ ellipse83772-6	figures/chapters/tapir_fourier.svg	/^           ry="0.91839445" \
 ellipse83772-6	figures/linear_algebra/tapir_transform.svg	/^           ry="0.91839445" \/>$/;"	i
 ellipse83772-6	figures/linear_algebra/tapir_transform2.svg	/^           ry="0.91839445" \/>$/;"	i
 eq:	chapters/intro/trigonomentry.tex	/^	\\label{eq:}$/;"	l
+eq:	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:}$/;"	l
 eq:2D vector norm	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:2D vector norm}$/;"	l
@@ -498,11 +502,11 @@ fig:angle between two vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\
 fig:angle between two vectors in plane	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:angle between two vectors in plane}$/;"	l
 fig:angles equivalency	chapters/intro/trigonomentry.tex	/^	\\label{fig:angles equivalency}$/;"	l
 fig:area of a triangle	chapters/intro/trigonomentry.tex	/^	\\label{fig:area of a triangle}$/;"	l
+fig:basicLinearTrans	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:basicLinearTrans}$/;"	l
 fig:complex number	chapters/intro/complex_numbers.tex	/^	\\label{fig:complex number}$/;"	l
 fig:complex number 2	chapters/intro/complex_numbers.tex	/^	\\label{fig:complex number 2}$/;"	l
 fig:cross product	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:cross product}$/;"	l
 fig:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{fig:cube roots of 1}$/;"	l
-fig:fundLinearTrans	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:fundLinearTrans}$/;"	l
 fig:linear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:linear transformation grid}$/;"	l
 fig:nonlinear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:nonlinear transformation grid}$/;"	l
 fig:norm 2D vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:norm 2D vector}$/;"	l
@@ -513,9 +517,15 @@ fig:normalVec3	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{fig:nor
 fig:nth roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{fig:nth roots of 1}$/;"	l
 fig:parallelogram	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:parallelogram}$/;"	l
 fig:radians	chapters/intro/trigonomentry.tex	/^	\\label{fig:radians}$/;"	l
+fig:ref_line	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:ref_line}$/;"	l
+fig:ref_x_axis	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:ref_x_axis}$/;"	l
+fig:ref_y_axis	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:ref_y_axis}$/;"	l
+fig:reflections	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:reflections}$/;"	l
+fig:rotationT	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:rotationT}$/;"	l
 fig:rotation_around_axis	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:rotation_around_axis}$/;"	l
 fig:sin and cos graphs	chapters/intro/trigonomentry.tex	/^	\\label{fig:sin and cos graphs}$/;"	l
 fig:single vector LT	chapters/linear_algebra_intuitive/linear_trans.tex	/^		\\label{fig:single vector LT}$/;"	l
+fig:skew_in_x	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:skew_in_x}$/;"	l
 fig:span of a single vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:span of a single vector}$/;"	l
 fig:span of two vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:span of two vectors}$/;"	l
 fig:tan graph	chapters/intro/trigonomentry.tex	/^	\\label{fig:tan graph}$/;"	l
