@@ -428,3 +428,23 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 			\label{eq:}
 		\end{equation}
 \end{descitemize}
+
+The following table summarizes all the matrices of the basic transformations:
+
+\centering
+\begin{longtable}{lcccc}
+	\toprule
+	Transformation & Trans Tapir & $T \left( \hat{x} \right)$ & $T \left( \hat{y} \right)$ & Matrix\\
+	\midrule
+	Identity & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}$\\
+	Scale in $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1.3}{0}{0}{1}{0}{0}{}} & $\colvec{s;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} s&0 \\ 0&1 \end{bmatrix}$\\
+	Scale in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1.2}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;s}$ & $\begin{bmatrix} 1&0 \\ 0&s \end{bmatrix}$\\
+	Rotation & \tikz[baseline=-0.5ex]{\tapirTransComp{0.866}{0.5}{-0.5}{0.866}{0}{0}{}} & $\colvec{\Ctrig;-\Strig}$ & $\colvec{\Strig;\Ctrig}$ & $\begin{bmatrix} \Ctrig & -\Strig \\ \Strig & \Ctrig \end{bmatrix}$\\
+	Skew in $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0.5}{1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{k;1}$ & $\begin{bmatrix} 1&0 \\ k&1 \end{bmatrix}$\\
+	Skew in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0.35}{0}{1}{0}{0}{}} & $\colvec{1;k}$ & $\colvec{0;1}$ & $\begin{bmatrix} 1&k \\ 0&1 \end{bmatrix}$\\
+	Reflection by $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{-1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;-1}$ & $\begin{bmatrix} 1&0 \\ 0&-1 \end{bmatrix}$\\
+	Reflection by $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} -1&0 \\ 0&1 \end{bmatrix}$\\
+	Reflection by line & \tikz[baseline=-0.5ex]{\tapirTransComp{0.882}{0.471}{0.471}{-0.882}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} \text{TBD}&\text{TBD} \\ \text{TBD}&\text{TBD} \end{bmatrix} $\\
+	Reflection about origin & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{-1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;-1}$ & $\begin{bmatrix} -1&0 \\ 0&-1 \end{bmatrix}$\\
+	\bottomrule
+\end{longtable}
