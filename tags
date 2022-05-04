@@ -69,6 +69,8 @@ Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\se
 Logical Statements and their Truth Value	chapters/intro/math_symbols_sets.tex	/^\\subsection{Logical Statements and their Truth Value}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Mathematical Symbols and Sets	chapters/intro/math_symbols_sets.tex	/^\\section{Mathematical Symbols and Sets}$/;"	s	chapter:Introduction
 Matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\section{Matrices}$/;"	s
+Matrix representation of the basic linear transformations (2D)	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Matrix representation of the basic linear transformations (2D)}$/;"	u	section:Matrices
+Matrix representation of the basic linear transformations (3D)	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Matrix representation of the basic linear transformations (3D)}$/;"	u	section:Matrices
 Modulo fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Modulo fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 Normal vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Normal vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Polynomial functions	chapters/intro/polynomials.tex	/^\\section{Polynomial functions}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
@@ -358,6 +360,8 @@ eq:	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:}$/;"	l
 eq:2D vector norm	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:2D vector norm}$/;"	l
+eq:2D_rotation_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:2D_rotation_matrix}$/;"	l
+eq:3d_scale_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:3d_scale_matrix}$/;"	l
 eq:Cartesian_product	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:Cartesian_product}$/;"	l
 eq:Cartesian_product_multiple_sets	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:Cartesian_product_multiple_sets}$/;"	l
 eq:Euler's identity	chapters/intro/complex_numbers.tex	/^	\\label{eq:Euler's identity}$/;"	l
@@ -456,6 +460,7 @@ eq:rationals_subset_algebraic	chapters/intro/math_symbols_sets.tex	/^	\\label{eq
 eq:reals_subset_complex	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:reals_subset_complex}$/;"	l
 eq:restriction	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:restriction}$/;"	l
 eq:roots_form	chapters/intro/polynomials.tex	/^	\\label{eq:roots_form}$/;"	l
+eq:rotation_matrix_x	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:rotation_matrix_x}$/;"	l
 eq:scalar product	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:scalar product}$/;"	l
 eq:scalar product in column form	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:scalar product in column form}$/;"	l
 eq:scalar product to norm	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:scalar product to norm}$/;"	l
@@ -472,6 +477,7 @@ eq:subset_def	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:subset_def}$/;"
 eq:subset_equal	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:subset_equal}$/;"	l
 eq:summation_notation	chapters/intro/polynomials.tex	/^	\\label{eq:summation_notation}$/;"	l
 eq:summation_notation_general	chapters/intro/polynomials.tex	/^	\\label{eq:summation_notation_general}$/;"	l
+eq:tan_double_angles	chapters/intro/trigonomentry.tex	/^			\\label{eq:tan_double_angles}$/;"	l
 eq:test	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:test}$/;"	l
 eq:test2	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:test2}$/;"	l
 eq:three points in a plane	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:three points in a plane}$/;"	l
