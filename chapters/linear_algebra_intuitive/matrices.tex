@@ -178,6 +178,7 @@ The structure of an $m\times n$ matrix $M$ has a nice property: given that the t
 \tikzset{
 	highlight/.style={thick, draw=#1, rounded corners, draw opacity=1, fill=#1, fill opacity=0.2},
 	hltxt/.style={highlight=#1, draw opacity=1, text=black, text opacity=1, above, yshift=1.5cm},
+	nrtxt/.style={black, opacity=1, text opacity=1},
 	hlarrow/.style={-stealth, thick, #1},
 }
 \tikz[overlay, remember picture, blend mode=multiply]{
@@ -214,6 +215,7 @@ The structure of an $m\times n$ matrix $M$ has a nice property: given that the t
 	\end{align*}
 \end{example}
 
+\subsection{Matrix representation of the basic linear transformations (2D)}
 We can now represent all of the basic linear transformations in $\Rs{2}$ mentioned in the previous section (\autoref{fig:basicLinearTrans}) as $2\times2$ matrices. We do this by observing how the basis vectors $\hat{x}$ and $\hat{y}$ change after the application of each transformation.
 
 \begin{descitemize}
@@ -243,7 +245,7 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 		Altogether the rotation matrix $R_{\theta}$ is
 		\begin{equation}
 			R_{\theta} = \begin{bmatrix} \cos(\theta)&-\sin(\theta) \\ \sin(\theta)&\cos(\theta) \end{bmatrix}.
-			\label{eq:}
+			\label{eq:2D_rotation_matrix}
 		\end{equation}
 
 		\begin{figure}
@@ -439,8 +441,10 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 Table \autoref{tab:matrix_basic_LTs} summarizes all the matrices of the basic linear transformations.
 
 \begin{longtable}{lcccc}
+	% !!! vvv MUST FIND WHY THESE DON'T WORK vvv !!! %
 	% \caption{my caption}\\
 	% \label{tab:matrix_basic_LTs}
+	% !!! ^^^ THESE TWO LINES ^^^ !!! %
 	\toprule
 	Transformation & Trans Tapir & $T \left( \hat{x} \right)$ & $T \left( \hat{y} \right)$ & Matrix\\
 	\midrule
@@ -456,3 +460,35 @@ Table \autoref{tab:matrix_basic_LTs} summarizes all the matrices of the basic li
 	Reflection about origin & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{-1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;-1}$ & $\begin{bmatrix} -1&0 \\ 0&-1 \end{bmatrix}$\\
 	\bottomrule
 \end{longtable}
+
+\subsection{Matrix representation of the basic linear transformations (3D)}
+In 3-dimensions, the respective matrices are very similar. For example, the matrix for scaling by $\alpha$ in the $x$-direction, $\beta$ in the $y$-direction and $\gamma$ in the $z$-direction is
+\begin{equation}
+	S = 
+	\begin{bmatrix}
+		\alpha & 0 & 0\\
+		0 & \beta & 0\\
+		0 & 0 & \gamma
+	\end{bmatrix}.
+	\label{eq:3d_scale_matrix}
+\end{equation}
+
+As mentioned in the previous section, in 3-dimensions there are infinitely many rotations: the axis of rotation can be any line going through the origin (i.e. any vector except $\vec{0}$ can represent an axis of rotation). Let us start with constructing rotations around the three axes $x,y$ and $z$ first. When rotating around the $x$ axis it stays stationary, while the rotation itself is done in the $yz$ plane. This means that we can take the $2\times2$ rotation matrix (\autoref{eq:2D_rotation_matrix}) and expand it such that it affects only the $yz$ plane:
+
+\vspace{2em}
+\begin{equation}
+	R^{x}_{\theta} =
+	\begin{bmatrix}
+		\tikzmark{D1}1 & 0 & 0\\
+		0 & \tikzmark{E1} \cos \left( \theta \right) & -\sin \left( \theta \right) \\
+		0\tikzmark{D2} & \sin \left( \theta \right) & \cos \left( \theta \right)\tikzmark{E2}
+	\end{bmatrix}.
+	\label{eq:rotation_matrix_x}
+\end{equation}
+\tikz[overlay, remember picture, blend mode=multiply]{
+	\small
+	\draw[highlight={xred}] ($(pic cs:D1)+(-4pt,9pt)$) rectangle node[hltxt={xred}, above right, anchor=east, xshift=-1cm] (Atxt) {$\hat{x}$ doesn't change} ($(pic cs:D2)+(4pt,-5pt)$);
+	\draw[hlarrow={xred}] (Atxt.east) to [out=0, in=90] ($(pic cs:D1) + (3pt,10pt)$);
+	\draw[highlight={xgreen}] ($(pic cs:E1)+(-4pt,9pt)$) rectangle node[hltxt={xgreen}, below left, anchor=west, yshift=-3cm, xshift=9mm] (Btxt) {2D rotation matrix} ($(pic cs:E2)+(4pt,-5pt)$);
+	\draw[hlarrow={xgreen}] (Btxt.west) to [out=180, in=-90] ($(pic cs:E1) + (35pt,-20pt)$);
+}
