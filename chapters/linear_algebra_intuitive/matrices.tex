@@ -337,9 +337,16 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 
 		The most general reflection is made across a line of angle $\theta$ relative to the $x$-axis (see \autoref{fig:ref_line}):
 		\begin{equation}
-			\Refl_{\theta} = \begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & \cos \left( 2\theta \right) \end{bmatrix}.
+			\Refl_{\theta} = \begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bmatrix}.
 		\end{equation}
 		A way to calculate this matrix will be shown later in the chapter.
+
+		We can translate the matrix to be based on the slope $m$ of the line instead of its angle $\theta$ relative to the $x$-axis by using the relation $m=\tan\left(\theta\right)$ and the two trigonomentric identities for double angles (\autoref{eq:tan_double_angles}):
+		\begin{align*}
+			\begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bmatrix} &= \begin{bmatrix} \frac{1-\tan^{2} \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } \\ \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{\tan^{2} \left( \theta \right)-1 }{1+\tan^{2} \left( \theta \right) } \end{bmatrix}\\
+														&= \frac{1}{1+\tan^{2} \left( \theta \right)}\begin{bmatrix} 1-\tan^{2} \left( \theta \right) & 2\tan \left( \theta \right) \\ 2\tan \left( \theta \right) & \tan^{2} \left( \theta \right) -1  \end{bmatrix}\\
+														&= \frac{1}{1+m^{2}} \begin{bmatrix} 1-m^{2} & 2m \\ 2m & m^{2}-1 \end{bmatrix}.
+		\end{align*}	
 
 		\begin{figure}
 			\centering
@@ -429,22 +436,23 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 		\end{equation}
 \end{descitemize}
 
-The following table summarizes all the matrices of the basic transformations:
+Table \autoref{tab:matrix_basic_LTs} summarizes all the matrices of the basic linear transformations.
 
-\centering
 \begin{longtable}{lcccc}
+	% \caption{my caption}\\
+	% \label{tab:matrix_basic_LTs}
 	\toprule
 	Transformation & Trans Tapir & $T \left( \hat{x} \right)$ & $T \left( \hat{y} \right)$ & Matrix\\
 	\midrule
 	Identity & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}$\\
 	Scale in $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1.3}{0}{0}{1}{0}{0}{}} & $\colvec{s;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} s&0 \\ 0&1 \end{bmatrix}$\\
-	Scale in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1.2}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;s}$ & $\begin{bmatrix} 1&0 \\ 0&s \end{bmatrix}$\\
+	Scale in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1.4}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;s}$ & $\begin{bmatrix} 1&0 \\ 0&s \end{bmatrix}$\\
 	Rotation & \tikz[baseline=-0.5ex]{\tapirTransComp{0.866}{0.5}{-0.5}{0.866}{0}{0}{}} & $\colvec{\Ctrig;-\Strig}$ & $\colvec{\Strig;\Ctrig}$ & $\begin{bmatrix} \Ctrig & -\Strig \\ \Strig & \Ctrig \end{bmatrix}$\\
 	Skew in $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0.5}{1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{k;1}$ & $\begin{bmatrix} 1&0 \\ k&1 \end{bmatrix}$\\
 	Skew in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0.35}{0}{1}{0}{0}{}} & $\colvec{1;k}$ & $\colvec{0;1}$ & $\begin{bmatrix} 1&k \\ 0&1 \end{bmatrix}$\\
 	Reflection by $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{-1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;-1}$ & $\begin{bmatrix} 1&0 \\ 0&-1 \end{bmatrix}$\\
 	Reflection by $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} -1&0 \\ 0&1 \end{bmatrix}$\\
-	Reflection by line & \tikz[baseline=-0.5ex]{\tapirTransComp{0.882}{0.471}{0.471}{-0.882}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} \text{TBD}&\text{TBD} \\ \text{TBD}&\text{TBD} \end{bmatrix} $\\
+	Reflection by line & \tikz[baseline=-0.5ex]{\tapirTransComp{0.882}{0.471}{0.471}{-0.882}{0}{0}{};\draw[very thick, dashed, xpurple](-2,-0.5)--(2,0.5)node[pos=-0.05, anchor=east] {$y=mx$}} & $\colvec{\Ctrig_{2};\Strig_{2}}$ & $\colvec{\Strig_{2};-\Ctrig_{2}}$ & $\begin{bmatrix} \Ctrig_{2}&\Strig_{2} \\ \Strig_{2}&-\Ctrig_{2} \end{bmatrix}$\\
 	Reflection about origin & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{-1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;-1}$ & $\begin{bmatrix} -1&0 \\ 0&-1 \end{bmatrix}$\\
 	\bottomrule
 \end{longtable}
