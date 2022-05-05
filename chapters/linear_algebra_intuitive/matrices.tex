@@ -473,7 +473,7 @@ In 3-dimensions, the respective matrices are very similar. For example, the matr
 	\label{eq:3d_scale_matrix}
 \end{equation}
 
-As mentioned in the previous section, in 3-dimensions there are infinitely many rotations: the axis of rotation can be any line going through the origin (i.e. any vector except $\vec{0}$ can represent an axis of rotation). Let us start with constructing rotations around the three axes $x,y$ and $z$ first. When rotating around the $x$ axis it stays stationary, while the rotation itself is done in the $yz$ plane. This means that we can take the $2\times2$ rotation matrix (\autoref{eq:2D_rotation_matrix}) and expand it such that it affects only the $yz$ plane:
+As mentioned in the previous section, in 3-dimensions there are infinitely many rotations: the axis of rotation can be any line going through the origin (i.e. any vector except $\vec{0}$ can represent an axis of rotation). Let us start with constructing rotations around the three axes $x,y$ and $z$ first. When rotating around the $x$ axis it stays stationary, while the rotation itself is done in the $yz$-plane. This means that we can take the $2\times2$ rotation matrix (\autoref{eq:2D_rotation_matrix}) and expand it such that it affects only the $yz$-plane:
 
 \vspace{2em}
 \begin{equation}
@@ -485,10 +485,63 @@ As mentioned in the previous section, in 3-dimensions there are infinitely many 
 	\end{bmatrix}.
 	\label{eq:rotation_matrix_x}
 \end{equation}
-\tikz[overlay, remember picture, blend mode=multiply]{
+\begin{tikzpicture}[overlay, remember picture, blend mode=multiply]
 	\small
 	\draw[highlight={xred}] ($(pic cs:D1)+(-4pt,9pt)$) rectangle node[hltxt={xred}, above right, anchor=east, xshift=-1cm] (Atxt) {$\hat{x}$ doesn't change} ($(pic cs:D2)+(4pt,-5pt)$);
 	\draw[hlarrow={xred}] (Atxt.east) to [out=0, in=90] ($(pic cs:D1) + (3pt,10pt)$);
 	\draw[highlight={xgreen}] ($(pic cs:E1)+(-4pt,9pt)$) rectangle node[hltxt={xgreen}, below left, anchor=west, yshift=-3cm, xshift=9mm] (Btxt) {2D rotation matrix} ($(pic cs:E2)+(4pt,-5pt)$);
 	\draw[hlarrow={xgreen}] (Btxt.west) to [out=180, in=-90] ($(pic cs:E1) + (35pt,-20pt)$);
-}
+\end{tikzpicture}
+
+\vspace{3em}
+A graphical representation of the rotation can be seen in \autoref{fig:rotation_in_yz}.
+
+\begin{figure}
+	\centering
+	\def\angThe{75}
+	\def\angPhi{45}
+	\tdplotsetmaincoords{\angThe}{\angPhi}
+	\begin{tikzpicture}[tdplot_main_coords]
+		\draw[stealth-, very thick] (-3,0,0) -- (0,0,0);
+		\begin{scope}[canvas is yz plane at x=0]
+			\fill[fill=xgreen, fill opacity=0.2] (-2,2) -- (2,2) -- (2,-2) -- (-2,-2) -- cycle;
+			\draw[step=0.5, xdarkgreen!30] (-2,-2) grid (2,2);
+			\draw[vector, xgreen] (-1,0) arc (180:350:1);
+			\draw[vector, xgreen] (1,0) arc (0:170:1);
+		\end{scope}
+		\draw[stealth-stealth, very thick] (0,-3,0) -- (0,3,0) node[pos=1.05] {$y$};
+		\draw[stealth-stealth, very thick] (0,0,-3) -- (0,0,3) node[pos=1.05] {$z$};
+		\begin{scope}[canvas is yz plane at x=2]
+			\draw[vector, xgreen] (-0.5,0) arc (180:350:0.5);
+		\end{scope}
+		\draw[-stealth, very thick] (0,0,0) -- (3,0,0) node[pos=1.05] {$x$};
+		\begin{scope}[canvas is yz plane at x=2]
+			\draw[vector, xgreen] (0.5,0) arc (0:170:0.5);
+		\end{scope}
+	\end{tikzpicture}
+	\caption{In $\Rs{3}$, rotation around the $x$-axis is a rotation in the $yz$-plane (i.e. $x=0$).}
+	\label{fig:rotation_in_yz}
+\end{figure}
+
+The rotation matrices around the $y$- and $z$-axes follow the same structure:
+\begin{align}
+	R^{y}_{\varphi} &=
+		\begin{bmatrix}
+			\cos \left( \varphi \right) & 0 & \sin \left( \varphi \right)\\
+			0 & 1 & 0 \\
+			-\sin \left( \varphi \right) & 0 & \cos \left( \varphi \right)
+		\end{bmatrix},\\
+	R^{z}_{\psi} &=
+		\begin{bmatrix}
+			\cos \left( \psi \right) & -\sin \left( \psi \right) & 0\\
+			\sin \left( \psi \right) & \cos \left( \psi \right)  & 0\\
+			0 & 0 & 1
+		\end{bmatrix}.
+	\label{eq:rotation_y_z}
+\end{align}
+
+\begin{note}{Direction of the $y$-axis}{}
+	The signs of $\sin \left( \varphi \right)$ in $R^{y}_{\varphi}$ are flipped compared to $R^{x}_{\theta}$ and $R^{z}_{\psi}$, for the same reason a similar thing happens in the $y$-component of the cross product: it is due to the use of a right-handed system.
+\end{note}
+
+Reflections\ldots
