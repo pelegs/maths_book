@@ -544,4 +544,135 @@ The rotation matrices around the $y$- and $z$-axes follow the same structure:
 	The signs of $\sin \left( \varphi \right)$ in $R^{y}_{\varphi}$ are flipped compared to $R^{x}_{\theta}$ and $R^{z}_{\psi}$, for the same reason a similar thing happens in the $y$-component of the cross product: it is due to the use of a right-handed system.
 \end{note}
 
-Reflections\ldots
+The most general rotation in $\Rs{3}$, i.e. around an axis represented by the unit vector $\hat{u}=\colvec{u_{x};u_{y};u_{z}}$ counter-clockwise by an angle $\theta$, is given in matrix form as
+\begin{equation}
+	R_{\theta}=
+	\begin{bmatrix}
+		\cos \left( \theta \right) +u_{x}^{2}\left[1-\cos \left( \theta \right) \right] & u_{x}u_{y}\left[1-\cos \left( \theta \right) \right]-u_{z}\sin \left( \theta \right)  & u_{x}u_{z}\left[1-\cos \left( \theta \right) \right]+u_{y}\sin \left( \theta \right) \\
+		u_{y}u_{x}\left[1-\cos \left( \theta \right) \right]+u_{z}\sin \left( \theta \right)  & \cos \left( \theta \right) +u_{y}^{2}\left[1-\cos \left( \theta \right) \right] & u_{y}u_{z}\left[1-\cos \left( \theta \right) \right]-u_{x}\sin \left( \theta \right) \\
+		u_{z}u_{x}\left[1-\cos \left( \theta \right) \right]-u_{y}\sin \left( \theta \right)  & u_{z}u_{y}\left[1-\cos \left( \theta \right) \right]+u_{x}\sin \left( \theta \right)  & \cos \left( \theta \right) +u_{z}^{2}\left[1-\cos \left( \theta \right) \right]\end{bmatrix}.
+	\label{eq:}
+\end{equation}
+For the moment the derivation of this matrix is not presented.
+
+TBW: REFLECTIONS IN 3D.
+
+\subsection{Types of matrices}
+Any matrix $M$ which represents a transformation of the type $\Rs{n}\to\Rs{n}$ (i.e. from a space onto itself) has the same number of rows and columns (i.e. its dimension is $n\times n$):
+\begin{equation}
+	M =
+	\begin{bmatrix}
+		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		\Ma{n}{1} & \Ma{n}{2} & \cdots & \Ma{n}{n}
+	\end{bmatrix}. 
+	\label{eq:square_matrix}
+\end{equation}
+
+Due to their shape, such matrices are called \emph{square matrices}. The elements $\Ma{1}{1},\Ma{2}{2},\Ma{3}{3},\dots,\Ma{n}{n}$ of a square matrix jointly form its \emph{main diagonal} (also: \emph{principal diagonal}):
+
+\vspace{1em}
+\begin{equation}
+	M =
+	\begin{bmatrix}
+		\tikzmark{m11}\Ma{1}{1} & \Ma{1}{2} & \Ma{1}{3} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
+		\Ma{3}{1} & \Ma{3}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \vdots & \rotatebox[origin=c]{-28}{$\cdots\cdots$} & \vdots\\
+		\Ma{n}{1} & \Ma{n}{2} & \Ma{n}{3} & \cdots & \Ma{n}{n}\tikzmark{mnn}
+	\end{bmatrix}. 
+	\label{eq:square_matrix_main_diag}
+\end{equation}
+\tikz[overlay, remember picture, blend mode=multiply]{
+	\draw[xgreen, line width=5mm, opacity=0.2, cap=round] ($(pic cs:m11)+(5pt,3pt)$) -- ($(pic cs:mnn)+(-5pt,2pt)$) node[pos=-0.1, anchor=east, xshift=-7mm, yshift=4mm, text=xdarkgreen, opacity=1] (txt) {main diagonal};
+	\draw[-stealth, xdarkgreen] ($(txt.east)-(3mm,0)$) to [out=0, in=135] ($(pic cs:m11)+(-1pt,9pt)$);
+}
+
+The sum of the main diagonal elements is called the \emph{trace} of the matrix:
+\begin{equation}
+	\tr \left( M \right) = \sum\limits_{i=1}^{n}\Ma{i}{i}.
+	\label{eq:trace}
+\end{equation}
+
+A \emph{diagonal matrix} $M$ is a matrix in which all the non-main diagonal elements, i.e. $\Ma{i}{j}$ where $\textcolor{xred}{i}\neq \textcolor{xblue}{j}$, equal zero. These matrices can be thought of as scaling matrices: each entry $\Ma{i}{i}$ tells us how the sapce is scaled in the $i$-th dimension.
+
+\begin{example}{Diagonal matrices}{}
+	Text.
+\end{example}
+
+TBW: IDENTITY MATRIX, ZERO MATRIX, ORTHOGONAL MATRIX.
+
+\subsection{Matrix operations}
+An important operation that can be performed on a matrix is the \emph{transpose}: this operation "rotates" all rows of the matrix to columns, and wise-versa:
+\begin{equation}
+	\begin{bmatrix}
+		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
+	\end{bmatrix}
+	\xrightarrow[] {\text{transpose}}
+	\begin{bmatrix}
+		\Ma{1}{1} & \Ma{2}{1} & \cdots & \Ma{n}{1}\\
+		\Ma{1}{2} & \Ma{2}{2} & \cdots & \Ma{n}{2}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		\Ma{1}{m} & \Ma{2}{m} & \cdots & \Ma{n}{m}
+	\end{bmatrix}.
+	\label{eq:transpose}
+\end{equation}
+Mathematically, the transpose takes any element $\Ma{i}{j}$ of the matrix and exchanges its indeces, yielding $\Ma{j}{i}$. If the original matrix has dimensions $\rhl{m}\times \bhl{n}$, then the transposed matrix has dimensions $\rhl{n}\times \bhl{m}$.
+
+\begin{example}{Transposing matrices}{}
+    \begin{align*}
+		\underset{3\times3}{
+			\begin{bmatrix}
+				\rhl{1} & \phl{2} & \phl{3}\\
+				\ghl{4} & \rhl{5} & \phl{6}\\
+				\ghl{7} & \ghl{8} & \rhl{9}\\
+			\end{bmatrix}
+		}
+	  &\xrightarrow[] {\text{transpose}}
+	  \underset{3\times3}{
+		  \begin{bmatrix}
+			  \rhl{1} & \ghl{4} & \ghl{7}\\
+			  \phl{2} & \rhl{5} & \ghl{8}\\
+			  \phl{3} & \phl{6} & \rhl{9}\\
+		  \end{bmatrix}
+	  }
+	  \\[5mm]
+	  \underset{2\times3}{
+		  \begin{bmatrix}
+			  \ghl{0} & \ghl{1} & \ghl{-1}\\
+			  \phl{2} & \phl{-3} & \phl{5}
+		  \end{bmatrix}
+	  }
+	  &\xrightarrow[] {\text{transpose}}
+	  \underset{3\times2}{
+		  \begin{bmatrix}
+			  \ghl{0}  & \phl{2}\\
+			  \ghl{1}  & \phl{-3}\\
+			  \ghl{-1} & \phl{5}
+		  \end{bmatrix}
+	  }
+	  \\[5mm]
+	  \underset{6\times1}{
+		  \begin{bmatrix}
+			  \phl{1} \\
+			  \phl{2} \\
+			  \phl{-1}\\
+			  \phl{0}\\
+			  \phl{7}\\
+			  \phl{-4}\\
+		  \end{bmatrix}
+	  }
+	  &\xrightarrow[] {\text{transpose}}
+	  \underset{1\times6}{
+		  \begin{bmatrix}
+			  \phl{1} & \phl{2} & \phl{-1} & \phl{0} & \phl{7} & \phl{-4}
+		  \end{bmatrix}
+	  }
+    \end{align*}
+\end{example}
+
+The notation for the transpose of a matrix $M$ is $M^{\top}$. Since for the main diagonal elements of a matrix the row and column have equal indeces, the transpose operation does not affect their position in the matrix, i.e. $\Ma{i}{i}\xrightarrow[] {\text{transpose}}\Ma{i}{i}$. This means that $\tr{M}=\tr{M^{\top}}$. Also, diagonal matrices are not affected by a transpose. The transpose of a transposed matrix is the original matrix, i.e. $\left(M^{\top}\right)^{\top} = M$.
