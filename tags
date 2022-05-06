@@ -110,6 +110,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\Ctrig	settings.tex	/^\\newcommand{\\Ctrig}{\\text{c}}$/;"	C
 \\Ma	settings.tex	/^\\newcommand{\\Ma}[2]{$/;"	C
 \\Matel	settings.tex	/^\\newcommand{\\Matel}[5]{$/;"	C
+\\Mb	settings.tex	/^\\newcommand{\\Mb}[2]{$/;"	C
 \\OR	settings.tex	/^\\newcommand{\\OR}{\\textbf{OR}}$/;"	C
 \\Refl	settings.tex	/^\\newcommand{\\Refl}{\\text{Ref}}$/;"	C
 \\Rs	settings.tex	/^\\newcommand{\\Rs}[1]{\\mathbb{R}^{#1}}$/;"	C
@@ -437,6 +438,7 @@ eq:log_product_rule	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:log
 eq:log_subtraction_rule	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:log_subtraction_rule}$/;"	l
 eq:logarithms	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:logarithms}$/;"	l
 eq:matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix}$/;"	l
+eq:matrix_scaling	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:matrix_scaling}$/;"	l
 eq:matrix_vector_product	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix_vector_product}$/;"	l
 eq:matrix_vector_product_as_dot_product	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix_vector_product_as_dot_product}$/;"	l
 eq:mod 360	chapters/linear_algebra_rigorous/fields.tex	/^	\\label{eq:mod 360}$/;"	l

@@ -63,18 +63,18 @@ where $a,b,c,d\in\mathbb{R}$. If we apply this transformation to $\hat{x}$ and $
 \end{equation}
 We can now collect these two vectors to form a new structure, which we call a \emph{matrix} (in this specific casr a $2\times2$ matrix):
 \begin{equation}
-	M = \begin{bmatrix} a&b\\c&d \end{bmatrix}.
+	A = \begin{bmatrix} a&b\\c&d \end{bmatrix}.
 	\label{eq:matrix}
 \end{equation}
 
 We then define the product of $M$ with a vector $\vec{v}=\colvec{x;y}$ to yield $T \left( \vec{v} \right)$, i.e.
 \begin{equation}
-	M\vec{v} = \begin{bmatrix} a&b\\c&d \end{bmatrix} \cdot\colvec{x;y} = \colvec{ax+by;cx+dy}.
+	A\vec{v} = \begin{bmatrix} a&b\\c&d \end{bmatrix} \cdot\colvec{x;y} = \colvec{ax+by;cx+dy}.
 	\label{eq:matrix_vector_product}
 \end{equation}
 This defintion can be re-written as following:
 \begin{equation}
-	M\vec{v} = \begin{bmatrix} a&b\\c&d \end{bmatrix} \cdot\colvec{x;y} = \colvec{M_{1}\cdot\vec{v};M_{2}\cdot\vec{v}},
+	A\vec{v} = \begin{bmatrix} a&b\\c&d \end{bmatrix} \cdot\colvec{x;y} = \colvec{A_{1}\cdot\vec{v};A_{2}\cdot\vec{v}},
 	\label{eq:matrix_vector_product_as_dot_product}
 \end{equation}
 i.e. the $i$-th component of the resulting vector is the scalar product of the $i$-th \textbf{row} of the matrix with the vector $\vec{v}$.
@@ -127,7 +127,7 @@ where $\Ma{i}{j}\in\mathbb{R},\ \textcolor{xred}{i}=1,2,3,\dots,m$ and $\textcol
 
 Respectively, we define an $\textcolor{xred}{m}\times \textcolor{xblue}{n}$ matrix (\textcolor{xred}{$m$} rows by \textcolor{xblue}{$n$} columns) by collecting all the coefficients $\Ma{i}{j}$ into a single structure:
 \begin{equation}
-	M =
+	A =
 	\begin{bmatrix}
 		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
 		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
@@ -138,7 +138,7 @@ Respectively, we define an $\textcolor{xred}{m}\times \textcolor{xblue}{n}$ matr
 \end{equation}
 The product $M\vec{v}$ (where $\vec{v}\in\Rs{n}$) is then defined as
 \begin{equation}
-	M\vec{v} =
+	A\vec{v} =
 	\begin{bmatrix}
 		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
 		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
@@ -152,7 +152,7 @@ The product $M\vec{v}$ (where $\vec{v}\in\Rs{n}$) is then defined as
 	}.
 	\label{eq:}
 \end{equation}
-Again, note that the $i$-th component of the resulting vector is the scalar product $M_{i}\cdot\vec{v}$.
+Again, note that the $i$-th component of the resulting vector is the scalar product $A_{i}\cdot\vec{v}$.
 
 \begin{note}{When is a matrix-vector product defined}{}
 	In order for a matrix-vector product to be defined, the vector must be of the same dimension as the number of \textbf{columns} in the matrix - i.e. given an $a\times b$ matrix, a vector must be $b$-dimensional for the product to be defined.
@@ -162,12 +162,12 @@ Again, note that the $i$-th component of the resulting vector is the scalar prod
 	\blindtext[2]
 \end{example}
 
-The structure of an $m\times n$ matrix $M$ has a nice property: given that the transformation in represented in some basis $B=\left\{ \vec{b}_{1},\vec{b}_{2},\dots,\vec{b}_{n} \right\}$, the $i$-th column of the matrix always shows how $\vec{b}_{i}$ is transformed by the product $M\vec{b}_{n}$. This is easy to see in the case of the standard basis, which we anyway use througout this chapter:
+The structure of an $m\times n$ matrix $A$ has a nice property: given that the transformation in represented in some basis $B=\left\{ \vec{b}_{1},\vec{b}_{2},\dots,\vec{b}_{n} \right\}$, the $i$-th column of the matrix always shows how $\vec{b}_{i}$ is transformed by the product $A\vec{b}_{n}$. This is easy to see in the case of the standard basis, which we anyway use througout this chapter:
 
 \vspace{1cm}
 \begin{equation*}
 	\setlength{\arraycolsep}{2.7mm}
-	M =
+	A =
 	\begin{bNiceMatrix}
 		\tikzmark{A1}\Ma{1}{1} & \tikzmark{B1}\Ma{1}{2} & \cdots & \tikzmark{N1}\Ma{1}{n}\\
 	    \Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
@@ -192,21 +192,21 @@ The structure of an $m\times n$ matrix $M$ has a nice property: given that the t
 }
 
 \begin{example}{Matrices}{}
-	The product of the following matrix $M$ with each of the vectors $\eb{1},\eb{2},\eb{3}$ (i.e. $\hat{x},\hat{y}$ and $\hat{z}$, respectively) returns the respective column of the matrix:
+	The product of the following matrix $A$ with each of the vectors $\eb{1},\eb{2},\eb{3}$ (i.e. $\hat{x},\hat{y}$ and $\hat{z}$, respectively) returns the respective column of the matrix:
 	\begin{align*}
-		M\eb{1}=
+		A\eb{1}=
 		\begin{bmatrix}
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
 			 0 & 1 & 3\\
 		 \end{bmatrix}\colvec{1;0;0} &= \colvec{1\cdot1+2\cdot0+0\cdot0;-1\cdot1+3\cdot0+4\cdot0;0\cdot1+1\cdot0+3\cdot0} = \colvec{1;-1;0},\\[3mm]
-		M\eb{2}=
+		A\eb{2}=
 		\begin{bmatrix}
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
 			 0 & 1 & 3\\
 		\end{bmatrix}\colvec{0;1;0} &= \colvec{1\cdot0+2\cdot1+0\cdot0;-1\cdot0+3\cdot1+4\cdot0;0\cdot0+1\cdot1+3\cdot0} = \colvec{2;3;1},\\[3mm]
-		M\eb{3}=
+		A\eb{3}=
 		\begin{bmatrix}
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
@@ -558,9 +558,9 @@ For the moment the derivation of this matrix is not presented.
 TBW: REFLECTIONS IN 3D.
 
 \subsection{Types of matrices}
-Any matrix $M$ which represents a transformation of the type $\Rs{n}\to\Rs{n}$ (i.e. from a space onto itself) has the same number of rows and columns (i.e. its dimension is $n\times n$):
+Any matrix $A$ which represents a transformation of the type $\Rs{n}\to\Rs{n}$ (i.e. from a space onto itself) has the same number of rows and columns (i.e. its dimension is $n\times n$):
 \begin{equation}
-	M =
+	A =
 	\begin{bmatrix}
 		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
 		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
@@ -574,7 +574,7 @@ Due to their shape, such matrices are called \emph{square matrices}. The element
 
 \vspace{1em}
 \begin{equation}
-	M =
+	A =
 	\begin{bmatrix}
 		\tikzmark{m11}\Ma{1}{1} & \Ma{1}{2} & \Ma{1}{3} & \cdots & \Ma{1}{n}\\
 		\Ma{2}{1} & \Ma{2}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
@@ -591,11 +591,11 @@ Due to their shape, such matrices are called \emph{square matrices}. The element
 
 The sum of the main diagonal elements is called the \emph{trace} of the matrix:
 \begin{equation}
-	\tr \left( M \right) = \sum\limits_{i=1}^{n}\Ma{i}{i}.
+	\tr \left( A \right) = \sum\limits_{i=1}^{n}\Ma{i}{i}.
 	\label{eq:trace}
 \end{equation}
 
-A \emph{diagonal matrix} $M$ is a matrix in which all the non-main diagonal elements, i.e. $\Ma{i}{j}$ where $\textcolor{xred}{i}\neq \textcolor{xblue}{j}$, equal zero. These matrices can be thought of as scaling matrices: each entry $\Ma{i}{i}$ tells us how the sapce is scaled in the $i$-th dimension.
+A \emph{diagonal matrix} $A$ is a matrix in which all the non-main diagonal elements, i.e. $\Ma{i}{j}$ where $\textcolor{xred}{i}\neq \textcolor{xblue}{j}$, equal zero. These matrices can be thought of as scaling matrices: each entry $\Ma{i}{i}$ tells us how the sapce is scaled in the $i$-th dimension.
 
 \begin{example}{Diagonal matrices}{}
 	Text.
@@ -675,4 +675,58 @@ Mathematically, the transpose takes any element $\Ma{i}{j}$ of the matrix and ex
     \end{align*}
 \end{example}
 
-The notation for the transpose of a matrix $M$ is $M^{\top}$. Since for the main diagonal elements of a matrix the row and column have equal indeces, the transpose operation does not affect their position in the matrix, i.e. $\Ma{i}{i}\xrightarrow[] {\text{transpose}}\Ma{i}{i}$. This means that $\tr{M}=\tr{M^{\top}}$. Also, diagonal matrices are not affected by a transpose. The transpose of a transposed matrix is the original matrix, i.e. $\left(M^{\top}\right)^{\top} = M$.
+The notation for the transpose of a matrix $A$ is $A^{\top}$. Since for the main diagonal elements of a matrix the row and column have equal indeces, the transpose operation does not affect their position in the matrix, i.e. $\Ma{i}{i}\xrightarrow[] {\text{transpose}}\Ma{i}{i}$. This means that $\tr{A}=\tr{A^{\top}}$. Also, diagonal matrices are not affected by a transpose. The transpose of a transposed matrix is the original matrix, i.e. $\left(A^{\top}\right)^{\top} = A$.
+
+Much like vectors, a matrix can be scaled by a real number, and two matrices can be added together if their dimensions are identical. The rules for scaling a matrix by a scalar and the addition of two matrices are the same as with vectors, namely everything is dome element wise:
+\begin{descitemize}
+	\item[Scaling] given a matrix
+		\[
+			A = 
+			\begin{bmatrix}
+				\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+				\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
+			\end{bmatrix}
+		\]
+		and a scalar $\gamma\in\mathbb{R}$, their product is
+		\begin{equation}
+			\gamma A = 
+			\begin{bmatrix}
+				\gamma\cdot\Ma{1}{1} & \gamma\cdot\Ma{1}{2} & \cdots & \gamma\cdot\Ma{1}{n}\\
+				\gamma\cdot\Ma{2}{1} & \gamma\cdot\Ma{2}{2} & \cdots & \gamma\cdot\Ma{2}{n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				\gamma\cdot\Ma{m}{1} & \gamma\cdot\Ma{m}{2} & \cdots & \gamma\cdot\Ma{m}{n}
+			\end{bmatrix}.
+			\label{eq:matrix_scaling}
+		\end{equation}
+
+	\item[Addition] given two matrices,
+		\[
+			A = 
+			\begin{bmatrix}
+				\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+				\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
+			\end{bmatrix},\quad
+			B = 
+			\begin{bmatrix}
+				\Mb{1}{1} & \Mb{1}{2} & \cdots & \Mb{1}{n}\\
+				\Mb{2}{1} & \Mb{2}{2} & \cdots & \Mb{2}{n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				\Mb{m}{1} & \Mb{m}{2} & \cdots & \Mb{m}{n}
+			\end{bmatrix}, 
+		\]
+		their sum is
+		\begin{equation}
+			A+B = 
+			\begin{bmatrix}
+				\Ma{1}{1}+\Mb{1}{1} & \Ma{1}{2}+\Mb{1}{2} & \cdots & \Ma{1}{n}+\Mb{1}{n}\\
+				\Ma{2}{1}+\Mb{2}{1} & \Ma{2}{2}+\Mb{2}{2} & \cdots & \Ma{2}{n}+\Mb{2}{n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				\Ma{m}{1}+\Mb{m}{1} & \Ma{m}{2}+\Mb{m}{2} & \cdots & \Ma{m}{n}+\Mb{m}{n}
+			\end{bmatrix}.
+			\label{eq:}
+		\end{equation}
+\end{descitemize}
