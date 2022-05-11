@@ -121,6 +121,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\bhl	settings.tex	/^\\newcommand{\\bhl}[1]{\\textcolor{xblue}{#1}}$/;"	C
 \\chapternumsize	settings.tex	/^\\newcommand{\\chapternumsize}{\\fontsize{70}{70}\\selectfont}$/;"	C
 \\chaptertitlesize	settings.tex	/^\\newcommand{\\chaptertitlesize}{\\fontsize{30}{30}\\selectfont}$/;"	C
+\\circhar	settings.tex	/^\\newcommand{\\circhar}[2]{$/;"	C
 \\cmplxsol	chapters/intro/complex_numbers.tex	/^\\newcommand{\\cmplxsol}[1]{$/;"	C
 \\colvec	settings.tex	/^\\newcommand{\\colvec}[2][c]{%$/;"	C
 \\conj	settings.tex	/^\\newcommand{\\conj}[1]{\\overline{#1}}$/;"	C
@@ -423,6 +424,7 @@ eq:intersection_n_sets	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:inters
 eq:intersection_n_sets_big_notation	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:intersection_n_sets_big_notation}$/;"	l
 eq:isolation1	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:isolation1}$/;"	l
 eq:isolation2	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:isolation2}$/;"	l
+eq:kronecker_delta	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:kronecker_delta}$/;"	l
 eq:law of cosines	chapters/intro/trigonomentry.tex	/^	\\label{eq:law of cosines}$/;"	l
 eq:law of sines	chapters/intro/trigonomentry.tex	/^	\\label{eq:law of sines}$/;"	l
 eq:linear combination	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:linear combination}$/;"	l
@@ -489,6 +491,7 @@ eq:subset_def	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:subset_def}$/;"
 eq:subset_equal	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:subset_equal}$/;"	l
 eq:summation_notation	chapters/intro/polynomials.tex	/^	\\label{eq:summation_notation}$/;"	l
 eq:summation_notation_general	chapters/intro/polynomials.tex	/^	\\label{eq:summation_notation_general}$/;"	l
+eq:symmetric_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:symmetric_matrix}$/;"	l
 eq:tan_double_angles	chapters/intro/trigonomentry.tex	/^			\\label{eq:tan_double_angles}$/;"	l
 eq:test	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:test}$/;"	l
 eq:test2	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:test2}$/;"	l
