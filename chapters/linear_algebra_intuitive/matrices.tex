@@ -580,51 +580,51 @@ Mathematically, the transpose takes any element $\Ma{i}{j}$ of the matrix and ex
 \begin{example}{Transposing matrices}{}
     \begin{align*}
 		\underset{3\times3}{
-			\begin{bNiceMatrix}
+			\begin{bmatrix}
 				\rhl{1} & \phl{2} & \phl{3}\\
 				\ghl{4} & \rhl{5} & \phl{6}\\
 				\ghl{7} & \ghl{8} & \rhl{9}\\
-			\end{bNiceMatrix}
+			\end{bmatrix}
 		}
 	  &\xrightarrow[] {\text{transpose}}
 	  \underset{3\times3}{
-		  \begin{bNiceMatrix}
+		  \begin{bmatrix}
 			  \rhl{1} & \ghl{4} & \ghl{7}\\
 			  \phl{2} & \rhl{5} & \ghl{8}\\
 			  \phl{3} & \phl{6} & \rhl{9}\\
-		  \end{bNiceMatrix}
+		  \end{bmatrix}
 	  }
 	  \\[5mm]
 	  \underset{2\times3}{
-		  \begin{bNiceMatrix}
+		  \begin{bmatrix}
 			  \ghl{0} & \ghl{1} & \ghl{-1}\\
 			  \phl{2} & \phl{-3} & \phl{5}
-		  \end{bNiceMatrix}
+		  \end{bmatrix}
 	  }
 	  &\xrightarrow[] {\text{transpose}}
 	  \underset{3\times2}{
-		  \begin{bNiceMatrix}
+		  \begin{bmatrix}
 			  \ghl{0}  & \phl{2}\\
 			  \ghl{1}  & \phl{-3}\\
 			  \ghl{-1} & \phl{5}
-		  \end{bNiceMatrix}
+		  \end{bmatrix}
 	  }
 	  \\[5mm]
 	  \underset{6\times1}{
-		  \begin{bNiceMatrix}
+		  \begin{bmatrix}
 			  \phl{1} \\
 			  \phl{2} \\
 			  \phl{-1}\\
 			  \phl{0}\\
 			  \phl{7}\\
 			  \phl{-4}\\
-		  \end{bNiceMatrix}
+		  \end{bmatrix}
 	  }
 	  &\xrightarrow[] {\text{transpose}}
 	  \underset{1\times6}{
-		  \begin{bNiceMatrix}
+		  \begin{bmatrix}
 			  \phl{1} & \phl{2} & \phl{-1} & \phl{0} & \phl{7} & \phl{-4}
-		  \end{bNiceMatrix}
+		  \end{bmatrix}
 	  }
     \end{align*}
 \end{example}
@@ -723,26 +723,39 @@ The sum of the main diagonal elements is called the \emph{trace} of the matrix:
 	\label{eq:trace}
 \end{equation}
 
+\emph{Triangular matrices} are matrices in which the elements above or below the main diagonal are all zeros, e.g.
+
+\begin{center}
+	\def\bperc{25}
+	\begin{tabular}{rcp{5mm}rc}
+		$U=$ &
+		$\begin{bmatrix}
+			1 & 6 & 6 & -3 \\
+			\textcolor{black!\bperc}{0} & 2 & 7 & 1 \\
+			\textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} & 3 & 5 \\
+			\textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} & -4
+		\end{bmatrix},$
+			 & &
+		$L=$ &
+		$\begin{bmatrix}
+			1 & \textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} \\
+			\tikzmark{LT1} 2 & 3 & \textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} \\ 
+			5 & 1 & -5 & \textcolor{black!\bperc}{0} \\
+			-4 & 1 & 2\tikzmark{LT2} & -3
+		\end{bmatrix}.$
+		\\[2.5em]
+			 & upper triangular & & & lower triangular
+	\end{tabular}
+\end{center}
+
 A \emph{diagonal matrix} $A$ is a matrix in which all the non-main diagonal elements, i.e. $\Ma{i}{j}$ where $\textcolor{xred}{i}\neq \textcolor{xblue}{j}$, equal zero. These matrices can be thought of as scaling matrices: each entry $\Ma{i}{i}$ tells us how the sapce is scaled in the $i$-th dimension.
 
 \begin{example}{Diagonal matrices}{}
 	Text.
 \end{example}
+As we saw in the cases of $\Rs{2}$ and $\Rs{3}$, diagonal matrices are \emph{scaling matrices}: each entry $a_{ii}$ tells us by how much space is scaled in the $i$-th direction.
 
-A rather non-interesting family of matrices are the \emph{zero matrices}: these are matrices which have only zero-elements, i.e.
-\begin{equation}
-	\bm{0} =
-	\begin{bNiceMatrix}
-		0 & 0 & \cdots & 0\\
-		0 & 0 & \cdots & 0\\
-		\vdots & \vdots & \Ddots & \vdots\\
-		0 & 0 & \cdots & 0
-	\end{bNiceMatrix}.
-	\label{eq:}
-\end{equation}
-Will see later on why exactly we call these matrices "zero matrices".
-
-A very important family of square matrices is the \emph{identity matrices}. These matrices have a unique structure: their main diagonal elements are all $1$, while the rest of the elements (the \emph{off-diagonal elements}) are all $0$:
+A very important family of \textbf{square} matrices are the \emph{identity matrices}. These matrices have a unique structure: their main diagonal elements are all $1$, while the rest of the elements (the \emph{off-diagonal elements}) are all $0$:
 
 \vspace{1em}
 \begin{equation}
@@ -791,36 +804,36 @@ An identity matrix of dimension $n$ represents the identity transformation in $\
 
 	\centering
 	\begin{tabular}{ccccc}
-		$\begin{bNiceMatrix}
+		$\begin{bmatrix}
 			1 & 0\\
 			0 & 1
-		\end{bNiceMatrix}$&
-		$\begin{bNiceMatrix}
+		\end{bmatrix}$&
+		$\begin{bmatrix}
 			1 & 0 & 0\\
 			0 & 1 & 0\\
 			0 & 0 & 1
-		\end{bNiceMatrix}$& 
-		$\begin{bNiceMatrix}
+		\end{bmatrix}$& 
+		$\begin{bmatrix}
 			1 & 0 & 0 & 0\\
 			0 & 1 & 0 & 0\\
 			0 & 0 & 1 & 0\\
 			0 & 0 & 0 & 1\\
-		\end{bNiceMatrix}$&
-		$\begin{bNiceMatrix}
+		\end{bmatrix}$&
+		$\begin{bmatrix}
 			1 & 0 & 0 & 0 & 0\\
 			0 & 1 & 0 & 0 & 0\\
 			0 & 0 & 1 & 0 & 0\\
 			0 & 0 & 0 & 1 & 0\\
 			0 & 0 & 0 & 0 & 1\\
-		\end{bNiceMatrix}$&
-		$\begin{bNiceMatrix}
+		\end{bmatrix}$&
+		$\begin{bmatrix}
 			1 & 0 & 0 & 0 & 0& 0\\
 			0 & 1 & 0 & 0 & 0& 0\\
 			0 & 0 & 1 & 0 & 0& 0\\
 			0 & 0 & 0 & 1 & 0& 0\\
 			0 & 0 & 0 & 0 & 1& 0\\
 			0 & 0 & 0 & 0 & 0& 1\\
-		\end{bNiceMatrix}$\\
+		\end{bmatrix}$\\
 		$I_{2}$ & $I_{3}$ & $I_{4}$ & $I_{5}$ & $I_{6}$
 	\end{tabular}
 \end{example}
@@ -828,7 +841,7 @@ In the next section we will see the importance of the identity matrices.
 
 Another important family of matrices are the \emph{orthogonal matrices} (also \emph{orthonormal matrices}): we say that a matrix $Q$ is an orthogonal matrix if all of its columns, when viewed as column vectors, form an orthonormal set. For example, the identity matrices are all orthogonal matrices. Another orthogonal matrix is the matrix
 \begin{equation}
-	B = \frac{1}{\sqrt{2}}\begin{bNiceMatrix}1&1\\1&-1\end{bNiceMatrix},
+	B = \frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix},
 	\label{eq:}
 \end{equation}
 since both $\frac{1}{\sqrt{2}}\colvec{1;1}$ and $\frac{1}{\sqrt{2}}\colvec{1;-1}$ are unit vectors, and they are orthogonal to each other (as seen in REF).
@@ -841,7 +854,7 @@ A \emph{symmetric matrix} is a square matrix for which
 "Graphically", the symmetry of such matrices can be seen in respect to their main diagonal.
 
 \begin{example}{Symmetric matrix}{}
-	The following matrix is a symmetric $4\times4$ matrix:
+	The following matrix is a symmetric $4\times4$ matrix, in which the elements $a_{ij},a_{ji}$ are higlighted with the same color:
 	\[
 		S =
 		\begin{bNiceMatrix}
@@ -854,4 +867,19 @@ A \emph{symmetric matrix} is a square matrix for which
 	\]
 \end{example}
 
-TBW: UPPER/LOWER TRIANGULAR MATRICES, SYMMETRIC MATRICES.
+A rather non-interesting family of matrices are the \emph{zero matrices}: these are matrices which have only zero-elements, i.e.
+\begin{equation}
+	\bm{0}_{n} =
+	\begin{bNiceMatrix}
+		\tikzmark{z1}0 & 0 & \cdots & 0\tikzmark{z2}\\
+		0 & 0 & \cdots & 0\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		0 & 0 & \cdots & 0\tikzmark{z3}
+	\end{bNiceMatrix}.
+	\label{eq:}
+\end{equation}
+\begin{tikzpicture}[overlay, remember picture]
+	  \draw [xred, thick, decorate, decoration={brace, amplitude=3pt, raise=7pt}] (pic cs:z2) -- (pic cs:z3) node[midway, right, xshift=10pt]{$m$ rows};
+	  \draw [xblue, thick, decorate, decoration={brace, amplitude=3pt, raise=10pt}] (pic cs:z1) -- (pic cs:z2) node[midway, above, yshift=13pt]{$n$ columns};
+\end{tikzpicture}
+We will see later on why exactly we call these matrices "zero matrices".
