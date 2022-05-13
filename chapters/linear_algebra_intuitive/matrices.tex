@@ -704,11 +704,11 @@ Due to their shape, such matrices are called \emph{square matrices}. The element
 \begin{equation}
 	A =
 	\begin{bNiceMatrix}
-		\tikzmark{m11}\Ma{1}{1} & \Ma{1}{2} & \Ma{1}{3} & \cdots & \Ma{1}{n}\\
-		\Ma{2}{1} & \Ma{2}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
-		\Ma{3}{1} & \Ma{3}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
-		\vdots & \vdots & \vdots & \rotatebox[origin=c]{-28}{$\cdots\cdots$} & \vdots\\
-		\Ma{n}{1} & \Ma{n}{2} & \Ma{n}{3} & \cdots & \Ma{n}{n}\tikzmark{mnn}
+		\tikzmark{m11}\cxgreen\Ma{1}{1} & \Ma{1}{2} & \Ma{1}{3} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \cxgreen\Ma{2}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
+		\Ma{3}{1} & \Ma{3}{2} & \cxgreen\Ma{2}{3} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \vdots & \Ddots & \vdots\\
+		\Ma{n}{1} & \Ma{n}{2} & \Ma{n}{3} & \cdots & \cxgreen\Ma{n}{n}\tikzmark{mnn}
 	\end{bNiceMatrix}. 
 	\label{eq:square_matrix_main_diag}
 \end{equation}
@@ -800,39 +800,39 @@ Using the Kronecker delta, each element $a_{ij}$ of the identity matrix $I_{n}$ 
 An identity matrix of dimension $n$ represents the identity transformation in $\Rs{n}$: each standard basis vector $\eb{i}$ is left unchanged by the transformation.
 
 \begin{example}{Identity matrices}{}
-	The identity matrices of $\Rs{2},\dots,\Rs{6}$:
+	The identity matrices of $\Rs{2},\Rs{3},\dots,\Rs{6}$ (in each matrix the main diagonal is highlighted):
 
 	\centering
 	\begin{tabular}{ccccc}
 		$\begin{bmatrix}
-			1 & 0\\
-			0 & 1
+			\cxred1 & 0\\
+			0 & \cxred1
 		\end{bmatrix}$&
 		$\begin{bmatrix}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
+			\cxblue1 & 0 & 0\\
+			0 & \cxblue1 & 0\\
+			0 & 0 & \cxblue1
 		\end{bmatrix}$& 
 		$\begin{bmatrix}
-			1 & 0 & 0 & 0\\
-			0 & 1 & 0 & 0\\
-			0 & 0 & 1 & 0\\
-			0 & 0 & 0 & 1\\
+			\cxgreen1 & 0 & 0 & 0\\
+			0 & \cxgreen1 & 0 & 0\\
+			0 & 0 & \cxgreen1 & 0\\
+			0 & 0 & 0 & \cxgreen1\\
 		\end{bmatrix}$&
 		$\begin{bmatrix}
-			1 & 0 & 0 & 0 & 0\\
-			0 & 1 & 0 & 0 & 0\\
-			0 & 0 & 1 & 0 & 0\\
-			0 & 0 & 0 & 1 & 0\\
-			0 & 0 & 0 & 0 & 1\\
+			\cxpurple1 & 0 & 0 & 0 & 0\\
+			0 & \cxpurple1 & 0 & 0 & 0\\
+			0 & 0 & \cxpurple1 & 0 & 0\\
+			0 & 0 & 0 & \cxpurple1 & 0\\
+			0 & 0 & 0 & 0 & \cxpurple1\\
 		\end{bmatrix}$&
 		$\begin{bmatrix}
-			1 & 0 & 0 & 0 & 0& 0\\
-			0 & 1 & 0 & 0 & 0& 0\\
-			0 & 0 & 1 & 0 & 0& 0\\
-			0 & 0 & 0 & 1 & 0& 0\\
-			0 & 0 & 0 & 0 & 1& 0\\
-			0 & 0 & 0 & 0 & 0& 1\\
+			\cxorange1 & 0 & 0 & 0 & 0& 0\\
+			0 & \cxorange1 & 0 & 0 & 0& 0\\
+			0 & 0 & \cxorange1 & 0 & 0& 0\\
+			0 & 0 & 0 & \cxorange1 & 0& 0\\
+			0 & 0 & 0 & 0 & \cxorange1& 0\\
+			0 & 0 & 0 & 0 & 0& \cxorange1\\
 		\end{bmatrix}$\\
 		$I_{2}$ & $I_{3}$ & $I_{4}$ & $I_{5}$ & $I_{6}$
 	\end{tabular}
@@ -858,11 +858,10 @@ A \emph{symmetric matrix} is a square matrix for which
 	\[
 		S =
 		\begin{bNiceMatrix}
-			% \rowlistcolors{1}{white,xred!30,xblue!30,xgreen!30}
-				 7 & 2 & -2 & -6 \\
-				 2 & 9 & 0 & 7 \\
-				 -2 & 0 & 1 & 1 \\
-				 -6 & 7 & 1 & -7 \\
+			7 & \cxblue2 & \cxgreen-2 & \cxpurple-6 \\
+			\cxblue2 & 9 & \cxred0 & \cxcyan7 \\
+			\cxgreen-2 & \cxred0 & 1 & \cxpink1 \\
+			\cxpurple-6 & \cxcyan7 & \cxpink1 & -7 \\
 		\end{bNiceMatrix}.
 	\]
 \end{example}

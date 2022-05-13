@@ -7,7 +7,7 @@
 %-----------%
 
 \usepackage{pgfkeys}
-\usepackage{colortbl}
+\usepackage[table]{xcolor}
 \pgfkeyssetvalue{/xref dict/fig}{Figure}
 \pgfkeyssetvalue{/xref dict/eq}{Equation}
 \pgfkeyssetvalue{/xref dict/eqs}{Equations}
@@ -578,9 +578,12 @@
 % Ornaments
 \usepackage{pgfornament}
 
-% Circular background for a character
-\newcommand{\circhar}[2]{
-	\tikz[baseline=-0.5ex]{
-		\node[fill=#1!30, inner sep=0pt, minimum size=15pt] {$#2$}
-	}
-}
+% Colored matrix cells
+\newcommand{\ceco}[1]{\cellcolor{#1}}
+\newcommand{\cxred}{\ceco{xred!20}}
+\newcommand{\cxblue}{\ceco{xblue!20}}
+\newcommand{\cxgreen}{\ceco{xgreen!20}}
+\newcommand{\cxpurple}{\ceco{xpurple!20}}
+\newcommand{\cxorange}{\ceco{xorange!20}}
+\newcommand{\cxcyan}{\ceco{xcyan!20}}
+\newcommand{\cxpink}{\ceco{xpink!20}}
