@@ -7,6 +7,7 @@
 %-----------%
 
 \usepackage{pgfkeys}
+\usepackage[table]{xcolor}
 \pgfkeyssetvalue{/xref dict/fig}{Figure}
 \pgfkeyssetvalue{/xref dict/eq}{Equation}
 \pgfkeyssetvalue{/xref dict/eqs}{Equations}
@@ -153,7 +154,6 @@
 %--------%
 
 \usepackage{xcolor}
-\usepackage{colortbl}
 \definecolor{xred}{HTML}{BD4242}
 \definecolor{xblue}{HTML}{4268BD}
 \definecolor{xgreen}{HTML}{52B256}
@@ -577,3 +577,13 @@
 
 % Ornaments
 \usepackage{pgfornament}
+
+% Colored matrix cells
+\newcommand{\ceco}[1]{\cellcolor{#1}}
+\newcommand{\cxred}{\ceco{xred!20}}
+\newcommand{\cxblue}{\ceco{xblue!20}}
+\newcommand{\cxgreen}{\ceco{xgreen!20}}
+\newcommand{\cxpurple}{\ceco{xpurple!20}}
+\newcommand{\cxorange}{\ceco{xorange!20}}
+\newcommand{\cxcyan}{\ceco{xcyan!20}}
+\newcommand{\cxpink}{\ceco{xpink!20}}

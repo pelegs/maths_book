@@ -63,18 +63,18 @@ where $a,b,c,d\in\mathbb{R}$. If we apply this transformation to $\hat{x}$ and $
 \end{equation}
 We can now collect these two vectors to form a new structure, which we call a \emph{matrix} (in this specific casr a $2\times2$ matrix):
 \begin{equation}
-	A = \begin{bmatrix} a&b\\c&d \end{bmatrix}.
+	A = \begin{bNiceMatrix} a&b\\c&d \end{bNiceMatrix}.
 	\label{eq:matrix}
 \end{equation}
 
 We then define the product of $M$ with a vector $\vec{v}=\colvec{x;y}$ to yield $T \left( \vec{v} \right)$, i.e.
 \begin{equation}
-	A\vec{v} = \begin{bmatrix} a&b\\c&d \end{bmatrix} \cdot\colvec{x;y} = \colvec{ax+by;cx+dy}.
+	A\vec{v} = \begin{bNiceMatrix} a&b\\c&d \end{bNiceMatrix} \cdot\colvec{x;y} = \colvec{ax+by;cx+dy}.
 	\label{eq:matrix_vector_product}
 \end{equation}
 This defintion can be re-written as following:
 \begin{equation}
-	A\vec{v} = \begin{bmatrix} a&b\\c&d \end{bmatrix} \cdot\colvec{x;y} = \colvec{A_{1}\cdot\vec{v};A_{2}\cdot\vec{v}},
+	A\vec{v} = \begin{bNiceMatrix} a&b\\c&d \end{bNiceMatrix} \cdot\colvec{x;y} = \colvec{A_{1}\cdot\vec{v};A_{2}\cdot\vec{v}},
 	\label{eq:matrix_vector_product_as_dot_product}
 \end{equation}
 i.e. the $i$-th component of the resulting vector is the scalar product of the $i$-th \textbf{row} of the matrix with the vector $\vec{v}$.
@@ -83,18 +83,18 @@ i.e. the $i$-th component of the resulting vector is the scalar product of the $
 	Some matrix-vector products:
 
 	\begin{align*}
-		\begin{bmatrix}
+		\begin{bNiceMatrix}
 			1 & -2 \\
 			0 & 5
-		\end{bmatrix}\colvec{-3;2} &= \colvec{1\cdot(-3) + (-2)\cdot2;0\cdot(-3)+5\cdot2} = \colvec{-7;10},\\[5mm]
-		\begin{bmatrix}
+		\end{bNiceMatrix}\colvec{-3;2} &= \colvec{1\cdot(-3) + (-2)\cdot2;0\cdot(-3)+5\cdot2} = \colvec{-7;10},\\[5mm]
+		\begin{bNiceMatrix}
 			1 & 2 \\
 			1 & 2
-		\end{bmatrix}\colvec{5;-4} &= \colvec{1\cdot5+2\cdot(-4);1\cdot5+2\cdot(-4)} = \colvec{-3;-3},\\[5mm]
-		\begin{bmatrix}
+		\end{bNiceMatrix}\colvec{5;-4} &= \colvec{1\cdot5+2\cdot(-4);1\cdot5+2\cdot(-4)} = \colvec{-3;-3},\\[5mm]
+		\begin{bNiceMatrix}
 			1 & 0 \\
 			0 & 2
-		\end{bmatrix}\colvec{2;-2} &= \colvec{2\cdot2+0\cdot(-2);0\cdot2+2\cdot(-2)} = \colvec{4;-4}.
+		\end{bNiceMatrix}\colvec{2;-2} &= \colvec{2\cdot2+0\cdot(-2);0\cdot2+2\cdot(-2)} = \colvec{4;-4}.
 	\end{align*}
 \end{example}
 
@@ -128,23 +128,23 @@ where $\Ma{i}{j}\in\mathbb{R},\ \textcolor{xred}{i}=1,2,3,\dots,m$ and $\textcol
 Respectively, we define an $\textcolor{xred}{m}\times \textcolor{xblue}{n}$ matrix (\textcolor{xred}{$m$} rows by \textcolor{xblue}{$n$} columns) by collecting all the coefficients $\Ma{i}{j}$ into a single structure:
 \begin{equation}
 	A =
-	\begin{bmatrix}
+	\begin{bNiceMatrix}
 		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
 		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
-		\vdots & \vdots & \ddots & \vdots\\
+		\vdots & \vdots & \Ddots & \vdots\\
 		\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
-	\end{bmatrix}. 
+	\end{bNiceMatrix}. 
 	\label{eq:mxn_matrix}
 \end{equation}
 The product $M\vec{v}$ (where $\vec{v}\in\Rs{n}$) is then defined as
 \begin{equation}
 	A\vec{v} =
-	\begin{bmatrix}
+	\begin{bNiceMatrix}
 		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
 		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
-		\vdots & \vdots & \ddots & \vdots\\
+		\vdots & \vdots & \Ddots & \vdots\\
 		\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
-	\end{bmatrix}\colvec{x_{1};x_{2};\vdots;x_{n}} = \colvec{
+	\end{bNiceMatrix}\colvec{x_{1};x_{2};\vdots;x_{n}} = \colvec{
 	\Ma{1}{1}x_{1}+\Ma{1}{2}x_{2}+\cdots+\Ma{1}{n}x_{n};
 	\Ma{2}{1}x_{1}+\Ma{2}{2}x_{2}+\cdots+\Ma{2}{n}x_{n};
 	\vdots;
@@ -171,7 +171,7 @@ The structure of an $m\times n$ matrix $A$ has a nice property: given that the t
 	\begin{bNiceMatrix}
 		\tikzmark{A1}\Ma{1}{1} & \tikzmark{B1}\Ma{1}{2} & \cdots & \tikzmark{N1}\Ma{1}{n}\\
 	    \Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
-		\vdots & \vdots & \ddots & \vdots\\
+		\vdots & \vdots & \Ddots & \vdots\\
 		\Ma{m}{1}\tikzmark{A2} & \Ma{m}{2}\tikzmark{B2} & \cdots & \Ma{m}{n}\tikzmark{N2}
 	\end{bNiceMatrix}.
 \end{equation*}
@@ -195,23 +195,23 @@ The structure of an $m\times n$ matrix $A$ has a nice property: given that the t
 	The product of the following matrix $A$ with each of the vectors $\eb{1},\eb{2},\eb{3}$ (i.e. $\hat{x},\hat{y}$ and $\hat{z}$, respectively) returns the respective column of the matrix:
 	\begin{align*}
 		A\eb{1}=
-		\begin{bmatrix}
+		\begin{bNiceMatrix}
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
 			 0 & 1 & 3\\
-		 \end{bmatrix}\colvec{1;0;0} &= \colvec{1\cdot1+2\cdot0+0\cdot0;-1\cdot1+3\cdot0+4\cdot0;0\cdot1+1\cdot0+3\cdot0} = \colvec{1;-1;0},\\[3mm]
+		 \end{bNiceMatrix}\colvec{1;0;0} &= \colvec{1\cdot1+2\cdot0+0\cdot0;-1\cdot1+3\cdot0+4\cdot0;0\cdot1+1\cdot0+3\cdot0} = \colvec{1;-1;0},\\[3mm]
 		A\eb{2}=
-		\begin{bmatrix}
+		\begin{bNiceMatrix}
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
 			 0 & 1 & 3\\
-		\end{bmatrix}\colvec{0;1;0} &= \colvec{1\cdot0+2\cdot1+0\cdot0;-1\cdot0+3\cdot1+4\cdot0;0\cdot0+1\cdot1+3\cdot0} = \colvec{2;3;1},\\[3mm]
+		\end{bNiceMatrix}\colvec{0;1;0} &= \colvec{1\cdot0+2\cdot1+0\cdot0;-1\cdot0+3\cdot1+4\cdot0;0\cdot0+1\cdot1+3\cdot0} = \colvec{2;3;1},\\[3mm]
 		A\eb{3}=
-		\begin{bmatrix}
+		\begin{bNiceMatrix}
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
 			 0 & 1 & 3\\
-		\end{bmatrix}\colvec{0;0;1} &= \colvec{1\cdot0+2\cdot0+0\cdot1;-1\cdot0+3\cdot0+4\cdot1;0\cdot0+1\cdot0+3\cdot1} = \colvec{0;4;3}.
+		\end{bNiceMatrix}\colvec{0;0;1} &= \colvec{1\cdot0+2\cdot0+0\cdot1;-1\cdot0+3\cdot0+4\cdot1;0\cdot0+1\cdot0+3\cdot1} = \colvec{0;4;3}.
 	\end{align*}
 \end{example}
 
@@ -221,18 +221,18 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 \begin{descitemize}
 	\item[Identity] both basis vectors remain the same: $\colvec{1;0}\to\colvec{1;0},\ \colvec{0;1}\to\colvec{0;1}$. Therefore the matrix $I$ representing the identity transformation is
 		\begin{equation}
-			I = \begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}.
+			I = \begin{bNiceMatrix} 1&0 \\ 0&1 \end{bNiceMatrix}.
 		\end{equation}
 
 	\item[Scaling by $\bm{s}$ in the $\bm{x}$-direction] the basis vector $\hat{x}$ is streched by $s$: $\colvec{1;0}\to\colvec{s;0}$. The basis vector $\hat{y}=\colvec{0;1}$ stays the same. Therefore the matrix $S_{x}$ representing the transformation is
 		\begin{equation}
-			S_{x} = \begin{bmatrix} s&0 \\ 0&1 \end{bmatrix}.
+			S_{x} = \begin{bNiceMatrix} s&0 \\ 0&1 \end{bNiceMatrix}.
 			\label{eq:}
 		\end{equation}
 	
 	\item[Scaling by $\bm{s}$ in the $\bm{y}$-direction] much like with $S_{x}$, now the basis vector $\hat{y}$ is the one getting streched, by $\beta$: $\colvec{0;1}\to\colvec{0;s}$. The basis vector $\hat{x}=\colvec{1;0}$ stays the same. Therefore the matrix $S_{y}$ representing the transformation is
 		\begin{equation}
-			S_{y} = \begin{bmatrix} 1&0 \\ 0&s \end{bmatrix}.
+			S_{y} = \begin{bNiceMatrix} 1&0 \\ 0&s \end{bNiceMatrix}.
 			\label{eq:}
 		\end{equation}
 
@@ -244,7 +244,7 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 
 		Altogether the rotation matrix $R_{\theta}$ is
 		\begin{equation}
-			R_{\theta} = \begin{bmatrix} \cos(\theta)&-\sin(\theta) \\ \sin(\theta)&\cos(\theta) \end{bmatrix}.
+			R_{\theta} = \begin{bNiceMatrix} \cos(\theta)&-\sin(\theta) \\ \sin(\theta)&\cos(\theta) \end{bNiceMatrix}.
 			\label{eq:2D_rotation_matrix}
 		\end{equation}
 
@@ -288,7 +288,7 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 	
 	\item[Skew by $\bm{k}$ in the $\bm{x}$-direction] what differentiates this transformation from scaling in the $x$-direction is that a skew changes only $\hat{y}$ by adding to it some horizontal displacement $\vec{K}=k\hat{x}$ (see \autoref{fig:skew_in_x}). Therefore $\hat{x}$ remains the same while $\hat{y}$ is transformed as $\hat{y}\to\hat{y}+\vec{k}=\hat{y}+k\hat{x}=\colvec{0;1}+\colvec{k;0}=\colvec{k;1}$, and altogether the matrix is
 		\begin{equation}
-			K_{x} = \begin{bmatrix} 1&k \\ 0&1 \end{bmatrix}.
+			K_{x} = \begin{bNiceMatrix} 1&k \\ 0&1 \end{bNiceMatrix}.
 			\label{eq:}
 		\end{equation}
 		
@@ -318,36 +318,36 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 		\]
 		Thus the matrix is
 		\begin{equation}
-			K_{y} = \begin{bmatrix} 1&0 \\ k&1 \end{bmatrix}.
+			K_{y} = \begin{bNiceMatrix} 1&0 \\ k&1 \end{bNiceMatrix}.
 			\label{eq:}
 		\end{equation}
 
 	\item[Reflections across a line going through the origin] in the case of reflections across the $x$-axis, $\hat{x}$ stays the same, while $\hat{y}$ is flipped (see \autoref{fig:ref_x_axis}), i.e. $\colvec{0;1}\to-\colvec{0;1}=\colvec{0;-1}$. Therefore the matrix is
 		\begin{equation}
-			\Refl_{x} = \begin{bmatrix} 1&0 \\ 0&-1 \end{bmatrix}.
+			\Refl_{x} = \begin{bNiceMatrix} 1&0 \\ 0&-1 \end{bNiceMatrix}.
 		\end{equation}
 		
 		Similarily, a reflection across the $y$-axis flipps $\hat{x}$ while keeping $\hat{y}$ the same (see \autoref{fig:ref_y_axis}), i.e.
 		\begin{equation}
-			\Refl_{y} = \begin{bmatrix} -1&0 \\ 0&1 \end{bmatrix}. 
+			\Refl_{y} = \begin{bNiceMatrix} -1&0 \\ 0&1 \end{bNiceMatrix}. 
 		\end{equation}
 		
 		Another special case of these kinds of reflections is done across the line rotated by $\frac{\pi}{4}=\ang{45}$ relative to the $x$-axis, i.e the line $y=x$. In this case $\hat{x}$ and $\hat{y}$ are swapped, giving
 		\begin{equation}
-			\Refl_{\frac{\pi}{4}} = \begin{bmatrix} 0&1 \\ 1&0 \end{bmatrix}. 
+			\Refl_{\frac{\pi}{4}} = \begin{bNiceMatrix} 0&1 \\ 1&0 \end{bNiceMatrix}. 
 		\end{equation}
 
 		The most general reflection is made across a line of angle $\theta$ relative to the $x$-axis (see \autoref{fig:ref_line}):
 		\begin{equation}
-			\Refl_{\theta} = \begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bmatrix}.
+			\Refl_{\theta} = \begin{bNiceMatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bNiceMatrix}.
 		\end{equation}
 		A way to calculate this matrix will be shown later in the chapter.
 
 		We can translate the matrix to be based on the slope $m$ of the line instead of its angle $\theta$ relative to the $x$-axis by using the relation $m=\tan\left(\theta\right)$ and the two trigonomentric identities for double angles (\autoref{eq:tan_double_angles}):
 		\begin{align*}
-			\begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bmatrix} &= \begin{bmatrix} \frac{1-\tan^{2} \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } \\ \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{\tan^{2} \left( \theta \right)-1 }{1+\tan^{2} \left( \theta \right) } \end{bmatrix}\\
-														&= \frac{1}{1+\tan^{2} \left( \theta \right)}\begin{bmatrix} 1-\tan^{2} \left( \theta \right) & 2\tan \left( \theta \right) \\ 2\tan \left( \theta \right) & \tan^{2} \left( \theta \right) -1  \end{bmatrix}\\
-														&= \frac{1}{1+m^{2}} \begin{bmatrix} 1-m^{2} & 2m \\ 2m & m^{2}-1 \end{bmatrix}.
+			\begin{bNiceMatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bNiceMatrix} &= \begin{bNiceMatrix} \frac{1-\tan^{2} \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } \\ \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{\tan^{2} \left( \theta \right)-1 }{1+\tan^{2} \left( \theta \right) } \end{bNiceMatrix}\\
+														&= \frac{1}{1+\tan^{2} \left( \theta \right)}\begin{bNiceMatrix} 1-\tan^{2} \left( \theta \right) & 2\tan \left( \theta \right) \\ 2\tan \left( \theta \right) & \tan^{2} \left( \theta \right) -1  \end{bNiceMatrix}\\
+														&= \frac{1}{1+m^{2}} \begin{bNiceMatrix} 1-m^{2} & 2m \\ 2m & m^{2}-1 \end{bNiceMatrix}.
 		\end{align*}	
 
 		\begin{figure}
@@ -433,7 +433,7 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 		\]
 		and the matrix is essentially a rotation by $\pi$ ($\ang{180}$) around the origin:
 		\begin{equation}
-			R = \begin{bmatrix} -1&0 \\ 0&-1 \end{bmatrix}.
+			R = \begin{bNiceMatrix} -1&0 \\ 0&-1 \end{bNiceMatrix}.
 			\label{eq:}
 		\end{equation}
 \end{descitemize}
@@ -448,16 +448,16 @@ Table \autoref{tab:matrix_basic_LTs} summarizes all the matrices of the basic li
 	\toprule
 	Transformation & Trans Tapir & $T \left( \hat{x} \right)$ & $T \left( \hat{y} \right)$ & Matrix\\
 	\midrule
-	Identity & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}$\\
-	Scale in $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1.3}{0}{0}{1}{0}{0}{}} & $\colvec{s;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} s&0 \\ 0&1 \end{bmatrix}$\\
-	Scale in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1.4}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;s}$ & $\begin{bmatrix} 1&0 \\ 0&s \end{bmatrix}$\\
-	Rotation & \tikz[baseline=-0.5ex]{\tapirTransComp{0.866}{0.5}{-0.5}{0.866}{0}{0}{}} & $\colvec{\Ctrig;-\Strig}$ & $\colvec{\Strig;\Ctrig}$ & $\begin{bmatrix} \Ctrig & -\Strig \\ \Strig & \Ctrig \end{bmatrix}$\\
-	Skew in $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0.5}{1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{k;1}$ & $\begin{bmatrix} 1&0 \\ k&1 \end{bmatrix}$\\
-	Skew in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0.35}{0}{1}{0}{0}{}} & $\colvec{1;k}$ & $\colvec{0;1}$ & $\begin{bmatrix} 1&k \\ 0&1 \end{bmatrix}$\\
-	Reflection by $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{-1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;-1}$ & $\begin{bmatrix} 1&0 \\ 0&-1 \end{bmatrix}$\\
-	Reflection by $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;1}$ & $\begin{bmatrix} -1&0 \\ 0&1 \end{bmatrix}$\\
-	Reflection by line & \tikz[baseline=-0.5ex]{\tapirTransComp{0.882}{0.471}{0.471}{-0.882}{0}{0}{};\draw[very thick, dashed, xpurple](-2,-0.5)--(2,0.5)node[pos=-0.05, anchor=east] {$y=mx$}} & $\colvec{\Ctrig_{2};\Strig_{2}}$ & $\colvec{\Strig_{2};-\Ctrig_{2}}$ & $\begin{bmatrix} \Ctrig_{2}&\Strig_{2} \\ \Strig_{2}&-\Ctrig_{2} \end{bmatrix}$\\
-	Reflection about origin & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{-1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;-1}$ & $\begin{bmatrix} -1&0 \\ 0&-1 \end{bmatrix}$\\
+	Identity & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;1}$ & $\begin{bNiceMatrix} 1&0 \\ 0&1 \end{bNiceMatrix}$\\
+	Scale in $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1.3}{0}{0}{1}{0}{0}{}} & $\colvec{s;0}$ & $\colvec{0;1}$ & $\begin{bNiceMatrix} s&0 \\ 0&1 \end{bNiceMatrix}$\\
+	Scale in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{1.4}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;s}$ & $\begin{bNiceMatrix} 1&0 \\ 0&s \end{bNiceMatrix}$\\
+	Rotation & \tikz[baseline=-0.5ex]{\tapirTransComp{0.866}{0.5}{-0.5}{0.866}{0}{0}{}} & $\colvec{\Ctrig;-\Strig}$ & $\colvec{\Strig;\Ctrig}$ & $\begin{bNiceMatrix} \Ctrig & -\Strig \\ \Strig & \Ctrig \end{bNiceMatrix}$\\
+	Skew in $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0.5}{1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{k;1}$ & $\begin{bNiceMatrix} 1&0 \\ k&1 \end{bNiceMatrix}$\\
+	Skew in $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0.35}{0}{1}{0}{0}{}} & $\colvec{1;k}$ & $\colvec{0;1}$ & $\begin{bNiceMatrix} 1&k \\ 0&1 \end{bNiceMatrix}$\\
+	Reflection by $x$ & \tikz[baseline=-0.5ex]{\tapirTransComp{1}{0}{0}{-1}{0}{0}{}} & $\colvec{1;0}$ & $\colvec{0;-1}$ & $\begin{bNiceMatrix} 1&0 \\ 0&-1 \end{bNiceMatrix}$\\
+	Reflection by $y$ & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;1}$ & $\begin{bNiceMatrix} -1&0 \\ 0&1 \end{bNiceMatrix}$\\
+	Reflection by line & \tikz[baseline=-0.5ex]{\tapirTransComp{0.882}{0.471}{0.471}{-0.882}{0}{0}{};\draw[very thick, dashed, xpurple](-2,-0.5)--(2,0.5)node[pos=-0.05, anchor=east] {$y=mx$}} & $\colvec{\Ctrig_{2};\Strig_{2}}$ & $\colvec{\Strig_{2};-\Ctrig_{2}}$ & $\begin{bNiceMatrix} \Ctrig_{2}&\Strig_{2} \\ \Strig_{2}&-\Ctrig_{2} \end{bNiceMatrix}$\\
+	Reflection about origin & \tikz[baseline=-0.5ex]{\tapirTransComp{-1}{0}{0}{-1}{0}{0}{}} & $\colvec{-1;0}$ & $\colvec{0;-1}$ & $\begin{bNiceMatrix} -1&0 \\ 0&-1 \end{bNiceMatrix}$\\
 	\bottomrule
 \end{longtable}
 
@@ -465,11 +465,11 @@ Table \autoref{tab:matrix_basic_LTs} summarizes all the matrices of the basic li
 In 3-dimensions, the respective matrices are very similar. For example, the matrix for scaling by $\alpha$ in the $x$-direction, $\beta$ in the $y$-direction and $\gamma$ in the $z$-direction is
 \begin{equation}
 	S = 
-	\begin{bmatrix}
+	\begin{bNiceMatrix}
 		\alpha & 0 & 0\\
 		0 & \beta & 0\\
 		0 & 0 & \gamma
-	\end{bmatrix}.
+	\end{bNiceMatrix}.
 	\label{eq:3d_scale_matrix}
 \end{equation}
 
@@ -478,11 +478,11 @@ As mentioned in the previous section, in 3-dimensions there are infinitely many 
 \vspace{2em}
 \begin{equation}
 	R^{x}_{\theta} =
-	\begin{bmatrix}
+	\begin{bNiceMatrix}
 		\tikzmark{D1}1 & 0 & 0\\
 		0 & \tikzmark{E1} \cos \left( \theta \right) & -\sin \left( \theta \right) \\
 		0\tikzmark{D2} & \sin \left( \theta \right) & \cos \left( \theta \right)\tikzmark{E2}
-	\end{bmatrix}.
+	\end{bNiceMatrix}.
 	\label{eq:rotation_matrix_x}
 \end{equation}
 \begin{tikzpicture}[overlay, remember picture, blend mode=multiply]
@@ -526,17 +526,17 @@ A graphical representation of the rotation can be seen in \autoref{fig:rotation_
 The rotation matrices around the $y$- and $z$-axes follow the same structure:
 \begin{align}
 	R^{y}_{\varphi} &=
-		\begin{bmatrix}
+		\begin{bNiceMatrix}
 			\cos \left( \varphi \right) & 0 & \sin \left( \varphi \right)\\
 			0 & 1 & 0 \\
 			-\sin \left( \varphi \right) & 0 & \cos \left( \varphi \right)
-		\end{bmatrix},\\
+		\end{bNiceMatrix},\\
 	R^{z}_{\psi} &=
-		\begin{bmatrix}
+		\begin{bNiceMatrix}
 			\cos \left( \psi \right) & -\sin \left( \psi \right) & 0\\
 			\sin \left( \psi \right) & \cos \left( \psi \right)  & 0\\
 			0 & 0 & 1
-		\end{bmatrix}.
+		\end{bNiceMatrix}.
 	\label{eq:rotation_y_z}
 \end{align}
 
@@ -547,78 +547,32 @@ The rotation matrices around the $y$- and $z$-axes follow the same structure:
 The most general rotation in $\Rs{3}$, i.e. around an axis represented by the unit vector $\hat{u}=\colvec{u_{x};u_{y};u_{z}}$ counter-clockwise by an angle $\theta$, is given in matrix form as
 \begin{equation}
 	R_{\theta}=
-	\begin{bmatrix}
+	\begin{bNiceMatrix}
 		\cos \left( \theta \right) +u_{x}^{2}\left[1-\cos \left( \theta \right) \right] & u_{x}u_{y}\left[1-\cos \left( \theta \right) \right]-u_{z}\sin \left( \theta \right)  & u_{x}u_{z}\left[1-\cos \left( \theta \right) \right]+u_{y}\sin \left( \theta \right) \\
 		u_{y}u_{x}\left[1-\cos \left( \theta \right) \right]+u_{z}\sin \left( \theta \right)  & \cos \left( \theta \right) +u_{y}^{2}\left[1-\cos \left( \theta \right) \right] & u_{y}u_{z}\left[1-\cos \left( \theta \right) \right]-u_{x}\sin \left( \theta \right) \\
-		u_{z}u_{x}\left[1-\cos \left( \theta \right) \right]-u_{y}\sin \left( \theta \right)  & u_{z}u_{y}\left[1-\cos \left( \theta \right) \right]+u_{x}\sin \left( \theta \right)  & \cos \left( \theta \right) +u_{z}^{2}\left[1-\cos \left( \theta \right) \right]\end{bmatrix}.
+		u_{z}u_{x}\left[1-\cos \left( \theta \right) \right]-u_{y}\sin \left( \theta \right)  & u_{z}u_{y}\left[1-\cos \left( \theta \right) \right]+u_{x}\sin \left( \theta \right)  & \cos \left( \theta \right) +u_{z}^{2}\left[1-\cos \left( \theta \right) \right]\end{bNiceMatrix}.
 	\label{eq:}
 \end{equation}
 For the moment the derivation of this matrix is not presented.
 
 TBW: REFLECTIONS IN 3D.
 
-\subsection{Types of matrices}
-Any matrix $A$ which represents a transformation of the type $\Rs{n}\to\Rs{n}$ (i.e. from a space onto itself) has the same number of rows and columns (i.e. its dimension is $n\times n$):
-\begin{equation}
-	A =
-	\begin{bmatrix}
-		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
-		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
-		\vdots & \vdots & \ddots & \vdots\\
-		\Ma{n}{1} & \Ma{n}{2} & \cdots & \Ma{n}{n}
-	\end{bmatrix}. 
-	\label{eq:square_matrix}
-\end{equation}
-
-Due to their shape, such matrices are called \emph{square matrices}. The elements $\Ma{1}{1},\Ma{2}{2},\Ma{3}{3},\dots,\Ma{n}{n}$ of a square matrix jointly form its \emph{main diagonal} (also: \emph{principal diagonal}):
-
-\vspace{1em}
-\begin{equation}
-	A =
-	\begin{bmatrix}
-		\tikzmark{m11}\Ma{1}{1} & \Ma{1}{2} & \Ma{1}{3} & \cdots & \Ma{1}{n}\\
-		\Ma{2}{1} & \Ma{2}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
-		\Ma{3}{1} & \Ma{3}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
-		\vdots & \vdots & \vdots & \rotatebox[origin=c]{-28}{$\cdots\cdots$} & \vdots\\
-		\Ma{n}{1} & \Ma{n}{2} & \Ma{n}{3} & \cdots & \Ma{n}{n}\tikzmark{mnn}
-	\end{bmatrix}. 
-	\label{eq:square_matrix_main_diag}
-\end{equation}
-\tikz[overlay, remember picture, blend mode=multiply]{
-	\draw[xgreen, line width=5mm, opacity=0.2, cap=round] ($(pic cs:m11)+(5pt,3pt)$) -- ($(pic cs:mnn)+(-5pt,2pt)$) node[pos=-0.1, anchor=east, xshift=-7mm, yshift=4mm, text=xdarkgreen, opacity=1] (txt) {main diagonal};
-	\draw[-stealth, xdarkgreen] ($(txt.east)-(3mm,0)$) to [out=0, in=135] ($(pic cs:m11)+(-1pt,9pt)$);
-}
-
-The sum of the main diagonal elements is called the \emph{trace} of the matrix:
-\begin{equation}
-	\tr \left( A \right) = \sum\limits_{i=1}^{n}\Ma{i}{i}.
-	\label{eq:trace}
-\end{equation}
-
-A \emph{diagonal matrix} $A$ is a matrix in which all the non-main diagonal elements, i.e. $\Ma{i}{j}$ where $\textcolor{xred}{i}\neq \textcolor{xblue}{j}$, equal zero. These matrices can be thought of as scaling matrices: each entry $\Ma{i}{i}$ tells us how the sapce is scaled in the $i$-th dimension.
-
-\begin{example}{Diagonal matrices}{}
-	Text.
-\end{example}
-
-TBW: IDENTITY MATRIX, ZERO MATRIX, ORTHOGONAL MATRIX.
-
 \subsection{Matrix operations}
 An important operation that can be performed on a matrix is the \emph{transpose}: this operation "rotates" all rows of the matrix to columns, and wise-versa:
 \begin{equation}
-	\begin{bmatrix}
+	\begin{bNiceMatrix}
 		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
 		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
-		\vdots & \vdots & \ddots & \vdots\\
+		\vdots & \vdots & \Ddots & \vdots\\
 		\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
-	\end{bmatrix}
+	\end{bNiceMatrix}
 	\xrightarrow[] {\text{transpose}}
-	\begin{bmatrix}
+	\begin{bNiceMatrix}
 		\Ma{1}{1} & \Ma{2}{1} & \cdots & \Ma{n}{1}\\
 		\Ma{1}{2} & \Ma{2}{2} & \cdots & \Ma{n}{2}\\
-		\vdots & \vdots & \ddots & \vdots\\
+		\vdots & \vdots & \Ddots & \vdots\\
 		\Ma{1}{m} & \Ma{2}{m} & \cdots & \Ma{n}{m}
-	\end{bmatrix}.
+	\end{bNiceMatrix}.
 	\label{eq:transpose}
 \end{equation}
 Mathematically, the transpose takes any element $\Ma{i}{j}$ of the matrix and exchanges its indeces, yielding $\Ma{j}{i}$. If the original matrix has dimensions $\rhl{m}\times \bhl{n}$, then the transposed matrix has dimensions $\rhl{n}\times \bhl{m}$.
@@ -682,51 +636,249 @@ Much like vectors, a matrix can be scaled by a real number, and two matrices can
 	\item[Scaling] given a matrix
 		\[
 			A = 
-			\begin{bmatrix}
+			\begin{bNiceMatrix}
 				\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
 				\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
-				\vdots & \vdots & \ddots & \vdots\\
+				\vdots & \vdots & \Ddots & \vdots\\
 				\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
-			\end{bmatrix}
+			\end{bNiceMatrix}
 		\]
 		and a scalar $\gamma\in\mathbb{R}$, their product is
 		\begin{equation}
 			\gamma A = 
-			\begin{bmatrix}
+			\begin{bNiceMatrix}
 				\gamma\cdot\Ma{1}{1} & \gamma\cdot\Ma{1}{2} & \cdots & \gamma\cdot\Ma{1}{n}\\
 				\gamma\cdot\Ma{2}{1} & \gamma\cdot\Ma{2}{2} & \cdots & \gamma\cdot\Ma{2}{n}\\
-				\vdots & \vdots & \ddots & \vdots\\
+				\vdots & \vdots & \Ddots & \vdots\\
 				\gamma\cdot\Ma{m}{1} & \gamma\cdot\Ma{m}{2} & \cdots & \gamma\cdot\Ma{m}{n}
-			\end{bmatrix}.
+			\end{bNiceMatrix}.
 			\label{eq:matrix_scaling}
 		\end{equation}
 
 	\item[Addition] given two matrices,
 		\[
 			A = 
-			\begin{bmatrix}
+			\begin{bNiceMatrix}
 				\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
 				\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
-				\vdots & \vdots & \ddots & \vdots\\
+				\vdots & \vdots & \Ddots & \vdots\\
 				\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
-			\end{bmatrix},\quad
+			\end{bNiceMatrix},\quad
 			B = 
-			\begin{bmatrix}
+			\begin{bNiceMatrix}
 				\Mb{1}{1} & \Mb{1}{2} & \cdots & \Mb{1}{n}\\
 				\Mb{2}{1} & \Mb{2}{2} & \cdots & \Mb{2}{n}\\
-				\vdots & \vdots & \ddots & \vdots\\
+				\vdots & \vdots & \Ddots & \vdots\\
 				\Mb{m}{1} & \Mb{m}{2} & \cdots & \Mb{m}{n}
-			\end{bmatrix}, 
+			\end{bNiceMatrix}, 
 		\]
 		their sum is
 		\begin{equation}
 			A+B = 
-			\begin{bmatrix}
+			\begin{bNiceMatrix}
 				\Ma{1}{1}+\Mb{1}{1} & \Ma{1}{2}+\Mb{1}{2} & \cdots & \Ma{1}{n}+\Mb{1}{n}\\
 				\Ma{2}{1}+\Mb{2}{1} & \Ma{2}{2}+\Mb{2}{2} & \cdots & \Ma{2}{n}+\Mb{2}{n}\\
-				\vdots & \vdots & \ddots & \vdots\\
+				\vdots & \vdots & \Ddots & \vdots\\
 				\Ma{m}{1}+\Mb{m}{1} & \Ma{m}{2}+\Mb{m}{2} & \cdots & \Ma{m}{n}+\Mb{m}{n}
-			\end{bmatrix}.
+			\end{bNiceMatrix}.
 			\label{eq:}
 		\end{equation}
 \end{descitemize}
+
+\subsection{Types of matrices}
+Any matrix $A$ which represents a transformation of the type $\Rs{n}\to\Rs{n}$ (i.e. from a space onto itself) has the same number of rows and columns (i.e. its dimension is $n\times n$):
+\begin{equation}
+	A =
+	\begin{bNiceMatrix}
+		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		\Ma{n}{1} & \Ma{n}{2} & \cdots & \Ma{n}{n}
+	\end{bNiceMatrix}. 
+	\label{eq:square_matrix}
+\end{equation}
+
+Due to their shape, such matrices are called \emph{square matrices}. The elements $\Ma{1}{1},\Ma{2}{2},\Ma{3}{3},\dots,\Ma{n}{n}$ of a square matrix jointly form its \emph{main diagonal} (also: \emph{principal diagonal}):
+
+\vspace{1em}
+\begin{equation}
+	A =
+	\begin{bNiceMatrix}
+		\tikzmark{m11}\cxgreen\Ma{1}{1} & \Ma{1}{2} & \Ma{1}{3} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \cxgreen\Ma{2}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
+		\Ma{3}{1} & \Ma{3}{2} & \cxgreen\Ma{2}{3} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \vdots & \Ddots & \vdots\\
+		\Ma{n}{1} & \Ma{n}{2} & \Ma{n}{3} & \cdots & \cxgreen\Ma{n}{n}\tikzmark{mnn}
+	\end{bNiceMatrix}. 
+	\label{eq:square_matrix_main_diag}
+\end{equation}
+% \tikz[overlay, remember picture, blend mode=multiply]{
+% 	\draw[xgreen, line width=5mm, opacity=0.2, cap=round] ($(pic cs:m11)+(5pt,3pt)$) -- ($(pic cs:mnn)+(-5pt,2pt)$) node[pos=-0.1, anchor=east, xshift=-7mm, yshift=4mm, text=xdarkgreen, opacity=1] (txt) {main diagonal};
+% 	\draw[-stealth, xdarkgreen] ($(txt.east)-(3mm,0)$) to [out=0, in=135] ($(pic cs:m11)+(-1pt,9pt)$);
+% }
+
+The sum of the main diagonal elements is called the \emph{trace} of the matrix:
+\begin{equation}
+	\tr \left( A \right) = \sum\limits_{i=1}^{n}\Ma{i}{i}.
+	\label{eq:trace}
+\end{equation}
+
+\emph{Triangular matrices} are matrices in which the elements above or below the main diagonal are all zeros, e.g.
+
+\begin{center}
+	\def\bperc{25}
+	\begin{tabular}{rcp{5mm}rc}
+		$U=$ &
+		$\begin{bmatrix}
+			1 & 6 & 6 & -3 \\
+			\textcolor{black!\bperc}{0} & 2 & 7 & 1 \\
+			\textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} & 3 & 5 \\
+			\textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} & -4
+		\end{bmatrix},$
+			 & &
+		$L=$ &
+		$\begin{bmatrix}
+			1 & \textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} \\
+			\tikzmark{LT1} 2 & 3 & \textcolor{black!\bperc}{0} & \textcolor{black!\bperc}{0} \\ 
+			5 & 1 & -5 & \textcolor{black!\bperc}{0} \\
+			-4 & 1 & 2\tikzmark{LT2} & -3
+		\end{bmatrix}.$
+		\\[2.5em]
+			 & upper triangular & & & lower triangular
+	\end{tabular}
+\end{center}
+
+A \emph{diagonal matrix} $A$ is a matrix in which all the non-main diagonal elements, i.e. $\Ma{i}{j}$ where $\textcolor{xred}{i}\neq \textcolor{xblue}{j}$, equal zero. These matrices can be thought of as scaling matrices: each entry $\Ma{i}{i}$ tells us how the sapce is scaled in the $i$-th dimension.
+
+\begin{example}{Diagonal matrices}{}
+	Text.
+\end{example}
+As we saw in the cases of $\Rs{2}$ and $\Rs{3}$, diagonal matrices are \emph{scaling matrices}: each entry $a_{ii}$ tells us by how much space is scaled in the $i$-th direction.
+
+A very important family of \textbf{square} matrices are the \emph{identity matrices}. These matrices have a unique structure: their main diagonal elements are all $1$, while the rest of the elements (the \emph{off-diagonal elements}) are all $0$:
+
+\vspace{1em}
+\begin{equation}
+	I_{n} =
+	\begin{bNiceMatrix}
+		\tikzmark{I11} 1 & 0 & 0 & \cdots & 0\tikzmark{I1n}\\
+		0 & 1 & 0 & \cdots & 0\\
+		0 & 0 & 1 & \cdots & 0\\
+		\vdots & \vdots & \vdots & \Ddots & \vdots\\
+		\tikzmark{In1}0 & 0 & 0 & \cdots & 1\tikzmark{Inn}
+	\end{bNiceMatrix}
+	\label{eq:}
+\end{equation}
+\begin{tikzpicture}[overlay, remember picture]
+	  \draw [xred, thick, decorate, decoration={brace, amplitude=3pt, raise=7pt}] (pic cs:I1n) -- (pic cs:Inn) node[midway, right, xshift=10pt]{$n$ rows};
+	  \draw [xblue, thick, decorate, decoration={brace, amplitude=3pt, raise=10pt}] (pic cs:I11) -- (pic cs:I1n) node[midway, above, yshift=13pt]{$n$ columns};
+\end{tikzpicture}
+
+A common way of depicting an identity matrix is
+\[
+	I_{n} =
+	\begin{bNiceMatrix}
+	1   &       & \Block{2-3}<\huge>{0} \\
+		&   1   &        &      &       \\
+		&       &   1    &      &       \\
+	\Block{2-3}<\huge>{0}
+		&       &       & \Ddots    &   \\
+		&       &       &      &   1   \\
+	\end{bNiceMatrix}.
+\]
+In such a depiction, the off-diagonal elements are each written using a single zero. This kind of notation will come in handy in later sections. Yet another way of defining the identity matrix is by using the \emph{Kronecker delta}, which takes two integers $i,j$ and returns $1$ if they are equal, otherwise it returns $0$:
+\begin{equation}
+	\delta_{ij} =
+	\begin{cases}
+		1 & i=j,\\
+		0 & i\neq j.
+	\end{cases}
+	\label{eq:kronecker_delta}
+\end{equation}
+Using the Kronecker delta, each element $a_{ij}$ of the identity matrix $I_{n}$ simply equals $\delta_{ij}$.
+
+An identity matrix of dimension $n$ represents the identity transformation in $\Rs{n}$: each standard basis vector $\eb{i}$ is left unchanged by the transformation.
+
+\begin{example}{Identity matrices}{}
+	The identity matrices of $\Rs{2},\Rs{3},\dots,\Rs{6}$ (in each matrix the main diagonal is highlighted):
+
+	\centering
+	\begin{tabular}{ccccc}
+		$\begin{bmatrix}
+			\cxred1 & 0\\
+			0 & \cxred1
+		\end{bmatrix}$&
+		$\begin{bmatrix}
+			\cxblue1 & 0 & 0\\
+			0 & \cxblue1 & 0\\
+			0 & 0 & \cxblue1
+		\end{bmatrix}$& 
+		$\begin{bmatrix}
+			\cxgreen1 & 0 & 0 & 0\\
+			0 & \cxgreen1 & 0 & 0\\
+			0 & 0 & \cxgreen1 & 0\\
+			0 & 0 & 0 & \cxgreen1\\
+		\end{bmatrix}$&
+		$\begin{bmatrix}
+			\cxpurple1 & 0 & 0 & 0 & 0\\
+			0 & \cxpurple1 & 0 & 0 & 0\\
+			0 & 0 & \cxpurple1 & 0 & 0\\
+			0 & 0 & 0 & \cxpurple1 & 0\\
+			0 & 0 & 0 & 0 & \cxpurple1\\
+		\end{bmatrix}$&
+		$\begin{bmatrix}
+			\cxorange1 & 0 & 0 & 0 & 0& 0\\
+			0 & \cxorange1 & 0 & 0 & 0& 0\\
+			0 & 0 & \cxorange1 & 0 & 0& 0\\
+			0 & 0 & 0 & \cxorange1 & 0& 0\\
+			0 & 0 & 0 & 0 & \cxorange1& 0\\
+			0 & 0 & 0 & 0 & 0& \cxorange1\\
+		\end{bmatrix}$\\
+		$I_{2}$ & $I_{3}$ & $I_{4}$ & $I_{5}$ & $I_{6}$
+	\end{tabular}
+\end{example}
+In the next section we will see the importance of the identity matrices.
+
+Another important family of matrices are the \emph{orthogonal matrices} (also \emph{orthonormal matrices}): we say that a matrix $Q$ is an orthogonal matrix if all of its columns, when viewed as column vectors, form an orthonormal set. For example, the identity matrices are all orthogonal matrices. Another orthogonal matrix is the matrix
+\begin{equation}
+	B = \frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix},
+	\label{eq:}
+\end{equation}
+since both $\frac{1}{\sqrt{2}}\colvec{1;1}$ and $\frac{1}{\sqrt{2}}\colvec{1;-1}$ are unit vectors, and they are orthogonal to each other (as seen in REF).
+
+A \emph{symmetric matrix} is a square matrix for which
+\begin{equation}
+	A^{\top} = A.
+	\label{eq:symmetric_matrix}
+\end{equation}
+"Graphically", the symmetry of such matrices can be seen in respect to their main diagonal.
+
+\begin{example}{Symmetric matrix}{}
+	The following matrix is a symmetric $4\times4$ matrix, in which the elements $a_{ij},a_{ji}$ are higlighted with the same color:
+	\[
+		S =
+		\begin{bNiceMatrix}
+			7 & \cxblue2 & \cxgreen-2 & \cxpurple-6 \\
+			\cxblue2 & 9 & \cxred0 & \cxcyan7 \\
+			\cxgreen-2 & \cxred0 & 1 & \cxpink1 \\
+			\cxpurple-6 & \cxcyan7 & \cxpink1 & -7 \\
+		\end{bNiceMatrix}.
+	\]
+\end{example}
+
+A rather non-interesting family of matrices are the \emph{zero matrices}: these are matrices which have only zero-elements, i.e.
+\begin{equation}
+	\bm{0}_{n} =
+	\begin{bNiceMatrix}
+		\tikzmark{z1}0 & 0 & \cdots & 0\tikzmark{z2}\\
+		0 & 0 & \cdots & 0\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		0 & 0 & \cdots & 0\tikzmark{z3}
+	\end{bNiceMatrix}.
+	\label{eq:}
+\end{equation}
+\begin{tikzpicture}[overlay, remember picture]
+	  \draw [xred, thick, decorate, decoration={brace, amplitude=3pt, raise=7pt}] (pic cs:z2) -- (pic cs:z3) node[midway, right, xshift=10pt]{$m$ rows};
+	  \draw [xblue, thick, decorate, decoration={brace, amplitude=3pt, raise=10pt}] (pic cs:z1) -- (pic cs:z2) node[midway, above, yshift=13pt]{$n$ columns};
+\end{tikzpicture}
+We will see later on why exactly we call these matrices "zero matrices".

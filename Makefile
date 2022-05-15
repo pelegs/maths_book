@@ -5,6 +5,7 @@ all: boxes
 
 bookmain:
 	latexmk $(LATEXMKSWITCHES) -pretex="\def\all{1}" $@.tex
+	pkill -HUP mupdf
 boxes:
 	latexmk $(LATEXMKSWITCHES) -jobname=$(TESTFOLDER)/$@ $(TESTFOLDER)/$@.tex
 
