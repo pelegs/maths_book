@@ -36,7 +36,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usepackage{tikzpagenodes}
-\usetikzlibrary{backgrounds, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective, tikzmark, fpu}
+\usetikzlibrary{backgrounds, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective, tikzmark, fpu, matrix, fit, shapes}
 
 \makeatletter
 \tikzoption{canvas is plane}[]{\@setOxy#1}
@@ -49,11 +49,12 @@
 \makeatother
 
 \tikzset{
-	arrow/.style={thick, ->, >=stealth},
-	vector/.style={ultra thick, ->, >=stealth, cap=round},
-	complex/.style={circle, minimum size=5pt, fill, inner sep=0pt},
-	axisline/.style={thick, stealth-stealth}
+	arrow/.style = {thick, ->, >=stealth},
+	vector/.style = {ultra thick, ->, >=stealth, cap=round},
+	complex/.style = {circle, minimum size=5pt, fill, inner sep=0pt},
+	axisline/.style = {thick, stealth-stealth},
 }
+
 \newcommand{\draworigin}{
 	\fill (0,0) circle (0.075);
 }
