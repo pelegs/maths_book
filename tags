@@ -49,7 +49,7 @@ Exercises	chapters/linear_algebra_rigorous/exercises.tex	/^\\section{Exercises}$
 Exponential and Logarithmic Functions	chapters/intro/exponentials_logarithms.tex	/^\\section{Exponential and Logarithmic Functions}$/;"	s	chapter:Introduction
 Fields	chapters/linear_algebra_rigorous/fields.tex	/^\\section{Fields}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
-From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Matrices
+From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
 Graphs	chapters/intro/trigonomentry.tex	/^\\subsection{Graphs}$/;"	u	section:Introduction""Trigonometric functions
 Identities	chapters/intro/trigonomentry.tex	/^\\subsection{Identities}$/;"	u	section:Introduction""Trigonometric functions
@@ -64,14 +64,14 @@ Limits of real functions	chapters/calculus_1D/function_limits.tex	/^\\section{Li
 Linear algebra\\\\(intuitive approach)	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	c
 Linear algebra\\\\(rigorous approach)	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	c
 Linear combinations, spans and linear dependency	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Linear combinations, spans and linear dependency}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
-Linear transformation of basis vectors	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Linear transformation of basis vectors}$/;"	u	section:Matrices
+Linear transformation of basis vectors	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Linear transformation of basis vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\section{Linear transformations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Logical Statements and their Truth Value	chapters/intro/math_symbols_sets.tex	/^\\subsection{Logical Statements and their Truth Value}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Mathematical Symbols and Sets	chapters/intro/math_symbols_sets.tex	/^\\section{Mathematical Symbols and Sets}$/;"	s	chapter:Introduction
-Matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\section{Matrices}$/;"	s
-Matrix operations	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Matrix operations}$/;"	u	section:Matrices
-Matrix representation of the basic linear transformations (2D)	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Matrix representation of the basic linear transformations (2D)}$/;"	u	section:Matrices
-Matrix representation of the basic linear transformations (3D)	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Matrix representation of the basic linear transformations (3D)}$/;"	u	section:Matrices
+Matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\section{Matrices}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
+Matrix operations	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Matrix operations}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
+Matrix representation of the basic linear transformations (2D)	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Matrix representation of the basic linear transformations (2D)}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
+Matrix representation of the basic linear transformations (3D)	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Matrix representation of the basic linear transformations (3D)}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Modulo fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Modulo fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 Normal vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Normal vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Polynomial functions	chapters/intro/polynomials.tex	/^\\section{Polynomial functions}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
@@ -102,7 +102,7 @@ TriangleOutM	figures/linear_algebra/tapir_transform.svg	/^       inkscape:isstoc
 TriangleOutM	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	d
 TriangleOutM	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	i
 Trigonometric functions	chapters/intro/trigonomentry.tex	/^\\section{Trigonometric functions}$/;"	s	chapter:Introduction
-Types of matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Types of matrices}$/;"	u	section:Matrices
+Types of matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Types of matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Useful theorems	chapters/intro/trigonomentry.tex	/^\\subsection{Useful theorems}$/;"	u	section:Introduction""Trigonometric functions
 Vector spaces	chapters/linear_algebra_rigorous/vectors.tex	/^\\section{Vector spaces}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
