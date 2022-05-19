@@ -108,6 +108,8 @@ Vector spaces	chapters/linear_algebra_rigorous/vectors.tex	/^\\section{Vector sp
 Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 \\AND	settings.tex	/^\\newcommand{\\AND}{\\textbf{AND}}$/;"	C
 \\Ctrig	settings.tex	/^\\newcommand{\\Ctrig}{\\text{c}}$/;"	C
+\\IdMatHl	settings.tex	/^\\newcommand{\\IdMatHl}[3]{$/;"	C
+\\IdentityHl	settings.tex	/^\\newcommand{\\IdentityHl}[3]{$/;"	C
 \\Ma	settings.tex	/^\\newcommand{\\Ma}[2]{$/;"	C
 \\Matel	settings.tex	/^\\newcommand{\\Matel}[5]{$/;"	C
 \\Mb	settings.tex	/^\\newcommand{\\Mb}[2]{$/;"	C

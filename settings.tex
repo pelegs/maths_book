@@ -376,6 +376,7 @@
 %-------%
 
 \usepackage{amsmath, bm}
+% \usepackage{physics}
 \allowdisplaybreaks
 \usepackage{nicematrix}
 \numberwithin{equation}{section}
@@ -530,6 +531,10 @@
 	\pgftransformreset
 }
 
+\newcommand{\IdMatHl}[3]{
+	\node[fill=#3, fit=(#1-#2-#2)(#1-#2-#2)] {};
+}
+
 %-------------%
 % OTHER STUFF %
 %-------------%
@@ -588,3 +593,17 @@
 \newcommand{\cxorange}{\ceco{xorange!20}}
 \newcommand{\cxcyan}{\ceco{xcyan!20}}
 \newcommand{\cxpink}{\ceco{xpink!20}}
+
+% Define identity matrix using NiceMatrix 
+\NewDocumentCommand{\Identity}{O{}m}
+{\pAutoNiceMatrix[#1]{#2-#2}{\ifthenelse{\arabic{iRow}=\arabic{jCol}}{1}{0}}}
+
+% Define highlighted identity matrix
+\newcommand{\IdentityHl}[3]{
+	$\Identity[name=#2]{#1}$
+	\begin{tikzpicture}[overlay, remember picture, blend mode=multiply]
+		\foreach \k in {1,...,#1}{
+			\node[fill=#3, rectangle, minimum width=10pt, minimum height=10pt] at (#2-\k-\k) {}; 
+		}
+	\end{tikzpicture}
+}

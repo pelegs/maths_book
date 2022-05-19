@@ -803,34 +803,9 @@ An identity matrix of dimension $n$ represents the identity transformation in $\
 	The identity matrices of $\Rs{2},\Rs{3},\dots,\Rs{6}$ (in each matrix the main diagonal is highlighted):
 
 	\centering
+	\setlength\tabcolsep{3pt}
 	\begin{tabular}{ccccc}
-		&
-		$\begin{bmatrix}
-			\cxblue1 & 0 & 0\\
-			0 & \cxblue1 & 0\\
-			0 & 0 & \cxblue1
-		\end{bmatrix}$& 
-		$\begin{bmatrix}
-			\cxgreen1 & 0 & 0 & 0\\
-			0 & \cxgreen1 & 0 & 0\\
-			0 & 0 & \cxgreen1 & 0\\
-			0 & 0 & 0 & \cxgreen1\\
-		\end{bmatrix}$&
-		$\begin{bmatrix}
-			\cxpurple1 & 0 & 0 & 0 & 0\\
-			0 & \cxpurple1 & 0 & 0 & 0\\
-			0 & 0 & \cxpurple1 & 0 & 0\\
-			0 & 0 & 0 & \cxpurple1 & 0\\
-			0 & 0 & 0 & 0 & \cxpurple1\\
-		\end{bmatrix}$&
-		$\begin{bmatrix}
-			\cxorange1 & 0 & 0 & 0 & 0& 0\\
-			0 & \cxorange1 & 0 & 0 & 0& 0\\
-			0 & 0 & \cxorange1 & 0 & 0& 0\\
-			0 & 0 & 0 & \cxorange1 & 0& 0\\
-			0 & 0 & 0 & 0 & \cxorange1& 0\\
-			0 & 0 & 0 & 0 & 0& \cxorange1\\
-		\end{bmatrix}$\\
+		\IdentityHl{2}{I2}{xred!30} & \IdentityHl{3}{I3}{xblue!30} & \IdentityHl{4}{I4}{xgreen!30} & \IdentityHl{5}{I5}{xpurple!30} & \IdentityHl{6}{I6}{xorange!30} \\
 		$I_{2}$ & $I_{3}$ & $I_{4}$ & $I_{5}$ & $I_{6}$
 	\end{tabular}
 \end{example}
@@ -897,4 +872,3 @@ A rather non-interesting family of matrices are the \emph{zero matrices}: these 
 	  \draw [xred, thick, decorate, decoration={brace, amplitude=3pt, raise=7pt}] (pic cs:z2) -- (pic cs:z3) node[midway, right, xshift=10pt]{$m$ rows};
 	  \draw [xblue, thick, decorate, decoration={brace, amplitude=3pt, raise=10pt}] (pic cs:z1) -- (pic cs:z2) node[midway, above, yshift=13pt]{$n$ columns};
 \end{tikzpicture}
-We will see later in the section why exactly we call these matrices "zero matrices".
