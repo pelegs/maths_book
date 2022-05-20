@@ -171,7 +171,7 @@ The structure of an $m\times n$ matrix $A$ has a nice property: given that the t
 	\begin{bNiceMatrix}
 		\tikzmark{A1}\Ma{1}{1} & \tikzmark{B1}\Ma{1}{2} & \cdots & \tikzmark{N1}\Ma{1}{n}\\
 	    \Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
-		\vdots & \vdots & \Ddots & \vdots\\
+		\vdots & \vdots & \ddots & \vdots\\
 		\Ma{m}{1}\tikzmark{A2} & \Ma{m}{2}\tikzmark{B2} & \cdots & \Ma{m}{n}\tikzmark{N2}
 	\end{bNiceMatrix}.
 \end{equation*}
@@ -580,11 +580,11 @@ Mathematically, the transpose takes any element $\Ma{i}{j}$ of the matrix and ex
 \begin{example}{Transposing matrices}{}
     \begin{align*}
 		\underset{3\times3}{
-			\begin{bmatrix}
-				\rhl{1} & \phl{2} & \phl{3}\\
-				\ghl{4} & \rhl{5} & \phl{6}\\
-				\ghl{7} & \ghl{8} & \rhl{9}\\
-			\end{bmatrix}
+			\begin{bNiceMatrix}
+				1 & 2 & 3\\
+				4 & 5 & 6\\
+				7 & 8 & 9\\
+			\end{bNiceMatrix}
 		}
 	  &\xrightarrow[] {\text{transpose}}
 	  \underset{3\times3}{
@@ -685,6 +685,13 @@ Much like vectors, a matrix can be scaled by a real number, and two matrices can
 		\end{equation}
 \end{descitemize}
 
+\begin{note}{Matrix addition}{}
+	Since matrix addition is done \textbf{element wise} it is comutative, i.e. for any two $m\times n$ matrices $A$ and $B$,
+	\[
+		A+B = B+A.
+	\]
+\end{note}
+
 \subsection{Types of matrices}
 Any matrix $A$ which represents a transformation of the type $\Rs{n}\to\Rs{n}$ (i.e. from a space onto itself) has the same number of rows and columns (i.e. its dimension is $n\times n$):
 \begin{equation}
@@ -703,19 +710,20 @@ Due to their shape, such matrices are called \emph{square matrices}. The element
 \vspace{1em}
 \begin{equation}
 	A =
-	\begin{bNiceMatrix}
-		\tikzmark{m11}\cxgreen\Ma{1}{1} & \Ma{1}{2} & \Ma{1}{3} & \cdots & \Ma{1}{n}\\
-		\Ma{2}{1} & \cxgreen\Ma{2}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
-		\Ma{3}{1} & \Ma{3}{2} & \cxgreen\Ma{2}{3} & \cdots & \Ma{2}{n}\\
+	\begin{bNiceMatrix}[name=A_diag]
+		\Ma{1}{1} & \Ma{1}{2} & \Ma{1}{3} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
+		\Ma{3}{1} & \Ma{3}{2} & \Ma{2}{3} & \cdots & \Ma{2}{n}\\
 		\vdots & \vdots & \vdots & \Ddots & \vdots\\
-		\Ma{n}{1} & \Ma{n}{2} & \Ma{n}{3} & \cdots & \cxgreen\Ma{n}{n}\tikzmark{mnn}
+		\Ma{n}{1} & \Ma{n}{2} & \Ma{n}{3} & \cdots & \Ma{n}{n}
 	\end{bNiceMatrix}. 
 	\label{eq:square_matrix_main_diag}
 \end{equation}
-% \tikz[overlay, remember picture, blend mode=multiply]{
-% 	\draw[xgreen, line width=5mm, opacity=0.2, cap=round] ($(pic cs:m11)+(5pt,3pt)$) -- ($(pic cs:mnn)+(-5pt,2pt)$) node[pos=-0.1, anchor=east, xshift=-7mm, yshift=4mm, text=xdarkgreen, opacity=1] (txt) {main diagonal};
-% 	\draw[-stealth, xdarkgreen] ($(txt.east)-(3mm,0)$) to [out=0, in=135] ($(pic cs:m11)+(-1pt,9pt)$);
-% }
+\begin{tikzpicture}[overlay, remember picture, blend mode=multiply]
+	\foreach \k in {1,...,3,5}{
+		\node[fill=xgreen!25, rectangle, minimum width=13pt, minimum height=10pt] at (A_diag-\k-\k) {};
+	}
+\end{tikzpicture}
 
 The sum of the main diagonal elements is called the \emph{trace} of the matrix:
 \begin{equation}
@@ -727,7 +735,7 @@ The sum of the main diagonal elements is called the \emph{trace} of the matrix:
 
 \begin{center}
 	\def\bperc{25}
-	\begin{tabular}{rcp{5mm}rc}
+	\begin{tabular}{p{-1mm}cp{5mm}p{-1mm}c}
 		$U=$ &
 		$\begin{bmatrix}
 			1 & 6 & 6 & -3 \\
@@ -747,6 +755,12 @@ The sum of the main diagonal elements is called the \emph{trace} of the matrix:
 			 & upper triangular & & & lower triangular
 	\end{tabular}
 \end{center}
+
+A somewhat formal way of defining the elements "above" the main diagonal is all elements $\Ma{i}{j}$ for which $j<i$. Similarily, when $j>i$ the element $\Ma{i}{j}$ is "below" the main diagonal. Note that the transpose of an upper triangular matrix is a lower triangular matrix and vice-versa.
+
+\begin{challange}{Upper/lower triangular matrices}{}
+	Show that if $A$ is an upper triangular matrix then $A^{\top}$ is a lower triangular matrix, and if $B$ is a lower triangular matrix then $B^{\top}$ is an upper triangular matrix.
+\end{challange}
 
 A \emph{diagonal matrix} $A$ is a matrix in which all the non-main diagonal elements, i.e. $\Ma{i}{j}$ where $\textcolor{xred}{i}\neq \textcolor{xblue}{j}$, equal zero. These matrices can be thought of as scaling matrices: each entry $\Ma{i}{i}$ tells us how the sapce is scaled in the $i$-th dimension.
 
@@ -774,7 +788,7 @@ A very important family of \textbf{square} matrices are the \emph{identity matri
 	  \draw [xblue, thick, decorate, decoration={brace, amplitude=3pt, raise=10pt}] (pic cs:I11) -- (pic cs:I1n) node[midway, above, yshift=13pt]{$n$ columns};
 \end{tikzpicture}
 
-A common way of depicting an identity matrix is
+Sometimes for clarity large areas of zero-value elements in a matrix are depicted together. In that form, the identity matrix is written as
 \[
 	I_{n} =
 	\begin{bNiceMatrix}
@@ -823,7 +837,8 @@ A \emph{symmetric matrix} is a square matrix for which
 	A^{\top} = A.
 	\label{eq:symmetric_matrix}
 \end{equation}
-"Graphically", the symmetry of such matrices can be seen in respect to their main diagonal.
+"Graphically", the symmetry of such matrices can be seen in respect to their main diagonal: if we imagine placing a mirror on the main diagonal, each element $\Ma{i}{j}$ would be "reflected" across the mirror, and thus be equal to $\Ma{j}{i}$ (see example below).
+
 
 \begin{example}{Symmetric matrix}{}
 	The following matrix $S$ is a symmetric $4\times4$ matrix, in which the elements $a_{ij},a_{ji}$ are higlighted with the same color:
@@ -872,3 +887,35 @@ A rather non-interesting family of matrices are the \emph{zero matrices}: these 
 	  \draw [xred, thick, decorate, decoration={brace, amplitude=3pt, raise=7pt}] (pic cs:z2) -- (pic cs:z3) node[midway, right, xshift=10pt]{$m$ rows};
 	  \draw [xblue, thick, decorate, decoration={brace, amplitude=3pt, raise=10pt}] (pic cs:z1) -- (pic cs:z2) node[midway, above, yshift=13pt]{$n$ columns};
 \end{tikzpicture}
+The zero matrices are called that way since for a given matrix $A$,
+\begin{align}
+	A + \bm{0} &=
+	\begin{bNiceMatrix}
+		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
+	\end{bNiceMatrix}
+	+
+	\begin{bNiceMatrix}
+		0 & 0 & \cdots & 0\\
+		0 & 0 & \cdots & 0\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		0 & 0 & \cdots & 0
+	\end{bNiceMatrix}\nonumber\\
+			   &=
+	\begin{bNiceMatrix}
+		\Ma{1}{1}+0 & \Ma{1}{2}+0 & \cdots & \Ma{1}{n}+0\\
+		\Ma{2}{1}+0 & \Ma{2}{2}+0 & \cdots & \Ma{2}{n}+0\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		\Ma{m}{1}+0 & \Ma{m}{2}+0 & \cdots & \Ma{m}{n}+0
+	\end{bNiceMatrix}\nonumber\\
+			   &=
+	\begin{bNiceMatrix}
+		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
+	\end{bNiceMatrix}
+	= A.
+\end{align}
