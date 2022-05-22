@@ -575,61 +575,76 @@ An important operation that can be performed on a matrix is the \emph{transpose}
 	\end{bNiceMatrix}.
 	\label{eq:transpose}
 \end{equation}
-Mathematically, the transpose takes any element $\Ma{i}{j}$ of the matrix and exchanges its indeces, yielding $\Ma{j}{i}$. If the original matrix has dimensions $\rhl{m}\times \bhl{n}$, then the transposed matrix has dimensions $\rhl{n}\times \bhl{m}$.
+Mathematically, the transpose takes any element $\Ma{i}{j}$ of the matrix and exchanges its indeces, yielding $\Ma{j}{i}$. If the original matrix has dimensions $\rhl{m}\times \bhl{n}$, then the transposed matrix has dimensions $\rhl{n}\times \bhl{m}$. The notation for the transpose of a matrix $A$ is $A^{\top}$.
 
 \begin{example}{Transposing matrices}{}
-    \begin{align*}
-		\underset{3\times3}{
-			\begin{bNiceMatrix}
-				1 & 2 & 3\\
-				4 & 5 & 6\\
-				7 & 8 & 9\\
-			\end{bNiceMatrix}
-		}
-	  &\xrightarrow[] {\text{transpose}}
-	  \underset{3\times3}{
-		  \begin{bmatrix}
-			  \rhl{1} & \ghl{4} & \ghl{7}\\
-			  \phl{2} & \rhl{5} & \ghl{8}\\
-			  \phl{3} & \phl{6} & \rhl{9}\\
-		  \end{bmatrix}
-	  }
-	  \\[5mm]
-	  \underset{2\times3}{
-		  \begin{bmatrix}
-			  \ghl{0} & \ghl{1} & \ghl{-1}\\
-			  \phl{2} & \phl{-3} & \phl{5}
-		  \end{bmatrix}
-	  }
-	  &\xrightarrow[] {\text{transpose}}
-	  \underset{3\times2}{
-		  \begin{bmatrix}
-			  \ghl{0}  & \phl{2}\\
-			  \ghl{1}  & \phl{-3}\\
-			  \ghl{-1} & \phl{5}
-		  \end{bmatrix}
-	  }
-	  \\[5mm]
-	  \underset{6\times1}{
-		  \begin{bmatrix}
-			  \phl{1} \\
-			  \phl{2} \\
-			  \phl{-1}\\
-			  \phl{0}\\
-			  \phl{7}\\
-			  \phl{-4}\\
-		  \end{bmatrix}
-	  }
-	  &\xrightarrow[] {\text{transpose}}
-	  \underset{1\times6}{
-		  \begin{bmatrix}
-			  \phl{1} & \phl{2} & \phl{-1} & \phl{0} & \phl{7} & \phl{-4}
-		  \end{bmatrix}
-	  }
-    \end{align*}
+	The following presents three matrices each with its transpose. The elements in each matrix on the left hand side are highlighted column-wise, and these colors remain with the elements after the transpose. That way, the effect of the transpose is clear: columns in the original matrix become rows in the transposed matrix and vice-versa. In addition, the dimensions of each matrix are written below it.
+
+	\begin{align*}
+		\begin{bNiceMatrix}[name=T1]
+			1 & 2 & 3\\
+			4 & 5 & 6\\
+			7 & 8 & 9\\
+		\end{bNiceMatrix}^{\top} &=
+		\begin{bNiceMatrix}[name=T2]
+			1 & 4 & 7\\
+			2 & 5 & 8\\
+			3 & 6 & 9\\
+		\end{bNiceMatrix}\\[10mm]
+		\begin{bNiceMatrix}[name=T3]
+			0 & 1 & -1\\
+			2 & -3 & 5\\
+		\end{bNiceMatrix}^{\top} &=
+		\begin{bNiceMatrix}[name=T4]
+			0  & 2\\
+			1  & -3\\
+			-1 & 5\\
+		\end{bNiceMatrix}\\[10mm]
+		\begin{bNiceMatrix}[name=T5]
+			1\\
+			2\\
+			-1\\
+			0\\
+			7\\
+			-4\\
+		\end{bNiceMatrix}^{\top} &=
+		\begin{bNiceMatrix}[name=T6]
+			1 & 2 & -1 & 0 & 7 & -4\\
+		\end{bNiceMatrix}
+	\end{align*}
+\begin{tikzpicture}[overlay, remember picture, blend mode=multiply, node distance=15pt]
+	% ---- T1 ---- %
+	\MatHL{(T1-1-1),(T1-2-1),(T1-3-1)}{xred!20}
+	\MatHL{(T1-1-2),(T1-2-2),(T1-3-2)}{xorange!20}
+	\MatHL{(T1-1-3),(T1-2-3),(T1-3-3)}{xgreen!20}
+	\node[below of=T1-3-2] {$3\times3$};
+	% ---- T2 ---- %
+	\MatHL{(T2-1-1),(T2-1-2),(T2-1-3)}{xred!20}
+	\MatHL{(T2-2-1),(T2-2-2),(T2-2-3)}{xorange!20}
+	\MatHL{(T2-3-1),(T2-3-2),(T2-3-3)}{xgreen!20}
+	\node[below of=T2-3-2] {$3\times3$};
+	
+	% ---- T3 ---- %
+	\MatHL{(T3-1-1),(T3-2-1)}{xred!20}
+	\MatHL{(T3-1-2),(T3-2-2)}{xorange!20}
+	\MatHL{(T3-1-3),(T3-2-3)}{xgreen!20}
+	\node[below of=T3-2-2] {$2\times3$};
+	% ---- T4 ---- %
+	\MatHL{(T4-1-1),(T4-1-2)}{xred!20}
+	\MatHL{(T4-2-1),(T4-2-2)}{xorange!20}
+	\MatHL{(T4-3-1),(T4-3-2)}{xgreen!20}
+	\node[below of=T4-3-1, xshift=10pt] {$3\times2$};
+	
+	% ---- T5 ---- %
+	\MatHL{(T5-1-1),(T5-2-1),(T5-3-1),(T5-4-1),(T5-5-1),(T5-6-1)}{xred!20}
+	\node[below of=T5-6-1] {$6\times1$};
+	% ---- T6 ---- %
+	\MatHL{(T6-1-1),(T6-1-2),(T6-1-3),(T6-1-4),(T6-1-5),(T6-1-6)}{xred!20}
+	\node[below of=T6-1-3, xshift=10pt] {$1\times6$};
+\end{tikzpicture}
 \end{example}
 
-The notation for the transpose of a matrix $A$ is $A^{\top}$. Since for the main diagonal elements of a matrix the row and column have equal indeces, the transpose operation does not affect their position in the matrix, i.e. $\Ma{i}{i}\xrightarrow[] {\text{transpose}}\Ma{i}{i}$. This means that $\tr{A}=\tr{A^{\top}}$. Also, diagonal matrices are not affected by a transpose. The transpose of a transposed matrix is the original matrix, i.e. $\left(A^{\top}\right)^{\top} = A$.
+Since for the main diagonal elements of a matrix the row and column have equal indeces, the transpose operation does not affect their position in the matrix, i.e. $\Ma{i}{i}\xrightarrow[] {\text{transpose}}\Ma{i}{i}$. This means that $\tr{A}=\tr{A^{\top}}$. Also, diagonal matrices are not affected by a transpose. The transpose of a transposed matrix is the original matrix, i.e. $\left(A^{\top}\right)^{\top} = A$.
 
 Much like vectors, a matrix can be scaled by a real number, and two matrices can be added together if their dimensions are identical. The rules for scaling a matrix by a scalar and the addition of two matrices are the same as with vectors, namely everything is dome element wise:
 \begin{descitemize}
@@ -814,7 +829,7 @@ Using the Kronecker delta, each element $a_{ij}$ of the identity matrix $I_{n}$ 
 An identity matrix of dimension $n$ represents the identity transformation in $\Rs{n}$: each standard basis vector $\eb{i}$ is left unchanged by the transformation.
 
 \begin{example}{Identity matrices}{}
-	The identity matrices of $\Rs{2},\Rs{3},\dots,\Rs{6}$ (in each matrix the main diagonal is highlighted):
+	The following are the identity matrices of $\Rs{2},\Rs{3},\dots,\Rs{6}$, where in each matrix the main diagonal is highlighted:
 
 	\centering
 	\setlength\tabcolsep{3pt}
@@ -871,6 +886,9 @@ A \emph{symmetric matrix} is a square matrix for which
 		}
 	\end{tikzpicture}
 \end{example}
+\begin{note}{Transpose of a symmetric matrix}{}
+	A symmetric matrix is its own transpose, i.e. if $A$ is a symmetric matrix then $A^{\top}=A$.
+\end{note}
 
 A rather non-interesting family of matrices are the \emph{zero matrices}: these are matrices which have only zero-elements, i.e.
 \begin{equation}
@@ -919,3 +937,51 @@ The zero matrices are called that way since for a given matrix $A$,
 	\end{bNiceMatrix}
 	= A.
 \end{align}
+I.e. much like the number zero and the zero vector, the zero matrix is neutral in respect to addition.
+
+\subsection{The determinant}
+As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation scale all volumes by the same amount\footnote{remember that 2-dimensional volumes are areas.}. This scaling factor is encapsulated in the matrix representing the transformation by a number called the \emph{determinant} of the matrix. The determinant of a matrix $A$ is written as $|A|$.
+
+\begin{example}{The determinant as a scaling factor}{}
+	In the following transformation represented by the matrix $A$, areas are scaled by a factor of $\frac{1}{2}$ and therefore $|A|=\frac{1}{2}$:
+
+	\center
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=7cm, height=7cm,
+			xmin=-5, xmax=5,
+			ymin=-5, ymax=5,
+			minor tick num=1,
+			xticklabels={,,},
+			yticklabels={,,},
+		]
+			\draw[thick, xred, fill=xred!20] (-4,-4) rectangle (-3,-3);
+			\draw[thick, xgreen, fill=xgreen!20] (-2,-4) rectangle (0,-1);
+			\draw[thick, xpurple, fill=xpurple!20] (4,2) arc (0:360:1.5);
+		\end{axis}
+		\pgftransformcm{1}{0}{0}{1}{\pgfpoint{7cm}{0}}
+		\begin{axis}[
+			vector plane,
+			width=7cm, height=7cm,
+			xmin=-10, xmax=10,
+			ymin=-5, ymax=5,
+			minor x tick num=4,
+			minor y tick num=1,
+			xticklabels={,,},
+			yticklabels={,,},
+		]
+			\draw[thick, xred, fill=xred!20] (-4,-4) rectangle (-3,-3);
+			\draw[thick, xgreen, fill=xgreen!20] (-2,-4) rectangle (0,-1);
+			\draw[thick, xpurple, fill=xpurple!20] (4,2) arc (0:360:1.5);
+		\end{axis}
+		\draw[vector] (-1.3cm,3.5cm) -- ++(1cm,0) node[midway, above] {$A$};
+	\end{tikzpicture}
+\end{example}
+
+\blindtext{}
+
+\subsection{Matrix-vector products}
+\subsection{Matrix-matrix products}
+\subsection{Inverse matrices}
+\subsection{Kernel and null space}

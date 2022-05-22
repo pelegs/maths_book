@@ -53,6 +53,7 @@
 	vector/.style = {ultra thick, ->, >=stealth, cap=round},
 	complex/.style = {circle, minimum size=5pt, fill, inner sep=0pt},
 	axisline/.style = {thick, stealth-stealth},
+	mathl/.style = {fill=#1, rectangle, minimum width=10pt, minimum height=10pt},
 }
 
 \newcommand{\draworigin}{
@@ -603,7 +604,14 @@
 	$\Identity[name=#2]{#1}$
 	\begin{tikzpicture}[overlay, remember picture, blend mode=multiply]
 		\foreach \k in {1,...,#1}{
-			\node[fill=#3, rectangle, minimum width=10pt, minimum height=10pt] at (#2-\k-\k) {}; 
+			\node[mathl={#3}] at (#2-\k-\k) {}; 
 		}
 	\end{tikzpicture}
+}
+
+% Matrix highlight from list
+\newcommand{\MatHL}[2]{
+	\foreach \el in {#1}{
+		\node[mathl={#2}] at \el {};
+	}
 }
