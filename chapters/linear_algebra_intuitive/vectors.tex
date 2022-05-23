@@ -1188,12 +1188,65 @@ In the case where $B$ is an orthonormal basis set, we know that each of its vect
 \subsection{The cross product}
 Another commonly used product of two vectors is the so-called \emph{cross product}. Unlike the scalar product, it is only really valid in $\Rs{2},\ \Rs{3}$ and $\Rs{7}$, of which we will focus on $\Rs{3}$ and touch a bit on its uses in $\Rs{2}$. Also in contrast to the scalar product, the cross product in $\Rs{3}$ results in a vector rather than a scalar - therefore the product is sometimes known as the \emph{vector product}. The cross product uses the notation $\vec{a}\times\vec{b}$, from which it derives its name.
 
-Geometrically, the cross product of two vectors $\vu,\vv\in\Rs{3}$ is defined as a vector $\vw\in\Rs{3}$ which is \textbf{orthogonal to both} $\vu$ and $\vv$, and has a magnitude
+We start with the definition of the cross product in $\Rs{2}$: the cross product of two vectors $\vu=\vutd$ and $\vv=\vvtd$ is the (signed) area of the parallelogram defined by the two vectors (see \autoref{fig:cross_product_in_R2}).
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			xmin=-1, xmax=4,
+			ymin=-1, ymax=4,
+			xticklabels={,},
+			yticklabels={,},
+		]
+			\tikzset{every node/.style={font=\large}}
+			\fill[xpurple!20] (0,0) -- (1,2.5) -- (3,3) -- (2,0.5) -- cycle;
+			\draw[vector, xred] (0,0) -- (1,2.5) node[midway, above left] {$\vec{u}$};
+			\draw[vector, xblue] (0,0) -- (2,0.5) node[midway, above] {$\vec{v}$};
+			\draw[vector, xred, dashed] (2,0.5) -- (3,3);
+			\draw[vector, xblue, dashed] (1,2.5,0) -- (3,3);
+			\node[xpurple] at (1.5,1.75) {$\vec{u}\times\vec{v}$};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The cross product in $\Rs{2}$  of two vectors $\vu=\vutd$ and $\vv=\vvtd$ as the signed area of the parallogram defined by the vectors.}
+	\label{fig:cross_product_in_R2}
+\end{figure}
+
+The value of the parallelogram defined by $\vu$ and $\vv$ is
 \begin{equation}
-	\gnorm{\vw} = \gnorm{\vu}\gnorm{\vv}\sin\left(\ath\right),
+	\vu\times\vv = \gnorm{\vu}\gnorm{\vv}\sin \left( \ath \right),
+	\label{eq:cross_product_geometric_area}
+\end{equation}
+where $\ath$ is the angle between the vectors. This is extremely similar to the scalar product, and we can use this fact to find how to calculate the cross product from vectors in column form: if we replace $\vu$ by a vector orthogonal to it, denoted by $\vu^{\perp}$, the cross product is then
+\begin{equation}
+	\vu\times\vv = \gnorm{\vu^{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right),
+	\label{eq:cross_product_to_dot_product_part1}
+\end{equation}
+since the angle between $\vu^{\perp}$ and $\vv$ is $\frac{\pi}{2}$ more than that between $\vu$ and $\vv$. Using the fact that $\sin \left( \theta+\frac{\pi}{2} \right) = \cos \left( \theta \right)$, we get the equality
+\begin{align}
+	\vu\times\vv &= \gnorm{\vu^{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right)\nonumber\\
+				 &= \gnorm{\vu^{\perp}}\gnorm{\vv}\cos \left( \ath \right)\nonumber\\
+				 &= \vu^{\perp}\cdot\vv.
+	\label{eq:cross_product_to_dot_product_part2}
+\end{align}
+In $\Rs{2}$, any vector $\vu=\vutd$ has two vectors orthogonal to it: $\colvec{\textcolor{xred}{-b};\textcolor{xred}{a}}$ and $\colvec{\textcolor{xred}{b};\textcolor{xred}{-a}}$. Choosing the former gives
+\begin{equation}
+	\vu\times\vv = \colvec{\textcolor{xred}{-b};\textcolor{xred}{a}} \cdot \vvtd = -\textcolor{xred}{b}\textcolor{xblue}{c}+\textcolor{xred}{a}\textcolor{xblue}{d},
+	\label{eq:}
+\end{equation}
+while choosing the latter gives
+\begin{equation}
+	\vu\times\vv = \colvec{\textcolor{xred}{b};\textcolor{xred}{-a}} \cdot \vvtd = \textcolor{xred}{b}\textcolor{xblue}{c}-\textcolor{xred}{a}\textcolor{xblue}{d}.
+	\label{eq:}
+\end{equation}
+These two forms are the opposite of each other - i.e. if one yields the value $4$, the other yields the value $-4$. We will see which one is used in a moment.
+
+On to $\Rs{3}$: geometrically, the cross product of two vectors $\vu,\vv\in\Rs{3}$ is defined as a \textbf{vector} $\vw\in\Rs{3}$ which is \textbf{orthogonal to both} $\vu$ and $\vv$, and with norm of the same magnitude as the product would have in $\Rs{2}$, i.e.
+\begin{equation}
+	\gnorm{\vw} = \gnorm{\vu}\gnorm{\vv}\sin\left(\ath\right).
 	\label{eq:cross product geometry}
 \end{equation}
-where, like with the scalar product, $\ath$ is the angle between $\vu$ and $\vv$.
 
 \begin{figure}
 	\centering

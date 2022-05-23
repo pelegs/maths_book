@@ -943,7 +943,7 @@ I.e. much like the number zero and the zero vector, the zero matrix is neutral i
 As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation scale all volumes by the same amount\footnote{remember that 2-dimensional volumes are areas.}. This scaling factor is encapsulated in the matrix representing the transformation by a number called the \emph{determinant} of the matrix. The determinant of a matrix $A$ is written as $|A|$.
 
 \begin{example}{The determinant as a scaling factor}{}
-	In the following transformation represented by the matrix $A$, areas are scaled by a factor of $\frac{1}{2}$ and therefore $|A|=\frac{1}{2}$:
+	In the following transformation, represented by the matrix $A=\begin{bmatrix}\frac{1}{2}&0\\0&1\end{bmatrix}$, areas are scaled by a factor of $\frac{1}{2}$ and therefore $|A|=\frac{1}{2}$ (the number inside each shapes is its area):
 
 	\center
 	\begin{tikzpicture}
@@ -953,12 +953,11 @@ As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation sca
 			xmin=-5, xmax=5,
 			ymin=-5, ymax=5,
 			minor tick num=1,
-			xticklabels={,,},
-			yticklabels={,,},
+			ticklabel style={font=\tiny},
 		]
-			\draw[thick, xred, fill=xred!20] (-4,-4) rectangle (-3,-3);
-			\draw[thick, xgreen, fill=xgreen!20] (-2,-4) rectangle (0,-1);
-			\draw[thick, xpurple, fill=xpurple!20] (4,2) arc (0:360:1.5);
+			\draw[thick, xred, fill=xred!20] (-4,-4) rectangle (-3,-3) node[shnode] {$1$};
+			\draw[thick, xgreen, fill=xgreen!20] (-4,4) rectangle (-2,1) node[shnode] {$6$};
+			\draw[thick, xpurple, fill=xpurple!20] (4,2) arc (0:360:1.2616) node[black, xshift=-7mm] {$5$};
 		\end{axis}
 		\pgftransformcm{1}{0}{0}{1}{\pgfpoint{7cm}{0}}
 		\begin{axis}[
@@ -966,16 +965,17 @@ As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation sca
 			width=7cm, height=7cm,
 			xmin=-10, xmax=10,
 			ymin=-5, ymax=5,
-			minor x tick num=4,
+			minor x tick num=2,
 			minor y tick num=1,
-			xticklabels={,,},
-			yticklabels={,,},
+			xtick={-8,-4,...,8},
+			xticklabels={-4,-2,2,4},
+			ticklabel style={font=\tiny},
 		]
-			\draw[thick, xred, fill=xred!20] (-4,-4) rectangle (-3,-3);
-			\draw[thick, xgreen, fill=xgreen!20] (-2,-4) rectangle (0,-1);
-			\draw[thick, xpurple, fill=xpurple!20] (4,2) arc (0:360:1.5);
+		\draw[thick, xred, fill=xred!20] (-4,-4) rectangle (-3,-3) node[shnode] {$\frac{1}{2}$};
+		\draw[thick, xgreen, fill=xgreen!20] (-4,4) rectangle (-2,1) node[shnode] {$3$};
+		\draw[thick, xpurple, fill=xpurple!20] (4,2) arc (0:360:0.8921) node[black, xshift=-2.5mm] {$\frac{5}{2}$};
 		\end{axis}
-		\draw[vector] (-1.3cm,3.5cm) -- ++(1cm,0) node[midway, above] {$A$};
+		\draw[vector] (-1.3cm,3.5cm) -- ++(1cm,0) node[midway, above] {$A$} node[midway, below] {$|A|=\frac{1}{2}$};
 	\end{tikzpicture}
 \end{example}
 

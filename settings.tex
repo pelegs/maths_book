@@ -54,6 +54,7 @@
 	complex/.style = {circle, minimum size=5pt, fill, inner sep=0pt},
 	axisline/.style = {thick, stealth-stealth},
 	mathl/.style = {fill=#1, rectangle, minimum width=10pt, minimum height=10pt},
+	shnode/.style={black, midway, anchor=center},
 }
 
 \newcommand{\draworigin}{
@@ -452,6 +453,8 @@
 \newcommand{\vv}{\textcolor{xblue}{\vec{v}}}
 \newcommand{\vw}{\textcolor{xpurple}{\vec{w}}}
 \newcommand{\ath}{\textcolor{xpurple}{\theta}}
+\newcommand{\vutd}{\colvec{\textcolor{xred}{a};\textcolor{xred}{b}}}
+\newcommand{\vvtd}{\colvec{\textcolor{xblue}{c};\textcolor{xblue}{d}}}
 
 % Norm of a whatever
 \newcommand{\gnorm}[1]{\left\|\,  #1 \, \right\|}
@@ -534,6 +537,12 @@
 
 \newcommand{\IdMatHl}[3]{
 	\node[fill=#3, fit=(#1-#2-#2)(#1-#2-#2)] {};
+}
+
+\newcommand{\veccomp}[4]{
+	\draw[thin, dashed, #4!50] (0,#3) -- (#2,#3) -- (#2,0);
+	\draw[vector, #4] (0,0) -- (#2,#3);
+	\node[text=#4] at ({1.2*#2},{1.2*#3}) {$\vec{#1}=\colvec{#2;#3}$};
 }
 
 %-------------%
