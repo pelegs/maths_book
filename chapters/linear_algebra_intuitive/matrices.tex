@@ -773,9 +773,9 @@ The sum of the main diagonal elements is called the \emph{trace} of the matrix:
 
 A somewhat formal way of defining the elements "above" the main diagonal is all elements $\Ma{i}{j}$ for which $j<i$. Similarily, when $j>i$ the element $\Ma{i}{j}$ is "below" the main diagonal. Note that the transpose of an upper triangular matrix is a lower triangular matrix and vice-versa.
 
-\begin{challange}{Upper/lower triangular matrices}{}
+\begin{challenge}{Upper/lower triangular matrices}{}
 	Show that if $A$ is an upper triangular matrix then $A^{\top}$ is a lower triangular matrix, and if $B$ is a lower triangular matrix then $B^{\top}$ is an upper triangular matrix.
-\end{challange}
+\end{challenge}
 
 A \emph{diagonal matrix} $A$ is a matrix in which all the non-main diagonal elements, i.e. $\Ma{i}{j}$ where $\textcolor{xred}{i}\neq \textcolor{xblue}{j}$, equal zero. These matrices can be thought of as scaling matrices: each entry $\Ma{i}{i}$ tells us how the sapce is scaled in the $i$-th dimension.
 
@@ -978,6 +978,68 @@ As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation sca
 		\draw[vector] (-1.3cm,3.5cm) -- ++(1cm,0) node[midway, above] {$A$} node[midway, below] {$|A|=\frac{1}{2}$};
 	\end{tikzpicture}
 \end{example}
+
+Since there is not much sense in discussing volume changes between different spaces (e.g. $\Rs{5}\to\Rs{7}$), only square matrices, which as you recall represent linear transformations from a space onto itself, have determinants.
+
+Zero determinant...\\
+Negative determinant...
+
+To calculate the determinant of a matrix, we start with the simplest case: $2\times2$ matrices. Since all areas are equaly scaled by a linear transformation, we look at the unit sqaure defined by $\hat{x}$ and $\hat{y}$ (see \autoref{fig:det_2x2}). After the application of the transformation represented by the generic matrix $A=\begin{bmatrix}a&c\\b&d\end{bmatrix}$ (where $a,b,c,d\in\mathbb{R}$), these basis vectors are transformed into the vectors 
+\begin{equation}
+	A\hat{x}=\colvec{a;b} \mkern9mu \text{and} \mkern9mu A\hat{y}=\colvec{c;d},
+	\label{eq:}
+\end{equation}
+respectively.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=6cm, height=6cm,
+			xmin=-1, xmax=3,
+			ymin=-1, ymax=3,
+			xticklabels={,},
+			yticklabels={,},
+		]
+			\fill[xpurple, opacity=0.2] (0,0) rectangle (1,1);
+			\node[xpurple, anchor=center] at (0.5,0.5) {$S=1$};
+			\draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
+			\draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
+			\draw[vector, xred!50, dashed] (0,1) -- (1,1);
+			\draw[vector, xblue!50, dashed] (1,0) -- (1,1);
+		\end{axis}
+		
+		\pgftransformcm{1}{0}{0}{1}{\pgfpoint{7cm}{0}}
+		\begin{axis}[
+			vector plane,
+			width=6cm, height=6cm,
+			xmin=-1, xmax=3,
+			ymin=-1, ymax=3,
+			xticklabels={,},
+			yticklabels={,},
+		]
+			\coordinate (Ax) at (0.5,1.5);
+			\coordinate (Ay) at (1.5,0.5);
+			\coordinate (Axy) at (2,2);
+			\fill[xpurple, opacity=0.2] (0,0) -- (Ax) -- (Axy) -- (Ay) -- cycle;
+			\node[xpurple, anchor=center] at (1,1) {$S=|A|$};
+			\draw[vector, xred] (0,0) -- (Ax) node[pos=1.1, xshift=-6pt] {$A\hat{x}$};
+			\draw[vector, xblue] (0,0) -- (Ay) node[pos=1.1, xshift=5pt, yshift=-3pt] {$A\hat{y}$};
+			\draw[vector, xred!50, dashed] (Ay) -- (Axy);
+			\draw[vector, xblue!50, dashed] (Ax) -- (Axy);
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:det_2x2}
+\end{figure}
+
+The unit square defined by $\hat{x}$ and $\hat{y}$ is therefore transformed into the parallelogram defined by $A\hat{x}$ and $A\hat{y}$. \autoref{eq:cross_product_2d_algebraic} tells us that the area of the parallelogram is $S=ad-bc$. Therefore, the determinant - which equals to the change in area after application of $A$, is
+\begin{equation}
+	|A| = ad-bc
+	\label{eq:determinant_2x2}
+\end{equation}
+as well.
 
 \blindtext{}
 

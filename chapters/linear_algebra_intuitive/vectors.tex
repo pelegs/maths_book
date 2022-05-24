@@ -1201,7 +1201,7 @@ We start with the definition of the cross product in $\Rs{2}$: the cross product
 			yticklabels={,},
 		]
 			\tikzset{every node/.style={font=\large}}
-			\fill[xpurple!20] (0,0) -- (1,2.5) -- (3,3) -- (2,0.5) -- cycle;
+			\fill[xpurple, opacity=0.2] (0,0) -- (1,2.5) -- (3,3) -- (2,0.5) -- cycle;
 			\draw[vector, xred] (0,0) -- (1,2.5) node[midway, above left] {$\vec{u}$};
 			\draw[vector, xblue] (0,0) -- (2,0.5) node[midway, above] {$\vec{v}$};
 			\draw[vector, xred, dashed] (2,0.5) -- (3,3);
@@ -1233,7 +1233,7 @@ since the angle between $\vu^{\perp}$ and $\vv$ is $\frac{\pi}{2}$ more than tha
 In $\Rs{2}$, any vector $\vu=\vutd$ has two vectors orthogonal to it: $\colvec{\textcolor{xred}{-b};\textcolor{xred}{a}}$ and $\colvec{\textcolor{xred}{b};\textcolor{xred}{-a}}$. Choosing the former gives
 \begin{equation}
 	\vu\times\vv = \colvec{\textcolor{xred}{-b};\textcolor{xred}{a}} \cdot \vvtd = -\textcolor{xred}{b}\textcolor{xblue}{c}+\textcolor{xred}{a}\textcolor{xblue}{d},
-	\label{eq:}
+	\label{eq:cross_product_2d_algebraic}
 \end{equation}
 while choosing the latter gives
 \begin{equation}
