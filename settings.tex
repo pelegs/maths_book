@@ -624,3 +624,11 @@
 		\node[mathl={#2}] at \el {};
 	}
 }
+
+% Minor
+\newcommand{\MatMinor}[4]{
+	\foreach \d in {1,...,#2}{
+		\node[mathl={black!50}] at (#1-#3-\d) {};
+		\node[mathl={black!50}] at (#1-\d-#4) {};
+	}
+}

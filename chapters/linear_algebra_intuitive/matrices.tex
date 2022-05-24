@@ -940,7 +940,7 @@ The zero matrices are called that way since for a given matrix $A$,
 I.e. much like the number zero and the zero vector, the zero matrix is neutral in respect to addition.
 
 \subsection{The determinant}
-As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation scale all volumes by the same amount\footnote{remember that 2-dimensional volumes are areas.}. This scaling factor is encapsulated in the matrix representing the transformation by a number called the \emph{determinant} of the matrix. The determinant of a matrix $A$ is written as $|A|$.
+As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation scale all volumes by the same amount\footnote{remember that 2-dimensional volumes are areas.}. This scaling factor is encapsulated in the matrix representing the transformation by a number called the \emph{determinant} of the matrix. The determinant of a matrix $A$ is written as $|A|$ and sometimes $\det(A)$.
 
 \begin{example}{The determinant as a scaling factor}{}
 	In the following transformation, represented by the matrix $A=\begin{bmatrix}\frac{1}{2}&0\\0&1\end{bmatrix}$, areas are scaled by a factor of $\frac{1}{2}$ and therefore $|A|=\frac{1}{2}$ (the number inside each shapes is its area):
@@ -1030,18 +1030,73 @@ respectively.
 			\draw[vector, xblue!50, dashed] (Ax) -- (Axy);
 		\end{axis}
 	\end{tikzpicture}
-	\caption{}
+	\caption{Unit area defined by the vectors $\hat{x}$ and $\hat{y}$ before application of a linear transformation represented by the matrix $A$ (left) and the parallelogram defined by the vectors $A\hat{x}$ and $A\hat{y}$ after application of the transformation (right).}
 	\label{fig:det_2x2}
 \end{figure}
 
-The unit square defined by $\hat{x}$ and $\hat{y}$ is therefore transformed into the parallelogram defined by $A\hat{x}$ and $A\hat{y}$. \autoref{eq:cross_product_2d_algebraic} tells us that the area of the parallelogram is $S=ad-bc$. Therefore, the determinant - which equals to the change in area after application of $A$, is
+The unit square defined by $\hat{x}$ and $\hat{y}$ is therefore transformed into the parallelogram defined by $A\hat{x}$ and $A\hat{y}$. \autoref{eq:cross_product_2d_algebraic} tells us that the area of the parallelogram is $S=ad-bc$. Therefore, the determinant - which equals the change in area after application of $A$, is
 \begin{equation}
 	|A| = ad-bc
 	\label{eq:determinant_2x2}
 \end{equation}
 as well.
 
-\blindtext{}
+\begin{example}{Determinants of $\bm{2\times2}$ matrices}{}
+	Some $2\times2$ matrices and their determinants:
+
+	\begin{align*}
+		\begin{bmatrix} 1&-2\\0&3 \end{bmatrix} &\longrightarrow 1\cdot3-(-2)\cdot0 = 3.\\
+		\begin{bmatrix} 1&5\\1&3 \end{bmatrix} &\longrightarrow 1\cdot3-1\cdot5 = -2.\\
+		\begin{bmatrix} 1&2\\1&2 \end{bmatrix} &\longrightarrow 1\cdot2-1\cdot2 = 0.\\
+		\begin{bmatrix} 1&2\\2&4 \end{bmatrix} &\longrightarrow 1\cdot4-2\cdot2 = 0.\\
+		\begin{bmatrix} 0&7\\0&-3 \end{bmatrix} &\longrightarrow 0\cdot(-3)-0\cdot7 = 0.\\
+	\end{align*}
+\end{example}
+
+Calculating the determinant of a $3\times3$ matrix is based on the calculation of the determinant of a $2\times2$ matrix. First, we should define an idea called a \emph{minor} of a matrix. The $ij$-minor of a $3\times3$ matrix $A$ is the determinant of the $2\times2$ matrix resulting by the removal of the $i$-th row and $j$-th column of $A$, e.g. let
+\newcommand{\Aminor}[1]{
+	\begin{bNiceMatrix}[name=#1]
+		2 & -5 & 4\\
+		-3 & 0 & 2\\
+		3 & 3 & 2\\
+	\end{bNiceMatrix}
+}
+\[
+	A = \Aminor{A00},
+\]
+then \autoref{tab:minors_of_A} shows all the minors of $A$.
+
+\begin{table}
+	\centering
+	\caption{All the minors of the matrix $A$.}
+	\label{tab:minors_of_A}
+	\begin{tabular}{lcccr}
+		\toprule
+		$i$ & $j$ & $3\times3$-matrix & $2\times2$ determinant & value\\
+		\midrule
+		$1$ & $1$ & $\Aminor{A11}$ & $\begin{vmatrix}0&2\\3&2\end{vmatrix}$   & $-6 $\\[10mm]
+		$1$ & $2$ & $\Aminor{A12}$ & $\begin{vmatrix}-3&2\\3&2\end{vmatrix}$  & $-12$\\[10mm]
+		$1$ & $3$ & $\Aminor{A13}$ & $\begin{vmatrix}-3&0\\3&3\end{vmatrix}$  & $-12$\\[10mm]
+		$2$ & $1$ & $\Aminor{A21}$ & $\begin{vmatrix}-5&4\\3&2\end{vmatrix}$  & $-22$\\[10mm]
+		$2$ & $2$ & $\Aminor{A22}$ & $\begin{vmatrix}2&4\\3&2\end{vmatrix}$   & $-8 $\\[10mm]
+		$2$ & $3$ & $\Aminor{A23}$ & $\begin{vmatrix}2&-5\\3&3\end{vmatrix}$  & $ 21$\\[10mm]
+		$3$ & $1$ & $\Aminor{A31}$ & $\begin{vmatrix}-5&4\\0&2\end{vmatrix}$  & $-10$\\[10mm]
+		$3$ & $2$ & $\Aminor{A32}$ & $\begin{vmatrix}2&4\\-3&2\end{vmatrix}$  & $ 16$\\[10mm]
+		$3$ & $3$ & $\Aminor{A33}$ & $\begin{vmatrix}2&-5\\-3&0\end{vmatrix}$ & $-15$\\
+		\bottomrule
+	\end{tabular}
+	\begin{tikzpicture}[overlay, remember picture]
+		\MatMinor{A11}{3}{1}{1}
+		\MatMinor{A12}{3}{1}{2}
+		\MatMinor{A13}{3}{1}{3}
+		\MatMinor{A21}{3}{2}{1}
+		\MatMinor{A22}{3}{2}{2}
+		\MatMinor{A23}{3}{2}{3}
+		\MatMinor{A31}{3}{3}{1}
+		\MatMinor{A32}{3}{3}{2}
+		\MatMinor{A33}{3}{3}{3}
+	\end{tikzpicture}
+\end{table}
 
 \subsection{Matrix-vector products}
 \subsection{Matrix-matrix products}
