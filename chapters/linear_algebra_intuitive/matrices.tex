@@ -979,10 +979,45 @@ As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation sca
 	\end{tikzpicture}
 \end{example}
 
-Since there is not much sense in discussing volume changes between different spaces (e.g. $\Rs{5}\to\Rs{7}$), only square matrices, which as you recall represent linear transformations from a space onto itself, have determinants.
+Since there is not much sense in discussing volume changes between different spaces (e.g. $\Rs{5}\to\Rs{7}$), only square matrices, which as you recall represent linear transformations from a space onto itself, have determinants. Determinants can take any real number as values, including zero and negative numbers.
 
-Zero determinant...\\
-Negative determinant...
+What does a zero determinant mean? Since in $\Rs{2}$ determinants tells us the scaling factor of areas by the transformation, if the matrix representing the linear transformation has a zero determinant, it means that somehow all areas are "squashed" by the transformation to zero. There are two possible relevant shapes of zero area: a line going through the origin, or the origin itself which is a point. See \autoref{fig:zero_det_R2} for a visualization.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=6cm, height=6cm,
+			xmin=-2, xmax=2,
+			ymin=-2, ymax=2,
+			xticklabels={,},
+			yticklabels={,},
+		]
+			\fill[xpurple, opacity=0.2] (0,0) rectangle (1,1) node[midway, anchor=center, opacity=1] {$S=1$};
+			\draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
+			\draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
+		\end{axis}
+		\pgftransformcm{1}{0}{0}{1}{\pgfpoint{7cm}{0}}
+		\begin{axis}[
+			vector plane,
+			width=6cm, height=6cm,
+			xmin=-2, xmax=2,
+			ymin=-2, ymax=2,
+			xticklabels={,},
+			yticklabels={,},
+		]
+			\draw[vector, xred] (0,0) -- (2,1) node[midway, above] {$\hat{x}$};
+			\draw[vector, xblue] (0,0) -- (-1,-0.5) node[midway, below] {$\hat{y}$};
+		\end{axis}
+		\draw[vector] (-2cm,3cm) -- ++(1.6cm,0) node[midway, above] {$|A|=0$};
+	\end{tikzpicture}
+	\caption{A transformation which "squashes" all areas into a line is represented by a matrix $A$ with $|A|=0$. Note how the unit volume defined by $\cxhat$ and $\cyhat$ is transformed into a shape of zero area: a line going through the origin. Also note that $\cxhat$ and $\cyhat$ are linearly dependent, since they lie on the same line. Cf. \autoref{fig:det_2x2}.}
+	\label{fig:zero_det_R2}
+\end{figure}
+
+Similarily, in $\Rs{3}$ the determinant tells us how volumes are scaled by a linear transformation, and thus a $3\times3$ matrix with zero determinant means that all the transformation represented by the matrix "squashes" all volumes to one of three relevant shapes with zero volume: a plane going through the origin, a line going through the origin, or the origin point itself. See \autoref{fig:zero_det_R3} for a visualization.
+
 
 To calculate the determinant of a matrix, we start with the simplest case: $2\times2$ matrices. Since all areas are equaly scaled by a linear transformation, we look at the unit sqaure defined by $\hat{x}$ and $\hat{y}$ (see \autoref{fig:det_2x2}). After the application of the transformation represented by the generic matrix $A=\begin{bmatrix}a&c\\b&d\end{bmatrix}$ (where $a,b,c,d\in\mathbb{R}$), these basis vectors are transformed into the vectors 
 \begin{equation}
@@ -1076,7 +1111,7 @@ then \autoref{tab:minors_of_A} shows all the minors of $A$.
 		\midrule
 		$1$ & $1$ & $\Aminor{A11}$ & $\begin{vmatrix}0&2\\3&2\end{vmatrix}$   & $-6 $\\[10mm]
 		$1$ & $2$ & $\Aminor{A12}$ & $\begin{vmatrix}-3&2\\3&2\end{vmatrix}$  & $-12$\\[10mm]
-		$1$ & $3$ & $\Aminor{A13}$ & $\begin{vmatrix}-3&0\\3&3\end{vmatrix}$  & $-12$\\[10mm]
+		$1$ & $3$ & $\Aminor{A13}$ & $\begin{vmatrix}-3&0\\3&3\end{vmatrix}$  & $-9 $\\[10mm]
 		$2$ & $1$ & $\Aminor{A21}$ & $\begin{vmatrix}-5&4\\3&2\end{vmatrix}$  & $-22$\\[10mm]
 		$2$ & $2$ & $\Aminor{A22}$ & $\begin{vmatrix}2&4\\3&2\end{vmatrix}$   & $-8 $\\[10mm]
 		$2$ & $3$ & $\Aminor{A23}$ & $\begin{vmatrix}2&-5\\3&3\end{vmatrix}$  & $ 21$\\[10mm]
@@ -1097,6 +1132,41 @@ then \autoref{tab:minors_of_A} shows all the minors of $A$.
 		\MatMinor{A33}{3}{3}{3}
 	\end{tikzpicture}
 \end{table}
+
+Using the its minors, the determinant of a $3\times3$ matrix can be calculated using the following formula:
+\begin{equation}
+	|A| = a_{11}m_{11} - a_{12}m_{12} + a_{13}m_{13},
+	\label{eq:determinant_3x3}
+\end{equation}
+where $a_{ij}$ and $m_{ij}$ are the elements and minors of the matrix, respectively. For example, using the above matrix $A$, we get that
+\begin{align*}
+	|A| &= a_{11}m_{11} - a_{12}m_{12} + a_{13}m_{13}\\
+		&= 2\begin{vmatrix}0&2\\3&2\end{vmatrix} - (-5)\begin{vmatrix}-3&2\\3&2\end{vmatrix} + 4\begin{vmatrix}-3&0\\3&3\end{vmatrix}\\
+		&= 2\cdot(-6) - (-5)\cdot(-12) + 4\cdot(-9)\\
+		&= -12 - 60 - 36\\
+		&= -108.
+\end{align*}
+
+\begin{example}{Determinants of $3\times3$ matrices}{}
+	\ldots
+\end{example}
+
+The determinant of a $4\times4$ matrix follow in the same pattern, i.e.
+\begin{equation}
+	|A| = a_{11}m_{11} - a_{12}m_{12} + a_{13}m_{13} - a_{14}m_{14},
+	\label{eq:}
+\end{equation}
+where again $a_{ij}$ and $m_{ij}$ are, respectively, the elements and minors of a matrix. Much like with the case of a minor of a $3\times3$ matrix being a determinant of a $2\times2$ matrix, the minor of a $4\times4$ matrix is a determinant of a $3\times3$ matrix, itself calculated using determinants of $2\times2$ matrices. This pattern continues to higher dimensions, i.e. the calculation of the determinant of a $5\times5$ matrix uses determinants of $5$ $4\times4$ matrices, the calculation of the determinant of a $6\times6$ matrix uses $6$ determinants of $5\times5$ matrices, and so forth. Therefore, the total number of $2\times2$ determinants needed for the calculation of the determinant of an $n\times n$ matrix is
+\begin{equation}
+	d = n\times(n-1)\times(n-2)\times\cdots\times5\times4\times3 = \frac{n!}{2}.
+	\label{eq:num_of_2x2_dets_in_n_dim_matrix}
+\end{equation}
+
+Some properties of determinants:
+\begin{itemize}
+	\item In any case where the columns of a matrix form a linearly dependent set, the determinant is zero. This is due to the loss of dimensionality (i.e. at least one basis vector is mapped to a vector which can be written as a linear combination of the other vectors). One obvious case is where there is one or more columns of zeros in the matrix.
+	\item The determinant of the transpose of a matrix is the same as the determinant of the original matrix, i.e. $|A|=|A^{\top}|$. This is due to the fact that all ideas discussed here can be applied directly to row vectors (as mentioned in the previous sections), and the transpose operation essentially switches between these forms: the columns of the original matrix become the rows in its transposed format. Therefore, the previous property applies to the rows of a matrix as well: e.g. a row of zeros means that the determinant is zero.
+\end{itemize}
 
 \subsection{Matrix-vector products}
 \subsection{Matrix-matrix products}
