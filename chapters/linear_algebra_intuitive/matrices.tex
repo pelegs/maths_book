@@ -1203,19 +1203,66 @@ The resulting vector $\vec{u}$ is then given by the following formula:
 }
 
 \vspace{1em}
-Let us illustrate this step by step:
+In the following illustration, each row of $A$ is scalar multiplied with the vector $\vec{v}$, yielding the respective element of $\vec{u}$. The respective rows of $A$ and elements of $\vec{v}$ are color-coded for clarity.
 
-\begin{align*}
-	\Amatv{Av1}\Vvec{vv1} &= \begin{bNiceMatrix}[name=u1]-4\\\textcolor{black!20}{16}\\\textcolor{black!20}{24}\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
-	\Amatv{Av2}\Vvec{vv2} &= \begin{bNiceMatrix}[name=u2]\textcolor{black!20}{-4}\\16\\\textcolor{black!20}{24}\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
-	\Amatv{Av3}\Vvec{vv3} &= \begin{bNiceMatrix}[name=u3]\textcolor{black!20}{-4}\\\textcolor{black!20}{16}\\24\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
-	\Amatv{Av4}\Vvec{vv4} &= \begin{bNiceMatrix}[name=u4]\textcolor{black!20}{-4}\\\textcolor{black!20}{16}\\\textcolor{black!20}{24}\\26\end{bNiceMatrix}.
-\end{align*}
+% \begin{align*}
+% 	\Amatv{Av1}\cdot\Vvec{vv1} &= \begin{bNiceMatrix}[name=u1]-4\\\textcolor{black!20}{16}\\\textcolor{black!20}{24}\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
+% 	\Amatv{Av2}\cdot\Vvec{vv2} &= \begin{bNiceMatrix}[name=u2]\textcolor{black!20}{-4}\\16\\\textcolor{black!20}{24}\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
+% 	\Amatv{Av3}\cdot\Vvec{vv3} &= \begin{bNiceMatrix}[name=u3]\textcolor{black!20}{-4}\\\textcolor{black!20}{16}\\24\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
+% 	\Amatv{Av4}\cdot\Vvec{vv4} &= \begin{bNiceMatrix}[name=u4]\textcolor{black!20}{-4}\\\textcolor{black!20}{16}\\\textcolor{black!20}{24}\\26\end{bNiceMatrix}.
+% \end{align*}
+% \tikz[overlay, remember picture, blend mode=multiply]{
+% 	\node[above of=vv1-1-1] (vv1-txt) {$\vec{v}$};
+% 	\draw[-stealth] (vv1-txt) -- ($(vv1-1-1)+(0,10pt)$);
+% 	\foreach \r in {1,...,4}{
+% 		\node[mathl={xcol\r!20}, draw=xcol\r, rounded corners, fit=(Av\r-\r-1)(Av\r-\r-3)] {};
+% 		\node[mathl={xcol\r!20}, draw=xcol\r, rounded corners, fit=(vv\r-1-1)(vv\r-3-1)] {};
+% 		\node[mathl={xcol\r!20}, draw=xcol\r, rounded corners, fit=(u\r-\r-1)(u\r-\r-1)] {};
+% 		\node[xcol\r, left of=Av\r-\r-1, anchor=east] (Av\r-txt) {\nth{\r} row of $A$};
+% 		\draw[-stealth, xcol\r] (Av\r-txt) -- ($(Av\r-\r-1.west)+(-7pt,0)$);
+% 		\node[xcol\r, right of=u\r-\r-1, anchor=west] (u\r-txt) {\nth{\r} element of $\vec{u}$};
+% 		\draw[-stealth, xcol\r] (u\r-txt) -- ($(u\r-\r-1.east)+(7pt,0)$);
+% 	}
+% }
+
+\[
+	\renewcommand{\arraystretch}{1.5}
+	\begin{bNiceMatrix}[name=Av1]
+		1 & 0 & 2\\
+		0 & 3 & 1\\
+		2 & 4 & 0\\
+		6 & 1 & 3\\
+	\end{bNiceMatrix}
+	\quad\quad\quad
+	\begin{bNiceMatrix}[name=vv1]
+		2\\5\\0
+	\end{bNiceMatrix}
+	\quad\quad\quad
+	\begin{bNiceMatrix}[name=u1]
+		1\cdot2+0\cdot5+2\cdot0\\
+		0\cdot2+3\cdot5+1\cdot0\\
+		2\cdot2+4\cdot5+0\cdot0\\
+		6\cdot2+1\cdot5+3\cdot0\\
+	\end{bNiceMatrix}
+	\quad\quad
+	\begin{bNiceMatrix}[name=u2]
+		2\\15\\24\\17
+	\end{bNiceMatrix}
+\]
 \tikz[overlay, remember picture, blend mode=multiply]{
+	% \node[mathl={xorange!20}, fit=(vv1-1-1)(vv1-3-1)] {};
+	\node[below of=Av1-4-2, yshift=2pt] (Av1-txt) {$A$};
+	\node[below of=vv1-3-1, yshift=-6pt] (vv1-txt) {$\vec{v}$};
+	\node[below of=u1-4-1, yshift=2pt] (u1-txt) {$\vec{u}$};
+	\node[below of=u2-4-1, yshift=2pt] (u2-txt) {$\vec{u}$};
 	\foreach \r in {1,...,4}{
-		\node[mathl={xcol\r!20}, fit=(Av\r-\r-1)(Av\r-\r-3)] {};
-		\node[mathl={xcol\r!20}, fit=(vv\r-1-1)(vv\r-3-1)] {};
-		\node[mathl={xcol\r!20}, fit=(u\r-\r-1)(u\r-\r-1)] {};
+		\node[mathl={xcol\r!25}, fit=(Av1-\r-1)(Av1-\r-3)] {};
+		\node[mathl={xcol\r!25}, fit=(u1-\r-1)(u1-\r-1)] {};
+		\node[mathl={xcol\r!25}, fit=(u2-\r-1)(u2-\r-1)] {};
+		\pgfmathsetmacro{\a}{(\r-2.5)*8}
+		\draw[thick, -stealth, xcol\r] ($(Av1-\r-3.east)+(7pt,0pt)$) to [out=0, in=180] ($(vv1-2-1.west)-(7pt,\a pt)$);
+		\draw[thick, -stealth, xcol\r] ($(vv1-2-1.east)+(7pt,-\a pt)$) to [out=0, in=180] ($(u1-\r-1.west)-(7pt,0)$);
+		\draw[thick, -stealth, xcol\r] ($(u1-\r-1.east)+(7pt,0)$) to ($(u2-\r-1.west)-(7pt,0)$);
 	}
 }
 
