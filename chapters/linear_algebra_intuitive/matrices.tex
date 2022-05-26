@@ -70,7 +70,7 @@ We can now collect these two vectors to form a new structure, which we call a \e
 We then define the product of $M$ with a vector $\vec{v}=\colvec{x;y}$ to yield $T \left( \vec{v} \right)$, i.e.
 \begin{equation}
 	A\vec{v} = \begin{bNiceMatrix} a&b\\c&d \end{bNiceMatrix} \cdot\colvec{x;y} = \colvec{ax+by;cx+dy}.
-	\label{eq:matrix_vector_product}
+	\label{eq:matrix_vector_product_2x2}
 \end{equation}
 This defintion can be re-written as following:
 \begin{equation}
@@ -150,7 +150,7 @@ The product $M\vec{v}$ (where $\vec{v}\in\Rs{n}$) is then defined as
 	\vdots;
 	\Ma{m}{1}x_{1}+\Ma{m}{2}x_{2}+\cdots+\Ma{m}{n}x_{n}
 	}.
-	\label{eq:}
+	\label{eq:matrix_vector_product}
 \end{equation}
 Again, note that the $i$-th component of the resulting vector is the scalar product $A_{i}\cdot\vec{v}$.
 
@@ -1018,6 +1018,7 @@ What does a zero determinant mean? Since in $\Rs{2}$ determinants tells us the s
 
 Similarily, in $\Rs{3}$ the determinant tells us how volumes are scaled by a linear transformation, and thus a $3\times3$ matrix with zero determinant means that all the transformation represented by the matrix "squashes" all volumes to one of three relevant shapes with zero volume: a plane going through the origin, a line going through the origin, or the origin point itself. See \autoref{fig:zero_det_R3} for a visualization.
 
+DISCUSSION OF NEGATIVE DETERMINANTS\ldots
 
 To calculate the determinant of a matrix, we start with the simplest case: $2\times2$ matrices. Since all areas are equaly scaled by a linear transformation, we look at the unit sqaure defined by $\hat{x}$ and $\hat{y}$ (see \autoref{fig:det_2x2}). After the application of the transformation represented by the generic matrix $A=\begin{bmatrix}a&c\\b&d\end{bmatrix}$ (where $a,b,c,d\in\mathbb{R}$), these basis vectors are transformed into the vectors 
 \begin{equation}
@@ -1143,15 +1144,14 @@ where $a_{ij}$ and $m_{ij}$ are the elements and minors of the matrix, respectiv
 	|A| &= a_{11}m_{11} - a_{12}m_{12} + a_{13}m_{13}\\
 		&= 2\begin{vmatrix}0&2\\3&2\end{vmatrix} - (-5)\begin{vmatrix}-3&2\\3&2\end{vmatrix} + 4\begin{vmatrix}-3&0\\3&3\end{vmatrix}\\
 		&= 2\cdot(-6) - (-5)\cdot(-12) + 4\cdot(-9)\\
-		&= -12 - 60 - 36\\
-		&= -108.
+		&= -12 - 60 - 36 = -108.
 \end{align*}
 
 \begin{example}{Determinants of $3\times3$ matrices}{}
 	\ldots
 \end{example}
 
-The determinant of a $4\times4$ matrix follow in the same pattern, i.e.
+The determinant of a $4\times4$ matrix follows the same pattern, i.e.
 \begin{equation}
 	|A| = a_{11}m_{11} - a_{12}m_{12} + a_{13}m_{13} - a_{14}m_{14},
 	\label{eq:}
@@ -1169,6 +1169,56 @@ Some properties of determinants:
 \end{itemize}
 
 \subsection{Matrix-vector products}
+As discussed in the first part of this section, matrices represent linear transformations - in fact, we define a matrix in such a way that its product with a vector gives the result of applying the transformation the matrix represents on the vector (see \autoref{eq:matrix_vector_product}). Let us now review this idea and elaborate a bit on the process of calculating matrix-vector products.
+
+Given an $m\times n$ matrix $A$ and an $n$-dimensional vector $\vec{v}$, the product $A\vec{v}$ is an $m$-dimensional vector, in which each element $v_{i}$ is the scalar product between the $i$-th \textbf{row} of $A$ (interpreted as a vector) and the vector $\vec{v}$ itself. To illustrate this, we use the following $4\times3$ matrix $A$ and $3$-dimensional vector $\vec{v}$:
+\newcommand{\Amatv}[1]{
+	\begin{bNiceMatrix}[name=#1]
+		1 & 0 & 2\\
+		-1 & 3 & -1\\
+		2 & 4 & 0\\
+		6 & 1 & -3\\
+	\end{bNiceMatrix}
+}
+\newcommand{\Vvec}[1]{
+	\begin{bNiceMatrix}[name=#1]
+		2\\
+		5\\
+		-3\\
+	\end{bNiceMatrix}
+}
+\[
+	A=\Amatv{A0},\quad\vec{v}=\Vvec{v0}
+\]
+(note that the number of \textbf{columns} in $A$ is the same as the number of elements of $\vec{v}$, namely $3$).
+
+The resulting vector $\vec{u}$ is then given by the following formula:
+\[
+	u_{i} = \tikzmark{A}A^{i}\cdot \vec{v}.
+\]
+\tikz[overlay, remember picture, node distance=15pt]{
+	\coordinate (Anode) at ($(pic cs:A)+(5pt,-2pt)$);
+	\node[below of=Anode, anchor=center, draw=xgreen, fill=xgreen!20, rounded corners, font=\small] (Atxt) {$i$-th row of $A$};
+	\draw[-stealth, xgreen] (Atxt) -- (Anode);
+}
+
+\vspace{1em}
+Let us illustrate this step by step:
+
+\begin{align*}
+	\Amatv{Av1}\Vvec{vv1} &= \begin{bNiceMatrix}[name=u1]-4\\\textcolor{black!20}{16}\\\textcolor{black!20}{24}\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
+	\Amatv{Av2}\Vvec{vv2} &= \begin{bNiceMatrix}[name=u2]\textcolor{black!20}{-4}\\16\\\textcolor{black!20}{24}\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
+	\Amatv{Av3}\Vvec{vv3} &= \begin{bNiceMatrix}[name=u3]\textcolor{black!20}{-4}\\\textcolor{black!20}{16}\\24\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
+	\Amatv{Av4}\Vvec{vv4} &= \begin{bNiceMatrix}[name=u4]\textcolor{black!20}{-4}\\\textcolor{black!20}{16}\\\textcolor{black!20}{24}\\26\end{bNiceMatrix}.
+\end{align*}
+\tikz[overlay, remember picture, blend mode=multiply]{
+	\foreach \r in {1,...,4}{
+		\node[mathl={xcol\r!20}, fit=(Av\r-\r-1)(Av\r-\r-3)] {};
+		\node[mathl={xcol\r!20}, fit=(vv\r-1-1)(vv\r-3-1)] {};
+		\node[mathl={xcol\r!20}, fit=(u\r-\r-1)(u\r-\r-1)] {};
+	}
+}
+
 \subsection{Matrix-matrix products}
 \subsection{Inverse matrices}
 \subsection{Kernel and null space}
