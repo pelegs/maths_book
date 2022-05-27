@@ -1,6 +1,7 @@
 \usepackage{booktabs}
 \usepackage{blindtext}
 \usepackage{xargs}
+\usepackage{nth}
 
 %-----------%
 % XREF DICT %
@@ -55,6 +56,8 @@
 	axisline/.style = {thick, stealth-stealth},
 	mathl/.style = {fill=#1, rectangle, minimum width=10pt, minimum height=10pt},
 	shnode/.style={black, midway, anchor=center},
+	mat/.style={matrix of math nodes, left delimiter=[,right delimiter={]}, nodes={rectangle, draw, minimum size=1cm, anchor=center}},
+	boxarr/.style={->, >=stealth, line width=3pt}
 }
 
 \newcommand{\draworigin}{
@@ -648,4 +651,17 @@
 	}
 }
 
-\usepackage{nth}
+% Matrix-matrix product illustration
+\newcommand{\boxgrid}[6]{
+  \pgfmathsetmacro{\a}{#1}
+  \pgfmathsetmacro{\nrow}{#2}
+  \pgfmathsetmacro{\ncol}{#3}
+  \pgfmathsetmacro{\dx}{#4}
+  \pgfmathsetmacro{\dy}{#5}
+  \foreach \row in {1,...,\nrow}{
+  \foreach \col in {1,...,\ncol}{
+  \draw[thick] (\row*\a+\dx,-\col*\a-\dy) rectangle ++(\a,-\a) node [midway] {$#6_{\col\row}$};
+  }
+  }
+  \draw[thick] (\dx+\a*1.7,\dy-\a*0.7) -- ++(-\a*2,0);
+}

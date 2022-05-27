@@ -1281,5 +1281,134 @@ In the following illustration, each row of $A$ is scalar multiplied with the vec
 \end{example}
 
 \subsection{Matrix-matrix products}
+Since the product of a matrix and a vector is itself a vector, one can take the resulting vector and multiply it by another matrix, i.e. given the matrices $A,B$ and a vector $\vec{v}$, the expression
+
+\vspace{2em}
+\[
+	B\cdot \left( A\cdot\vec{v} \right)
+\]
+is a vector as well.
+
+Of course, the dimensions of all participating objects must align for the products to be properly defined: if $A$ is an $m\times n$ matrix, then $\vec{v}$ must be an $n$-dimensional vector. The result of the product $A\cdot\vec{v}$ is then an $m$-dimensional vector which we can call $\vec{u}$. Thus, for the product $B\cdot\vec{u}$ to be properly defined, $B$ must have the same number of columns as $\vec{u}$ has elements, namely $m$ columns. The number of rows is free, and can be any natural number $k$. Therefore, $B$ is a $k\times n$ matrix, and the product $B\cdot\vec{u}$ is a $k$-dimensional vector.
+
+\begin{example}{Multiple matrix-vector products}{}
+	Let
+	\[
+		A=\begin{bmatrix}2 & -1 & 0\\5 & 4 & 3\end{bmatrix},\quad B=\begin{bmatrix} 5 & 2\\6 & -7\\-1 & 0\end{bmatrix},\quad \vec{v}=\colvec{1;2;5},
+	\]
+	then
+	\[
+		\vec{u} = A\cdot\vec{v} = \colvec{2\cdot1-1\cdot2+0\cdot5;5\cdot1+4\cdot2+3\cdot5} = \colvec{0;28}.
+	\]
+	The product $B\cdot\vec{u}$ is defined, since $\vec{u}$ has the same number of elements as $B$ has columns (namely $2$). Its result is the $3$-dimensional vector
+	\[
+		\vec{w} = B\cdot\vec{u} = \colvec{5\cdot0+2\cdot28;6\cdot0-7\cdot28;-1\cdot0+0\cdot28} = \colvec{56;-196;0}.
+	\]
+\end{example}
+
+Multiple matrix-vector product therefore represent application of multiple linear transformations on an initial vector, in the order the matrix-vector products are performed. For example, consider the vector $\vec{v}=\colvec{1;1}$. Rotating $\vec{v}$ by $\frac{\pi}{2}\ (=\ang{90})$ counter-clockwise around the origin and then scaling the result by $2$ should yield the vector $\vec{w}=\colvec{-2;2}$:
+\[
+	\colvec{1;1} \xrightarrow[] {\text{rotation by $\frac{\pi}{2}$}} \colvec{-1;1} \xrightarrow[] {\text{scaling by $2$}} \colvec{-2;2}.
+\]
+
+Using the respective matrix representation of each transformation, we get the following:
+\[
+	\begin{bNiceMatrix}[name=mp1] 2 & 0\\0 & 2\end{bNiceMatrix} \cdot \left( \begin{bNiceMatrix}[name=mp2] 0 & 1\\-1 & 0 \end{bNiceMatrix} \cdot \begin{bNiceMatrix}[name=mpv1]1\\1\end{bNiceMatrix} \right) = \begin{bNiceMatrix}[name=mp3] 2 & 0\\0 & 2 \end{bNiceMatrix} \cdot \begin{bNiceMatrix}[name=mpv2] -1\\1 \end{bNiceMatrix} = \colvec{-2;2}.
+\]
+\tikz[overlay, remember picture, blend mode=multiply]{
+	\node[mathl={xred!20}, fit=(mp1-1-1)(mp1-2-2)] {};
+	\node[mathl={xgreen!20}, fit=(mp2-1-1)(mp2-2-2)] {};
+	\node[mathl={xgreen!20}, fit=(mpv1-1-1)(mpv1-2-1)] {};
+	\node[mathl={xred!20}, fit=(mp3-1-1)(mp3-2-2)] {};
+	\node[mathl={xgreen!20}, fit=(mpv2-1-1)(mpv2-2-1)] {};
+}
+(note that the matrix-vector products are performed from right to left)
+
+More generally, there could be several products made successionally, i.e.
+\[
+	A_{n} \left( A_{n-1} \left( A_{n-2} \cdots \left( A_{2} \left( A_{1}\vec{v} \right)  \right)  \right)  \right).
+\]
+Matrix-vector products are most commonly written without the paranthesis nor the dot symbol, i.e. as
+\[
+	A_{n}A_{n-1}A_{n-2}\cdots A_{2}A_{1}\vec{v},
+\]
+and the order of multiplication is from left to right, i.e. $A_{1}$ is the first matrix to be multiplied by $\vec{v}$, then $A_{2}$ is multiplied by the result of the product $A_{1}\vec{v}$, then $A_{3}$ is multiplied by the result of $A_{2}A_{1}\vec{v}$ and so on.
+
+At this point one should wonder whether instead of doing this long chain of products on each individual vector, perhaps the matrices themselves could be multiplied first, yielding a matrix representing the total transformation applied to a vector, as a composition of the separate transformations in the correct order. The answer is of course yes!\footnote{otherwise this subsection would not be called "Matrix-matrix products", after all.}
+
+Let us define the product of two matrices: given the an $m\times n$ matrix $A$ and an $n\times k$ matrix $B$, the product $C=AB$ is itself a matrix, having the dimension $m\times k$, in which every element $c_{ij}$ is the scalar product of the row $A^{i}$ and the column $B_{j}$, i.e.
+\begin{equation}
+	c_{ij} = A^{i}\cdot B_{j} = \sum_{k=1}^{n}a_{ik}b_{kj} = a_{i1}b_{1j} + a_{i2}b_{2j} + \dots + a_{in}b_{nj}.
+	\label{eq:matrix_matrix_product_elements}
+\end{equation}
+
+\autoref{fig:matrix_matrix_product_elements} illustrates this idea graphically.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\matrix [mat] (left) {
+			|[draw, fill=xred!30]|a_{11} & |[draw, fill=xred!30]|a_{12}\\
+			a_{21} & a_{22}\\
+			|[draw, fill=xblue!30]|a_{31} & |[draw, fill=xblue!30]|a_{32}\\
+			a_{41} & a_{42}\\
+		};
+		\matrix [mat] (top) at (3.5,3.7) {
+			|[draw, fill=xred!30]|b_{11} & b_{12} & |[draw, fill=xblue!30]|b_{13}\\
+			|[draw, fill=xred!30]|b_{21} & b_{22} & |[draw, fill=xblue!30]|b_{23}\\
+		};
+
+		\matrix [mat, text=white] (center) at (3.5,0) {
+			|[draw, black, fill=xred!30]|c_{11} & 0 & 0 \\
+			0 & 0 & 0 \\
+			0 & 0 & |[draw, black, fill=xblue!30]|c_{33} \\
+			0 & 0 & 0 \\
+		};
+
+		\node[left=of left, xshift=7mm] {\huge$A$};
+		\node[left=of top, xshift=7mm] {\huge$B$};
+		\node[below=of center, yshift=1cm] {\huge$C=AB$};
+
+		\draw[boxarr, xred] (left-1-2) -- (center-1-1);
+		\draw[boxarr, xblue] (left-3-2) -- (center-3-3);
+		\draw[boxarr, xred] (top-2-1) -- (center-1-1);
+		\draw[boxarr, xblue] (top-2-3) -- (center-3-3);
+
+		\draw[line width=3pt, xred] (left-1-1.north west) rectangle (left-1-2.south east);
+		\draw[line width=3pt, xblue] (left-3-1.north west) rectangle (left-3-2.south east);
+		\draw[line width=3pt, xred] (top-1-1.north west) rectangle (top-2-1.south east);
+		\draw[line width=3pt, xblue] (top-1-3.north west) rectangle (top-2-3.south east);
+	\end{tikzpicture}
+	\caption{The element $c_{ij}$ of the matrix $C=AB$ is the scalar product of the $i$-th row of $A$ and the $j$-th column of $B$.}
+	\label{fig:matrix_matrix_product_elements}
+\end{figure}
+
+Using the previous example, instead of calculating the $\frac{pi}{2}$ rotation of the vector $\colvec{1;1}$ and then scaling it by $2$, we calculate the product of the two matrices representing these transformations, and then apply them to the vector:
+\[
+	C=\begin{bmatrix} 0 & -1\\1 & 0 \end{bmatrix}\begin{bmatrix} 2 & 0\\0 & 2 \end{bmatrix} =
+	\begin{bmatrix}
+		0\cdot2-1\cdot0 & 0\cdot0-1\cdot2\\
+		1\cdot2+0\cdot0 & 1\cdot0+0\cdot2
+		\end{bmatrix} = \begin{bmatrix} 0 & -2\\2 & 0 \end{bmatrix}.
+\]
+We then apply $C$ to the vector and get the expected result:
+\[
+	C\vec{v} = \begin{bmatrix} 0 & -2\\2 & 0 \end{bmatrix} \colvec{1;1} = \colvec{0\cdot1-2\cdot1;2\cdot1+0\cdot1} = \colvec{-2;2}.
+\]
+
+\begin{example}{Matrix-matrix products}{}
+	TBW
+\end{example}
+
+Recall that the order of composition of linear transformations matters: $T_{1}\circ T_{2} \neq T_{2}\circ T_{1}$. Therefore, matrix-matrix products, which represent such compositions, are non-commutative, i.e.
+\begin{equation}
+	AB\neq BA.
+	\label{eq:matrix_matrix_product_non_commutative}
+\end{equation}
+\begin{note}{When $\bm{BA=AB}$}{}
+There are special cases where $AB=BA$, but these are the exception and not the norm. We will discuss such cases later in the chapter.
+\end{note}
+
+
 \subsection{Inverse matrices}
 \subsection{Kernel and null space}
