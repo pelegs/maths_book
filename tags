@@ -192,6 +192,7 @@ base	figures/chapters/tapir_voronoi.svg	/^     inkscape:snap-global="true" \/>$/
 base	figures/ideas/Coloured dot pattern fills.svg	/^     inkscape:snap-global="true" \/>$/;"	i
 base	figures/ideas/tom_Summer_Leaves.svg	/^     inkscape:current-layer="layer1" \/>$/;"	i
 bookmain	Makefile	/^bookmain:$/;"	t
+bookpartial	Makefile	/^bookpartial:$/;"	t
 boxes	Makefile	/^boxes:$/;"	t
 cc	design/chapter.svg	/^   sodipodi:docname="chapter.svg">$/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/chapters/tapir_butterfly.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://creativecommons.org/ns#

@@ -1,0 +1,97 @@
+\documentclass[b5paper]{book}
+\usepackage[
+		b5paper,
+		margin=2cm,
+		%showframe
+	]{geometry}
+\setlength\parindent{0em}
+\setlength\parskip{1em}
+\raggedbottom
+
+%----------%
+% SETTINGS %
+%----------%
+
+\input{settings}
+
+%----------%
+% DOCUMENT %
+%----------%
+
+\begin{document}
+% Contents?
+%\tableofcontents
+
+% Chapters
+\setcounter{chapter}{-1}
+
+% Introduction
+% \makeatletter
+% \def\input@path{{./chapters/intro/}}
+% \makeatother
+% \input{preface}
+% \input{math_symbols_sets}
+% \input{relations_functions}
+% \input{polynomials}
+% \input{exponentials_logarithms}
+% \input{trigonomentry}
+% \input{complex_numbers}
+% \input{exercises}
+
+% Linear algebra (intuitive)
+\makeatletter
+\def\input@path{{./chapters/linear_algebra_intuitive/}}
+\makeatother
+% \input{preface}
+% \input{vectors}
+% \input{linear_trans}
+\input{matrices}
+% \input{linear_systems}
+% \input{eigenvectors}
+% \input{decompositions}
+% \input{real_life_examples}
+% \input{exercises}
+
+% % Calculus in 1D
+% \makeatletter
+% \def\input@path{{./chapters/calculus_1D/}}
+% \makeatother
+% \input{preface}
+% \input{sequences}
+% \input{function_limits}
+% \input{derivatives}
+% \input{integrals}
+% \input{analysis}
+% \input{exercises}
+
+% % Linear algebra (Rigorous)
+% \makeatletter
+% \def\input@path{{./chapters/linear_algebra_rigorous/}}
+% \makeatother
+% \input{preface}
+% \input{fields}
+% \input{vectors}
+% \input{exercises}
+
+% % Differential equations
+% \makeatletter
+% \def\input@path{{./chapters/differential_equations/}}
+% \makeatother
+% \input{preface}
+% \input{exercises}
+
+% % Fourier series and transforms
+% \makeatletter
+% \def\input@path{{./chapters/fourier/}}
+% \makeatother
+% \input{preface}
+% \input{exercises}
+
+% % Symmetry groups
+% \makeatletter
+% \def\input@path{{./chapters/groups/}}
+% \makeatother
+% \input{preface}
+% \input{exercises}
+
+\end{document}
