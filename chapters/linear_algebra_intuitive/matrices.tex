@@ -34,9 +34,9 @@ This result is pretty neat: it means that by knowing how a linear transformation
 
 	Now, let us apply $T$ first to the three standard basis vectors $\hat{x},\hat{y},\hat{z}$:
 	\begin{align*}
-		T\left( \hat{x} \right) &= T\left(\colvec{1;0;0}\right) = \colvec{1+0-2\cdot0;2\cdot1+0;-1-0-0} = \colvec{1;2;-1},\\
-		T\left( \hat{y} \right) &= T\left(\colvec{0;1;0}\right) = \colvec{0+1-2\cdot0;2\cdot0+0;-0-1-0} = \colvec{1;0;-1},\\
-		T\left( \hat{z} \right) &= T\left(\colvec{0;0;1}\right) = \colvec{0+0-2\cdot1;2\cdot0+1;-0-0-1} = \colvec{-2;1;-1}.
+		T\left( \hat{x} \right) &= T\left(\colvec{1;0;0}\right) = \colvec{1+0-\cancel{2\cdot0};2\cdot1+0;-1-0-0} = \colvec{1;2;-1},\\
+		T\left( \hat{y} \right) &= T\left(\colvec{0;1;0}\right) = \colvec{0+1-\cancel{2\cdot0};\cancel{2\cdot0}+0;-0-1-0} = \colvec{1;0;-1},\\
+		T\left( \hat{z} \right) &= T\left(\colvec{0;0;1}\right) = \colvec{0+0-2\cdot1;\cancel{2\cdot0}+1;-0-0-1} = \colvec{-2;1;-1}.
 	\end{align*}
 
 	Taking these results and applying \autoref{eq:transfom_by_basis} yields
@@ -86,7 +86,7 @@ i.e. the $i$-th component of the resulting vector is the scalar product of the $
 		\begin{bNiceMatrix}
 			1 & -2 \\
 			0 & 5
-		\end{bNiceMatrix}\colvec{-3;2} &= \colvec{1\cdot(-3) + (-2)\cdot2;0\cdot(-3)+5\cdot2} = \colvec{-7;10},\\[5mm]
+		\end{bNiceMatrix}\colvec{-3;2} &= \colvec{1\cdot(-3) + (-2)\cdot2;\cancel{0\cdot(-3)}+5\cdot2} = \colvec{-7;10},\\[5mm]
 		\begin{bNiceMatrix}
 			1 & 2 \\
 			1 & 2
@@ -94,7 +94,7 @@ i.e. the $i$-th component of the resulting vector is the scalar product of the $
 		\begin{bNiceMatrix}
 			1 & 0 \\
 			0 & 2
-		\end{bNiceMatrix}\colvec{2;-2} &= \colvec{2\cdot2+0\cdot(-2);0\cdot2+2\cdot(-2)} = \colvec{4;-4}.
+		\end{bNiceMatrix}\colvec{2;-2} &= \colvec{2\cdot2+\cancel{0\cdot(-2)};\cancel{0\cdot2}+2\cdot(-2)} = \colvec{4;-4}.
 	\end{align*}
 \end{example}
 
@@ -199,19 +199,19 @@ The structure of an $m\times n$ matrix $A$ has a nice property: given that the t
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
 			 0 & 1 & 3\\
-		 \end{bNiceMatrix}\colvec{1;0;0} &= \colvec{1\cdot1+2\cdot0+0\cdot0;-1\cdot1+3\cdot0+4\cdot0;0\cdot1+1\cdot0+3\cdot0} = \colvec{1;-1;0},\\[3mm]
+		 \end{bNiceMatrix}\colvec{1;0;0} &= \colvec{1\cdot1+\cancel{2\cdot0}+\cancel{\cancel{0\cdot0}};-1\cdot1+\cancel{3\cdot0}+\cancel{4\cdot0};\cancel{0\cdot1}+\cancel{1\cdot0}+\cancel{3\cdot0}} = \colvec{1;-1;0},\\[3mm]
 		A\eb{2}=
 		\begin{bNiceMatrix}
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
 			 0 & 1 & 3\\
-		\end{bNiceMatrix}\colvec{0;1;0} &= \colvec{1\cdot0+2\cdot1+0\cdot0;-1\cdot0+3\cdot1+4\cdot0;0\cdot0+1\cdot1+3\cdot0} = \colvec{2;3;1},\\[3mm]
+		\end{bNiceMatrix}\colvec{0;1;0} &= \colvec{\cancel{1\cdot0}+2\cdot1+\cancel{\cancel{0\cdot0}};-\cancel{1\cdot0}+3\cdot1+\cancel{4\cdot0};\cancel{\cancel{0\cdot0}}+1\cdot1+\cancel{3\cdot0}} = \colvec{2;3;1},\\[3mm]
 		A\eb{3}=
 		\begin{bNiceMatrix}
 			 1 & 2 & 0\\
 			-1 & 3 & 4\\
 			 0 & 1 & 3\\
-		\end{bNiceMatrix}\colvec{0;0;1} &= \colvec{1\cdot0+2\cdot0+0\cdot1;-1\cdot0+3\cdot0+4\cdot1;0\cdot0+1\cdot0+3\cdot1} = \colvec{0;4;3}.
+		\end{bNiceMatrix}\colvec{0;0;1} &= \colvec{\cancel{1\cdot0}+\cancel{2\cdot0}+\cancel{0\cdot1};-\cancel{1\cdot0}+\cancel{3\cdot0}+4\cdot1;\cancel{\cancel{0\cdot0}}+\cancel{1\cdot0}+3\cdot1} = \colvec{0;4;3}.
 	\end{align*}
 \end{example}
 
@@ -1085,7 +1085,7 @@ as well.
 		\begin{bmatrix} 1&5\\1&3 \end{bmatrix} &\longrightarrow 1\cdot3-1\cdot5 = -2.\\
 		\begin{bmatrix} 1&2\\1&2 \end{bmatrix} &\longrightarrow 1\cdot2-1\cdot2 = 0.\\
 		\begin{bmatrix} 1&2\\2&4 \end{bmatrix} &\longrightarrow 1\cdot4-2\cdot2 = 0.\\
-		\begin{bmatrix} 0&7\\0&-3 \end{bmatrix} &\longrightarrow 0\cdot(-3)-0\cdot7 = 0.\\
+		\begin{bmatrix} 0&7\\0&-3 \end{bmatrix} &\longrightarrow \cancel{0\cdot(-3)}-\cancel{0\cdot7} = 0.\\
 	\end{align*}
 \end{example}
 
@@ -1205,26 +1205,6 @@ The resulting vector $\vec{u}$ is then given by the following formula:
 \vspace{1em}
 In the following illustration, each row of $A$ is scalar multiplied with the vector $\vec{v}$, yielding the respective element of $\vec{u}$. The respective rows of $A$ and elements of $\vec{v}$ are color-coded for clarity.
 
-% \begin{align*}
-% 	\Amatv{Av1}\cdot\Vvec{vv1} &= \begin{bNiceMatrix}[name=u1]-4\\\textcolor{black!20}{16}\\\textcolor{black!20}{24}\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
-% 	\Amatv{Av2}\cdot\Vvec{vv2} &= \begin{bNiceMatrix}[name=u2]\textcolor{black!20}{-4}\\16\\\textcolor{black!20}{24}\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
-% 	\Amatv{Av3}\cdot\Vvec{vv3} &= \begin{bNiceMatrix}[name=u3]\textcolor{black!20}{-4}\\\textcolor{black!20}{16}\\24\\\textcolor{black!20}{26}\end{bNiceMatrix},\\[5mm]
-% 	\Amatv{Av4}\cdot\Vvec{vv4} &= \begin{bNiceMatrix}[name=u4]\textcolor{black!20}{-4}\\\textcolor{black!20}{16}\\\textcolor{black!20}{24}\\26\end{bNiceMatrix}.
-% \end{align*}
-% \tikz[overlay, remember picture, blend mode=multiply]{
-% 	\node[above of=vv1-1-1] (vv1-txt) {$\vec{v}$};
-% 	\draw[-stealth] (vv1-txt) -- ($(vv1-1-1)+(0,10pt)$);
-% 	\foreach \r in {1,...,4}{
-% 		\node[mathl={xcol\r!20}, draw=xcol\r, rounded corners, fit=(Av\r-\r-1)(Av\r-\r-3)] {};
-% 		\node[mathl={xcol\r!20}, draw=xcol\r, rounded corners, fit=(vv\r-1-1)(vv\r-3-1)] {};
-% 		\node[mathl={xcol\r!20}, draw=xcol\r, rounded corners, fit=(u\r-\r-1)(u\r-\r-1)] {};
-% 		\node[xcol\r, left of=Av\r-\r-1, anchor=east] (Av\r-txt) {\nth{\r} row of $A$};
-% 		\draw[-stealth, xcol\r] (Av\r-txt) -- ($(Av\r-\r-1.west)+(-7pt,0)$);
-% 		\node[xcol\r, right of=u\r-\r-1, anchor=west] (u\r-txt) {\nth{\r} element of $\vec{u}$};
-% 		\draw[-stealth, xcol\r] (u\r-txt) -- ($(u\r-\r-1.east)+(7pt,0)$);
-% 	}
-% }
-
 \[
 	\renewcommand{\arraystretch}{1.5}
 	\begin{bNiceMatrix}[name=Av1]
@@ -1239,10 +1219,10 @@ In the following illustration, each row of $A$ is scalar multiplied with the vec
 	\end{bNiceMatrix}
 	\quad\quad\quad
 	\begin{bNiceMatrix}[name=u1]
-		1\cdot2+0\cdot5+2\cdot0\\
-		0\cdot2+3\cdot5+1\cdot0\\
-		2\cdot2+4\cdot5+0\cdot0\\
-		6\cdot2+1\cdot5+3\cdot0\\
+		1\cdot2+\cancel{0\cdot5}+\cancel{2\cdot0}\\
+		\cancel{0\cdot2}+3\cdot5+\cancel{1\cdot0}\\
+		2\cdot2+4\cdot5+\cancel{\cancel{0\cdot0}}\\
+		6\cdot2+1\cdot5+\cancel{3\cdot0}\\
 	\end{bNiceMatrix}
 	\quad\quad
 	\begin{bNiceMatrix}[name=u2]
@@ -1271,19 +1251,18 @@ In the following illustration, each row of $A$ is scalar multiplied with the vec
 	The following are some examples of matrix-vector products. Note how in each product the number of columns in the matrix is the same as the number of elements of the vector.
 
 	\begin{align*}
-		&\begin{bmatrix}1 & 0 & 2\\3 & -1 & 5\end{bmatrix}\cdot\colvec{2;-7;4} = \colvec{1\cdot2+0\cdot(-7)+2\cdot4;3\cdot2-1\cdot(-7)+5\cdot4} = \colvec{10;33}.\\[5mm]
-		&\begin{bmatrix}0 & 4 & -5\\4 & 6 & -2\\-2 & 2 & 0\\\end{bmatrix} \cdot \colvec{0;-3;-2} = \colvec{0\cdot0+4\cdot(-3)-5\cdot(-2);4\cdot0+6\cdot(-3)-2\cdot(-2);-2\cdot0+2\cdot(-3)+0\cdot(-2)} = \colvec{-2;-14;-6}.\\[5mm]
-		&\begin{bmatrix}-2 & -1\\-2 & 1\\\end{bmatrix} \cdot \colvec{0;-1} = \colvec{-2\cdot0-1\cdot(-1);-2\cdot0+1\cdot(-1)} = \colvec{1;-1}.\\[5mm]
-		&\begin{bmatrix}6 & -1\\5 & 0\\\end{bmatrix} \cdot \colvec{2;2} = \colvec{6\cdot2-1\cdot2;5\cdot2+0\cdot2} = \colvec{10;10}.\\[5mm]
-		&\begin{bmatrix}2 & -1 & -2 & -2\\2 & 0 & 0 & 5\\\end{bmatrix} \cdot \colvec{0;-2;2;4} = \colvec{2\cdot0-1\cdot(-2)-2\cdot2-2\cdot4;2\cdot0+0\cdot(-2)+0\cdot2+5\cdot4} = \colvec{-10;20}.\\[5mm]
-		&\begin{bmatrix}3 & 4 & -1 & 1\\-2 & 5 & 6 & -2\\4 & 5 & -1 & 3\\\end{bmatrix} \cdot \colvec{6;3;0;4} = \colvec{3\cdot6+4\cdot3-1\cdot0+1\cdot4;-2\cdot6+5\cdot3+6\cdot0-2\cdot4;4\cdot6+5\cdot3-1\cdot0+3\cdot4} = \colvec{34;-5;51}.
+		&\begin{bmatrix}1 & 0 & 2\\3 & -1 & 5\end{bmatrix}\cdot\colvec{2;-7;4} = \colvec{1\cdot2+\cancel{0\cdot(-7)}+2\cdot4;3\cdot2-1\cdot(-7)+5\cdot4} = \colvec{10;33}.\\[5mm]
+		&\begin{bmatrix}0 & 4 & -5\\4 & 6 & -2\\-2 & 2 & 0\\\end{bmatrix} \cdot \colvec{0;-3;-2} = \colvec{\cancel{\cancel{0\cdot0}}+4\cdot(-3)-5\cdot(-2);\cancel{4\cdot0}+6\cdot(-3)-2\cdot(-2);-\cancel{2\cdot0}+2\cdot(-3)+\cancel{0\cdot(-2)}} = \colvec{-2;-14;-6}.\\[5mm]
+		&\begin{bmatrix}-2 & -1\\-2 & 1\\\end{bmatrix} \cdot \colvec{0;-1} = \colvec{-\cancel{2\cdot0}-1\cdot(-1);-\cancel{2\cdot0}+1\cdot(-1)} = \colvec{1;-1}.\\[5mm]
+		&\begin{bmatrix}6 & -1\\5 & 0\\\end{bmatrix} \cdot \colvec{2;2} = \colvec{6\cdot2-1\cdot2;5\cdot2+\cancel{0\cdot2}} = \colvec{10;10}.\\[5mm]
+		&\begin{bmatrix}2 & -1 & -2 & -2\\2 & 0 & 0 & 5\\\end{bmatrix} \cdot \colvec{0;-2;2;4} = \colvec{\cancel{2\cdot0}-1\cdot(-2)-2\cdot2-2\cdot4;\cancel{2\cdot0}+\cancel{0\cdot(-2)}+\cancel{0\cdot2}+5\cdot4} = \colvec{-10;20}.\\[5mm]
+		&\begin{bmatrix}3 & 4 & -1 & 1\\-2 & 5 & 6 & -2\\4 & 5 & -1 & 3\\\end{bmatrix} \cdot \colvec{6;3;0;4} = \colvec{3\cdot6+4\cdot3-\cancel{1\cdot0}+1\cdot4;-2\cdot6+5\cdot3+\cancel{6\cdot0}-2\cdot4;4\cdot6+5\cdot3-\cancel{1\cdot0}+3\cdot4} = \colvec{34;-5;51}.
 	\end{align*}
 \end{example}
 
 \subsection{Matrix-matrix products}
 Since the product of a matrix and a vector is itself a vector, one can take the resulting vector and multiply it by another matrix, i.e. given the matrices $A,B$ and a vector $\vec{v}$, the expression
 
-\vspace{2em}
 \[
 	B\cdot \left( A\cdot\vec{v} \right)
 \]
@@ -1298,11 +1277,11 @@ Of course, the dimensions of all participating objects must align for the produc
 	\]
 	then
 	\[
-		\vec{u} = A\cdot\vec{v} = \colvec{2\cdot1-1\cdot2+0\cdot5;5\cdot1+4\cdot2+3\cdot5} = \colvec{0;28}.
+		\vec{u} = A\cdot\vec{v} = \colvec{2\cdot1-1\cdot2+\cancel{0\cdot5};5\cdot1+4\cdot2+3\cdot5} = \colvec{0;28}.
 	\]
 	The product $B\cdot\vec{u}$ is defined, since $\vec{u}$ has the same number of elements as $B$ has columns (namely $2$). Its result is the $3$-dimensional vector
 	\[
-		\vec{w} = B\cdot\vec{u} = \colvec{5\cdot0+2\cdot28;6\cdot0-7\cdot28;-1\cdot0+0\cdot28} = \colvec{56;-196;0}.
+		\vec{w} = B\cdot\vec{u} = \colvec{\cancel{5\cdot0}+2\cdot28;\cancel{6\cdot0}-7\cdot28;-\cancel{1\cdot0}+\cancel{0\cdot2}8} = \colvec{56;-196;0}.
 	\]
 \end{example}
 
@@ -1351,33 +1330,31 @@ Let us define the product of two matrices: given the an $m\times n$ matrix $A$ a
 			|[draw, fill=xred!30]|a_{11} & |[draw, fill=xred!30]|a_{12}\\
 			a_{21} & a_{22}\\
 			|[draw, fill=xblue!30]|a_{31} & |[draw, fill=xblue!30]|a_{32}\\
-			a_{41} & a_{42}\\
 		};
-		\matrix [mat] (top) at (3.5,3.7) {
-			|[draw, fill=xred!30]|b_{11} & b_{12} & |[draw, fill=xblue!30]|b_{13}\\
-			|[draw, fill=xred!30]|b_{21} & b_{22} & |[draw, fill=xblue!30]|b_{23}\\
+		\matrix [mat] (top) at (4,3.7) {
+			|[draw, fill=xred!30]|b_{11} & b_{12} & b_{13} & |[draw, fill=xblue!30]|b_{14} & b_{15}\\
+			|[draw, fill=xred!30]|b_{21} & b_{22} & b_{23} & |[draw, fill=xblue!30]|b_{24} & b_{25}\\
 		};
 
-		\matrix [mat, text=white] (center) at (3.5,0) {
-			|[draw, black, fill=xred!30]|c_{11} & 0 & 0 \\
-			0 & 0 & 0 \\
-			0 & 0 & |[draw, black, fill=xblue!30]|c_{33} \\
-			0 & 0 & 0 \\
+		\matrix [mat, text=white] (center) at (4,0) {
+			|[draw, black, fill=xred!30]|c_{11} & 0 & 0 & 0 & 0\\
+			0 & 0 & 0 & 0 & 0\\
+			0 & 0 & 0 & |[draw, black, fill=xblue!30]|c_{34} & 0\\
 		};
 
 		\node[left=of left, xshift=7mm] {\huge$A$};
-		\node[left=of top, xshift=7mm] {\huge$B$};
+		\node[above=of top, yshift=-4mm] {\huge$B$};
 		\node[below=of center, yshift=1cm] {\huge$C=AB$};
 
 		\draw[boxarr, xred] (left-1-2) -- (center-1-1);
-		\draw[boxarr, xblue] (left-3-2) -- (center-3-3);
+		\draw[boxarr, xblue] (left-3-2) -- (center-3-4);
 		\draw[boxarr, xred] (top-2-1) -- (center-1-1);
-		\draw[boxarr, xblue] (top-2-3) -- (center-3-3);
+		\draw[boxarr, xblue] (top-2-4) -- (center-3-4);
 
 		\draw[line width=3pt, xred] (left-1-1.north west) rectangle (left-1-2.south east);
 		\draw[line width=3pt, xblue] (left-3-1.north west) rectangle (left-3-2.south east);
 		\draw[line width=3pt, xred] (top-1-1.north west) rectangle (top-2-1.south east);
-		\draw[line width=3pt, xblue] (top-1-3.north west) rectangle (top-2-3.south east);
+		\draw[line width=3pt, xblue] (top-1-4.north west) rectangle (top-2-4.south east);
 	\end{tikzpicture}
 	\caption{The element $c_{ij}$ of the matrix $C=AB$ is the scalar product of the $i$-th row of $A$ and the $j$-th column of $B$.}
 	\label{fig:matrix_matrix_product_elements}
@@ -1387,13 +1364,13 @@ Using the previous example, instead of calculating the $\frac{pi}{2}$ rotation o
 \[
 	C=\begin{bmatrix} 0 & -1\\1 & 0 \end{bmatrix}\begin{bmatrix} 2 & 0\\0 & 2 \end{bmatrix} =
 	\begin{bmatrix}
-		0\cdot2-1\cdot0 & 0\cdot0-1\cdot2\\
-		1\cdot2+0\cdot0 & 1\cdot0+0\cdot2
+		\cancel{0\cdot2}-\cancel{1\cdot0} & \cancel{\cancel{0\cdot0}}-1\cdot2\\
+		1\cdot2+\cancel{\cancel{0\cdot0}} & \cancel{1\cdot0}+\cancel{0\cdot2}
 		\end{bmatrix} = \begin{bmatrix} 0 & -2\\2 & 0 \end{bmatrix}.
 \]
 We then apply $C$ to the vector and get the expected result:
 \[
-	C\vec{v} = \begin{bmatrix} 0 & -2\\2 & 0 \end{bmatrix} \colvec{1;1} = \colvec{0\cdot1-2\cdot1;2\cdot1+0\cdot1} = \colvec{-2;2}.
+	C\vec{v} = \begin{bmatrix} 0 & -2\\2 & 0 \end{bmatrix} \colvec{1;1} = \colvec{\cancel{0\cdot1}-2\cdot1;2\cdot1+\cancel{0\cdot1}} = \colvec{-2;2}.
 \]
 
 \begin{example}{Matrix-matrix products}{}
@@ -1405,10 +1382,54 @@ Recall that the order of composition of linear transformations matters: $T_{1}\c
 	AB\neq BA.
 	\label{eq:matrix_matrix_product_non_commutative}
 \end{equation}
-\begin{note}{When $\bm{BA=AB}$}{}
-There are special cases where $AB=BA$, but these are the exception and not the norm. We will discuss such cases later in the chapter.
-\end{note}
 
+\begin{example}{Non-commutativity of matrix-matrix products}{}
+	
+\end{example}
+
+Of course, there are special cases where $AB=BA$, but these are the exception and not the norm. An example is the the rotation and scaling of the vector $\colvec{1;1}$ we saw above: if we flip the order of application of the two linear transformations we get the same result. This is true for any vector:
+
+\centering
+\begin{tikzpicture}[node distance=2cm]
+	\node (xy) {$\colvec{x;y}$};
+	\node[right of=xy, xshift=2cm] (res) {$\colvec{-2y;2x}$};
+	\node at ($(xy)!0.5!(res)+(0,1cm)$) (in1) {$\colvec{-y;x}$};
+	\node at ($(xy)!0.5!(res)-(0,1cm)$) (in2) {$\colvec{2x;2y}$};
+	\draw[-stealth, thick] (xy)  -- (in1) node[midway, above, rotate=30]  {rotate};
+	\draw[-stealth, thick] (xy)  -- (in2) node[midway, below, rotate=-30] {scale};
+	\draw[-stealth, thick] (in1) -- (res) node[midway, above, rotate=-30] {scale};
+	\draw[-stealth, thick] (in2) -- (res) node[midway, below, rotate=30]  {rotate};
+\end{tikzpicture}
+\flushleft
+
+We can see that fact by multiplying the two matrices directly, in both directions:
+\begin{align*}
+	\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}2&0\\0&2\end{bmatrix} &= \begin{bmatrix}\cancel{0\cdot2}-\cancel{1\cdot0} & \cancel{\cancel{0\cdot0}}-1\cdot2 \\1\cdot2+\cancel{\cancel{0\cdot0}}&\cancel{1\cdot0}+\cancel{0\cdot2}\end{bmatrix} = \begin{bmatrix}0&-2\\2&0\end{bmatrix},\\
+	\begin{bmatrix}2&0\\0&2\end{bmatrix}\begin{bmatrix}0&-1\\1&0\end{bmatrix} &= \begin{bmatrix}\cancel{2\cdot0}+\cancel{0\cdot1}&2\cdot(-1)+\cancel{\cancel{0\cdot0}}\\1\cdot2+\cancel{\cancel{0\cdot0}}&\cancel{1\cdot0}+\cancel{0\cdot2}\end{bmatrix} = \begin{bmatrix}0&-2\\2&0\end{bmatrix}.
+\end{align*}
+
+Later in this chapter we will analyze the conditions for such commutativity to occur.
+
+The determinant of a matrix-matrix product $AB$ equals the product of the determinants of the separate matrices, i.e.
+\begin{equation}
+	|AB| = |A|\times|B|.
+	\label{eq:determinant_AB}
+\end{equation}
+The reason is that the change in volume after application of two consecutive transformations is the product of the change in volume for each separate transformation. This also mean that $|AB|=|BA|$. The trace of a matrix-matrix product behaves the same as well:
+\begin{equation}
+	\tr\left(AB\right) = \tr\left(BA\right).
+	\label{eq:}
+\end{equation}
+
+\begin{proof}{Trace of a matrix-matrix product}{}
+	Prove the above behaviour of the trance operator.
+\end{proof}
+
+On the other hand, the traspose operator doesn't behave so "nicely":
+\begin{equation}
+	\left(AB\right)^{\top} = B^{\top}A^{\top}.
+	\label{eq:}
+\end{equation}
 
 \subsection{Inverse matrices}
 \subsection{Kernel and null space}

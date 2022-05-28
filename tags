@@ -440,6 +440,7 @@ eq:cross_product_to_dot_product_part2	chapters/linear_algebra_intuitive/vectors.
 eq:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{eq:cube roots of 1}$/;"	l
 eq:determinant_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_2x2}$/;"	l
 eq:determinant_3x3	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_3x3}$/;"	l
+eq:determinant_AB	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_AB}$/;"	l
 eq:dimension of a vector space	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:dimension of a vector space}$/;"	l
 eq:exponent	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponent}$/;"	l
 eq:exponents_properties	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponents_properties}$/;"	l
