@@ -1432,4 +1432,130 @@ On the other hand, the traspose operator doesn't behave so "nicely":
 \end{equation}
 
 \subsection{Inverse matrices}
+Some linear transformations are invertible. For example, given a transformation which rotates any vector in $\Rs{2}$ by $\theta$ \textbf{counter-clockwise} around the origin, its inverse transformation is one that rotates any vector in $\Rs{2}$ by $\theta$ \textbf{clockwise} around the origin (or equivalently by $-\theta$ counter-clockwise). \autoref{fig:trans_and_inverses} illustrates such transformation.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[node distance=1pt]
+		\pgfmathsetmacro{\tha}{15}
+		\pgfmathsetmacro{\thb}{80}
+		\pgfmathsetmacro{\thas}{\tha+3}
+		\pgfmathsetmacro{\thbs}{\thb-3}
+		\pgfmathsetmacro{\R}{2.5}
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=10cm,
+			xmin=-0.5, xmax=3,
+			ymin=-0.5, ymax=3,
+			xticklabels={,},
+			yticklabels={,},
+		]
+			\coordinate (v) at ({\R*cos(\tha)},{\R*sin(\tha)});
+			\coordinate (u) at ({\R*cos(\thb)},{\R*sin(\thb)});
+			\draw[vector, xred]  (0,0) -- (v) node[pos=1.05] {$\vec{u}$};
+			\draw[vector, xblue] (0,0) -- (u) node[pos=1.05] {$\vec{v}$};
+			\draw[vector, xpurple] ({0.4*\R*cos(\thas)},{0.4*\R*sin(\thas)}) arc (\thas:\thbs:{0.4*\R});
+			\draw[vector, xpurple] ({0.65*\R*cos(\thbs)},{0.65*\R*sin(\thbs)}) arc (\thbs:\thas:{0.65*\R});
+			\node[draw=xpurple, thick, fill=xpurple!20, rounded corners, text=xpurple] at (0.75,0.75) {$T$};
+			\node[draw=xpurple, thick, fill=xpurple!20, rounded corners, text=xpurple] at (1.2,1.2) {$T^{-1}$};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The transformation $T$ rotates a vector $\vu$ by $\ath$ counter-clockwise, turning it into the vector $\vv$. Its inverse, $T^{-1}$, turns the vector $\vv$ back into $\vu$.}
+	\label{fig:trans_and_inverses}
+\end{figure}
+
+Recall that a transformations (function) is only invertible if and only if it is bijective (\autoref{sec:relations_and_functions}). Specifically to our case, a non-bijective linear transformation is a transformation $T:\Rs{m}\to\Rs{n}$ for which some two vectors $\vec{u},\vec{v}\in\Rs{m}$ are mapped to the same vector $\vec{w}\in\Rs{n}$.
+
+\begin{example}{Two vectors mapped to the same vector}{}
+	Let $T$ be a linear transformation represented by the matrix
+	\[
+		A=
+		\begin{bmatrix}
+			1 & 0 & 2\\
+			0 & 1 & 0\\
+			0 & 0 & 0\\
+		\end{bmatrix}.
+	\]
+	
+	The two vectors $\vec{u}=\colvec{2;0;0}$ and $\vec{v}=\colvec{0;0;1}$ are mapped by $T$ to the same vector:
+	\begin{align*}
+		A\vec{u} &= \colvec{1\cdot2+\cancel{\cancel{0\cdot0}}+\cancel{2\cdot0};\cancel{0\cdot2}+\cancel{1\cdot0}+\cancel{\cancel{0\cdot0}};\cancel{0\cdot2}+\cancel{\cancel{0\cdot0}}+\cancel{\cancel{0\cdot0}}} = \colvec{2;0;0}.\\
+		A\vec{v} &= \colvec{\cancel{1\cdot0}+\cancel{0\cdot0}+2\cdot1;\cancel{0\cdot0}+\cancel{1\cdot0}+\cancel{0\cdot1};\cancel{0\cdot0}+\cancel{0\cdot0}+\cancel{0\cdot2}} = \colvec{2;0;0}.\\
+	\end{align*}
+\end{example}
+
+In fact, when a linear transformation maps two vectors in its domain to a single vector in is image - it actually maps \textbf{infinitely many} vectors to that point: let $T$ be a linear transformation and $\vec{u},\vec{v}$ two vectors in its domain that are mapped to the same output $\vec{w}$, i.e.
+\[
+	T \left( \vec{u} \right) = T \left( \vec{v} \right) = \vec{w}.
+\]
+
+Due to the properties of linear transformations, on one side we get
+\begin{align}
+	T \left( \alpha\vec{v}+\beta\vec{u} \right) &= T \left( \alpha\vec{u} \right) + T \left( \beta\vec{v} \right)\\ 
+												&= \alpha T \left( \vec{u} \right)  + \beta T\left(\vec{w}\right)\\
+												&= \alpha\vec{w} + \beta\vec{w}\\
+												&= (\alpha+\beta)\vec{w}.
+\end{align}
+(for any $\alpha\in\mathbb{R}$)
+
+Thus, for example, the linear combination $2\vec{u}+6\vec{v}$ will be mapped to the same output as $6\vec{u}+2\vec{v},\ 3\vec{u}+9\vec{v},\ 0.5\vec{u}+11.5\vec{v}$, etc. - the linear combination using any two coefficients $\alpha,\beta$ which add up to $12$ would be mapped to $12\vec{w}$. This is of course true for any real number, and so for each scale of $\vec{w}$ there are infinitely many linear combinations that are mapped to it.
+
+In fact, the only way in which a linear transformation can be non-bijective is by "loosing" a dimension, i.e. when it maps $\Rs{3}$ to a single plane/line/point. As we saw earlier, these kind of transformations are represented by matrices for which the determinant is zero, i.e.
+\begin{equation}
+	|A|=0 \Leftrightarrow \nexists A^{-1}.
+	\label{eq:determinant_zero_no_inverse}
+\end{equation}
+which in words mean that if (and only if!) the determinant of a matrix is zero then it has no iverse, and vice-versa (the symbol $\nexists$ means "does not exist"). On the other hand, if the determinant isn't zero, then the inverse must exist.
+
+The product of a matrix and its inverse is the respective identity matrix, since the composition of the respective linear transformations represented by the matrices is the identity transformation. In mathematic terms:
+\begin{equation}
+	AA^{-1} = A^{-1}A = I.
+	\label{eq:matrix_inverse_identity}
+\end{equation}
+
+\begin{example}{Inverse matrices}{}
+	TBW: give a $3\times3$ matrix, show that its determinant is non-zero, present its inverse and demonstrate it on a specific vector.
+\end{example}
+
+Matrices with zero determinant are also known as a \emph{singular} or \emph{degenerate} matrix. For obvious reason, we will not use the latter term in this book\footnote{nor should you use it in general, in my opinion.}.
+
+While the identity matrix is its own inverse (since $I\cdot I=I$), it is not the only matrix which shows such behaviour. For example, consider the matrix
+\[
+	A =
+	\begin{bmatrix}
+		-1 & 0 & 0\\
+		 0 & 1 & 0\\
+		 0 & 0 & 1\\
+	\end{bmatrix}.
+\]
+Geometrically, $A$ takes a vector in $\Rs{3}$ and flips its $x$-component. In other words it mirrors any vector across the $yz$-plane (see \autoref{fig:mirror_yz}). If we take a vector $\vec{u}=\colvec{x;y;z}$ and multiply it by $A$ we get the vector $\vec{v}=\colvec{-x;y;z}$ (tip: calculate the product $A\vec{v}$ directly for practice). If we take $\vec{v}$ and multiply it by $A$, we get the vector $\colvec{x;y;z}$ - i.e. we retrieved back $\vec{u}$. Since this is true for any vector in $\Rs{3}$, $A$ is its own inverse. We can check this directly by calculating the product of $A$ with itself:
+\begin{align*}
+	A\cdot A &=
+	\begin{bmatrix}
+		-1 & 0 & 0\\
+		 0 & 1 & 0\\
+		 0 & 0 & 1\\
+	\end{bmatrix}
+	\begin{bmatrix}
+		-1 & 0 & 0\\
+		 0 & 1 & 0\\
+		 0 & 0 & 1\\
+	\end{bmatrix}\\
+			 &=
+	\begin{bmatrix}
+		-1\cdot(-1) + \cancel{\cancel{0\cdot0}}+\cancel{\cancel{0\cdot0}} & -\cancel{1\cdot0}+\cancel{0\cdot1}+\cancel{\cancel{0\cdot0}} & -\cancel{1\cdot0}+\cancel{\cancel{0\cdot0}}+\cancel{0\cdot1}\\
+		 \cancel{0\cdot(-1)} + \cancel{\cancel{0\cdot0}}+\cancel{\cancel{0\cdot0}} &  \cancel{0\cdot1}+1\cdot1+\cancel{\cancel{0\cdot0}} &  \cancel{\cancel{0\cdot0}}+\cancel{0\cdot1}+\cancel{\cancel{0\cdot0}}\\
+		 \cancel{0\cdot(-1)} + \cancel{\cancel{0\cdot0}}+\cancel{0\cdot1} &  \cancel{\cancel{0\cdot0}}+\cancel{0\cdot1}+\cancel{\cancel{0\cdot0}} &  \cancel{\cancel{0\cdot0}}+\cancel{\cancel{0\cdot0}}+1\cdot1\\
+	\end{bmatrix}\\
+			 &=
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1\\
+	\end{bmatrix}\\
+			 &= I_{3}.
+\end{align*}
+
+A matrix which is its own inverse is known as an \emph{involutory matrix}. Such matrices must be square (challange to the reader: why is that true?).
+
 \subsection{Kernel and null space}

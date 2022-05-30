@@ -25,14 +25,14 @@ Arrow1Mend	figures/linear_algebra/tapir_transform.svg	/^       inkscape:isstock=
 Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	d
 Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	i
 Basic Definitions	chapters/intro/trigonomentry.tex	/^\\subsection{Basic Definitions}$/;"	u	section:Introduction""Trigonometric functions
-Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Introduction""Relations and Functions
+Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Relations and Functions
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Calculus in 1D	chapters/calculus_1D/preface.tex	/^\\chapter{Calculus in 1D}$/;"	c
 Cartesian Products	chapters/intro/math_symbols_sets.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Common mathematical notations	chapters/intro/math_symbols_sets.tex	/^\\subsection{Common mathematical notations}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Complex Numbers	chapters/intro/complex_numbers.tex	/^\\section{Complex Numbers}\\label{sec:complex numbers}$/;"	s	chapter:Introduction
 Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Components}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
-Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Introduction""Relations and Functions
+Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Relations and Functions
 Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Definition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
 Derivatives	chapters/calculus_1D/derivatives.tex	/^\\section{Derivatives}$/;"	s	chapter:Calculus in 1D
@@ -55,7 +55,7 @@ Graphs	chapters/intro/trigonomentry.tex	/^\\subsection{Graphs}$/;"	u	section:Int
 Identities	chapters/intro/trigonomentry.tex	/^\\subsection{Identities}$/;"	u	section:Introduction""Trigonometric functions
 Important number sets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Important number sets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Infinite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Infinite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
-Injective, surjective and bijective functions	chapters/intro/relations_functions.tex	/^\\subsection{Injective, surjective and bijective functions}$/;"	u	section:Introduction""Relations and Functions
+Injective, surjective and bijective functions	chapters/intro/relations_functions.tex	/^\\subsection{Injective, surjective and bijective functions}$/;"	u	section:Relations and Functions
 Integrals	chapters/calculus_1D/integrals.tex	/^\\section{Integrals}$/;"	s	chapter:Calculus in 1D
 Intersection, union, difference and complement sets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Intersection, union, difference and complement sets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Intervals on the real number line	chapters/intro/math_symbols_sets.tex	/^\\subsection{Intervals on the real number line}$/;"	u	section:Introduction""Mathematical Symbols and Sets
@@ -80,8 +80,8 @@ Modulo fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Modulo 
 Normal vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Normal vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Polynomial functions	chapters/intro/polynomials.tex	/^\\section{Polynomial functions}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Radians	chapters/intro/trigonomentry.tex	/^\\subsection{Radians}$/;"	u	section:Introduction""Trigonometric functions
-Real functions	chapters/intro/relations_functions.tex	/^\\subsection{Real functions}$/;"	u	section:Introduction""Relations and Functions
-Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relations and Functions}$/;"	s	chapter:Introduction
+Real functions	chapters/intro/relations_functions.tex	/^\\subsection{Real functions}$/;"	u	section:Relations and Functions
+Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relations and Functions}\\label{sec:relations_and_functions}$/;"	s
 Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots of complex numbers}$/;"	u	section:Introduction""Complex Numbers
 Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:Calculus in 1D
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
@@ -441,6 +441,7 @@ eq:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{eq:cube roots o
 eq:determinant_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_2x2}$/;"	l
 eq:determinant_3x3	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_3x3}$/;"	l
 eq:determinant_AB	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_AB}$/;"	l
+eq:determinant_zero_no_inverse	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_zero_no_inverse}$/;"	l
 eq:dimension of a vector space	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:dimension of a vector space}$/;"	l
 eq:exponent	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponent}$/;"	l
 eq:exponents_properties	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponents_properties}$/;"	l
@@ -473,6 +474,7 @@ eq:log_product_rule	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:log
 eq:log_subtraction_rule	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:log_subtraction_rule}$/;"	l
 eq:logarithms	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:logarithms}$/;"	l
 eq:matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix}$/;"	l
+eq:matrix_inverse_identity	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix_inverse_identity}$/;"	l
 eq:matrix_matrix_product_elements	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix_matrix_product_elements}$/;"	l
 eq:matrix_matrix_product_non_commutative	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:matrix_matrix_product_non_commutative}$/;"	l
 eq:matrix_scaling	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:matrix_scaling}$/;"	l
@@ -593,6 +595,7 @@ fig:skew_in_x	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:sk
 fig:span of a single vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:span of a single vector}$/;"	l
 fig:span of two vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:span of two vectors}$/;"	l
 fig:tan graph	chapters/intro/trigonomentry.tex	/^	\\label{fig:tan graph}$/;"	l
+fig:trans_and_inverses	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:trans_and_inverses}$/;"	l
 fig:two vectors LT	chapters/linear_algebra_intuitive/linear_trans.tex	/^		\\label{fig:two vectors LT}$/;"	l
 fig:two_reflections_rotation	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:two_reflections_rotation}$/;"	l
 fig:union_counting	chapters/intro/math_symbols_sets.tex	/^	\\label{fig:union_counting}$/;"	l
@@ -4370,6 +4373,7 @@ rect8956	figures/linear_algebra/tapir_transform.svg	/^         id="rect8956" \/>
 rect8956	figures/linear_algebra/tapir_transform2.svg	/^         id="rect8956" \/>$/;"	i
 sec:LS_developing_intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Developing intuition}\\label{sec:LS_developing_intuition}$/;"	l
 sec:complex numbers	chapters/intro/complex_numbers.tex	/^\\section{Complex Numbers}\\label{sec:complex numbers}$/;"	l
+sec:relations_and_functions	chapters/intro/relations_functions.tex	/^\\section{Relations and Functions}\\label{sec:relations_and_functions}$/;"	l
 sodipodi	design/chapter.svg	/^   sodipodi:docname="chapter.svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/chapters/ftcrics/tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/chapters/ftcrics/tapir_ft.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
