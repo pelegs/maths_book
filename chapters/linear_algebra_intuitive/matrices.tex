@@ -1558,4 +1558,119 @@ Geometrically, $A$ takes a vector in $\Rs{3}$ and flips its $x$-component. In ot
 
 A matrix which is its own inverse is known as an \emph{involutory matrix}. Such matrices must be square (challange to the reader: why is that true?).
 
+How do we calculate the inverse of a matrix? In general, non-square matrices don't have so-called "complete" inverses, so we focus on calculating the inverses of square matrices only. The general formula for an inverse matrix $A^{-1}$ is
+\begin{equation}
+	A^{-1} = \frac{1}{|A|}\adj(A),
+	\label{eq:inverse_matrix_calc}
+\end{equation}
+where $\adj(A)$ is the \emph{adjugate} of the matrix $A$. The adjugate of a matrix is calculated using its minors, as follows: let \[
+	A=
+	\begin{bNiceMatrix}
+		\Ma{1}{1} & \Ma{1}{2} & \cdots & \Ma{1}{n}\\
+		\Ma{2}{1} & \Ma{2}{2} & \cdots & \Ma{2}{n}\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		\Ma{m}{1} & \Ma{m}{2} & \cdots & \Ma{m}{n}
+	\end{bNiceMatrix},
+\]
+then its adjugate is the matrix
+\[
+	\adj(A)=
+	\begin{bNiceMatrix}
+		+\Mm{1}{1} & -\Mm{1}{2} & \cdots & \pm\Mm{1}{n}\\
+		-\Mm{2}{1} & +\Mm{2}{2} & \cdots & \mp\Mm{2}{n}\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		\pm\Mm{m}{1} & \mp\Mm{m}{2} & \cdots & \pm\Mm{m}{n}
+	\end{bNiceMatrix}^{\top}
+\]
+(where $\Mm{i}{j}$ is the $\textcolor{xred}{i}\textcolor{xblue}{j}$-minor of $A$).
+
+\begin{example}{Adjugate of a matrix}{}
+	Let
+	\[
+		C=
+		\begin{bmatrix}
+			1 & 7 & -3\\
+			2 & 5 &  0\\
+			0 & 1 &  1\\
+		\end{bmatrix},
+	\]
+	then
+	\begin{align*}
+		\adj(C)&=
+		\begin{bmatrix}
+			+\Mm{1}{1} & -\Mm{1}{2} & +\Mm{1}{3}\\
+			-\Mm{2}{1} & +\Mm{2}{2} & -\Mm{2}{3}\\
+			+\Mm{3}{1} & -\Mm{3}{2} & +\Mm{3}{3}\\
+		\end{bmatrix}^{\top}\\
+			   &=
+			   \begin{bmatrix}
+				   +\begin{vmatrix}5&0\\1&1\end{vmatrix} & -\begin{vmatrix}2&0\\0&1\end{vmatrix} & +\begin{vmatrix}2&5\\0&1\end{vmatrix}\\
+				   -\begin{vmatrix}7&-3\\1&1\end{vmatrix} & +\begin{vmatrix}1&-3\\0&1\end{vmatrix} & -\begin{vmatrix}1&7\\0&1\end{vmatrix}\\
+				   +\begin{vmatrix}7&-3\\5&0\end{vmatrix} & -\begin{vmatrix}1&-3\\2&0\end{vmatrix} & +\begin{vmatrix}1&7\\2&5\end{vmatrix}\\
+			   \end{bmatrix}^{\top}\\
+			   &=
+			   \begin{bmatrix}
+				   5\cdot1-\cancel{1\cdot0} & -2\cdot1+\cancel{\cancel{0\cdot0}} & 2\cdot1-\cancel{0\cdot5}\\
+				   -(7\cdot1+1\cdot3) & 1\cdot1+\cancel{3\cdot0} & -(1\cdot1-\cancel{7\cdot0})\\
+				   \cancel{7\cdot0}+3\cdot5 & -(\cancel{1\cdot0}+3\cdot2) & 1\cdot5-2\cdot7\\
+			   \end{bmatrix}^{\top}\\
+			   &=
+			   \begin{bmatrix}
+				   5 & -2 & 2\\
+				   -10 & 1 & -1\\
+				   15 & -6 & -9\\
+			   \end{bmatrix}^{\top}\\ 
+			   &=
+			   \begin{bmatrix}
+				   5 & -10 & 15\\
+				   -2 & 1 & -6\\
+				   2 & -1 & -9
+			   \end{bmatrix}.
+	\end{align*}
+\end{example}
+
+We can use the above example to calculate the inverse of the matrix $C$.
+
+\begin{example}{Inverse of a matrix}{}
+	The determinant of $C$ is
+	\[
+		|C| = \Mm{1}{1} -7\Mm{1}{2} -3\Mm{1}{3} = 5-14-6 = -15.
+	\]
+	Therefore the inverse of $C$ is
+	\begin{align*}
+		C^{-1} &= \frac{1}{|C|}\adj(C)\\
+			   &= -\frac{1}{15}
+			   \begin{bmatrix}
+				   5 & -10 & 15\\
+				   -2 & 1 & -6\\
+				   2 & -1 & -9
+			   \end{bmatrix}\\
+			   &=
+			   \begin{bmatrix}
+				   -\frac{1}{3} & -\frac{2}{3} & -1\\
+				   \frac{2}{15} & -\frac{1}{15} & \frac{6}{15}\\
+				   -\frac{2}{15} & \frac{1}{15} & \frac{3}{5}\\
+			   \end{bmatrix}.
+	\end{align*}
+\end{example}
+
+In the case of $2\times2$ matrices, the adjugate has a rather simple formula:
+\begin{equation}
+	\adj\left( \begin{bmatrix}a&b\\c&d\end{bmatrix}  \right) = \begin{bmatrix} d&-b\\-c&a \end{bmatrix}.
+	\label{eq:adjugate_2x2}
+\end{equation}
+
+\begin{note}{Minors of $\bm{2\times2}$ matrices}{}
+	The minors of a $2\times2$ matrix $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ are simply
+	\begin{align*}
+		\Mm{1}{1} &= d,\ \Mm{1}{2} = c,\\
+		\Mm{2}{1} &= b,\ \Mm{2}{2} = a.
+	\end{align*}
+\end{note}
+
+Therefore, the inverse of a $2\times2$ matrix $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ is
+\begin{equation}
+	A^{-1} = \frac{1}{|A|}\begin{bmatrix}d&-b\\-c&a\end{bmatrix} = \frac{1}{ad-cb}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}.
+	\label{eq:inverse_2x2}
+\end{equation}
 \subsection{Kernel and null space}
