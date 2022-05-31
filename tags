@@ -513,6 +513,7 @@ eq:quadratic_equation	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:quadrat
 eq:rationals	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:rationals}$/;"	l
 eq:rationals_subset_algebraic	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:rationals_subset_algebraic}$/;"	l
 eq:reals_subset_complex	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:reals_subset_complex}$/;"	l
+eq:reflect_general_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:reflect_general_2x2}$/;"	l
 eq:restriction	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:restriction}$/;"	l
 eq:roots_form	chapters/intro/polynomials.tex	/^	\\label{eq:roots_form}$/;"	l
 eq:rotation_matrix_x	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:rotation_matrix_x}$/;"	l

@@ -340,6 +340,7 @@ We can now represent all of the basic linear transformations in $\Rs{2}$ mention
 		The most general reflection is made across a line of angle $\theta$ relative to the $x$-axis (see \autoref{fig:ref_line}):
 		\begin{equation}
 			\Refl_{\theta} = \begin{bNiceMatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bNiceMatrix}.
+			\label{eq:reflect_general_2x2}
 		\end{equation}
 		A way to calculate this matrix will be shown later in the chapter.
 
@@ -1673,4 +1674,86 @@ Therefore, the inverse of a $2\times2$ matrix $A=\begin{bmatrix}a&b\\c&d\end{bma
 	A^{-1} = \frac{1}{|A|}\begin{bmatrix}d&-b\\-c&a\end{bmatrix} = \frac{1}{ad-cb}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}.
 	\label{eq:inverse_2x2}
 \end{equation}
+
+We can check that \autoref{eq:inverse_2x2} is correct by directly calculating the products $AA^{-1}$ and $A^{-1}A$:
+\begin{align*}
+	AA^{-1} &= \frac{1}{|A|}\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\\
+			&= \frac{1}{ad-cb}\begin{bmatrix} ad-bc & \cancel{-ab+ba} \\ \cancel{cd-dc} & -cb+da \end{bmatrix}\\
+			&= \begin{bmatrix}\frac{ad-bc}{ad-cb} & 0 \\ 0 & \frac{da-cb}{ad-bc}\end{bmatrix}\\
+			&= \begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}\\
+			&= I_{2}.\\
+			\\
+	A^{-1}A &= \frac{1}{|A|}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\begin{bmatrix}a&b\\c&d\end{bmatrix}\\
+			&= \frac{1}{ad-cb}\begin{bmatrix} da-bc & \cancel{db-bd} \\ \cancel{-ca+ac} & -cb+ad \end{bmatrix}\\
+			&= \begin{bmatrix} \frac{da-bc}{ad-cb} & 0 \\ 0 & \frac{ad-cb}{ad-cb} \end{bmatrix}\\
+			&= \begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix}\\
+			&= I_{2}.
+\end{align*}
+
+\begin{example}{Inverting a $\bm{2\times2}$ matrix}{}
+	The inverse of the matrix
+	\[
+		A = \begin{bmatrix}1&-3 \\ 2&0\end{bmatrix}
+	\]
+	is
+	\begin{align*}
+		A^{-1} &= \frac{1}{|A|}\begin{bmatrix}0&3 \\ -2&1\end{bmatrix}\\
+			   &= \frac{1}{1\cdot0-(-3)\cdot2} \begin{bmatrix}0&3 \\ -2&1\end{bmatrix}\\
+			   &= \frac{1}{6}\begin{bmatrix}0&3 \\ -2&1\end{bmatrix}.
+	\end{align*}
+\end{example}
+
+\begin{example}{Inverse of the $2$-dimensional rotation matrix}{}
+	We can use \autoref{eq:inverse_2x2} to calculate the inverse of the $2$-dimensional rotation matrix
+	\[
+		R \left( \theta \right) = \begin{bmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix}.
+	\]
+	Since the rotation matrix rotates all vector by $\theta$ counter-clockwise around the origin, we expect its inverse to rotate all vectors by $-\theta$ counter-clockwise around the origin. Let's show that this is indeed the case: we first calculate the determinant of $R$:
+	\[
+		|R| = \cos(\theta)\cdot\cos(\theta) + \sin(\theta)\sin(\theta) = \cos(\theta)^{2}+\sin(\theta)^{2} = 1.
+	\]
+	This result makes sense - rotation does not change areas. We can now use $|R|$ to calculate $R^{-1}$:
+	\begin{align*}
+		R^{-1} \left( \theta \right) &= \frac{1}{|R|}\begin{bmatrix} \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta)  \end{bmatrix}\\
+									 &= \begin{bmatrix} \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta)  \end{bmatrix}. 
+	\end{align*}
+	Since $\cos(-\theta)=\cos(\theta)$ and $\sin(-\theta)=-\sin(\theta)$, the above matrix is exactly a rotation by $-\theta$ counter-clockwise around the origin, as we expected.
+\end{example}
+
+We can use the rotation matrix and its inverse to calculate the general $2\times2$ reflection matrix around a line going through the origin (\autoref{eq:reflect_general_2x2}), represented by its angel $\theta$. We do this by taking the following steps (see \autoref{eq:building_reflect_2x2} for a graphical illustration):
+\begin{enumerate}
+	\item Rotate space by $-\theta$ such that the reflection line aligns with the horizontal axis.
+	\item Reflect space across the horizontal line.
+	\item Rotate space by $\theta$ to bring back space to its original orientation.
+\end{enumerate}
+
+The order of application of the above transformations is 1-2-3. Therefore, in matrix form we write them from \textbf{left to right}, i.e. $\bm{3}\cdot\bm{2}\cdot\bm{1}$:
+
+\vspace{1em}
+\centering
+\tikz[node distance=2.75cm]{
+	\node (RefD) {$\Refl(\theta)$};
+	\node[right of=RefD, xshift=-2cm] (eq1) {$=$};
+	\node[fill=xgreen!20, right of=eq1] (rot2) {$\begin{bmatrix} \cos(\theta)&-\sin(\theta) \\ \sin(\theta)&\cos(\theta) \end{bmatrix}$};
+	\node[fill=xblue!20, right of=rot2] (ref) {$\begin{bmatrix} 1&0 \\ 0&-1 \end{bmatrix}$};
+	\node[fill=xred!20, right of=ref] (rot1) {$\begin{bmatrix} \cos(\theta)&\sin(\theta) \\ -\sin(\theta)&\cos(\theta) \end{bmatrix}$};
+	
+	\node at ($(rot2.east)!0.5!(ref.west)$) {$\cdot$};
+	\node at ($(ref.east)!0.5!(rot1.west)$) {$\cdot$};
+
+	\tikzset{node distance=1.5cm}
+	\node[fill=xgreen!20, above of=rot2] (rot2txt) {3. rotate back};
+	\node[fill=xblue!20, above of=ref] (reftxt) {2. flip vertically};
+	\node[fill=xred!20, above of=rot1] (rot1txt) {1. rotate};
+
+	\draw[vector, xgreen!20] (rot2txt) -- (rot2);
+	\draw[vector, xblue!20] (reftxt) -- (ref);
+	\draw[vector, xred!20] (rot1txt) -- (rot1);
+
+	\tikzset{node distance=2.75cm}
+	\node[below of=eq1, yshift=1cm] (eq2) {$=$};
+	\node[right of=eq2, xshift=3mm] {$\begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ -\sin \left( 2\theta \right) & \cos \left( 2\theta \right) \end{bmatrix}.$};
+}
+\flushleft
+
 \subsection{Kernel and null space}
