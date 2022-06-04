@@ -1720,7 +1720,7 @@ We can check that \autoref{eq:inverse_2x2} is correct by directly calculating th
 	Since $\cos(-\theta)=\cos(\theta)$ and $\sin(-\theta)=-\sin(\theta)$, the above matrix is exactly a rotation by $-\theta$ counter-clockwise around the origin, as we expected.
 \end{example}
 
-We can use the rotation matrix and its inverse to calculate the general $2\times2$ reflection matrix around a line going through the origin (\autoref{eq:reflect_general_2x2}), represented by its angel $\theta$. We do this by taking the following steps (see \autoref{eq:building_reflect_2x2} for a graphical illustration):
+We can use the rotation matrix and its inverse to calculate the general $2\times2$ reflection matrix around a line going through the origin (\autoref{eq:reflect_general_2x2}), represented by its angel $\theta$. We do this by taking the following steps (see \autoref{fig:building_reflect_2x2} for a graphical illustration):
 \begin{enumerate}
 	\item Rotate space by $-\theta$ such that the reflection line aligns with the horizontal axis.
 	\item Reflect space across the horizontal line.
@@ -1756,4 +1756,179 @@ The order of application of the above transformations is 1-2-3. Therefore, in ma
 }
 \flushleft
 
+\renewcommand\thesubfigure{\arabic{subfigure}}
+\setcounter{subfigure}{-1} % <-- why doesn't this work? :(
+\begin{figure}[]
+	\centering
+	\begin{subfigure}[c]{0.45\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}[
+				vector plane,
+				width=6cm, height=6cm,
+				xlabel={},
+				ylabel={},
+				xticklabels={,},
+				yticklabels={,},
+				axis line style={draw=none},
+				tick style={draw=none},
+				grid=none,
+			]
+			\node at (0,0) {\includesvg[scale=0.75]{figures/linear_algebra/tapir_transform2}};
+			\addplot[thick, dashed] {0.5*\x};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Original space.}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.45\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}[
+				vector plane,
+				width=6cm, height=6cm,
+				xlabel={},
+				ylabel={},
+				xticklabels={,},
+				yticklabels={,},
+				axis line style={draw=none},
+				tick style={draw=none},
+				grid=none,
+			]
+			\pgftransformcm{0.8945}{-0.4472}{0.4472}{0.8945}{\pgfpoint{0}{0}}
+			\node at (0,0) {\includesvg[scale=0.75]{figures/linear_algebra/tapir_transform2}};
+			\addplot[thick, dashed] {0.5*\x};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Rotation by $\theta$ such that the mirror line is aligned with the horizontal axis.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[c]{0.45\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}[
+				vector plane,
+				width=6cm, height=6cm,
+				xlabel={},
+				ylabel={},
+				xticklabels={,},
+				yticklabels={,},
+				axis line style={draw=none},
+				tick style={draw=none},
+				grid=none,
+			]
+			\pgftransformcm{1}{0}{0}{-1}{\pgfpoint{0}{0}}
+			\pgftransformcm{0.8945}{-0.4472}{0.4472}{0.8945}{\pgfpoint{0}{0}}
+			\node at (0,0) {\includesvg[scale=0.75]{figures/linear_algebra/tapir_transform2}};
+			\addplot[thick, dashed] {0.5*\x};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Mirroring across the mirror line.}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.45\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}[
+				vector plane,
+				width=6cm, height=6cm,
+				xlabel={},
+				ylabel={},
+				xticklabels={,},
+				yticklabels={,},
+				axis line style={draw=none},
+				tick style={draw=none},
+				grid=none,
+			]
+			\pgftransformcm{0.8945}{0.4472}{-0.4472}{0.8945}{\pgfpoint{0}{0}}
+			\pgftransformcm{1}{0}{0}{-1}{\pgfpoint{0}{0}}
+			\pgftransformcm{0.8945}{-0.4472}{0.4472}{0.8945}{\pgfpoint{0}{0}}
+			\node at (0,0) {\includesvg[scale=0.75]{figures/linear_algebra/tapir_transform2}};
+			\addplot[thick, dashed] {0.5*\x};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Rotating back to the original orientation (i.e. by $-\theta$).}
+	\end{subfigure}
+	\caption{Constructing a general $2\times2$ reflection matrix as the composition of rotating, mirroring and rotating back.}
+	\label{fig:building_reflect_2x2}
+\end{figure}
+
 \subsection{Kernel and null space}
+While the determinant of a matrix tells us whether the matrix is reversible or not, it doesn't quantify the loss in dimensionality resulting from applying it: a matrix which "squishes" $\Rs{3}$ in to a plane has the same determinant as a matrix which "squishes" it into a line or the the a single point (the origin): $0$. To find a measurement that does quantify this characteristic, we can look at the set of all vectors which the matrix (and thus the transformation it represents) map to $\vec{0}$. We call this set the \emph{kernel} of the matrix/transformation (denoted $\ker(A)$ or $\ker(T)$, respectively). More formally - given an $m\times n$ matrix representing a transformation $T:\Rs{n}\to\Rs{m}$,
+\begin{equation}
+	\ker(A) = \left\{ \vec{v}\in\Rs{n} \mid A\vec{v}=\vec{0}_{m} \right\},
+	\label{eq:kernel_matrix}
+\end{equation}
+and equivalently,
+\begin{equation}
+	\ker(T) = \left\{ \vec{v}\in\Rs{n} \mid T \left( \vec{v} \right) =\vec{0}_{m} \right\}
+	\label{eq:kernel_transformation}
+\end{equation}
+
+In the language of matrices, the kernel is sometimes refered to as their \emph{null space}.
+
+\begin{note}{Matrix/Transformation duality}{}
+	From now on in this subsection we will discuss matrices only, however everything discussed here can be applied directly to the transformations they represent. We also use the term kernel instead of null space, as these two concepts are practially equivalent in our context.
+\end{note}
+
+\begin{example}{Kernel of a matrix}{}
+	The vector
+	\[
+		\vec{v}=\colvec{0;-2;1}
+	\]
+	is in the kernel of the matrix
+	\[
+		A=
+		\begin{bmatrix}
+			 0 & 1 & 2\\
+			-1 & 3 & 6\\
+			 2 & 2 & 4\\
+		\end{bmatrix},
+	\]
+	since
+	\begin{align*}
+		A\vec{v} &= 
+		\begin{bmatrix}
+			 0 & 1 & 2\\
+			-1 & 3 & 6\\
+			 2 & 2 & 4\\
+		 \end{bmatrix}\colvec{0;-2;1}\\
+				 &= \colvec{0\cdot0+1\cdot(-2)+2\cdot1;-1\cdot0+3\cdot(-2)+6\cdot1;2\cdot0+2\cdot(-2)+4\cdot1}\\
+				 &= \colvec{0-2+2;0-6+6;0-2+4}\\
+				 &= \colvec{0;0;0}.
+	\end{align*}
+\end{example}
+
+Two properties of the kernel of a matrix are relatively straight-forward:
+\begin{itemize}
+	\item The (dimentially correct) zero vector is always in the kernel of any matrix. This is because the zero vector of a transformation's domain is always mapped to the zero vector in its image (stated in \autoref{sec:intuitive_linear_trans} as the fact that linear transformations preserve the origin).
+	\item Any linear combination of vectors in the kernel of a matrix is also in the kernel of the matrix. This is easily proved using the basic properties of linear transformations (which we show in matrix form):
+\begin{proof}{Linear combinations of kernel vectors}{}
+	Let $A$ be a matrix, and $\vec{u},\vec{v}$ two vectors in its kernel. Then
+	\begin{align*}
+		A\cdot \left( \alpha\vec{u}+\beta\vec{v} \right) &= A\cdot \left( \alpha\vec{u} \right) + A\cdot \left( \beta\vec{v} \right)\\
+														 &= \alpha A\vec{u} + \beta A\vec{v}\\
+														 &= \alpha\vec{0} + \beta\vec{0}\\
+														 &= \vec{0} + \vec{0}\\
+														 &= \vec{0}.
+	\end{align*}
+	Therefore $\vec{w}=\alpha\vec{u}+\beta\vec{v}$ is also in the kernel of $A$.
+\end{proof}
+\end{itemize}
+  
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}
+		\node[ellipse, draw=black, thick, fill=xred!50, minimum width=2cm, minimum height=4cm, label={[label distance=-1cm]90:$\Rs{n}$}] (domain) {};
+		\node[circle, draw=black, thick, fill=xblue!50, minimum size=1cm] (kernel) {$\ker(A)$};
+
+		\node[ellipse, draw=black, thick, fill=xgreen!50, minimum width=2cm, minimum height=3cm, label={[label distance=-1cm]90:$\Rs{m}$}] (image) at (4cm,0) {};
+		\node[circle, fill=black] (zero) at (4cm,0) {};
+		\node[right=of zero, xshift=-1cm] {$\vec{0}$};
+
+		\draw[thick, densely dotted] (domain.north) -- (image.north);
+		\draw[thick, densely dotted] (domain.south) -- (image.south);
+		\draw[thick, densely dotted] (kernel.north) -- (zero.north);
+		\draw[thick, densely dotted] (kernel.south) -- (zero.south);
+
+		\draw[vector] (1,2.3) -- node [midway, above] {$A$} ++(2,0);
+	\end{tikzpicture}
+	\caption{TBW}
+	\label{fig:kernel_subspace}
+\end{figure}
+
+TBW: the kernel as a subspace of the domain of a transformation.

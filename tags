@@ -9,7 +9,7 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
-3D Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{3D Linear transformations}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
+3D Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{3D Linear transformations}$/;"	u	section:Linear transformations
 Algebraic approach	chapters/intro/complex_numbers.tex	/^\\subsection{Algebraic approach}$/;"	u	section:Introduction""Complex Numbers
 Analyzing real functions	chapters/calculus_1D/analysis.tex	/^\\section{Analyzing real functions}$/;"	s	chapter:Calculus in 1D
 Arrow1Mend	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:isstock="true">$/;"	d
@@ -34,9 +34,9 @@ Complex Numbers	chapters/intro/complex_numbers.tex	/^\\section{Complex Numbers}\
 Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Components}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Introduction""Relations and Functions
 Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
-Definition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
+Definition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Definition}$/;"	u	section:Linear transformations
 Derivatives	chapters/calculus_1D/derivatives.tex	/^\\section{Derivatives}$/;"	s	chapter:Calculus in 1D
-Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Developing intuition}\\label{sec:LS_developing_intuition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
+Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Developing intuition}\\label{sec:LS_developing_intuition}$/;"	u	section:Linear transformations
 Differential equations	chapters/differential_equations/preface.tex	/^\\chapter{Differential equations}$/;"	c
 Eigenvectors and eigenvalues	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\section{Eigenvectors and eigenvalues}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Exercises	chapters/calculus_1D/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Calculus in 1D
@@ -67,7 +67,7 @@ Linear algebra\\\\(intuitive approach)	chapters/linear_algebra_intuitive/preface
 Linear algebra\\\\(rigorous approach)	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	c
 Linear combinations, spans and linear dependency	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Linear combinations, spans and linear dependency}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Linear transformation of basis vectors	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Linear transformation of basis vectors}$/;"	u	section:Matrices
-Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\section{Linear transformations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
+Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\section{Linear transformations}\\label{sec:intuitive_linear_trans}$/;"	s
 Logical Statements and their Truth Value	chapters/intro/math_symbols_sets.tex	/^\\subsection{Logical Statements and their Truth Value}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Mathematical Symbols and Sets	chapters/intro/math_symbols_sets.tex	/^\\section{Mathematical Symbols and Sets}$/;"	s	chapter:Introduction
 Matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\section{Matrices}$/;"	s
@@ -463,6 +463,8 @@ eq:inverse_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:inve
 eq:inverse_matrix_calc	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:inverse_matrix_calc}$/;"	l
 eq:isolation1	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:isolation1}$/;"	l
 eq:isolation2	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:isolation2}$/;"	l
+eq:kernel_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:kernel_matrix}$/;"	l
+eq:kernel_transformation	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:kernel_transformation}$/;"	l
 eq:kronecker_delta	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:kronecker_delta}$/;"	l
 eq:law of cosines	chapters/intro/trigonomentry.tex	/^	\\label{eq:law of cosines}$/;"	l
 eq:law of sines	chapters/intro/trigonomentry.tex	/^	\\label{eq:law of sines}$/;"	l
@@ -571,12 +573,14 @@ fig:angle between two vectors in plane	chapters/linear_algebra_intuitive/vectors
 fig:angles equivalency	chapters/intro/trigonomentry.tex	/^	\\label{fig:angles equivalency}$/;"	l
 fig:area of a triangle	chapters/intro/trigonomentry.tex	/^	\\label{fig:area of a triangle}$/;"	l
 fig:basicLinearTrans	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:basicLinearTrans}$/;"	l
+fig:building_reflect_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:building_reflect_2x2}$/;"	l
 fig:complex number	chapters/intro/complex_numbers.tex	/^	\\label{fig:complex number}$/;"	l
 fig:complex number 2	chapters/intro/complex_numbers.tex	/^	\\label{fig:complex number 2}$/;"	l
 fig:cross product	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:cross product}$/;"	l
 fig:cross_product_in_R2	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:cross_product_in_R2}$/;"	l
 fig:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{fig:cube roots of 1}$/;"	l
 fig:det_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:det_2x2}$/;"	l
+fig:kernel_subspace	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:kernel_subspace}$/;"	l
 fig:linear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:linear transformation grid}$/;"	l
 fig:matrix_matrix_product_elements	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:matrix_matrix_product_elements}$/;"	l
 fig:nonlinear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:nonlinear transformation grid}$/;"	l
@@ -4379,6 +4383,7 @@ rect8956	figures/linear_algebra/tapir_transform.svg	/^         id="rect8956" \/>
 rect8956	figures/linear_algebra/tapir_transform2.svg	/^         id="rect8956" \/>$/;"	i
 sec:LS_developing_intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Developing intuition}\\label{sec:LS_developing_intuition}$/;"	l
 sec:complex numbers	chapters/intro/complex_numbers.tex	/^\\section{Complex Numbers}\\label{sec:complex numbers}$/;"	l
+sec:intuitive_linear_trans	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\section{Linear transformations}\\label{sec:intuitive_linear_trans}$/;"	l
 sec:relations_and_functions	chapters/intro/relations_functions.tex	/^\\section{Relations and Functions}\\label{sec:relations_and_functions}$/;"	l
 sodipodi	design/chapter.svg	/^   sodipodi:docname="chapter.svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/chapters/ftcrics/tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
