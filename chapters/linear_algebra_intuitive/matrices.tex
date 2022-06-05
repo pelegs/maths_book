@@ -1909,7 +1909,44 @@ Two properties of the kernel of a matrix are relatively straight-forward:
 	Therefore $\vec{w}=\alpha\vec{u}+\beta\vec{v}$ is also in the kernel of $A$.
 \end{proof}
 \end{itemize}
-  
+
+The kernel of a matrix forms a subspace of its domain (see \autoref{fig:kernel_subspace}). Therefore, we can quantify the dimension of the kernel, sometimes called its \emph{nullity}:
+\begin{equation}
+	\Null(A) = \dim(\ker(A)).
+	\label{eq:nullity}
+\end{equation}
+
+\begin{example}{Kernel space of a matrix}{}
+	The matrix
+	\[
+		A=
+		\begin{bmatrix}
+			0 &  1 & 2\\
+			0 &  2 & 4\\
+			0 & -3 & -6\\
+		\end{bmatrix} 
+	\]
+	has the following two vectors in its kernel:
+	\[
+		\vec{u}=\colvec{1;0;0},\ \vec{v}=\colvec{0;-2;1}.
+	\]
+	These two vectors are linearly independant, and span the kernel of $A$, having dimension $\dim(V)=2$. All the vectors in $\ker(A)$ are of the form
+	\[
+		\vec{w} = \alpha\vec{u} + \beta\vec{v},
+	\]
+	i.e. the linear combinations of $\vec{u}$ and $\vec{v}$.
+\end{example}
+
+All the vectors which are not in $\ker(A)$ also span a subspace of its domain, called the \emph{column space} of $A$. The dimension of the column space is called the \emph{rank} of $A$, $\rank(A)$. The kernel and column space of a matrix are complementary: together they span $\Rs{n}$.
+
+This means that we can split the domain of a matrix to two separate subspaces, which together give us a lot of information about the image of the matrix: in one subspace are all the vectors that will be "squished" by the transformation into the origin, and the other subspace is composed of all the vectors that are transformed to a non-zero vector. If we limit the domain of the transformation to its column space, it becomes reversible - no two vectors in the column space are mapped to a single vector. On the other hand, the transformation on the kernel is always inversible.
+
+Alltogether, the nullity and rank of a matrix add up to the dimension of its domain, i.e.
+\begin{equation}
+	\Null(A) + \rank(A) = n.
+	\label{eq:}
+\end{equation}
+
 \begin{figure}[]
 	\centering
 	\begin{tikzpicture}
@@ -1927,8 +1964,18 @@ Two properties of the kernel of a matrix are relatively straight-forward:
 
 		\draw[vector] (1,2.3) -- node [midway, above] {$A$} ++(2,0);
 	\end{tikzpicture}
-	\caption{TBW}
+	\caption{The kernel of a matrix $A$ is a subspace of its domain $\Rs{n}$. It is mapped exclusively to $\vec{0}_{m}$ in its image. The set $\Rs{n}\setminus\ker(A)$, i.e. $\Rs{n}$ minus the kernel (shown in red), is in fact the column space of the matrix.}
 	\label{fig:kernel_subspace}
 \end{figure}
 
-TBW: the kernel as a subspace of the domain of a transformation.
+TBD: figure to illustrate the kernel and column space of a matrix as complementary.
+
+If the rank of an $m\times n$ matrix $A$ is equal to $n$, its kernel space must have the dimension
+\[
+	\Null(A) = n-\rank(A) = n-n = 0,
+\]
+i.e. the matrix has no vectors mapped to $\vec{0}$ (except the zero vector itself), and thus the matrix is invertible (non-singular), and so its determinant is non-zero. This is true in the other direction: a matrix with non-zero determinant is invertible, and thus its kernel contains only $\vec{0}$ and the nullity of the matrix is $0$. This means that the column space of the matrix must equal $n$. Alltogether, these facts can be written succinctly as
+\begin{equation}
+	\rank(A) = n \Leftrightarrow |A|\neq0.
+	\label{eq:rank_det}
+\end{equation}
