@@ -1,4 +1,5 @@
 \section{Systems of linear equations}
+\subsection{Defintions}
 Everything we learned so far about vectors and matrices can be used to solve and characterise a family of equations known as \emph{linear equations}. You're probably already very familiar with linear equations: they are equations in which the \emph{variables} appear directly, without any power or other functions acting on them. For example, the simple equation
 \begin{equation}
 	y = ax+b,
@@ -71,7 +72,7 @@ In $\Rs{2}$ linear equations represent a line, which doesn't necesserally go thr
 	\label{fig:linear_equations_2_vars}
 \end{figure}
 
-In $\Rs{3}$ linear equations represent planes. Much like with the lines in $\Rs{2}$, these planes don't necesserally go through the origin.
+In $\Rs{3}$ linear equations represent planes. Much like with the lines in $\Rs{2}$, these planes don't necesserally go through the origin. The trend continues with increasing dimensions: in $\Rs{4}$ linear equations represent $3$-dimensional spaces, in $\Rs{5}$ linear equations represent $4$-dimensional spaces, etc. When the free coefficient is equal to zero, these spaces become subspaces of the respective $\Rs{n}$.
 		
 \begin{figure}
 	\centering
@@ -104,3 +105,75 @@ In $\Rs{3}$ linear equations represent planes. Much like with the lines in $\Rs{
 	\caption{Two intersecting planes in $\Rs{3}$ with their corresponding equations.}
 	\label{fig:line_plane_R3}
 \end{figure}
+
+\subsection{Systems and matrix form}
+A \emph{system of linear equations} is a set of linear equations using the same variables. For example, the three equations
+\[
+	\begin{cases}
+		&2x-5y+4z+2=0\\
+		&-3x-2y+1=0\\
+		&5x+4z+-3=0\\
+	\end{cases}
+\]
+form together a system of $3$ linear equations with $3$ variables ($x,y$ and $z$). Systems of linear equations can be written together in matrix form: in the above example, the system can be represented as the equation
+\[
+	\begin{bmatrix}
+		2 & -5 & 4\\
+		-3 & -2 & 0 \\
+		5 & 0 & 4
+	\end{bmatrix}\colvec{x;y;z} + \colvec{2;1;-3} = \colvec{0;0;0}, 
+\]
+since performing the matrix-vector product and vector addition yields back the system of equations. We call the matrix the \emph{coefficients matrix} of the equation.
+
+\begin{note}{}{}
+	In practice, many times the vector representing the free coefficients is moved to the right hand side of the equation. In the case of the above system this yields the simple equation
+	\[
+		\begin{bmatrix}
+			2 & -5 & 4\\
+			-3 & -2 & 0 \\
+			5 & 0 & 4
+		\end{bmatrix}\colvec{x;y;z} = \colvec{-2;-1;3}. 
+	\]
+\end{note}
+
+In the most general form, a system of $m$ equations in $n$ variavles $x_{1},x_{2},x_{3},\dots,x_{n}$ can be represented as the product of an $m\times n$ coefficient matrix and the variables vector, yielding the free-coefficient vector:
+
+\vspace{1em}
+\begin{equation}
+	\begin{bNiceMatrix}[name=coeffMat_mxn]
+		a_{11} & a_{12} & \cdots & a_{1n}\\
+		a_{21} & a_{22} & \cdots & a_{2n}\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		a_{m1} & a_{m2} & \cdots & a_{mn}
+		\end{bNiceMatrix}\begin{bNiceMatrix}[name=varVec]x_{1}\\x_{2}\\x_{3}\\\vdots\\x_{n}\end{bNiceMatrix} = \begin{bNiceMatrix}[name=freeCoeffVec]b_{1}\\b_{2}\\\vdots\\b_{m}\end{bNiceMatrix},
+	\label{eq:n_eqs_m_vars}
+\end{equation}
+\tikz[overlay, remember picture, blend mode=multiply]{
+	% Highlights
+	\node[mathl={xred!30}, fit=(coeffMat_mxn-1-1)(coeffMat_mxn-4-4)] {};
+	\node[mathl={xblue!30}, fit=(varVec-1-1)(varVec-5-1)] {};
+	\node[mathl={xgreen!30}, fit=(freeCoeffVec-1-1)(freeCoeffVec-4-1)] {};
+
+	% Texts
+	\tikzset{node distance=2cm and 2mm}
+	\node[xred, below of=coeffMat_mxn-4-2, xshift=-5mm] (coeffMatTxt) {$\bm{m}\times \bm{n}$ coefficients};
+	\node[xblue, below of=varVec-5-1] (varVecTxt) {$\bm{n}$ variables};
+	\node[xgreen, below of=freeCoeffVec-4-1, xshift=15mm] (freeCoeffTxt) {$\bm{m}$ free coefficients};
+	
+	% Arrows
+	\draw[vector, thin, xred] (coeffMatTxt) to [out=90, in=-90] ($(coeffMat_mxn-4-2)-(0,5mm)$);
+	\draw[vector, thin, xblue] (varVecTxt) to [out=90, in=-90] ($(varVec-5-1)-(0,5mm)$);
+	\draw[vector, thin, xgreen] (freeCoeffTxt) to [out=90, in=-90] ($(freeCoeffVec-4-1)-(0,5mm)$);
+}
+
+\vspace{5em}
+which can be written succinctly as
+\begin{equation}
+	\colorbox{xred!30}{$A$}\colorbox{xblue!30}{$x$} = \colorbox{xgreen!30}{$b$}.
+	\label{eq:system_equations_sussinct}
+\end{equation}
+
+
+\subsection{Solutions}
+
+\subsection{Finding solutions}

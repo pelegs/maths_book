@@ -35,6 +35,7 @@ Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Componen
 Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Introduction""Relations and Functions
 Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Definition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
+Defintions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Defintions}$/;"	u	section:Systems of linear equations
 Derivatives	chapters/calculus_1D/derivatives.tex	/^\\section{Derivatives}$/;"	s	chapter:Calculus in 1D
 Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Developing intuition}\\label{sec:LS_developing_intuition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
 Differential equations	chapters/differential_equations/preface.tex	/^\\chapter{Differential equations}$/;"	c
@@ -48,6 +49,7 @@ Exercises	chapters/linear_algebra_intuitive/exercises.tex	/^\\section{Exercises}
 Exercises	chapters/linear_algebra_rigorous/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Exponential and Logarithmic Functions	chapters/intro/exponentials_logarithms.tex	/^\\section{Exponential and Logarithmic Functions}$/;"	s	chapter:Introduction
 Fields	chapters/linear_algebra_rigorous/fields.tex	/^\\section{Fields}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
+Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Finding solutions}$/;"	u	section:Systems of linear equations
 Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
@@ -85,8 +87,10 @@ Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relat
 Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots of complex numbers}$/;"	u	section:Introduction""Complex Numbers
 Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:Calculus in 1D
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
+Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Systems of linear equations
 Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
+Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Systems of linear equations
 Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s
 TESTFOLDER	Makefile	/^TESTFOLDER=tests$/;"	m
 The Fourier transform	chapters/fourier/preface.tex	/^\\chapter{The Fourier transform}$/;"	c
@@ -498,6 +502,7 @@ eq:matrix_vector_product_as_dot_product	chapters/linear_algebra_intuitive/matric
 eq:mod 360	chapters/linear_algebra_rigorous/fields.tex	/^	\\label{eq:mod 360}$/;"	l
 eq:mxn_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:mxn_matrix}$/;"	l
 eq:myeq	tests/autoref.tex	/^	\\label{eq:myeq}$/;"	l
+eq:n_eqs_m_vars	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{eq:n_eqs_m_vars}$/;"	l
 eq:naturals_subset_integers	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:naturals_subset_integers}$/;"	l
 eq:no_real_solutions	chapters/intro/complex_numbers.tex	/^	\\label{eq:no_real_solutions}$/;"	l
 eq:norm 3D vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:norm 3D vector}$/;"	l
@@ -548,6 +553,7 @@ eq:subset_equal	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:subset_equal}
 eq:summation_notation	chapters/intro/polynomials.tex	/^	\\label{eq:summation_notation}$/;"	l
 eq:summation_notation_general	chapters/intro/polynomials.tex	/^	\\label{eq:summation_notation_general}$/;"	l
 eq:symmetric_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:symmetric_matrix}$/;"	l
+eq:system_equations_sussinct	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{eq:system_equations_sussinct}$/;"	l
 eq:tan_double_angles	chapters/intro/trigonomentry.tex	/^			\\label{eq:tan_double_angles}$/;"	l
 eq:test	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:test}$/;"	l
 eq:test2	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:test2}$/;"	l
