@@ -590,6 +590,7 @@ fig:cross_product_in_R2	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label
 fig:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{fig:cube roots of 1}$/;"	l
 fig:det_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:det_2x2}$/;"	l
 fig:kernel_subspace	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:kernel_subspace}$/;"	l
+fig:line_plane_R3	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:line_plane_R3}$/;"	l
 fig:linear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:linear transformation grid}$/;"	l
 fig:linear_equations_2_vars	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:linear_equations_2_vars}$/;"	l
 fig:matrix_matrix_product_elements	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:matrix_matrix_product_elements}$/;"	l

@@ -51,7 +51,7 @@ where $x_{1},x_{2},\dots,x_{n}$ are the variables of the equation, and $a_{0},a_
 	In this case the coefficient $a_{z}=a_{3}=0$. Depending on the context, this equation can be considered as either an equation of order $3$ or an equation of order $2$.
 \end{example}
 
-A linear equation of order $2$ represents a line in $\Rs{2}$ which doesn't necesserally go through the origin (and thus isn't necesserally a subspace of $\Rs{2}$). For a line to go through the origin, the free coefficient $a_{0}$ must equal zero (see \autoref{fig:linear_equations_2_vars}).
+In $\Rs{2}$ linear equations represent a line, which doesn't necesserally go through the origin (and thus isn't necesserally a subspace of $\Rs{n}$). For a line to go through the origin, the free coefficient $a_{0}$ must equal zero (see \autoref{fig:linear_equations_2_vars}).
 
 \begin{figure}
 	\centering
@@ -69,4 +69,38 @@ A linear equation of order $2$ represents a line in $\Rs{2}$ which doesn't neces
 	\end{tikzpicture}
 	\caption{Two linear equations represented as lines in $\Rs{2}$. Note how in the red equation the free coefficient is zero, and so the line goes through the origin.}
 	\label{fig:linear_equations_2_vars}
+\end{figure}
+
+In $\Rs{3}$ linear equations represent planes. Much like with the lines in $\Rs{2}$, these planes don't necesserally go through the origin.
+		
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		% The trick with the labels is copied from https://tex.stackexchange.com/questions/212699/text-projection-onto-plane-in-3d-pgf-plots
+		\def\h{58}
+		\def\v{30}
+		\begin{axis}[
+			width=11cm, height=11cm,
+			view={\h}{\v},
+			]
+			% Plots
+			\pgfplotsset{plane/.style={surf, faceted color={#1!75!black!50}, fill={#1!20}, opacity=0.8, samples=6}}
+			\addplot3[plane={xpurple}, domain=-4:0, y domain=-4:0, samples=3] {-1};
+			\addplot3[plane={xpurple}, domain=-4:0, y domain=0:4, samples=3] {-1};
+			\addplot3[plane={xorange}, domain=-4:4] {-0.5*\x};
+			\addplot3[plane={xpurple}, domain=0:4, y domain=-4:0, samples=3] {-1};
+			\addplot3[plane={xpurple}, domain=0:4, y domain=0:4, samples=3] {-1};
+			\addplot3[mark=*] coordinates { (0,0,0) };
+
+			% Labels
+			\pgfmathparse{atan(tan(\h)*sin(\v))}
+			\let\a=\pgfmathresult
+			\pgfmathparse{atan(tan(90-\h)*sin(\v))}
+			\let\b=\pgfmathresult
+			\path (axis cs:-2.5,-2,1.25) -- (axis cs:-2.5,-1,1.25) node[color=xdarkorange, midway, above, sloped, xslant=tan(\a+\b+110), yscale=sin(\a+\b), font=\Huge] {$\frac{1}{2}x+z=0$};
+			\path (axis cs:3.5,-2,-1) -- (axis cs:3.5,-1,-1) node[color=xdarkpurple, midway, above, sloped, xslant=tan(\a+\b+80), yscale=sin(\a+\b), font=\Huge] {$z+1=0$};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Two intersecting planes in $\Rs{3}$ with their corresponding equations.}
+	\label{fig:line_plane_R3}
 \end{figure}
