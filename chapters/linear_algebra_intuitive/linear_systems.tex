@@ -175,5 +175,56 @@ which can be written succinctly as
 
 
 \subsection{Solutions}
+A system of linear equations can have one or more \emph{solutions}. A solution is a tuple
+\[
+	s=\left(s_{1},s_{2},\dots,s_{n}\right)
+\]
+such that if we substitute each $s_{i}$ into the respective variable $x_{i}$ all equation become \true{} statements.
+
+\begin{example}{Solutions of a system of linear equations}{}
+	The following linear system
+	\[
+		\begin{cases}
+			&-4x+2y=0\\
+			&x-y+3=
+		\end{cases}
+	\]
+	has the solution
+	\[
+		s = (-1,2).
+	\]
+	Indeed if we substitute $x=-1$ and $y=2$ into the system we get
+	\[
+		\begin{cases}
+			&-4\cdot(-1)+2\cdot(2)=-4+4=0\ \Rightarrow\ \true{}\\
+			&-1-2+3=-3+3=0\ \Rightarrow\ \true{}
+		\end{cases}
+	\]
+\end{example}
+
+In the graphical representation of linear equations, the solutions of a system are the points where the respective graph representing the equation (line, plane, etc.) intersect.
+
+\begin{example}{Solutions of a system of linear equations - graph}{}
+	The linear system from the previous example can be represented by the following graph:
+	
+	\vspace{2em}
+	\centering
+	\begin{tikzpicture}[every node/.style={font=\Large}]
+		\begin{axis}[
+			vector plane,
+			width=11cm, height=11cm,
+			xmin=-4, xmax=4,
+			ymin=-4, ymax=4,
+			domain={-4:4},
+			major grid style={black!10},
+		]
+		\addplot[function, xred] {-2*\x} node[pos=0.63, above, rotate=-63.435] {$10x+2y=0$};
+		\addplot[function, xblue] {\x+3} node[pos=0.22, above, rotate=45] {$x-y-6=0$};
+		\addplot[mark=*] coordinates { (-1,2) } node (s) {};
+		\node[] (stxt) at (-3,3) {solution};
+		\draw[-stealth, thick] (stxt.east) to [out=0, in=180] (s.west);
+		\end{axis}
+	\end{tikzpicture}
+\end{example}
 
 \subsection{Finding solutions}
