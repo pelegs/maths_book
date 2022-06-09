@@ -59,7 +59,7 @@ In $\Rs{2}$ linear equations represent a line, which doesn't necesserally go thr
 	\begin{tikzpicture}
 		\begin{axis}[
 			vector plane,
-			width=11cm, height=11cm,
+			width=9cm, height=9cm,
 			xmin=-1, xmax=6,
 			ymin=-1, ymax=6,
 			domain={-1:6},
@@ -81,7 +81,7 @@ In $\Rs{3}$ linear equations represent planes. Much like with the lines in $\Rs{
 		\def\h{58}
 		\def\v{30}
 		\begin{axis}[
-			width=11cm, height=11cm,
+			width=9cm, height=9cm,
 			view={\h}{\v},
 			]
 			% Plots
@@ -98,8 +98,8 @@ In $\Rs{3}$ linear equations represent planes. Much like with the lines in $\Rs{
 			\let\a=\pgfmathresult
 			\pgfmathparse{atan(tan(90-\h)*sin(\v))}
 			\let\b=\pgfmathresult
-			\path (axis cs:-2.5,-2,1.25) -- (axis cs:-2.5,-1,1.25) node[color=xdarkorange, midway, above, sloped, xslant=tan(\a+\b+110), yscale=sin(\a+\b), font=\Huge] {$\frac{1}{2}x+z=0$};
-			\path (axis cs:3.5,-2,-1) -- (axis cs:3.5,-1,-1) node[color=xdarkpurple, midway, above, sloped, xslant=tan(\a+\b+80), yscale=sin(\a+\b), font=\Huge] {$z+1=0$};
+			\path (axis cs:-2.5,-1.5,1.25) -- (axis cs:-2.5,-0.5,1.25) node[color=xdarkorange, midway, above, sloped, xslant=tan(\a+\b+110), yscale=sin(\a+\b), font=\Huge] {$\frac{1}{2}x+z=0$};
+			\path (axis cs:3.5,-1.5,-1) -- (axis cs:3.5,-0.5,-1) node[color=xdarkpurple, midway, above, sloped, xslant=tan(\a+\b+80), yscale=sin(\a+\b), font=\Huge] {$z+1=0$};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Two intersecting planes in $\Rs{3}$ with their corresponding equations.}
@@ -212,7 +212,7 @@ In the graphical representation of linear equations, the solutions of a system a
 	\begin{tikzpicture}[every node/.style={font=\Large}]
 		\begin{axis}[
 			vector plane,
-			width=11cm, height=11cm,
+			width=9cm, height=9cm,
 			xmin=-4, xmax=4,
 			ymin=-4, ymax=4,
 			domain={-4:4},
@@ -254,7 +254,7 @@ has no solutions (see \autoref{example:no_solution}).
 	\begin{tikzpicture}[every node/.style={font=\Large}]
 		\begin{axis}[
 			vector plane,
-			width=11cm, height=11cm,
+			width=9cm, height=9cm,
 			xmin=-4, xmax=4,
 			ymin=-4, ymax=4,
 			domain={-4:4},
@@ -400,6 +400,140 @@ In the case of more than two linear equations there can be, again, either a sing
 	\label{fig:R2_num_solutions_multi}
 \end{figure}
 
-In $\Rs{3}$\ldots
+In $\Rs{3}$\ldots (TBW later because I'm lazy af)
 
 \subsection{Finding solutions}
+Several method to solve systems of linear equations were established over the years. One of the most well-known is \emph{Gauss elimination method}. The goal of this method is to use a set of pre-defined operations to bring the system into a form which is easy to solve. This form essentially exposes the rank of the coefficient matrix, from which one can deduce some important properties of the system such as the existance of a solution (or lack thereof), the degrees of freedom in the values which can be substituted into the system and more.
+
+We start by describing the \emph{row-echelon form} of a matrix. For now we simply assume that such matrices exist, and later we will use a set of pre-defined operations to convert any matrix to this form. The following matrix is in row-echelon form:
+\[
+	A =
+	\begin{bmatrix}
+		1 & 3 & -5 & 7 &  0\\
+		0 & 0 &  2 & 2 & -3\\
+		0 & 0 &  0 & 1 &  2\\
+		0 & 0 &  0 & 0 &  0\\
+	\end{bmatrix} 
+\]
+
+We note three properties of the above matrix:
+\begin{itemize}
+	\item The bottom row is all zeros.
+	\item When looking at each row (left to right), all values are zero until we reach a non-zero element. For example, the first row starts with a non-zero element, but the second row has two non zero elements followed by the number $2$. These first non-zero elements are called \emph{leading coefficients} or \emph{pivots}, and each one is strictle to the \textbf{right} of the leading coefficient of the row above it.
+	\item The leading coefficient of each row has only zeros below it in its column.
+\end{itemize}
+Any matrix that has the same three properies is said to be in its row-echelon form.
+
+\begin{example}{Row-echelon form}{row-echelon}
+	All of the matrices below are in their row-echelon form, and the leading zeros in each row are highlighted:
+
+	\vspace{1em}
+	\centering
+	\begin{tabular}{cccc}
+		$\begin{bNiceMatrix}[name=RE1]
+			0 & 5 & 10\\
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+		\end{bNiceMatrix}$ &
+		$\begin{bNiceMatrix}[name=RE2]
+			1 &  2 & 4\\
+			0 & -2 & 2\\
+			0 &  0 & 7\\
+		\end{bNiceMatrix}$ &
+		$\begin{bNiceMatrix}[name=RE3]
+			0 & 0 & 3\\
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+		\end{bNiceMatrix}$ &
+		$\begin{bNiceMatrix}[name=RE4]
+			0 & 0 & 3 & -6 & 9 & -3\\
+			0 & 0 & 0 &  0 & 2 &  6\\
+		\end{bNiceMatrix}$\\
+	\end{tabular}
+	\tikz[overlay, remember picture, blend mode=multiply]{
+		\node[mathl={xred!20}, fit=(RE1-1-2)] {};
+		\foreach \pivot in {(RE2-1-1),(RE2-2-2),(RE2-3-3)}{
+			\node[mathl={xblue!20}, fit=\pivot] {};
+		}
+		\node[mathl={xgreen!20}, fit=(RE3-1-3)] {};
+		\foreach \pivot in {(RE4-1-3),(RE4-2-5)}{
+			\node[mathl={xpurple!20}, fit=\pivot] {};
+		}
+	}
+	\flushleft
+
+	The following matrices are all \textbf{not} in their row-echelon form:
+	
+	\vspace{1em}
+	\centering
+	\begin{tabular}{cccc}
+		$\begin{bmatrix}
+			0 & 5 & 1\\
+			0 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 0\\
+		\end{bmatrix}$ &
+		$\begin{bmatrix}
+			1 &  2 & 4\\
+			0 & -2 & 2\\
+			3 &  0 & 7\\
+		\end{bmatrix}$ &
+		$\begin{bmatrix}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 3\\
+		\end{bmatrix}$ &
+		$\begin{bmatrix}
+			0 & 0 & 7 & -3 & 4 & 4\\
+			0 & 1 & 0 &  0 & 2 & 3\\
+		\end{bmatrix}$\\
+	\end{tabular}
+\end{example}
+
+Using the row-echelon form we define the \emph{reduced row-echelon form}. A matrix in a reduced row-echelon form is a matrix that is already in its row-echelon form, and in addition:
+\begin{itemize}
+	\item The leading coefficients are all equal to $1$ (and are thus called \emph{leading ones}).
+	\item All the elements in the \textbf{column} of a leading one are equal to zero (except the leading one itself).
+\end{itemize}
+
+\begin{example}{Reduced row-echelon form}{}
+	The following matrices are the reduced row-echelon forms of the row-echelon matrices in \autoref{example:row-echelon}, with theleading ones in each row highlighted:
+
+	\vspace{1em}
+	\centering
+	\begin{tabular}{cccc}
+		$\begin{bNiceMatrix}[name=RRE1]
+			0 & 1 & 2\\
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+		\end{bNiceMatrix}$ &
+		$\begin{bNiceMatrix}[name=RRE2]
+			1 &  0 & 0\\
+			0 & -1 & 0\\
+			0 &  0 & 1\\
+		\end{bNiceMatrix}$ &
+		$\begin{bNiceMatrix}[name=RRE3]
+			0 & 0 & 1\\
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+		\end{bNiceMatrix}$ &
+		$\begin{bNiceMatrix}[name=RRE4]
+			0 & 0 & 1 & -2 & 0 & -10\\
+			0 & 0 & 0 &  0 & 1 &   3\\
+		\end{bNiceMatrix}$\\
+	\end{tabular}
+	\tikz[overlay, remember picture, blend mode=multiply]{
+		\node[mathl={xred!20}, fit=(RRE1-1-2)] {};
+		\foreach \pivot in {(RRE2-1-1),(RRE2-2-2),(RRE2-3-3)}{
+			\node[mathl={xblue!20}, fit=\pivot] {};
+		}
+		\node[mathl={xgreen!20}, fit=(RRE3-1-3)] {};
+		\foreach \pivot in {(RRE4-1-3),(RRE4-2-5)}{
+			\node[mathl={xpurple!20}, fit=\pivot] {};
+		}
+	}
+\end{example}
+
+TBW: row operations.
