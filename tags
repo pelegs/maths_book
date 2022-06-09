@@ -581,7 +581,11 @@ feGaussianBlur12165	figures/chapters/tapir_rainbow.svg	/^         id="feGaussian
 feGaussianBlur12169	figures/chapters/tapir_rainbow.svg	/^         id="feGaussianBlur12169" \/>$/;"	i
 feGaussianBlur9339	figures/chapters/tapir_butterfly.svg	/^         id="feGaussianBlur9339" \/>$/;"	i
 feTurbulence9143	figures/chapters/tapir_butterfly.svg	/^         result="result1" \/>$/;"	i
+fig:	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/linear_trans.tex	/^		\\label{fig:}$/;"	l
+fig:R2_infinite_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:R2_infinite_solutions}$/;"	l
+fig:R2_num_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:R2_num_solutions}$/;"	l
+fig:R2_num_solutions_multi	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:R2_num_solutions_multi}$/;"	l
 fig:Z5 periodic	chapters/linear_algebra_rigorous/fields.tex	/^	\\label{fig:Z5 periodic}$/;"	l
 fig:angle between two vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:angle between two vectors}$/;"	l
 fig:angle between two vectors in plane	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:angle between two vectors in plane}$/;"	l

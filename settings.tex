@@ -95,6 +95,25 @@
 		minor tick num=4,
 	},
 	function/.style={line width=1.5pt},
+	vector plane no ticks/.style={
+		vector plane,
+		width=5cm, height=5cm,
+		xmin=-4, xmax=4,
+		ymin=-4, ymax=4,
+		tick style={draw=none},
+		xticklabels={,},
+		yticklabels={,},
+	},
+	linear plane no ticks/.style={
+		vector plane,
+		width=5cm, height=5cm,
+		xmin=-4, xmax=4,
+		ymin=-4, ymax=4,
+		tick style={draw=none},
+		xticklabels={,},
+		yticklabels={,},
+		samples=2,
+	},
 }
 \pgfkeys{
 	/pgfplots/vector plane/.style={
