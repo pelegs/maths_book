@@ -1,0 +1,27 @@
+chapters/linear_algebra_rigorous/fields.tex:We leave the proof of \autoref{theorem:R as a field} to the reader, as it is pretty straight forward using the known properties of the standard addition and product over $\mathbb{R}$ (and rather uninteresting). Instead, we jump forward to using \autoref{theorem:R as a field} for proving the same idea about the complex numbers:
+-------------------------------------------
+chapters/linear_algebra_rigorous/fields.tex:We therefore only need to prove two points to show that $S$ is a field together with the operations described by the above tables: associativity of both operations and distributivity of multiplication over addition. We leave these proofs as a challenge to the reader. Such a field is sometime denoted as $\mathbb{F}_{4}$. There are, of course, infinitely many finite fields.
+-------------------------------------------
+chapters/linear_algebra_rigorous/vectors.tex:(it is adviceable for the reader to go over the rest of the axioms and prove them for $\Rs{n}$)
+-------------------------------------------
+chapters/intro/preface.tex:	It is recommended for readers who are familiar with the topics to at least gloss over this chapter and make sure they know and understand all the concepts presented here.
+-------------------------------------------
+chapters/intro/exponentials_logarithms.tex:(TBW:\@ proving this will be in the chapter questions to the reader)
+-------------------------------------------
+chapters/intro/exponentials_logarithms.tex:(TBW:\@ proving this too will be a question to the reader)
+-------------------------------------------
+chapters/linear_algebra_intuitive/matrices.tex:A matrix which is its own inverse is known as an \emph{involutory matrix}. Such matrices must be square (challange to the reader: why is that true?).
+-------------------------------------------
+chapters/linear_algebra_intuitive/vectors.tex:	As the reader, you should verify for yourself the above equation.
+-------------------------------------------
+chapters/linear_algebra_intuitive/vectors.tex:	(you, the reader, should verify this!)
+-------------------------------------------
+chapters/linear_algebra_intuitive/vectors.tex:This is such an important fact that we will put effort into framing it nicely, so you (the reader) could memorize it well. How well should you memorize this? Such that if someone wakes you up in the middle of the night and asked you, you could easily repeat it\footnote{For a humble fee, I'm willing to do this - just write me an email and we can discuss the terms ;)}.
+-------------------------------------------
+chapters/linear_algebra_intuitive/vectors.tex:Normalizing $\vec{n}_{\mathbf{P}}$ will then yield the normal vector $\normalVec{n}{P}$\footnote{I leave this as a challenge to the reader, because I'm lazy.}.
+-------------------------------------------
+chapters/linear_algebra_intuitive/linear_trans.tex:(to the reader: verify that this transformation is indeed linear)
+-------------------------------------------
+tabularray.sty:%% To solve the problem of missing hlines of long tables in some PDF readers,
+-------------------------------------------
+

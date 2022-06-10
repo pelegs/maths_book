@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="44.184116mm"
+   height="51.174107mm"
+   viewBox="0 0 44.184117 51.174107"
+   version="1.1"
+   id="svg8436"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="exmark.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8438"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.5518659"
+     inkscape:cx="73.782149"
+     inkscape:cy="137.25413"
+     inkscape:window-width="1916"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="text8498" />
+  <defs
+     id="defs8433" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.341967,-91.484505)">
+    <g
+       aria-label="!"
+       id="text8498"
+       style="font-size:75.0192px;line-height:1.25;font-family:'Ka Blam';-inkscape-font-specification:'Ka Blam';letter-spacing:0px;word-spacing:0px;fill:#bd4242;stroke-width:5.62644">
+      <path
+         d="m 80.353875,97.455272 c 0,1.001233 -0.04884,1.929205 -0.146522,2.783918 l -3.370003,28.75492 h -0.989023 l -0.659348,-8.13197 c -0.244203,-2.85717 -0.671559,-6.30044 -1.282067,-10.32979 -1.001233,-6.61791 -1.501849,-11.050194 -1.501849,-13.296861 0,-3.833989 1.330907,-5.750984 3.992721,-5.750984 2.637394,0 3.956091,1.990256 3.956091,5.970767 z"
+         style="font-family:Nakula;-inkscape-font-specification:Nakula"
+         id="path13412"
+         inkscape:transform-center-x="-0.10988851"
+         inkscape:transform-center-y="-21.847834"
+         sodipodi:nodetypes="scccccsss" />
+      <path
+         d="m 97.488842,103.03114 c -0.421935,0.90799 -0.857289,1.72895 -1.306062,2.4629 l -15.173919,24.65673 -0.896913,-0.41679 2.828998,-7.65248 c 0.982597,-2.69399 2.046087,-5.99666 3.190469,-9.90803 1.880904,-6.4235 3.294746,-10.65397 4.241527,-12.691398 1.615703,-3.476921 3.630511,-4.654516 6.044424,-3.532786 2.391769,1.111439 2.748928,3.472057 1.071476,7.081854 z"
+         style="font-family:Nakula;-inkscape-font-specification:Nakula;fill:#4268bd;fill-opacity:1"
+         id="path13415"
+         inkscape:transform-center-x="-9.1493953"
+         inkscape:transform-center-y="-19.770688"
+         sodipodi:nodetypes="scccccsss" />
+      <path
+         d="m 62.613081,99.56791 c 0.418521,0.90957 0.762049,1.77299 1.030585,2.59028 l 8.958239,27.53094 -0.898473,0.41341 -3.998185,-7.11183 c -1.416158,-2.49351 -3.243688,-5.44288 -5.482591,-8.84813 -3.675883,-5.59349 -5.983383,-9.41072 -6.922502,-11.45169 -1.602627,-3.482966 -1.194884,-5.780775 1.223227,-6.893426 2.395927,-1.102444 4.425827,0.154371 6.0897,3.770446 z"
+         style="font-family:Nakula;-inkscape-font-specification:Nakula;fill:#52b256;fill-opacity:1"
+         id="path14143"
+         inkscape:transform-center-x="8.931948"
+         inkscape:transform-center-y="-19.861701"
+         sodipodi:nodetypes="scccccsss" />
+      <path
+         d="m 80.517044,138.77578 c 0,1.12334 -0.390725,2.05131 -1.172175,2.78392 -0.75703,0.73261 -1.733843,1.09891 -2.930438,1.09891 -1.123334,0 -2.063516,-0.3663 -2.820546,-1.09891 -0.732609,-0.73261 -1.098914,-1.66058 -1.098914,-2.78392 0,-1.17217 0.378515,-2.14898 1.135545,-2.93043 0.78145,-0.80587 1.733842,-1.20881 2.857176,-1.20881 1.123335,0 2.075727,0.41515 2.857177,1.24544 0.78145,0.80587 1.172175,1.77047 1.172175,2.8938 z"
+         style="font-family:Nakula;-inkscape-font-specification:Nakula;fill:#000000"
+         id="path14871"
+         inkscape:transform-center-x="-0.10988851"
+         inkscape:transform-center-y="-21.847834"
+         sodipodi:nodetypes="scscscscs" />
+    </g>
+  </g>
+</svg>

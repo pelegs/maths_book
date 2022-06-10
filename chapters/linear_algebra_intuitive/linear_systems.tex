@@ -583,10 +583,10 @@ To bring a matrix to its reduced row-echelon form, we use a sequence of operatio
 				 1 & 0 & -3 &  2\\
 				 5 & 1 &  0 & -4\\
 				-9 & 6 &  3 &  3\\
-				 0 & 2 &  6 &  3\\
+				 0 & 2 &  5 &  3\\
 			 \end{bNiceMatrix}
 		\]
-		(note that $R_{1}$ was not changed)
+		(note that $R_{1}$ itself is not changed by the operation)
 
 \tikz[overlay, remember picture, blend mode=multiply]{
 	% Scaling
@@ -608,5 +608,85 @@ To bring a matrix to its reduced row-echelon form, we use a sequence of operatio
 \end{itemize}
 
 \begin{example}{Row operations}{}
-	\ldots
+	Let us apply a sequence of 6 row opertions on a matrix until it reaches its reduced row-echelon form:
+
+	\begin{align*}
+		&
+		\begin{bmatrix}
+			 1 &  5 & 0 \\
+			-2 &  3 & 1 \\
+			-3 & -8 & 0 \\
+		\end{bmatrix}
+		\xrightarrow[]{R_{3}\to R_{3}+3R_{1}}
+		\begin{bmatrix}
+			 1 & 5 & 0 \\
+			-2 & 3 & 1 \\
+			 0 & 7 & 0 \\
+		\end{bmatrix}
+		\xrightarrow[]{R_{3}\to \frac{1}{7}R_{3}}
+		\begin{bmatrix}
+			 1 & 5 & 0 \\
+			-2 & 3 & 1 \\
+			 0 & 1 & 0 \\
+		\end{bmatrix}
+		\xrightarrow[]{R_{2}\leftrightarrow R_{3}}
+		\\&
+		\begin{bmatrix}
+			 1 & 5 & 0 \\
+			 0 & 1 & 0 \\
+			-2 & 3 & 1 \\
+		\end{bmatrix}
+		\xrightarrow[]{R_{1}\to R_{1}-5R_{2}}
+		\begin{bmatrix}
+			 1 & 0 & 0 \\
+			 0 & 1 & 0 \\
+			-2 & 3 & 1 \\
+		\end{bmatrix}
+		\xrightarrow[]{R_{3}\to R_{3}+2R_{1}}
+		\begin{bmatrix}
+			 1 & 0 & 0 \\
+			 0 & 1 & 0 \\
+			 0 & 3 & 1 \\
+		\end{bmatrix}
+		\xrightarrow[]{R_{3}\to R_{3}-3R_{2}}
+		\\&
+		\begin{bmatrix}
+			 1 & 0 & 0 \\
+			 0 & 1 & 0 \\
+			 0 & 0 & 1 \\
+	    \end{bmatrix}=I_{3}.
+	\end{align*}
 \end{example}
+
+To use row operations to solve a system of linear equations, we first write the \emph{augmented matrix} form of the system. This for looks as follows: suppose we have the system
+\[
+	\begin{cases}
+		% x=-1, y=3, z=2
+		2x+y-3z  &= -5\\
+		4x-2y+6z &=  2\\
+		x+y-z    &=  0
+	\end{cases}
+\]
+Then the augmenten matrix of the system is
+\[
+	\begin{pNiceMatrixAug}
+		2 &  1 & -3 & -5\\
+		4 & -2 &  6 &  2\\
+		1 &  1 & -1 &  0
+	\end{pNiceMatrixAug},
+\]
+i.e. it is simpy the coefficients matrix \textit{augmented} with the free coefficients vector. We draw a vertical line where the matrix and vector were "stitched" together, to remind us which elements belong to what object.
+
+To solve the system, we bring the augmented matrix to its reduced row-echelon form. In our case, this would be the matrix
+\[
+	\begin{pNiceMatrixAug}[name=AugM1]
+		1 & 0 & 0 & -1\\
+		0 & 1 & 0 &  3\\
+		0 & 0 & 1 &  2
+	\end{pNiceMatrixAug},
+\]
+which means that the solution to the system is
+\[
+	x=-1,\ y=3,\ z=2.
+\]
+\solvesym{AugM1-1-4}

@@ -35,7 +35,7 @@ Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Componen
 Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Introduction""Relations and Functions
 Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Definition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
-Defintions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Defintions}$/;"	u	section:Systems of linear equations
+Defintions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Defintions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Derivatives	chapters/calculus_1D/derivatives.tex	/^\\section{Derivatives}$/;"	s	chapter:Calculus in 1D
 Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Developing intuition}\\label{sec:LS_developing_intuition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
 Differential equations	chapters/differential_equations/preface.tex	/^\\chapter{Differential equations}$/;"	c
@@ -49,7 +49,7 @@ Exercises	chapters/linear_algebra_intuitive/exercises.tex	/^\\section{Exercises}
 Exercises	chapters/linear_algebra_rigorous/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Exponential and Logarithmic Functions	chapters/intro/exponentials_logarithms.tex	/^\\section{Exponential and Logarithmic Functions}$/;"	s	chapter:Introduction
 Fields	chapters/linear_algebra_rigorous/fields.tex	/^\\section{Fields}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
-Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Finding solutions}$/;"	u	section:Systems of linear equations
+Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Finding solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
@@ -64,6 +64,8 @@ Intervals on the real number line	chapters/intro/math_symbols_sets.tex	/^\\subse
 Introduction	chapters/intro/preface.tex	/^\\chapter{Introduction}\\label{chapter:intro}$/;"	c
 Inverse matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Inverse matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Kernel and null space	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Kernel and null space}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
+Layer_x0020_1	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^ <g id="Layer_x0020_1">$/;"	i
+Layer_x0020_1	figures/symbols/solve.svg	/^           style="image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-render/;"	i
 Limits of real functions	chapters/calculus_1D/function_limits.tex	/^\\section{Limits of real functions}$/;"	s	chapter:Calculus in 1D
 Linear algebra\\\\(intuitive approach)	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	c
 Linear algebra\\\\(rigorous approach)	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	c
@@ -87,11 +89,11 @@ Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relat
 Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots of complex numbers}$/;"	u	section:Introduction""Complex Numbers
 Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:Calculus in 1D
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
-Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Systems of linear equations
+Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
-Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Systems of linear equations
-Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s
+Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
+Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 TESTFOLDER	Makefile	/^TESTFOLDER=tests$/;"	m
 The Fourier transform	chapters/fourier/preface.tex	/^\\chapter{The Fourier transform}$/;"	c
 The Unit Circle	chapters/intro/trigonomentry.tex	/^\\subsection{The Unit Circle}$/;"	u	section:Introduction""Trigonometric functions
@@ -178,6 +180,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\rhl	settings.tex	/^\\newcommand{\\rhl}[1]{\\textcolor{xred}{#1}}$/;"	C
 \\rowstyle	settings.tex	/^\\newcommand{\\rowstyle}[1]{\\gdef\\currentrowstyle{#1}%$/;"	C
 \\shrug	settings.tex	/^\\newcommand{\\shrug}[1][]{% shrug emoji$/;"	C
+\\solvesym	settings.tex	/^\\newcommand{\\solvesym}[1]{$/;"	C
 \\stcomp	settings.tex	/^\\newcommand{\\stcomp}[1]{{#1}^\\complement}$/;"	C
 \\tapirTrans	settings.tex	/^\\newcommand{\\tapirTrans}[5]{$/;"	C
 \\tapirTransCM	settings.tex	/^\\newcommand{\\tapirTransCM}[7]{$/;"	C
@@ -213,9 +216,15 @@ cc	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.
 cc	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://web.resource.org/cc/
+cc	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://creativecommons.org/ns#
 chapter:intro	chapters/intro/preface.tex	/^\\chapter{Introduction}\\label{chapter:intro}$/;"	l
 chapter:linear algebra intuitive	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	l
 chapter:linear algebra rigorous	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	l
+circle240	figures/symbols/solve.svg	/^   style="fill:#0a0b0c" \/>$/;"	i
+circle242	figures/symbols/solve.svg	/^   style="fill:#0a0b0c" \/>$/;"	i
+circle244	figures/symbols/solve.svg	/^   style="fill:#0a0b0c" \/>$/;"	i
 circle3202	figures/chapters/ftcrics/tapir_ft.svg	/^           style="opacity:1;vector-effect:none;fill:#808080;fill-opacity:1;fill-rule:evenodd;str/;"	i
 circle3202	figures/chapters/tapir_comics.svg	/^           style="opacity:1;vector-effect:none;fill:#808080;fill-opacity:1;fill-rule:evenodd;str/;"	i
 circle3202	figures/chapters/tapir_fourier.svg	/^           style="opacity:1;vector-effect:none;fill:#808080;fill-opacity:1;fill-rule:evenodd;str/;"	i
@@ -321,6 +330,11 @@ clipPath20057	figures/chapters/tapir_stars.svg	/^       id="clipPath20057">$/;"	
 clipPath20057	figures/chapters/tapir_stars.svg	/^       id="clipPath20057">$/;"	i
 clipPath20061	figures/chapters/tapir_stars.svg	/^       id="clipPath20061">$/;"	d
 clipPath20061	figures/chapters/tapir_stars.svg	/^       id="clipPath20061">$/;"	i
+clipPath3036	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	d
+clipPath3036	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+clipPath3036	figures/symbols/solve.svg	/^       id="clipPath3036"><path$/;"	d
+clipPath3036	figures/symbols/solve.svg	/^       id="clipPath3036"><path$/;"	i
+corel-charset	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://product.corel.com/CGS/11/cddns/
 dc	design/chapter.svg	/^   sodipodi:docname="chapter.svg">$/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/chapters/tapir_butterfly.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://purl.org/dc/elements/1.1/
@@ -331,7 +345,11 @@ dc	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.
 dc	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://purl.org/dc/elements/1.1/
 defs1018	figures/chapters/tapir_70s.svg	/^     id="defs1018" \/>$/;"	i
+defs16334	figures/symbols/lightmark.svg	/^     id="defs16334">$/;"	i
 defs2	design/chapter.svg	/^     id="defs2" \/>$/;"	i
 defs2	figures/chapters/tapir_butterfly.svg	/^     id="defs2">$/;"	i
 defs2	figures/chapters/tapir_comics.svg	/^     id="defs2">$/;"	i
@@ -343,10 +361,13 @@ defs2	figures/chapters/tapir_warhol.svg	/^     id="defs2">$/;"	i
 defs2	figures/linear_algebra/tapir_transform.svg	/^     id="defs2">$/;"	i
 defs2	figures/linear_algebra/tapir_transform2.svg	/^     id="defs2">$/;"	i
 defs2649	figures/ideas/Coloured dot pattern fills.svg	/^     id="defs2649">$/;"	i
+defs3024	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+defs3024	figures/symbols/solve.svg	/^     id="defs3024"><inkscape:path-effect$/;"	i
 defs3360	figures/ideas/tapir4.svg	/^     id="defs3360" \/>$/;"	i
 defs5	figures/ideas/tom_Summer_Leaves.svg	/^     id="defs5">$/;"	i
 defs52747	figures/ideas/comics_tile.svg	/^     id="defs52747">$/;"	i
 defs77383	figures/chapters/ftcrics/tapir.svg	/^     id="defs77383">$/;"	i
+defs8433	figures/symbols/exmark.svg	/^     id="defs8433" \/>$/;"	i
 defs919	figures/ideas/tapir2.svg	/^  <defs id="defs919"\/>$/;"	i
 defs920	figures/chapters/tapir_voronoi.svg	/^     id="defs920" \/>$/;"	i
 defs955	figures/chapters/ftcrics/tapir_ft.svg	/^     id="defs955">$/;"	i
@@ -752,6 +773,12 @@ g2656	figures/chapters/tapir_dissolve.svg	/^       id="g2656">$/;"	i
 g29058	figures/chapters/tapir_warhol.svg	/^         transform="matrix(-0.23260486,0,0,0.23260486,-323.83567,302.54886)">$/;"	i
 g29060	figures/chapters/tapir_warhol.svg	/^       transform="matrix(0.12083561,0,0,0.12083561,-274.25625,296.87657)">$/;"	i
 g29918	figures/chapters/tapir_voronoi.svg	/^       transform="matrix(-0.14296,0,0,0.14296,40.292877,64.861403)" \/>$/;"	i
+g3028	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+g3028	figures/symbols/solve.svg	/^     transform="matrix(1.3333333,0,0,-1.3333333,-80.571069,933.01689)"><g$/;"	i
+g3030	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+g3030	figures/symbols/solve.svg	/^       transform="translate(123.73048,175.36489)"><g$/;"	i
+g3032	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+g3032	figures/symbols/solve.svg	/^         clip-path="url(#clipPath3036)"><g$/;"	i
 g3264	figures/chapters/ftcrics/tapir_ft.svg	/^         id="g3264">$/;"	i
 g3264	figures/chapters/tapir_comics.svg	/^         id="g3264">$/;"	i
 g3264	figures/chapters/tapir_fourier.svg	/^         id="g3264">$/;"	i
@@ -821,6 +848,7 @@ g3300	figures/linear_algebra/tapir_transform2.svg	/^         id="g3300">$/;"	i
 g35431	figures/chapters/tapir_voronoi.svg	/^       id="g35431" \/>$/;"	i
 g35678	figures/chapters/tapir_voronoi.svg	/^       id="g35678" \/>$/;"	i
 g36160	figures/chapters/tapir_voronoi.svg	/^       id="g36160" \/>$/;"	i
+g367	figures/symbols/solve.svg	/^         transform="matrix(0.04655546,-1.1305258e-5,-1.1305258e-5,-0.04655546,-439.65469,517.780/;"	i
 g3673	figures/chapters/tapir_comics.svg	/^     inkscape:export-ydpi="560.27002">$/;"	i
 g3874	figures/chapters/tapir_butterfly.svg	/^         transform="matrix(0.29177864,0,0,0.29177864,-45.54265,-107.05637)">$/;"	i
 g4065	figures/chapters/tapir_dissolve.svg	/^       id="g4065">$/;"	d
@@ -1106,6 +1134,7 @@ g5760-9-5	figures/chapters/tapir_stars.svg	/^         style="fill:#ffffff;fill-o
 g5760-9-8	figures/chapters/tapir_stars.svg	/^         style="fill:#ffffff;fill-opacity:1">$/;"	i
 g5760-9-9	figures/chapters/tapir_stars.svg	/^         style="fill:#ffffff;fill-opacity:1">$/;"	i
 g5760-9-93	figures/chapters/tapir_stars.svg	/^         style="fill:#ffffff;fill-opacity:1">$/;"	i
+g5905	figures/symbols/solve.svg	/^           id="g5905"><path$/;"	i
 g6098	figures/chapters/tapir_strawberry_two.svg	/^       transform="matrix(0.15137037,0,0,0.15137037,93.900061,55.588458)">$/;"	i
 g6140	figures/chapters/tapir_rainbow.svg	/^       style="mix-blend-mode:normal;fill:#eae6f8;fill-opacity:1;stroke:none;stroke-width:2.64583/;"	i
 g6228	figures/chapters/tapir_rainbow.svg	/^       id="g6228">$/;"	d
@@ -1172,6 +1201,7 @@ g6962	figures/chapters/tapir_rainbow.svg	/^       style="mix-blend-mode:normal;f
 g7164	figures/chapters/tapir_rainbow.svg	/^       style="mix-blend-mode:normal;fill:#d97474;fill-opacity:1;stroke:none;stroke-width:2.64583/;"	i
 g7275	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
 g7275-3	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
+g7493	figures/symbols/solve.svg	/^       transform="rotate(13.342332,-295.15733,2576.2291)"><rect$/;"	i
 g77373	figures/chapters/ftcrics/tapir.svg	/^       transform="matrix(0.35277777,0,0,0.35277777,56.908255,51.57539)">$/;"	i
 g7945	figures/chapters/tapir_rainbow.svg	/^       id="g7945">$/;"	d
 g7945	figures/chapters/tapir_rainbow.svg	/^       id="g7945">$/;"	i
@@ -1315,6 +1345,7 @@ glyph4-1	figures/chapters/tapir_warhol.svg	/^         id="glyph4-1">$/;"	i
 glyph4-2	figures/chapters/tapir_butterfly.svg	/^         id="glyph4-2">$/;"	i
 glyph4-2	figures/chapters/tapir_dissolve.svg	/^         id="glyph4-2">$/;"	i
 glyph4-2	figures/chapters/tapir_warhol.svg	/^         id="glyph4-2">$/;"	i
+grid17067	figures/symbols/lightmark.svg	/^       originy="-77.858657" \/>$/;"	i
 image1168	figures/chapters/tapir_strawberry_two.svg	/^         style="stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-o/;"	i
 image4554	figures/chapters/ftcrics/tapir_ft.svg	/^         y="0" \/>$/;"	i
 image4554	figures/chapters/tapir_comics.svg	/^         y="0" \/>$/;"	i
@@ -1419,6 +1450,10 @@ inkscape	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"
 inkscape	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/linear_algebra/tapir_transform.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/linear_algebra/tapir_transform2.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 layer1	design/chapter.svg	/^     id="layer1">$/;"	i
 layer1	figures/chapters/ftcrics/tapir.svg	/^     transform="translate(-56.908255,-52.23855)">$/;"	i
 layer1	figures/chapters/tapir_70s.svg	/^     transform="translate(-44.468839,-129.1333)">$/;"	i
@@ -1435,6 +1470,8 @@ layer1	figures/ideas/comics_tile.svg	/^     transform="translate(7.5189924,-74.7
 layer1	figures/ideas/tom_Summer_Leaves.svg	/^     style="display:inline">$/;"	i
 layer1	figures/linear_algebra/tapir_transform.svg	/^     transform="translate(-39.226521,-107.33628)">$/;"	i
 layer1	figures/linear_algebra/tapir_transform2.svg	/^     transform="translate(-39.226521,-107.33628)">$/;"	i
+layer1	figures/symbols/exmark.svg	/^     transform="translate(-54.341967,-91.484505)">$/;"	i
+layer1	figures/symbols/lightmark.svg	/^     transform="translate(20.02918,-77.858659)">$/;"	i
 layer1-1	figures/linear_algebra/tapir_transform.svg	/^       transform="translate(-94.866347,-20.330078)">$/;"	i
 layer1-1	figures/linear_algebra/tapir_transform2.svg	/^       transform="translate(-94.866347,-20.330078)">$/;"	i
 layer1-3	figures/chapters/tapir_warhol.svg	/^           id="layer1-3">$/;"	i
@@ -1465,6 +1502,8 @@ linearGradient15-4-0	figures/linear_algebra/tapir_transform2.svg	/^       id="li
 linearGradient15-4-0	figures/linear_algebra/tapir_transform2.svg	/^       id="linearGradient15-4-0">$/;"	i
 linearGradient15266	figures/chapters/tapir_dissolve.svg	/^       inkscape:collect="always" \/>$/;"	d
 linearGradient15266	figures/chapters/tapir_dissolve.svg	/^       inkscape:collect="always" \/>$/;"	i
+linearGradient18304	figures/symbols/lightmark.svg	/^       id="linearGradient18304">$/;"	d
+linearGradient18304	figures/symbols/lightmark.svg	/^       id="linearGradient18304">$/;"	i
 linearGradient35055	figures/linear_algebra/tapir_transform.svg	/^       gradientUnits="userSpaceOnUse" \/>$/;"	d
 linearGradient35055	figures/linear_algebra/tapir_transform.svg	/^       gradientUnits="userSpaceOnUse" \/>$/;"	i
 linearGradient3999	figures/chapters/tapir_butterfly.svg	/^       id="linearGradient3999">$/;"	d
@@ -1492,6 +1531,8 @@ linearGradient8597	figures/chapters/tapir_butterfly.svg	/^       y2="-128.19991"
 linearGradient8599	figures/chapters/tapir_butterfly.svg	/^       y2="-126.72735" \/>$/;"	d
 linearGradient8599	figures/chapters/tapir_butterfly.svg	/^       y2="-126.72735" \/>$/;"	i
 metadata2652	figures/ideas/Coloured dot pattern fills.svg	/^     id="metadata2652">$/;"	i
+metadata3026	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+metadata3026	figures/symbols/solve.svg	/^     id="metadata3026"><rdf:RDF><cc:Work$/;"	i
 metadata3362	figures/ideas/tapir4.svg	/^     id="metadata3362">$/;"	i
 metadata5	design/chapter.svg	/^     id="metadata5">$/;"	i
 metadata5	figures/chapters/tapir_butterfly.svg	/^     id="metadata5">$/;"	i
@@ -1502,6 +1543,9 @@ metadata923	figures/chapters/tapir_voronoi.svg	/^     id="metadata923">$/;"	i
 namedview1023	figures/chapters/tapir_70s.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview1024	figures/chapters/ftcrics/tapir_ft.svg	/^     inkscape:snap-global="false" \/>$/;"	i
 namedview1024	figures/chapters/tapir_fourier.svg	/^     inkscape:snap-global="false" \/>$/;"	i
+namedview16339	figures/symbols/lightmark.svg	/^     inkscape:current-layer="layer1">$/;"	i
+namedview3022	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+namedview3022	figures/symbols/solve.svg	/^     inkscape:deskcolor="#d1d1d1" \/><g$/;"	i
 namedview3358	figures/ideas/tapir4.svg	/^     inkscape:current-layer="svg3356" \/>$/;"	i
 namedview52752	figures/ideas/comics_tile.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview7	figures/chapters/tapir_comics.svg	/^     fit-margin-bottom="0" \/>$/;"	i
@@ -1512,8 +1556,10 @@ namedview7	figures/chapters/tapir_warhol.svg	/^     fit-margin-bottom="0" \/>$/;
 namedview7	figures/linear_algebra/tapir_transform.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview7	figures/linear_algebra/tapir_transform2.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview77388	figures/chapters/ftcrics/tapir.svg	/^     inkscape:current-layer="layer1" \/>$/;"	i
+namedview8438	figures/symbols/exmark.svg	/^     inkscape:current-layer="text8498" \/>$/;"	i
 namedview917	figures/ideas/tapir2.svg	/^  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttoleranc/;"	i
 ns05b6379b0101	figures/chapters/tapir_voronoi.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/2000/svg
+ns0ec112200101	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://www.w3.org/2000/svg
 ns1	figures/ideas/speech_17.svg	/^  >$/;"	n	uri:http://sozi.baierouge.fr
 ns13dc609c0101	figures/chapters/tapir_stars.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 ns185022e10101	figures/chapters/tapir_rainbow.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
@@ -1527,6 +1573,7 @@ ns460334ed0101	figures/chapters/tapir_comics.svg	/^   xmlns:svg="http:\/\/www.w3
 ns5d71320e0101	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.w3.org/2000/svg
 ns5d834a8f0101	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	n	uri:http://www.w3.org/2000/svg
 ns5d9563100101	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+ns652e32a70101	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 ns888f6eb90101	figures/linear_algebra/tapir_transform.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 ns9a9fc74b0101	figures/linear_algebra/tapir_transform2.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsa112770d0101	figures/chapters/ftcrics/tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
@@ -1537,6 +1584,10 @@ nsbe6b4ee60101	figures/chapters/ftcrics/tapir_ft.svg	/^   xmlns:svg="http:\/\/ww
 nsc02fd07d0101	figures/chapters/tapir_strawberry_two.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsc22175c90101	figures/chapters/tapir_70s.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsce9c53780101	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+nsf2bcd3f80101	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.w3.org/2000/svg
+nsf68529080101	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
+nsf7c62ec20101	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
+odm	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://product.corel.com/CGS/11/cddns/
 p8570d31437	figures/chapters/ftcrics/tapir.svg	/^       id="p8570d31437">$/;"	d
 p8570d31437	figures/chapters/ftcrics/tapir.svg	/^       id="p8570d31437">$/;"	i
 path-effect10143	figures/chapters/tapir_butterfly.svg	/^       simplify_just_coalesce="false" \/>$/;"	d
@@ -1611,6 +1662,8 @@ path-effect2417	figures/linear_algebra/tapir_transform.svg	/^       simplify_jus
 path-effect2417	figures/linear_algebra/tapir_transform.svg	/^       simplify_just_coalesce="false" \/>$/;"	i
 path-effect2417	figures/linear_algebra/tapir_transform2.svg	/^       simplify_just_coalesce="false" \/>$/;"	d
 path-effect2417	figures/linear_algebra/tapir_transform2.svg	/^       simplify_just_coalesce="false" \/>$/;"	i
+path-effect602	figures/symbols/solve.svg	/^       simplify_just_coalesce="false" \/><clipPath$/;"	d
+path-effect602	figures/symbols/solve.svg	/^       simplify_just_coalesce="false" \/><clipPath$/;"	i
 path-effect6177	figures/chapters/ftcrics/tapir_ft.svg	/^       applied="false" \/>$/;"	d
 path-effect6177	figures/chapters/ftcrics/tapir_ft.svg	/^       applied="false" \/>$/;"	i
 path-effect6177	figures/chapters/tapir_comics.svg	/^       applied="false" \/>$/;"	d
@@ -1787,13 +1840,18 @@ path1225-5-6-2	figures/chapters/tapir_rainbow.svg	/^         d="m -24.851562,569
 path1225-9	figures/chapters/tapir_rainbow.svg	/^         id="path1225-9" \/>$/;"	i
 path1275	figures/chapters/tapir_dissolve.svg	/^           id="path1275" \/>$/;"	i
 path1310	figures/chapters/tapir_dissolve.svg	/^           id="path1310" \/>$/;"	i
+path13412	figures/symbols/exmark.svg	/^         sodipodi:nodetypes="scccccsss" \/>$/;"	i
+path13415	figures/symbols/exmark.svg	/^         sodipodi:nodetypes="scccccsss" \/>$/;"	i
 path13443	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="pupil" \/>$/;"	i
 path13443	figures/chapters/tapir_comics.svg	/^         inkscape:label="pupil" \/>$/;"	i
 path13443	figures/chapters/tapir_fourier.svg	/^       inkscape:label="pupil" \/>$/;"	i
 path13443	figures/linear_algebra/tapir_transform.svg	/^               inkscape:label="pupil" \/>$/;"	i
 path13443	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="pupil" \/>$/;"	i
+path1349	figures/symbols/solve.svg	/^             id="path1349" \/><path$/;"	i
 path13494	figures/chapters/tapir_stars.svg	/^           inkscape:transform-center-y="0.0301849" \/>$/;"	i
 path135	figures/chapters/tapir_dissolve.svg	/^           id="path135" \/>$/;"	i
+path1351	figures/symbols/solve.svg	/^             sodipodi:nodetypes="cccccc" \/><path$/;"	i
+path1353	figures/symbols/solve.svg	/^             id="path1353" \/><path$/;"	i
 path1382	figures/chapters/tapir_dissolve.svg	/^           id="path1382" \/>$/;"	i
 path1392-6	figures/chapters/tapir_butterfly.svg	/^           id="path1392-6" \/>$/;"	i
 path1392-6	figures/chapters/tapir_dissolve.svg	/^           id="path1392-6" \/>$/;"	i
@@ -1819,6 +1877,7 @@ path1410-2	figures/chapters/tapir_warhol.svg	/^           id="path1410-2" \/>$/;
 path1413	figures/chapters/tapir_butterfly.svg	/^           id="path1413" \/>$/;"	i
 path1413	figures/chapters/tapir_dissolve.svg	/^           id="path1413" \/>$/;"	i
 path1413	figures/chapters/tapir_warhol.svg	/^           id="path1413" \/>$/;"	i
+path14143	figures/symbols/exmark.svg	/^         sodipodi:nodetypes="scccccsss" \/>$/;"	i
 path1416-9	figures/chapters/tapir_butterfly.svg	/^           id="path1416-9" \/>$/;"	i
 path1416-9	figures/chapters/tapir_dissolve.svg	/^           id="path1416-9" \/>$/;"	i
 path1416-9	figures/chapters/tapir_warhol.svg	/^           id="path1416-9" \/>$/;"	i
@@ -1899,6 +1958,7 @@ path1470	figures/ideas/tapir2.svg	/^      <path style="fill:none;stroke:#000000;
 path1472	figures/ideas/tapir2.svg	/^      <path style="fill:#333333;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:bu/;"	i
 path1485	figures/ideas/tapir2.svg	/^      <path style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linej/;"	i
 path1487	figures/ideas/tapir2.svg	/^      <path style="fill:#333333;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:bu/;"	i
+path14871	figures/symbols/exmark.svg	/^         sodipodi:nodetypes="scscscscs" \/>$/;"	i
 path1489	figures/ideas/tapir2.svg	/^      <path style="fill:#ffffff;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linej/;"	i
 path14892	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="highlight" \/>$/;"	i
 path14892	figures/chapters/tapir_comics.svg	/^         inkscape:label="highlight" \/>$/;"	i
@@ -1952,6 +2012,7 @@ path1684	figures/linear_algebra/tapir_transform.svg	/^           id="path1684" \
 path1684	figures/linear_algebra/tapir_transform2.svg	/^           id="path1684" \/>$/;"	i
 path16996	figures/chapters/tapir_comics.svg	/^           inkscape:label="star4_ouline" \/>$/;"	i
 path1704	figures/chapters/tapir_dissolve.svg	/^           id="path1704" \/>$/;"	i
+path17069	figures/symbols/lightmark.svg	/^       id="path17069" \/>$/;"	i
 path17180	figures/chapters/tapir_comics.svg	/^           inkscape:label="star3_ouline" \/>$/;"	i
 path17182	figures/chapters/tapir_comics.svg	/^           inkscape:label="star2_ouline" \/>$/;"	i
 path17184	figures/chapters/tapir_comics.svg	/^           inkscape:label="star1_ouline" \/>$/;"	i
@@ -1973,9 +2034,13 @@ path1835	figures/chapters/tapir_voronoi.svg	/^       id="path1835" \/>$/;"	i
 path1836	figures/chapters/tapir_voronoi.svg	/^       id="path1836" \/>$/;"	i
 path18697	figures/chapters/tapir_stars.svg	/^         id="path18697" \/>$/;"	i
 path1890	figures/chapters/tapir_dissolve.svg	/^           id="path1890" \/>$/;"	i
+path194	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path196	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path198	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path1998	figures/chapters/tapir_rainbow.svg	/^           id="path1998" \/>$/;"	i
 path1998	figures/linear_algebra/tapir_transform.svg	/^           id="path1998" \/>$/;"	i
 path1998	figures/linear_algebra/tapir_transform2.svg	/^           id="path1998" \/>$/;"	i
+path200	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path20023	figures/chapters/tapir_stars.svg	/^         id="path20023" \/>$/;"	i
 path20027	figures/chapters/tapir_stars.svg	/^         id="path20027" \/>$/;"	i
 path20031	figures/chapters/tapir_stars.svg	/^         id="path20031" \/>$/;"	i
@@ -1987,35 +2052,54 @@ path20051	figures/chapters/tapir_stars.svg	/^         id="path20051" \/>$/;"	i
 path20055	figures/chapters/tapir_stars.svg	/^         id="path20055" \/>$/;"	i
 path20059	figures/chapters/tapir_stars.svg	/^         id="path20059" \/>$/;"	i
 path20063	figures/chapters/tapir_stars.svg	/^         id="path20063" \/>$/;"	i
+path202	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path204	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path206	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path208	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path210	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path212	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path21306	figures/symbols/lightmark.svg	/^       r="9.0882511" \/>$/;"	i
 path2131	figures/chapters/tapir_dissolve.svg	/^           id="path2131" \/>$/;"	i
+path214	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path21541	figures/chapters/tapir_warhol.svg	/^           style="fill:#9a82d1;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap/;"	i
 path21543	figures/chapters/tapir_warhol.svg	/^           style="fill:#666666;stroke-width:0.264583" \/>$/;"	i
 path21545	figures/chapters/tapir_warhol.svg	/^           style="fill:#c94b0b;fill-opacity:1;stroke-width:0.264583" \/>$/;"	i
 path21547	figures/chapters/tapir_warhol.svg	/^           style="fill:#6ca1d9;fill-opacity:1;stroke-width:0.264583" \/>$/;"	i
+path216	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path21796	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="shadow12" \/>$/;"	i
 path21796	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow12" \/>$/;"	i
 path21796	figures/chapters/tapir_fourier.svg	/^       inkscape:label="shadow12" \/>$/;"	i
 path21796	figures/linear_algebra/tapir_transform.svg	/^               inkscape:label="shadow12" \/>$/;"	i
 path21796	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="shadow12" \/>$/;"	i
+path218	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path2182	figures/chapters/tapir_dissolve.svg	/^           id="path2182" \/>$/;"	i
+path220	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path2205	figures/chapters/tapir_rainbow.svg	/^           id="path2205" \/>$/;"	i
 path2205	figures/linear_algebra/tapir_transform.svg	/^           id="path2205" \/>$/;"	i
 path2205	figures/linear_algebra/tapir_transform2.svg	/^           id="path2205" \/>$/;"	i
+path222	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path224	figures/chapters/tapir_dissolve.svg	/^           id="path224" \/>$/;"	i
+path224	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path2254	figures/chapters/tapir_rainbow.svg	/^         id="path2254" \/>$/;"	i
+path226	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path2268	figures/chapters/tapir_dissolve.svg	/^           id="path2268" \/>$/;"	i
 path2273	figures/chapters/tapir_rainbow.svg	/^           id="path2273" \/>$/;"	i
 path2273	figures/linear_algebra/tapir_transform.svg	/^           id="path2273" \/>$/;"	i
 path2273	figures/linear_algebra/tapir_transform2.svg	/^           id="path2273" \/>$/;"	i
+path228	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path230	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path2311	figures/ideas/tom_Summer_Leaves.svg	/^       transform="translate(-7.7437277e-6,2.068473e-6)" \/>$/;"	i
+path232	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path23280	figures/chapters/ftcrics/tapir_ft.svg	/^       transform="matrix(-0.99842023,0.05618756,0.46274237,0.88649281,0,0)" \/>$/;"	i
 path23280	figures/chapters/tapir_comics.svg	/^         transform="matrix(0.99840833,0.05639869,-0.46137504,0.8872052,0,0)" \/>$/;"	i
 path23280	figures/chapters/tapir_fourier.svg	/^       transform="matrix(-0.99842023,0.05618756,0.46274237,0.88649281,0,0)" \/>$/;"	i
 path23280	figures/linear_algebra/tapir_transform.svg	/^               transform="matrix(0.99840833,0.05639869,-0.46137504,0.8872052,0,0)" \/>$/;"	i
 path23280	figures/linear_algebra/tapir_transform2.svg	/^               transform="matrix(0.99840833,0.05639869,-0.46137504,0.8872052,0,0)" \/>$/;"	i
+path234	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path2350	figures/chapters/tapir_rainbow.svg	/^           id="path2350" \/>$/;"	i
 path2350	figures/linear_algebra/tapir_transform.svg	/^           id="path2350" \/>$/;"	i
 path2350	figures/linear_algebra/tapir_transform2.svg	/^           id="path2350" \/>$/;"	i
+path236	figures/symbols/solve.svg	/^   style="fill:#da251d" \/>$/;"	i
 path2373	figures/chapters/tapir_dissolve.svg	/^           id="path2373" \/>$/;"	i
 path2393	figures/ideas/tom_Summer_Leaves.svg	/^       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccc" \/>$/;"	i
 path2397	figures/ideas/tom_Summer_Leaves.svg	/^       id="path2397" \/>$/;"	i
@@ -2059,6 +2143,8 @@ path27948	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow8" 
 path27948	figures/chapters/tapir_fourier.svg	/^       inkscape:label="shadow8" \/>$/;"	i
 path27948	figures/linear_algebra/tapir_transform.svg	/^               inkscape:label="shadow8" \/>$/;"	i
 path27948	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="shadow8" \/>$/;"	i
+path2807	figures/symbols/solve.svg	/^             id="path2807" \/><path$/;"	i
+path2809	figures/symbols/solve.svg	/^             id="path2809" \/><path$/;"	i
 path2834	figures/chapters/tapir_dissolve.svg	/^           id="path2834" \/>$/;"	i
 path28925	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="shadow7" \/>$/;"	i
 path28925	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow7" \/>$/;"	i
@@ -2078,6 +2164,10 @@ path2978	figures/linear_algebra/tapir_transform2.svg	/^           id="path2978" 
 path2986	figures/chapters/tapir_rainbow.svg	/^           id="path2986" \/>$/;"	i
 path2986	figures/linear_algebra/tapir_transform.svg	/^           id="path2986" \/>$/;"	i
 path2986	figures/linear_algebra/tapir_transform2.svg	/^           id="path2986" \/>$/;"	i
+path3034	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+path3034	figures/symbols/solve.svg	/^         inkscape:connector-curvature="0" \/><\/clipPath><\/defs><sodipodi:namedview$/;"	i
+path3038	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+path3038	figures/symbols/solve.svg	/^             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc/;"	i
 path3104	figures/chapters/tapir_dissolve.svg	/^           id="path3104" \/>$/;"	i
 path31321	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="eye_skin_top" \/>$/;"	i
 path31321	figures/chapters/tapir_comics.svg	/^         inkscape:label="eye_skin_top" \/>$/;"	i
@@ -2120,9 +2210,11 @@ path36078	figures/chapters/tapir_fourier.svg	/^       inkscape:label="shadow1" \
 path36078	figures/linear_algebra/tapir_transform.svg	/^               inkscape:label="shadow1" \/>$/;"	i
 path36078	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="shadow1" \/>$/;"	i
 path3647	figures/chapters/tapir_dissolve.svg	/^           id="path3647" \/>$/;"	i
+path3650	figures/symbols/solve.svg	/^             ry="9.7166033" \/><\/g><\/g><\/g><\/g><\/svg>$/;"	i
 path3738	figures/chapters/tapir_rainbow.svg	/^           id="path3738" \/>$/;"	i
 path3738	figures/linear_algebra/tapir_transform.svg	/^           id="path3738" \/>$/;"	i
 path3738	figures/linear_algebra/tapir_transform2.svg	/^           id="path3738" \/>$/;"	i
+path3839	figures/symbols/solve.svg	/^             id="path3839" \/><path$/;"	i
 path38723	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="shadow6" \/>$/;"	i
 path38723	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow6" \/>$/;"	i
 path38723	figures/chapters/tapir_fourier.svg	/^       inkscape:label="shadow6" \/>$/;"	i
@@ -2148,7 +2240,9 @@ path40105	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="highlig
 path40105	figures/chapters/tapir_comics.svg	/^         inkscape:label="highlight1" \/>$/;"	i
 path40105	figures/chapters/tapir_fourier.svg	/^       inkscape:label="highlight1" \/>$/;"	i
 path407	figures/chapters/tapir_dissolve.svg	/^           id="path407" \/>$/;"	i
+path4095	figures/symbols/solve.svg	/^             id="path4095" \/><path$/;"	i
 path4136	figures/chapters/tapir_dissolve.svg	/^           id="path4136" \/>$/;"	i
+path4145	figures/symbols/solve.svg	/^             id="path4145" \/><path$/;"	i
 path41476	figures/chapters/tapir_warhol.svg	/^           style="fill:#5f5e65;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap/;"	i
 path41478	figures/chapters/tapir_warhol.svg	/^           style="fill:#666666;stroke-width:0.264583" \/>$/;"	i
 path41480	figures/chapters/tapir_warhol.svg	/^           style="fill:#3b4148;fill-opacity:1;stroke-width:0.264583" \/>$/;"	i
@@ -2400,6 +2494,7 @@ path4994	figures/chapters/tapir_dissolve.svg	/^           id="path4994" \/>$/;"	
 path5040	figures/chapters/tapir_dissolve.svg	/^           id="path5040" \/>$/;"	i
 path506	figures/chapters/tapir_dissolve.svg	/^           id="path506" \/>$/;"	i
 path5071	figures/chapters/tapir_dissolve.svg	/^           id="path5071" \/>$/;"	i
+path5080	figures/symbols/solve.svg	/^             id="path5080" \/><path$/;"	i
 path5083	figures/chapters/tapir_comics.svg	/^             id="path5083" \/>$/;"	i
 path5085	figures/chapters/tapir_comics.svg	/^             id="path5085" \/>$/;"	i
 path5087	figures/chapters/tapir_comics.svg	/^             id="path5087" \/>$/;"	i
@@ -2410,6 +2505,7 @@ path5095	figures/chapters/tapir_comics.svg	/^             id="path5095" \/>$/;"	
 path5097	figures/chapters/tapir_rainbow.svg	/^           id="path5097" \/>$/;"	i
 path5097	figures/linear_algebra/tapir_transform.svg	/^           id="path5097" \/>$/;"	i
 path5097	figures/linear_algebra/tapir_transform2.svg	/^           id="path5097" \/>$/;"	i
+path5113	figures/symbols/solve.svg	/^             sodipodi:nodetypes="cccccccc" \/><path$/;"	i
 path5116	figures/chapters/tapir_comics.svg	/^             id="path5116" \/>$/;"	i
 path5118	figures/chapters/tapir_comics.svg	/^             id="path5118" \/>$/;"	i
 path5120	figures/chapters/tapir_comics.svg	/^             id="path5120" \/>$/;"	i
@@ -3152,6 +3248,7 @@ path6412	figures/chapters/tapir_rainbow.svg	/^         id="path6412" \/>$/;"	i
 path6509	figures/chapters/tapir_dissolve.svg	/^           id="path6509" \/>$/;"	i
 path65146	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscscccscccssssssssssssssssssssssssssscssssssssscssssssssssssssc/;"	i
 path6549	figures/chapters/tapir_dissolve.svg	/^           id="path6549" \/>$/;"	i
+path667	figures/symbols/solve.svg	/^             sodipodi:nodetypes="cccccccccccccccccccccccccccccscsccccccc" \/><path$/;"	i
 path6706	figures/chapters/tapir_dissolve.svg	/^           id="path6706" \/>$/;"	i
 path6708	figures/chapters/tapir_dissolve.svg	/^           id="path6708" \/>$/;"	i
 path6812	figures/chapters/tapir_rainbow.svg	/^         id="path6812" \/>$/;"	i
@@ -4133,6 +4230,8 @@ pattern94943-3	figures/linear_algebra/tapir_transform2.svg	/^       id="pattern9
 pattern94943-3	figures/linear_algebra/tapir_transform2.svg	/^       id="pattern94943-3">$/;"	i
 perspective2505	figures/ideas/tom_Summer_Leaves.svg	/^       id="perspective2505" \/>$/;"	d
 perspective2505	figures/ideas/tom_Summer_Leaves.svg	/^       id="perspective2505" \/>$/;"	i
+radialGradient18306	figures/symbols/lightmark.svg	/^       gradientUnits="userSpaceOnUse" \/>$/;"	d
+radialGradient18306	figures/symbols/lightmark.svg	/^       gradientUnits="userSpaceOnUse" \/>$/;"	i
 rdf	design/chapter.svg	/^   sodipodi:docname="chapter.svg">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/chapters/tapir_butterfly.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
@@ -4143,6 +4242,9 @@ rdf	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1
 rdf	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rect1173	figures/chapters/ftcrics/tapir.svg	/^         id="rect1173" \/>$/;"	i
 rect21539	figures/chapters/tapir_warhol.svg	/^         y="337.68039" \/>$/;"	i
 rect2383	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="bg" \/>$/;"	i
@@ -4360,6 +4462,7 @@ rect62591-7	figures/chapters/tapir_comics.svg	/^           id="rect62591-7" \/>$
 rect62591-7	figures/chapters/tapir_fourier.svg	/^           id="rect62591-7" \/>$/;"	i
 rect62591-7	figures/linear_algebra/tapir_transform.svg	/^           id="rect62591-7" \/>$/;"	i
 rect62591-7	figures/linear_algebra/tapir_transform2.svg	/^           id="rect62591-7" \/>$/;"	i
+rect7463	figures/symbols/solve.svg	/^         ry="13.984709" \/><g$/;"	i
 rect7819	figures/chapters/ftcrics/tapir_ft.svg	/^         id="rect7819" \/>$/;"	i
 rect7819	figures/chapters/tapir_comics.svg	/^         id="rect7819" \/>$/;"	i
 rect7819	figures/chapters/tapir_fourier.svg	/^         id="rect7819" \/>$/;"	i
@@ -4427,6 +4530,10 @@ sodipodi	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"
 sodipodi	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/linear_algebra/tapir_transform.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/linear_algebra/tapir_transform2.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 stop1084	figures/chapters/tapir_butterfly.svg	/^         style="stop-color:#ff0000;stop-opacity:1;" \/>$/;"	i
 stop1084	figures/chapters/tapir_dissolve.svg	/^         style="stop-color:#ff0000;stop-opacity:1;" \/>$/;"	i
 stop1084	figures/chapters/tapir_warhol.svg	/^         style="stop-color:#ff0000;stop-opacity:1;" \/>$/;"	i
@@ -4461,6 +4568,8 @@ stop1439	figures/chapters/tapir_butterfly.svg	/^         id="stop1439" \/>$/;"	i
 stop1441	figures/chapters/tapir_butterfly.svg	/^         style="stop-color:#8cfa00;stop-opacity:1" \/>$/;"	i
 stop1443	figures/chapters/tapir_butterfly.svg	/^         id="stop1443" \/>$/;"	i
 stop1445	figures/chapters/tapir_butterfly.svg	/^         style="stop-color:#ff0000;stop-opacity:0.95787066" \/>$/;"	i
+stop18300	figures/symbols/lightmark.svg	/^         id="stop18300" \/>$/;"	i
+stop18302	figures/symbols/lightmark.svg	/^         id="stop18302" \/>$/;"	i
 stop31	figures/linear_algebra/tapir_transform.svg	/^         style="stop-color:#4268bd;stop-opacity:1" \/>$/;"	i
 stop31	figures/linear_algebra/tapir_transform2.svg	/^         style="stop-color:#5bcefa;stop-opacity:1" \/>$/;"	i
 stop35	figures/linear_algebra/tapir_transform.svg	/^         style="stop-color:#fd9337;stop-opacity:1" \/>$/;"	i
@@ -4527,11 +4636,19 @@ svg	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	ur
 svg	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/linear_algebra/tapir_transform.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/linear_algebra/tapir_transform2.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
 svg1021	figures/chapters/tapir_70s.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg1022	figures/chapters/ftcrics/tapir_ft.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg1022	figures/chapters/tapir_fourier.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
+svg16337	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg2	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;"	i
 svg2655	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	i
+svg3020	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
+svg3020	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	i
 svg3356	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	i
 svg4156	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	i
 svg5	figures/chapters/tapir_comics.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
@@ -4546,6 +4663,7 @@ svg77386	figures/chapters/ftcrics/tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\
 svg8	design/chapter.svg	/^   sodipodi:docname="chapter.svg">$/;"	i
 svg8	figures/chapters/tapir_butterfly.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	i
 svg8	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	i
+svg8436	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg915	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 svg926	figures/chapters/tapir_voronoi.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	i
 symbol1079	figures/chapters/tapir_dissolve.svg	/^         id="symbol1079">$/;"	i
@@ -4778,6 +4896,7 @@ text4119	figures/ideas/Coloured dot pattern fills.svg	/^       id="text4119"><ts
 text4123	figures/ideas/Coloured dot pattern fills.svg	/^       xml:space="preserve"><tspan$/;"	i
 text4990	figures/ideas/Coloured dot pattern fills.svg	/^       id="text4990"><tspan$/;"	i
 text837	design/chapter.svg	/^       id="text837"><tspan$/;"	i
+text8498	figures/symbols/exmark.svg	/^       style="font-size:75.0192px;line-height:1.25;font-family:'Ka Blam';-inkscape-font-specific/;"	i
 text851	design/chapter.svg	/^       id="text851"><tspan$/;"	i
 text875	design/chapter.svg	/^       id="text875"><tspan$/;"	i
 text896	figures/ideas/Coloured dot pattern fills.svg	/^         xml:space="preserve"><tspan$/;"	i
@@ -5990,3 +6109,4 @@ xlink	figures/ideas/comics_tile.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/s
 xlink	figures/ideas/speech_17.svg	/^  >$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/linear_algebra/tapir_transform.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/linear_algebra/tapir_transform2.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink
+xlink	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink

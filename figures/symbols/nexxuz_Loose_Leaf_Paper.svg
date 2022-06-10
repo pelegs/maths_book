@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:odm="http://product.corel.com/CGS/11/cddns/" xmlns:corel-charset="http://product.corel.com/CGS/11/cddns/" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality" xml:space="preserve" viewBox="0 0 9500 11626" fill-rule="evenodd">
+ <defs>
+  <style type="text/css">
+    .fil0 {fill:#0093DD}
+    .fil3 {fill:#0A0B0C}
+    .fil2 {fill:#1F1A17}
+    .fil1 {fill:#DA251D}
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+    <path class="fil0" d="m500 1271h8500v84h-8500v-84z"/>
+    <path class="fil0" d="m500 1744h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 2217h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 2690h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 3162h8500v84h-8500v-84z"/>
+    <path class="fil0" d="m500 3635h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 4108h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 4580h8500v84h-8500v-84z"/>
+    <path class="fil0" d="m500 5053h8500v84h-8500v-84z"/>
+    <path class="fil0" d="m500 5526h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 5999h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 6471h8500v84h-8500v-84z"/>
+    <path class="fil0" d="m500 6944h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 7417h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 7890h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 8362h8500v84h-8500v-84z"/>
+    <path class="fil0" d="m500 8835h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 9308h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 9781h8500v83h-8500v-83z"/>
+    <path class="fil0" d="m500 10253h8500v84h-8500v-84z"/>
+    <path class="fil0" d="m500 10726h8500v83h-8500v-83z"/>
+    <path class="fil1" d="m1542 313v11000h-84v-11000h84z"/>
+    <path class="fil2" d="m608 271h8284v84h-8284v-84zm8284 0v84-84zc42 0 80 19 107 49l-62 56c-11-13-28-21-45-21v-84zm107 49c26 29 43 68 43 112h-84c0-22-8-42-21-56l62-56zm43 112h-84 84zv10762h-84v-10762h84zm0 10762h-84 84zc0 44-17 83-43 112l-62-56c13-14 21-34 21-56h84zm-43 112c-27 30-65 49-107 49v-84c17 0 33-8 45-21l62 56zm-107 49v-84 84zh-8284v-84h8284v84zm-8284 0v-84 84zc-42 0-80-19-107-49l62-56c11 13 28 21 45 21v84zm-107-49c-26-29-43-68-43-112h84c0 22 8 42 21 56l-62 56zm-43-112h84-84zv-10762h84v10762h-84zm0-10762h84-84zc0-44 17-83 43-112l62 56c-13 14-21 34-21 56h-84zm43-112c27-30 65-49 107-49v84c-17 0-33 8-45 21l-62-56zm107-49v84-84z"/>
+   <circle cy="5813" cx="1e3" r="125" class="fil3"/>
+   <circle cy="1086" cx="1e3" r="125" class="fil3"/>
+   <circle cy="10540" cx="1e3" r="125" class="fil3"/>
+ </g>
+<metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/><dc:publisher><cc:Agent rdf:about="http://openclipart.org/"><dc:title>Openclipart</dc:title></cc:Agent></dc:publisher><dc:title>Loose Leaf Paper</dc:title><dc:date>2008-03-25T18:33:19</dc:date><dc:description>Simple piece of loose leaf paper</dc:description><dc:source>http://openclipart.org/detail/16004/loose-leaf-paper-by-nexxuz</dc:source><dc:creator><cc:Agent><dc:title>nexxuz</dc:title></cc:Agent></dc:creator><dc:subject><rdf:Bag><rdf:li>clip art</rdf:li><rdf:li>clipart</rdf:li><rdf:li>how i did it</rdf:li><rdf:li>image</rdf:li><rdf:li>media</rdf:li><rdf:li>office</rdf:li><rdf:li>paper</rdf:li><rdf:li>public domain</rdf:li><rdf:li>school</rdf:li><rdf:li>supplies</rdf:li><rdf:li>svg</rdf:li></rdf:Bag></dc:subject></cc:Work><cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/"><cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/><cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/><cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/></cc:License></rdf:RDF></metadata></svg>

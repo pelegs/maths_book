@@ -701,3 +701,23 @@
   }
   \draw[thick] (\dx+\a*1.7,\dy-\a*0.7) -- ++(-\a*2,0);
 }
+
+% Augmented (nice)matrix
+\makeatletter
+\ExplSyntaxOn
+\NewDocumentEnvironment { pNiceMatrixAug } { }
+  { \begin { pNiceMatrix } }
+  { 
+    \CodeAfter \tikz \draw (1-|\arabic{jCol}) -- (last-|\arabic{jCol}) ; 
+    \end { pNiceMatrix } 
+  }
+
+\ExplSyntaxOff
+\makeatother
+
+% Test: solve symbol
+\newcommand{\solvesym}[1]{
+	\tikz[overlay, remember picture]{
+		\node[right of=#1] {\includesvg[scale=0.03]{figures/symbols/lightmark}};
+	}
+}
