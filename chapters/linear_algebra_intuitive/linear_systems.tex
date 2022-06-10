@@ -536,4 +536,77 @@ Using the row-echelon form we define the \emph{reduced row-echelon form}. A matr
 	}
 \end{example}
 
-TBW: row operations.
+To bring a matrix to its reduced row-echelon form, we use a sequence of operations from the following set:
+\begin{itemize}
+	\item Scaling a row by a non-zero real number. For example:
+		\[
+			\begin{bNiceMatrix}[name=rreo1]
+				 1 & 0 & -3 &  2\\
+				-3 & 2 &  1 &  1\\
+				 5 & 1 &  0 & -4\\
+				 2 & 2 & -1 &  7\\
+			 \end{bNiceMatrix} \xrightarrow[]{\colorbox{xblue!30}{$R_{2}$}\rightarrow3\colorbox{xblue!30}{$R_{2}$}}
+			 \begin{bNiceMatrix}[name=rreo2]
+				 1 & 0 & -3 &  2\\
+				-9 & 6 &  3 &  3\\
+				 5 & 1 &  0 & -4\\
+				 2 & 2 & -1 &  7\\
+			 \end{bNiceMatrix}
+		\]
+		here we take the 2nd row of the matrix (denoted as $R_{2}$) and scale it by $3$. The notation above the arrow tells us exactly that: $R_{2}$ is transformed into $2\times R_{2}$.
+
+	\item Exchanging two rows. For example:
+		\[
+			\begin{bNiceMatrix}[name=rreo3]
+				 1 & 0 & -3 &  2\\
+				-9 & 6 &  3 &  3\\
+				 5 & 1 &  0 & -4\\
+				 2 & 2 & -1 &  7\\
+			 \end{bNiceMatrix} \xrightarrow[]{\colorbox{xred!30}{$R_{2}$}\leftrightarrow \colorbox{xgreen!30}{$R_{3}$}}
+			 \begin{bNiceMatrix}[name=rreo4]
+				 1 & 0 & -3 &  2\\
+				 5 & 1 &  0 & -4\\
+				-9 & 6 &  3 &  3\\
+				 0 & 2 &  6 &  3\\
+			 \end{bNiceMatrix}
+		\]
+
+	\item Adding one scaled row to a different row (where the scalar is not zero). For example:
+		\[
+			\begin{bNiceMatrix}[name=rreo5]
+				 1 & 0 & -3 &  2\\
+				 5 & 1 &  0 & -4\\
+				-9 & 6 &  3 &  3\\
+				 2 & 2 & -1 &  7\\
+			 \end{bNiceMatrix} \xrightarrow[]{\colorbox{xpurple!30}{$R_{4}$}\rightarrow \colorbox{xpurple!30}{$R_{4}$}-2\colorbox{xorange!30}{$R_{1}$}}
+			 \begin{bNiceMatrix}[name=rreo6]
+				 1 & 0 & -3 &  2\\
+				 5 & 1 &  0 & -4\\
+				-9 & 6 &  3 &  3\\
+				 0 & 2 &  6 &  3\\
+			 \end{bNiceMatrix}
+		\]
+		(note that $R_{1}$ was not changed)
+
+\tikz[overlay, remember picture, blend mode=multiply]{
+	% Scaling
+	\node[mathl={xblue!30}, fit=(rreo1-2-1)(rreo1-2-4)] {};
+	\node[mathl={xblue!30}, fit=(rreo2-2-1)(rreo2-2-4)] {};
+
+	% Exchanging
+	\node[mathl={xred!30}, fit=(rreo3-2-1)(rreo3-2-4)] {};
+	\node[mathl={xred!30}, fit=(rreo4-3-1)(rreo4-3-4)] {};
+	\node[mathl={xgreen!30}, fit=(rreo3-3-1)(rreo3-3-4)] {};
+	\node[mathl={xgreen!30}, fit=(rreo4-2-1)(rreo4-2-4)] {};
+
+	% Addition
+	\node[mathl={xorange!30}, fit=(rreo5-1-1)(rreo5-1-4)] {};
+	\node[mathl={xorange!30}, fit=(rreo6-1-1)(rreo6-1-4)] {};
+	\node[mathl={xpurple!30}, fit=(rreo5-4-1)(rreo5-4-4)] {};
+	\node[mathl={xpurple!30}, fit=(rreo6-4-1)(rreo6-4-4)] {};
+}
+\end{itemize}
+
+\begin{example}{Row operations}{}
+	\ldots
+\end{example}
