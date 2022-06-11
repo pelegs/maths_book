@@ -662,31 +662,186 @@ To use row operations to solve a system of linear equations, we first write the 
 \[
 	\begin{cases}
 		% x=-1, y=3, z=2
-		2x+y-3z  &= -5\\
-		4x-2y+6z &=  2\\
-		x+y-z    &=  0
+		&2x+y-3z  = -5\\
+		&4x-2y+6z =  2\\
+		&x+y-z    =  0
 	\end{cases}
 \]
 Then the augmenten matrix of the system is
 \[
-	\begin{pNiceMatrixAug}
+	\begin{bNiceMatrixAug}
 		2 &  1 & -3 & -5\\
 		4 & -2 &  6 &  2\\
 		1 &  1 & -1 &  0
-	\end{pNiceMatrixAug},
+	\end{bNiceMatrixAug},
 \]
 i.e. it is simpy the coefficients matrix \textit{augmented} with the free coefficients vector. We draw a vertical line where the matrix and vector were "stitched" together, to remind us which elements belong to what object.
 
 To solve the system, we bring the augmented matrix to its reduced row-echelon form. In our case, this would be the matrix
 \[
-	\begin{pNiceMatrixAug}[name=AugM1]
+	\begin{bNiceMatrixAug}[name=AugM1]
 		1 & 0 & 0 & -1\\
 		0 & 1 & 0 &  3\\
 		0 & 0 & 1 &  2
-	\end{pNiceMatrixAug},
+	\end{bNiceMatrixAug},
 \]
 which means that the solution to the system is
 \[
 	x=-1,\ y=3,\ z=2.
 \]
 \solvesym{AugM1-1-4}
+
+\begin{example}{Solving a system of linear equations}{}
+	Let us solve the following system of linear equations using the Gaussian elimination method:
+
+	\[
+		% x=4, y=0, z=3, w=-2
+		\begin{cases}
+		& -3x+6y+6z-2w = 10\\
+		& 7x-5y+7z-6w = 61\\
+		& 5x-5y-4z-5w = 18\\
+		& -8x+2y+2z+7y = -40
+		\end{cases}
+	\]
+
+	The augmented matrix for the system is
+	\[
+		A =
+		\begin{bNiceMatrixAug}
+			-3 &  6 &  6 & -2 &  10\\
+			 7 & -5 &  7 & -6 &  61\\
+			 5 & -5 & -4 & -5 &  18\\
+			-8 &  2 &  2 &  7 & -40
+		\end{bNiceMatrixAug}.
+	\]
+
+	Applying a sequence of row operations to $A$:
+
+	\begin{align*}
+		\begin{bNiceMatrixAug}
+			-3 &  6 &  6 & -2 &  10\\
+			 7 & -5 &  7 & -6 &  61\\
+			 5 & -5 & -4 & -5 &  18\\
+			-8 &  2 &  2 &  7 & -40
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{1}\to R_{1}-3R_{4}}
+		\begin{bNiceMatrixAug}
+			21 &  0 &  0 & -23 & 130\\
+			 7 & -5 &  7 &  -6 &  61\\
+			 5 & -5 & -4 &  -5 &  18\\
+			-8 &  2 &  2 &   7 & -40
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{2}\to R_{2}-R_{3}}
+		\begin{bNiceMatrixAug}
+			21 &  0 &  0 & -23 & 130\\
+			 2 &  0 & 11 &  -1 &  43\\
+			 5 & -5 & -4 &  -5 &  18\\
+			-8 &  2 &  2 &   7 & -40
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{3}\to R_{3}+2R_{4}}
+		\begin{bNiceMatrixAug}
+			21 &  0 &  0 & -23 & 130\\
+			 2 &  0 & 11 &  -1 &  43\\
+		   -11 & -1 &  0 &   9 & -62\\
+			-8 &  2 &  2 &   7 & -40
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{4}\to R_{4}+2R_{3}}
+		\begin{bNiceMatrixAug}
+			21 &  0 &  0 & -23 & 130\\
+			 2 &  0 & 11 &  -1 &  43\\
+		   -11 & -1 &  0 &   9 & -62\\
+		   -30 &  0 &  2 &  25 & -164
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{4}\to R_{4}+15R_{2}}
+		\begin{bNiceMatrixAug}
+			21 &  0 &   0 & -23 & 130\\
+			 2 &  0 &  11 &  -1 &  43\\
+		   -11 & -1 &   0 &   9 & -62\\
+		     0 &  0 & 167 &  10 & 481
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{1}\to R_{1}-10.5R_{2}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 & -115.5 & -12.5 & -321.5\\
+			 2 &  0 &   11   &    -1 &   43\\
+		   -11 & -1 &    0   &     9 &  -62\\
+		     0 &  0 &  167   &    10 &   481
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{1}\to R_{1}-1.25R_{4}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 &  93.25 &  0 & 279.75\\
+			 2 &  0 &  11    & -1 &  43\\
+		   -11 & -1 &   0    &  9 & -62\\
+		     0 &  0 & 167    & 10 &  481
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{1}\to \frac{1}{93.25}R_{1}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 &   1 &  0 &   3\\
+			 2 &  0 &  11 & -1 &  43\\
+		   -11 & -1 &   0 &  9 & -62\\
+		     0 &  0 & 167 & 10 &  481
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{4}\to R_{4}-167R_{1}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 &  1 &  0 &   3\\
+			 2 &  0 & 11 & -1 &  43\\
+		   -11 & -1 &  0 &  9 & -62\\
+		     0 &  0 &  0 & 10 &  -20
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{4}\to \frac{1}{10}R_{4}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 &  1 &  0 &   3\\
+			 2 &  0 & 11 & -1 &  43\\
+		   -11 & -1 &  0 &  9 & -62\\
+		     0 &  0 &  0 &  1 &  -2
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{3}\to R_{3}-9R_{4}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 &  1 &  0 &   3\\
+			 2 &  0 & 11 & -1 &  43\\
+		   -11 & -1 &  0 &  0 & -44\\
+		     0 &  0 &  0 &  1 &  -2
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{2}\to R_{2}-11R_{1}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 & 1 &  0 &   3\\
+			 2 &  0 & 0 & -1 &  10\\
+		   -11 & -1 & 0 &  0 & -44\\
+		     0 &  0 & 0 &  1 &  -2
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{2}\to R_{2}-R_{4}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 & 1 & 0 &   3\\
+			 2 &  0 & 0 & 0 &   8\\
+		   -11 & -1 & 0 & 0 & -44\\
+		     0 &  0 & 0 & 1 &  -2
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{2}\to \frac{1}{2}R_{2}}
+		\begin{bNiceMatrixAug}
+			 0 &  0 & 1 & 0 &   3\\
+			 1 &  0 & 0 & 0 &   4\\
+		   -11 & -1 & 0 & 0 & -44\\
+		     0 &  0 & 0 & 1 &  -2
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{3}\to R_{3}+11R_{2}}
+		\begin{bNiceMatrixAug}
+			0 &  0 & 1 & 0 &  3\\
+			1 &  0 & 0 & 0 &  4\\
+			0 & -1 & 0 & 0 &  0\\
+		    0 &  0 & 0 & 1 & -2
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{3}\to -R_{3}}
+		\begin{bNiceMatrixAug}
+			0 & 0 & 1 & 0 &  3\\
+			1 & 0 & 0 & 0 &  4\\
+			0 & 1 & 0 & 0 &  0\\
+		    0 & 0 & 0 & 1 & -2
+		\end{bNiceMatrixAug}
+		\xrightarrow[]{R_{1}\leftrightarrow R_{2},\ R_{2}\leftrightarrow R_{3}}
+		\begin{bNiceMatrixAug}
+			1 & 0 & 0 & 0 &  4\\
+			0 & 1 & 0 & 0 &  0\\
+			0 & 0 & 1 & 0 &  3\\
+		    0 & 0 & 0 & 1 & -2
+		\end{bNiceMatrixAug}
+	\end{align*}
+\end{example}
