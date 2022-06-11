@@ -705,11 +705,11 @@
 % Augmented (nice)matrix
 \makeatletter
 \ExplSyntaxOn
-\NewDocumentEnvironment { pNiceMatrixAug } { }
-  { \begin { pNiceMatrix } }
+\NewDocumentEnvironment { bNiceMatrixAug } { }
+  { \begin { bNiceMatrix } }
   { 
     \CodeAfter \tikz \draw (1-|\arabic{jCol}) -- (last-|\arabic{jCol}) ; 
-    \end { pNiceMatrix } 
+    \end { bNiceMatrix } 
   }
 
 \ExplSyntaxOff
@@ -718,6 +718,6 @@
 % Test: solve symbol
 \newcommand{\solvesym}[1]{
 	\tikz[overlay, remember picture]{
-		\node[right of=#1] {\includesvg[scale=0.03]{figures/symbols/lightmark}};
+		\node[right of=#1] {\includesvg[scale=0.05]{figures/symbols/solve_hand_only}};
 	}
 }

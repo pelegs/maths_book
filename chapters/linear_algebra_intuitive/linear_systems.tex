@@ -718,6 +718,7 @@ which means that the solution to the system is
 	Applying a sequence of row operations to $A$:
 
 	\begin{align*}
+		&
 		\begin{bNiceMatrixAug}
 			-3 &  6 &  6 & -2 &  10\\
 			 7 & -5 &  7 & -6 &  61\\
@@ -731,6 +732,7 @@ which means that the solution to the system is
 			 5 & -5 & -4 &  -5 &  18\\
 			-8 &  2 &  2 &   7 & -40
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{2}\to R_{2}-R_{3}}
 		\begin{bNiceMatrixAug}
 			21 &  0 &  0 & -23 & 130\\
@@ -745,6 +747,7 @@ which means that the solution to the system is
 		   -11 & -1 &  0 &   9 & -62\\
 			-8 &  2 &  2 &   7 & -40
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{4}\to R_{4}+2R_{3}}
 		\begin{bNiceMatrixAug}
 			21 &  0 &  0 & -23 & 130\\
@@ -759,6 +762,7 @@ which means that the solution to the system is
 		   -11 & -1 &   0 &   9 & -62\\
 		     0 &  0 & 167 &  10 & 481
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{1}\to R_{1}-10.5R_{2}}
 		\begin{bNiceMatrixAug}
 			 0 &  0 & -115.5 & -12.5 & -321.5\\
@@ -766,6 +770,7 @@ which means that the solution to the system is
 		   -11 & -1 &    0   &     9 &  -62\\
 		     0 &  0 &  167   &    10 &   481
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{1}\to R_{1}-1.25R_{4}}
 		\begin{bNiceMatrixAug}
 			 0 &  0 &  93.25 &  0 & 279.75\\
@@ -773,6 +778,7 @@ which means that the solution to the system is
 		   -11 & -1 &   0    &  9 & -62\\
 		     0 &  0 & 167    & 10 &  481
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{1}\to \frac{1}{93.25}R_{1}}
 		\begin{bNiceMatrixAug}
 			 0 &  0 &   1 &  0 &   3\\
@@ -787,6 +793,7 @@ which means that the solution to the system is
 		   -11 & -1 &  0 &  9 & -62\\
 		     0 &  0 &  0 & 10 &  -20
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{4}\to \frac{1}{10}R_{4}}
 		\begin{bNiceMatrixAug}
 			 0 &  0 &  1 &  0 &   3\\
@@ -801,6 +808,7 @@ which means that the solution to the system is
 		   -11 & -1 &  0 &  0 & -44\\
 		     0 &  0 &  0 &  1 &  -2
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{2}\to R_{2}-11R_{1}}
 		\begin{bNiceMatrixAug}
 			 0 &  0 & 1 &  0 &   3\\
@@ -815,6 +823,7 @@ which means that the solution to the system is
 		   -11 & -1 & 0 & 0 & -44\\
 		     0 &  0 & 0 & 1 &  -2
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{2}\to \frac{1}{2}R_{2}}
 		\begin{bNiceMatrixAug}
 			 0 &  0 & 1 & 0 &   3\\
@@ -829,6 +838,7 @@ which means that the solution to the system is
 			0 & -1 & 0 & 0 &  0\\
 		    0 &  0 & 0 & 1 & -2
 		\end{bNiceMatrixAug}
+	  \\[5mm]&
 		\xrightarrow[]{R_{3}\to -R_{3}}
 		\begin{bNiceMatrixAug}
 			0 & 0 & 1 & 0 &  3\\
@@ -837,11 +847,21 @@ which means that the solution to the system is
 		    0 & 0 & 0 & 1 & -2
 		\end{bNiceMatrixAug}
 		\xrightarrow[]{R_{1}\leftrightarrow R_{2},\ R_{2}\leftrightarrow R_{3}}
-		\begin{bNiceMatrixAug}
+		\begin{bNiceMatrixAug}[name=rrefe]
 			1 & 0 & 0 & 0 &  4\\
 			0 & 1 & 0 & 0 &  0\\
 			0 & 0 & 1 & 0 &  3\\
 		    0 & 0 & 0 & 1 & -2
-		\end{bNiceMatrixAug}
+		\end{bNiceMatrixAug}.
 	\end{align*}
+	\tikz[overlay, remember picture]{
+		\node[thick, draw=xred, rounded corners, fill=xred!20, right of=rrefe-3-5, text width=2.5cm, xshift=1.3cm, align=center] (rrefeTxt) {Reduced row echelon form};
+		\draw[-stealth, thick, xred] (rrefeTxt.west) to ($(rrefe-3-5.east)+(2.5mm,0)$);
+	}
+
+	The solution of the system is therefore
+	\[
+		x=4,\ y=0,\ z=3,\ w=-2.
+	\]
+
 \end{example}

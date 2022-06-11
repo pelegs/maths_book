@@ -35,7 +35,7 @@ Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Componen
 Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Introduction""Relations and Functions
 Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Definition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
-Defintions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Defintions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
+Defintions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Defintions}$/;"	u	section:Systems of linear equations
 Derivatives	chapters/calculus_1D/derivatives.tex	/^\\section{Derivatives}$/;"	s	chapter:Calculus in 1D
 Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Developing intuition}\\label{sec:LS_developing_intuition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
 Differential equations	chapters/differential_equations/preface.tex	/^\\chapter{Differential equations}$/;"	c
@@ -49,7 +49,7 @@ Exercises	chapters/linear_algebra_intuitive/exercises.tex	/^\\section{Exercises}
 Exercises	chapters/linear_algebra_rigorous/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Exponential and Logarithmic Functions	chapters/intro/exponentials_logarithms.tex	/^\\section{Exponential and Logarithmic Functions}$/;"	s	chapter:Introduction
 Fields	chapters/linear_algebra_rigorous/fields.tex	/^\\section{Fields}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
-Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Finding solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
+Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Finding solutions}$/;"	u	section:Systems of linear equations
 Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
@@ -89,11 +89,11 @@ Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relat
 Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots of complex numbers}$/;"	u	section:Introduction""Complex Numbers
 Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:Calculus in 1D
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
-Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
+Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Systems of linear equations
 Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
-Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
-Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
+Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Systems of linear equations
+Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s
 TESTFOLDER	Makefile	/^TESTFOLDER=tests$/;"	m
 The Fourier transform	chapters/fourier/preface.tex	/^\\chapter{The Fourier transform}$/;"	c
 The Unit Circle	chapters/intro/trigonomentry.tex	/^\\subsection{The Unit Circle}$/;"	u	section:Introduction""Trigonometric functions
@@ -219,6 +219,7 @@ cc	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;
 cc	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://web.resource.org/cc/
 cc	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://creativecommons.org/ns#
 chapter:intro	chapters/intro/preface.tex	/^\\chapter{Introduction}\\label{chapter:intro}$/;"	l
 chapter:linear algebra intuitive	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	l
 chapter:linear algebra rigorous	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	l
@@ -334,6 +335,8 @@ clipPath3036	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg x
 clipPath3036	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 clipPath3036	figures/symbols/solve.svg	/^       id="clipPath3036"><path$/;"	d
 clipPath3036	figures/symbols/solve.svg	/^       id="clipPath3036"><path$/;"	i
+clipPath3036	figures/symbols/solve_hand_only.svg	/^       id="clipPath3036"><path$/;"	d
+clipPath3036	figures/symbols/solve_hand_only.svg	/^       id="clipPath3036"><path$/;"	i
 corel-charset	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://product.corel.com/CGS/11/cddns/
 dc	design/chapter.svg	/^   sodipodi:docname="chapter.svg">$/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/chapters/tapir_butterfly.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://purl.org/dc/elements/1.1/
@@ -348,6 +351,7 @@ dc	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;
 dc	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://purl.org/dc/elements/1.1/
 defs1018	figures/chapters/tapir_70s.svg	/^     id="defs1018" \/>$/;"	i
 defs16334	figures/symbols/lightmark.svg	/^     id="defs16334">$/;"	i
 defs2	design/chapter.svg	/^     id="defs2" \/>$/;"	i
@@ -363,6 +367,7 @@ defs2	figures/linear_algebra/tapir_transform2.svg	/^     id="defs2">$/;"	i
 defs2649	figures/ideas/Coloured dot pattern fills.svg	/^     id="defs2649">$/;"	i
 defs3024	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 defs3024	figures/symbols/solve.svg	/^     id="defs3024"><inkscape:path-effect$/;"	i
+defs3024	figures/symbols/solve_hand_only.svg	/^     id="defs3024"><inkscape:path-effect$/;"	i
 defs3360	figures/ideas/tapir4.svg	/^     id="defs3360" \/>$/;"	i
 defs5	figures/ideas/tom_Summer_Leaves.svg	/^     id="defs5">$/;"	i
 defs52747	figures/ideas/comics_tile.svg	/^     id="defs52747">$/;"	i
@@ -775,10 +780,13 @@ g29060	figures/chapters/tapir_warhol.svg	/^       transform="matrix(0.12083561,0
 g29918	figures/chapters/tapir_voronoi.svg	/^       transform="matrix(-0.14296,0,0,0.14296,40.292877,64.861403)" \/>$/;"	i
 g3028	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 g3028	figures/symbols/solve.svg	/^     transform="matrix(1.3333333,0,0,-1.3333333,-80.571069,933.01689)"><g$/;"	i
+g3028	figures/symbols/solve_hand_only.svg	/^     transform="matrix(1.3333333,0,0,-1.3333333,-262.99263,929.29995)"><g$/;"	i
 g3030	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 g3030	figures/symbols/solve.svg	/^       transform="translate(123.73048,175.36489)"><g$/;"	i
+g3030	figures/symbols/solve_hand_only.svg	/^       transform="translate(136.80133,174.8526)"><g$/;"	i
 g3032	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 g3032	figures/symbols/solve.svg	/^         clip-path="url(#clipPath3036)"><g$/;"	i
+g3032	figures/symbols/solve_hand_only.svg	/^         clip-path="url(#clipPath3036)"><g$/;"	i
 g3264	figures/chapters/ftcrics/tapir_ft.svg	/^         id="g3264">$/;"	i
 g3264	figures/chapters/tapir_comics.svg	/^         id="g3264">$/;"	i
 g3264	figures/chapters/tapir_fourier.svg	/^         id="g3264">$/;"	i
@@ -1135,6 +1143,7 @@ g5760-9-8	figures/chapters/tapir_stars.svg	/^         style="fill:#ffffff;fill-o
 g5760-9-9	figures/chapters/tapir_stars.svg	/^         style="fill:#ffffff;fill-opacity:1">$/;"	i
 g5760-9-93	figures/chapters/tapir_stars.svg	/^         style="fill:#ffffff;fill-opacity:1">$/;"	i
 g5905	figures/symbols/solve.svg	/^           id="g5905"><path$/;"	i
+g5905	figures/symbols/solve_hand_only.svg	/^           id="g5905"><path$/;"	i
 g6098	figures/chapters/tapir_strawberry_two.svg	/^       transform="matrix(0.15137037,0,0,0.15137037,93.900061,55.588458)">$/;"	i
 g6140	figures/chapters/tapir_rainbow.svg	/^       style="mix-blend-mode:normal;fill:#eae6f8;fill-opacity:1;stroke:none;stroke-width:2.64583/;"	i
 g6228	figures/chapters/tapir_rainbow.svg	/^       id="g6228">$/;"	d
@@ -1454,6 +1463,7 @@ inkscape	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns
 inkscape	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 layer1	design/chapter.svg	/^     id="layer1">$/;"	i
 layer1	figures/chapters/ftcrics/tapir.svg	/^     transform="translate(-56.908255,-52.23855)">$/;"	i
 layer1	figures/chapters/tapir_70s.svg	/^     transform="translate(-44.468839,-129.1333)">$/;"	i
@@ -1533,6 +1543,7 @@ linearGradient8599	figures/chapters/tapir_butterfly.svg	/^       y2="-126.72735"
 metadata2652	figures/ideas/Coloured dot pattern fills.svg	/^     id="metadata2652">$/;"	i
 metadata3026	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 metadata3026	figures/symbols/solve.svg	/^     id="metadata3026"><rdf:RDF><cc:Work$/;"	i
+metadata3026	figures/symbols/solve_hand_only.svg	/^     id="metadata3026"><rdf:RDF><cc:Work$/;"	i
 metadata3362	figures/ideas/tapir4.svg	/^     id="metadata3362">$/;"	i
 metadata5	design/chapter.svg	/^     id="metadata5">$/;"	i
 metadata5	figures/chapters/tapir_butterfly.svg	/^     id="metadata5">$/;"	i
@@ -1546,6 +1557,7 @@ namedview1024	figures/chapters/tapir_fourier.svg	/^     inkscape:snap-global="fa
 namedview16339	figures/symbols/lightmark.svg	/^     inkscape:current-layer="layer1">$/;"	i
 namedview3022	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 namedview3022	figures/symbols/solve.svg	/^     inkscape:deskcolor="#d1d1d1" \/><g$/;"	i
+namedview3022	figures/symbols/solve_hand_only.svg	/^     inkscape:deskcolor="#d1d1d1" \/><g$/;"	i
 namedview3358	figures/ideas/tapir4.svg	/^     inkscape:current-layer="svg3356" \/>$/;"	i
 namedview52752	figures/ideas/comics_tile.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview7	figures/chapters/tapir_comics.svg	/^     fit-margin-bottom="0" \/>$/;"	i
@@ -1575,6 +1587,7 @@ ns5d834a8f0101	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/
 ns5d9563100101	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	uri:http://www.w3.org/2000/svg
 ns652e32a70101	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 ns888f6eb90101	figures/linear_algebra/tapir_transform.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
+ns8b6ff2030101	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
 ns9a9fc74b0101	figures/linear_algebra/tapir_transform2.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsa112770d0101	figures/chapters/ftcrics/tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsa3d6851c0101	figures/chapters/tapir_warhol.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
@@ -1664,6 +1677,8 @@ path-effect2417	figures/linear_algebra/tapir_transform2.svg	/^       simplify_ju
 path-effect2417	figures/linear_algebra/tapir_transform2.svg	/^       simplify_just_coalesce="false" \/>$/;"	i
 path-effect602	figures/symbols/solve.svg	/^       simplify_just_coalesce="false" \/><clipPath$/;"	d
 path-effect602	figures/symbols/solve.svg	/^       simplify_just_coalesce="false" \/><clipPath$/;"	i
+path-effect602	figures/symbols/solve_hand_only.svg	/^       simplify_just_coalesce="false" \/><clipPath$/;"	d
+path-effect602	figures/symbols/solve_hand_only.svg	/^       simplify_just_coalesce="false" \/><clipPath$/;"	i
 path-effect6177	figures/chapters/ftcrics/tapir_ft.svg	/^       applied="false" \/>$/;"	d
 path-effect6177	figures/chapters/ftcrics/tapir_ft.svg	/^       applied="false" \/>$/;"	i
 path-effect6177	figures/chapters/tapir_comics.svg	/^       applied="false" \/>$/;"	d
@@ -1848,10 +1863,13 @@ path13443	figures/chapters/tapir_fourier.svg	/^       inkscape:label="pupil" \/>
 path13443	figures/linear_algebra/tapir_transform.svg	/^               inkscape:label="pupil" \/>$/;"	i
 path13443	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="pupil" \/>$/;"	i
 path1349	figures/symbols/solve.svg	/^             id="path1349" \/><path$/;"	i
+path1349	figures/symbols/solve_hand_only.svg	/^             id="path1349" \/><path$/;"	i
 path13494	figures/chapters/tapir_stars.svg	/^           inkscape:transform-center-y="0.0301849" \/>$/;"	i
 path135	figures/chapters/tapir_dissolve.svg	/^           id="path135" \/>$/;"	i
 path1351	figures/symbols/solve.svg	/^             sodipodi:nodetypes="cccccc" \/><path$/;"	i
+path1351	figures/symbols/solve_hand_only.svg	/^             sodipodi:nodetypes="cccccc" \/><path$/;"	i
 path1353	figures/symbols/solve.svg	/^             id="path1353" \/><path$/;"	i
+path1353	figures/symbols/solve_hand_only.svg	/^             id="path1353" \/><path$/;"	i
 path1382	figures/chapters/tapir_dissolve.svg	/^           id="path1382" \/>$/;"	i
 path1392-6	figures/chapters/tapir_butterfly.svg	/^           id="path1392-6" \/>$/;"	i
 path1392-6	figures/chapters/tapir_dissolve.svg	/^           id="path1392-6" \/>$/;"	i
@@ -2144,7 +2162,9 @@ path27948	figures/chapters/tapir_fourier.svg	/^       inkscape:label="shadow8" \
 path27948	figures/linear_algebra/tapir_transform.svg	/^               inkscape:label="shadow8" \/>$/;"	i
 path27948	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="shadow8" \/>$/;"	i
 path2807	figures/symbols/solve.svg	/^             id="path2807" \/><path$/;"	i
+path2807	figures/symbols/solve_hand_only.svg	/^             id="path2807" \/><path$/;"	i
 path2809	figures/symbols/solve.svg	/^             id="path2809" \/><path$/;"	i
+path2809	figures/symbols/solve_hand_only.svg	/^             id="path2809" \/><path$/;"	i
 path2834	figures/chapters/tapir_dissolve.svg	/^           id="path2834" \/>$/;"	i
 path28925	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="shadow7" \/>$/;"	i
 path28925	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow7" \/>$/;"	i
@@ -2166,8 +2186,10 @@ path2986	figures/linear_algebra/tapir_transform.svg	/^           id="path2986" \
 path2986	figures/linear_algebra/tapir_transform2.svg	/^           id="path2986" \/>$/;"	i
 path3034	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 path3034	figures/symbols/solve.svg	/^         inkscape:connector-curvature="0" \/><\/clipPath><\/defs><sodipodi:namedview$/;"	i
+path3034	figures/symbols/solve_hand_only.svg	/^         inkscape:connector-curvature="0" \/><\/clipPath><\/defs><sodipodi:namedview$/;"	i
 path3038	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 path3038	figures/symbols/solve.svg	/^             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc/;"	i
+path3038	figures/symbols/solve_hand_only.svg	/^             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc/;"	i
 path3104	figures/chapters/tapir_dissolve.svg	/^           id="path3104" \/>$/;"	i
 path31321	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="eye_skin_top" \/>$/;"	i
 path31321	figures/chapters/tapir_comics.svg	/^         inkscape:label="eye_skin_top" \/>$/;"	i
@@ -2211,10 +2233,12 @@ path36078	figures/linear_algebra/tapir_transform.svg	/^               inkscape:l
 path36078	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="shadow1" \/>$/;"	i
 path3647	figures/chapters/tapir_dissolve.svg	/^           id="path3647" \/>$/;"	i
 path3650	figures/symbols/solve.svg	/^             ry="9.7166033" \/><\/g><\/g><\/g><\/g><\/svg>$/;"	i
+path3650	figures/symbols/solve_hand_only.svg	/^             ry="9.7166033" \/><\/g><\/g><\/g><\/g><\/svg>$/;"	i
 path3738	figures/chapters/tapir_rainbow.svg	/^           id="path3738" \/>$/;"	i
 path3738	figures/linear_algebra/tapir_transform.svg	/^           id="path3738" \/>$/;"	i
 path3738	figures/linear_algebra/tapir_transform2.svg	/^           id="path3738" \/>$/;"	i
 path3839	figures/symbols/solve.svg	/^             id="path3839" \/><path$/;"	i
+path3839	figures/symbols/solve_hand_only.svg	/^             id="path3839" \/><path$/;"	i
 path38723	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="shadow6" \/>$/;"	i
 path38723	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow6" \/>$/;"	i
 path38723	figures/chapters/tapir_fourier.svg	/^       inkscape:label="shadow6" \/>$/;"	i
@@ -2241,8 +2265,10 @@ path40105	figures/chapters/tapir_comics.svg	/^         inkscape:label="highlight
 path40105	figures/chapters/tapir_fourier.svg	/^       inkscape:label="highlight1" \/>$/;"	i
 path407	figures/chapters/tapir_dissolve.svg	/^           id="path407" \/>$/;"	i
 path4095	figures/symbols/solve.svg	/^             id="path4095" \/><path$/;"	i
+path4095	figures/symbols/solve_hand_only.svg	/^             id="path4095" \/><path$/;"	i
 path4136	figures/chapters/tapir_dissolve.svg	/^           id="path4136" \/>$/;"	i
 path4145	figures/symbols/solve.svg	/^             id="path4145" \/><path$/;"	i
+path4145	figures/symbols/solve_hand_only.svg	/^             id="path4145" \/><path$/;"	i
 path41476	figures/chapters/tapir_warhol.svg	/^           style="fill:#5f5e65;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap/;"	i
 path41478	figures/chapters/tapir_warhol.svg	/^           style="fill:#666666;stroke-width:0.264583" \/>$/;"	i
 path41480	figures/chapters/tapir_warhol.svg	/^           style="fill:#3b4148;fill-opacity:1;stroke-width:0.264583" \/>$/;"	i
@@ -2495,6 +2521,7 @@ path5040	figures/chapters/tapir_dissolve.svg	/^           id="path5040" \/>$/;"	
 path506	figures/chapters/tapir_dissolve.svg	/^           id="path506" \/>$/;"	i
 path5071	figures/chapters/tapir_dissolve.svg	/^           id="path5071" \/>$/;"	i
 path5080	figures/symbols/solve.svg	/^             id="path5080" \/><path$/;"	i
+path5080	figures/symbols/solve_hand_only.svg	/^             id="path5080" \/><path$/;"	i
 path5083	figures/chapters/tapir_comics.svg	/^             id="path5083" \/>$/;"	i
 path5085	figures/chapters/tapir_comics.svg	/^             id="path5085" \/>$/;"	i
 path5087	figures/chapters/tapir_comics.svg	/^             id="path5087" \/>$/;"	i
@@ -2506,6 +2533,7 @@ path5097	figures/chapters/tapir_rainbow.svg	/^           id="path5097" \/>$/;"	i
 path5097	figures/linear_algebra/tapir_transform.svg	/^           id="path5097" \/>$/;"	i
 path5097	figures/linear_algebra/tapir_transform2.svg	/^           id="path5097" \/>$/;"	i
 path5113	figures/symbols/solve.svg	/^             sodipodi:nodetypes="cccccccc" \/><path$/;"	i
+path5113	figures/symbols/solve_hand_only.svg	/^             sodipodi:nodetypes="cccccccc" \/><path$/;"	i
 path5116	figures/chapters/tapir_comics.svg	/^             id="path5116" \/>$/;"	i
 path5118	figures/chapters/tapir_comics.svg	/^             id="path5118" \/>$/;"	i
 path5120	figures/chapters/tapir_comics.svg	/^             id="path5120" \/>$/;"	i
@@ -3249,6 +3277,7 @@ path6509	figures/chapters/tapir_dissolve.svg	/^           id="path6509" \/>$/;"	
 path65146	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscscccscccssssssssssssssssssssssssssscssssssssscssssssssssssssc/;"	i
 path6549	figures/chapters/tapir_dissolve.svg	/^           id="path6549" \/>$/;"	i
 path667	figures/symbols/solve.svg	/^             sodipodi:nodetypes="cccccccccccccccccccccccccccccscsccccccc" \/><path$/;"	i
+path667	figures/symbols/solve_hand_only.svg	/^             sodipodi:nodetypes="cccccccccccccccccccccccccccccscsccccccc" \/><path$/;"	i
 path6706	figures/chapters/tapir_dissolve.svg	/^           id="path6706" \/>$/;"	i
 path6708	figures/chapters/tapir_dissolve.svg	/^           id="path6708" \/>$/;"	i
 path6812	figures/chapters/tapir_rainbow.svg	/^         id="path6812" \/>$/;"	i
@@ -4245,6 +4274,7 @@ rdf	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/
 rdf	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rect1173	figures/chapters/ftcrics/tapir.svg	/^         id="rect1173" \/>$/;"	i
 rect21539	figures/chapters/tapir_warhol.svg	/^         y="337.68039" \/>$/;"	i
 rect2383	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="bg" \/>$/;"	i
@@ -4534,6 +4564,7 @@ sodipodi	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns
 sodipodi	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 stop1084	figures/chapters/tapir_butterfly.svg	/^         style="stop-color:#ff0000;stop-opacity:1;" \/>$/;"	i
 stop1084	figures/chapters/tapir_dissolve.svg	/^         style="stop-color:#ff0000;stop-opacity:1;" \/>$/;"	i
 stop1084	figures/chapters/tapir_warhol.svg	/^         style="stop-color:#ff0000;stop-opacity:1;" \/>$/;"	i
@@ -4641,6 +4672,7 @@ svg	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$
 svg	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
 svg1021	figures/chapters/tapir_70s.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg1022	figures/chapters/ftcrics/tapir_ft.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg1022	figures/chapters/tapir_fourier.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
@@ -4649,6 +4681,7 @@ svg2	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$
 svg2655	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	i
 svg3020	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 svg3020	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	i
+svg3020	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	i
 svg3356	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	i
 svg4156	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	i
 svg5	figures/chapters/tapir_comics.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
