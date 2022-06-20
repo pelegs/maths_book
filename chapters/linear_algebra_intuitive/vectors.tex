@@ -202,6 +202,7 @@ Vectors can be decomposed to their components, the number of which depends on th
 			\draw (0.1,\uy) -- (0.1,{\uy+0.1}) -- (0,{\uy+0.1});
 			\draw[vector, xred] (0,0) -- (\ux,\uy) node[above] {$\vec{u}=\colvec{u_{x};u_{y}}$};
 			\draw[fill] (0,0) circle[radius=2pt];
+			\addplot[only marks, mark=*] coordinates {(0,0)};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Placing a 2-dimensional vector $\vu$ on the 2-dimensional Cartesian coordinate system, showing its $x$- and $y$-components.}
@@ -829,6 +830,7 @@ Therefore, in the basis set $B$, the coordinates of $\vw$ are $\left(2,\frac{1}{
 				\draw[vector, xpurple] (0,0) -- (2,3) node[pos=1.1] {$\vec{w}$};
 				\draw[vector, xred] (0,0) -- (2,1) node[pos=1.1] {$\vec{v}$};
 				\draw[vector, xblue] (0,0) -- (-4,2) node[above right] {$\vec{u}$};
+				\addplot[only marks, mark=*] coordinates {(0,0)};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure}
@@ -848,6 +850,7 @@ Therefore, in the basis set $B$, the coordinates of $\vw$ are $\left(2,\frac{1}{
 				\draw[vector, xred] (0,0) -- (2,1);
 				\draw[vector, xred] (2,1) -- (4,2);
 				\draw[vector, xblue] (4,2) -- (2,3);
+				\addplot[only marks, mark=*] coordinates {(0,0)};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure}
@@ -1141,6 +1144,44 @@ the scalar product $\vec{u}\cdot\vec{v}$ is
 	\]
 	exactly the result we got in \autoref{example:scalar product two vectors}.
 \end{example}
+
+For any given a $2$-dimensional vector $\vec{v}=\colvec{x;y}$ there is only a single orthogonal direction (\autoref{fig:R2_ortho}). We can use \autoref{eq:scalar product in column form} to find a general formula for a vector $\vec{v^{\perp}}$ representing this direction:
+\[
+	0 = \vec{v}\cdot\vec{v}^{\perp} = \colvec{x;y}\cdot\colvec{a;b} = xa + yb.
+\]
+
+The solution for the above equation is the vector
+\begin{equation}
+	\vec{v}^{\perp} = \colvec{-y;x}.
+	\label{eq:ortho_vec_R2}
+\end{equation}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=7cm, height=7cm,
+			xticklabels={,},
+			yticklabels={,},
+			xmin=-2, xmax=2,
+			ymin=-2, ymax=2,
+			]
+			\pgfmathsetmacro{\vx}{1}
+			\pgfmathsetmacro{\vy}{1.5}
+			\pgfmathsetmacro{\nv}{sqrt(\vx^2+\vy^2)}
+			\tikzset{every node/.style={font=\Large}}
+			\draw[vector, xred] (0,0) -- (\vx,\vy) node [pos=1.1] {$\vec{v}$};
+			\addplot[thin, black!75, dashed] {-\vx/\vy*\x};
+			\draw[vector, xpurple] (0,0) -- (-\vy/\nv,\vx/\nv) node [above, yshift=5pt] {$\vec{v}_{\perp}$};
+			\draw[vector, xorange] (0,0) -- (\vy/\nv,-\vx/\nv) node [below, yshift=-5pt] {$-\vec{v}_{\perp}$};
+			\addplot[only marks, mark=*] coordinates {(0,0)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{A vector $\textcolor{xred}{\vec{v}}$ and its orthogonal direction, signified by a dashed line. Two vectors $\textcolor{xpurple}{\vec{v}^{\perp}}$ and $\textcolor{xorange}{\vec{v}^{\perp}}$ are drawn on the orthogonal direction.}
+	\label{fig:R2_ortho}
+\end{figure}
+
 The norm of a vector can be calculated using the scalar product: given a vector $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$,
 \begin{equation}
 	\vec{v}\cdot\vec{v} = v_{1}v_{1} + v_{2}v_{2} + \cdots + v_{n}v_{n} = v_{1}^{2} + v_{2}^{2} + \cdots + v_{n}^{2} = \norm{v}^{2}.
@@ -1206,6 +1247,7 @@ We start with the definition of the cross product in $\Rs{2}$: the cross product
 			\draw[vector, xred, dashed] (2,0.5) -- (3,3);
 			\draw[vector, xblue, dashed] (1,2.5,0) -- (3,3);
 			\node[xpurple] at (1.5,1.75) {$\vec{u}\times\vec{v}$};
+			\addplot[only marks, mark=*] coordinates {(0,0)};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{The cross product in $\Rs{2}$  of two vectors $\vu=\vutd$ and $\vv=\vvtd$ as the signed area of the parallogram defined by the vectors.}
