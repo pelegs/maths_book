@@ -1,12 +1,13 @@
 \section{Exercises}
+\subsection{Problems}
 \begin{enumerate}
   \item Write the following sets explicitly:
     \begin{enumerate}[label=(\roman*)]
       \item $\left\{ x\in \mathbb{N}\mid1<x\leq7\right\}$
       \item $\left\{ x\in \mathbb{Z}\mid x<5\right\}$
       \item $\left\{ x\in \mathbb{R}\mid x^{2}=-1 \right\}$
-      \item $\left\{ x\in \mathbb{N} \wedge x\in \mathbb{Q} \right\}$
-      \item $\left\{ x\in \mathbb{R} \mid x^{2}-3x-4=0 \right\}$
+      \item $\left\{ x\in \mathbb{N}\wedge x\in \mathbb{Q} \right\}$
+      \item $\left\{ x\in \mathbb{R}\mid x^{2}-3x-4=0 \right\}$
       \item $\left\{ x\in\mathbb{R}\mid x<5\wedge x \geq 2\right\}$
     \end{enumerate}
   
@@ -29,4 +30,42 @@
 
 	\item Given two sets $A,B$ such that $|B|=|A|-1$, can a bijective function $f:A\to B$ exist? Explain your answer.
 	\item MORE EXERCISES TO BE WRITTEN\ldots
+\end{enumerate}
+
+\subsection{Solutions}
+\begin{enumerate}
+	\item For each of the sets we first write how to read the notation in words, followed by its explicit form:
+		\begin{enumerate}[label={(\roman*)}]
+		\item Any \textbf{natural number} such that it is bigger than $1$ and smaller or equal to $7$. These are of course the numbers
+			\[
+				\left\{2,3,4,5,6,7\right\}.
+			\]
+		
+		\item Any \textbf{integer} such that it is smaller than $5$. These are the numbers
+			\[
+				\left\{4,3,2,1,0,-1,-2,-3,\dots\right\}.
+			\]
+		
+		\item Any \textbf{real number} $x$ such that $x^{2}=-1$. Since for any $x\in\mathbb{R},\ x^{2}\geq0$ - there is no such real number $x$ whose square equals $-1$. Therefore this definition describes the empty set, i.e. $\emptyset$.
+		
+		\item Any \textbf{natural number} that is also a \text{rational number}. Since any natural number is also a rational number (e.g. $4=\frac{4}{1}=\frac{8}{2}$, etc.) the definition actually simply describes the set of natural numbers, $\mathbb{N}$. This fact can also be written as
+			\[
+				\mathbb{N} \cap \mathbb{Q} = \mathbb{N}.
+			\]
+		
+		\item Any \textbf{real number} such that it solves the equation $x^{2}-3x-4=0$. The solutions can be found using the quadratic formula:
+			\[
+				\frac{3\pm\sqrt{3^{2}+4\cdot4}}{2} = \frac{3\pm\sqrt{9+16}}{2} = \frac{3\pm5}{2} = 4,-1.
+			\]
+			Therefore the set described by the definition is simply
+			\[
+				\left\{4,-1\right\}.
+			\]
+		
+		\item Any \textbf{real number} that is smaller than $5$ \textbf{and} is bigger than or equal to $2$. This definition describes the half-open interval
+			\[
+				[2,5).
+			\]
+	\end{enumerate}
+\item Bla
 \end{enumerate}
