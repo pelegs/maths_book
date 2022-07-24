@@ -36,36 +36,81 @@
 \begin{enumerate}
 	\item For each of the sets we first write how to read the notation in words, followed by its explicit form:
 		\begin{enumerate}[label={(\roman*)}]
-		\item Any \textbf{natural number} such that it is bigger than $1$ and smaller or equal to $7$. These are of course the numbers
-			\[
-				\left\{2,3,4,5,6,7\right\}.
-			\]
-		
-		\item Any \textbf{integer} such that it is smaller than $5$. These are the numbers
-			\[
-				\left\{4,3,2,1,0,-1,-2,-3,\dots\right\}.
-			\]
-		
-		\item Any \textbf{real number} $x$ such that $x^{2}=-1$. Since for any $x\in\mathbb{R},\ x^{2}\geq0$ - there is no such real number $x$ whose square equals $-1$. Therefore this definition describes the empty set, i.e. $\emptyset$.
-		
-		\item Any \textbf{natural number} that is also a \text{rational number}. Since any natural number is also a rational number (e.g. $4=\frac{4}{1}=\frac{8}{2}$, etc.) the definition actually simply describes the set of natural numbers, $\mathbb{N}$. This fact can also be written as
-			\[
-				\mathbb{N} \cap \mathbb{Q} = \mathbb{N}.
-			\]
-		
-		\item Any \textbf{real number} such that it solves the equation $x^{2}-3x-4=0$. The solutions can be found using the quadratic formula:
-			\[
-				\frac{3\pm\sqrt{3^{2}+4\cdot4}}{2} = \frac{3\pm\sqrt{9+16}}{2} = \frac{3\pm5}{2} = 4,-1.
-			\]
-			Therefore the set described by the definition is simply
-			\[
-				\left\{4,-1\right\}.
-			\]
-		
-		\item Any \textbf{real number} that is smaller than $5$ \textbf{and} is bigger than or equal to $2$. This definition describes the half-open interval
-			\[
-				[2,5).
-			\]
-	\end{enumerate}
-\item Bla
+			\item Any \textbf{natural number} such that it is bigger than $1$ and smaller or equal to $7$. These are of course the numbers
+				\[
+					\left\{2,3,4,5,6,7\right\}.
+				\]
+
+			\item Any \textbf{integer} such that it is smaller than $5$. These are the numbers
+				\[
+					\left\{4,3,2,1,0,-1,-2,-3,\dots\right\}.
+				\]
+
+			\item Any \textbf{real number} $x$ such that $x^{2}=-1$. Since for any $x\in\mathbb{R},\ x^{2}\geq0$ - there is no such real number $x$ whose square equals $-1$. Therefore this definition describes the empty set, i.e. $\emptyset$.
+
+			\item Any \textbf{natural number} that is also a \text{rational number}. Since any natural number is also a rational number (e.g. $4=\frac{4}{1}=\frac{8}{2}$, etc.) the definition actually simply describes the set of natural numbers, $\mathbb{N}$. This fact can also be written as
+				\[
+					\mathbb{N} \cap \mathbb{Q} = \mathbb{N}.
+				\]
+
+			\item Any \textbf{real number} such that it solves the equation $x^{2}-3x-4=0$. The solutions can be found using the quadratic formula:
+				\[
+					\frac{3\pm\sqrt{3^{2}+4\cdot4}}{2} = \frac{3\pm\sqrt{9+16}}{2} = \frac{3\pm5}{2} = 4,-1.
+				\]
+				Therefore the set described by the definition is simply
+				\[
+					\left\{4,-1\right\}.
+				\]
+
+			\item Any \textbf{real number} that is smaller than $5$ \textbf{and} is bigger than or equal to $2$. This definition describes the half-open interval
+				\[
+					[2,5).
+				\]
+		\end{enumerate}
+
+	\item Relations between sets:
+		\begin{enumerate}[label={(\roman*)}]
+			\item All the elements in the set $B$ are also in the set $A$ ($1,2$), but there's an element in $A$ which is not in $B$ (namely $3$). Therefore, $B$ is a subset of $A$:
+				\[
+					B\subset A.
+				\]
+
+			\item The empty set is a subset of any set (and a proper subset of any set except itself), therefore
+				\[
+					A\subset B.
+				\]
+
+			\item The set $B$ is defined as all the natural numbers, their negatives and zero. This is exactly the definition of the integers $\mathbb{Z}$, which set $A$ in this case. Therefore
+				\[
+					A=B.
+				\]
+
+			\item All of the elements in $A$ are irrational numbers. The set $B$ is the set of \textbf{rational numbers}, and therefore the sets are disjoined:
+				\[
+					A\cap B = \emptyset.
+				\]
+		\end{enumerate}
+
+	\item $S^{2}$ is a Cartesian product of $S$ with itself:
+		\[
+			S^{2} = \left\{ (\alpha,\alpha), (\alpha,\beta), (\alpha,\gamma), (\beta,\alpha), (\beta,\beta), (\beta,\gamma), (\gamma,\alpha), (\gamma,\beta), (\gamma,\gamma) \right\}.
+		\]
+		Therefore, to form the Cartesian product $S^{2}\times W$ we simply take each of the elements is $S^{2}$ and add to it an element from $W$:
+		\begin{align*}
+			S^{2}\times W =
+			\left\{(\alpha,\alpha,x), (\alpha,\beta,x), (\alpha,\gamma,x), (\beta,\alpha,x), (\beta,\beta,x), (\beta,\gamma,x), (\gamma,\alpha,x), (\gamma,\beta,x), (\gamma,\gamma,x)\right.\\
+			\left.(\alpha,\alpha,y), (\alpha,\beta,y), (\alpha,\gamma,y), (\beta,\alpha,y), (\beta,\beta,y), (\beta,\gamma,y), (\gamma,\alpha,y), (\gamma,\beta,y), (\gamma,\gamma,y)\right.\\
+			\left.(\alpha,\alpha,z), (\alpha,\beta,z), (\alpha,\gamma,z), (\beta,\alpha,z), (\beta,\beta,z), (\beta,\gamma,z), (\gamma,\alpha,z), (\gamma,\beta,z), (\gamma,\gamma,z)\right\}.
+		\end{align*}
+
+		Note that the number of elements in $S$ is $3$, and so the number of elements in $S^{2}$ is $3\times3=9$. The number of elements in $W$ is also $3$, and so the number of elements in $S^{2}\times W$ is $9\times3=27$.
+
+		The Cartesian product $W\times S^{2}$ has the same structure as $S^{2}\times W$, except that the elements from $W$ ($x,y,z$) are now on the left (remember that in tuples the order matters):
+		\begin{align*}
+			S^{2}\times W =
+			\left\{(x,\alpha,\alpha), (x,\alpha,\beta), (x,\alpha,\gamma), (x,\beta,\alpha), (x,\beta,\beta), (x,\beta,\gamma), (x,\gamma,\alpha), (x,\gamma,\beta), (x,\gamma,\gamma)\right.\\
+			\left.(y,\alpha,\alpha), (y,\alpha,\beta), (y,\alpha,\gamma), (y,\beta,\alpha), (y,\beta,\beta), (y,\beta,\gamma), (y,\gamma,\alpha), (y,\gamma,\beta), (y,\gamma,\gamma)\right.\\
+			\left.(z,\alpha,\alpha), (z,\alpha,\beta), (z,\alpha,\gamma), (z,\beta,\alpha), (z,\beta,\beta), (z,\beta,\gamma), (z,\gamma,\alpha), (z,\gamma,\beta), (z,\gamma,\gamma)\right\}.
+		\end{align*}
+
 \end{enumerate}
