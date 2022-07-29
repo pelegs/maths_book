@@ -21,14 +21,58 @@
 
 	\item Write all elements in $S^{2}\times W$, where $S=\{\alpha,\beta,\gamma\}$ and $W=\{x,y,z\}$. Find a condition that guarantees $S^{2}\times W = W\times S^{2}$.
 
-	\item How many different injective functions $f:\{1,2\}\to\{1,2\}$ exist? How many injective functions $f:\{1,2,3\}\to\{1,2,3\}$ exist? How many inject functions $f:\{1,2,\dots,n\}\to\{1,2,\dots,n\}$ exist for a given $n\in\mathbb{N}$?
+	\item How many different \textbf{bijective} functions exist between a set with $2$ elements and another set with $2$ elements (e.g. $f:\{1,2\}\to\{\alpha,\beta\}$)? How many exist between two sets, each with $3$ elements? Between two sets each with $n$ elements?
 
 	\item For each of the real functions below, find a set on which it is surjective (use a graphing calculator if you are not familiar with the shape of a function):
 		\[
 			x^{2},\ x^{3}-5,\ \eu^{-x^{2}/2},\ \sin(x),\ \sin(x)+\cos(x),\ x\eu^{x}.
 		\]
 
-	\item Given two sets $A,B$ such that $|B|=|A|-1$, can a bijective function $f:A\to B$ exist? Explain your answer.
+	\item Given two sets $A,B$ such that $|A|\neq|B|$, can a bijective function $f:A\to B$ exist? Explain your answer.
+
+	\item Find all real roots of the following polynomial function:
+		\[
+			f(x) = x^{3} + x^{2} - 6x.
+		\]
+
+	\item Given a real $b>0$ and $k$, prove that for any real $x>0$
+		\[
+			\log_{b} \left( x^{k} \right) = k\log_{b} \left( x \right).
+		\]
+
+	\item Show that for any positive real $x,b$
+		\[
+			\log_{b} \left( \frac{1}{x} \right) = -\log_{b}(x).
+		\]
+
+	\item Solve the following equation for any real $x>0$: (CHECK SOLUTION! MIGHT BE WRONG)
+		\[
+			\log_{2}(x) + \log_{4}(x-1) = \log_{16}\left(x^{3}\right).
+		\]
+
+	\item The horizon on a spherical planet such as the earth\footnote{It is.} is defined as the distance from an observer to the point where the ground disappears behind the planet's curve. Following is a 2-dimensional depiction, where $\textcolor{xblue}{\bm{o}}$ is the observer, $\bm{h}$ its height above the planet surface, $\textcolor{xblue}{\bm{x}}$ the horizon point and $\textcolor{xred}{\bm{d}}$ the air-distance from the observer to the horizon and $\textcolor{xgreen}{\bm{D}}$ the ground-distance from the observer to the horizon:
+
+		\begin{center}
+			\begin{tikzpicture}
+				\pgfmathsetmacro{\R}{2}
+				\pgfmathsetmacro{\h}{0.6}
+				\pgfmathsetmacro{\th}{asin(sqrt(2*\R*\h+\h^2)/(\R+\h))}
+				\pgfmathsetmacro{\ph}{90-\th}
+				\coordinate (O) at (0,0);
+				\coordinate (obs) at (0,{\R+\h});
+				\coordinate (top) at (0,\R);
+				\coordinate (horiz) at ({\R*cos(\ph)},{\R*sin(\ph)});
+				\draw[very thick, fill=xblue!20] (O) circle (\R);
+				\draw[ultra thick] (top) -- (obs) node [midway, left] {$h$};
+				\draw[ultra thick, xred] (obs) -- (horiz) node [midway, above right] {$d$};
+				\draw[ultra thick, xgreen] (horiz) arc (\ph:90:\R) node [midway, below, xshift=-1mm] {$D$};
+				\fill[xblue] (obs) circle (0.07) node [above] {$o$};
+				\fill[xblue] (horiz) circle (0.07) node [above right] {$x$};
+			\end{tikzpicture}
+		\end{center}
+
+		Find an expression for the air-distance $d$ and ground-distance $D$ to the horizon as a function of the planet's radius $R$ and the observer's height $h$. Given that the Earth's radius is about $6371\si{km}$ and an average person is $1.75\si{m}$ tall - what is the distance to the horizon for a person standing at sea-level (both air- and ground-distances)?
+
 	\item MORE EXERCISES TO BE WRITTEN\ldots
 \end{enumerate}
 
@@ -105,7 +149,7 @@
 
 		Note that the number of elements in $S$ is $3$, and so the number of elements in $S^{2}$ is $3\times3=9$. The number of elements in $W$ is also $3$, and so the number of elements in $S^{2}\times W$ is $9\times3=27$.
 
-		The Cartesian product $W\times S^{2}$ has the same structure as $S^{2}\times W$, except that the elements from $W$ ($x,y,z$) are now on the left (remember that in tuples the order matters):
+		The Cartesian product $W\times S^{2}$ has the same structure as $S^{2}\times W$, except that the elements from $W$ are now on the left (remember that the order of elements is important in tuples, unlike with sets):
 		\begin{align*}
 			S^{2}\times W =
 			\left\{(x,\alpha,\alpha), (x,\alpha,\beta), (x,\alpha,\gamma), (x,\beta,\alpha), (x,\beta,\beta), (x,\beta,\gamma), (x,\gamma,\alpha), (x,\gamma,\beta), (x,\gamma,\gamma)\right.\\
@@ -113,4 +157,149 @@
 			\left.(z,\alpha,\alpha), (z,\alpha,\beta), (z,\alpha,\gamma), (z,\beta,\alpha), (z,\beta,\beta), (z,\beta,\gamma), (z,\gamma,\alpha), (z,\gamma,\beta), (z,\gamma,\gamma)\right\}.
 		\end{align*}
 
+		One way of ensuring that $S^{2}\times W = W\times S^{2}$ is by making all tuples equal, i.e. if
+		\[
+			\alpha=\beta=\gamma=x=y=z,
+		\]
+		then
+		\[
+			S^{2}\times W = \left\{ (\alpha,\alpha,\alpha) \right\} = W\times S^{2}.
+		\]
+
+	\item We start by counting the number of possible bijective functions $f_{2}:\{1,2\}\to\{\alpha,\beta\}$. For each element in the domain of $f_{2}$ there are two options to connect to an element in the function's image: either $1$ or $2$. So we can have
+		\begin{align*}
+			1&\mapsto\alpha,\ \text{or}\\
+			1&\mapsto\beta.
+		\end{align*}
+		(recall that the symbol $x\mapsto y$ means that the element $x$ is mapped by the function to the element $y$)
+
+		For each of the above options, there is only a single option left for the element $2$:
+		\begin{align*}
+			2&\mapsto\beta  \ \text{if}\ 1\mapsto\alpha,\\
+			2&\mapsto\alpha \ \text{if}\ 2\mapsto\beta.
+		\end{align*}
+
+		Therefore, we have two possible choices for mapping $1$, each of which dictates the choice for mapping $2$. Altogether there are two such bijective functions:
+
+		\vspace{2em}
+		\begin{center}
+		\begin{tikzpicture}
+			\Large
+			
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.25cm and 1cm);
+			\node (1) at (0,0.5cm) {$1$};
+			\node (2) at (0,-0.5cm) {$2$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (1.5cm,0) ellipse (0.25cm and 1cm);
+			\node (alpha) at (1.5cm,0.5cm) {$\alpha$};
+			\node (beta) at (1.5cm,-0.5cm) {$\beta$};
+
+			\draw[arrow] (1) -- (alpha);
+			\draw[arrow] (2) -- (beta);
+		\end{tikzpicture}
+		\hspace{2cm}
+		\begin{tikzpicture}
+			\Large
+			
+			\draw[thick, xred, fill=xred!20] (0,0) ellipse (0.25cm and 1cm);
+			\node (1) at (0,0.5cm) {$1$};
+			\node (2) at (0,-0.5cm) {$2$};
+			
+			\draw[thick, xgreen, fill=xgreen!20] (1.5cm,0) ellipse (0.25cm and 1cm);
+			\node (alpha) at (1.5cm,0.5cm) {$\alpha$};
+			\node (beta) at (1.5cm,-0.5cm) {$\beta$};
+
+			\draw[arrow] (1) -- (beta);
+			\draw[arrow] (2) -- (alpha);
+		\end{tikzpicture}
+		\end{center}
+
+	We can use the same logic for the case of $3$ elements in each set. Let's define the function as
+	\[
+		f_{3}:\{1,2,3\}\to\{\alpha,\beta,\gamma\}.
+	\]
+
+	We start with all the possibilities for connecting $1$:
+
+	\begin{align*}
+		1&\mapsto\alpha,\ \text{or}\\
+		1&\mapsto\beta,\ \text{or}\\
+		1&\mapsto\gamma.
+	\end{align*}
+
+	For each of the above choices, we have two remaining choices for connecting $2$ (since one element in the image of $f_{3}$ is already decided by our choice for $1$). Then, for the last element $3$ we remain with a single option only, since two elements in the image of $f_{3}$ are already connected to by $1$ and $2$. Altogether we therefore have
+	\[
+		3\times2\times1 = 6
+	\]
+	total bijective functions $f_{3}$.
+
+	You probably already noticed the pattern: for a function
+	\[
+		f_{n}:\{n\ \text{elements}\} \to \{n\ \text{elements}\},
+	\]
+	we have $n$ choices for connecting the first element, then $n-1$ options for connecting the second element, then $n-2$ options for connecting the the third element\ldots and by the last element we have only a single option. Therefore, the number of bijective functions $f_{n}$ is
+	\[
+		n\times(n-1)\times(n-2)\times\dots\times3\times2\times1 = n!
+	\]
+
+	Note that indeed $2!=2$ and $3!=6$, which agrees with the results we got for $f_{2}$ and $f_{3}$, respectively.
+
+	\item solution\ldots
+
+	\item A function is bijective if and only if it is both a injective and surjective. There are two cases for $|A|\neq|B|$:
+		\begin{enumerate}
+			\item $|A|>|B|$, in which case there is at least one element in $A$ which is not connected to any element in $B$: otherwise, there are at least two elements in $A$ that connect to the same element in $B$. In the first case the relation is not a function, and in the second it is not injective and therefore not bijective.
+			\item $|A|<|B|$, in which case there must be at least one element in $B$ that is not connected to by any element from $A$ (by the defintion of a function, there cannot be any element in $A$ that is connected to more than a single element in $B$). Therefore such a function is not surjective and thus not bijective.
+		\end{enumerate}
+
+	\item The polynomial $f(x)$ can be re-written as
+		\[
+			f(x) = x \left( x^{2}+x-6 \right).
+		\]
+		Therefore one of its roots are when $x=0$, and the other when $x^{2}+x-6=0$. Using the quadratic formula we get that $x^{2}+x-6=0$ when
+		\[
+			x_{1,2} = \frac{-1\pm\sqrt{1-4(-6)}}{2} = \frac{-1\pm\sqrt{25}}{2} = \frac{-1\pm5}{2} = 2,-3.
+		\]
+		Thus, altogether the roots of $f$ are $\{-3,0,2\}$.
+
+	\item As with most logarithm-related proofs, we transform the problem into the realm of exponents: let us set $m=\log_{b}(x)$. We then get that $x=b^{m}$. If we raise both by to the $k$-th power, we get
+		\begin{align*}
+			x^{k} &= \left( b^{m} \right)^{k}\\
+				  &= b^{mk}.
+		\end{align*}
+		Taking the logarithm in base $b$ of both sides of the above relation gives
+		\begin{align*}
+			\log_{b} \left( x^{k} \right) &= \log_{b} \left( b^{mk} \right)\\
+										  &= mk\\
+										  &= k\log_{b}(x).
+		\end{align*}
+		The last step results from our original defintion that $m=\log_{b}(x)$.
+
+	\item Using the relation proved in the previous question and setting $k=-1$ we get
+		\[
+			\log_{b} \left( \frac{1}{x} \right) = \log_{b} \left( x^{-1} \right) = -1\cdot\log_{b}(x) = -\log_{b}(x).
+		\]
+
+	\item Using the logarithm base-change rule (\autoref{eq:log_base_change}), we set all logarithms to same base ($b=16$):
+		\begin{align*}
+			\log_{2}(x) &= \log_{16}(x)\cdot\log_{2}(16) = 4\log_{16}(x).\\
+			\log_{4}(x-1) &= \log_{16}(x-1)\cdot\log_{4}(16) = 2\log_{16}(x-1).
+		\end{align*}
+		Therefore, the expression is equivalent to
+		\[
+			4\log_{16}(x) = 2\log_{16}(x-1) + \log_{16}(x^{3}).
+		\]
+		We can now bring the coefficients $4$ and $2$ inside the logarithm expression:
+		\[
+			\log_{16}(x^{4}) = \log_{16}(\left[x-1\right]^{2}) + \log_{16}\left(x^{3}\right).
+		\]
+		Using the logarithmic addition law, we get:
+		\[
+			\log_{16}(x^{4}) = \log_{16}(x^{3}\left[x-1\right]^{3}).
+		\]
+		We can now discard $\log_{16}$ on both sides, and we're left with a simple equation to solve:
+		\[
+			x^{4} = x^{3} \left( x-1 \right)^{2},
+		\]
+		the solutions of which are $x_{1}=0$ and $x_{2,3}=\frac{3\pm\sqrt{5}}{2}$, of which only $x_{2} = \frac{3+\sqrt{5}}{2}$ is valid: $x_{1}$ isn't valid since $x>0$, and $x_{3}$ isn't valid since $x_{3}-1<0$, and thus $\log_{b}\left(x_{3}-1\right)$ isn't defined over the real numbers.
 \end{enumerate}
