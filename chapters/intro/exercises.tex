@@ -50,7 +50,7 @@
 			\log_{2}(x) + \log_{4}(x-1) = \log_{16}\left(x^{3}\right).
 		\]
 
-	\item The horizon on a spherical planet such as the earth\footnote{It is.} is defined as the distance from an observer to the point where the ground disappears behind the planet's curve. Following is a 2-dimensional depiction, where $\textcolor{xblue}{\bm{o}}$ is the observer, $\bm{h}$ its height above the planet surface, $\textcolor{xblue}{\bm{x}}$ the horizon point and $\textcolor{xred}{\bm{d}}$ the air-distance from the observer to the horizon and $\textcolor{xgreen}{\bm{D}}$ the ground-distance from the observer to the horizon:
+	\item The horizon on a spherical planet such as the earth\footnote{It is.} is defined as the distance from an observer to the point where the ground disappears behind the planet's curve. Following is a 2-dimensional depiction, where $\textcolor{xblue}{\bm{O}}$ is the observer, $\bm{h}$ its height above the planet surface, $\textcolor{xblue}{\bm{X}}$ the horizon point and $\textcolor{xred}{\bm{d_{a}}}$ the air-distance from the observer to the horizon and $\textcolor{xgreen}{\bm{d_{g}}}$ the ground-distance from the observer to the horizon:
 
 		\begin{center}
 			\begin{tikzpicture}
@@ -64,14 +64,14 @@
 				\coordinate (horiz) at ({\R*cos(\ph)},{\R*sin(\ph)});
 				\draw[very thick, fill=xblue!20] (O) circle (\R);
 				\draw[ultra thick] (top) -- (obs) node [midway, left] {$h$};
-				\draw[ultra thick, xred] (obs) -- (horiz) node [midway, above right] {$d$};
-				\draw[ultra thick, xgreen] (horiz) arc (\ph:90:\R) node [midway, below, xshift=-1mm] {$D$};
-				\fill[xblue] (obs) circle (0.07) node [above] {$o$};
-				\fill[xblue] (horiz) circle (0.07) node [above right] {$x$};
+				\draw[ultra thick, xred] (obs) -- (horiz) node [midway, above right] {$d_{a}$};
+				\draw[ultra thick, xgreen] (horiz) arc (\ph:90:\R) node [midway, below, xshift=-1mm] {$d_{g}$};
+				\fill[xblue] (obs) circle (0.07) node [above] {$O$};
+				\fill[xblue] (horiz) circle (0.07) node [above right] {$X$};
 			\end{tikzpicture}
 		\end{center}
 
-		Find an expression for the air-distance $d$ and ground-distance $D$ to the horizon as a function of the planet's radius $R$ and the observer's height $h$. Given that the Earth's radius is about $6371\si{km}$ and an average person is $1.75\si{m}$ tall - what is the distance to the horizon for a person standing at sea-level (both air- and ground-distances)?
+		Find an expression for the air-distance $d$ and ground-distance $D$ to the horizon as a function of the radius $R$ and height $h$. Given that the Earth's radius is about $6371\si{km}$ ($6.371\times10^{6}\si{m}$) and an average person is $1.75\si{m}$ tall - what is the distance to the horizon for a person standing at sea-level (both air- and ground-distances)?
 
 	\item MORE EXERCISES TO BE WRITTEN\ldots
 \end{enumerate}
@@ -302,4 +302,71 @@
 			x^{4} = x^{3} \left( x-1 \right)^{2},
 		\]
 		the solutions of which are $x_{1}=0$ and $x_{2,3}=\frac{3\pm\sqrt{5}}{2}$, of which only $x_{2} = \frac{3+\sqrt{5}}{2}$ is valid: $x_{1}$ isn't valid since $x>0$, and $x_{3}$ isn't valid since $x_{3}-1<0$, and thus $\log_{b}\left(x_{3}-1\right)$ isn't defined over the real numbers.
+
+	\item We start with drawing two radial lines from the center of the planet $\bm{C}$: one to the point on the surface where the observer meets the ground, and one to the horizon. The triangle $\triangle COX$ is a right triangle: the angle $\angle CXO=\ang{90}$:
+		
+		\begin{center}
+			\begin{tikzpicture}
+				\pgfmathsetmacro{\R}{2}
+				\pgfmathsetmacro{\h}{0.6}
+				\pgfmathsetmacro{\th}{asin(sqrt(2*\R*\h+\h^2)/(\R+\h))}
+				\pgfmathsetmacro{\ph}{90-\th}
+				\coordinate (O) at (0,0);
+				\coordinate (obs) at (0,{\R+\h});
+				\coordinate (top) at (0,\R);
+				\coordinate (horiz) at ({\R*cos(\ph)},{\R*sin(\ph)});
+				\draw[very thick, fill=xblue!20] (O) circle (\R);
+				\fill[xpurple!40] (O) -- ({\R*0.4*cos(\ph)},{\R*0.4*sin(\ph)}) arc (\ph:90:{0.4*\R}) -- cycle;
+				\draw[opacity=0] ({\R*0.25*cos(\ph)},{\R*0.25*sin(\ph)}) arc (\ph:90:{0.25*\R}) node [midway, opacity=1, xpurple] {$\theta$};
+				\draw[ultra thick] (top) -- (obs) node [midway, left] {$h$};
+				\draw[ultra thick, xred] (obs) -- (horiz) node [midway, above right] {$d_{a}$};
+				\draw[thick, dashed] (O) -- (0,\R) node [midway, left] {$R$};
+				\draw[thick, dashed] (O) -- (horiz) node [midway, below right] {$R$};
+				\fill[xblue] (obs) circle (0.07) node [above] {$O$};
+				\fill[xblue] (horiz) circle (0.07) node [above right] {$X$};
+				\fill[xblue] (O) circle (0.07) node [below left] {$C$};
+			\end{tikzpicture}
+		\end{center}
+
+	Using the Pythagorean theorem (with $R+h$ as the hypotenuse) we can calculate $d_{a}$:
+	\[
+		d_{a}^{2} + R^{2} = \left( R+h \right)^{2}.
+	\]
+	By expanding the right-hand side, cancelling $R^{2}$ and rearranging we get
+	\[
+		d_{a} = \sqrt{2Rh+h^{2}}.
+	\]
+
+	To get $d_{g}$ we need to find the angle $\theta$ between the lines $CX$ and $CO$. For that purpose we can use the law of sines (\autoref{eq:law of sines}):
+	\[
+		\frac{d_{a}}{\sin(\theta)} = \frac{R+h}{\sin(\ang{90})} = R+h.
+	\]
+	(since $\sin(\ang{90})=1$)
+
+	Isolating $\sin(\theta)$ and subtituting the value of $d_{a}$ as function of $R$ and $h$ yields:
+	\[
+		\sin(\theta) = \frac{d_{a}}{R+h} = \frac{\sqrt{2Rh+h^{2}}}{R+h}.
+	\]
+	Therefore
+	\[
+		\theta = \arcsin \left( \frac{\sqrt{2Rh+h^{2}}}{R+h} \right).
+	\]
+
+	When $\theta$ is given in radians, the length $d_{g}$ then simply becomes
+	\[
+		d_{g} = R\theta = R\cdot\arcsin \left( \frac{\sqrt{2Rh+h^{2}}}{R+h} \right).
+	\]
+
+	For an average person on Earth ($h=1.75\si{m},\ R=6.371\times10^{6}\si{m}$), standing at sea level, the air-distance to the horizon is therefore
+	\[
+		d_{a} = \sqrt{2Rh+h^{2}} = \sqrt{2\cdot6.371\times10^{6}\cdot1.75+1.75^{2}} \approx 4722\si{m} = 4.722\si{km}.
+	\]
+	The ground-distance, on the other hand, is
+	\begin{align*}
+		d_{g} &= R\cdot\arcsin \left( \frac{\sqrt{2Rh+h^{2}}}{R+h} \right)\\
+			  &= 6.371\times10^{6}\si{m} \cdot \arcsin \left( \frac{4722\si{m}}{6.371\times10^{6}\si{m}+1.75\si{m}} \right)\\
+			  &\approx 4722\si{m}.
+	\end{align*}
+	
+	It is not a coincidence that in our calculation $d_{a}=d_{g}$\ldots (EXPLAIN AND LINK TO DESMOS?)
 \end{enumerate}
