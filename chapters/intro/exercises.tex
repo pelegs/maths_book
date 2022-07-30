@@ -71,7 +71,11 @@
 			\end{tikzpicture}
 		\end{center}
 
-		Find an expression for the air-distance $d$ and ground-distance $D$ to the horizon as a function of the radius $R$ and height $h$. Given that the Earth's radius is about $6371\si{km}$ ($6.371\times10^{6}\si{m}$) and an average person is $1.75\si{m}$ tall - what is the distance to the horizon for a person standing at sea-level (both air- and ground-distances)?
+		\begin{enumerate}[label=(\roman*)]
+			\item Find an expression for the air-distance $d$ and ground-distance $D$ to the horizon as a function of the radius $R$ and height $h$.
+			\item Given that the Earth's radius is about $6371\si{km}$ ($6.371\times10^{6}\si{m}$) and an average person is $1.75\si{m}$ tall - what is the distance to the horizon for a person standing at sea-level (both air- and ground-distances)? What would these distances be at the following heights: $165\si{m}$ (Eiffel tower's observation deck), $9.1\si{km}$ (average cruising altitude of a passenger jet) and $408\si{km}$ (average altitude of the International Space Station)?
+			\item How many degrees does the horizon "drop" from a striaght-forward view as function of $h$? ("striaght-forward view" in this context means looking at a direction tangent to the planet's surface)
+		\end{enumerate}
 
 	\item MORE EXERCISES TO BE WRITTEN\ldots
 \end{enumerate}
@@ -303,7 +307,10 @@
 		\]
 		the solutions of which are $x_{1}=0$ and $x_{2,3}=\frac{3\pm\sqrt{5}}{2}$, of which only $x_{2} = \frac{3+\sqrt{5}}{2}$ is valid: $x_{1}$ isn't valid since $x>0$, and $x_{3}$ isn't valid since $x_{3}-1<0$, and thus $\log_{b}\left(x_{3}-1\right)$ isn't defined over the real numbers.
 
-	\item We start with drawing two radial lines from the center of the planet $\bm{C}$: one to the point on the surface where the observer meets the ground, and one to the horizon. The triangle $\triangle COX$ is a right triangle: the angle $\angle CXO=\ang{90}$:
+	\item 
+		\begin{enumerate}[label=(\roman*)]
+			\item
+		We start with drawing two radial lines from the center of the planet $\bm{C}$: one to the point on the surface where the observer meets the ground, and one to the horizon. The triangle $\triangle COX$ is a right triangle: the angle $\angle CXO=\ang{90}$:
 		
 		\begin{center}
 			\begin{tikzpicture}
@@ -357,6 +364,7 @@
 		d_{g} = R\theta = R\cdot\arcsin \left( \frac{\sqrt{2Rh+h^{2}}}{R+h} \right).
 	\]
 
+\item
 	For an average person on Earth ($h=1.75\si{m},\ R=6.371\times10^{6}\si{m}$), standing at sea level, the air-distance to the horizon is therefore
 	\[
 		d_{a} = \sqrt{2Rh+h^{2}} = \sqrt{2\cdot6.371\times10^{6}\cdot1.75+1.75^{2}} \approx 4722\si{m} = 4.722\si{km}.
@@ -367,6 +375,50 @@
 			  &= 6.371\times10^{6}\si{m} \cdot \arcsin \left( \frac{4722\si{m}}{6.371\times10^{6}\si{m}+1.75\si{m}} \right)\\
 			  &\approx 4722\si{m}.
 	\end{align*}
+
+	\item horizon drop\ldots
+
+	The following table sums up all the (approximate) air- and ground-distances to the horizon for each of the heights mentioned in the exercise:
+	\begin{center}
+		\begin{tabular}{llll}
+			\toprule
+			Position & Height [\si{m}] & $d_{a} [\si{km}]$ & $d_{g} [\si{km}]$ \\
+			\midrule
+			Person at sea level & 1.75 & 4.7 & 4.7 \\
+			Eiffel Tower observation & 165 & 45.8 & 45.8 \\
+			Average cruising altitude & 9100 & 340.6 & 340.3 \\
+			Internation Space Station & 408000 & 2316 & 2221 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
 	
-	It is not a coincidence that in our calculation $d_{a}=d_{g}$\ldots (EXPLAIN AND LINK TO DESMOS?)
+	Note that as the height $h$ grows, the difference between $d_{a}$ and $d_{g}$ grows too. We can see this clearly when plotting $d_{a}(h)$ and $d_{g}(h)$ in the same graph (disregarding the units and values for now, since we are only interested in the qualitative behaviour of both distances):
+
+	\begin{center}
+		\begin{tikzpicture}
+			\pgfmathsetmacro{\Re}{6.371}
+			\begin{axis}[
+				graph2d,
+				width=10cm, height=10cm,
+				xmin=0, xmax=4,
+				domain=0:4,
+				restrict y to domain=0:10,
+				axis line style={-stealth, thick},
+				xlabel={$h$},
+				ylabel={Distance},
+				xticklabels={,},
+				yticklabels={,},
+				grid style={line width=.1pt, draw=gray!10},
+				major grid style={line width=.2pt,draw=gray!20},
+				declare function={da(\h)=sqrt(2*\Re*\h+\h^2);},
+				declare function={dg(\h)=\Re*rad(asin(sqrt(2*\Re*\h+\h^2)/(\Re+\h)));},
+			]
+			\addplot[ultra thick, xblue] {da(x)} node[pos=0.5, above, font=\Large, yshift=2mm] {$d_{a}$};
+			\addplot[ultra thick, xred] {dg(x)} node[pos=0.5, below, font=\Large, xshift=1mm] {$d_{g}$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+
+	For small values of $h$ the two functions are very close to eachother, and as $h$ grows they grow apart, with $d_{a}>d_{g}$.
+\end{enumerate}
 \end{enumerate}
