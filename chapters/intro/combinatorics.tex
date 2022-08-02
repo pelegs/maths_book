@@ -1,0 +1,130 @@
+\section{Combinatorics}
+Suppose we have a set of $3$ spheres, each of a different color: red, blue and green - and want to order all of them in a row. How many different ways do we have of organizing the spheres? \autoref{tab:arranging_spheres} shows all of the options.
+
+\newcommand{\threeSpheres}[3]{
+	\tikz{
+		\draw[thick, fill=#1] (0,0) circle (0.5);
+		\draw[thick, fill=#2] (1.5,0) circle (0.5);
+		\draw[thick, fill=#3] (3,0) circle (0.5);
+	}
+}
+\begin{table}[htpb]
+	\centering
+	\caption{All the ways of arranging a set of 3 differently colored spheres.}
+	\label{tab:arranging_spheres}
+	\begin{tabular}{m{5mm} m{4cm}}
+		1 & \threeSpheres{xred}{xblue}{xgreen}\\
+		\midrule
+		2 & \threeSpheres{xred}{xgreen}{xblue}\\
+		\midrule
+		3 & \threeSpheres{xblue}{xred}{xgreen}\\
+		\midrule
+		4 & \threeSpheres{xblue}{xgreen}{xred}\\
+		\midrule
+		5 & \threeSpheres{xgreen}{xred}{xblue}\\
+		\midrule
+		6 & \threeSpheres{xgreen}{xblue}{xred}\\
+	\end{tabular}
+\end{table}
+
+Going about the options systematically, we can describe them as follows: we  have three options for placing the first sphere: red, blue or green. Once we have chosen the first sphere, we're left with only two option for the second sphere: if we chose red, then we're left with choosing between blue and green. The choice of last sphere is then dictated by the previous choices: if for the second sphere we chose green, then we are left with only the blue sphere for the third position (as in option 2 above). We call each of these ways to organize the spheres a \emph{combination}.
+
+Quantitatively the number of ways we have of organizing the spheres is
+\begin{equation}
+	k = 3 \times 2 \times 1 = 6.
+	\label{eq:3_fac}
+\end{equation}
+
+We can expand this logic to however many $n\in\mathbb{N}$ different spheres we wish: for $n$ different spheres we have $n$ options for placing the first sphere, then $n-1$ options for placing the second sphere, then $n-2$ options for placing the third sphere\ldots all the way to the last sphere. The number of total combinations is therefore
+\begin{equation}
+	k = n \times (n-1) \times (n-2) \times \cdots \times 3 \times 2 \times 1.
+	\label{eq:n_fac}
+\end{equation}
+
+The function used to represent $k$ in the above general form is called the \emph{factorial}, and is denoted using an exclamation mark:
+\begin{equation}
+	k = n!
+	\label{eq:factorial_def}
+\end{equation}
+
+A somewhat more rigouros (and quite intereseting) way of defining the factorial is as follows:
+\begin{equation}
+	n! \coloneqq
+	\begin{cases}
+		1 & \text{if}\ n=1,\\
+		n \times (n-1)! & \text{if}\ n>1.
+	\end{cases}
+	\label{eq:factorial_def_recursive}
+\end{equation}
+This kind of definition is called a \emph{recursive} definition, since it uses itself in its own definition. For example, for $3!$ we have $3>1$, and thus $3!=3\times2!$. Then $2>1$ and thus $2!=2\times1!$, but since $1=1$ we get $1!=1$, and altogether we get $3!=3\times2\times1=6$.
+
+Going forward we can ask the following question: given that we have a set of 5 spheres, 2 of them red and the rest are blue. How many combinations are there to sort the spheres, assuming there's no way to distinguish spheres of the same color? All the possible combinations are shown in \autoref{tab:arranging_spheres_binom}.
+
+\newcommand{\fiveSpheres}[2]{
+	\tikz{
+		\foreach \k in {1,...,5}{
+			\pgfmathparse{\k==#1 || \k==#2 ? int(1):int(0)}
+			\ifnum\pgfmathresult=1
+				\def\scol{xred}
+			\else
+				\def\scol{xblue}
+			\fi
+			\draw[thick, fill=\scol] ({1.5*(\k-1)},0) circle (0.5);
+		}
+	}
+}
+\begin{table}[htpb]
+	\centering
+	\caption{All possible combinations of two red spheres and three blue spheres, where spheres of the same color are indistinguishable.}
+	\label{tab:arranging_spheres_binom}
+	\begin{tabular}{m{5mm} m{7cm}}
+		1 & \fiveSpheres{1}{2}\\
+		\midrule
+		2 & \fiveSpheres{1}{3}\\
+		\midrule
+		3 & \fiveSpheres{1}{4}\\
+		\midrule
+		4 & \fiveSpheres{1}{5}\\
+		\midrule
+		5 & \fiveSpheres{2}{3}\\
+		\midrule
+		6 & \fiveSpheres{2}{4}\\
+		\midrule
+		7 & \fiveSpheres{2}{5}\\
+		\midrule
+		8 & \fiveSpheres{3}{4}\\
+		\midrule
+		9 & \fiveSpheres{3}{5}\\
+		\midrule
+		10 & \fiveSpheres{4}{5}\\
+	\end{tabular}
+\end{table}
+
+We can again go about solving this by directly counting all possible combinations. We place a red sphere in the 1st spot, and then count all such possible combinations, each time placing the other red sphere in a different place (2nd, 3rd, etc.). This gives us $5$ combinations (numbered 1-4 in the table). We then place a red sphere in the 2nd spot, and placing the other red sphere in all possible spots: 3rd, 4th and 5th (combinations 5-7 in the table). Note that we don't count the combination where the red spheres are in the 1st and 2nd spots since this was already counted (combination 1).
+
+We then proceed to puting a red sphere in the 3rd spot, and counting all the possible combinations, i.e. the other red sphere being in the 4th or 5th spots (combinations 8 and 9). Again, all other options were already counted. We're then left with only a single combination: the red spheres being in the 4th and 5th spots. Altogether we have counted $10$ distinct combinations.
+
+In the general case, we want to know how many combinations are there of arrainging $n$ spheres in a row, when $k$ of them are red and the other $n-k$ blue. A convinient way of representing this number is using the \emph{binomial coefficients}, which are defined as
+
+\begin{equation}
+	\binom{n}{k} = \frac{n!}{k!(n-k)!}.
+	\label{eq:binom_def}
+\end{equation}
+
+\begin{note}{Binom pronounciation}{}
+	Reading the binom notation outloud we say "$n$ choose $k$", since we are choosing $k$ objects out of a total of $n$ objects.
+\end{note}
+
+We expect then that $\binom{5}{3}=10$, since this is what we got in the example above. Let's verify this:
+\[
+	\binom{5}{3} = \frac{5!}{3!(5-3)!} = \frac{120}{6\cdot2!} = \frac{120}{12} = 10.
+\]
+
+The binomial coefficients are symmetric: note how in the denominator $k!$ is multiplied by $(n-k)!$, i.e. $k$ is always multiplied by the difference between it and $n$. Thus, if we change our choice of $k$ to be $n-k$ (e.g. for the case of $\binom{5}{3}$ we instead use $\binom{5}{2}$) the result stays the same. This can visualized in the above example: instead of thinking of two red spheres out of five total spheres, think of three blue spheres out of a total of five spheres. The result doesn't change because we are talking about the same exact problem. Thus generaly
+\[
+	\binom{n}{k} = \binom{n}{n-k}.
+\]
+
+We can visualize the binomial coefficients using \emph{Pascal's triangle}, in which the value of each cell is the result of adding the values of the two cells above it (\autoref{fig:pascal's triangle}).
+
+% TBW: USING BINOMIAL COEFFICIENTS FOR EXPANDING (x+y)^n.

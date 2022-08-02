@@ -29,6 +29,7 @@ Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	secti
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Calculus in 1D	chapters/calculus_1D/preface.tex	/^\\chapter{Calculus in 1D}$/;"	c
 Cartesian Products	chapters/intro/math_symbols_sets.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Introduction""Mathematical Symbols and Sets
+Combinatorics	chapters/intro/combinatorics.tex	/^\\section{Combinatorics}$/;"	s
 Common mathematical notations	chapters/intro/math_symbols_sets.tex	/^\\subsection{Common mathematical notations}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Complex Numbers	chapters/intro/complex_numbers.tex	/^\\section{Complex Numbers}\\label{sec:complex numbers}$/;"	s	chapter:Introduction
 Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Components}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
@@ -167,6 +168,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\eu	settings.tex	/^\\newcommand{\\eu}{\\mathrm{e}}$/;"	C
 \\false	settings.tex	/^\\newcommand{\\false}{\\textcolor{xred}{\\textbf{false}}}$/;"	C
 \\falseprop	settings.tex	/^\\newcommand{\\falseprop}[1]{$/;"	C
+\\fiveSpheres	chapters/intro/combinatorics.tex	/^\\newcommand{\\fiveSpheres}[2]{$/;"	C
 \\ghl	settings.tex	/^\\newcommand{\\ghl}[1]{\\textcolor{xgreen}{#1}}$/;"	C
 \\gnorm	settings.tex	/^\\newcommand{\\gnorm}[1]{\\left\\|\\,  #1 \\, \\right\\|}$/;"	C
 \\iu	settings.tex	/^\\newcommand{\\iu}{\\mathrm{i}\\mkern1mu}$/;"	C
@@ -187,6 +189,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\tapirTrans	settings.tex	/^\\newcommand{\\tapirTrans}[5]{$/;"	C
 \\tapirTransCM	settings.tex	/^\\newcommand{\\tapirTransCM}[7]{$/;"	C
 \\tapirTransComp	settings.tex	/^\\newcommand{\\tapirTransComp}[7]{$/;"	C
+\\threeSpheres	chapters/intro/combinatorics.tex	/^\\newcommand{\\threeSpheres}[3]{$/;"	C
 \\tr	settings.tex	/^\\newcommand{\\tr}{\\text{tr}}$/;"	C
 \\true	settings.tex	/^\\newcommand{\\true}{\\textcolor{xblue}{\\textbf{true}}}$/;"	C
 \\trueprop	settings.tex	/^\\newcommand{\\trueprop}[1]{$/;"	C
@@ -432,6 +435,7 @@ eq:	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:}$/;"	l
 eq:2D vector norm	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:2D vector norm}$/;"	l
 eq:2D_rotation_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:2D_rotation_matrix}$/;"	l
+eq:3_fac	chapters/intro/combinatorics.tex	/^	\\label{eq:3_fac}$/;"	l
 eq:3d_scale_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:3d_scale_matrix}$/;"	l
 eq:Cartesian_product	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:Cartesian_product}$/;"	l
 eq:Cartesian_product_multiple_sets	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:Cartesian_product_multiple_sets}$/;"	l
@@ -445,6 +449,7 @@ eq:area of a triangle	chapters/intro/trigonomentry.tex	/^	\\label{eq:area of a t
 eq:area using sin theta	chapters/intro/trigonomentry.tex	/^	\\label{eq:area using sin theta}$/;"	l
 eq:arguments for the cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{eq:arguments for the cube roots of 1}$/;"	l
 eq:basic_trig_rearrange	chapters/intro/trigonomentry.tex	/^	\\label{eq:basic_trig_rearrange}$/;"	l
+eq:binom_def	chapters/intro/combinatorics.tex	/^	\\label{eq:binom_def}$/;"	l
 eq:closed_interval	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:closed_interval}$/;"	l
 eq:collinear system	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:collinear system}$/;"	l
 eq:collinear vectors	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:collinear vectors}$/;"	l
@@ -482,6 +487,8 @@ eq:determinant_zero_no_inverse	chapters/linear_algebra_intuitive/matrices.tex	/^
 eq:dimension of a vector space	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:dimension of a vector space}$/;"	l
 eq:exponent	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponent}$/;"	l
 eq:exponents_properties	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponents_properties}$/;"	l
+eq:factorial_def	chapters/intro/combinatorics.tex	/^	\\label{eq:factorial_def}$/;"	l
+eq:factorial_def_recursive	chapters/intro/combinatorics.tex	/^	\\label{eq:factorial_def_recursive}$/;"	l
 eq:first equation in law of sines	chapters/intro/trigonomentry.tex	/^	\\label{eq:first equation in law of sines}$/;"	l
 eq:function_basics	chapters/intro/relations_functions.tex	/^	\\label{eq:function_basics}$/;"	l
 eq:function_by_formula	chapters/intro/relations_functions.tex	/^	\\label{eq:function_by_formula}$/;"	l
@@ -531,6 +538,7 @@ eq:mod 360	chapters/linear_algebra_rigorous/fields.tex	/^	\\label{eq:mod 360}$/;
 eq:mxn_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:mxn_matrix}$/;"	l
 eq:myeq	tests/autoref.tex	/^	\\label{eq:myeq}$/;"	l
 eq:n_eqs_m_vars	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{eq:n_eqs_m_vars}$/;"	l
+eq:n_fac	chapters/intro/combinatorics.tex	/^	\\label{eq:n_fac}$/;"	l
 eq:naturals_subset_integers	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:naturals_subset_integers}$/;"	l
 eq:no_real_solutions	chapters/intro/complex_numbers.tex	/^	\\label{eq:no_real_solutions}$/;"	l
 eq:norm 3D vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:norm 3D vector}$/;"	l
@@ -4908,6 +4916,8 @@ symbol9779	figures/chapters/tapir_dissolve.svg	/^         id="symbol9779">$/;"	i
 symbol9833	figures/chapters/tapir_dissolve.svg	/^         id="symbol9833">$/;"	i
 symbol9934	figures/chapters/tapir_dissolve.svg	/^         id="symbol9934">$/;"	i
 tab:AND_OR_truth_table	chapters/intro/math_symbols_sets.tex	/^	\\label{tab:AND_OR_truth_table}$/;"	l
+tab:arranging_spheres	chapters/intro/combinatorics.tex	/^	\\label{tab:arranging_spheres}$/;"	l
+tab:arranging_spheres_binom	chapters/intro/combinatorics.tex	/^	\\label{tab:arranging_spheres_binom}$/;"	l
 tab:common_math_notations	chapters/intro/math_symbols_sets.tex	/^	\\label{tab:common_math_notations}$/;"	l
 tab:complex_exponentials	chapters/intro/complex_numbers.tex	/^	\\label{tab:complex_exponentials}$/;"	l
 tab:minors_of_A	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{tab:minors_of_A}$/;"	l
