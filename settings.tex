@@ -416,7 +416,7 @@
 % MATHS %
 %-------%
 
-\usepackage{amsmath, bm, mathtools}
+\usepackage{amsmath, bm, mathtools, commath, relsize}
 % \usepackage{physics}
 \allowdisplaybreaks
 \usepackage{nicematrix}
@@ -500,7 +500,7 @@
 \newcommand{\gnorm}[1]{\left\|\,  #1 \, \right\|}
 
 % Norm of a vector
-\newcommand{\norm}[1]{\left\|\,  \vec{#1} \, \right\|}
+\renewcommand{\norm}[1]{\left\|\,  \vec{#1} \, \right\|}
 
 % Projection
 \newcommandx*{\projection}[4][1=u, 2=v, 3=xred, 4=xblue]{

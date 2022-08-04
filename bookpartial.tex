@@ -19,25 +19,36 @@
 %----------%
 
 \begin{document}
+
+% Cover
+\input{figures/cover/cover}
+
+% Rights, lefts, etc.
+\makeatletter
+\def\input@path{{./pre_content/}}
+\makeatother
+\input{rights}
+
 % Contents?
+HERE BE TABLE
 %\tableofcontents
 
 % Chapters
 \setcounter{chapter}{-1}
 
 % Introduction
-\makeatletter
-\def\input@path{{./chapters/intro/}}
-\makeatother
+% \makeatletter
+% \def\input@path{{./chapters/intro/}}
+% \makeatother
 % \input{preface}
 % \input{math_symbols_sets}
 % \input{relations_functions}
 % \input{polynomials}
 % \input{exponentials_logarithms}
-\input{combinatorics}
+% \input{combinatorics}
 % \input{trigonomentry}
 % \input{complex_numbers}
-\input{exercises}
+% \input{exercises}
 
 % Linear algebra (intuitive)
 % \makeatletter

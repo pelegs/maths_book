@@ -1,0 +1,53 @@
+\clearpage
+%% temporary titles
+% command to provide stretchy vertical space in proportion
+\newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
+% allow some slack to avoid under/overfull boxes
+\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
+% To improve spacing on titlepages
+\newcommand{\nbtitlestretch}{\spaceskip0.6em}
+\pagestyle{empty}
+\begin{center}
+\bfseries
+\nbvspace[1]
+\Huge
+
+{
+	\nbtitlestretch\fontsize{35pt}{35pt}\selectfont
+	MATHEMATICS FOR SCIENCE STUDENTS
+}
+
+\Large
+An open-source book
+
+\vspace{2em}
+\small Written, illustrated and typeset (mostly) by\\
+\Large PELEG BAR SAPIR\\[0.5em]
+\small with contributions from others
+
+\vspace{25em}
+\begin{tikzpicture}[overlay, remember picture, node distance={2pt}]
+	\node (tapir) {\includesvg[width=10cm]{./figures/cover/tapir}};
+	\node[black!85, above right=of tapir.north, rotate=5] (fundcalc) {$\mathop{\mathlarger{\int\limits_{a}^{b}f(x)\dif x=F(b)-F(a)}}$};
+	\node[black!70, above left=of fundcalc, rotate=-5] (orth) {$\langle \eb{i},\eb{j} \rangle = \delta_{ij}$};
+	\node[black!75, above right=of orth, rotate=-3, xshift=15pt] (diff) {$\od{f}{x}=\lim\limits_{\Delta x\rightarrow0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$};
+	\node[black!60, right=of diff, rotate=3, yshift=-15pt] (vecdef) {$\vec{v} = \sum\limits_{i=1}^{n}\alpha_{i}\eb{i}$};
+	\node[black!40, below left=of orth, rotate=-9] (euler) {$\eu^{\pi\iu}+1=0$};
+	\node[black!30, above left=of diff] (eigendecomp) {$A=Q\Lambda Q^{-1}$};
+	\node[black!90, below right=of fundcalc, xshift=10pt, yshift=15pt, rotate=-10] (taylorcos) {$\cos(x)=\sum\limits_{n=0}^{\infty}\frac{(-1)^{n}}{(2n)!}x^{2n}$};
+	\node[black!25, above right=of diff, xshift=10pt, yshift=-10pt] (gamma) {$\Gamma(z)=\mathop{\mathlarger{\int\limits_{0}^{\infty} t^{z-1}e^{-t}\dif t}}$};
+	\node[black!20, above=of diff, xshift=-5pt, yshift=15pt, rotate=-7] (lintrans) {$T \left( \alpha\vec{u}+\beta\vec{v} \right)=\alpha T \left( \vec{u} \right) + \beta T \left( \vec{v} \right)$};
+	\node[black!20, above left=of eigendecomp, rotate=-7] (binom) {$\binom{n}{k}=\frac{n!}{k!(n-k)!}$};
+	\node[black!15, above left=of orth, rotate=3] (rot) {$R(\theta)=\begin{bmatrix}\cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix}$};
+	\node[black!13, above left=of gamma, yshift=15pt, rotate=5] (expand) {$(a+b)^{n}=\sum\limits_{k=0}^{n}\binom{n}{k}a^{n-k}b^{k}$};
+	\node[black!10, above left=of binom, rotate=3] (elog) {$a^{b}=\eu^{b\log(a)}$};
+\end{tikzpicture}
+\nbvspace[3]
+\normalsize
+
+\large
+
+\vspace{2em}
+PUBLISHED IN THE WILD
+\end{center}
+\newpage

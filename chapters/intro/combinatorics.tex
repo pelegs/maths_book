@@ -1,4 +1,4 @@
-\section{Combinatorics}
+\section{Simple combinatorics and the binomial coefficients}
 Suppose we have a set of $3$ spheres, each of a different color: red, blue and green - and want to order all of them in a row. How many different ways do we have of organizing the spheres? \autoref{fig:arranging_spheres} shows all of the options.
 
 \newcommand{\threeSpheres}[3]{
@@ -27,7 +27,7 @@ Suppose we have a set of $3$ spheres, each of a different color: red, blue and g
 	\label{fig:arranging_spheres}
 \end{figure}
 
-Going about the options systematically, we can describe them as follows: we  have three options for placing the first sphere: red, blue or green. Once we have chosen the first sphere, we're left with only two option for the second sphere: if we chose red, then we're left with choosing between blue and green. The choice of last sphere is then dictated by the previous choices: if for the second sphere we chose green, then we are left with only the blue sphere for the third position (as in option 2 above). We call each of these ways to organize the spheres a \emph{combination}.
+Going about the options systematically, we can describe them as follows: we  have three options for placing the first sphere - red, blue or green. Once we have chosen the first sphere, we're left with only two option for the second sphere: if we chose red, then we're left with choosing between blue and green. The choice of last sphere is then dictated by the previous choices: if for the second sphere we chose green, then we are left with only the blue sphere for the third position (as in option 2 above). We call each of these ways to organize the spheres a \emph{combination}.
 
 Quantitatively the number of ways we have of organizing the spheres is
 \begin{equation}
