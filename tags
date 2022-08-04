@@ -450,6 +450,9 @@ eq:area using sin theta	chapters/intro/trigonomentry.tex	/^	\\label{eq:area usin
 eq:arguments for the cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{eq:arguments for the cube roots of 1}$/;"	l
 eq:basic_trig_rearrange	chapters/intro/trigonomentry.tex	/^	\\label{eq:basic_trig_rearrange}$/;"	l
 eq:binom_def	chapters/intro/combinatorics.tex	/^	\\label{eq:binom_def}$/;"	l
+eq:binom_symmetry	chapters/intro/combinatorics.tex	/^	\\label{eq:binom_symmetry}$/;"	l
+eq:binomial_expansion	chapters/intro/combinatorics.tex	/^	\\label{eq:binomial_expansion}$/;"	l
+eq:binomial_expansion_n	chapters/intro/combinatorics.tex	/^	\\label{eq:binomial_expansion_n}$/;"	l
 eq:closed_interval	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:closed_interval}$/;"	l
 eq:collinear system	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:collinear system}$/;"	l
 eq:collinear vectors	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:collinear vectors}$/;"	l
@@ -629,6 +632,8 @@ fig:angle between two vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\
 fig:angle between two vectors in plane	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:angle between two vectors in plane}$/;"	l
 fig:angles equivalency	chapters/intro/trigonomentry.tex	/^	\\label{fig:angles equivalency}$/;"	l
 fig:area of a triangle	chapters/intro/trigonomentry.tex	/^	\\label{fig:area of a triangle}$/;"	l
+fig:arranging_spheres	chapters/intro/combinatorics.tex	/^	\\label{fig:arranging_spheres}$/;"	l
+fig:arranging_spheres_binom	chapters/intro/combinatorics.tex	/^	\\label{fig:arranging_spheres_binom}$/;"	l
 fig:basicLinearTrans	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:basicLinearTrans}$/;"	l
 fig:building_reflect_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:building_reflect_2x2}$/;"	l
 fig:complex number	chapters/intro/complex_numbers.tex	/^	\\label{fig:complex number}$/;"	l
@@ -650,6 +655,7 @@ fig:normalVec2	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{fig:nor
 fig:normalVec3	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{fig:normalVec3}$/;"	l
 fig:nth roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{fig:nth roots of 1}$/;"	l
 fig:parallelogram	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:parallelogram}$/;"	l
+fig:pascal's triangle	chapters/intro/combinatorics.tex	/^	\\label{fig:pascal's triangle}$/;"	l
 fig:radians	chapters/intro/trigonomentry.tex	/^	\\label{fig:radians}$/;"	l
 fig:ref_line	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:ref_line}$/;"	l
 fig:ref_x_axis	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:ref_x_axis}$/;"	l
@@ -4916,8 +4922,6 @@ symbol9779	figures/chapters/tapir_dissolve.svg	/^         id="symbol9779">$/;"	i
 symbol9833	figures/chapters/tapir_dissolve.svg	/^         id="symbol9833">$/;"	i
 symbol9934	figures/chapters/tapir_dissolve.svg	/^         id="symbol9934">$/;"	i
 tab:AND_OR_truth_table	chapters/intro/math_symbols_sets.tex	/^	\\label{tab:AND_OR_truth_table}$/;"	l
-tab:arranging_spheres	chapters/intro/combinatorics.tex	/^	\\label{tab:arranging_spheres}$/;"	l
-tab:arranging_spheres_binom	chapters/intro/combinatorics.tex	/^	\\label{tab:arranging_spheres_binom}$/;"	l
 tab:common_math_notations	chapters/intro/math_symbols_sets.tex	/^	\\label{tab:common_math_notations}$/;"	l
 tab:complex_exponentials	chapters/intro/complex_numbers.tex	/^	\\label{tab:complex_exponentials}$/;"	l
 tab:minors_of_A	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{tab:minors_of_A}$/;"	l

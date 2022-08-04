@@ -1,5 +1,5 @@
 \section{Combinatorics}
-Suppose we have a set of $3$ spheres, each of a different color: red, blue and green - and want to order all of them in a row. How many different ways do we have of organizing the spheres? \autoref{tab:arranging_spheres} shows all of the options.
+Suppose we have a set of $3$ spheres, each of a different color: red, blue and green - and want to order all of them in a row. How many different ways do we have of organizing the spheres? \autoref{fig:arranging_spheres} shows all of the options.
 
 \newcommand{\threeSpheres}[3]{
 	\tikz{
@@ -8,10 +8,8 @@ Suppose we have a set of $3$ spheres, each of a different color: red, blue and g
 		\draw[thick, fill=#3] (3,0) circle (0.5);
 	}
 }
-\begin{table}[htpb]
+\begin{figure}[h]
 	\centering
-	\caption{All the ways of arranging a set of 3 differently colored spheres.}
-	\label{tab:arranging_spheres}
 	\begin{tabular}{m{5mm} m{4cm}}
 		1 & \threeSpheres{xred}{xblue}{xgreen}\\
 		\midrule
@@ -25,7 +23,9 @@ Suppose we have a set of $3$ spheres, each of a different color: red, blue and g
 		\midrule
 		6 & \threeSpheres{xgreen}{xblue}{xred}\\
 	\end{tabular}
-\end{table}
+	\caption{All the ways of arranging a set of 3 differently colored spheres.}
+	\label{fig:arranging_spheres}
+\end{figure}
 
 Going about the options systematically, we can describe them as follows: we  have three options for placing the first sphere: red, blue or green. Once we have chosen the first sphere, we're left with only two option for the second sphere: if we chose red, then we're left with choosing between blue and green. The choice of last sphere is then dictated by the previous choices: if for the second sphere we chose green, then we are left with only the blue sphere for the third position (as in option 2 above). We call each of these ways to organize the spheres a \emph{combination}.
 
@@ -58,7 +58,7 @@ A somewhat more rigouros (and quite intereseting) way of defining the factorial 
 \end{equation}
 This kind of definition is called a \emph{recursive} definition, since it uses itself in its own definition. For example, for $3!$ we have $3>1$, and thus $3!=3\times2!$. Then $2>1$ and thus $2!=2\times1!$, but since $1=1$ we get $1!=1$, and altogether we get $3!=3\times2\times1=6$.
 
-Going forward we can ask the following question: given that we have a set of 5 spheres, 2 of them red and the rest are blue. How many combinations are there to sort the spheres, assuming there's no way to distinguish spheres of the same color? All the possible combinations are shown in \autoref{tab:arranging_spheres_binom}.
+Going forward we can ask the following question: given that we have a set of 5 spheres, 2 of them red and the rest are blue. How many combinations are there to sort the spheres, assuming there's no way to distinguish spheres of the same color? All the possible combinations are shown in \autoref{fig:arranging_spheres_binom}.
 
 \newcommand{\fiveSpheres}[2]{
 	\tikz{
@@ -73,10 +73,8 @@ Going forward we can ask the following question: given that we have a set of 5 s
 		}
 	}
 }
-\begin{table}[htpb]
+\begin{figure}[h]
 	\centering
-	\caption{All possible combinations of two red spheres and three blue spheres, where spheres of the same color are indistinguishable.}
-	\label{tab:arranging_spheres_binom}
 	\begin{tabular}{m{5mm} m{7cm}}
 		1 & \fiveSpheres{1}{2}\\
 		\midrule
@@ -98,7 +96,9 @@ Going forward we can ask the following question: given that we have a set of 5 s
 		\midrule
 		10 & \fiveSpheres{4}{5}\\
 	\end{tabular}
-\end{table}
+	\caption{All possible combinations of two red spheres and three blue spheres, where spheres of the same color are indistinguishable.}
+	\label{fig:arranging_spheres_binom}
+\end{figure}
 
 We can again go about solving this by directly counting all possible combinations. We place a red sphere in the 1st spot, and then count all such possible combinations, each time placing the other red sphere in a different place (2nd, 3rd, etc.). This gives us $5$ combinations (numbered 1-4 in the table). We then place a red sphere in the 2nd spot, and placing the other red sphere in all possible spots: 3rd, 4th and 5th (combinations 5-7 in the table). Note that we don't count the combination where the red spheres are in the 1st and 2nd spots since this was already counted (combination 1).
 
@@ -115,16 +115,142 @@ In the general case, we want to know how many combinations are there of arraingi
 	Reading the binom notation outloud we say "$n$ choose $k$", since we are choosing $k$ objects out of a total of $n$ objects.
 \end{note}
 
-We expect then that $\binom{5}{3}=10$, since this is what we got in the example above. Let's verify this:
+We expect then that $\binom{5}{2}=10$, since this is what we got in the example above. Let's verify this:
 \[
-	\binom{5}{3} = \frac{5!}{3!(5-3)!} = \frac{120}{6\cdot2!} = \frac{120}{12} = 10.
+	\binom{5}{2} = \frac{5!}{2!(5-2)!} = \frac{120}{2\cdot3!} = \frac{120}{12} = 10.
 \]
 
-The binomial coefficients are symmetric: note how in the denominator $k!$ is multiplied by $(n-k)!$, i.e. $k$ is always multiplied by the difference between it and $n$. Thus, if we change our choice of $k$ to be $n-k$ (e.g. for the case of $\binom{5}{3}$ we instead use $\binom{5}{2}$) the result stays the same. This can visualized in the above example: instead of thinking of two red spheres out of five total spheres, think of three blue spheres out of a total of five spheres. The result doesn't change because we are talking about the same exact problem. Thus generaly
-\[
+The binomial coefficients are symmetric: note how in the denominator $k!$ is multiplied by $(n-k)!$, i.e. $k$ is always multiplied by the difference between it and $n$. Thus, if we change our choice of $k$ to be $n-k$ (e.g. for the case of $\binom{5}{2}$ we instead use $\binom{5}{3}$) the result stays the same. This can be visualized in the above example: instead of thinking of two red spheres out of five total spheres, think of three blue spheres out of a total of five spheres. The result doesn't change because we are talking about the same exact problem.
+
+Thus, the following always holds:
+\begin{equation}
 	\binom{n}{k} = \binom{n}{n-k}.
+	\label{eq:binom_symmetry}
+\end{equation}
+
+\begin{note}{}{}
+	Some important values of the binomial coefficianets: Given $n$ objecst,
+	\begin{enumerate}
+		\item there is a single combination of choosing $0$ objects, and also a single combination of choosing $n$ objects. Therefore
+			\[
+				\binom{n}{0}=\binom{n}{n}=1.
+			\]
+
+		\item there are $n$ combinations for choosing a single object, and also $n$ combination of choosing $n-1$ objects. Therefore
+			\[
+				\binom{n}{1} = \binom{n}{n-1} = n.
+			\]
+	\end{enumerate}
+\end{note}
+
+We can visualize the binomial coefficients using \emph{Pascal's triangle}, in which the value of each cell is the result of adding the values of the two cells above it (\autoref{fig:pascal's triangle}). For example: to find the value of $\binom{4}{2}$ we go to the $4$-th row (purple color in the figure) and then start from left starting with $0$. The value of the resulting cell is $6$, and indeed $\binom{4}{2}=6$.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\tikzset{
+			coeff/.style={draw=#1, thick, fill=#1!20, minimum width=10mm, minimum height=10mm, font=\Large},
+		}
+		% Triangle
+		\pgfmathsetmacro{\max}{7}
+		\foreach \n in {0,...,\max}{
+			\node[xcol\n, font=\bfseries\Large] (i\n) at ({-\max/2-2},{-\n*1.025}) {\n};
+			\foreach \k in {0,...,\n}{
+				\pgfmathsetmacro{\bin}{int(\n!/(\k!*(\n-\k)!))}
+				\node[coeff={xcol\n}] (\n-\k) at ({-(\n+1)/2+\k},{-\n*1.025}) {$\bin$};
+			}
+		}
+		% Row indices
+		\node[above of=i0, yshift=2mm, font=\Large] {$n$};
+		\node[above of=i0, yshift=-3mm, font=\Large] {$\downarrow$};
+		
+		% Column indeces
+		\foreach \k in {0,...,\max}{
+			\node[below of=\max-\k, font=\bfseries\Large] (t-\k) {$\k$};
+		}
+		\node[left of=t-0, font=\Large] {$k$};
+		\node[left of=t-0, xshift=5mm, font=\Large] {$\rightarrow$};
+	\end{tikzpicture}
+	\caption{Pascal's triangle: the value in each cell is the sum of the values in the two cells above it (empty cells are considered to be with value $0$). Each row is enumerated starting from $0$: see for example the indeces below the last row, which go from $0$ to $7$.}
+	\label{fig:pascal's triangle}
+\end{figure}
+
+Why are the binomial coefficients called that way? The name comes from the \emph{binomial expansion}. You probably had to memorize the following expansion in school:
+\begin{equation}
+	(a+b)^{2} = a^{2}+2ab+b^{2}.
+	\label{eq:binomial_expansion}
+\end{equation}
+We can use the binomial coefficients to easily expand any expression of the form $(a+b)^{n}$, where $n\in\mathbb{N}$. As always, we start with a basic example - this time the above expansion when $n=2$: when we expand this expression we first get (color coded for clarity)
+\def\aR{\textcolor{xred}{a}}
+\def\aB{\textcolor{xblue}{a}}
+\def\aG{\textcolor{xdarkgreen}{a}}
+\def\bR{\textcolor{xred}{b}}
+\def\bB{\textcolor{xblue}{b}}
+\def\bG{\textcolor{xdarkgreen}{b}}
+\[
+	(a+b)^{2} = (\aR+\bR)(\aB+\bB).
 \]
 
-We can visualize the binomial coefficients using \emph{Pascal's triangle}, in which the value of each cell is the result of adding the values of the two cells above it (\autoref{fig:pascal's triangle}).
+Then, to calculate all possible products we multiply each possible pair of numbers systematically:
 
-% TBW: USING BINOMIAL COEFFICIENTS FOR EXPANDING (x+y)^n.
+\vspace{1em}
+\begin{center}
+	{
+		\renewcommand{\arraystretch}{5}
+		\begin{tabular}{m{1cm} m{4cm}}
+			$\aR\cdot\aB$: & $\mbox{\Huge\color{gray} $(\tikzmark{a11}{\aR}+\bR)(\tikzmark{a21}{\aB}+\bB)$}$\\
+			$\aR\cdot\bB$: & $\mbox{\Huge\color{gray} $(\tikzmark{a12}{\aR}+\bR)(\aB+\tikzmark{b22}{\bB})$}$\\
+			$\bR\cdot\aB$: & $\mbox{\Huge\color{gray} $(\aR+\tikzmark{b13}{\bR})(\tikzmark{a23}{\aB}+\bB)$}$\\
+			$\bR\cdot\bB$: & $\mbox{\Huge\color{gray} $(\aR+\tikzmark{b14}{\bR})(\aB+\tikzmark{b24}{\bB})$}$
+		\end{tabular}
+		\tikz[overlay, remember picture]{
+			\coordinate (shift1) at (2.5mm,6mm);
+			\coordinate (shift2) at (2.5mm,9mm);
+			\draw[vector] ($(pic cs:a11)+(shift1)$) to [out=90, in=90] ($(pic cs:a21)+(shift1)$);
+			\draw[vector] ($(pic cs:a12)+(shift2)$) to [out=90, in=90, looseness=0.7] ($(pic cs:b22)+(shift2)$);
+			\draw[vector] ($(pic cs:b13)+(shift1)$) to [out=90, in=90, looseness=1.5] ($(pic cs:a23)+(shift1)$);
+			\draw[vector] ($(pic cs:b14)+(shift2)$) to [out=90, in=90] ($(pic cs:b24)+(shift2)$);
+		}
+	}
+\end{center}
+
+Altogether we therefore get
+\[
+	(a+b)^{2} = (\aR+\bR)(\aB+\bB) = \aR\cdot\aB + \aR\bB + \bR\aB + \bR\cdot\bB = a^{2}+2ab+b^{2}.
+\]
+(since for real numbers $ab=ba$)
+
+Notice the pattern here: the coefficients of the different terms in $a^{2}+2ab+b^{2}$ correspond to the binomial coefficients when $n=2$ (i.e. $1,2,1$). This is because there's only a single combination of numbers yielding $a^{2}$ (namely $\aR\cdot\aB$), two combinations that yield $ab$ (namely $\aR\cdot\bB$, and $\bR\cdot\aB$), and again a single combination that yields $b^{2}$ ($\bR\cdot\bB$).
+
+The powers of $a$ and $b$ also follow a pattern: the power of $a$ decreases in each term - starting with $2$ (i.e. $a^{2}$), then $1$ ($2ab$) and finally $0$ ($b^{2}$). The power of $b$ in each term increases in the same way from $0$ to $2$. If we call the power of $b$ in each term $k$, then the power of $a$ is always $2-k$.
+
+The pattern appears in $(a+b)^{3}$ as well: (we again color code the numbers)
+\[
+	(a+b)^{3} = (\aR+\bR)(\aB+\bB)(\aG+\bG).
+\]
+The expansion is then
+\begin{align*}
+	(a+b)^{3} &= (\aR+\bR)(\aB+\bB)(\aG+\bG)\\
+			  &= \aR\cdot\aB\cdot\aG + \aR\cdot\aB\cdot\bG + \aR\cdot\bB\cdot\aG + \aR\cdot\bB\cdot\bG + \bR\cdot\aB\cdot\aG + \bR\cdot\aB\cdot\bG + \bR\cdot\bB\cdot\aG + \bR\cdot\bB\cdot\bG\\
+			  &= a^{3} + 3a^{2}b + 3ab^{2} + b^{3}.
+\end{align*}
+Again, we see that the coefficients in the expansion are exactly the binomial coefficients for $n=3$ (namely $1,3,3,1$), and that the powers of $a$ and $b$ decrease and increase, respectively, just as for $n=2$: $a$ goes from $3$ to $0$, and $b$ from $0$ to $3$. This time the power of $a$ is always $3-k$ (where $k$ is the power of $b$).
+
+Therefore, in the most general case (i.e. $(a+b)^{n}$) we expect each term to be of the following structure:
+\[
+	a^{k}b^{n-k},
+\]
+and the coefficients being the binomial coefficients $\binom{n}{k}$. Putting this into a formula:
+\begin{align}
+	(a+b)^{n} &= \binom{n}{0}a^{n} + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^{2} + \dots + \binom{n}{n-2}a^{2}b^{n-2} + \binom{n}{n-1}ab^{n-1} + \binom{n}{n}b^{n}\\\nonumber
+			  &= \sum\limits_{k=0}^{n}\binom{n}{k}a^{n-k}b^{k}.
+	\label{eq:binomial_expansion_n}
+\end{align}
+
+\begin{example}{Exapnding $\bm{(a+b)^{4}}$ using binomial coefficients}{}
+	Let's use the above patterns to expand $(a+b)^{4}$. Looking at Pascal's triangle, the coefficients in row $n=4$ are $1,4,6,4,1$. Starting with the powers $a^{4}$ and $b^{0}=1$ and then decreasing and increasing the powers of $a$ and $b$, respectively, we write all terms:
+	\[
+		(a+b)^{4} = a^{4} + 4a^{3}b + 6a^{2}b^{2} + 4ab^{3} + b^{4}.
+	\]
+	You can check this expansion manually and see that it is indeed correct.
+\end{example}

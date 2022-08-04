@@ -189,6 +189,8 @@
 %--------%
 
 \usepackage{xcolor}
+
+% Normal colors
 \definecolor{xred}{HTML}{BD4242}
 \definecolor{xblue}{HTML}{4268BD}
 \definecolor{xgreen}{HTML}{52B256}
@@ -200,15 +202,6 @@
 \definecolor{xpink}{HTML}{F690EA}
 \definecolor{xgrayblue}{HTML}{49B095}
 \definecolor{xgraycyan}{HTML}{5AA1B9}
-
-% Normal colors
-\colorlet{xcol0}{xred}
-\colorlet{xcol1}{xblue}
-\colorlet{xcol2}{xgreen}
-\colorlet{xcol3}{xpurple}
-\colorlet{xcol4}{xorange}
-\colorlet{xcol5}{xgray}
-\colorlet{xcol6}{xcyan}
 
 % Dark colors
 \colorlet{xdarkred}{red!85!black}
@@ -233,7 +226,7 @@
 \colorlet{xcol4}{xpurple}
 \colorlet{xcol5}{xorange}
 \colorlet{xcol6}{xcyan}
-\colorlet{xcol7}{xpink}
+\colorlet{xcol7}{xpink!75!black}
 
 %------- %
 % XHFILL %
@@ -375,6 +368,9 @@
 	challengestyle/.style={
 		common={xorange}{\textbf{?}},
 	},
+	quotestyle/.style={
+		common={gray}{\textbf{"}},
+	},
 }
 
 \newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
@@ -384,6 +380,7 @@
 \newtcbtheorem[auto counter, number within=chapter]{example}{Example}{examplestyle}{example}
 \newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
 \newtcbtheorem[auto counter, number within=chapter]{challenge}{Challenge}{challengestyle}{challenge}
+\newtcbtheorem[]{nquote}{Quote}{quotestyle}{quote}
 
 %---------%
 % FIGURES %
@@ -602,6 +599,9 @@
 %-------------%
 % OTHER STUFF %
 %-------------%
+
+\usepackage[autostyle]{csquotes} % for quotes
+\usepackage[]{quoting}
 
 \usepackage[version=4]{mhchem} % for chemistry
 \newcommand{\shrug}[1][]{% shrug emoji
