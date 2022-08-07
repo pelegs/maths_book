@@ -522,18 +522,18 @@
 
 		For a more general proof which includes the odd values of $n$ we must work a bit harder. Recall that the $k$-th root of the equation $z^{n}=1$ has the following form (\autoref{eq:nth roots of 1}):
 		\[
-			w_{k} = e^{\frac{2\pi}{n}\iu k}.
+			w_{k} = \eu^{\frac{2\pi}{n}\iu k}.
 		\]
 
 		We can re-write the sum of the roots as
 		\[
-			\sum\limits_{k=0}^{n-1} \left(e^{\frac{2\pi\iu}{n}}\right)^{k},
+			\sum\limits_{k=0}^{n-1} \left(\eu^{\frac{2\pi\iu}{n}}\right)^{k},
 		\]
 		(since $x^{ab} = (x^{a})^{b}$)
 
-		Using the hint we note that in this sum $r=e^{\frac{2\pi\iu}{n}}$, and thus
+		Using the hint we note that in this sum $r=\eu^{\frac{2\pi\iu}{n}}$, and thus
 		\def\lsk{1.25\normalbaselineskip}
 		\begin{align*}
-			\sum\limits_{k=0}^{n-1} \left( e^{\frac{2\pi\iu}{n}} \right)^{k} &= \frac{1-\left(e^{\frac{2\pi\iu}{n}}\right)^{n}}{1-e^{\frac{2\pi\iu}{n}}} = \frac{1-e^{\frac{2\pi\iu}{n}n}}{1-e^{\frac{2\pi\iu}{n}}} = \frac{1-e^{2\pi\iu}}{1-e^{\frac{2\pi\iu}{n}}} = \frac{1-1}{1-e^{\frac{2\pi\iu}{n}}} = 0.
+			\sum\limits_{k=0}^{n-1} \left( \eu^{\frac{2\pi\iu}{n}} \right)^{k} &= \frac{1-\left(\eu^{\frac{2\pi\iu}{n}}\right)^{n}}{1-\eu^{\frac{2\pi\iu}{n}}} = \frac{1-\eu^{\frac{2\pi\iu}{n}n}}{1-\eu^{\frac{2\pi\iu}{n}}} = \frac{1-\eu^{2\pi\iu}}{1-\eu^{\frac{2\pi\iu}{n}}} = \frac{1-1}{1-\eu^{\frac{2\pi\iu}{n}}} = 0.
 		\end{align*}
 \end{enumerate}
