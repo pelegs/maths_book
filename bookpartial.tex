@@ -28,10 +28,12 @@
 \def\input@path{{./pre_content/}}
 \makeatother
 \input{rights}
+\newpage
 
 % Contents?
 HERE BE TABLE
 %\tableofcontents
+\newpage
 
 % Chapters
 \setcounter{chapter}{-1}
@@ -40,7 +42,7 @@ HERE BE TABLE
 \makeatletter
 \def\input@path{{./chapters/intro/}}
 \makeatother
-% \input{preface}
+\input{preface}
 % \input{math_symbols_sets}
 % \input{relations_functions}
 % \input{polynomials}
@@ -48,21 +50,23 @@ HERE BE TABLE
 % \input{combinatorics}
 % \input{trigonomentry}
 % \input{complex_numbers}
-\input{exercises}
+% \input{exercises}
+% \newpage
 
 % Linear algebra (intuitive)
-% \makeatletter
-% \def\input@path{{./chapters/linear_algebra_intuitive/}}
-% \makeatother
+\makeatletter
+\def\input@path{{./chapters/linear_algebra_intuitive/}}
+\makeatother
 % \input{preface}
 % \input{vectors}
 % \input{linear_trans}
 % \input{matrices}
 % \input{linear_systems}
-% \input{eigenvectors}
+\input{eigenvectors}
 % \input{decompositions}
 % \input{real_life_examples}
 % \input{exercises}
+% \newpage
 
 % % Calculus in 1D
 % \makeatletter
@@ -75,6 +79,7 @@ HERE BE TABLE
 % \input{integrals}
 % \input{analysis}
 % \input{exercises}
+% \newpage
 
 % % Linear algebra (Rigorous)
 % \makeatletter
@@ -84,6 +89,7 @@ HERE BE TABLE
 % \input{fields}
 % \input{vectors}
 % \input{exercises}
+% \newpage
 
 % % Differential equations
 % \makeatletter
@@ -91,6 +97,7 @@ HERE BE TABLE
 % \makeatother
 % \input{preface}
 % \input{exercises}
+% \newpage
 
 % % Fourier series and transforms
 % \makeatletter
@@ -98,6 +105,7 @@ HERE BE TABLE
 % \makeatother
 % \input{preface}
 % \input{exercises}
+% \newpage
 
 % % Symmetry groups
 % \makeatletter
@@ -105,5 +113,6 @@ HERE BE TABLE
 % \makeatother
 % \input{preface}
 % \input{exercises}
+% \newpage
 
 \end{document}

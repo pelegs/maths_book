@@ -35,21 +35,21 @@ Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Componen
 Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Introduction""Relations and Functions
 Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Definition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
-Defintions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Defintions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
+Defintions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Defintions}$/;"	u	section:Systems of linear equations
 Derivatives	chapters/calculus_1D/derivatives.tex	/^\\section{Derivatives}$/;"	s	chapter:Calculus in 1D
 Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Developing intuition}\\label{sec:LS_developing_intuition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
 Differential equations	chapters/differential_equations/preface.tex	/^\\chapter{Differential equations}$/;"	c
-Eigenvectors and eigenvalues	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\section{Eigenvectors and eigenvalues}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
+Eigenvectors and eigenvalues	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\section{Eigenvectors and eigenvalues}$/;"	s
 Exercises	chapters/calculus_1D/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Calculus in 1D
 Exercises	chapters/differential_equations/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Differential equations
 Exercises	chapters/fourier/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:The Fourier transform
 Exercises	chapters/groups/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Symmetry Groups
-Exercises	chapters/intro/exercises.tex	/^\\section{Exercises}$/;"	s
+Exercises	chapters/intro/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Introduction
 Exercises	chapters/linear_algebra_intuitive/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Exercises	chapters/linear_algebra_rigorous/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Exponential and Logarithmic Functions	chapters/intro/exponentials_logarithms.tex	/^\\section{Exponential and Logarithmic Functions}$/;"	s	chapter:Introduction
 Fields	chapters/linear_algebra_rigorous/fields.tex	/^\\section{Fields}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
-Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Finding solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
+Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Finding solutions}$/;"	u	section:Systems of linear equations
 Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
@@ -83,7 +83,7 @@ Matrix-vector products	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsec
 Modulo fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Modulo fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 Normal vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Normal vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Polynomial functions	chapters/intro/polynomials.tex	/^\\section{Polynomial functions}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
-Problems	chapters/intro/exercises.tex	/^\\subsection{Problems}$/;"	u	section:Exercises
+Problems	chapters/intro/exercises.tex	/^\\subsection{Problems}$/;"	u	section:Introduction""Exercises
 Radians	chapters/intro/trigonomentry.tex	/^\\subsection{Radians}$/;"	u	section:Introduction""Trigonometric functions
 Real functions	chapters/intro/relations_functions.tex	/^\\subsection{Real functions}$/;"	u	section:Introduction""Relations and Functions
 Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relations and Functions}\\label{sec:relations_and_functions}$/;"	s	chapter:Introduction
@@ -91,12 +91,12 @@ Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots
 Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:Calculus in 1D
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Simple combinatorics and the binomial coefficients	chapters/intro/combinatorics.tex	/^\\section{Simple combinatorics and the binomial coefficients}$/;"	s	chapter:Introduction
-Solutions	chapters/intro/exercises.tex	/^\\subsection{Solutions}$/;"	u	section:Exercises
-Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
+Solutions	chapters/intro/exercises.tex	/^\\subsection{Solutions}$/;"	u	section:Introduction""Exercises
+Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Systems of linear equations
 Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
-Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
-Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
+Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Systems of linear equations
+Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s
 TESTFOLDER	Makefile	/^TESTFOLDER=tests$/;"	m
 The Fourier transform	chapters/fourier/preface.tex	/^\\chapter{The Fourier transform}$/;"	c
 The Unit Circle	chapters/intro/trigonomentry.tex	/^\\subsection{The Unit Circle}$/;"	u	section:Introduction""Trigonometric functions
@@ -494,6 +494,8 @@ eq:determinant_3x3	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:
 eq:determinant_AB	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_AB}$/;"	l
 eq:determinant_zero_no_inverse	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_zero_no_inverse}$/;"	l
 eq:dimension of a vector space	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:dimension of a vector space}$/;"	l
+eq:eigenvector_matrix_form	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:eigenvector_matrix_form}$/;"	l
+eq:eigenvector_matrix_form_indeces	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:eigenvector_matrix_form_indeces}$/;"	l
 eq:exponent	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponent}$/;"	l
 eq:exponents_properties	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponents_properties}$/;"	l
 eq:factorial_def	chapters/intro/combinatorics.tex	/^	\\label{eq:factorial_def}$/;"	l
@@ -627,6 +629,7 @@ feGaussianBlur12165	figures/chapters/tapir_rainbow.svg	/^         id="feGaussian
 feGaussianBlur12169	figures/chapters/tapir_rainbow.svg	/^         id="feGaussianBlur12169" \/>$/;"	i
 feGaussianBlur9339	figures/chapters/tapir_butterfly.svg	/^         id="feGaussianBlur9339" \/>$/;"	i
 feTurbulence9143	figures/chapters/tapir_butterfly.svg	/^         result="result1" \/>$/;"	i
+fig:	chapters/linear_algebra_intuitive/eigenvectors.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/linear_trans.tex	/^		\\label{fig:}$/;"	l
 fig:R2_infinite_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:R2_infinite_solutions}$/;"	l
@@ -685,6 +688,7 @@ fig:vector addition geometric	chapters/linear_algebra_intuitive/vectors.tex	/^	\
 fig:vector components	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:vector components}$/;"	l
 fig:vector in different basis sets	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:vector in different basis sets}$/;"	l
 fig:vector in two different basis sets	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:vector in two different basis sets}$/;"	l
+fig:y_scale_2	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{fig:y_scale_2}$/;"	l
 fig:zero_det_R2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:zero_det_R2}$/;"	l
 filter12147	figures/chapters/tapir_rainbow.svg	/^       height="1.2930124">$/;"	d
 filter12147	figures/chapters/tapir_rainbow.svg	/^       height="1.2930124">$/;"	i

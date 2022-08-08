@@ -1,1 +1,131 @@
 \section{Eigenvectors and eigenvalues}
+Some linear transformations have special directions which only scale by the application of the transformation and are not mapped to different directions. Take for example the transformation $T:\Rs{2}\to\Rs{2}$, which scales space by $2$ in the $y$-direction. All vectors pointing in the $y$-direction get scaled by $T$ (namely by a factor of $2$) and still point in the $y$-direction after the application of $T$. All vectors pointing in the $x$-direction do not change at all (i.e. they are "scaled" by a factor of $1$), and of course still point in the $x$-direction after the application of $T$. Any other vector - i.e. those that have both components different than zero - change their direction after the application of $T$ (see \autoref{fig:y_scale_2}).
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[c]{0.45\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+					vector plane,
+					width=7.5cm, height=7.5cm,
+					xlabel={},
+					xticklabels={,},
+					yticklabels={,},
+					]
+					\pgfmathsetmacro{\R}{2}
+					\foreach \k in {0,...,11}{
+						\pgfmathsetmacro{\th}{30*\k}
+						\edef\temp{\noexpand
+							\draw[vector, color=xrainbow\k] (0,0) -- ({\R*cos(\th)},{\R*sin(\th)});
+						;}
+						\temp
+					}
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		\caption{Some vectors.}
+		\label{fig:}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.45\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+					vector plane,
+					width=7.5cm, height=7.5cm,
+					xticklabels={,},
+					yticklabels={,},
+					]
+					\pgfmathsetmacro{\R}{2}
+					\foreach \k in {0,...,11}{
+						\pgfmathsetmacro{\th}{30*\k}
+						\edef\temp{\noexpand
+							\draw[vector, color=xrainbow\k] (0,0) -- ({\R*cos(\th)},{2*\R*sin(\th)});
+						;}
+						\temp
+					}
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		\caption{Same vectors after the application of $T$.}
+		\label{fig:}
+	\end{subfigure}
+	\begin{subfigure}[c]{\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+					vector plane,
+					width=7.5cm, height=7.5cm,
+					xticklabels={,},
+					yticklabels={,},
+					]
+					\pgfmathsetmacro{\R}{2}
+					\foreach \k in {0,...,11}{
+						\pgfmathsetmacro{\th}{30*\k}
+						\edef\temp{
+							\noexpand\draw[vector, color=xrainbow\k] (0,0) -- ({\R*cos(\th)},{\R*sin(\th)});
+							\noexpand\draw[vector, color=xrainbow\k] (0,0) -- ({\R*cos(\th)},{2*\R*sin(\th)});
+						;}
+						\temp
+					}
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		\caption{The vectors before and after the application of $T$ layered on top of eachother.}
+		\label{fig:}
+	\end{subfigure}
+	\caption{Some vectors before and after application of the $y$-scaling transformation $T$. Note how only the vectors pointing in the direction of the $x$- and $y$-axes stay in the same direction, while all the other vectors change their directions.}
+	\label{fig:y_scale_2}
+\end{figure}
+
+We call such vectors the \emph{eigenvectors} of the transformation. The amount by which the are scaled is then their respective \emph{eigenvalues}.
+
+\begin{example}{Eigenvectors and eigenvalues}{}
+	Text here
+\end{example}
+
+In matrix form, a vector $\vec{v}$ is an eigenvector of a transformation represented by the matrix $A$, if
+\begin{equation}
+	A\vec{v} = \lambda\vec{v},
+	\label{eq:eigenvector_matrix_form}
+\end{equation}
+where $\lambda\in\mathbb{R},\ \lambda\neq0$. This kind of equation is typically called an \emph{eigenvector equation}. When there are several eigenvectors for a transformation, each with its distinct eigenvalue, we simply add indeces to all relevant parts:
+\begin{equation}
+	A\vec{v}_{i} = \lambda_{i}\vec{v}_{i},
+	\label{eq:eigenvector_matrix_form_indeces}
+\end{equation}
+where again $\lambda_{i}\in\mathbb{R}$ and $\lambda_{i}\neq0$.
+
+Before continuing to explore some more examples of eigenvectors, there are two properties\footnote{actually one property and one non-property} of eigenvectors that are important to mention. Given a linear transformation $T$,
+\begin{itemize}
+	\item A scale of any eigenvector $\vec{v}$ of $T$ is also an eigenvector of $T$, with the same eigenvalue.
+		\begin{proof}{Eigenvector scale}{}
+			Let $T:\Rs{n}\to\Rs{n}$ be a linear transformation represented by the square matrix $A$, with eigenvector $\vec{v}$ and its respective eigenvalue $\lambda$. Then
+			\[
+				A\vec{v} = \lambda\vec{v}.
+			\]
+			Replacing $\vec{v}$ with a scale of itself, i.e. $\vec{u}=\alpha\vec{v}$, then applying $A$ to $\vec{u}$ gives us
+			\[
+				A\vec{u} \overset{(1)}{=} A \left( \alpha\vec{v} \right) \overset{(2)}{=} \alpha A \vec{v} \overset{(3)}{=} \alpha\lambda\vec{v} \overset{(4)}{=} \lambda\alpha\vec{v} \overset{(5)}{=} \lambda\vec{u}.
+			\]
+			where
+			\begin{enumerate}[label=(\arabic*)]
+				\item Substitution of $\vec{u}$ by its definition $\vec{u}=\alpha\vec{v}$.
+				\item Due to the linearity of $A$ we can bring $\alpha$ out of the product.
+				\item Resulting due to $\vec{v}$ being an eigenvector of $A$.
+				\item The product of real numbers is commutative.
+				\item Substituting back $\alpha\vec{v}=\vec{u}$.
+			\end{enumerate}
+
+			Therefore, $\vec{u}$ is also an eigenvector of $A$ (and thus $T$) with the same eigenvalue $\lambda$ as $\vec{v}$.
+		\end{proof}
+
+	\item The linear combination of two eigenvectors of $T$ is \textbf{not neccessarily an eigenvector of} $\bm{T}$! For example, consider the above transformation which scales all vectors by $2$ in the $y$-direction: as we saw, any vector in the $x$-direction is an eigenvector of the transformation, and so does any vector in the $y$-direction. Specifically, the vectors $\vec{a}=\colvec{1;0}$ and $\vec{b}=\colvec{0;1}$ are two separate eigenvectors of the transformation (with eigenvalues $1$ and $2$, respectively), however the vector
+		\[
+			\vec{c} = \vec{a}+\vec{b} = \colvec{1;1}
+		\]
+		is \textbf{NOT} an eigenvector of the transformation, since
+		\[
+			\colvec{1;1} \overset{T}{\mapsto} \colvec{1;2} \neq 2\colvec{1;1}.
+		\]
+\end{itemize}
