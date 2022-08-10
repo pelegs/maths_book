@@ -253,7 +253,7 @@ Note that $A-\lambda I$ is a matrix, with the following form:
 
 Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the values of $\lambda$ for which the eigenvector equation holds, and in turn we get all the eigenvalues $\lambda_{i}$ of the linear transformation represented by $A$. We can then substitute each $\lambda_{i}$ into the eigenvector equation and find its respective eigenvector family.
 
-\begin{example}{Eigenvectors and eigenvalues of some $\bm{2\times2}$ matrices}{}
+\begin{example}{Eigenvectors and eigenvalues of a $\bm{2\times2}$ matrix}{}
 	The matrix representing the $y$-scaling transformation discussed in the beginning of this section is
 	\[
 		A = \begin{bmatrix}1&0 \\ 0&2\end{bmatrix}.
@@ -287,9 +287,148 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 	The solution is of course $x=0$ and $y\in\mathbb{R}$, meaning any vector pointing in the $y$-direction.
 \end{example}
 
+\begin{example}{Eigenvectors and eigenvalues of a $\bm{3\times3}$ matrix}{}
+	Let us now calculate the eigenvectors and their respective eigenvalues for the following $3\times3$ matrix:
+	\[
+		A=
+		\begin{bmatrix}
+			5 & -6 & -3\\
+			0 & -1 &  0\\
+			0 &  2 &  2\\
+		\end{bmatrix}.
+	\]
+
+	We start by calculating the determinant $|A-\lambda I$:
+	\begin{align*}
+		|A-\lambda I| &=
+		\begin{vmatrix}
+			5-\lambda & -6 & -3\\
+			0 & -1-\lambda & 0\\
+			0 & 2 & 2-\lambda\\
+		\end{vmatrix}\\
+		&=
+		\left(5-\lambda\right)\begin{vmatrix}-1-\lambda & 0 \\ 2 & 2-\lambda\end{vmatrix} -(-6)\cancel{\begin{vmatrix}0&0 \\ 0&2-\lambda\end{vmatrix}} +3 (-3)\cancel{\begin{vmatrix}0&-1-\lambda \\ 0&2\end{vmatrix}}\\
+		&= \left(5-\lambda\right) \left( -1-\lambda \right) \left( 2-\lambda \right)\\
+	\end{align*}
+	The solutions of $|A-\lambda I|=0$ are therefore
+	\[
+		\lambda_{1}=5,\ \lambda_{2}=-1,\ \lambda_{3}=2.
+	\]
+
+	\begin{descitemize}
+	\item[$\bm{\lambda_{1}=5}$] solving $A\vec{v} = 5\vec{v}$ yields
+	\[
+		\begin{bmatrix}
+			5 & -6 & -3\\
+			0 & -1 &  0\\
+			0 &  2 &  2\\
+		\end{bmatrix}\colvec{x;y;z} = 5\colvec{x;y;z} = \colvec{5x;5y;5z},
+	\]
+	i.e.
+	\[
+		\begin{cases}
+			5x-6y-3z &= 5x,\\
+			0x-1y+0z &= 5y,\\
+			0x+2y+2z &=5z,
+		\end{cases}
+	\]
+	for which the solution is
+	\[
+		x\in\mathbb{R},\ y=0,\ z=0.
+	\]
+	The first family of eigenvectors are the vectors pointing in the $x$-direction, and their respective eigenvalue is $\lambda=5$. We can verify this:
+	\[
+		\begin{bmatrix}
+			5 & -6 & -3\\
+			0 & -1 &  0\\
+			0 &  2 &  2\\
+		\end{bmatrix}\colvec{x;0;0} = \colvec{5x-6\cdot0-3\cdot0;0x-1\cdot0+0\cdot0;0x+2\cdot0+2\cdot0} = \colvec{5x;0;0} = 5\colvec{x;0;0}.
+	\]
+
+	\vspace{1em}
+	\item[$\bm{\lambda_{2}=-1}$] solving $A\vec{v}=-\vec{v}$ yields
+	\[
+		\begin{bmatrix}
+			5 & -6 & -3\\
+			0 & -1 &  0\\
+			0 &  2 &  2\\
+		\end{bmatrix}\colvec{x;y;z} = -\colvec{x;y;z} = \colvec{-x;-y;-z},
+	\]
+	i.e.
+	\[
+		\begin{cases}
+			5x-6y-3z &= -x,\\
+			0x-1y+0z &= -y,\\
+			0x+2y+2z &= -z,
+		\end{cases}
+	\]
+	for which the solution is
+	\[
+		x=\frac{2}{3}y,\ y\in\mathbb{R},\ z=-x.
+	\]
+	Verifying the solution using the representative vector $\vec{v}=\colvec{2;3;-2}$:
+	\[
+		\begin{bmatrix}
+			5 & -6 & -3\\
+			0 & -1 &  0\\
+			0 &  2 &  2\\
+		\end{bmatrix}\colvec{2;3;-2} = \colvec{5\cdot2-6\cdot3+3\cdot2;0\cdot2-1\cdot3+0\cdot(-2);0\cdot2+2\cdot3+2\cdot(-2)} = \colvec{10-18+6;-3;6-4} = \colvec{-2;-3;2} = -\colvec{2;3;-2}.
+	\]
+
+	\item[$\bm{\lambda_{3}=2}$] solving $A\vec{v}=2\vec{v}$ yields
+	\[
+		\begin{bmatrix}
+			5 & -6 & -3\\
+			0 & -1 &  0\\
+			0 &  2 &  2\\
+		\end{bmatrix}\colvec{x;y;z} = 2\colvec{x;y;z} = \colvec{2x;2y;2z},
+	\]
+	i.e.
+	\[
+		\begin{cases}
+			5x-6y-3z &= 2x,\\
+			0x-1y+0z &= 2y,\\
+			0x+2y+2z &= 2z,
+		\end{cases}
+	\]
+	for which the solution is
+	\[
+		x=z,\ y=0.
+	\]
+	Verifying the solution using the representative vector $\colvec{1;0;1}$:
+	\[
+		\begin{bmatrix}
+			5 & -6 & -3\\
+			0 & -1 &  0\\
+			0 &  2 &  2\\
+		\end{bmatrix}\colvec{1;0;1} = \colvec{5\cdot1-6\cdot0-3\cdot1;0\cdot1-1\cdot0+0\cdot0;0\cdot1+2\cdot0+2\cdot1} = \colvec{2;0;2} = 2\colvec{1;0;1}.
+	\]
+	\end{descitemize}
+
+	To summarize: the linear transformation represented by the matrix
+	\[
+		A=
+		\begin{bmatrix}
+			5 & -6 & -3\\
+			0 & -1 &  0\\
+			0 &  2 &  2\\
+		\end{bmatrix}
+	\]
+	has three families of eigenvectors:
+
+	\begin{center}
+		\begin{tabular}{lc}
+			\toprule
+			Eigenvalue & Eigenvector \\
+			\midrule
+			\addlinespace[1em]
+			$\lambda_{1}= 5$ & $\colvec{1;0;0}$ \\[3em]
+			$\lambda_{2}=-1$ & $\colvec{2;3;-2}$ \\[3em]
+			$\lambda_{3}= 2$ & $\colvec{1;0;1}$ \\[2em]
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{example}
+
 \subsection{Characteristic polynomial}
-In the above example the expression $|A-\lambda I|$ is a polynomial in $\lambda$, namely
-\[
-	P(\lambda) = (1-\lambda)(2-\lambda) = 2-\lambda-\lambda+\lambda^{2} = \lambda^{2}-2\lambda+2.
-\]
-This is not a coincidence - any expression of this form is a polynomial in $\lambda$, its degree depending on the form of $A$. We call this polynomial the \emph{characteristic polynomial} of $A$ and its roots are of course the eigenvecors of $A$.
+Did you notice that in both above examples the expression $|A-\lambda I|$ is a polynomial in $\lambda$? This is not a coincidence - any expression of this form is a polynomial in $\lambda$, its degree depending on the form of $A$. We call this polynomial the \emph{characteristic polynomial} of $A$ and its roots are of course the eigenvecors of $A$.
