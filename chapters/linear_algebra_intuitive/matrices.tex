@@ -1971,10 +1971,11 @@ Alltogether, the nullity and rank of a matrix add up to the dimension of its dom
 TBD: figure to illustrate the kernel and column space of a matrix as complementary.
 
 If the rank of an $m\times n$ matrix $A$ is equal to $n$, its kernel space must have the dimension
-\[
+\begin{equation}
 	\Null(A) = n-\rank(A) = n-n = 0,
-\]
-i.e. the matrix has no vectors mapped to $\vec{0}$ (except the zero vector itself), and thus the matrix is invertible (non-singular), and so its determinant is non-zero. This is true in the other direction: a matrix with non-zero determinant is invertible, and thus its kernel contains only $\vec{0}$ and the nullity of the matrix is $0$. This means that the column space of the matrix must equal $n$. Alltogether, these facts can be written succinctly as
+	\label{eq:nullity_rank}
+\end{equation}
+i.e. the matrix has no vectors mapped to $\vec{0}$ (except the zero vector itself), and thus the matrix is invertible (non-singular), and so its determinant is non-zero. This is true in the other direction: a matrix with non-zero determinant is invertible, and thus its kernel contains only $\vec{0}$ and the nullity of the matrix is $0$. This means that the column space of the matrix must equal $n$. Altogether, these facts can be written succinctly as
 \begin{equation}
 	\rank(A) = n \Leftrightarrow |A|\neq0.
 	\label{eq:rank_det}
