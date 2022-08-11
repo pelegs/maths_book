@@ -32,7 +32,7 @@ we can get its row form by transposing it, i.e. we look at $\vec{v}^{\top}$. How
 To be consistent with the usual notation used in physics (and have more succisent, we introduce the following changes:
 \begin{itemize}
 	\item The complex conjugate of the number $z\in\mathbb{C}$ is changed to $\sconj{C}$.
-	\item The star notation is also used for transpose.
+	\item The star notation is also used for transpose (this is normaly called \emph{conjugate transpose}, and is sometimes denoted by $u^{\dagger}$).
 	\item The arrow is dropped from the vector notation.
 \end{itemize}
 Applying these changes, \autoref{eq:row_vector_complex_star_notation} has the form
@@ -105,4 +105,67 @@ There is an interesting way one can interpret the scalar product: instead of as 
 
 \tbw{this is the dual space of $\Cs{n}$, etc.}
 
-Another product that is easily defined usin the bra-ket notation is the \emph{exterior product} of two vectors (recall that the scalar product is also called the \textit{inner product}). The exterior product arises when we multiply two vectors in the opposite order compared to the scalar product, i.e. instead of $\innerproduct{u}{v}$ we calculate
+Another product that is easily defined usin the bra-ket notation is the \emph{exterior product} of two vectors (recall that the scalar product is also called the \textit{inner product}). The exterior product arises when we multiply two vectors in the opposite order compared to the scalar product, i.e. instead of $\innerproduct{u}{v}$ we calculate $\outerproduct{u}{v}$:
+\begin{equation}
+	\outerproduct{u}{v} = \colvec{\Ui{1};\Ui{2};\vdots;\Ui{n}}\rowvec{\sconj{\Vj{1}};\sconj{\Vj{2}};\dots;\sconj{\Vj{n}}} =
+	\begin{bNiceMatrix}
+		\Ui{1}\sconj{\Vj{1}} & \Ui{1}\sconj{\Vj{2}} & \dots & \Ui{1}\sconj{\Vj{n}}\\
+		\Ui{2}\sconj{\Vj{1}} & \Ui{2}\sconj{\Vj{2}} & \dots & \Ui{2}\sconj{\Vj{n}}\\
+		\vdots & \vdots & \Ddots & \vdots\\
+		\Ui{n}\sconj{\Vj{1}} & \Ui{n}\sconj{\Vj{2}} & \dots & \Ui{n}\sconj{\Vj{n}}\\
+	\end{bNiceMatrix},
+	\label{eq:outer_product}
+\end{equation}
+i.e. the result of the outer product is a matrix, in which any element $\Ma{i}{j}$ is equal to
+\begin{equation}
+	\Ma{i}{j} = \Ui{i}\sconj{\Vj{j}}.
+	\label{eq:}
+\end{equation}
+
+\begin{note}{Bra-ket vs. ket-bra}{}
+	Using the bra-ket notation, the names for the inner and outer products make sense: in the inner product the vectors stay inside the brackets, while in the outer product they are outside of it. This is just a small demonstration for the ``power'' of the bra-ket notation in simplifying mathematical expressions.
+\end{note}
+
+\begin{example}{Inner and outer products}{}
+	Given the two column vectors
+	\[
+		\ket{u}=\colvec{1+\iu;3},\ \ket{v}=\colvec{-2+3\iu;5-\iu},
+	\]
+	let us calculate the following:
+	\[
+		\innerproduct{u}{v},\ \innerproduct{v}{u},\ \outerproduct{u}{v},\ \outerproduct{v}{u}.
+	\]
+
+	We start by writing $\bra{u}$ and $\bra{v}$:
+	\[
+		\bra{u}=\rowvec{1-\iu;3},\ \bra{v}=\rowvec{-2-3\iu;5+\iu}.
+	\]
+	Then, the 4 requested products are easy to calculate:
+	\begin{align*}
+		\innerproduct{u}{v} &= (1-\iu)(-2+3\iu) + 3(5-\iu) = -2+3\iu+2\iu+3+15-3\iu = 16+2\iu.\\
+		\innerproduct{v}{u} &= (1+\iu)(-2-3\iu) + 3(5+\iu) = -2-3\iu-2\iu+3+15+3\iu = 16-2\iu = \sconj{\innerproduct{u}{v}}.\\[2em]
+		\outerproduct{u}{v} &=
+			\begin{bmatrix}
+				(1+\iu)(-2-3\iu) & (1+\iu)(5+\iu)\\
+				3(-2-3\iu) & 3(5+\iu)
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				1-5\iu & 4+6\iu\\
+				-6-9\iu & 15+3\iu
+			\end{bmatrix}.\\
+		\outerproduct{v}{u} &=
+			\begin{bmatrix}
+				(-2+3\iu)(1-\iu) & 3(-2+3\iu)\\
+				(5-\iu)(1-\iu) & 3(5-\iu)
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				1+5\iu & -6+9\iu\\
+				4-6\iu & 15-3\iu
+			\end{bmatrix}.
+	\end{align*}
+\end{example}
+
+\subsection{Basis sets}
+\tbw{text text text\ldots}

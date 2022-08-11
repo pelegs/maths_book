@@ -551,6 +551,18 @@
 \newcommand{\Mm}[2]{
 	\Matel{m}{xred}{xblue}{#1}{#2}
 }
+\newcommand{\Ui}[1]{
+	u_{\textcolor{xred}{#1}}
+}
+\newcommand{\Uj}[1]{
+	u_{\textcolor{xblue}{#1}}
+}
+\newcommand{\Vi}[1]{
+	v_{\textcolor{xred}{#1}}
+}
+\newcommand{\Vj}[1]{
+	v_{\textcolor{xblue}{#1}}
+}
 
 % Non-linear transformations
 \makeatletter
@@ -737,4 +749,6 @@
 	}
 }
 
-\newcommand{\tbw}[1]{\colorbox{xred!20}{\textbf{To be written}: #1}}
+\newcommand{\tbw}[1]{
+	\textcolor{xred}{\textbf{!}}\ \colorbox{xred!20}{\textbf{To be written}: #1}\ \textcolor{xred}{\textbf{!}}
+}
