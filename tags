@@ -27,7 +27,6 @@ Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock
 Basic Definitions	chapters/intro/trigonomentry.tex	/^\\subsection{Basic Definitions}$/;"	u	section:Trigonometric functions
 Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Introduction""Relations and Functions
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Vectors
-Basis sets	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Basis sets}$/;"	u	section:The Bra-Ket notation
 Calculus in 1D	chapters/calculus_1D/preface.tex	/^\\chapter{Calculus in 1D}$/;"	c
 Calulating eigenvectors	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Calulating eigenvectors}$/;"	u	section:Eigenvectors and eigenvalues
 Cartesian Products	chapters/intro/math_symbols_sets.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Mathematical Symbols and Sets
@@ -36,7 +35,7 @@ Common mathematical notations	chapters/intro/math_symbols_sets.tex	/^\\subsectio
 Complex Numbers	chapters/intro/complex_numbers.tex	/^\\section{Complex Numbers}\\label{sec:complex numbers}$/;"	s	chapter:Introduction
 Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Components}$/;"	u	section:Vectors
 Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Introduction""Relations and Functions
-Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
+Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s
 Definition	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Definition}$/;"	u	section:The Bra-Ket notation
 Definition	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Definition}$/;"	u	section:Eigenvectors and eigenvalues
 Definition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
@@ -75,6 +74,7 @@ Layer_x0020_1	figures/symbols/solve.svg	/^           style="image-rendering:opti
 Limits of real functions	chapters/calculus_1D/function_limits.tex	/^\\section{Limits of real functions}$/;"	s	chapter:Calculus in 1D
 Linear algebra\\\\(intuitive approach)	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	c
 Linear algebra\\\\(rigorous approach)	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	c
+Linear combinations and basis sets	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Linear combinations and basis sets}$/;"	u	section:The Bra-Ket notation
 Linear combinations, spans and linear dependency	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Linear combinations, spans and linear dependency}$/;"	u	section:Vectors
 Linear transformation of basis vectors	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Linear transformation of basis vectors}$/;"	u	section:Matrices
 Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\section{Linear transformations}\\label{sec:intuitive_linear_trans}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
@@ -95,13 +95,14 @@ Radians	chapters/intro/trigonomentry.tex	/^\\subsection{Radians}$/;"	u	section:T
 Real functions	chapters/intro/relations_functions.tex	/^\\subsection{Real functions}$/;"	u	section:Introduction""Relations and Functions
 Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relations and Functions}\\label{sec:relations_and_functions}$/;"	s	chapter:Introduction
 Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots of complex numbers}$/;"	u	section:Introduction""Complex Numbers
+Scalar multiplication and addition of vectors	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Scalar multiplication and addition of vectors}$/;"	u	section:The Bra-Ket notation
 Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:Calculus in 1D
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Mathematical Symbols and Sets
 Simple combinatorics and the binomial coefficients	chapters/intro/combinatorics.tex	/^\\section{Simple combinatorics and the binomial coefficients}$/;"	s	chapter:Introduction
 Solutions	chapters/intro/exercises.tex	/^\\subsection{Solutions}$/;"	u	section:Introduction""Exercises
 Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Systems of linear equations
 Some examples	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Some examples}$/;"	u	section:Eigenvectors and eigenvalues
-Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
+Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
 Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Systems of linear equations
 Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s
@@ -465,6 +466,7 @@ eq:Euler's identity	chapters/intro/complex_numbers.tex	/^	\\label{eq:Euler's ide
 eq:Euler's_formula	chapters/intro/complex_numbers.tex	/^	\\label{eq:Euler's_formula}$/;"	l
 eq:Rn	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:Rn}$/;"	l
 eq:adding vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:adding vectors}$/;"	l
+eq:addition_bra-ket	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:addition_bra-ket}$/;"	l
 eq:adjugate_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:adjugate_2x2}$/;"	l
 eq:algebraic_subset_reals	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:algebraic_subset_reals}$/;"	l
 eq:area of a triangle	chapters/intro/trigonomentry.tex	/^	\\label{eq:area of a triangle}$/;"	l
@@ -475,13 +477,18 @@ eq:binom_def	chapters/intro/combinatorics.tex	/^	\\label{eq:binom_def}$/;"	l
 eq:binom_symmetry	chapters/intro/combinatorics.tex	/^	\\label{eq:binom_symmetry}$/;"	l
 eq:binomial_expansion	chapters/intro/combinatorics.tex	/^	\\label{eq:binomial_expansion}$/;"	l
 eq:binomial_expansion_n	chapters/intro/combinatorics.tex	/^	\\label{eq:binomial_expansion_n}$/;"	l
+eq:bra-ket_linear_combination	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra-ket_linear_combination}$/;"	l
+eq:bra-ket_orthonormal_basis	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra-ket_orthonormal_basis}$/;"	l
+eq:bra-ket_spanning_vectors	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra-ket_spanning_vectors}$/;"	l
 eq:bra_as_operator	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra_as_operator}$/;"	l
 eq:bra_ket_def	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra_ket_def}$/;"	l
 eq:closed_interval	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:closed_interval}$/;"	l
+eq:coeffs_right_side	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:coeffs_right_side}$/;"	l
 eq:collinear system	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:collinear system}$/;"	l
 eq:collinear vectors	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:collinear vectors}$/;"	l
 eq:column vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:column vector}$/;"	l
 eq:column_vector_complex	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:column_vector_complex}$/;"	l
+eq:completeness_relation_std_basis_C3	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:completeness_relation_std_basis_C3}$/;"	l
 eq:complex number using Eurler's formula	chapters/intro/complex_numbers.tex	/^	\\label{eq:complex number using Eurler's formula}$/;"	l
 eq:complex_addition	chapters/intro/complex_numbers.tex	/^	\\label{eq:complex_addition}$/;"	l
 eq:complex_addition_geometric	chapters/intro/complex_numbers.tex	/^	\\label{eq:complex_addition_geometric}$/;"	l
@@ -530,6 +537,7 @@ eq:general_linear_equation_2_vars_renamed	chapters/linear_algebra_intuitive/line
 eq:general_linear_equation_n_vars	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{eq:general_linear_equation_n_vars}$/;"	l
 eq:generic_R2_LT	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:generic_R2_LT}$/;"	l
 eq:half_open_intervals	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:half_open_intervals}$/;"	l
+eq:i-th_std_basis_vector_bra-ket	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:i-th_std_basis_vector_bra-ket}$/;"	l
 eq:infinite_intervals	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:infinite_intervals}$/;"	l
 eq:integers	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:integers}$/;"	l
 eq:integers_subset_rationals	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:integers_subset_rationals}$/;"	l
@@ -538,10 +546,13 @@ eq:intersection_n_sets	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:inters
 eq:intersection_n_sets_big_notation	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:intersection_n_sets_big_notation}$/;"	l
 eq:inverse_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:inverse_2x2}$/;"	l
 eq:inverse_matrix_calc	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:inverse_matrix_calc}$/;"	l
+eq:isolating_scalar_coeffs	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:isolating_scalar_coeffs}$/;"	l
 eq:isolation1	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:isolation1}$/;"	l
 eq:isolation2	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:isolation2}$/;"	l
 eq:kernel_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:kernel_matrix}$/;"	l
 eq:kernel_transformation	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:kernel_transformation}$/;"	l
+eq:ket_as_sum_of_outer_products	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:ket_as_sum_of_outer_products}$/;"	l
+eq:ket_as_sum_of_outer_products_parenthesis	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:ket_as_sum_of_outer_products_parenthesis}$/;"	l
 eq:kronecker_delta	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:kronecker_delta}$/;"	l
 eq:law of cosines	chapters/intro/trigonomentry.tex	/^	\\label{eq:law of cosines}$/;"	l
 eq:law of sines	chapters/intro/trigonomentry.tex	/^	\\label{eq:law of sines}$/;"	l
@@ -616,6 +627,8 @@ eq:scalar product to norm	chapters/linear_algebra_intuitive/vectors.tex	/^	\\lab
 eq:scalar product via cos	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:scalar product via cos}$/;"	l
 eq:scalar_product_complex_full	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:scalar_product_complex_full}$/;"	l
 eq:scaling vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:scaling vectors}$/;"	l
+eq:scaling_bra	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:scaling_bra}$/;"	l
+eq:scaling_ket	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:scaling_ket}$/;"	l
 eq:set of n vectors	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:set of n vectors}$/;"	l
 eq:set_equality	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:set_equality}$/;"	l
 eq:sin sqr plus cos sqr equals 1	chapters/intro/trigonomentry.tex	/^	\\label{eq:sin sqr plus cos sqr equals 1}$/;"	l
@@ -625,6 +638,7 @@ eq:span of a two vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\labe
 eq:square_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:square_matrix}$/;"	l
 eq:square_matrix_main_diag	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:square_matrix_main_diag}$/;"	l
 eq:std basis set	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:std basis set}$/;"	l
+eq:std_basis_vectors_bra-ket	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:std_basis_vectors_bra-ket}$/;"	l
 eq:subset_def	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:subset_def}$/;"	l
 eq:subset_equal	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:subset_equal}$/;"	l
 eq:summation_notation	chapters/intro/polynomials.tex	/^	\\label{eq:summation_notation}$/;"	l
@@ -634,6 +648,7 @@ eq:system_equations_sussinct	chapters/linear_algebra_intuitive/linear_systems.te
 eq:tan_double_angles	chapters/intro/trigonomentry.tex	/^			\\label{eq:tan_double_angles}$/;"	l
 eq:test	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:test}$/;"	l
 eq:test2	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{eq:test2}$/;"	l
+eq:the_completeness_relation	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:the_completeness_relation}$/;"	l
 eq:three points in a plane	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:three points in a plane}$/;"	l
 eq:three points in a plane as vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:three points in a plane as vectors}$/;"	l
 eq:trace	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:trace}$/;"	l

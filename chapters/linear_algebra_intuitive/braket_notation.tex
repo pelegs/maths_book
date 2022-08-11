@@ -41,8 +41,8 @@ Applying these changes, \autoref{eq:row_vector_complex_star_notation} has the fo
 	\label{eq:row_vector_complex_star_notation_transpose}
 \end{equation}
 
-\begin{example}{Row vectors}{}
-	The row form of the vector
+\begin{example}{Bra/Row vectors}{}
+	The bra form of the vector
 	\[
 		v = \colvec{1+2i;3-i;\sqrt{2}+5i;4;-3i}
 	\]
@@ -61,7 +61,6 @@ their scalar product is
 	u\cdot v = \sconj{u}\cdot v = \rowvec{\sconj{u_{1}};\sconj{u_{2}};\dots;\sconj{u_{n}}} \cdot \colvec{v_{1};v_{2};\vdots;v_{n}} = \sconj{u_{1}}v_{1} + \sconj{u_{2}}v_{2} + \cdots + \sconj{u_{n}}v_{n}.
 	\label{eq:scalar_product_complex_full}
 \end{equation}
-
 
 Recall that a common notation for the scalar product of two vectors uses triangular brakets, i.e.
 \[
@@ -96,12 +95,12 @@ Let us write the properties of the scalar product adjusted to the bra-ket notati
 Generally speaking, any vector space that is ``equiped'' with a norm complying with these properties is called a \emph{Hilbert space}. We will discuss such spaces in more details later in the book.
 \end{note}
 
-There is an interesting way one can interpret the scalar product: instead of as an operation acting on two vectors, we can view a bra (i.e. a row vector) as an operator acting on a column vector and returning a scalar. Mathematically this is written as
+There is an interesting way one can interpret the scalar product: instead of as an operation acting on two vectors, we can view a bra as an operator acting on a ket and returning a scalar. Mathematically this is written as
 \begin{equation}
 	\bra{\bigcirc}: \Cs{n}\to\mathbb{C}.
 	\label{eq:bra_as_operator}
 \end{equation}
-(the empty circle signifies that that the symbol representing the row vector is placed inside the bra symbol)
+(the empty circle signifies that that the symbol representing the bra is placed inside the bra symbol)
 
 \tbw{this is the dual space of $\Cs{n}$, etc.}
 
@@ -127,7 +126,7 @@ i.e. the result of the outer product is a matrix, in which any element $\Ma{i}{j
 \end{note}
 
 \begin{example}{Inner and outer products}{}
-	Given the two column vectors
+	Given the two kets
 	\[
 		\ket{u}=\colvec{1+\iu;3},\ \ket{v}=\colvec{-2+3\iu;5-\iu},
 	\]
@@ -167,5 +166,139 @@ i.e. the result of the outer product is a matrix, in which any element $\Ma{i}{j
 	\end{align*}
 \end{example}
 
-\subsection{Basis sets}
-\tbw{text text text\ldots}
+\subsection{Scalar multiplication and addition of vectors}
+Scaling a vector in the bra-ket notation is represented by simply putting the scalar on the left or right of the vector, i.e. given a ket
+\[
+	\ket{u}=\colvec{u_{1};u_{2};\vdots;u_{n}},
+\]
+its scaled version by the scalar $\alpha\in\mathbb{C}$ is
+\begin{equation}
+	\alpha\ket{u} = \ket{u}\alpha = \colvec{\alpha u_{1};\alpha u_{2};\vdots;\alpha u_{n}}.
+	\label{eq:scaling_ket}
+\end{equation}
+The bra version is essentialy the same:
+\begin{equation}
+	\alpha\bra{u} = \bra{u}\alpha = \rowvec{\alpha \sconj{u_{1}};\sconj{\alpha u_{2}};\dots;\sconj{\alpha u_{n}}}.
+	\label{eq:scaling_bra}
+\end{equation}
+Normaly, scaling a ket is written with the scalar on the left, and scaling a bra is written with scalar on the right. However, in some instances the other forms are used (we will see such case soon).
+
+Adding two kets or two bras is also quote simple:
+\begin{align}
+	\ket{u}+\ket{v} &= \ket{u+v} = \colvec{u_{1}+v_{1};u_{2}+v_{2};\vdots;u_{n}+v_{n}},\nonumber\\
+	\bra{u}+\bra{v} &= \bra{u+v} = \rowvec{\sconj{\left(u_{1}+v_{1}\right)};\sconj{\left(u_{2}+v_{2}\right)};\dots;\sconj{\left(u_{n}+v_{n}\right)}}.
+	\label{eq:addition_bra-ket}
+\end{align}
+
+\begin{note}{Addition of a bra and a ket}{}
+	Of course, a bra and a ket cannot be added together.
+\end{note}
+
+\subsection{Linear combinations and basis sets}
+Linear combinations are easily represented using the bra-ket notation: let $\alpha_{1},\alpha_{2},\dots,\alpha_{n}$ be complex numbers, and $\ket{v_{1}},\ket{v_{2}},\dots,\ket{v_{n}}$ kets in $\Cs{n}$. Then
+\begin{equation}
+	\ket{w} = \alpha_{1}\ket{v_{1}} + \alpha_{2}\ket{v_{2}} + \cdots + \alpha_{n}\ket{v_{n}} = \sum\limits_{i=1}^{n}\alpha_{i}\ket{v_{i}}
+	\label{eq:bra-ket_linear_combination}
+\end{equation}
+is of course itself a vector in $\Cs{n}$. If the set $B=\left\{\ket{b_{1}},\ket{b_{2}},\dots,\ket{b_{n}}\right\}$ is a basis set of $\Cs{n}$ then any vector $\vec{v}\in\Cs{n}$ can be written as a linear combination of the vectors in $B$, i.e.
+\begin{equation}
+	\vec{w} = \sum\limits_{i=1}^{n}\beta_{i}\ket{b_{i}},
+	\label{eq:bra-ket_spanning_vectors}
+\end{equation}
+such that not all $\beta_{i}=0$ (i.e. at least one of them is non-zero). If in addition
+\begin{equation}
+	\innerproduct{b_{i}}{b_{j}} = \delta_{ij},
+	\label{eq:bra-ket_orthonormal_basis}
+\end{equation}
+the basis set is orthonormal: each vector has unit norm (since $\innerproduct{b_{i}}=\delta_{ii}=1$), and they are all orthogonal to each other (since for $i\neq j,\ \innerproduct{b_{i}}{b_{j}}=\delta_{i\neq j} = 0$).
+
+Sometimes, and depending on the context, basis vectors are written as their indeces only inside a bra or a ket. This is common for example with the standard basis vectors, e.g. in $\Cs{3}$
+\begin{equation}
+	\hat{x}=\ket{1},\ \hat{y}=\ket{2},\ \hat{z}=\ket{3}.
+	\label{eq:std_basis_vectors_bra-ket}
+\end{equation}
+and more generaly
+\begin{equation}
+	\eb{i}=\ket{i}.
+	\label{eq:i-th_std_basis_vector_bra-ket}
+\end{equation}
+
+Let us now take a general ket in $\ket{v}\in\Cs{n}$ and write it as a linear combination of some orthonormal basis set $B$:
+\begin{equation}
+	\ket{v} = \sum\limits_{i=1}^{n}\alpha_{i}\ket{b_{i}}.
+	\label{eq:}
+\end{equation}
+We now choose one of the basis vectors and write it in its bra form: $\bra{b_{j}}$, where $j\in\left\{1,2,\dots,n\right\}$. We can easily write the inner product of $\bra{b_{j}}$ with $\ket{v}$:
+\begin{align}
+	\innerproduct{b_{j}}{v} &= \bra{b_{j}}\sum\limits_{i=1}^{n}\alpha_{i}\ket{b_{i}}\nonumber\\
+	&= \bra{b_{j}}\alpha_{1}\ket{b_{1}} + \bra{b_{j}}\alpha_{2}\ket{b_{2}} + \dots + \bra{b_{j}}\alpha_{n}\ket{b_{n}}.
+	\label{eq:}
+\end{align}
+Since $\alpha_{i}$ are scalars, we can move each one of them to the left of $\bra{b_{j}}$, yielding
+\begin{equation}
+	\innerproduct{b_{j}}{v} = \alpha_{1}\innerproduct{b_{j}}{b_{1}} + \alpha_{2}\innerproduct{b_{j}}{b_{2}} + \cdots + \alpha_{n}\innerproduct{b_{j}}{b_{n}}.
+	\label{eq:}
+\end{equation}
+Since the basis vectors are all orthonormal, $\innerproduct{b_{j}}{b_{i}}=\delta_{ji}$, or zero for all $i$ except when $i=j$, in which case the product equals $1$. Thus all the terms where $i\neq j$ disappear, and we are left with a single term:
+\begin{align}
+	\innerproduct{b_{j}}{v} = \alpha_{j}\innerproduct{b_{j}} = \alpha_{j}.
+	\label{eq:isolating_scalar_coeffs}
+\end{align}
+This shows is that we can calculate the coefficient $\alpha_{j}$ for any $j\in\left\{1,2,\dots,n\right\}$ by simply taking the dot product of the $j$-th basis vector with $\ket{u}$. This is very easy compared to using the vector notation we used so far.
+
+We can now start again with spanning $\ket{u}$ using $B$, but this time we write the scalar coefficients on the right side:
+\begin{equation}
+	\ket{u} = \sum\limits_{i=1}^{n}\ket{b_{i}}\alpha_{i}.
+	\label{eq:coeffs_right_side}
+\end{equation}
+Subtituting \autoref{eq:isolating_scalar_coeffs} into \autoref{eq:coeffs_right_side} we get
+\begin{equation}
+	\ket{u} = \sum\limits_{i=1}^{n}\ket{b_{i}}\innerproduct{b_{i}}{u}.
+	\label{eq:ket_as_sum_of_outer_products}
+\end{equation}
+Since $\ket{u}$ is found in all the terms of the sum, we can put parenthesis around the summation excluding $\ket{u}$:
+\begin{equation}
+	\ket{u} = \left(\sum\limits_{i=1}^{n}\ket{b_{i}}\bra{b_{i}}\right)\ket{u}.
+	\label{eq:ket_as_sum_of_outer_products_parenthesis}
+\end{equation}
+
+Recall that the outer product return a matrix. Thus, \autoref{eq:ket_as_sum_of_outer_products_parenthesis} tells us that the matrix $A=\sum\limits_{i=1}^{n}\ket{b_{i}}\bra{b_{i}}$ is a matrix that doesn't change any vector $\ket{u}$ (remember that there is nothing special about $\ket{u}$, we didn't even write it explicitly). This matrix is of course the identity matrix, i.e.
+\begin{equation}
+	I_{n}=\sum\limits_{i=1}^{n}\ket{b_{i}}\bra{b_{i}}.
+	\label{eq:the_completeness_relation}
+\end{equation}
+This result is called the \emph{completeness relation}. It essentially tells us that given an orthonormal basis set, the sum of the outer product of each basis vector with itself is the identity matrix. For example, given the standard basis set in $\Cs{3}$,
+\begin{equation}
+	\outerproduct{1}{1} + \outerproduct{2}{2} + \outerproduct{3}{3} = I_{3}.
+	\label{eq:completeness_relation_std_basis_C3}
+\end{equation}
+
+\begin{example}{The completeness relation in $\bm{\Cs{2}}$}{}
+	As we saw in \autoref{example:orthobasis}, the following basis set is orthonormal:
+	\[
+		\ket{1}=\frac{1}{\sqrt{2}}\colvec{1;1},\ \ket{2}=\frac{1}{\sqrt{2}}\colvec{1;-1}.
+	\]
+
+	The outer products of each of the two vectors with itself are
+	\begin{align*}
+		\outerproduct{1}{1} &=
+		\frac{1}{2}
+		\begin{bmatrix}
+			1 & 1\\
+			1 & 1
+		\end{bmatrix},\\
+		\outerproduct{2}{2} &=
+		\frac{1}{2}
+		\begin{bmatrix}
+			1 & -1\\
+			-1 & 1
+		\end{bmatrix}.
+	\end{align*}
+
+	Thus,
+	\[
+		\outerproduct{1}{1}+\outerproduct{2}{2} = \frac{1}{2}\left(\begin{bmatrix} 1&1 \\ 1&1 \end{bmatrix} + \begin{bmatrix} 1&-1 \\ -1&1 \end{bmatrix}\right) = \frac{1}{2}\begin{bmatrix} 2&0 \\ 0&2 \end{bmatrix} = \begin{bmatrix} 1&0 \\ 0&1 \end{bmatrix} = I_{2}.
+	\]
+\end{example}
+
+\tbw{change of basis, matries inside brakets, eigenvectors, etc.}
