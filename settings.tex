@@ -431,7 +431,7 @@
 %-------%
 
 \usepackage{amsmath, bm, mathtools, commath, relsize}
-% \usepackage{physics}
+\usepackage{physics}
 \allowdisplaybreaks
 \usepackage{nicematrix}
 \numberwithin{equation}{section}
@@ -439,6 +439,7 @@
 \usepackage[thicklines]{cancel}
 \renewcommand\CancelColor{\color{xred}}
 \newcommand{\Rs}[1]{\mathbb{R}^{#1}}
+\newcommand{\Cs}[1]{\mathbb{C}^{#1}}
 \newcommand{\stcomp}[1]{{#1}^\complement}
 %\newcommand{\true}{\colorbox{xblue!25}{true}}
 %\newcommand{\false}{\colorbox{xred!25}{false}}
@@ -463,6 +464,7 @@
 \newcommand{\defeq}{:=}
 \newcommand{\eqdef}{=:}
 \newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\sconj}[1]{#1^{*}}
 \newcommand{\nroot}[2]{
 	\sqrt[\leftroot{3}\uproot{3}#1]{#2}
 }
@@ -473,7 +475,7 @@
 \newcommand{\Ctrig}{\text{c}}
 \newcommand{\Strig}{\text{s}}
 \newcommand{\Refl}{\text{Ref}}
-\newcommand{\tr}{\text{tr}}
+\renewcommand{\tr}{\text{tr}}
 \newcommand{\adj}{\text{adj}}
 
 % Highlights
@@ -482,28 +484,27 @@
 \newcommand{\ghl}[1]{\textcolor{xgreen}{#1}}
 \newcommand{\phl}[1]{\textcolor{xpurple}{#1}}
 
-% Column vectors
+% Row and Column vectors
 \makeatletter
-\newcommand{\colvec}[2][c]{%
-	\gdef\@VORNE{1}
-	\left[\hskip-\arraycolsep%
-		\begin{array}{#1}\vekSp@lten{#2}\end{array}%
-\hskip-\arraycolsep\right]}
-
-\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
-\def\vekL@stLine{vekL@stLine}
-\def\xvekSp@lten#1;{\def\temp{#1}%
-	\ifx\temp\vekL@stLine
-	\else
-		\ifnum\@VORNE=1\gdef\@VORNE{0}
-		\else\@arraycr\fi%
-			#1%
-			\expandafter\xvekSp@lten
-	\fi}
+\newcommand\rcvector[2][\\]{\ensuremath{%
+  \global\def\rc@delim{#1}%
+    \negthinspace\begin{bmatrix}
+      \rc@vector #2;\relax\noexpand\@eolst%
+    \end{bmatrix}}}
+\def\rc@vector #1;#2\@eolst{%
+  \ifx\relax#2\relax
+    #1
+  \else
+    #1\rc@delim
+    \rc@vector #2\@eolst%
+  \fi}
 \makeatother
 
+\newcommand{\colvec}{\rcvector}
+\newcommand{\rowvec}[1]{\rcvector[,\;]{#1}}
+
 % Colored (common) vectors and angles I use
-\newcommand{\vu}{\textcolor{xred}{\vec{u}}}
+\renewcommand{\vu}{\textcolor{xred}{\vec{u}}}
 \newcommand{\vv}{\textcolor{xblue}{\vec{v}}}
 \newcommand{\vw}{\textcolor{xpurple}{\vec{w}}}
 \newcommand{\ath}{\textcolor{xpurple}{\theta}}
@@ -608,7 +609,7 @@
 }
 
 \newcommand{\Null}{\text{Null}}
-\newcommand{\rank}{\text{rank}}
+\renewcommand{\rank}{\text{rank}}
 
 %-------------%
 % OTHER STUFF %
@@ -736,4 +737,4 @@
 	}
 }
 
-\newcommand{\bul}[1]{\underline{\textbf{#1}}}
+\newcommand{\tbw}[1]{\colorbox{xred!20}{\textbf{To be written}: #1}}

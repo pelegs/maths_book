@@ -1,0 +1,108 @@
+\section{The Bra-Ket notation}
+In this section we introduce a special vector notation widely used in physics: the \emph{Bra-ket notation}, also known as \emph{Dirac's notation}. This notation helps simplify many aspects of linear algebra, and make its use more streamlined.
+
+\begin{note}{Importance of this section}{}
+	A person can have a pretty good grasp of linear algebra without ever learning about the bra-ket notation. This section, while interesting and providing a useful tool in working with linear algebra - is not obligatory, especially to people who do not intend to ever learn topics such as quantum physics, relativity theory, statistical mechanics, etc. It is however recommended even for those readers.
+\end{note}
+
+\subsection{Definition}
+Up until now we presented the theory of linear algebra based on real numbers: all of the vectors we used were real vectors, i.e. of the form $\vec{v}\in\Rs{n}$, where $n\in\mathbb{N}$. All of the matrices used were also made up of real components - and so were of course the scalars themselves, which we defined simply as real numbers.
+
+However, it is aparently useful in many cases to use linear algebra in the context of complex numbers: instead of working with spaces of the form $\Rs{n}$ we can use spaces of the form $\Cs{n}$, e.g. a vector in $\Cs{3}$ can be the following:
+\[
+	\vec{v} = \colvec{1-i;2+3i;\pi+\sqrt{2}i}.
+\]
+
+When using complex numbers instead of real numbers, a small change must be made to the way we conceptualize row vs. column vectors. Before we said that essentially both forms can be used interchangeably without affecting the outcome. However now we define row vectors a bit differently: given the column vector
+\begin{equation}
+	\vec{v} = \colvec{v_{1};v_{2};\vdots;v_{n}},
+	\label{eq:column_vector_complex}
+\end{equation}
+we can get its row form by transposing it, i.e. we look at $\vec{v}^{\top}$. However, when doing this we must change all the components of $\vec{v}$ to their respective complex conjugates, i.e.
+\begin{equation}
+	\vec{v}^{\top} = \colvec{v_{1};v_{2};\vdots;v_{n}}^{\top} = \rowvec{\conj{v_{1}};\conj{v_{2}};\dots;\conj{v_{n}}}.
+	\label{eq:row_vector_complex}
+\end{equation}
+
+
+\begin{equation}
+	\vec{v}^{\top} = \colvec{v_{1};v_{2};\vdots;v_{n}}^{\top} = \rowvec{\sconj{v_{1}};\sconj{v_{2}};\dots;\sconj{v_{n}}}.
+	\label{eq:row_vector_complex_star_notation}
+\end{equation}
+To be consistent with the usual notation used in physics (and have more succisent, we introduce the following changes:
+\begin{itemize}
+	\item The complex conjugate of the number $z\in\mathbb{C}$ is changed to $\sconj{C}$.
+	\item The star notation is also used for transpose.
+	\item The arrow is dropped from the vector notation.
+\end{itemize}
+Applying these changes, \autoref{eq:row_vector_complex_star_notation} has the form
+\begin{equation}
+	\sconj{v} = \sconj{\colvec{v_{1};v_{2};\vdots;v_{n}}} = \rowvec{\sconj{v_{1}};\sconj{v_{2}};\dots;\sconj{v_{n}}}.
+	\label{eq:row_vector_complex_star_notation_transpose}
+\end{equation}
+
+\begin{example}{Row vectors}{}
+	The row form of the vector
+	\[
+		v = \colvec{1+2i;3-i;\sqrt{2}+5i;4;-3i}
+	\]
+	is
+	\[
+		\sconj{v} = \sconj{\colvec{1+2i;3-i;\sqrt{2}+5i;4;-3i}} = \rowvec{1-2i;3+i;\sqrt{2}-5i;4;3i}.
+	\]
+\end{example}
+
+Next, we make sure that the scalar product between any two vectors $u,v$ is such that the left vector is a row vector, and the right vector is a column vector, i.e. given $u,v\in\Cs{n}$ such that
+\[
+	u = \colvec{u_{1};u_{2};\vdots;u_{n}} \quad v = \colvec{v_{1};v_{2};\vdots;v_{n}},
+\]
+their scalar product is
+\begin{equation}
+	u\cdot v = \sconj{u}\cdot v = \rowvec{\sconj{u_{1}};\sconj{u_{2}};\dots;\sconj{u_{n}}} \cdot \colvec{v_{1};v_{2};\vdots;v_{n}} = \sconj{u_{1}}v_{1} + \sconj{u_{2}}v_{2} + \cdots + \sconj{u_{n}}v_{n}.
+	\label{eq:scalar_product_complex_full}
+\end{equation}
+
+
+Recall that a common notation for the scalar product of two vectors uses triangular brakets, i.e.
+\[
+	u\cdot v = \innerproduct{u}{v}.
+\]
+We can use \autoref{eq:scalar_product_complex_full} and ``separate'' this product into two parts: a \emph{bra} $\bra{u}$ and a \emph{ket} $\ket{v}$, define as
+\begin{align}
+	\bra{u} &= \rowvec{\sconj{u_{1}};\sconj{u_{2}};\dots;\sconj{u_{n}}},\nonumber\\
+	\ket{v} &= \colvec{v_{1};v_{2};\vdots;v_{n}}.
+	\label{eq:bra_ket_def}
+\end{align}
+
+\subsection{Norm and products}
+The norm of a vector $v$ can be calculated by taking the square root of its scalar product with itself (\autoref{eq:norm from scalar product}). Using the bra-ket notation this becomes
+\begin{equation}
+	\norm{v} = \sqrt{\innerproduct{v}}.
+	\label{eq:norm_braket}
+\end{equation}
+
+Let us write the properties of the scalar product adjusted to the bra-ket notation:
+\begin{descitemize}
+	\item[Non-negative norm] for any vector $v\in\Cs{n},\ \innerproduct{v}\geq0$.
+	\item[Uniqeness of zero] if $\innerproduct{v}=0$, then $v=0$.
+	\item[Conjugate commutativity] for any two vectors $u,v\in\Cs{n},\ \innerproduct{u}{v}=\sconj{\innerproduct{v}{u}}$.
+	\item[Distributivity] Given three vectors $u,v,w\in\Cs{n}$ and two scalars $\alpha,\beta\in\mathbb{C}$,
+		\[
+			\bra{u} \left( \alpha\ket{v}+\beta\ket{w} \right) = \alpha\innerproduct{u}{v} + \beta\innerproduct{u}{w}.
+		\]
+\end{descitemize}
+
+\begin{note}{Hilbert spaces}
+Generally speaking, any vector space that is ``equiped'' with a norm complying with these properties is called a \emph{Hilbert space}. We will discuss such spaces in more details later in the book.
+\end{note}
+
+There is an interesting way one can interpret the scalar product: instead of as an operation acting on two vectors, we can view a bra (i.e. a row vector) as an operator acting on a column vector and returning a scalar. Mathematically this is written as
+\begin{equation}
+	\bra{\bigcirc}: \Cs{n}\to\mathbb{C}.
+	\label{eq:bra_as_operator}
+\end{equation}
+(the empty circle signifies that that the symbol representing the row vector is placed inside the bra symbol)
+
+\tbw{this is the dual space of $\Cs{n}$, etc.}
+
+Another product that is easily defined usin the bra-ket notation is the \emph{exterior product} of two vectors (recall that the scalar product is also called the \textit{inner product}). The exterior product arises when we multiply two vectors in the opposite order compared to the scalar product, i.e. instead of $\innerproduct{u}{v}$ we calculate
