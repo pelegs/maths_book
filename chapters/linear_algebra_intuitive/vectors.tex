@@ -279,15 +279,15 @@ Vectors can be decomposed to their components, the number of which depends on th
 
 The column form of a vector is essentially equivalent to an order list of $n$ real numbers, i.e. $(v_{1},v_{2},\dots,v_{n})$. Why then are we using the column form and not the list form (mostly known as \emph{row vectors})? In fact, we could use either form - and even using both interchangeably - and with only minor adjusments the entire chapter would stay the same as it is now. However, there are some advantages of using only a single form, and consider the other form as a different object altogether. This idea will become clear in future chapters, when discussing \emph{covariant vectors}, \emph{contravarient vectors}, and \emph{tensors}. For now, we stick with the column form of vectors to stay consistent with common notation.
 
-However, the row form of vectors highlights the space in which they exist: $n$-dimensional vectors live in a space we call $\Rs{n}$. Recall from \autoref{chapter:intro} that the set $\Rs{n}$ is a Cartesian product made up of $n$ times the set of real numbers, i.e.
+However, the row form of vectors highlights the space in which they exist: $n$-dimensional vectors live in a space we call $\Rs[n]$. Recall from \autoref{chapter:intro} that the set $\Rs[n]$ is a Cartesian product made up of $n$ times the set of real numbers, i.e.
 \begin{equation}
-	\Rs{n} = \underbrace{\mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}}_{n}.
+	\Rs[n] = \underbrace{\mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}}_{n}.
 	\label{eq:Rn}
 \end{equation}
 
-Each member of this set is a list of $n$ real numbers, and their order inside the list matters - very similar to vectors, be they in row or column form. For this reason, we refer to $\Rs{n}$ as the space of $n$-dimensional real vectors. As mentioned, in this chapter we use $\Rs{2}$ (the 2-dimensional real space) and $\Rs{3}$ (the 3-dimensional real space) for most ideas and examples.
+Each member of this set is a list of $n$ real numbers, and their order inside the list matters - very similar to vectors, be they in row or column form. For this reason, we refer to $\Rs[n]$ as the space of $n$-dimensional real vectors. As mentioned, in this chapter we use $\Rs[2]$ (the 2-dimensional real space) and $\Rs[3]$ (the 3-dimensional real space) for most ideas and examples.
 
-Looking at vectors in $\Rs{2}$, it is rather straight-forward to calculate their norm: since the origin, the head of the vector and the point $v_{x}$ form a right triangle (see \autoref{fig:norm 2D vector}), we can use the Pythagorean theorem to calculate the norm of the vector, which is equal to the hypotenous of said triangle:
+Looking at vectors in $\Rs[2]$, it is rather straight-forward to calculate their norm: since the origin, the head of the vector and the point $v_{x}$ form a right triangle (see \autoref{fig:norm 2D vector}), we can use the Pythagorean theorem to calculate the norm of the vector, which is equal to the hypotenous of said triangle:
 \begin{equation}
 	\norm{v} = \sqrt{v_{x}^{2} + v_{y}^{2}}.
 	\label{eq:2D vector norm}
@@ -322,7 +322,7 @@ Looking at vectors in $\Rs{2}$, it is rather straight-forward to calculate their
 	\label{fig:norm 2D vector}
 \end{figure}
 
-In $\Rs{3}$ the norm of a vector $\vec{v}$ is similarily
+In $\Rs[3]$ the norm of a vector $\vec{v}$ is similarily
 \begin{equation}
 	\norm{v} = \sqrt{v_{x}^{2} + v_{y}^{2} + v_{z}^{2}}.
 	\label{eq:norm 3D vector}
@@ -372,7 +372,7 @@ In $\Rs{3}$ the norm of a vector $\vec{v}$ is similarily
 	\end{tikzpicture}
 \end{challenge}
 
-Generalizing the vector norms in $\Rs{2}$ and $\Rs{3}$ to $\Rs{n}$ yields the following form:
+Generalizing the vector norms in $\Rs[2]$ and $\Rs[3]$ to $\Rs[n]$ yields the following form:
 \begin{equation}
 	\norm{v} = \sqrt{v_{1}^{2} + v_{2}^{2} + v_{3}^{2} + \dots + v_{n}^{2}} = \sqrt{\sum\limits_{i=1}^{n}v_{i}^{2}}.
 	\label{eq:norm nD vector}
@@ -461,12 +461,12 @@ Let's define linear combinations a little more formaly:
 	\end{equation}
 \end{definition}
 
-Linear combinations of real vectors have geometric meaningsc: we start with the set of all linear combinations of a single vector $\vec{v}\in\Rs{n}$, i.e.
+Linear combinations of real vectors have geometric meaningsc: we start with the set of all linear combinations of a single vector $\vec{v}\in\Rs[n]$, i.e.
 \begin{equation}
 	V = \left\{\alpha\vec{v} \mid \alpha\in\mathbb{R} \right\}.
 	\label{eq:span of a single vector}
 \end{equation}
-The set $V$ represents a line in the direction of $\vec{v}$ going through the origin (see \autoref{fig:span of a single vector}). The set $V$ is itself a vector space of dimension $1$, and as such a \emph{subspace} of $\Rs{n}$. We say that it is the \emph{span} of the vector $\vec{v}$ (i.e. the vector $\vec{v}$ \emph{spans} the subspace $V$).
+The set $V$ represents a line in the direction of $\vec{v}$ going through the origin (see \autoref{fig:span of a single vector}). The set $V$ is itself a vector space of dimension $1$, and as such a \emph{subspace} of $\Rs[n]$. We say that it is the \emph{span} of the vector $\vec{v}$ (i.e. the vector $\vec{v}$ \emph{spans} the subspace $V$).
 
 \def\veccolor{xred}
 \tikzset{
@@ -495,7 +495,7 @@ The set $V$ represents a line in the direction of $\vec{v}$ going through the or
 				\draw[dline] (B) -- (-6,{f(-6)});
 			\end{axis}
 		\end{tikzpicture}
-		\caption{$\Rs{2}$}
+		\caption{$\Rs[2]$}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -529,13 +529,13 @@ The set $V$ represents a line in the direction of $\vec{v}$ going through the or
 				\draw[dashed, black!50] (3,2,3) -- (3,2,0) -- (0,0,0);
 			\end{axis}
 		\end{tikzpicture}
-		\caption{$\Rs{3}$}
+		\caption{$\Rs[3]$}
 	\end{subfigure}
-	\caption{The span of a single vector $\color{xred}{\bm{\vec{v}}}$, shown as a dashed line: in $\Rs{2}$ (left) and $\Rs{3}$ (right).}
+	\caption{The span of a single vector $\color{xred}{\bm{\vec{v}}}$, shown as a dashed line: in $\Rs[2]$ (left) and $\Rs[3]$ (right).}
 	\label{fig:span of a single vector}
 \end{figure}
 
-Similarily, the set of all linear combinations of two vectors $\vec{u},\vec{v}\in\Rs{n}$ that are not scales of each other (i.e. there is no such $\alpha\in\mathbb{R}$ for which $\vec{v}=\alpha\vec{u}$),
+Similarily, the set of all linear combinations of two vectors $\vec{u},\vec{v}\in\Rs[n]$ that are not scales of each other (i.e. there is no such $\alpha\in\mathbb{R}$ for which $\vec{v}=\alpha\vec{u}$),
 \begin{equation}
 	V = \left\{\alpha\vec{u}+\beta\vec{v} \mid \alpha,\beta\in\mathbb{R} \right\},
 	\label{eq:span of a two vectors}
@@ -580,12 +580,12 @@ is a plane that goes through the origin (see \autoref{fig:span of two vectors}).
 			\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Two vectors $\vec{a}$ and $\vec{b}$ span a plane (colored green) in $\Rs{3}$. The $xy$-plane (i.e. $z=0$) is shown in blue for emphasis.}
+	\caption{Two vectors $\vec{a}$ and $\vec{b}$ span a plane (colored green) in $\Rs[3]$. The $xy$-plane (i.e. $z=0$) is shown in blue for emphasis.}
 	\label{fig:span of two vectors}
 \end{figure}
 
-\begin{example}{Spanning $\bm{\Rs{2}}$ using two non-collinear vectors}{}
-	Since any two non-collinear vectors span a 2-dimensional subspace of $\Rs{n}$, in $\Rs{2}$ this means that any vector $\vec{w}$ can be written as a linear combination of any two vectors $\vec{u},\vec{v}$ that are not a scale of each other. For example, we can take the vector
+\begin{example}{Spanning $\bm{\Rs[2]}$ using two non-collinear vectors}{}
+	Since any two non-collinear vectors span a 2-dimensional subspace of $\Rs[n]$, in $\Rs[2]$ this means that any vector $\vec{w}$ can be written as a linear combination of any two vectors $\vec{u},\vec{v}$ that are not a scale of each other. For example, we can take the vector
 	\[
 		\vec{w} = \colvec{7;-1},
 	\]
@@ -613,8 +613,8 @@ is a plane that goes through the origin (see \autoref{fig:span of two vectors}).
 %\solvesym{AAA}
 
 Generalizing the example above, any vector $\vec{w}=\colvec{w_{x};w_{y}}$ can be written as a linear combination of two vectors $\vec{u}=\colvec{u_{x};u_{y}}$ and $\vec{v}=\colvec{v_{x};v_{y}}$, as long as $\vec{u}$ and $\vec{v}$ are non-collinear. Let's prove this:
-\begin{proof}{$\bm{\Rs{2}}$ is spanned by any two non-collinear vectors in $\bm{\Rs{2}}$}{fd}
-	Let $\vec{u},\vec{v}\in\Rs{2}$ be two non-collinear vectors. Their non-collinearity means that the equation
+\begin{proof}{$\bm{\Rs[2]}$ is spanned by any two non-collinear vectors in $\bm{\Rs[2]}$}{fd}
+	Let $\vec{u},\vec{v}\in\Rs[2]$ be two non-collinear vectors. Their non-collinearity means that the equation
 	\begin{equation}
 		\vec{u} = \alpha\vec{v}
 		\label{eq:collinear vectors}
@@ -663,10 +663,10 @@ Generalizing the example above, any vector $\vec{w}=\colvec{w_{x};w_{y}}$ can be
 		\label{eq:test2}
 	\end{equation}
 
-	We can see that $\alpha$ and $\beta$ exist iff $u_{x}v_{y}\neq u_{y}v_{x}$, which is guaranteed by \autoref{eq:restriction}. Therefore, $\alpha$ and $\beta$ always exist when $\vec{u}$ and $\vec{v}$ are non-collinear, and thus any vector in $\Rs{2}$ can be written as a linear combination of any two non-collinear vectors in $\Rs{2}$, i.e. any two non-collinear vectors in $\Rs{2}$ span $\Rs{2}$.
+	We can see that $\alpha$ and $\beta$ exist iff $u_{x}v_{y}\neq u_{y}v_{x}$, which is guaranteed by \autoref{eq:restriction}. Therefore, $\alpha$ and $\beta$ always exist when $\vec{u}$ and $\vec{v}$ are non-collinear, and thus any vector in $\Rs[2]$ can be written as a linear combination of any two non-collinear vectors in $\Rs[2]$, i.e. any two non-collinear vectors in $\Rs[2]$ span $\Rs[2]$.
 \end{proof}
 
-Going a step further, any three vectors $\vec{u},\vec{v},\vec{w}\in\Rs{n}$ that are not coplanar span a 3-dimensional subspace of $\Rs{n}$ going through the origin. To generalize the notion of collinear and coplanar vectors to higher dimensions we introduct the concept of \emph{linear dependency} of a set of vectors:
+Going a step further, any three vectors $\vec{u},\vec{v},\vec{w}\in\Rs[n]$ that are not coplanar span a 3-dimensional subspace of $\Rs[n]$ going through the origin. To generalize the notion of collinear and coplanar vectors to higher dimensions we introduct the concept of \emph{linear dependency} of a set of vectors:
 
 \begin{definition}{Linear dependent set of vectors}{linear dependency}
 	A set of $n$ vectors
@@ -684,7 +684,7 @@ Going a step further, any three vectors $\vec{u},\vec{v},\vec{w}\in\Rs{n}$ that 
 
 The following examples shows that the definition above reduces to colinarity and coplanary in the case of $2$ and $3$ vectors:
 \begin{example}{Linear dependency of $2$ vectors}{}
-	Let $\vec{u}$ and $\vec{v}$ be two linearly dependent vectors in $\Rs{n}$. Then there exist a linear combination
+	Let $\vec{u}$ and $\vec{v}$ be two linearly dependent vectors in $\Rs[n]$. Then there exist a linear combination
 	\[
 		\alpha\vec{u} + \beta\vec{v} = \vec{0},
 	\]
@@ -703,7 +703,7 @@ The following examples shows that the definition above reduces to colinarity and
 \end{example}
 
 \begin{example}{Linear dependency of $3$ vectors}{}
-	Now, let $\vec{u},\vec{v}$ and $\vec{w}$ be three linearly dependent vectors in $\Rs{n}$. Then there exists a linear combination
+	Now, let $\vec{u},\vec{v}$ and $\vec{w}$ be three linearly dependent vectors in $\Rs[n]$. Then there exists a linear combination
 	\[
 		\alpha\vec{u} + \beta\vec{v} + \gamma\vec{w} = \vec{0},
 	\]
@@ -724,14 +724,14 @@ The following examples shows that the definition above reduces to colinarity and
 	From this example we learn that three vectors form a linearly dependent set if one or more of the vectors is the zero vector, or if any two vectors in the set are collinear, or if all three vectors are coplanar.
 \end{example}
 
-Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vectors in $\Rs{n}$ that are \textbf{not} linearly dependent span an $m$-dimensional subspace of $\Rs{n}$ (which goes throught the origin) - i.e. any vector $\vec{v}\in\Rs{n}$ can be written as a linear combination of these vectors. We call such a set a \emph{basis set} of $\Rs{n}$.
+Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vectors in $\Rs[n]$ that are \textbf{not} linearly dependent span an $m$-dimensional subspace of $\Rs[n]$ (which goes throught the origin) - i.e. any vector $\vec{v}\in\Rs[n]$ can be written as a linear combination of these vectors. We call such a set a \emph{basis set} of $\Rs[n]$.
 
 \begin{example}{Basis sets in $n$ dimensions}{}
-	The following three vectors are non coplanar (i.e. they are linearly independent), and thus form a basis set of $\Rs{3}$:
+	The following three vectors are non coplanar (i.e. they are linearly independent), and thus form a basis set of $\Rs[3]$:
 	\[
 		B = \left\{ \colvec{0;4;5},\ \colvec{4;2;-2},\ \colvec{1;0;-5} \right\}.
 	\]
-	This means that any vector in $\Rs{3}$ can be written as a linear combination of these vectors. We can show this by writing a generic vector $\vec{v}=\colvec{x;y;z}\in\Rs{3}$ as a linear combination of the vectors:
+	This means that any vector in $\Rs[3]$ can be written as a linear combination of these vectors. We can show this by writing a generic vector $\vec{v}=\colvec{x;y;z}\in\Rs[3]$ as a linear combination of the vectors:
 	\[
 		\vec{v} = \colvec{x;y;z} = \alpha\colvec{0;4;5} + \beta\colvec{4;2;-2} + \gamma\colvec{1;0;-5},
 	\]
@@ -744,7 +744,7 @@ Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vecto
 		\end{cases}
 	\]
 
-	The solution of the above system gives the coefficients of the linear combination to yield any vector in $\Rs{3}$:
+	The solution of the above system gives the coefficients of the linear combination to yield any vector in $\Rs[3]$:
 	\begin{align*}
 		\alpha &= -\frac{5x}{31} + \frac{9y}{31} - \frac{z}{31},\\
 		\beta  &= \frac{10x}{31} - \frac{5y}{62} + \frac{2z}{31},\\
@@ -765,22 +765,22 @@ Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vecto
 Having described basis sets in somewhat general terms, we can now define them a bit more precisely:
 
 \begin{definition}{Basis sets}{basis sets}
-	Let $B$ be a \textbf{linearly independent set} of vectors in $\Rs{n}$. If any vector $\vec{v}\in\mathbb{\Rs{n}}$ can be written as a linear combination of the vectors in $B$, then $B$ is called a basis set of $\Rs{n}$. The \emph{dimension} of $B$ is the number of vectors in $B$.
+	Let $B$ be a \textbf{linearly independent set} of vectors in $\Rs[n]$. If any vector $\vec{v}\in\mathbb{\Rs[n]}$ can be written as a linear combination of the vectors in $B$, then $B$ is called a basis set of $\Rs[n]$. The \emph{dimension} of $B$ is the number of vectors in $B$.
 \end{definition}
 
-The dimension of a basis set $B$ of $\Rs{n}$ is always $n$. In fact, in a later chapter we will see that the dimension of a vector space is defined by the dimension of its basis sets, i.e. given a vector space $V$ and a basis set $B\subseteq V$, the dimension of $V$ is equal to $|B|$, or mathematically
+The dimension of a basis set $B$ of $\Rs[n]$ is always $n$. In fact, in a later chapter we will see that the dimension of a vector space is defined by the dimension of its basis sets, i.e. given a vector space $V$ and a basis set $B\subseteq V$, the dimension of $V$ is equal to $|B|$, or mathematically
 \begin{equation}
 	\dim(V) = |B|.
 	\label{eq:dimension of a vector space}
 \end{equation}
 
-It can be easily shown that any set of vectors in $\Rs{n}$ which has more than $n$ vectors must be a linearly dependent set:
+It can be easily shown that any set of vectors in $\Rs[n]$ which has more than $n$ vectors must be a linearly dependent set:
 
-\begin{proof}{Sets with more than $\bm{n}$ vectors in $\bm{\Rs{n}}$}{label}
-	Let $S$ be a set of $m\in\mathbb{N}$ vectors in $\Rs{n}$, where $m>n$. Given a vector $\vec{v}\in S$ and the set of all vectors in $S$ except $\vec{v}$ (call this set $\tilde{S}$), there are two possibilities:
+\begin{proof}{Sets with more than $\bm{n}$ vectors in $\bm{\Rs[n]}$}{label}
+	Let $S$ be a set of $m\in\mathbb{N}$ vectors in $\Rs[n]$, where $m>n$. Given a vector $\vec{v}\in S$ and the set of all vectors in $S$ except $\vec{v}$ (call this set $\tilde{S}$), there are two possibilities:
 	\begin{itemize}
-		\item $\tilde{S}$ is a linearly dependent set in $\Rs{n}$. In this case, the addition of $\vec{v}$ doesn't change this fact, i.e. the set $S$ as a whole is linearly dependent.
-		\item The set $\tilde{S}$ is linearly independent, and since it has $n$ vectors it forms a basis set of $\Rs{n}$. Therefore, $\vec{v}$ can be written as a linear combination of the vectors in $\tilde{S}$, and thus the inclusion of $\vec{v}$ in $S$ makes $S$ a linearly dependent set.
+		\item $\tilde{S}$ is a linearly dependent set in $\Rs[n]$. In this case, the addition of $\vec{v}$ doesn't change this fact, i.e. the set $S$ as a whole is linearly dependent.
+		\item The set $\tilde{S}$ is linearly independent, and since it has $n$ vectors it forms a basis set of $\Rs[n]$. Therefore, $\vec{v}$ can be written as a linear combination of the vectors in $\tilde{S}$, and thus the inclusion of $\vec{v}$ in $S$ makes $S$ a linearly dependent set.
 	\end{itemize}
 \end{proof}
 
@@ -861,7 +861,7 @@ Therefore, in the basis set $B$, the coordinates of $\vw$ are $\left(2,\frac{1}{
 A bsis set $B$ in which all vectors are \emph{orthogonal} (i.e. are at $\ang{90}$) to each other is called a \emph{orthogonal basis set}. If all vectors are unit vectors as well, i.e. their norms all equal to $1$, the basis set is then an \emph{orthonormal basis set}.
 
 \begin{example}{Orthogonal and orthonormal basis sets}{orthobasis}
-	The vectors $\vec{a}=\colvec{1;1}$ and $\vec{b}=\colvec{-1;1}$ are linearly independent and thus form a basis set of $\Rs{2}$. We can calculate their respective angles in relation to the $x$-axis ($\theta_{a}$ and $\theta_{b}$) to find the angle between them ($\varphi$):
+	The vectors $\vec{a}=\colvec{1;1}$ and $\vec{b}=\colvec{-1;1}$ are linearly independent and thus form a basis set of $\Rs[2]$. We can calculate their respective angles in relation to the $x$-axis ($\theta_{a}$ and $\theta_{b}$) to find the angle between them ($\varphi$):
 
 \begin{figure}[H]
 	\centering
@@ -890,7 +890,7 @@ The angle of $\vec{a}$ is
 \[
 	\theta_{a} = \arctan\left( \frac{a_{y}}{a_{x}} \right) = \arctan(1) = \frac{\pi}{4}\ (=\ang{45}).
 \]
-Similarily, the angle $\alpha_{b}$ also equals $\frac{\pi}{4}$. Therefore, $\varphi=2\frac{\pi}{4}=\frac{\pi}{2}$ ($=\ang{90}$) - i.e. $\vec{a}$ and $\vec{b}$ are orthogonal, and thus form an orthogonal basis set of $\Rs{2}$.
+Similarily, the angle $\alpha_{b}$ also equals $\frac{\pi}{4}$. Therefore, $\varphi=2\frac{\pi}{4}=\frac{\pi}{2}$ ($=\ang{90}$) - i.e. $\vec{a}$ and $\vec{b}$ are orthogonal, and thus form an orthogonal basis set of $\Rs[2]$.
 
 To get a similar \textit{orthonormal} basis set we can simply normalize the two vectors. We start with $\vec{a}$: its norm is
 \[
@@ -901,30 +901,30 @@ Thus, the vector $\hat{a}=\frac{1}{\sqrt{2}}\vec{a}=\colvec{\frac{1}{\sqrt{2}};\
 \[
 	\left\{ \colvec{\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}},\ \colvec{-\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}} \right\}
 \]
-is an orthonormal basis set of $\Rs{2}$.
+is an orthonormal basis set of $\Rs[2]$.
 \end{example}
 
-\begin{challenge}{Orthonormal basis sets of $\Rs{2}$}{}
-Show that all orthonormal basis sets of $\Rs{2}$ are rotations of the set
+\begin{challenge}{Orthonormal basis sets of $\Rs[2]$}{}
+Show that all orthonormal basis sets of $\Rs[2]$ are rotations of the set
 \[
 	\left\{ \colvec{\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}},\ \colvec{-\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}} \right\}
 \]
 as a whole (i.e.\ each rotation angle is applied to both vectors).
 \end{challenge}
 
-See example below for such sets in $\Rs{2}$ and $\Rs{3}$.
+See example below for such sets in $\Rs[2]$ and $\Rs[3]$.
 
-One common orthonormal basis set in any $\Rs{n}$ is the so-called \emph{standard basis set}. We saw the standard basis set in $\Rs{3}$ in \autoref{fig:vector in different basis sets}: it is the set $B_{1}=\left\{ \colvec{1;0;0},\ \colvec{0;1;0},\ \colvec{0;0;1} \right\}$. Note how in this set, each vector has a special structure: one of its components is $1$ while the rest are $0$. In the first basis vector the non-zero component is the first component of the vector, in the second basis vector it is the second component, and in the third basis vector it is the third component. In $\Rs{2}$ the standard basis set is simply $\left\{ \colvec{1;0},\ \colvec{0;1} \right\}$, and generally in $\Rs{n}$ it is
+One common orthonormal basis set in any $\Rs[n]$ is the so-called \emph{standard basis set}. We saw the standard basis set in $\Rs[3]$ in \autoref{fig:vector in different basis sets}: it is the set $B_{1}=\left\{ \colvec{1;0;0},\ \colvec{0;1;0},\ \colvec{0;0;1} \right\}$. Note how in this set, each vector has a special structure: one of its components is $1$ while the rest are $0$. In the first basis vector the non-zero component is the first component of the vector, in the second basis vector it is the second component, and in the third basis vector it is the third component. In $\Rs[2]$ the standard basis set is simply $\left\{ \colvec{1;0},\ \colvec{0;1} \right\}$, and generally in $\Rs[n]$ it is
 \begin{equation}
 	B = \left\{ \colvec{1;0;0;\vdots;0;0},\ \colvec{0;1;0;\vdots;0;0},\ \colvec{0;0;1;\vdots;0;0}, \dots, \colvec{0;0;0;\vdots;1;0},\ \colvec{0;0;0;\vdots;0;1} \right\},
 	\label{eq:std basis set}
 \end{equation}
 i.e. in the $n$-th basis vector the $n$-th component is $1$ while the rest are $0$. The standard basis vectors are generally labeled as $\eb{1},\ \eb{2},\ \dots,\ \eb{n}$ - they get the ``hat`` symbol since they are all unit length.
 
-In $\Rs{2}$ and $\Rs{3}$ we give $\eb{1},\ \eb{2}$ and $\eb{3}$ special notations: $\hat{x},\ \hat{y}$ and $\hat{z}$, respectively (obviously $\hat{z}$ doesn't exists in $\Rs{2}$). For historical reasons, these vectors are sometimes denoted in physics textbooks as $\hat{i},\ \hat{j}$ and $\hat{k}$.
+In $\Rs[2]$ and $\Rs[3]$ we give $\eb{1},\ \eb{2}$ and $\eb{3}$ special notations: $\hat{x},\ \hat{y}$ and $\hat{z}$, respectively (obviously $\hat{z}$ doesn't exists in $\Rs[2]$). For historical reasons, these vectors are sometimes denoted in physics textbooks as $\hat{i},\ \hat{j}$ and $\hat{k}$.
 
 \subsection{The scalar product}
-When given two vectors $\vu,\vv\in\Rs{n}$ it is often useful to know the angle between them: if the two vectors are linearly dependent then the angle is either $\ath=0$ if they point in the same direction, or $\ath=\pi$ if the point in opposite directions (remember: we measure angles in radians). Otherwise, the angle $\ath$ can take any value in $(0,\pi)$. Angles are always measured on a plane, and in the case of two linearly independent vectors that plane is of course the one spanned by the two vectors (\autoref{fig:angle between two vectors}).
+When given two vectors $\vu,\vv\in\Rs[n]$ it is often useful to know the angle between them: if the two vectors are linearly dependent then the angle is either $\ath=0$ if they point in the same direction, or $\ath=\pi$ if the point in opposite directions (remember: we measure angles in radians). Otherwise, the angle $\ath$ can take any value in $(0,\pi)$. Angles are always measured on a plane, and in the case of two linearly independent vectors that plane is of course the one spanned by the two vectors (\autoref{fig:angle between two vectors}).
 
 \begin{figure}
 	\centering
@@ -1110,7 +1110,7 @@ This is such an important fact that we will put effort into framing it nicely, s
 	\end{tikzpicture}
 \end{figure}
 
-Calculating the scalar product of two vectors in $\Rs{n}$ using their column form is extremely straight-forward: it is nothing more than the sum of the component-wise product of the two vectors, i.e. given
+Calculating the scalar product of two vectors in $\Rs[n]$ using their column form is extremely straight-forward: it is nothing more than the sum of the component-wise product of the two vectors, i.e. given
 \[
 	\vec{u}=\colvec{u_{1};u_{2};\vdots;u_{n}},\ \vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}},
 \]
@@ -1208,7 +1208,7 @@ where in turn any element $v_{i}$ is the projection of $\vec{v}$ on the basis ve
 	v_{i} = \proj{\eb{i}}{\vec{v}},
 	\label{eq:}
 \end{equation}
-and thus the component $v_{i}\eb{i}=\left(\proj{\eb{i}}{\vec{v}}\right)\eb{i}$ is itself a vector of norm $v_{i}$ pointing at the direction $\eb{i}$. In general, given an orthogonal basis set $B=\left\{ \vec{b}_{1},\ \vec{b}_{2},\ \cdots,\ \vec{b}_{n} \right\}$, any vector in $\Rs{n}$ can be decomposed as follows:
+and thus the component $v_{i}\eb{i}=\left(\proj{\eb{i}}{\vec{v}}\right)\eb{i}$ is itself a vector of norm $v_{i}$ pointing at the direction $\eb{i}$. In general, given an orthogonal basis set $B=\left\{ \vec{b}_{1},\ \vec{b}_{2},\ \cdots,\ \vec{b}_{n} \right\}$, any vector in $\Rs[n]$ can be decomposed as follows:
 \begin{equation}
 	\vec{v} = \sum\limits_{i=1}^{n}\left(\proj{\hat{b}_{i}}{\vec{v}}\right)\hat{b}_{i}.
 	\label{eq:vector decomposition to orthogonal directions}
@@ -1226,9 +1226,9 @@ In the case where $B$ is an orthonormal basis set, we know that each of its vect
 
 
 \subsection{The cross product}
-Another commonly used product of two vectors is the so-called \emph{cross product}. Unlike the scalar product, it is only really valid in $\Rs{2},\ \Rs{3}$ and $\Rs{7}$, of which we will focus on $\Rs{3}$ and touch a bit on its uses in $\Rs{2}$. Also in contrast to the scalar product, the cross product in $\Rs{3}$ results in a vector rather than a scalar - therefore the product is sometimes known as the \emph{vector product}. The cross product uses the notation $\vec{a}\times\vec{b}$, from which it derives its name.
+Another commonly used product of two vectors is the so-called \emph{cross product}. Unlike the scalar product, it is only really valid in $\Rs[2],\ \Rs[3]$ and $\Rs[7]$, of which we will focus on $\Rs[3]$ and touch a bit on its uses in $\Rs[2]$. Also in contrast to the scalar product, the cross product in $\Rs[3]$ results in a vector rather than a scalar - therefore the product is sometimes known as the \emph{vector product}. The cross product uses the notation $\vec{a}\times\vec{b}$, from which it derives its name.
 
-We start with the definition of the cross product in $\Rs{2}$: the cross product of two vectors $\vu=\vutd$ and $\vv=\vvtd$ is the (signed) area of the parallelogram defined by the two vectors (see \autoref{fig:cross_product_in_R2}).
+We start with the definition of the cross product in $\Rs[2]$: the cross product of two vectors $\vu=\vutd$ and $\vv=\vvtd$ is the (signed) area of the parallelogram defined by the two vectors (see \autoref{fig:cross_product_in_R2}).
 
 \begin{figure}
 	\centering
@@ -1250,7 +1250,7 @@ We start with the definition of the cross product in $\Rs{2}$: the cross product
 			\addplot[only marks, mark=*] coordinates {(0,0)};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{The cross product in $\Rs{2}$  of two vectors $\vu=\vutd$ and $\vv=\vvtd$ as the signed area of the parallogram defined by the vectors.}
+	\caption{The cross product in $\Rs[2]$  of two vectors $\vu=\vutd$ and $\vv=\vvtd$ as the signed area of the parallogram defined by the vectors.}
 	\label{fig:cross_product_in_R2}
 \end{figure}
 
@@ -1271,7 +1271,7 @@ since the angle between $\vu^{\perp}$ and $\vv$ is $\frac{\pi}{2}$ more than tha
 				 &= \vu^{\perp}\cdot\vv.
 	\label{eq:cross_product_to_dot_product_part2}
 \end{align}
-In $\Rs{2}$, any vector $\vu=\vutd$ has two vectors orthogonal to it: $\colvec{\textcolor{xred}{-b};\textcolor{xred}{a}}$ and $\colvec{\textcolor{xred}{b};\textcolor{xred}{-a}}$. Choosing the former gives
+In $\Rs[2]$, any vector $\vu=\vutd$ has two vectors orthogonal to it: $\colvec{\textcolor{xred}{-b};\textcolor{xred}{a}}$ and $\colvec{\textcolor{xred}{b};\textcolor{xred}{-a}}$. Choosing the former gives
 \begin{equation}
 	\vu\times\vv = \colvec{\textcolor{xred}{-b};\textcolor{xred}{a}} \cdot \vvtd = -\textcolor{xred}{b}\textcolor{xblue}{c}+\textcolor{xred}{a}\textcolor{xblue}{d},
 	\label{eq:cross_product_2d_algebraic}
@@ -1283,7 +1283,7 @@ while choosing the latter gives
 \end{equation}
 These two forms are the opposite of each other - i.e. if one yields the value $4$, the other yields the value $-4$. We will see which one is used in a moment.
 
-On to $\Rs{3}$: geometrically, the cross product of two vectors $\vu,\vv\in\Rs{3}$ is defined as a \textbf{vector} $\vw\in\Rs{3}$ which is \textbf{orthogonal to both} $\vu$ and $\vv$, and with norm of the same magnitude as the product would have in $\Rs{2}$, i.e.
+On to $\Rs[3]$: geometrically, the cross product of two vectors $\vu,\vv\in\Rs[3]$ is defined as a \textbf{vector} $\vw\in\Rs[3]$ which is \textbf{orthogonal to both} $\vu$ and $\vv$, and with norm of the same magnitude as the product would have in $\Rs[2]$, i.e.
 \begin{equation}
 	\gnorm{\vw} = \gnorm{\vu}\gnorm{\vv}\sin\left(\ath\right).
 	\label{eq:cross product geometry}
@@ -1341,7 +1341,7 @@ When the vectors are given as column vectors $\vu=\colvec{\textcolor{xred}{u_{x}
 \end{equation}
 
 \begin{note}{The cross product of the standard basis vectors}{}
-	The cross product of two of the standard basis vectors in $\Rs{3}$ is the third basis vector. Its sign ($\pm$) is determined by a cyclic rule:
+	The cross product of two of the standard basis vectors in $\Rs[3]$ is the third basis vector. Its sign ($\pm$) is determined by a cyclic rule:
 	\begin{equation*}
 		\text{sign}\left( \eb{i}\times\eb{j} \right) =
 		\begin{cases}
@@ -1357,7 +1357,7 @@ When the vectors are given as column vectors $\vu=\colvec{\textcolor{xred}{u_{x}
 
 \subsection{Normal vectors}
 
-A special kind of vector in $\Rs{3}$ is the so-called \emph{normal vector} to a plane $\mathbf{P}$: this vector, usually denoted as $\normalVec{n}{P}$, is pointing at the orthogonal direction to any vector of the plane (see XXX). Given one knows three points on the plane, its normal vector can be calculated: say the following three points in $\mathbf{P}$ are given (for visualizing the following steps see YYY):
+A special kind of vector in $\Rs[3]$ is the so-called \emph{normal vector} to a plane $\mathbf{P}$: this vector, usually denoted as $\normalVec{n}{P}$, is pointing at the orthogonal direction to any vector of the plane (see XXX). Given one knows three points on the plane, its normal vector can be calculated: say the following three points in $\mathbf{P}$ are given (for visualizing the following steps see YYY):
 \begin{align}
 	p &= (p_{x}, p_{y}, p_{z})\nonumber\\
 	q &= (q_{x}, q_{y}, q_{z})\nonumber\\

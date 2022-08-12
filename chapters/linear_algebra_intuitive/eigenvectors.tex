@@ -1,6 +1,6 @@
 \section{Eigenvectors and eigenvalues}
 \subsection{Definition}
-Some linear transformations have special directions which only scale by the application of the transformation and are not mapped to different directions. Take for example the transformation $T:\Rs{2}\to\Rs{2}$, which scales space by $2$ in the $y$-direction. All vectors pointing in the $y$-direction get scaled by $T$ (namely by a factor of $2$) and still point in the $y$-direction after the application of $T$. All vectors pointing in the $x$-direction do not change at all (i.e. they are "scaled" by a factor of $1$), and of course still point in the $x$-direction after the application of $T$. Any other vector - i.e. those that have both components different than zero - change their direction after the application of $T$ (see \autoref{fig:y_scale_2}).
+Some linear transformations have special directions which only scale by the application of the transformation and are not mapped to different directions. Take for example the transformation $T:\Rs[2]\to\Rs[2]$, which scales space by $2$ in the $y$-direction. All vectors pointing in the $y$-direction get scaled by $T$ (namely by a factor of $2$) and still point in the $y$-direction after the application of $T$. All vectors pointing in the $x$-direction do not change at all (i.e. they are "scaled" by a factor of $1$), and of course still point in the $x$-direction after the application of $T$. Any other vector - i.e. those that have both components different than zero - change their direction after the application of $T$ (see \autoref{fig:y_scale_2}).
 
 \begin{figure}
 	\centering
@@ -115,7 +115,7 @@ Before continuing to explore some more examples of eigenvectors, there are two p
 \begin{itemize}
 	\item A scale of any eigenvector $\vec{v}$ of $T$ is also an eigenvector of $T$, with the same eigenvalue.
 		\begin{proof}{Eigenvector scale}{}
-			Let $T:\Rs{n}\to\Rs{n}$ be a linear transformation represented by the square matrix $A$, with eigenvector $\vec{v}$ and its respective eigenvalue $\lambda$. Then
+			Let $T:\Rs[n]\to\Rs[n]$ be a linear transformation represented by the square matrix $A$, with eigenvector $\vec{v}$ and its respective eigenvalue $\lambda$. Then
 			\[
 				A\vec{v} = \lambda\vec{v}.
 			\]

@@ -6,7 +6,7 @@ Linear transformations are a special set of transformations that are relatively 
 \subsection{Definition}
 As mentioned in \autoref{chapter:intro}, a ``transformation`` is simply another name for a function. Thus in our context, linear transformations are some functions that act on vectors: a linear transformation $T$ takes a vector as an input, and outputs another vector, possibly of a different dimension, i.e.
 \begin{equation}
-	T:\Rs{n}\to\Rs{m}.
+	T:\Rs[n]\to\Rs[m].
 	\label{eq:linear transformation signature}
 \end{equation}
 
@@ -23,7 +23,7 @@ What makes linear transformations more ``special'' than other functions is their
 \end{listitemize}
 
 \begin{example}{A linear transformation}{linear transformation}
-	\textbf{Claim}: the following $\Rs{3}\to\mathbb{R}$ transformation is linear:
+	\textbf{Claim}: the following $\Rs[3]\to\mathbb{R}$ transformation is linear:
 	\[
 		T\left(\colvec{x;y;z}\right) = 2x+3y-z.
 	\]
@@ -46,7 +46,7 @@ What makes linear transformations more ``special'' than other functions is their
 \end{example}
 
 \begin{example}{A non-linear transformation}{non-linear transformation}
-	\textbf{Claim}: the following $\Rs{3}\to\mathbb{R}$ transformation is \textbf{not} a linear transformation:
+	\textbf{Claim}: the following $\Rs[3]\to\mathbb{R}$ transformation is \textbf{not} a linear transformation:
 	\[
 		T\left(\colvec{x;y;z}\right) = 2x^{2}+3y-z.
 	\]
@@ -63,7 +63,7 @@ What makes linear transformations more ``special'' than other functions is their
 \end{example}
 
 \subsection{Developing intuition}\label{sec:LS_developing_intuition}
-Before moving on to explore the algebraic properties of linear transformations, we first shift our focus to gain some intuition about them. Much like in the last section, we do this using graphical representations of linear transformations in $\Rs{2}$ and $\Rs{3}$. We start with a single vector under transformation: let $\vec{u}=\colvec{2;4}$ and $T:\Rs{2}\to\Rs{2}$ defined by
+Before moving on to explore the algebraic properties of linear transformations, we first shift our focus to gain some intuition about them. Much like in the last section, we do this using graphical representations of linear transformations in $\Rs[2]$ and $\Rs[3]$. We start with a single vector under transformation: let $\vec{u}=\colvec{2;4}$ and $T:\Rs[2]\to\Rs[2]$ defined by
 \begin{equation}
 	T\left( \colvec{x;y} \right) = \colvec{2x;-y}.
 \end{equation}
@@ -118,7 +118,7 @@ Applying $T$ to $\vec{u}$ yields the vector $\vec{v}=\colvec{4;-4}$ (see \autore
 
 If we take other vectors, e.g. $\vec{a}=\colvec{-2;-2}$ and $\vec{b}=\colvec{1;-6}$ we see that $T$ transforms them in the exact same manner: it scales their $x$-components by $2$ and flipps over their $y$-components (\autoref{fig:two vectors LT}). This is a fundamental aspect of linear transformations: they always transform all vectors in the exact same manner. We can use this fact to help visualize transformations, by looking at how they transform the entire space. For example, we can draw all grid lines and observe how they are transformed.
 
-In \autoref{fig:linear transformation grid} a schematic of $\Rs{2}$ is shown before and after the application of a linear transformation $T$, by placing a transformed grid (blue) ontop of an untouched grid (gray). In this view, one can see how each point in space is transformed: assuming for example that each two adjacent grid points are 1 unit apart, the gray point at $(-2,2)$ is transformed to where the blue point is, i.e. $(-1,1)$ when measured using the original axes. 
+In \autoref{fig:linear transformation grid} a schematic of $\Rs[2]$ is shown before and after the application of a linear transformation $T$, by placing a transformed grid (blue) ontop of an untouched grid (gray). In this view, one can see how each point in space is transformed: assuming for example that each two adjacent grid points are 1 unit apart, the gray point at $(-2,2)$ is transformed to where the blue point is, i.e. $(-1,1)$ when measured using the original axes. 
 
 \colorlet{xbefore}{black!40}
 \colorlet{xafter}{xblue}
@@ -172,11 +172,11 @@ In \autoref{fig:linear transformation grid} a schematic of $\Rs{2}$ is shown bef
 		\node[xblue] at (xlbl) {$x$};
 		\node[xblue] at (ylbl) {$y$};
 	\end{tikzpicture}
-	\caption{$\Rs{2}$ after application of a linear transformation (blue), placed ontop of $\Rs{2}$ before the transformation (gray). Note the black point at the top left at $(-2,2)$ transforming into the blue point at $(-1,1)$.}
+	\caption{$\Rs[2]$ after application of a linear transformation (blue), placed ontop of $\Rs[2]$ before the transformation (gray). Note the black point at the top left at $(-2,2)$ transforming into the blue point at $(-1,1)$.}
 	\label{fig:linear transformation grid}
 \end{figure}
 
-For comparison, \autoref{fig:nonlinear transformation grid} shows a non linear transformation applied to $\Rs{2}$.
+For comparison, \autoref{fig:nonlinear transformation grid} shows a non linear transformation applied to $\Rs[2]$.
 
 \begin{figure}
 	\centering
@@ -196,7 +196,7 @@ For comparison, \autoref{fig:nonlinear transformation grid} shows a non linear t
 			\fill[xblue!50] (3,3) rectangle (2.5,2.5);
 		\end{scope}
 	\end{tikzpicture}
-	\caption{A non linear transformation applied to $\Rs{2}$ for comparison.}
+	\caption{A non linear transformation applied to $\Rs[2]$ for comparison.}
 	\label{fig:nonlinear transformation grid}
 \end{figure}
 
@@ -256,7 +256,7 @@ It is rather easy to prove the first two properties.
 
 We will prove the the third property (all areas are scaled by the same amount) later in the chapter.
 
-All linear transformations in $\Rs{2}$ can be created by composing transformations from a set of linear transformation which we will refer to as the \emph{basic linear transformations}\footnote{not an official name.}. To visualize these basic transformations we apply them on a figure of a tapir\footnote{They are here, they are a trans tapir. Get used to it.}:
+All linear transformations in $\Rs[2]$ can be created by composing transformations from a set of linear transformation which we will refer to as the \emph{basic linear transformations}\footnote{not an official name.}. To visualize these basic transformations we apply them on a figure of a tapir\footnote{They are here, they are a trans tapir. Get used to it.}:
 
 \begin{figure}[H]
 	\centering
@@ -379,7 +379,7 @@ Some of the basic linear transformations can be created as compositions of other
 \end{figure}
 
 \subsection{3D Linear transformations}
-The basic linear transformations in $\Rs{3}$ are very much similar to those in $\Rs{2}$ with some small differences worth mentioning. For a start, scaling and skewing can be done in three different directions instead of just two directions (namely, $x,y$ and $z$ instead of just $x$ and $y$). In addition, there are infinetly many axes of rotation: in $\Rs{2}$ there is just a single axis (actually a point) of rotation - the origin. In $\Rs{3}$ any line that goes through the origin can be an axis of rotation (see \autoref{fig:rotation_around_axis}). Lastly, there are three types of reflections: about the origin (a point), across a line going through the origin, and across a plane (see fig?).
+The basic linear transformations in $\Rs[3]$ are very much similar to those in $\Rs[2]$ with some small differences worth mentioning. For a start, scaling and skewing can be done in three different directions instead of just two directions (namely, $x,y$ and $z$ instead of just $x$ and $y$). In addition, there are infinetly many axes of rotation: in $\Rs[2]$ there is just a single axis (actually a point) of rotation - the origin. In $\Rs[3]$ any line that goes through the origin can be an axis of rotation (see \autoref{fig:rotation_around_axis}). Lastly, there are three types of reflections: about the origin (a point), across a line going through the origin, and across a plane (see fig?).
 
 \begin{figure}
 	\centering

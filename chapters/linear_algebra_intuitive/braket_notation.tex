@@ -1,4 +1,6 @@
 \section{The Bra-Ket notation}
+\tbw{this section needs some rework regarding dual vectors}
+
 In this section we introduce a special vector notation widely used in physics: the \emph{Bra-ket notation}, also known as \emph{Dirac's notation}. This notation helps simplify many aspects of linear algebra, and make its use more streamlined.
 
 \begin{note}{Importance of this section}{}
@@ -6,9 +8,9 @@ In this section we introduce a special vector notation widely used in physics: t
 \end{note}
 
 \subsection{Definition}
-Up until now we presented the theory of linear algebra based on real numbers: all of the vectors we used were real vectors, i.e. of the form $\vec{v}\in\Rs{n}$, where $n\in\mathbb{N}$. All of the matrices used were also made up of real components - and so were of course the scalars themselves, which we defined simply as real numbers.
+Up until now we presented the theory of linear algebra based on real numbers: all of the vectors we used were real vectors, i.e. of the form $\vec{v}\in\Rs[n]$, where $n\in\mathbb{N}$. All of the matrices used were also made up of real components - and so were of course the scalars themselves, which we defined simply as real numbers.
 
-However, it is aparently useful in many cases to use linear algebra in the context of complex numbers: instead of working with spaces of the form $\Rs{n}$ we can use spaces of the form $\Cs{n}$, e.g. a vector in $\Cs{3}$ can be the following:
+However, it is aparently useful in many cases to use linear algebra in the context of complex numbers: instead of working with spaces of the form $\Rs[n]$ we can use spaces of the form $\Cs[n]$, e.g. a vector in $\Cs[3]$ can be the following:
 \[
 	\vec{v} = \colvec{1-i;2+3i;\pi+\sqrt{2}i}.
 \]
@@ -31,7 +33,7 @@ we can get its row form by transposing it, i.e. we look at $\vec{v}^{\top}$. How
 \end{equation}
 To be consistent with the usual notation used in physics (and have more succisent, we introduce the following changes:
 \begin{itemize}
-	\item The complex conjugate of the number $z\in\mathbb{C}$ is changed to $\sconj{C}$.
+	\item The complex conjugate of the number $z\in\Cs$ is changed to $\sconj{C}$.
 	\item The star notation is also used for transpose (this is normaly called \emph{conjugate transpose}, and is sometimes denoted by $u^{\dagger}$).
 	\item The arrow is dropped from the vector notation.
 \end{itemize}
@@ -52,7 +54,7 @@ Applying these changes, \autoref{eq:row_vector_complex_star_notation} has the fo
 	\]
 \end{example}
 
-Next, we make sure that the scalar product between any two vectors $u,v$ is such that the left vector is a row vector, and the right vector is a column vector, i.e. given $u,v\in\Cs{n}$ such that
+Next, we make sure that the scalar product between any two vectors $u,v$ is such that the left vector is a row vector, and the right vector is a column vector, i.e. given $u,v\in\Cs[n]$ such that
 \[
 	u = \colvec{u_{1};u_{2};\vdots;u_{n}} \quad v = \colvec{v_{1};v_{2};\vdots;v_{n}},
 \]
@@ -82,10 +84,10 @@ The norm of a vector $v$ can be calculated by taking the square root of its scal
 
 Let us write the properties of the scalar product adjusted to the bra-ket notation:
 \begin{descitemize}
-	\item[Non-negative norm] for any vector $v\in\Cs{n},\ \innerproduct{v}\geq0$.
+	\item[Non-negative norm] for any vector $v\in\Cs[n],\ \innerproduct{v}\geq0$.
 	\item[Uniqeness of zero] if $\innerproduct{v}=0$, then $v=0$.
-	\item[Conjugate commutativity] for any two vectors $u,v\in\Cs{n},\ \innerproduct{u}{v}=\sconj{\innerproduct{v}{u}}$.
-	\item[Distributivity] Given three vectors $u,v,w\in\Cs{n}$ and two scalars $\alpha,\beta\in\mathbb{C}$,
+	\item[Conjugate commutativity] for any two vectors $u,v\in\Cs[n],\ \innerproduct{u}{v}=\sconj{\innerproduct{v}{u}}$.
+	\item[Distributivity] Given three vectors $u,v,w\in\Cs[n]$ and two scalars $\alpha,\beta\in\Cs$,
 		\[
 			\bra{u} \left( \alpha\ket{v}+\beta\ket{w} \right) = \alpha\innerproduct{u}{v} + \beta\innerproduct{u}{w}.
 		\]
@@ -97,12 +99,12 @@ Generally speaking, any vector space that is ``equiped'' with a norm complying w
 
 There is an interesting way one can interpret the scalar product: instead of as an operation acting on two vectors, we can view a bra as an operator acting on a ket and returning a scalar. Mathematically this is written as
 \begin{equation}
-	\bra{\bigcirc}: \Cs{n}\to\mathbb{C}.
+	\bra{\bigcirc}: \Cs[n]\to\Cs.
 	\label{eq:bra_as_operator}
 \end{equation}
 (the empty circle signifies that that the symbol representing the bra is placed inside the bra symbol)
 
-\tbw{this is the dual space of $\Cs{n}$, etc.}
+\tbw{this is the dual space of $\Cs[n]$, etc.}
 
 Another product that is easily defined usin the bra-ket notation is the \emph{exterior product} of two vectors (recall that the scalar product is also called the \textit{inner product}). The exterior product arises when we multiply two vectors in the opposite order compared to the scalar product, i.e. instead of $\innerproduct{u}{v}$ we calculate $\outerproduct{u}{v}$:
 \begin{equation}
@@ -171,7 +173,7 @@ Scaling a vector in the bra-ket notation is represented by simply putting the sc
 \[
 	\ket{u}=\colvec{u_{1};u_{2};\vdots;u_{n}},
 \]
-its scaled version by the scalar $\alpha\in\mathbb{C}$ is
+its scaled version by the scalar $\alpha\in\Cs$ is
 \begin{equation}
 	\alpha\ket{u} = \ket{u}\alpha = \colvec{\alpha u_{1};\alpha u_{2};\vdots;\alpha u_{n}}.
 	\label{eq:scaling_ket}
@@ -195,12 +197,12 @@ Adding two kets or two bras is also quote simple:
 \end{note}
 
 \subsection{Linear combinations and basis sets}
-Linear combinations are easily represented using the bra-ket notation: let $\alpha_{1},\alpha_{2},\dots,\alpha_{n}$ be complex numbers, and $\ket{v_{1}},\ket{v_{2}},\dots,\ket{v_{n}}$ kets in $\Cs{n}$. Then
+Linear combinations are easily represented using the bra-ket notation: let $\alpha_{1},\alpha_{2},\dots,\alpha_{n}$ be complex numbers, and $\ket{v_{1}},\ket{v_{2}},\dots,\ket{v_{n}}$ kets in $\Cs[n]$. Then
 \begin{equation}
 	\ket{w} = \alpha_{1}\ket{v_{1}} + \alpha_{2}\ket{v_{2}} + \cdots + \alpha_{n}\ket{v_{n}} = \sum\limits_{i=1}^{n}\alpha_{i}\ket{v_{i}}
 	\label{eq:bra-ket_linear_combination}
 \end{equation}
-is of course itself a vector in $\Cs{n}$. If the set $B=\left\{\ket{b_{1}},\ket{b_{2}},\dots,\ket{b_{n}}\right\}$ is a basis set of $\Cs{n}$ then any vector $\vec{v}\in\Cs{n}$ can be written as a linear combination of the vectors in $B$, i.e.
+is of course itself a vector in $\Cs[n]$. If the set $B=\left\{\ket{b_{1}},\ket{b_{2}},\dots,\ket{b_{n}}\right\}$ is a basis set of $\Cs[n]$ then any vector $\vec{v}\in\Cs[n]$ can be written as a linear combination of the vectors in $B$, i.e.
 \begin{equation}
 	\vec{w} = \sum\limits_{i=1}^{n}\beta_{i}\ket{b_{i}},
 	\label{eq:bra-ket_spanning_vectors}
@@ -212,7 +214,7 @@ such that not all $\beta_{i}=0$ (i.e. at least one of them is non-zero). If in a
 \end{equation}
 the basis set is orthonormal: each vector has unit norm (since $\innerproduct{b_{i}}=\delta_{ii}=1$), and they are all orthogonal to each other (since for $i\neq j,\ \innerproduct{b_{i}}{b_{j}}=\delta_{i\neq j} = 0$).
 
-Sometimes, and depending on the context, basis vectors are written as their indeces only inside a bra or a ket. This is common for example with the standard basis vectors, e.g. in $\Cs{3}$
+Sometimes, and depending on the context, basis vectors are written as their indeces only inside a bra or a ket. This is common for example with the standard basis vectors, e.g. in $\Cs[3]$
 \begin{equation}
 	\hat{x}=\ket{1},\ \hat{y}=\ket{2},\ \hat{z}=\ket{3}.
 	\label{eq:std_basis_vectors_bra-ket}
@@ -223,7 +225,7 @@ and more generaly
 	\label{eq:i-th_std_basis_vector_bra-ket}
 \end{equation}
 
-Let us now take a general ket in $\ket{v}\in\Cs{n}$ and write it as a linear combination of some orthonormal basis set $B$:
+Let us now take a general ket in $\ket{v}\in\Cs[n]$ and write it as a linear combination of some orthonormal basis set $B$:
 \begin{equation}
 	\ket{v} = \sum\limits_{i=1}^{n}\alpha_{i}\ket{b_{i}}.
 	\label{eq:}
@@ -267,13 +269,13 @@ Recall that the outer product return a matrix. Thus, \autoref{eq:ket_as_sum_of_o
 	I_{n}=\sum\limits_{i=1}^{n}\ket{b_{i}}\bra{b_{i}}.
 	\label{eq:the_completeness_relation}
 \end{equation}
-This result is called the \emph{completeness relation}. It essentially tells us that given an orthonormal basis set, the sum of the outer product of each basis vector with itself is the identity matrix. For example, given the standard basis set in $\Cs{3}$,
+This result is called the \emph{completeness relation}. It essentially tells us that given an orthonormal basis set, the sum of the outer product of each basis vector with itself is the identity matrix. For example, given the standard basis set in $\Cs[3]$,
 \begin{equation}
 	\outerproduct{1}{1} + \outerproduct{2}{2} + \outerproduct{3}{3} = I_{3}.
 	\label{eq:completeness_relation_std_basis_C3}
 \end{equation}
 
-\begin{example}{The completeness relation in $\bm{\Cs{2}}$}{}
+\begin{example}{The completeness relation in $\bm{\Cs[2]}$}{}
 	As we saw in \autoref{example:orthobasis}, the following basis set is orthonormal:
 	\[
 		\ket{1}=\frac{1}{\sqrt{2}}\colvec{1;1},\ \ket{2}=\frac{1}{\sqrt{2}}\colvec{1;-1}.

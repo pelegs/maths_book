@@ -2,7 +2,7 @@
 In the previous section we described linear transformations in a rather abstract way: what they are, how they behave qualitatively and how they look like in 2- and 3-dimensions. In this section we introduce a numerical method of representing linear transformations: matrices.
 
 \subsection{Linear transformation of basis vectors}
-Recall that any vector $\vec{v}\in\Rs{n}$ can be written as a linear combination of basis vectors $\vec{b}_{1}, \vec{b}_{2}, \dots, \vec{b}_{n}$:
+Recall that any vector $\vec{v}\in\Rs[n]$ can be written as a linear combination of basis vectors $\vec{b}_{1}, \vec{b}_{2}, \dots, \vec{b}_{n}$:
 \begin{equation}
 	\vec{v} = \sum\limits_{i=1}^{n}\alpha_{i}\vec{b}_{i} = \alpha_{1}\vec{b}_{1} + \alpha_{2}\vec{b}_{2} + \cdots + \alpha_{n}\vec{b}_{n}.
 \end{equation}
@@ -23,7 +23,7 @@ This result is pretty neat: it means that by knowing how a linear transformation
 \end{equation}
 
 \begin{example}{Vector transformation via a basis}{}
-	Applying the transformation $T:\Rs{3}\to\Rs{3}$, defined as
+	Applying the transformation $T:\Rs[3]\to\Rs[3]$, defined as
 	\[
 		T\left(\colvec{x;y;z}\right)=\colvec{x+y-2z;2x+z;-x-y-z}
 	\]
@@ -51,7 +51,7 @@ This result is pretty neat: it means that by knowing how a linear transformation
 \end{example}
 
 \subsection{From transformations to matrices}
-The most general linear transformation $T:\Rs{2}\to\Rs{2}$ has the following form:
+The most general linear transformation $T:\Rs[2]\to\Rs[2]$ has the following form:
 \begin{equation}
 	T \left( \colvec{x;y} \right) = \colvec{ax+by;cx+dy},
 	\label{eq:generic_R2_LT}
@@ -102,7 +102,7 @@ i.e. the $i$-th component of the resulting vector is the scalar product of the $
 	Prove that the transformation $T$ in \autoref{eq:generic_R2_LT} is indeed linear.
 \end{challenge}
 
-The most general form of a linear transformation is $T:\Rs{n}\to\Rs{m}$, i.e. a transformation which takes $n$-dimensional vectors as input and returns $m$-dimensional vectors as output:
+The most general form of a linear transformation is $T:\Rs[n]\to\Rs[m]$, i.e. a transformation which takes $n$-dimensional vectors as input and returns $m$-dimensional vectors as output:
 \begin{equation}
 	T \left( \colvec{\tikzmark{N}x_{1};x_{2};\vdots;x_{n}} \right) = \colvec{
 		\Ma{1}{1}x_{1}+\Ma{1}{2}x_{2}+\cdots+\Ma{1}{n}x_{n};
@@ -113,9 +113,9 @@ The most general form of a linear transformation is $T:\Rs{n}\to\Rs{m}$, i.e. a 
 	\label{eq:}
 \end{equation}
 \begin{tikzpicture}[overlay, remember picture]
-	\node[xblue] (Ntxt) at ($(pic cs:N)+(-1.5cm,-2mm)$) {$\Rs{n}\ni$};
+	\node[xblue] (Ntxt) at ($(pic cs:N)+(-1.5cm,-2mm)$) {$\Rs[n]\ni$};
 	\draw[-stealth, xblue] (Ntxt) to [out=45, in=90] ($(pic cs:N)+(1mm,2.5mm)$);
-	\node[xred] (Mtxt) at ($(pic cs:M)+(2.5cm,5mm)$) {$\in\Rs{m}$};
+	\node[xred] (Mtxt) at ($(pic cs:M)+(2.5cm,5mm)$) {$\in\Rs[m]$};
 	\draw[-stealth, xred] (Mtxt) to [out=180, in=0] ($(pic cs:M)+(2.5mm,0)$);
 \end{tikzpicture}
 
@@ -136,7 +136,7 @@ Respectively, we define an $\textcolor{xred}{m}\times \textcolor{xblue}{n}$ matr
 	\end{bNiceMatrix}. 
 	\label{eq:mxn_matrix}
 \end{equation}
-The product $M\vec{v}$ (where $\vec{v}\in\Rs{n}$) is then defined as
+The product $M\vec{v}$ (where $\vec{v}\in\Rs[n]$) is then defined as
 \begin{equation}
 	A\vec{v} =
 	\begin{bNiceMatrix}
@@ -216,7 +216,7 @@ The structure of an $m\times n$ matrix $A$ has a nice property: given that the t
 \end{example}
 
 \subsection{Matrix representation of the basic linear transformations (2D)}
-We can now represent all of the basic linear transformations in $\Rs{2}$ mentioned in the previous section (\autoref{fig:basicLinearTrans}) as $2\times2$ matrices. We do this by observing how the basis vectors $\hat{x}$ and $\hat{y}$ change after the application of each transformation.
+We can now represent all of the basic linear transformations in $\Rs[2]$ mentioned in the previous section (\autoref{fig:basicLinearTrans}) as $2\times2$ matrices. We do this by observing how the basis vectors $\hat{x}$ and $\hat{y}$ change after the application of each transformation.
 
 \begin{descitemize}
 	\item[Identity] both basis vectors remain the same: $\colvec{1;0}\to\colvec{1;0},\ \colvec{0;1}\to\colvec{0;1}$. Therefore the matrix $I$ representing the identity transformation is
@@ -520,7 +520,7 @@ A graphical representation of the rotation can be seen in \autoref{fig:rotation_
 			\draw[vector, xgreen] (0.5,0) arc (0:170:0.5);
 		\end{scope}
 	\end{tikzpicture}
-	\caption{In $\Rs{3}$, rotation around the $x$-axis is a rotation in the $yz$-plane (i.e. $x=0$).}
+	\caption{In $\Rs[3]$, rotation around the $x$-axis is a rotation in the $yz$-plane (i.e. $x=0$).}
 	\label{fig:rotation_in_yz}
 \end{figure}
 
@@ -545,7 +545,7 @@ The rotation matrices around the $y$- and $z$-axes follow the same structure:
 	The signs of $\sin \left( \varphi \right)$ in $R^{y}_{\varphi}$ are flipped compared to $R^{x}_{\theta}$ and $R^{z}_{\psi}$, for the same reason a similar thing happens in the $y$-component of the cross product: it is due to the use of a right-handed system.
 \end{note}
 
-The most general rotation in $\Rs{3}$, i.e. around an axis represented by the unit vector $\hat{u}=\colvec{u_{x};u_{y};u_{z}}$ counter-clockwise by an angle $\theta$, is given in matrix form as
+The most general rotation in $\Rs[3]$, i.e. around an axis represented by the unit vector $\hat{u}=\colvec{u_{x};u_{y};u_{z}}$ counter-clockwise by an angle $\theta$, is given in matrix form as
 \begin{equation}
 	R_{\theta}=
 	\begin{bNiceMatrix}
@@ -709,7 +709,7 @@ Much like vectors, a matrix can be scaled by a real number, and two matrices can
 \end{note}
 
 \subsection{Types of matrices}
-Any matrix $A$ which represents a transformation of the type $\Rs{n}\to\Rs{n}$ (i.e. from a space onto itself) has the same number of rows and columns (i.e. its dimension is $n\times n$):
+Any matrix $A$ which represents a transformation of the type $\Rs[n]\to\Rs[n]$ (i.e. from a space onto itself) has the same number of rows and columns (i.e. its dimension is $n\times n$):
 \begin{equation}
 	A =
 	\begin{bNiceMatrix}
@@ -783,7 +783,7 @@ A \emph{diagonal matrix} $A$ is a matrix in which all the non-main diagonal elem
 \begin{example}{Diagonal matrices}{}
 	Text.
 \end{example}
-As we saw in the cases of $\Rs{2}$ and $\Rs{3}$, diagonal matrices are \emph{scaling matrices}: each entry $a_{ii}$ tells us by how much space is scaled in the $i$-th direction.
+As we saw in the cases of $\Rs[2]$ and $\Rs[3]$, diagonal matrices are \emph{scaling matrices}: each entry $a_{ii}$ tells us by how much space is scaled in the $i$-th direction.
 
 A very important family of \textbf{square} matrices are the \emph{identity matrices}. These matrices have a unique structure: their main diagonal elements are all $1$, while the rest of the elements (the \emph{off-diagonal elements}) are all $0$:
 
@@ -827,10 +827,10 @@ In such a depiction, the off-diagonal elements are each written using a single z
 \end{equation}
 Using the Kronecker delta, each element $a_{ij}$ of the identity matrix $I_{n}$ simply equals $\delta_{ij}$.
 
-An identity matrix of dimension $n$ represents the identity transformation in $\Rs{n}$: each standard basis vector $\eb{i}$ is left unchanged by the transformation.
+An identity matrix of dimension $n$ represents the identity transformation in $\Rs[n]$: each standard basis vector $\eb{i}$ is left unchanged by the transformation.
 
 \begin{example}{Identity matrices}{}
-	The following are the identity matrices of $\Rs{2},\Rs{3},\dots,\Rs{6}$, where in each matrix the main diagonal is highlighted:
+	The following are the identity matrices of $\Rs[2],\Rs[3],\dots,\Rs[6]$, where in each matrix the main diagonal is highlighted:
 
 	\centering
 	\setlength\tabcolsep{3pt}
@@ -980,9 +980,9 @@ As mentioned in \autoref{sec:LS_developing_intuition}, linear transformation sca
 	\end{tikzpicture}
 \end{example}
 
-Since there is not much sense in discussing volume changes between different spaces (e.g. $\Rs{5}\to\Rs{7}$), only square matrices, which as you recall represent linear transformations from a space onto itself, have determinants. Determinants can take any real number as values, including zero and negative numbers.
+Since there is not much sense in discussing volume changes between different spaces (e.g. $\Rs[5]\to\Rs[7]$), only square matrices, which as you recall represent linear transformations from a space onto itself, have determinants. Determinants can take any real number as values, including zero and negative numbers.
 
-What does a zero determinant mean? Since in $\Rs{2}$ determinants tells us the scaling factor of areas by the transformation, if the matrix representing the linear transformation has a zero determinant, it means that somehow all areas are "squashed" by the transformation to zero. There are two possible relevant shapes of zero area: a line going through the origin, or the origin itself which is a point. See \autoref{fig:zero_det_R2} for a visualization.
+What does a zero determinant mean? Since in $\Rs[2]$ determinants tells us the scaling factor of areas by the transformation, if the matrix representing the linear transformation has a zero determinant, it means that somehow all areas are "squashed" by the transformation to zero. There are two possible relevant shapes of zero area: a line going through the origin, or the origin itself which is a point. See \autoref{fig:zero_det_R2} for a visualization.
 
 \begin{figure}
 	\centering
@@ -1017,7 +1017,7 @@ What does a zero determinant mean? Since in $\Rs{2}$ determinants tells us the s
 	\label{fig:zero_det_R2}
 \end{figure}
 
-Similarily, in $\Rs{3}$ the determinant tells us how volumes are scaled by a linear transformation, and thus a $3\times3$ matrix with zero determinant means that all the transformation represented by the matrix "squashes" all volumes to one of three relevant shapes with zero volume: a plane going through the origin, a line going through the origin, or the origin point itself. See \autoref{fig:zero_det_R3} for a visualization.
+Similarily, in $\Rs[3]$ the determinant tells us how volumes are scaled by a linear transformation, and thus a $3\times3$ matrix with zero determinant means that all the transformation represented by the matrix "squashes" all volumes to one of three relevant shapes with zero volume: a plane going through the origin, a line going through the origin, or the origin point itself. See \autoref{fig:zero_det_R3} for a visualization.
 
 DISCUSSION OF NEGATIVE DETERMINANTS\ldots
 
@@ -1433,7 +1433,7 @@ On the other hand, the traspose operator doesn't behave so "nicely":
 \end{equation}
 
 \subsection{Inverse matrices}
-Some linear transformations are invertible. For example, given a transformation which rotates any vector in $\Rs{2}$ by $\theta$ \textbf{counter-clockwise} around the origin, its inverse transformation is one that rotates any vector in $\Rs{2}$ by $\theta$ \textbf{clockwise} around the origin (or equivalently by $-\theta$ counter-clockwise). \autoref{fig:trans_and_inverses} illustrates such transformation.
+Some linear transformations are invertible. For example, given a transformation which rotates any vector in $\Rs[2]$ by $\theta$ \textbf{counter-clockwise} around the origin, its inverse transformation is one that rotates any vector in $\Rs[2]$ by $\theta$ \textbf{clockwise} around the origin (or equivalently by $-\theta$ counter-clockwise). \autoref{fig:trans_and_inverses} illustrates such transformation.
 
 \begin{figure}[h]
 	\centering
@@ -1465,7 +1465,7 @@ Some linear transformations are invertible. For example, given a transformation 
 	\label{fig:trans_and_inverses}
 \end{figure}
 
-Recall that a transformations (function) is only invertible if and only if it is bijective (\autoref{sec:relations_and_functions}). Specifically to our case, a non-bijective linear transformation is a transformation $T:\Rs{m}\to\Rs{n}$ for which some two vectors $\vec{u},\vec{v}\in\Rs{m}$ are mapped to the same vector $\vec{w}\in\Rs{n}$.
+Recall that a transformations (function) is only invertible if and only if it is bijective (\autoref{sec:relations_and_functions}). Specifically to our case, a non-bijective linear transformation is a transformation $T:\Rs[m]\to\Rs[n]$ for which some two vectors $\vec{u},\vec{v}\in\Rs[m]$ are mapped to the same vector $\vec{w}\in\Rs[n]$.
 
 \begin{example}{Two vectors mapped to the same vector}{}
 	Let $T$ be a linear transformation represented by the matrix
@@ -1501,7 +1501,7 @@ Due to the properties of linear transformations, on one side we get
 
 Thus, for example, the linear combination $2\vec{u}+6\vec{v}$ will be mapped to the same output as $6\vec{u}+2\vec{v},\ 3\vec{u}+9\vec{v},\ 0.5\vec{u}+11.5\vec{v}$, etc. - the linear combination using any two coefficients $\alpha,\beta$ which add up to $12$ would be mapped to $12\vec{w}$. This is of course true for any real number, and so for each scale of $\vec{w}$ there are infinitely many linear combinations that are mapped to it.
 
-In fact, the only way in which a linear transformation can be non-bijective is by "loosing" a dimension, i.e. when it maps $\Rs{3}$ to a single plane/line/point. As we saw earlier, these kind of transformations are represented by matrices for which the determinant is zero, i.e.
+In fact, the only way in which a linear transformation can be non-bijective is by "loosing" a dimension, i.e. when it maps $\Rs[3]$ to a single plane/line/point. As we saw earlier, these kind of transformations are represented by matrices for which the determinant is zero, i.e.
 \begin{equation}
 	|A|=0 \Leftrightarrow \nexists A^{-1}.
 	\label{eq:determinant_zero_no_inverse}
@@ -1529,7 +1529,7 @@ While the identity matrix is its own inverse (since $I\cdot I=I$), it is not the
 		 0 & 0 & 1\\
 	\end{bmatrix}.
 \]
-Geometrically, $A$ takes a vector in $\Rs{3}$ and flips its $x$-component. In other words it mirrors any vector across the $yz$-plane (see \autoref{fig:mirror_yz}). If we take a vector $\vec{u}=\colvec{x;y;z}$ and multiply it by $A$ we get the vector $\vec{v}=\colvec{-x;y;z}$ (tip: calculate the product $A\vec{v}$ directly for practice). If we take $\vec{v}$ and multiply it by $A$, we get the vector $\colvec{x;y;z}$ - i.e. we retrieved back $\vec{u}$. Since this is true for any vector in $\Rs{3}$, $A$ is its own inverse. We can check this directly by calculating the product of $A$ with itself:
+Geometrically, $A$ takes a vector in $\Rs[3]$ and flips its $x$-component. In other words it mirrors any vector across the $yz$-plane (see \autoref{fig:mirror_yz}). If we take a vector $\vec{u}=\colvec{x;y;z}$ and multiply it by $A$ we get the vector $\vec{v}=\colvec{-x;y;z}$ (tip: calculate the product $A\vec{v}$ directly for practice). If we take $\vec{v}$ and multiply it by $A$, we get the vector $\colvec{x;y;z}$ - i.e. we retrieved back $\vec{u}$. Since this is true for any vector in $\Rs[3]$, $A$ is its own inverse. We can check this directly by calculating the product of $A$ with itself:
 \begin{align*}
 	A\cdot A &=
 	\begin{bmatrix}
@@ -1848,14 +1848,14 @@ The order of application of the above transformations is 1-2-3. Therefore, in ma
 \end{figure}
 
 \subsection{Kernel and null space}
-While the determinant of a matrix tells us whether the matrix is reversible or not, it doesn't quantify the loss in dimensionality resulting from applying it: a matrix which "squishes" $\Rs{3}$ in to a plane has the same determinant as a matrix which "squishes" it into a line or the the a single point (the origin): $0$. To find a measurement that does quantify this characteristic, we can look at the set of all vectors which the matrix (and thus the transformation it represents) map to $\vec{0}$. We call this set the \emph{kernel} of the matrix/transformation (denoted $\ker(A)$ or $\ker(T)$, respectively). More formally - given an $m\times n$ matrix representing a transformation $T:\Rs{n}\to\Rs{m}$,
+While the determinant of a matrix tells us whether the matrix is reversible or not, it doesn't quantify the loss in dimensionality resulting from applying it: a matrix which "squishes" $\Rs[3]$ in to a plane has the same determinant as a matrix which "squishes" it into a line or the the a single point (the origin): $0$. To find a measurement that does quantify this characteristic, we can look at the set of all vectors which the matrix (and thus the transformation it represents) map to $\vec{0}$. We call this set the \emph{kernel} of the matrix/transformation (denoted $\ker(A)$ or $\ker(T)$, respectively). More formally - given an $m\times n$ matrix representing a transformation $T:\Rs[n]\to\Rs[m]$,
 \begin{equation}
-	\ker(A) = \left\{ \vec{v}\in\Rs{n} \mid A\vec{v}=\vec{0}_{m} \right\},
+	\ker(A) = \left\{ \vec{v}\in\Rs[n] \mid A\vec{v}=\vec{0}_{m} \right\},
 	\label{eq:kernel_matrix}
 \end{equation}
 and equivalently,
 \begin{equation}
-	\ker(T) = \left\{ \vec{v}\in\Rs{n} \mid T \left( \vec{v} \right) =\vec{0}_{m} \right\}
+	\ker(T) = \left\{ \vec{v}\in\Rs[n] \mid T \left( \vec{v} \right) =\vec{0}_{m} \right\}
 	\label{eq:kernel_transformation}
 \end{equation}
 
@@ -1937,7 +1937,7 @@ The kernel of a matrix forms a subspace of its domain (see \autoref{fig:kernel_s
 	i.e. the linear combinations of $\vec{u}$ and $\vec{v}$.
 \end{example}
 
-All the vectors which are not in $\ker(A)$ also span a subspace of its domain, called the \emph{column space} of $A$. The dimension of the column space is called the \emph{rank} of $A$, $\rank(A)$. The kernel and column space of a matrix are complementary: together they span $\Rs{n}$.
+All the vectors which are not in $\ker(A)$ also span a subspace of its domain, called the \emph{column space} of $A$. The dimension of the column space is called the \emph{rank} of $A$, $\rank(A)$. The kernel and column space of a matrix are complementary: together they span $\Rs[n]$.
 
 This means that we can split the domain of a matrix to two separate subspaces, which together give us a lot of information about the image of the matrix: in one subspace are all the vectors that will be "squished" by the transformation into the origin, and the other subspace is composed of all the vectors that are transformed to a non-zero vector. If we limit the domain of the transformation to its column space, it becomes reversible - no two vectors in the column space are mapped to a single vector. On the other hand, the transformation on the kernel is always inversible.
 
@@ -1950,10 +1950,10 @@ Alltogether, the nullity and rank of a matrix add up to the dimension of its dom
 \begin{figure}[]
 	\centering
 	\begin{tikzpicture}
-		\node[ellipse, draw=black, thick, fill=xred!50, minimum width=2cm, minimum height=4cm, label={[label distance=-1cm]90:$\Rs{n}$}] (domain) {};
+		\node[ellipse, draw=black, thick, fill=xred!50, minimum width=2cm, minimum height=4cm, label={[label distance=-1cm]90:$\Rs[n]$}] (domain) {};
 		\node[circle, draw=black, thick, fill=xblue!50, minimum size=1cm] (kernel) {$\ker(A)$};
 
-		\node[ellipse, draw=black, thick, fill=xgreen!50, minimum width=2cm, minimum height=3cm, label={[label distance=-1cm]90:$\Rs{m}$}] (image) at (4cm,0) {};
+		\node[ellipse, draw=black, thick, fill=xgreen!50, minimum width=2cm, minimum height=3cm, label={[label distance=-1cm]90:$\Rs[m]$}] (image) at (4cm,0) {};
 		\node[circle, fill=black] (zero) at (4cm,0) {};
 		\node[right=of zero, xshift=-1cm] {$\vec{0}$};
 
@@ -1964,7 +1964,7 @@ Alltogether, the nullity and rank of a matrix add up to the dimension of its dom
 
 		\draw[vector] (1,2.3) -- node [midway, above] {$A$} ++(2,0);
 	\end{tikzpicture}
-	\caption{The kernel of a matrix $A$ is a subspace of its domain $\Rs{n}$. It is mapped exclusively to $\vec{0}_{m}$ in its image. The set $\Rs{n}\setminus\ker(A)$, i.e. $\Rs{n}$ minus the kernel (shown in red), is in fact the column space of the matrix.}
+	\caption{The kernel of a matrix $A$ is a subspace of its domain $\Rs[n]$. It is mapped exclusively to $\vec{0}_{m}$ in its image. The set $\Rs[n]\setminus\ker(A)$, i.e. $\Rs[n]$ minus the kernel (shown in red), is in fact the column space of the matrix.}
 	\label{fig:kernel_subspace}
 \end{figure}
 

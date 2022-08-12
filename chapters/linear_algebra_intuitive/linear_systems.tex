@@ -52,7 +52,7 @@ where $x_{1},x_{2},\dots,x_{n}$ are the variables of the equation, and $a_{0},a_
 	In this case the coefficient $a_{z}=a_{3}=0$. Depending on the context, this equation can be considered as either an equation of order $3$ or an equation of order $2$.
 \end{example}
 
-In $\Rs{2}$ linear equations represent a line, which doesn't necesserally go through the origin (and thus isn't necesserally a subspace of $\Rs{n}$). For a line to go through the origin, the free coefficient $a_{0}$ must equal zero (see \autoref{fig:linear_equations_2_vars}).
+In $\Rs[2]$ linear equations represent a line, which doesn't necesserally go through the origin (and thus isn't necesserally a subspace of $\Rs[n]$). For a line to go through the origin, the free coefficient $a_{0}$ must equal zero (see \autoref{fig:linear_equations_2_vars}).
 
 \begin{figure}
 	\centering
@@ -68,11 +68,11 @@ In $\Rs{2}$ linear equations represent a line, which doesn't necesserally go thr
 		\addplot[function, xblue] {-0.5*\x+5} node[pos=0.7, above, font=\Large, rotate=-30] {$\frac{1}{2}x+y+5=0$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Two linear equations represented as lines in $\Rs{2}$. Note how in the red equation the free coefficient is zero, and so the line goes through the origin.}
+	\caption{Two linear equations represented as lines in $\Rs[2]$. Note how in the red equation the free coefficient is zero, and so the line goes through the origin.}
 	\label{fig:linear_equations_2_vars}
 \end{figure}
 
-In $\Rs{3}$ linear equations represent planes. Much like with the lines in $\Rs{2}$, these planes don't necesserally go through the origin. The trend continues with increasing dimensions: in $\Rs{4}$ linear equations represent $3$-dimensional spaces, in $\Rs{5}$ linear equations represent $4$-dimensional spaces, etc. When the free coefficient is equal to zero, these spaces become subspaces of the respective $\Rs{n}$.
+In $\Rs[3]$ linear equations represent planes. Much like with the lines in $\Rs[2]$, these planes don't necesserally go through the origin. The trend continues with increasing dimensions: in $\Rs[4]$ linear equations represent $3$-dimensional spaces, in $\Rs[5]$ linear equations represent $4$-dimensional spaces, etc. When the free coefficient is equal to zero, these spaces become subspaces of the respective $\Rs[n]$.
 		
 \begin{figure}
 	\centering
@@ -102,7 +102,7 @@ In $\Rs{3}$ linear equations represent planes. Much like with the lines in $\Rs{
 			\path (axis cs:3.5,-1.5,-1) -- (axis cs:3.5,-0.5,-1) node[color=xdarkpurple, midway, above, sloped, xslant=tan(\a+\b+80), yscale=sin(\a+\b), font=\Huge] {$z+1=0$};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Two intersecting planes in $\Rs{3}$ with their corresponding equations.}
+	\caption{Two intersecting planes in $\Rs[3]$ with their corresponding equations.}
 	\label{fig:line_plane_R3}
 \end{figure}
 
@@ -275,7 +275,7 @@ has no solutions (see \autoref{example:no_solution}).
 	\end{tikzpicture}
 \end{example}
 
-Let us now explore when a set of linear equations in $\Rs{2}$ and $\Rs{3}$ has a single solution, infinitely many solutions or no solutions. In $\Rs{2}$, the lines representing two linear equations can be either parallel or non-parallel. If they are non-parallel then the two equations have a single solution - the intercept of both lines (as seen in the previous two examples). If the lines are parallel, there are two cases: either the two lines are identical, in which case there are infinitely many solutions (all the points on the line), or they are parallel yet distince, in which case there are no solutions to the system (see \autoref{fig:R2_num_solutions}).
+Let us now explore when a set of linear equations in $\Rs[2]$ and $\Rs[3]$ has a single solution, infinitely many solutions or no solutions. In $\Rs[2]$, the lines representing two linear equations can be either parallel or non-parallel. If they are non-parallel then the two equations have a single solution - the intercept of both lines (as seen in the previous two examples). If the lines are parallel, there are two cases: either the two lines are identical, in which case there are infinitely many solutions (all the points on the line), or they are parallel yet distince, in which case there are no solutions to the system (see \autoref{fig:R2_num_solutions}).
 
 
 \begin{figure}
@@ -324,7 +324,7 @@ Let us now explore when a set of linear equations in $\Rs{2}$ and $\Rs{3}$ has a
 		\caption{}
 		\label{fig:}
 	\end{subfigure}	
-	\caption{Three possible cases for two linear equations in $\Rs{2}$: (a) non-parallel and thus a single solution, (b) parallel and identical and thus infinitely many solutions, and (c) parallel but not identical and thus no solutions.}
+	\caption{Three possible cases for two linear equations in $\Rs[2]$: (a) non-parallel and thus a single solution, (b) parallel and identical and thus infinitely many solutions, and (c) parallel but not identical and thus no solutions.}
 	\label{fig:R2_num_solutions}
 \end{figure}
 
@@ -396,11 +396,11 @@ In the case of more than two linear equations there can be, again, either a sing
 		\caption{}
 		\label{fig:}
 	\end{subfigure}	
-	\caption{Three possible cases for the number of solutions of several linear equations in $\Rs{2}$: (a) non-parallel but all lines intercept at single point and thus the system has a solution, (b) non-parallel but no single interception point and thus no solution, and (c) parallel and thus no solutions. The case where all lines are identical and thus there are infinitely many solutions is ommited from the figure, and looks identical to \autoref{fig:R2_infinite_solutions}.}
+	\caption{Three possible cases for the number of solutions of several linear equations in $\Rs[2]$: (a) non-parallel but all lines intercept at single point and thus the system has a solution, (b) non-parallel but no single interception point and thus no solution, and (c) parallel and thus no solutions. The case where all lines are identical and thus there are infinitely many solutions is ommited from the figure, and looks identical to \autoref{fig:R2_infinite_solutions}.}
 	\label{fig:R2_num_solutions_multi}
 \end{figure}
 
-In $\Rs{3}$\ldots
+In $\Rs[3]$\ldots
 \tbw{the rest\ldots later, because right now I'm lazy af}
 
 \subsection{Finding solutions}
