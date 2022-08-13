@@ -58,10 +58,12 @@ Exponential and Logarithmic Functions	chapters/intro/exponentials_logarithms.tex
 Fields	chapters/linear_algebra_rigorous/fields.tex	/^\\section{Fields}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Finding solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
+Formulating plant nutrient solutions	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Formulating plant nutrient solutions}$/;"	u	section:Some real life uses of linear algebra
 From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Functionals	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Functionals}$/;"	u	section:Dual vectors
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
 Graphs	chapters/intro/trigonomentry.tex	/^\\subsection{Graphs}$/;"	u	section:Introduction""Trigonometric functions
+Hunter-pray population growth	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Hunter-pray population growth}$/;"	u	section:Some real life uses of linear algebra
 Identities	chapters/intro/trigonomentry.tex	/^\\subsection{Identities}$/;"	u	section:Introduction""Trigonometric functions
 Important number sets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Important number sets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Infinite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Infinite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
@@ -93,6 +95,7 @@ Modulo fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Modulo 
 Norm and products	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Norm and products}$/;"	u	section:The Bra-Ket notation
 Normal vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Normal vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Polynomial functions	chapters/intro/polynomials.tex	/^\\section{Polynomial functions}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
+Primary components analsis	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Primary components analsis}$/;"	u	section:Some real life uses of linear algebra
 Problems	chapters/intro/exercises.tex	/^\\subsection{Problems}$/;"	u	section:Introduction""Exercises
 Radians	chapters/intro/trigonomentry.tex	/^\\subsection{Radians}$/;"	u	section:Introduction""Trigonometric functions
 Real functions	chapters/intro/relations_functions.tex	/^\\subsection{Real functions}$/;"	u	section:Introduction""Relations and Functions
@@ -106,7 +109,7 @@ Simple combinatorics and the binomial coefficients	chapters/intro/combinatorics.
 Solutions	chapters/intro/exercises.tex	/^\\subsection{Solutions}$/;"	u	section:Introduction""Exercises
 Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Some examples	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Some examples}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
-Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
+Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
 Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
@@ -5107,6 +5110,7 @@ tab:AND_OR_truth_table	chapters/intro/math_symbols_sets.tex	/^	\\label{tab:AND_O
 tab:common_math_notations	chapters/intro/math_symbols_sets.tex	/^	\\label{tab:common_math_notations}$/;"	l
 tab:complex_exponentials	chapters/intro/complex_numbers.tex	/^	\\label{tab:complex_exponentials}$/;"	l
 tab:minors_of_A	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{tab:minors_of_A}$/;"	l
+tab:plant_nutrients	chapters/linear_algebra_intuitive/real_life_examples.tex	/^	\\label{tab:plant_nutrients}$/;"	l
 tab:rad_degs	chapters/intro/trigonomentry.tex	/^	\\label{tab:rad_degs}$/;"	l
 text14331	figures/chapters/tapir_comics.svg	/^           inkscape:label="fill_color">$/;"	i
 text1745	figures/ideas/Coloured dot pattern fills.svg	/^         id="text1745"><tspan$/;"	i
