@@ -417,16 +417,19 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 	has three families of eigenvectors:
 
 	\begin{center}
-		\begin{tabular}{lc}
+		\begin{NiceTabular}{lc}[
+		cell-space-limits=3pt, code-before=\rowcolors{1}{xblue!15}{xblue!10} \rowcolor{xblue!50}{1}
+	]
+	% !! NOTE !! The blue color here (instead of tabcol) is intentional.
 			\toprule
-			Eigenvalue & Eigenvector \\
+			\RowStyle{\bfseries} Eigenvalue & Eigenvector \\
 			\midrule
 			\addlinespace[1em]
 			$\lambda_{1}= 5$ & $\colvec{1;0;0}$ \\[3em]
 			$\lambda_{2}=-1$ & $\colvec{2;3;-2}$ \\[3em]
 			$\lambda_{3}= 2$ & $\colvec{1;0;1}$ \\[2em]
 			\bottomrule
-		\end{tabular}
+		\end{NiceTabular}
 	\end{center}
 \end{example}
 

@@ -251,9 +251,11 @@ In \autoref{tab:complex_exponentials} we can see some useful complex exponential
 	\centering
 	\caption{Values of $\eu^{ix}$ for some useful values of $x$ (cf. \autoref{tab:rad_degs} for the values of $\sin(\theta)$ and $\cos(\theta)$).}
 	\label{tab:complex_exponentials}
-	\begin{tabular}{lccl}
+	\begin{NiceTabular}{lccl}[
+			cell-space-limits=5pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+		]
 		\toprule
-		$x$ & $\cos(x)$ & $\sin(x)$ & $z=\eu^{\iu x}$\\
+		\RowStyle[bold=true]{}$x$ & $\cos(x)$ & $\sin(x)$ & $z$\\
 		\midrule
 		$\frac{\pi}{2}$ & $0$ & $1$ & $\iu$\\
 		$\pi$ & $-1$ & $0$ & $-1$\\
@@ -262,7 +264,7 @@ In \autoref{tab:complex_exponentials} we can see some useful complex exponential
 		$\frac{\pi}{4}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}\left( 1+\iu \right)$\\
 		$\frac{\pi}{6}$ & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}\left( \sqrt{3}+\iu \right)$\\
 		\bottomrule
-	\end{tabular}
+	\end{NiceTabular}
 \end{table}
 
 \autoref{tab:complex_exponentials} also shows us the integer behaviours of $\iu$:

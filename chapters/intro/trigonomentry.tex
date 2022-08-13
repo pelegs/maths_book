@@ -161,21 +161,22 @@ How much is a radian in degrees? The full circumference of any circle with radiu
 	\caption{Common angles in radians, and their respective images for the three main trigonometric functions.}
 	\label{tab:rad_degs}
 	\centering
-	\begin{tabular}{lcccc}
+	\begin{NiceTabular}{lcccc}[
+			cell-space-limits=5pt, code-before=\rowcolors{2}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+		]
 		\toprule
-		\multicolumn{2}{c}{$\theta$} & $\sin(\theta)$ & $\cos(\theta)$ & $\tan(\theta)$\\
-		degrees & radians & & &\\
+		$\theta [\si{\degree}]$ & $\theta[\si{\radian}]$ & $\sin(\theta)$ & $\cos(\theta)$ & $\tan(\theta)$ \\
 		\midrule
-		\ang{0}   & 0								 & $0$									& $1$									 & $0$\\
-		\ang{30}  & $\frac{\pi}{6}$	 & $\frac{1}{2}$				& $\frac{\sqrt{3}}{2}$ & $\frac{1}{\sqrt{3}}$\\
-		\ang{45}  & $\frac{\pi}{4}$  & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}$ & $1$\\
-		\ang{60}  & $\frac{\pi}{3}$  & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}$				 & $\sqrt{3}$\\
-		\ang{90}  & $\frac{\pi}{2}$  & $1$									& $0$									 & undefined\\
-		\ang{180} & $\pi$						 & $0$									& $-1$								 & $0$\\
-		\ang{270} & $\frac{3\pi}{2}$ & $-1$									& $0$									 & undefined\\
-		\ang{360} & $2\pi$					 & $0$									& $1$ 								 & $0$\\
+		\RowStyle[bold=true]{} $0$   & $0$								 & $0$									& $1$									 & $0$\\
+		$30$  & $\frac{\pi}{6}$	 & $\frac{1}{2}$				& $\frac{\sqrt{3}}{2}$ & $\frac{1}{\sqrt{3}}$\\
+		$45$  & $\frac{\pi}{4}$  & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}$ & $1$\\
+		$60$  & $\frac{\pi}{3}$  & $\frac{\sqrt{3}}{2}$ & $\frac{1}{2}$				 & $\sqrt{3}$\\
+		$90$  & $\frac{\pi}{2}$  & $1$									& $0$									 & undefined\\
+		$180$ & $\pi$						 & $0$									& $-1$								 & $0$\\
+		$270$ & $\frac{3\pi}{2}$ & $-1$									& $0$									 & undefined\\
+		$360$ & $2\pi$					 & $0$									& $1$ 								 & $0$\\
 		\bottomrule
-	\end{tabular}
+	\end{NiceTabular}
 \end{table}
 
 \begin{figure}
