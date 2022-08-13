@@ -13,36 +13,38 @@ In order to grow and thrive, plants require \emph{nutrients}. These nutrients ar
 \tbw{add data and format the table}
 \begin{table}[htpb]
 	\centering
-	\caption{The $17$ essential elements for plants and their uses.}
+	\caption{The $17$ essential elements for plants and their uses. The column marked [\si{ppm}] shows the mass fraction of the element in dried plant material ($1 [\si{ppm}]=1 \times 10^{-6}$).}
 	\label{tab:plant_nutrients}
-	\begin{longtable}{p{3mm}lcll}
+	\begin{NiceTabular}{p{3mm}lcll}[
+			cell-space-limits=3pt, code-before=\rowcolors{1}{xblue!15}{xblue!10} \rowcolor{xblue!50}{1}
+		]
 		\toprule
-		& Element & symbol & [\si{ppm}] & some uses \\
+		\RowStyle{\bfseries} & Element & Symbol & [ppm] & Main uses \\
 		\midrule
-		\multirow{3}{=}{\rotatebox{-90}{Air}}
-		& Oxygen & \ce{O} & & practically all organic mulecules \\
-		& Carbon & \ce{C} & & carbohydrates and protein synthesis \\
-		& Hydrogen & \ce{H} & & practically all organic mulecules \\
+		\multirow{3}{=}{\rotatebox{-90}{\textbf{Air}}}
+		& Oxygen & \ce{O} & & Practically all organic mulecules \\
+		& Carbon & \ce{C} & & Carbohydrates and protein synthesis \\
+		& Hydrogen & \ce{H} & & Practically all organic mulecules \\
 		\midrule
-		\multirow{6}{=}{\rotatebox{-90}{Macronutrients}}
-		& Nitrogen & \ce{N} & $15,000$ & proteins \\
-		& Phosphorus & \ce{P} & $2,000$ & phospholipids, ATP \\
-		& Potassium & \ce{K} & $10,000$ & ion balance \\
-		& Calcium & \ce{Ca} & $5,000$ & ion balance \\
-		& Magnesium & \ce{Mg} & $2,000$ & chlorophyl \\
-		& Sulfur & \ce{S} & $1,000$& proteins, vitamins, chloroplast \\
+		\multirow{6}{=}{\rotatebox{-90}{\textbf{Macronutrients}}}
+		& Nitrogen & \ce{N} & $15,000$ & Proteins \\
+		& Phosphorus & \ce{P} & $2,000$ & Phospholipids, ATP \\
+		& Potassium & \ce{K} & $10,000$ & Ion balance \\
+		& Calcium & \ce{Ca} & $5,000$ & Ion balance \\
+		& Magnesium & \ce{Mg} & $2,000$ & Chlorophyl \\
+		& Sulfur & \ce{S} & $1,000$& Proteins, vitamins, chloroplast \\
 		\midrule
-		\multirow{8}{=}{\rotatebox{-90}{Micronutrients}}
-		& Chlorine & \ce{Cl} & $100$ & ion balance \\
-		& Iron & \ce{Fe} & $100$ & enzyme cofactors, photosynthesis \\
-		& Manganese & \ce{Mn} & $50$ & chloroplast \\
+		\multirow{8}{=}{\rotatebox{-90}{\textbf{Micronutrients}}}
+		& Chlorine & \ce{Cl} & $100$ & Ion balance \\
+		& Iron & \ce{Fe} & $100$ & Enzyme cofactors, photosynthesis \\
+		& Manganese & \ce{Mn} & $50$ & Chloroplast \\
 		& Zinc & \ce{Zn} & $20$ & DNA transcriptase \\
-		& Copper & \ce{Cu} & $6$ & photosynthesis \\
-		& Molybdenum & \ce{Mo} & $0.1$ & enzyme cofactors \\
-		& Boron & \ce{B} & $20$ & metabolism \\
-		& Nickel & \ce{Ni} & $0.1$ & nitrogen metabolism \\
+		& Copper & \ce{Cu} & $6$ & Photosynthesis \\
+		& Molybdenum & \ce{Mo} & $0.1$ & Enzyme cofactors \\
+		& Boron & \ce{B} & $20$ & Metabolism \\
+		& Nickel & \ce{Ni} & $0.1$ & Nitrogen metabolism \\
 		\bottomrule
-	\end{longtable}
+	\end{NiceTabular}
 \end{table}
 % Epstein. 1965. "Mineral metabolism" pp. 438-466. in: Plant Biochemistry (J.Bonner and J.E. Varner, eds.) Academic Press, London.
 
