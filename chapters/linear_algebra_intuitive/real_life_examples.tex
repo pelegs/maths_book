@@ -1,6 +1,8 @@
 \section{Some real life uses of linear algebra}
 \tbw{you guessed it - the entire section.}
 \subsection{Formulating plant nutrient solutions}
+\subsubsection{Theoretical background}
+
 In order to grow and thrive, plants require \emph{nutrients}. These nutrients are chemical elements which the plants use in different processes to create new roots, stems, leaves, fruits, etc. and to sustain those that already exist. Generaly speaking, there are $17$ such elements, and they can be roughly divided in to three categories:
 \begin{descitemize}
 	\item[Nutrients from air] carbon (\ce{C}), oxygen (\ce{O}) and hydrogen (\ce{H}). Plants get these from water (\ce{H2O}), carbon dioxide (\ce{CO2}) and atmospheric oxygen (\ce{O2}), and use them together with light to build carbohydrates (such as glucose, fructose and cellulose), in a process known as photosynthesis.
@@ -47,6 +49,36 @@ In order to grow and thrive, plants require \emph{nutrients}. These nutrients ar
 	\end{NiceTabular}
 \end{table}
 % Epstein. 1965. "Mineral metabolism" pp. 438-466. in: Plant Biochemistry (J.Bonner and J.E. Varner, eds.) Academic Press, London.
+
+Different plants require different nutrient concentrations for optimal growth: not only do the actuall concentrations change, but the ratio between the different elements. See for example \autoref{tab:basil_vs_tomato}, which compares between the nutritional needs of a basil plant and a tomato plant - the ratio of the calcium vs. nitrogen requirements is $30\%$ higher in tomatoes compared to basil (this is especially true during the fruiting stage of tomatoes).
+
+\begin{table}[htpb]
+	\centering
+	\caption{Text text bla.}
+	\label{tab:basil_vs_tomato}
+	\begin{NiceTabular}{lrr}[
+			cell-space-limits=3pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+		]
+		\toprule
+		\RowStyle{\bfseries} & Basil & Tomato \\
+		\midrule
+		\ce{N}  & $ 280$ & $ 308$ \\
+		\ce{P}  & $  25$ & $  31$ \\
+		\ce{K}  & $ 274$ & $ 313$ \\
+		\ce{Ca} & $ 280$ & $ 400$ \\
+		\ce{Mg} & $  61$ & $ 109$ \\
+		\ce{S}  & $ 112$ & $ 218$ \\
+		\ce{Cl} & $<284$ & $<284$ \\
+		\ce{Fe} & $ 1.4$ & $1.96$ \\
+		\ce{Mn} & $0.27$ & $0.28$ \\
+		\ce{Zn} & $0.46$ & $0.46$ \\
+		\ce{Cu} & $0.06$ & $0.04$ \\
+		\ce{Mo} & $0.05$ & $0.05$ \\
+		\ce{B}  & $0.54$ & $0.54$ \\
+		\bottomrule
+	\end{NiceTabular}
+\end{table}
+
 
 \tbw{rest of subsection}
 

@@ -128,6 +128,7 @@ The Unit Circle	chapters/intro/trigonomentry.tex	/^\\subsection{The Unit Circle}
 The cross product	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{The cross product}$/;"	u	section:Vectors
 The determinant	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{The determinant}$/;"	u	section:Matrices
 The scalar product	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{The scalar product}$/;"	u	section:Vectors
+Theoretical background	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsubsection{Theoretical background}$/;"	b	subsection:Some real life uses of linear algebra""Formulating plant nutrient solutions
 TriangleOutM	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:isstock="true">$/;"	d
 TriangleOutM	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:isstock="true">$/;"	i
 TriangleOutM	figures/chapters/tapir_comics.svg	/^       inkscape:isstock="true">$/;"	d
@@ -5143,6 +5144,7 @@ symbol9833	figures/chapters/tapir_dissolve.svg	/^         id="symbol9833">$/;"	i
 symbol9934	figures/chapters/tapir_dissolve.svg	/^         id="symbol9934">$/;"	i
 tab:AND_OR_truth_table	chapters/intro/math_symbols_sets.tex	/^	\\label{tab:AND_OR_truth_table}$/;"	l
 tab:AND_OR_truth_table	sed_test.tex	/^	\\label{tab:AND_OR_truth_table}$/;"	l
+tab:basil_vs_tomato	chapters/linear_algebra_intuitive/real_life_examples.tex	/^	\\label{tab:basil_vs_tomato}$/;"	l
 tab:common_math_notations	chapters/intro/math_symbols_sets.tex	/^	\\label{tab:common_math_notations}$/;"	l
 tab:common_math_notations	sed_test.tex	/^	\\label{tab:common_math_notations}$/;"	l
 tab:complex_exponentials	chapters/intro/complex_numbers.tex	/^	\\label{tab:complex_exponentials}$/;"	l
