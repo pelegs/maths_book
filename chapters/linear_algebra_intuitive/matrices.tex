@@ -346,9 +346,9 @@ We can now represent all of the basic linear transformations in $\Rs[2]$ mention
 
 		We can translate the matrix to be based on the slope $m$ of the line instead of its angle $\theta$ relative to the $x$-axis by using the relation $m=\tan\left(\theta\right)$ and the two trigonomentric identities for double angles (\autoref{eq:tan_double_angles}):
 		\begin{align*}
-			\begin{bNiceMatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bNiceMatrix} &= \begin{bNiceMatrix} \frac{1-\tan^{2} \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } \\ \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{\tan^{2} \left( \theta \right)-1 }{1+\tan^{2} \left( \theta \right) } \end{bNiceMatrix}\\
-														&= \frac{1}{1+\tan^{2} \left( \theta \right)}\begin{bNiceMatrix} 1-\tan^{2} \left( \theta \right) & 2\tan \left( \theta \right) \\ 2\tan \left( \theta \right) & \tan^{2} \left( \theta \right) -1  \end{bNiceMatrix}\\
-														&= \frac{1}{1+m^{2}} \begin{bNiceMatrix} 1-m^{2} & 2m \\ 2m & m^{2}-1 \end{bNiceMatrix}.
+			\begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bmatrix} &= \begin{bmatrix} \frac{1-\tan^{2} \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } \\ \frac{2\tan \left( \theta \right) }{1+\tan^{2} \left( \theta \right) } & \frac{\tan^{2} \left( \theta \right)-1 }{1+\tan^{2} \left( \theta \right) } \end{bmatrix}\\
+														&= \frac{1}{1+\tan^{2} \left( \theta \right)}\begin{bmatrix} 1-\tan^{2} \left( \theta \right) & 2\tan \left( \theta \right) \\ 2\tan \left( \theta \right) & \tan^{2} \left( \theta \right) -1  \end{bmatrix}\\
+														&= \frac{1}{1+m^{2}} \begin{bmatrix} 1-m^{2} & 2m \\ 2m & m^{2}-1 \end{bmatrix}.
 		\end{align*}	
 
 		\begin{figure}

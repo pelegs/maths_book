@@ -433,7 +433,7 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 	\end{center}
 \end{example}
 
-\begin{example}{The eigenvectors of reflections in $\bm{\Rs[2]}$}{}
+\begin{example}{The eigenvectors of reflections in $\bm{\Rs[2]}$, polar form}{}
 	In $\Rs[2]$, The reflection transformation across the $x$-axis has two families of eigenvectors: vectors pointing in $x$-direction (with eigenvalue $\lambda=1$), and vectors pointing in the $y$-direction (with eigenvalue $\lambda=-1$). The reflection transformation across the $y$-axis has the same families, but their eigenvalues are flipped: the vectors pointing in the $x$-direction have eigenvalue $\lambda=-1$, and those pointing in the $y$-direction have eigenvalu $\lambda=1$.
 
 	\vspace{1em}
@@ -442,7 +442,25 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 		\Refl_{\theta} = \begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bmatrix}.
 	\]
 
-	And so
+	Using \autoref{}, we expect the vectors with eigenvalue $\lambda=1$ to have the following form:
+	\[
+		\colvec{r\cos(\theta);r\sin(\theta)},
+	\]
+	since this is a structure of a vector pointing in the direction with angle $\theta$ relative to the $x$-axis. The ratio of the components of these vectors is therefore expected to be
+	\[
+		\frac{x}{y} = \frac{\cos(\theta)}{\sin(\theta)}.
+	\]
+
+	The vectors with eigenvalue $\lambda=-1$ should be orthogonal to the previous family, i.e. have the structure
+	\[
+		\colvec{-r\sin(\theta);r\cos(\theta)},
+	\]
+	or component ratio of
+	\[
+		\frac{x}{y} = -\frac{\sin(\theta)}{\cos(\theta)}.
+	\]
+
+	Now that we know what to expect, let's start with the actual calculations:
 	\begin{align*}
 		0 &= \left|\Refl_{\theta}-\lambda I\right|\\
 		  &= \left(\cos(2\theta)-\lambda\right)\left( -\cos(2\theta)-\lambda \right) - \sin^{2}(\theta)\\
@@ -453,7 +471,7 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 
 	We see that the solutions for the above equation in $\lambda$ are $\lambda_{1}=1$ and $\lambda_{2}=-1$, as expected. Substituing each of these eigenvalues into the eigenvector equation yields:
 	\begin{descitemize}
-	\item [$\lambda_{1}=1$]
+	\item [$\lambda=1$] the eigenvector equation
 		\[
 			\begin{bmatrix} \cos(2\theta) & \sin(2\theta) \\ \sin(2\theta) & -\cos(2\theta) \end{bmatrix}\colvec{x;y} = \colvec{x;y}
 		\]
@@ -471,13 +489,13 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 			  &= \frac{\cancel{2}x\sin(\theta)\cancelcol[xblue]{\cos(\theta)}}{\cancel{2}\cos^{\cancelcol[xblue]{2}}(\theta)}\\
 			  &= \frac{x\sin(\theta)}{\cos(\theta)}.
 		\end{align*}
-		If we move the $x$ to the right-hand side we get
+		Rearranging this yields
 		\[
-			\frac{y}{x} = \frac{\sin{\theta}}{\cos{\theta}},
+			\frac{x}{y} = \frac{\cos{\theta}}{\sin{\theta}},
 		\]
-		which is exactly the ration of components of a $2$-dimensional vector pointing at the direction of a line rotated by $\theta$ relative to the $x$-axis.
-	
-	\item [$\lambda_{2}=-1$]
+		as expected.
+
+	\item [$\lambda=-1$] the eigenvector equation
 		\[
 			\begin{bmatrix} \cos(2\theta) & \sin(2\theta) \\ \sin(2\theta) & -\cos(2\theta) \end{bmatrix}\colvec{x;y} = -\colvec{x;y} = \colvec{-x;-y}
 		\]
@@ -496,11 +514,93 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 			  &= -\frac{\cancel{2}x\cancelcol[xblue]{\sin(\theta)}\cos(\theta)}{\cancel{2}\sin^{\cancelcol[xblue]{2}}(\theta)}\\
 			  &= -\frac{x\cos(\theta)}{\sin(\theta)}.
 		\end{align*}
-		Rearranging this gives
+		And rearranging this yields
 		\[
-			\frac{y}{x} = -\frac{\cos(\theta)}{\sin(\theta)},
+			\frac{x}{y} = -\frac{\sin(\theta)}{\cos(\theta)},
 		\]
-		which is the ration of the two components in a $2$-dimensional vector pointing in a direction orthogonal to a line with angle $\theta$ relative to the $x$-axis.
+		also as expected.
+	\end{descitemize}
+\end{example}
+
+\begin{example}{The eigenvectors of reflections in $\bm{\Rs[2]}$, slope form}{}
+	In this example we will again calculate the eigenvectors and eigenvalues of the general reflection transformation, this time by using the slope $m$ of the reflection line, and the matrix representation
+	\[
+		\Refl_{m} = \frac{1}{1+m^{2}}
+		\begin{bmatrix}
+			1-m^{2} & 2m \\
+			2m & m^{2}-1
+		\end{bmatrix}.
+	\]
+	Again we expect the two eigenvalues $\lambda=\pm1$. The eigenvector family corresponding to $\lambda=1$ should have a component ratio $\frac{y}{x}=m$, i.e. $y=mx$ (the line equation) - and the eigenvector family corresponding to the eigenvalue $\lambda=-1$ should be orthogonal to the other family, i.e. has component ratio $\frac{y}{x}=-\frac{1}{m}$ (i.e. $y=-\frac{1}{m}x$).
+
+	\underline{The calculation}: the determinant $\left|\Refl_{m}-\lambda\right|$ is then
+	\begin{align*}
+		\left|\Refl_{m}-\lambda\right| &=
+		{\renewcommand{\arraystretch}{2}
+			\begin{vmatrix}
+				\frac{1-m^{2}}{1+m^{2}}-\lambda & \frac{2m}{1+m^{2}} \\
+				\frac{2m}{1+m^{2}} & \frac{m^{2}-1}{1+m^{2}}-\lambda
+			\end{vmatrix}
+		}\\
+		&= \left( \frac{1-m^{2}}{1+m^{2}}-\lambda \right) \left(  \frac{m^{2}-1}{1+m^{2}}-\lambda \right) - \frac{4m^{2}}{\left(1+m^{2}\right)^{2}}\\
+		&= \frac{\left(1-m^{2}\right)\left(m^{2}-1\right)}{\left(1+m^{2}\right)^{2}} - \lambda\frac{1-m^{2}}{1+m^{2}} - \lambda\frac{m^{2}-1}{1+m^{2}} + \lambda^{2} - \frac{4m^{2}}{\left(1+m^{2}\right)^{2}}.
+	\end{align*}
+	Setting $a=1-m^{2}$ and $b=1+m^{2}$ we get that  $m^{2}-1=-a$, and we continue:
+	\begin{align*}
+		\ldots &= \frac{a(-a)}{b^{2}} - \cancel{\lambda\frac{a}{b}} - \cancel{\lambda\frac{-a}{b}} + \lambda^{2} - \frac{4m^{2}}{b^{2}}\\
+			   &= \frac{-a^{2}-4m^{2}}{b^{2}}+\lambda^{2}\\
+			   &= \frac{-(1-m^{2})-4m^{2}}{\left(1+m^{2}\right)^{2}}+\lambda^{2}\\
+			   &= \frac{-\left(1-2m^{2}+m^{4}\right)-4m^{2}}{\left(1+m^{2}\right)^{2}}+\lambda^{2}\\
+			   &= \frac{-1+2m^{2}-m^{4}-4m^{2}}{\left(1+m^{2}\right)^{2}}+\lambda^{2}\\
+			   &= \frac{-1-2m^{2}-m^{4}}{\left(1+m^{2}\right)^{2}}+\lambda^{2}\\
+			   &= -\frac{1+2m^{2}+m^{4}}{\left(1+m^{2}\right)^{2}}+\lambda^{2}\\
+			   &= -\frac{\left(1+m^{2}\right)^{2}}{\left(1+m^{2}\right)^{2}}+\lambda^{2}\\
+			   &= -1+\lambda^{2},
+	\end{align*}
+	i.e. $\lambda^{2}=1$ and thus $\lambda=\pm1$ as expected. We now subtitute these eigenvalues in the eigenvector equation:
+
+	\begin{descitemize}
+		\item[$\lambda=1$] the matrix equation is
+			\[
+				\frac{1}{1+m^{2}}
+				\begin{bmatrix}
+					1-m^{2} & 2m \\
+					2m & m^{2}-1
+				\end{bmatrix}\colvec{x;y}=\colvec{x;y},
+			\]
+			for which the system of equations is
+			\[
+				\begin{cases}
+					\frac{1-m^{2}}{1+m^{2}}x + \frac{2m}{1+m^{2}}y &= x,\\
+					\frac{2m}{1+m^{2}}x + \frac{m^{2}-1}{1+m^{2}}y &= y,
+				\end{cases}
+			\]
+			and its solution is
+			\[
+				y = mx,
+			\]
+			i.e. $\frac{y}{x}=m$ as expected.
+
+		\item[$\lambda=-1$] the matrix equation is
+			\[
+				\frac{1}{1+m^{2}}
+				\begin{bmatrix}
+					1-m^{2} & 2m \\
+					2m & m^{2}-1
+				\end{bmatrix}\colvec{x;y}=-\colvec{x;y}=\colvec{-x;-y},
+			\]
+			for which the system of equations is
+			\[
+				\begin{cases}
+					\frac{1-m^{2}}{1+m^{2}}x + \frac{2m}{1+m^{2}}y &= -x,\\
+					\frac{2m}{1+m^{2}}x + \frac{m^{2}-1}{1+m^{2}}y &= -y,
+				\end{cases}
+			\]
+			and its solution is
+			\[
+				y = -\frac{x}{m},
+			\]
+			i.e. $\frac{y}{x}=-\frac{1}{m}$ as expected.
 	\end{descitemize}
 \end{example}
 

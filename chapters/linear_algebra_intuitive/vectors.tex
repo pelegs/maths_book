@@ -277,9 +277,9 @@ Vectors can be decomposed to their components, the number of which depends on th
 	\end{tikzpicture}
 \end{example}
 
-The column form of a vector is essentially equivalent to an order list of $n$ real numbers, i.e. $(v_{1},v_{2},\dots,v_{n})$. Why then are we using the column form and not the list form (mostly known as \emph{row vectors})? In fact, we could use either form - and even using both interchangeably - and with only minor adjusments the entire chapter would stay the same as it is now. However, there are some advantages of using only a single form, and consider the other form as a different object altogether. This idea will become clear in future chapters, when discussing \emph{covariant vectors}, \emph{contravarient vectors}, and \emph{tensors}. For now, we stick with the column form of vectors to stay consistent with common notation.
+The column form of a vector is essentially equivalent to an order list of $n$ real numbers, i.e. $(v_{1},v_{2},\dots,v_{n})$. Why then are we using the column form and not the list form (mostly known as \emph{row vectors})? In fact, we could use either form - and even using both interchangeably - and with only minor adjusments the entire chapter would stay the same as it is now. However, there are some advantages of using only a single form, and consider the other form as a different object altogether. This idea will become clearer in \autoref{section:dual_vectors} and will be used to its fullest extent in future chapters when discussing \emph{covariant vectors}, \emph{contravarient vectors}, and in general \emph{tensors}. For now, we stick with the column form of vectors to stay consistent with common notation.
 
-However, the row form of vectors highlights the space in which they exist: $n$-dimensional vectors live in a space we call $\Rs[n]$. Recall from \autoref{chapter:intro} that the set $\Rs[n]$ is a Cartesian product made up of $n$ times the set of real numbers, i.e.
+However, the row form of vectors hints at the space in which they exist: $n$-dimensional vectors live in a space we call $\Rs[n]$. Recall from \autoref{chapter:intro} that the set $\Rs[n]$ is a Cartesian product made up of $n$ times the set of real numbers, i.e.
 \begin{equation}
 	\Rs[n] = \underbrace{\mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}}_{n}.
 	\label{eq:Rn}
@@ -287,10 +287,29 @@ However, the row form of vectors highlights the space in which they exist: $n$-d
 
 Each member of this set is a list of $n$ real numbers, and their order inside the list matters - very similar to vectors, be they in row or column form. For this reason, we refer to $\Rs[n]$ as the space of $n$-dimensional real vectors. As mentioned, in this chapter we use $\Rs[2]$ (the 2-dimensional real space) and $\Rs[3]$ (the 3-dimensional real space) for most ideas and examples.
 
+\subsection{Norm, polar coordinates and spherical coordinates}
 Looking at vectors in $\Rs[2]$, it is rather straight-forward to calculate their norm: since the origin, the head of the vector and the point $v_{x}$ form a right triangle (see \autoref{fig:norm 2D vector}), we can use the Pythagorean theorem to calculate the norm of the vector, which is equal to the hypotenous of said triangle:
 \begin{equation}
 	\norm{v} = \sqrt{v_{x}^{2} + v_{y}^{2}}.
 	\label{eq:2D vector norm}
+\end{equation}
+
+Much like complex numbers, vectors in $\Rs[2]$ can be expressed using \emph{polar coordinates}, i.e. using the norm of the vector and its angle $\theta$ relative to the $x$-axis (cf. \autoref{eq:basic_trig_rearrange} and \autoref{eq:complex_components_geometric}). The relation between the cartesian and polar coordinates is
+\begin{align}
+	v_{x} &= \norm{v}\cos(\theta),\nonumber\\
+	v_{y} &= \norm{v}\sin(\theta).
+	\label{eq:2D_polar_coords}
+\end{align}
+
+To calculate $\theta$ from $v_{x}$ and $v_{y}$ we use the definition of $\tan(\theta)$ (see \autoref{section:trigonometry}), and get that
+\begin{equation}
+	\tan(\theta) = \frac{v_{y}}{v_{x}},
+	\label{eq:}
+\end{equation}
+i.e.
+\begin{equation}
+	\theta = \arctan \left( \frac{v_{y}}{v_{x}} \right).
+	\label{eq:}
 \end{equation}
 
 \begin{figure}[h]
@@ -382,6 +401,52 @@ Generalizing the vector norms in $\Rs[2]$ and $\Rs[3]$ to $\Rs[n]$ yields the fo
 	The norm shown here is called the $2$-norm. There are other possible norm that can be defined, and are used in different situations, such as the $1$-norm (also the called \emph{taxicab norm}), general $p$-norm where $p\geq1$ is a real number, the zero-norm, the max-norm, and many others. However, for the purpose of this chapter we use only the standard $2$-norm, since it is the most useful for describing basic concepts of linear algebra and its uses.
 \end{note}
 
+$\Rs[3]$ has its own version of polar coordinates, sometimes refered to as \emph{cylindrical coordinates}. These coordinates are similar to the polar coordinates in $\Rs[2]$, with an additional ``height'' component: the three coordinates are $\rho, \varphi$ and $z$, where
+\begin{itemize}
+	\item $\rho$ is the norm of the projection of $\vec{v}$ onto the $xy$-plane\footnote{$\rho$ is used instead of $r$ to prevent confusion with the polar coordinates in $\Rs[2]$},
+	\item $\varphi$ is the angle between the projection of $\vec{v}$ and the $x$-axis.
+	\item $z$ is the distance between the head of $\vec{v}$ to the $xy$-plane.
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\tdplotsetmaincoords{70}{45}
+	\begin{tikzpicture}[tdplot_main_coords]
+		\pgfmathsetmacro{\R}{3}
+		\pgfmathsetmacro{\phi}{45}
+		\pgfmathsetmacro{\z}{3}
+		\pgfmathsetmacro{\pL}{3}
+		\coordinate (v) at ({\R*cos(\phi)},{\R*sin(\phi)},\z);
+		\coordinate (v_proj) at ({\R*cos(\phi)},{\R*sin(\phi)},0);
+		\fill[xpurple!\pL0] (\pL,\pL,0) -- (\pL,-\pL,0) -- (-\pL,-\pL,0) -- (-\pL,\pL,0) -- cycle;
+		\node[xdarkpurple] (xy) at ({-\pL+0.5},{-\pL+0.5},0) {$\bm{xy}$};
+		\draw[thick, xpurple, fill=xpurple!20] (0,0,0) -- ({\R*0.6},0,0) arc (0:\phi:{\R*0.6}) -- cycle;
+		\draw[opacity=0] (0,0,0) -- ({\R*0.45},0,0) arc (0:\phi:{\R*0.45}) node[pos=0.4, xpurple, text opacity=1] {$\varphi$};
+		\draw[vector, xdarkpurple] (0,0,0) -- (3,0,0) node[pos=1.15] {$x$};
+		\draw[vector, xdarkpurple] (0,0,0) -- (0,3,0) node[pos=1.05, above] {$y$};
+		\draw[vector, xdarkpurple] (0,0,0) -- (0,0,3) node[pos=1.1] {$z$};
+		\draw[thick] (0,0,0) circle (\R);
+		\draw[vector, xred] (0,0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+		\draw[xdarkred!75, dashed] (v) -- (v_proj) node[midway, right] {$z$};
+		\draw[vector, xdarkred!75] (0,0,0) -- node [pos=0.85, above, yshift=-2pt] {$\rho$} (v_proj) node[pos=1.2] {$\vec{v}_{\text{proj}}$};
+	\end{tikzpicture}
+	\caption{The cylindrical coordinates $\rho,\varphi,z$.}
+	\label{fig:cylindrical_coords}
+\end{figure}
+
+The conversion between cylindrical and cartesian coordinates is given by
+\begin{align}
+	x &= \rho\cos(\varphi),\nonumber\\
+	y &= \rho\sin(\varphi),\nonumber\\
+	z &= z.
+	\label{eq:cylinder_to_cartesian}
+\end{align}
+
+Yet another useful set of coordinates in $\Rs[3]$ are the \emph{spherical coordinates}. Given a vector $\vec{v}$, instead of using two length coordinates, the spherical coordinate system uses two angles $\varphi$ and $\theta$: $\varphi$ is the angle between the projection of $\vec{v}$ onto the $xy$-plane, and $\theta$ the angle between $\vec{v}$ and the $z$-axis. The third coordinate is then the norm of $\vec{v}$, denoted $r$. See \autoref{fig:spherical_coords} for a graphical representation.
+
+\tbw{a nice figure for spherical coordinates}
+
+\subsection{Operations}
 Scaling a vector $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ by a real number $\alpha$ is done by multiplying each of its components by $\alpha$, i.e.
 \begin{equation}
 	\alpha\vec{v} = \colvec{\alpha v_{1};\alpha v_{2};\vdots;\alpha v_{n}}.
