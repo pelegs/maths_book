@@ -440,6 +440,11 @@
 \usepackage{siunitx}
 \usepackage[thicklines]{cancel}
 \renewcommand\CancelColor{\color{xred}}
+\newcommand{\cancelcol}[2][xred]{ % This is such a silly solution...
+	\renewcommand\CancelColor{\color{#1}}
+	\cancel{#2}
+	\renewcommand\CancelColor{\xred}
+}
 \newcommand{\Rs}[1][]{\mathbb{R}^{#1}}
 \newcommand{\Cs}[1][]{\mathbb{C}^{#1}}
 \newcommand{\stcomp}[1]{{#1}^\complement}

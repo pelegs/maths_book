@@ -433,7 +433,78 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 	\end{center}
 \end{example}
 
+\begin{example}{The eigenvectors of reflections in $\bm{\Rs[2]}$}{}
+	In $\Rs[2]$, The reflection transformation across the $x$-axis has two families of eigenvectors: vectors pointing in $x$-direction (with eigenvalue $\lambda=1$), and vectors pointing in the $y$-direction (with eigenvalue $\lambda=-1$). The reflection transformation across the $y$-axis has the same families, but their eigenvalues are flipped: the vectors pointing in the $x$-direction have eigenvalue $\lambda=-1$, and those pointing in the $y$-direction have eigenvalu $\lambda=1$.
+
+	\vspace{1em}
+	Generalizing to reflections in any direction, we expect to see a similar result: one family of eigenvectors being vectors pointing in the direction of the reflection line with eigenvalue $\lambda=1$, and the other family of vectors pointing in the orthogonal direction, with eigenvalue $\lambda=-1$. Let us now calculate this directly from the matrix representations of the transformation. We start with the angle-based representation, where the reflection line is represented by its angle $\theta$ relative to the $x$-axis (\autoref{eq:reflect_general_2x2}):
+	\[
+		\Refl_{\theta} = \begin{bmatrix} \cos \left( 2\theta \right) & \sin \left( 2\theta \right) \\ \sin \left( 2\theta \right) & -\cos \left( 2\theta \right) \end{bmatrix}.
+	\]
+
+	And so
+	\begin{align*}
+		0 &= \left|\Refl_{\theta}-\lambda I\right|\\
+		  &= \left(\cos(2\theta)-\lambda\right)\left( -\cos(2\theta)-\lambda \right) - \sin^{2}(\theta)\\
+		  &= -\cos^{2}(2\theta)-\cancel{\lambda\cos(2\theta)}+\cancel{\lambda\cos(2\theta)}+\lambda^{2} - \sin^{2}(\theta)\\
+		  &= \lambda^{2}-1.
+	\end{align*}
+	(the last equality stems from \autoref{eq:sin sqr plus cos sqr equals 1})
+
+	We see that the solutions for the above equation in $\lambda$ are $\lambda_{1}=1$ and $\lambda_{2}=-1$, as expected. Substituing each of these eigenvalues into the eigenvector equation yields:
+	\begin{descitemize}
+	\item [$\lambda_{1}=1$]
+		\[
+			\begin{bmatrix} \cos(2\theta) & \sin(2\theta) \\ \sin(2\theta) & -\cos(2\theta) \end{bmatrix}\colvec{x;y} = \colvec{x;y}
+		\]
+		gives rise to the system
+		\[
+			\begin{cases}
+				\cos(2\theta)x + \sin(2\theta)y &= x,\\
+				\sin(2\theta)x - \cos(2\theta)y &= y.
+			\end{cases}
+		\]
+		The solution of the system is
+		\begin{align*}
+			y &= \frac{x\sqrt{1-\cos^{2}(2\theta)}}{\cos(2\theta)+1}\\
+			  &= \frac{x\sin(2\theta)}{\cos(2\theta)+1}\\
+			  &= \frac{\cancel{2}x\sin(\theta)\cancelcol[xblue]{\cos(\theta)}}{\cancel{2}\cos^{\cancelcol[xblue]{2}}(\theta)}\\
+			  &= \frac{x\sin(\theta)}{\cos(\theta)}.
+		\end{align*}
+		If we move the $x$ to the right-hand side we get
+		\[
+			\frac{y}{x} = \frac{\sin{\theta}}{\cos{\theta}},
+		\]
+		which is exactly the ration of components of a $2$-dimensional vector pointing at the direction of a line rotated by $\theta$ relative to the $x$-axis.
+	
+	\item [$\lambda_{2}=-1$]
+		\[
+			\begin{bmatrix} \cos(2\theta) & \sin(2\theta) \\ \sin(2\theta) & -\cos(2\theta) \end{bmatrix}\colvec{x;y} = -\colvec{x;y} = \colvec{-x;-y}
+		\]
+		gives rise to the system
+		\[
+			\begin{cases}
+				\cos(2\theta)x + \sin(2\theta)y &= -x,\\
+				\sin(2\theta)x - \cos(2\theta)y &= -y.
+			\end{cases}
+		\]
+		The solution of the system is
+		\begin{align*}
+			y &= \frac{x\sqrt{1-\cos^{2}(2\theta)}}{\cos(2\theta)-1}\\
+			  &= \frac{x\sin(2\theta)}{\cos(2\theta)-1}\\
+			  &= \frac{2x\sin(\theta)\cos(\theta)}{\cancel{1}-2\sin^{2}(\theta)-\cancel{1}}\\
+			  &= -\frac{\cancel{2}x\cancelcol[xblue]{\sin(\theta)}\cos(\theta)}{\cancel{2}\sin^{\cancelcol[xblue]{2}}(\theta)}\\
+			  &= -\frac{x\cos(\theta)}{\sin(\theta)}.
+		\end{align*}
+		Rearranging this gives
+		\[
+			\frac{y}{x} = -\frac{\cos(\theta)}{\sin(\theta)},
+		\]
+		which is the ration of the two components in a $2$-dimensional vector pointing in a direction orthogonal to a line with angle $\theta$ relative to the $x$-axis.
+	\end{descitemize}
+\end{example}
+
 \subsection{Characteristic polynomial}
-Did you notice that in both above examples the expression $|A-\lambda I|$ is a polynomial in $\lambda$? This is not a coincidence - any expression of this form is a polynomial in $\lambda$, its degree depending on the form of $A$. We call this polynomial the \emph{characteristic polynomial} of $A$ and its roots are of course the eigenvecors of $A$.
+Did you notice that in both above examples the expression $|A-\lambda I|$ is a polynomial in $\lambda$? This is not a coincidence - any expression of this form is a polynomial in $\lambda$, its degree depending on the form of $A$. We call this polynomial the \emph{characteristic polynomial} of $A$ and its roots are of course the eigenvectors of $A$.
 
 \tbw{rest of the section}
