@@ -605,6 +605,86 @@ Therefore, if we solve \autoref{eq:|A-LI|=0} for $\lambda$, we will get all the 
 \end{example}
 
 \subsection{Characteristic polynomial}
-Did you notice that in both above examples the expression $|A-\lambda I|$ is a polynomial in $\lambda$? This is not a coincidence - any expression of this form is a polynomial in $\lambda$, its degree depending on the form of $A$. We call this polynomial the \emph{characteristic polynomial} of $A$ and its roots are of course the eigenvectors of $A$.
+Did you notice that in all of the above examples the expression $\left|A-\lambda I\right|$ is a polynomial in $\lambda$? This is not a coincidence: any expression of such form is a polynomial in $\lambda$, its degree depending on the form of $A$. We call this polynomial the \emph{characteristic polynomial} of $A$. As we saw in the examples, the roots of the characteristic polynomial are the eigenvectors of $A$. A more precise definition of the characteristic polynomial is given below.
 
+\begin{definition}{Characteristic polynomial of a matrix $\bm{A}$}{}
+	Let $A$ be a square matrix representing some transformation $T:\Rs[n]\to\Rs[n]$. Then
+	\begin{equation}
+		P(\lambda)=|A-\lambda I|,
+		\label{eq:characteristic_polynomial}
+	\end{equation}
+	is called the characteristic polynomial of $A$ (and $T$). The roots $\lambda_{1},\lambda_{2},\dots,\lambda_{n}$ of $P$ are the eigenvalues of $A$ (and $T$).
+\end{definition}
+
+Let us examine some values and coefficients of the characteristic polynomial $P(\lambda)$. Subtituting $\lambda=0$ into $P$ produces
+\begin{equation}
+	P(0) = \left| A-0I \right| = |A|,
+	\label{eq:}
+\end{equation}
+i.e. the value $P(0)$ is always the determinant of $A$. Recall that for a polynomial, this value is the free coefficient of $P$. We can see this fact clearly when we consider a generic $2 \times 2$ matrix
+\[
+	A= \begin{bmatrix} a & b \\ c & d \end{bmatrix}.
+\]
+Its characteristic polynomial is then
+\begin{align*}
+	P(\lambda) &= \left| A-\lambda I \right|\\
+			   &= \begin{vmatrix} a-\lambda & b \\ c & d-\lambda \end{vmatrix}\\
+			   &= (a-\lambda)(d-\lambda) - bc\\
+			   &= ad - a\lambda -d\lambda + \lambda^{2} - bc\\
+			   &= \tikz[baseline=-0.5ex]{\node[frame={xred}](CP1){$(ad-bc)$}; \node[xred, below of=CP1] (CP1txt) {$|A|$}; \draw[-stealth, xred] (CP1txt) -- (CP1);} + \tikz[baseline=-0.5ex]{\node[frame={xgreen}](CP2){$(a+d)$}; \node[xgreen, below of=CP2] (CP2txt) {$\Tr(A)$}; \draw[xgreen, -stealth] (CP2txt) -- (CP2);}\lambda + \lambda^{2}.
+\end{align*}
+
+We see that not only is the free coefficient of $P$ equal to the determinant of $A$, but also that the coefficient of $\lambda$ is the trace of A. This is not just the case in $2 \times 2$ matrices, but all square matrices: the coefficient of $\lambda^{n-1}$ is the trace of the matrix (up to a sign, i.e. $\pm\Tr(A)$). For example, the characteristic polynomial of a generic $3 \times 3$ matrix\footnote{note that $e$ and $i$ are just some real numbers, and \textbf{not} the constants $\eu$ and $\iu$, respectively.}
+\[
+	B =
+	\begin{bmatrix}
+		a & b & c\\
+		d & e & f\\
+		g & h & i
+	\end{bmatrix}
+\]
+is
+\begin{align}
+	P(\lambda) &= \left|B-\lambda I\right| =
+	\begin{vmatrix}
+		a-\lambda & b & c\\
+		d & e-\lambda & f\\
+		g & h & i-\lambda
+	\end{vmatrix}\nonumber\\
+			   &= (a-\lambda) \left( (e-\lambda)(i-\lambda)-fh \right) - b \left( d(i-\lambda)-fg \right) + c \left( dh - (e-\lambda)g \right)\nonumber\\
+			   &= (a-\lambda) \left( ei-e\lambda-\lambda i+\lambda^{2}-fh \right) -b \left( di-d\lambda-fg \right) + c \left( dh -eg+\lambda g \right)\nonumber\\
+			   &= aei-ae\lambda-ai\lambda+a\lambda^{2}-afh-ei\lambda-i\lambda^{2}-\lambda^{3}-fh\lambda-bdi+bd\lambda+bfg+cdh-ceg+cg\lambda\nonumber\\
+			&=aei-ae\lambda-afh-ai\lambda+a\lambda^{2}-bdi+bd\lambda+bfg+cdh-ceg+cg\lambda-ei\lambda+e\lambda^{2}+fh\lambda\nonumber\\
+			&+i\lambda^{2}-\lambda^{3}\nonumber\\
+			&= \tikz[baseline=-0.5ex]{\node[frame=xred]{$aei-afh-bdi+bfg-cdh-ceg$}} + (-ae-ai-ei-fh+bd+cg-ei+fh)\lambda\nonumber\\
+			&+ \left(\tikz[baseline=-0.5ex]{\node[frame=xgreen]{$a+e+i$}}\right)\lambda^{2} - \lambda^{3}.
+	\label{eq:}
+\end{align}
+
+We see that highlighted parts are exactly \tikz[baseline=-0.5ex]{\node[frame={xred}]{$|B|$}} and \tikz[baseline=-0.5ex]{\node[frame={xgreen}]{$\Tr(B)$}}, respectively.
+
+\subsection{Special cases}
+In the case of upper- or lower-triangular matrices, the eigenvalues are simply the main diagonal elements, e.g. the eigenvalues of the matrix
+\begin{equation}
+	A =
+		\begin{bNiceMatrix}
+			\Ma{1}{1} & 0 & 0 & \cdots & 0\\
+			\Ma{2}{1} & \Ma{2}{2} & 0 & \cdots & 0\\
+			\Ma{2}{1} & \Ma{2}{2} & \Ma{2}{3} & \cdots & 0\\
+			\vdots & \vdots & \vdots & \Ddots & \vdots\\
+			\Ma{n}{1} & \Ma{n}{2} & \Ma{n}{3} & \cdots & \Ma{n}{n}
+		\end{bNiceMatrix}
+	\label{eq:}
+\end{equation}
+are
+\[
+	\lambda=\left\{ \Ma{1}{1}, \Ma{2}{2}, \Ma{3}{3}, \dots, \Ma{n}{n} \right\},
+\]
+i.e. written simply,
+\begin{equation}
+	\lambda_{i} = \Ma{i}{i}.
+	\label{eq:eigenvalues_triangular_matrix}
+\end{equation}
+
+\vspace{1em}
 \tbw{rest of the section}

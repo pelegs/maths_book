@@ -120,6 +120,7 @@ Solutions	chapters/intro/exercises.tex	/^\\subsection{Solutions}$/;"	u	section:I
 Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Some examples	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Some examples}$/;"	u	section:Eigenvectors and eigenvalues
 Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s
+Special cases	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Special cases}$/;"	u	section:Eigenvectors and eigenvalues
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
 Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
@@ -472,6 +473,7 @@ ellipse83772-6	figures/linear_algebra/tapir_transform2.svg	/^           ry="0.91
 eq:	chapters/intro/trigonomentry.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/dual_spaces.tex	/^	\\label{eq:}$/;"	l
+eq:	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:}$/;"	l
@@ -507,6 +509,7 @@ eq:bra-ket_orthonormal_basis	chapters/linear_algebra_intuitive/braket_notation.t
 eq:bra-ket_spanning_vectors	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra-ket_spanning_vectors}$/;"	l
 eq:bra_as_operator	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra_as_operator}$/;"	l
 eq:bra_ket_def	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra_ket_def}$/;"	l
+eq:characteristic_polynomial	chapters/linear_algebra_intuitive/eigenvectors.tex	/^		\\label{eq:characteristic_polynomial}$/;"	l
 eq:closed_interval	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:closed_interval}$/;"	l
 eq:closed_interval	sed_test.tex	/^	\\label{eq:closed_interval}$/;"	l
 eq:coeffs_right_side	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:coeffs_right_side}$/;"	l
@@ -548,6 +551,7 @@ eq:determinant_3x3	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:
 eq:determinant_AB	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_AB}$/;"	l
 eq:determinant_zero_no_inverse	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_zero_no_inverse}$/;"	l
 eq:dimension of a vector space	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:dimension of a vector space}$/;"	l
+eq:eigenvalues_triangular_matrix	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:eigenvalues_triangular_matrix}$/;"	l
 eq:eigenvec_rearranged_1	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:eigenvec_rearranged_1}$/;"	l
 eq:eigenvec_rearranged_2	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:eigenvec_rearranged_2}$/;"	l
 eq:eigenvec_rearranged_3	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:eigenvec_rearranged_3}$/;"	l
