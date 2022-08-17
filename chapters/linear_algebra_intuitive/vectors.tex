@@ -827,6 +827,92 @@ Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vecto
 	(you, the reader, should verify this!)
 \end{example}
 
+The way we described what a basis set is, while being accurate and general, does not give us any particular intuition about what basis sets actually \textit{do}, and why do we even bother with them. To understand this, consider some vector $\vec{v}\in\Rs[2]$. Without defining some frame of reference, as far as we're considered $\vec{v}$ is merely some arrow floating in space:
+
+\pgfmathsetmacro{\vx}{-2}
+\pgfmathsetmacro{\vy}{4}
+\pgfmathsetmacro{\Vnorm}{sqrt(\vx*\vx+\vy*\vy)}
+\pgfmathsetmacro{\Vth}{atan2(\vy,\vx)}
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			empty,
+			width=5cm, height=5cm,
+			]
+			\coordinate (v) at (\vx,\vy);
+			\draw[vector, xred] (0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+Note that $\vec{v}$ still has all the properties any other general vector has: it a norm and a direction. However, we can't say anything meaningful about this direction, except maybe that it is roughly pointing up and to left. In order to make any sense of $\vec{v}$ we have to choose some frame of reference, i.e. two axes. We can of course use the usual horizontal and vertical directions (which we usually call $x$ and $y$):
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=5cm, height=5cm,
+			xticklabels={,},
+			yticklabels={,},
+			grid=none,
+			]
+			\coordinate (v) at (\vx,\vy);
+			\draw[perp] (v) -- (\vx,0) node[pos=1.2] {$v_{x}$};
+			\draw[perp] (v) -- (0,\vy) node[pos=1.3] {$v_{y}$};
+			\draw[vector, xred] (0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+Having this frame of reference, i.e. the $x$- and $y$-axes, we can calculate the components of $\vec{v}$ \textbf{in relation to these axes} by droping two perpendicular lines, one for each axis. But there's nothing really special about these axes, they are just convinent to draw on a flat paper. We could use any other two non-colinear directions, for example the following $x'$ and $y'$:
+
+\begin{center}
+	\begin{tikzpicture}
+		\pgfmathsetmacro{\th}{23}
+		\begin{axis}[
+			vector plane,
+			anchor=origin,
+			rotate around={{-\th}:(current axis.origin)},
+			axis lines*=center,
+			width=5cm, height=5cm,
+			xlabel={$x'$},
+			ylabel={$y'$},
+			xticklabels={,},
+			yticklabels={,},
+			grid=none,
+			]
+			\pgfmathsetmacro{\vxp}{\Vnorm*cos(\Vth+\th)}
+			\pgfmathsetmacro{\vyp}{\Vnorm*sin(\Vth+\th)}
+			\coordinate (v) at (\vxp, \vyp);
+			\draw[perp] (v) -- (\vxp,0) node[pos=1.2] {$v_{x'}$};
+			\draw[perp] (v) -- (0,\vyp) node[pos=1.3] {$v_{y'}$};
+			\draw[vector, xred] (0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+Notice how $\vec{v}$ stays the same, the only difference is how we will describe its components using the $x',y'$ axes system. We are of course not restricted to having two perpendicular axes, e.g. the following $x'',y''$ axes:
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			empty,
+			width=5cm, height=5cm,
+			]
+			\draw[stealth-stealth, thick] (-3,-1) -- (4,1) node[pos=1.1] {$x''$};
+			\draw[stealth-stealth, thick] (-3,2) -- (4,-2) node[pos=1.1] {$y''$};
+			\coordinate (v) at (\vx, \vy);
+			\draw[vector, xred] (0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\tbw{improve the above figure}
+
+The axis system we use as a reference is the basis set we use to describe vectors, except one detail: a basis set also tells us what is the unit of measurement in the direction of each basis vector. This is of course the norm of that basis vector.
+
+\tbw{show a vector drawn from integer amounts of 2 basis vectors}
+
 Having described basis sets in somewhat general terms, we can now define them a bit more precisely:
 
 \begin{definition}{Basis sets}{basis sets}
@@ -923,7 +1009,7 @@ Therefore, in the basis set $B$, the coordinates of $\vw$ are $\left(2,\frac{1}{
 	\label{fig:vector in two different basis sets}
 \end{figure}
 
-A bsis set $B$ in which all vectors are \emph{orthogonal} (i.e. are at $\ang{90}$) to each other is called a \emph{orthogonal basis set}. If all vectors are unit vectors as well, i.e. their norms all equal to $1$, the basis set is then an \emph{orthonormal basis set}.
+A basis set $B$ in which all vectors are \emph{orthogonal} (i.e. are at $\ang{90}$) to each other is called a \emph{orthogonal basis set}. If all vectors are unit vectors as well, i.e. their norms all equal to $1$, the basis set is then an \emph{orthonormal basis set}.
 
 \begin{example}{Orthogonal and orthonormal basis sets}{orthobasis}
 	The vectors $\vec{a}=\colvec{1;1}$ and $\vec{b}=\colvec{-1;1}$ are linearly independent and thus form a basis set of $\Rs[2]$. We can calculate their respective angles in relation to the $x$-axis ($\theta_{a}$ and $\theta_{b}$) to find the angle between them ($\varphi$):

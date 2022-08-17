@@ -59,6 +59,7 @@
 	mat/.style={matrix of math nodes, nodes={rectangle, draw, minimum size=1cm, anchor=center}},
 	boxarr/.style={->, >=stealth, line width=3pt},
 	frame/.style={draw=#1, rounded corners, fill=#1!20},
+	perp/.style={black!50, thick, dashed},
 }
 
 \newcommand{\draworigin}{
@@ -115,6 +116,16 @@
 		yticklabels={,},
 		samples=2,
 	},
+	empty/.style={
+		vector plane,
+		axis line style={draw=none},
+		tick style={draw=none},
+		xlabel={},
+		ylabel={},
+		xticklabels={,},
+		yticklabels={,},
+		grid=none,
+	}
 }
 \pgfkeys{
 	/pgfplots/vector plane/.style={
