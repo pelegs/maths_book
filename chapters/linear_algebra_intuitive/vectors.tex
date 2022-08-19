@@ -1506,9 +1506,114 @@ When the vectors are given as column vectors $\vu=\colvec{\textcolor{xred}{u_{x}
 	Using component calculation and utilizing the dot product, show that $\vec{a}\times\vec{v}$ is indeed orthogonal to both $\vec{a}$ and $\vec{b}$.
 \end{challenge}
 
-\subsection{Normal vectors}
+\subsection{The Gram–Schmidt process}
+While all basis sets of a given space are equaly good at spanning that space\footnote{\href{https://knowyourmeme.com/memes/theyre-good-dogs-brent}{they're good basis sets Brent}}, as humans we sometimes prefer using orthonormal basis sets due to their nice properties. One such property of orthonormal basis sets, which we will use in a later section, is that the scalar product of any two vectors of the set is the Kronecker's delta - i.e. given an orthonormal basis set
+\[
+	B=\left\{\vec{b}_{1},\vec{b}_{2},\dots,\vec{b}_{n}\right\},
+\]
+for any two basis vectors $\vec{b_{i}}$ and $\vec{b}_{j}$,
+\[
+	\vec{b}_{i} \cdot \vec{b}_{j} = \delta_{ij} =
+	\begin{cases}
+		1 &\text{ if } i=j,\\
+		0 &\text{ if } i\neq j.\\
+	\end{cases}
+\]
 
+However, most basis sets are not orthonormal\footnote{since there are countlessly infinitely many basis sets for any space, the meaning of ``most'' in this context is that the probability that a random basis set is not orthonormal is greater than the probability that it is orthonormal.}. How can we construct an orthonormal basis set from a given basis set?
+
+In the unlikely case that the given basis set is orthogonal, the answer is simple: normalize each of the basis vectors. When the given basis set in not orthogonal we can use the \emph{Gram-Schmidt process} (GSP), which takes a basis set and transforms it into an orthonormal basis set.
+
+In order to understand the GSP, one must first understand the following fact: given a vector $\vec{v}$ and a plane $P$ which contains the vector, we can always write $\vec{v}$ as the sum of any two orthogonal vectors $\vec{a}$ and $\vec{b}$ in $P$, i.e.
+\begin{equation}
+	\vec{v} = \vec{a} + \vec{b},
+	\label{eq:simple_vector_sum}
+\end{equation}
+where all the above vectors lie on the same plane (see \autoref{fig:orthogonal_decomposition_vector_in_plane}).
+
+\begin{figure}
+	\centering
+	\pgfmathsetmacro{\vx}{4}
+	\pgfmathsetmacro{\vy}{4}
+	\pgfmathsetmacro{\vnorm}{sqrt(\vx*\vx+\vy*\vy)}
+	\pgfmathsetmacro{\uAx}{1}
+	\pgfmathsetmacro{\uAy}{2}
+	\pgfmathsetmacro{\uBx}{-\uAy}
+	\pgfmathsetmacro{\uBy}{\uAx}
+	\pgfmathsetmacro{\unorm}{sqrt(\uAx*\uAx + \uAy*\uAy)}
+	\pgfmathsetmacro{\uAproj}{(\uAx*\vx+\uAy*\vy)/\unorm)}
+	\pgfmathsetmacro{\uBproj}{(\uBx*\vx+\uBy*\vy)/\unorm)}
+	\pgfmathsetmacro{\wAx}{2}
+	\pgfmathsetmacro{\wAy}{0.2}
+	\pgfmathsetmacro{\wBx}{-\wAy}
+	\pgfmathsetmacro{\wBy}{\wAx}
+	\pgfmathsetmacro{\wnorm}{sqrt(\wAx*\wAx + \wAy*\wAy)}
+	\pgfmathsetmacro{\wAproj}{(\wAx*\vx+\wAy*\vy)/\wnorm)}
+	\pgfmathsetmacro{\wBproj}{(\wBx*\vx+\wBy*\vy)/\wnorm)}
+	\begin{subfigure}[]{0.45\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\tikzset{every node/.style={font=\Large}}
+				\begin{axis}[
+					empty,
+					width=6cm, height=6cm,
+					xmin=-2, xmax=7,
+					ymin=-2, ymax=7,
+					]
+					% Defs
+					\coordinate (O) at (0,0);
+					\coordinate (v) at (\vx,\vx);
+					\coordinate (u1) at ({\uAx/\unorm*\uAproj},{\uAy/\unorm*\uAproj});
+					\coordinate (u2) at ({\uBx/\unorm*\uBproj},{\uBy/\unorm*\uBproj});
+					% Drawing
+					\draw[vector] (O) -- (v) node[pos=1.1] {$\vec{v}$};
+					\draw[vector, xred,  dashed] (O) -- (u1) node[pos=1.13] {$\vec{u}_{1}$};
+					\draw[vector, xblue, dashed] (O) -- (u2) node[pos=1.35] {$\vec{u}_{2}$};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		\caption{}
+		\label{fig:}
+	\end{subfigure}
+	\begin{subfigure}[]{0.45\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\tikzset{every node/.style={font=\Large}}
+				\begin{axis}[
+					empty,
+					width=6cm, height=6cm,
+					xmin=-2, xmax=7,
+					ymin=-2, ymax=7,
+					]
+					\coordinate (w1) at ({\wAx/\wnorm*\wAproj},{\wAy/\wnorm*\wAproj});
+					\coordinate (w2) at ({\wBx/\wnorm*\wBproj},{\wBy/\wnorm*\wBproj});
+					% Defs
+					% Drawing
+					\draw[vector] (O) -- (v) node[pos=1.1] {$\vec{v}$};
+					\draw[vector, xdarkgreen, dashed] (O) -- (w1) node[pos=1.2] {$\vec{w}_{1}$};
+					\draw[vector, xorange,    dashed] (O) -- (w2) node[pos=1.2] {$\vec{w}_{2}$};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		\caption{}
+		\label{fig:}
+	\end{subfigure}
+	\caption{The same vector $\vec{v}$ decomposed into two sets of orthogonal components: (a) \textcolor{xred}{$u_{1}$} and \textcolor{xblue}{$u_{2}$}; (b) \textcolor{xdarkgreen}{$w_{1}$} and \textcolor{xorange}{$w_{2}$}. There are infinitely many such orthogonal sets on any plane containing $\vec{v}$.}
+	\label{fig:orthogonal_decomposition_vector_in_plane}
+\end{figure}
+
+Rearranging \autoref{eq:simple_vector_sum}, we get that
+
+\begin{align}
+	\vec{a} &= \vec{v}-\vec{b},\ \text{and}\nonumber\\
+	\vec{b} &= \vec{v}-\vec{a}.
+\end{align}
+
+\tbw{Finish this subsection}
+
+\subsection{Normal vectors}
 A special kind of vector in $\Rs[3]$ is the so-called \emph{normal vector} to a plane $\mathbf{P}$: this vector, usually denoted as $\normalVec{n}{P}$, is pointing at the orthogonal direction to any vector of the plane (see XXX). Given one knows three points on the plane, its normal vector can be calculated: say the following three points in $\mathbf{P}$ are given (for visualizing the following steps see YYY):
+\tbw{Change XXX and YYY to the right refs}
 \begin{align}
 	p &= (p_{x}, p_{y}, p_{z})\nonumber\\
 	q &= (q_{x}, q_{y}, q_{z})\nonumber\\
