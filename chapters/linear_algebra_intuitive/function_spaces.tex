@@ -1,0 +1,126 @@
+\section{Functions as vectors}
+\begin{note}{Calculus ahead!}{}
+	This section uses ideas discussed in the chapter about $1$-dimensional real calculus (\autoref{chapter:calculus_1D}). While strict knowledge of calculus is not necessary, some concepts would be rather difficult to understand without it.
+\end{note}
+
+Up until now we used a rather informal definition for vectors (\autoref{def:real vectors}). While the formal definition will be discussed in the next chapter, it is worth while to review the basic properties of vectors we saw so far. We start with the scaling of vectors:
+\begin{descitemize}
+	\item[It is `close'] the result of scaling a vector is itself a vector.
+	\item[The scalar $\bm{1}$ is neutral to scaling] i.e. $1\cdot\vec{v}=\vec{v}$.
+	\item[It is associative] for any $\alpha,\beta\in\Rs$ and $\vec{v}\in\Rs[n]$,
+		\[
+			\alpha\cdot \left( \beta\vec{v} \right) = \left( \alpha\cdot\beta \right)\vec{v}.
+		\]
+\end{descitemize}
+
+And for vector addition:
+\begin{descitemize}
+	\item[It is close] the sum of any two vectors is also a vector.
+	\item[It is commutative] the order of addition does not change its result.
+	\item[It is associative] while not discussed directly, it is obvious that when adding together any three vectors $\vec{u},\vec{v},\vec{w}\in \Rs[n]$, we can change the order of addition and that too will not change its result: calculating $\vec{u}+\vec{v}$ first and then adding $\vec{w}$ to the result is the same as calculating $\vec{v}+\vec{w}$ first and then adding $\vec{u}$ to the result, i.e.
+		\[
+			\left( \vec{u}+\vec{v} \right) + \vec{w} = \vec{u} + \left( \vec{v}+\vec{w} \right).
+		\]
+	\item[$\bm{\vec{0}}$ is neutral to addition] i.e. the addition of $\vec{0}$ to any vector $\vec{v}$ results in $\vec{v}$.
+	\item[Any vector has an additive inverse] given a vector $\vec{u}\in\Rs[n]$, there is always a vector $\vec{v}\in\Rs[n]$ such that
+		\[
+			\vec{u}+\vec{v}=\vec{0},
+		\]
+		namely the vector $\vec{u}=-\vec{v}$.
+\end{descitemize}
+
+The two operations also have two important properties together:
+\begin{descitemize}
+	\item[Vector addition is distributive] for any $\alpha\in\Rs$ and $\vec{u},\vec{v}\in\Rs[n]$,
+		\[
+			\alpha \left( \vec{u}+\vec{v} \right) = \alpha\vec{u} + \alpha\vec{v}.
+		\]
+	\item[Scalar multiplication is distributive] for any $\alpha,\beta\in\Rs$ and $\vec{v}\in\Rs[n]$,
+		\[
+			\left( \alpha+\beta \right) \vec{v} = \alpha\vec{v} + \beta\vec{v}.
+		\]
+\end{descitemize}
+
+All these properties seem rather obvious, but not all mathematical structures actually have them: for example, in a later chapter in the book we learn about \emph{groups}, which do not have a scaling operator and don't necessarily have some of these properties, e.g. not all of them are commutative under their own operation.
+
+Real functions, on the other hand, do have all these properties. We can therefore apply to real functions all the stuff we learned about vectors in this chapter. While we're not promised that everything will \textit{look} the same, their general behavior is identical to that of vectors: the two obvious examples are scaling and addition:
+\begin{descitemize}
+	\item[Scaling] given a real function $f$ we can always scale it by multiplying its output by any real number $\alpha$: if $f(x)=y$, then
+		\[
+			\alpha f(x) = \alpha y.
+		\]
+		For example, we can scale the polynomial $P(x)=x^{3}-2x+5$ by a factor of $7$, yielding
+		\[
+			7P(x) = 7\cdot x^{3}-7\cdot2x+7\cdot5 = 7x^{3}-14x+35.
+		\]
+		And indeed we see that the result is itself a real function.
+	\item[Addition] any two real functions $f,g$ can be added together. For example, given the functions $f(x)=\eu^{x}$ and $g(x)=5\sin(x)$, their sum is then
+		\[
+			\left[ f+g \right](x) = \eu^{x}+5\sin(x),
+		\]
+		which is indeed a real function by itself.
+\end{descitemize}
+You should go over all the above properties of vectors and verify for yourself that real functions do indeed posses them.
+
+Before we move on, we should limit our further discussion to a specific set of real functions in order to avoid some annoying details which might rise later, and are not critical for the understanding of the idea of functions as vectors. Thus, from now on in the section we will only discuss real functions which are continuous in all of $\Rs$, and are ``smooth'' enough to not cause too many problems. Recall from \autoref{chapter:calculus_1D} that by a ``smooth'' function we mean a function infinitely continuous derivatives (i.e. its derivative of any order is continuous).
+
+The first important thing to do when using vectors is to choose a basis set to represent them. For any $\Rs[n]$ it is rather easy to understand how this representation looks like: we simply write the vector with $n$ components. How can we do that with functions? Well, consider the following vector in $\Rs[6]$:
+\begin{equation}
+	\vec{v} = \colvec{1;2;-3;1;0;-1}.
+	\label{eq:some_vector}
+\end{equation}
+While drawing $6$-dimensional spaces is rather difficult, we can draw as a bar chart each of its components $v_{i}$ as a function of the component index $i$:
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=8cm,
+			xmin=0, xmax=7,
+			ymin=-4, ymax=4,
+			xlabel={$i$},
+			ylabel={$v_{i}$},
+			x axis line style={-stealth, thick},
+			xtick={1,2,4,5},
+			extra x ticks={3,6},
+			extra x tick style={tick label style={yshift=1mm, anchor=south}},
+			ytick={-3,...,3},
+			extra y ticks={0},
+			]
+			\foreach \y [count=\x] in {1,2,-3,1,0,-1} {
+				\edef\temp{\noexpand\draw[component={xcol\x}] (\x,0) -- (\x,\y);}
+				\temp
+			}
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+We can do the same for the $\Rs[20]$ vector
+\begin{equation}
+	\vec{u} = \rowvec{5;-7;-7;-8;-5;5;8;-6;2;-6;-1;-1;7;9;8;-7;9;-1;-5;4}^{\top}:
+	\label{eq:}
+\end{equation}
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=8cm,
+			xmin=0, xmax=21,
+			ymin=-9, ymax=9,
+			xlabel={$i$},
+			ylabel={$v_{i}$},
+			x axis line style={-stealth, thick},
+			xtick={},
+			ytick={-10,-8,...,10},
+			extra y ticks={0},
+			]
+			\foreach \y [count=\x] in {5,-7,-7,-8,-5,5,8,-6,2,-6,-1,-1,7,9,8,-7,9,-1,-5,4} {
+				\pgfmathsetmacro{\k}{int(mod(\x,8))}
+				\edef\temp{\noexpand\draw[component={xcol\k}] (\x,0) -- (\x,\y);}
+				\temp
+			}
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+This method can be used for any natural number, or even an integer. In fact, we can expand it to any real number: given a number $x\in\Rs$, we assign it some number $y\in\Rs$ and say that $y$ is the component corresponding to the index $x$\ldots and we just defined a real function!

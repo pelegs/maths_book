@@ -9,6 +9,7 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+1-dimension real calculus	chapters/calculus_1D/preface.tex	/^\\chapter{1-dimension real calculus}\\label{chapter:calculus_1D}$/;"	c
 3D Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{3D Linear transformations}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
 A bit about more general vector spaces and their duals	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{A bit about more general vector spaces and their duals}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
 Algebraic approach	chapters/intro/complex_numbers.tex	/^\\subsection{Algebraic approach}$/;"	u	section:Introduction""Complex Numbers
@@ -28,7 +29,6 @@ Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock
 Basic Definitions	chapters/intro/trigonomentry.tex	/^\\subsection{Basic Definitions}$/;"	u	section:Introduction""Trigonometric functions
 Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Introduction""Relations and Functions
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Vectors
-Calculus in 1D	chapters/calculus_1D/preface.tex	/^\\chapter{Calculus in 1D}$/;"	c
 Calulating eigenvectors	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Calulating eigenvectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
 Cartesian Products	chapters/intro/math_symbols_sets.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Cartesian Products	sed_test.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Mathematical Symbols and Sets
@@ -63,6 +63,7 @@ Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite 
 Formulating plant nutrient solutions	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Formulating plant nutrient solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Some real life uses of linear algebra
 From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Functionals	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Functionals}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
+Functions as vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\section{Functions as vectors}$/;"	s
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
 Graphs	chapters/intro/trigonomentry.tex	/^\\subsection{Graphs}$/;"	u	section:Introduction""Trigonometric functions
 Hunter-pray population growth	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Hunter-pray population growth}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Some real life uses of linear algebra
@@ -148,7 +149,7 @@ TriangleOutM	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:issto
 Trigonometric functions	chapters/intro/trigonomentry.tex	/^\\section{Trigonometric functions}\\label{section:trigonometry}$/;"	s	chapter:Introduction
 Types of matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Types of matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Useful theorems	chapters/intro/trigonomentry.tex	/^\\subsection{Useful theorems}$/;"	u	section:Introduction""Trigonometric functions
-Vector spaces	chapters/linear_algebra_rigorous/vectors.tex	/^\\section{Vector spaces}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
+Vector spaces	chapters/linear_algebra_rigorous/vectors.tex	/^\\section{Vector spaces}$/;"	s
 Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\AND	settings.tex	/^\\newcommand{\\AND}{\\textbf{AND}}$/;"	C
 \\Amatv	chapters/linear_algebra_intuitive/matrices.tex	/^\\newcommand{\\Amatv}[1]{$/;"	C
@@ -198,7 +199,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\czhat	settings.tex	/^\\newcommand{\\czhat}{\\textcolor{xdarkgreen}{\\hat{z}}}$/;"	C
 \\defeq	settings.tex	/^\\newcommand{\\defeq}{:=}$/;"	C
 \\descitemlabel	settings.tex	/^\\newcommand{\\descitemlabel}[1]{%$/;"	C
-\\draworigin	settings.tex	/^\\newcommand{\\draworigin}{$/;"	C
+\\draworigin	settings.tex	/^\\newcommand{\\draworigin}{\\fill (0,0) circle (0.075);}$/;"	C
 \\eb	settings.tex	/^\\newcommand{\\eb}[1]{\\hat{e}_{#1}}$/;"	C
 \\eqdef	settings.tex	/^\\newcommand{\\eqdef}{=:}$/;"	C
 \\eu	settings.tex	/^\\newcommand{\\eu}{\\mathrm{e}}$/;"	C
@@ -228,6 +229,8 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\tapirTransComp	settings.tex	/^\\newcommand{\\tapirTransComp}[7]{$/;"	C
 \\tbw	settings.tex	/^\\newcommand{\\tbw}[1]{$/;"	C
 \\threeSpheres	chapters/intro/combinatorics.tex	/^\\newcommand{\\threeSpheres}[3]{$/;"	C
+\\tikzhl	settings.tex	/^\\newcommand{\\tikzhl}[3]{\\tikzinline{\\node[fill=#1!20](#2){$#3$}}}$/;"	C
+\\tikzinline	settings.tex	/^\\newcommand{\\tikzinline}[1]{\\tikz[baseline=-0.5ex]{#1}}$/;"	C
 \\true	settings.tex	/^\\newcommand{\\true}{\\textcolor{xblue}{\\textbf{true}}}$/;"	C
 \\trueprop	settings.tex	/^\\newcommand{\\trueprop}[1]{$/;"	C
 \\veccomp	settings.tex	/^\\newcommand{\\veccomp}[4]{$/;"	C
@@ -263,6 +266,7 @@ cc	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="h
 cc	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://web.resource.org/cc/
 cc	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://creativecommons.org/ns#
+chapter:calculus_1D	chapters/calculus_1D/preface.tex	/^\\chapter{1-dimension real calculus}\\label{chapter:calculus_1D}$/;"	l
 chapter:intro	chapters/intro/preface.tex	/^\\chapter{Introduction}\\label{chapter:intro}$/;"	l
 chapter:linear algebra intuitive	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	l
 chapter:linear algebra rigorous	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	l
@@ -475,6 +479,7 @@ eq:	chapters/intro/trigonomentry.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/dual_spaces.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:}$/;"	l
+eq:	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:}$/;"	l
 eq:	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:}$/;"	l
@@ -691,6 +696,7 @@ eq:set_equality	sed_test.tex	/^	\\label{eq:set_equality}$/;"	l
 eq:simple_vector_sum	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:simple_vector_sum}$/;"	l
 eq:sin sqr plus cos sqr equals 1	chapters/intro/trigonomentry.tex	/^	\\label{eq:sin sqr plus cos sqr equals 1}$/;"	l
 eq:sofds	chapters/intro/complex_numbers.tex	/^	\\label{eq:sofds}$/;"	l
+eq:some_vector	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:some_vector}$/;"	l
 eq:span of a single vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:span of a single vector}$/;"	l
 eq:span of a two vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:span of a two vectors}$/;"	l
 eq:square_matrix	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:square_matrix}$/;"	l

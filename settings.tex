@@ -60,11 +60,12 @@
 	boxarr/.style={->, >=stealth, line width=3pt},
 	frame/.style={draw=#1, rounded corners, fill=#1!20},
 	perp/.style={black!50, thick, dashed},
+	component/.style = {line width=5pt, draw=#1},
 }
 
-\newcommand{\draworigin}{
-	\fill (0,0) circle (0.075);
-}
+\newcommand{\draworigin}{\fill (0,0) circle (0.075);}
+\newcommand{\tikzinline}[1]{\tikz[baseline=-0.5ex]{#1}}
+\newcommand{\tikzhl}[3]{\tikzinline{\node[fill=#1!20](#2){$#3$}}}
 
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween, colormaps, colorbrewer, patchplots}
