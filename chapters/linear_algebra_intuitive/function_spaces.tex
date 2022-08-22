@@ -62,14 +62,15 @@ Real functions, on the other hand, do have all these properties. We can therefor
 \end{descitemize}
 You should go over all the above properties of vectors and verify for yourself that real functions do indeed posses them.
 
-Before we move on, we should limit our further discussion to a specific set of real functions in order to avoid some annoying details which might rise later, and are not critical for the understanding of the idea of functions as vectors. Thus, from now on in the section we will only discuss real functions which are continuous in all of $\Rs$, and are ``smooth'' enough to not cause too many problems. Recall from \autoref{chapter:calculus_1D} that by a ``smooth'' function we mean a function infinitely continuous derivatives (i.e. its derivative of any order is continuous).
+Before we move on, we should limit our further discussion to a specific set of real functions in order to avoid some annoying details which might rise later, and are not critical for the understanding of the idea of functions as vectors. Thus, from now on in the section we will only discuss functions of the set $C^{\infty}$. \textbf{Reminder}: a function $f$ which is continoues on an interval $I\subseteq\Rs$ is said to be in $C^{k}\ \left(k\in\mathbb{N}\right)$ if $f',f'',f''',\dots,f^{(k)}$ are all continoues on $I$ as well. The set $C^{\infty}$ is thus the set of all functions which are infinitely many times differentiable in some interval $I\subseteq\Rs$.
+% TODO: add reference to this part in the calculus chapter.
 
 The first important thing to do when using vectors is to choose a basis set to represent them. For any $\Rs[n]$ it is rather easy to understand how this representation looks like: we simply write the vector with $n$ components. How can we do that with functions? Well, consider the following vector in $\Rs[6]$:
 \begin{equation}
 	\vec{v} = \colvec{1;2;-3;1;0;-1}.
 	\label{eq:some_vector}
 \end{equation}
-While drawing $6$-dimensional spaces is rather difficult, we can draw as a bar chart each of its components $v_{i}$ as a function of the component index $i$:
+While drawing $6$-dimensional spaces is rather difficult, we can draw as a bar chart each of the components $v_{i}$ as a function of the component index $i$:
 
 \begin{center}
 	\begin{tikzpicture}
@@ -80,7 +81,7 @@ While drawing $6$-dimensional spaces is rather difficult, we can draw as a bar c
 			ymin=-4, ymax=4,
 			xlabel={$i$},
 			ylabel={$v_{i}$},
-			x axis line style={-stealth, thick},
+			x axis line style={-stealth, thick, black},
 			xtick={1,2,4,5},
 			extra x ticks={3,6},
 			extra x tick style={tick label style={yshift=1mm, anchor=south}},
@@ -95,7 +96,7 @@ While drawing $6$-dimensional spaces is rather difficult, we can draw as a bar c
 	\end{tikzpicture}
 \end{center}
 
-We can do the same for the $\Rs[20]$ vector
+Now let's do the same with a vector in $\Rs[20]$, e.g.
 \begin{equation}
 	\vec{u} = \rowvec{5;-7;-7;-8;-5;5;8;-6;2;-6;-1;-1;7;9;8;-7;9;-1;-5;4}^{\top}:
 	\label{eq:}
@@ -108,9 +109,10 @@ We can do the same for the $\Rs[20]$ vector
 			xmin=0, xmax=21,
 			ymin=-9, ymax=9,
 			xlabel={$i$},
-			ylabel={$v_{i}$},
+			ylabel={$u_{i}$},
 			x axis line style={-stealth, thick},
 			xtick={},
+			xticklabels={},
 			ytick={-10,-8,...,10},
 			extra y ticks={0},
 			]
@@ -123,4 +125,50 @@ We can do the same for the $\Rs[20]$ vector
 	\end{tikzpicture}
 \end{center}
 
-This method can be used for any natural number, or even an integer. In fact, we can expand it to any real number: given a number $x\in\Rs$, we assign it some number $y\in\Rs$ and say that $y$ is the component corresponding to the index $x$\ldots and we just defined a real function!
+...and for some vector $\vec{w}\in\Rs[90]$:
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=8cm,
+			xmin=0, xmax=91,
+			ymin=-1.5, ymax=1.5,
+			xlabel={$i$},
+			ylabel={$w_{i}$},
+			x axis line style={-stealth, thick},
+			xticklabels={},
+			ytick={-1.5,-1,...,1.5},
+			extra y ticks={0},
+			]
+			\foreach \y [count=\x] in {0,2,...,180} {
+				\pgfmathsetmacro{\k}{int(mod(\x,8))}
+				\edef\temp{\noexpand\draw[component={xblue}, ultra thick] (\x,0) -- (\x,{sin(4*\x)});}
+				\temp
+			}
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+What we see here is that we can use this method for any natural number. We can also easily generalize it for any integer by shifting our indexing to include negative integers. In fact, we can expand it to any real number by taking this idea to the continoues limit: given any $x\in\Rs$, we assign it some $f(x)\in\Rs$ and say that $f(x)$ is the component corresponding to the index $x$\ldots and we just defined a real function! For example, the function $f(x)=\sin(x)$:
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=8cm,
+			xmin=0, xmax=91,
+			ymin=-1.5, ymax=1.5,
+			xlabel={$x$},
+			ylabel={$f(x)$},
+			x axis line style={-stealth, thick},
+			xticklabels={},
+			ytick={-1.5,-1,...,1.5},
+			extra y ticks={0},
+			domain={0:92},
+			]
+			\addplot[function, xblue] {sin(4*x)};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+% Adding, scaling, etc.
