@@ -3,6 +3,7 @@
 	This section uses ideas discussed in the chapter about $1$-dimensional real calculus (\autoref{chapter:calculus_1D}). While strict knowledge of calculus is not necessary, some concepts would be rather difficult to understand without it.
 \end{note}
 
+\subsection{Properties of vectors}
 Up until now we used a rather informal definition for vectors (\autoref{def:real vectors}). While the formal definition will be discussed in the next chapter, it is worth while to review the basic properties of vectors we saw so far. We start with the scaling of vectors:
 \begin{descitemize}
 	\item[It is `close'] the result of scaling a vector is itself a vector.
@@ -62,9 +63,11 @@ Real functions, on the other hand, do have all these properties. We can therefor
 \end{descitemize}
 You should go over all the above properties of vectors and verify for yourself that real functions do indeed posses them.
 
-Before we move on, we should limit our further discussion to a specific set of real functions in order to avoid some annoying details which might rise later, and are not critical for the understanding of the idea of functions as vectors. Thus, from now on in the section we will only discuss functions of the set $C^{\infty}$. \textbf{Reminder}: a function $f$ which is continoues on an interval $I\subseteq\Rs$ is said to be in $C^{k}\ \left(k\in\mathbb{N}\right)$ if $f',f'',f''',\dots,f^{(k)}$ are all continoues on $I$ as well. The set $C^{\infty}$ is thus the set of all functions which are infinitely many times differentiable in some interval $I\subseteq\Rs$.
+\subsection{Smooth functions}
+Before we move on, we should limit our further discussion to a specific set of real functions in order to avoid some annoying details which might rise later, and are not critical for the understanding of the idea of functions as vectors. Thus, from now on in the section we will only discuss functions of the set $C^{\infty}$. \textbf{Reminder}: a function $f$ which is continuous on an interval $I\subseteq\Rs$ is said to be in $C^{k}\ \left(k\in\mathbb{N}\right)$ if $f',f'',f''',\dots,f^{(k)}$ are all continuous on $I$ as well. The set $C^{\infty}$ is thus the set of all functions which are infinitely many times differentiable in some interval $I\subseteq\Rs$.
 % TODO: add reference to this part in the calculus chapter.
 
+\subsection{Function values as vector components}
 The first important thing to do when using vectors is to choose a basis set to represent them. For any $\Rs[n]$ it is rather easy to understand how this representation looks like: we simply write the vector with $n$ components. How can we do that with functions? Well, consider the following vector in $\Rs[6]$:
 \begin{equation}
 	\vec{v} = \colvec{1;2;-3;1;0;-1}.
@@ -149,7 +152,7 @@ Now let's do the same with a vector in $\Rs[20]$, e.g.
 	\end{tikzpicture}
 \end{center}
 
-What we see here is that we can use this method for any natural number. We can also easily generalize it for any integer by shifting our indexing to include negative integers. In fact, we can expand it to any real number by taking this idea to the continoues limit: given any $x\in\Rs$, we assign it some $f(x)\in\Rs$ and say that $f(x)$ is the component corresponding to the index $x$\ldots and we just defined a real function! For example, the function $f(x)=\sin(x)$:
+What we see here is that we can use this method for any natural number. We can also easily generalize it for any integer by shifting our indexing to include negative integers. In fact, we can expand it to any real number by taking this idea to the continuous limit: given any $x\in\Rs$, we assign it some $f(x)\in\Rs$ and say that $f(x)$ is the component corresponding to the index $x$\ldots and we just defined a real function! For example, the function $f(x)=\sin(x)$:
 
 \begin{center}
 	\begin{tikzpicture}
@@ -172,3 +175,46 @@ What we see here is that we can use this method for any natural number. We can a
 \end{center}
 
 % Adding, scaling, etc.
+We saw in the comparison between vectors in functions how scaling and addition behave in functions in a similar way to their behavior in vectors. Now we will describe how to view these operations in a similar way to their component-wise depiction in vectors (\autoref{eq:scaling vectors} and \autoref{eq:adding vectors}):
+\begin{descitemize}
+	\item[Scaling] given a scalar $\alpha\in\Rs$ and a function $f$ which is smooth on an interval $I$, for each component $x\in I$, if $x$ is mapped by $f$ to $y\in\Rs$, then the function $\alpha f$ maps $x$ to $\alpha y$, i.e.
+		\[
+			x\overset{f}{\mapsto} y\ \Rightarrow\ x\overset{\alpha f}{\mapsto} \alpha y.
+		\]
+		\underline{Example}: for $f(x)=x^{2},\ x\overset{f}{\mapsto} x^{2}$. Therefore for $\alpha f,\ x\overset{\alpha f}{\mapsto}\alpha x^{2}$.
+
+	\item[Addition] given two functions $f,g$ which are smooth on an interval $I$, for any $x\in I$ if $x\overset{f}{\mapsto}y_{f}$ and $x\overset{g}{\mapsto}y_{g}$, then
+		\[
+			x\overset{f+g}{\mapsto} y_{f}+y_{g}.
+		\]
+		\underline{Example}: for $f(x)=3x^{2}$ and $g(x)=-7x$, $x\overset{f+g}{\mapsto}3x^{2}-7x$.
+\end{descitemize}
+
+\subsection{Scalar product, norm}
+Given two vectors $\vec{u},\vec{v}\in\Rs[n]$, the scalar product $\vec{u}\cdot\vec{v}$ is defined using the respective components of the vectors as
+\[
+	\vec{u}\cdot\vec{v}=\sum\limits_{i=1}^{n}u_{i}v_{i}.
+\]
+The natural extension of this sum of products to the continuous realm is via an integral (see \autoref{XXX}), i.e. given two functions $f,g$ which are smooth on the interval $(a,b)$ (where $a,b\in\Rs$), then
+\begin{equation}
+	f\cdot g = \int\limits_{a}^{b}f(x)g(x)\dif x.
+	\label{eq:scalar_product_functions}
+\end{equation}
+
+\begin{example}{Scalar product of two functions}{}
+	Given $f(x)=\sin(x)$ and $g(x)=\cos(x)$, the dot product $f\cdot g$ in the interval $I=\left(-\pi,\pi\right)$ is
+	\begin{align*}
+		f\cdot g &= \int\limits_{-\infty}^{\infty}f(x)g(x)\dif x\\
+				 &= \int\limits_{-\pi}^{\pi}\sin(x)\cos(x)\dif x\\
+				 &= \left.\frac{\sin^{2}(x)}{2}\right|_{-\pi}^{\pi}\\
+				 &= \frac{1}{2} \left( \sin^{2}(\pi)-\sin^{2}(-\pi) \right)\\
+				 &= \frac{1}{2} \left( 0-0 \right)\\
+				 &= 0.
+	\end{align*}
+\end{example}
+
+\tbw{orthogonal functions!}
+
+\subsection{Basis set}
+
+\subsection{Operators}
