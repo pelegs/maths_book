@@ -202,18 +202,56 @@ The natural extension of this sum of products to the continuous realm is via an 
 \end{equation}
 
 \begin{example}{Scalar product of two functions}{}
-	Given $f(x)=\sin(x)$ and $g(x)=\cos(x)$, the dot product $f\cdot g$ in the interval $I=\left(-\pi,\pi\right)$ is
+	Given the functions $f(x)=x^{3}+3x^{2}$ and $g(x)=\frac{1}{x}$, the scalar product $f\cdot g$ in the interval $I=\left[-1,1\right]$ is
 	\begin{align*}
-		f\cdot g &= \int\limits_{-\infty}^{\infty}f(x)g(x)\dif x\\
-				 &= \int\limits_{-\pi}^{\pi}\sin(x)\cos(x)\dif x\\
-				 &= \left.\frac{\sin^{2}(x)}{2}\right|_{-\pi}^{\pi}\\
-				 &= \frac{1}{2} \left( \sin^{2}(\pi)-\sin^{2}(-\pi) \right)\\
-				 &= \frac{1}{2} \left( 0-0 \right)\\
-				 &= 0.
+		f\cdot g &= \int\limits_{-1}^{1}f(x)g(x)\dif x\\
+				 &= \int\limits_{-1}^{1}\frac{x^{3}+3x^{2}}{x}\dif x\\
+				 &= \int\limits_{-1}^{1}\left(x^{2}+3x\right)\dif x\\
+				 &= \left.\left(\frac{1}{3}x^{3}+\frac{3}{2}x^{2}\right) \right|_{-1}^{1}\\
+				 &= \frac{1}{3}+\frac{3}{2} - \frac{-1}{3} - \frac{3}{2} \\
+				 &= \frac{2}{3}.
 	\end{align*}
 \end{example}
 
-\tbw{orthogonal functions!}
+This brings up an interesting question: what does it mean when the scalar product of two functions is $0$? For example, consider the two functions $f(x)=\sin(x)$ and $g(x)=\cos(x)$. Their scalar product $f\cdot g$ on the interval $I=\left(-\pi,\pi\right)$ is
+	\begin{align*}
+		f\cdot g &= \int\limits_{-\pi}^{\pi}f(x)g(x)\dif x  = \int\limits_{-\pi}^{\pi}\sin(x)\cos(x)\dif x  = \left.\frac{\sin^{2}(x)}{2}\right|_{-\pi}^{\pi}\nonumber\\
+				 &= \frac{1}{2} \left( \sin^{2}(\pi)-\sin^{2}(-\pi) \right)  = \frac{1}{2} \left( 0-0 \right)  = 0.
+	\end{align*}
+	Much like with vectors in $\Rs[n]$ we say that these two functions are orthogonal. In turn, this means that we can use them to form an orthonormal basis set to express all smooth functions on the same interval. In fact - a very similar idea, i.e. using infinite series of trigonometric functions to construct other functions, is used to form the \emph{Fourier series}, which we explore in greater depth in \autoref{chapter:fourier}).
+
+	The \emph{Legendre polynomial} are an infinite set of orthogonal polynomials defined on the interval $[-1,1]$, which arise in many different situations throughout science such as the wave functions of the electrons in a Hydrogen-like atom. The first few Legendre polynomials are
+	\begin{align}
+		P_{0}(x) &= 1,\nonumber\\
+		P_{1}(x) &= x,\nonumber\\
+		P_{2}(x) &= \frac{1}{2}\left(3x^{2}-1\right),\nonumber\\
+		P_{3}(x) &= \frac{1}{2}\left(5x^{3}-3x\right),\nonumber\\
+		P_{4}(x) &= \frac{1}{8}\left(35x^{4}-30x^{2}+3\right),\nonumber\\
+		P_{5}(x) &= \frac{1}{8}\left(63x^{5}-70x^{3}+15x\right),\nonumber\\
+		P_{6}(x) &= \frac{1}{16}\left(231x^{6}-315x^{4}+105x^{2}-5\right),\\
+		\vdots\nonumber
+		\label{eq:Legendre_polynomials_first_7}
+	\end{align}
+
+	with the general formula for the $n$-th Legendre polynomial being
+	\begin{equation}
+		P_{n}(x) = \frac{1}{2^{n}}\sum\limits_{k=0}^{n}\binom{n}{k}\left(x-1\right)^{n-k}\left(x+1\right)^{k}.
+		\label{eq:Legendre_polynomial_general}
+	\end{equation}
+
+	Let's check two combinations from the first $7$ Legendre polynomials to see that they functions are indeed orthogonal:
+	\begin{itemize}
+		\item $P_{1}$ and $P_{3}$:
+			\[
+				P_{1}\cdot P_{3} = \frac{1}{2}\int\limits_{-1}^{1}\left(5x^{4}-3x^{2}\right)\dif x = \frac{1}{2}\left.\left(x^{5}-x^{3}\right)\right|_{-1}^{1} = 1-1-1+1 = 0.
+			\]
+		\item $P_{2}$ and $P_{5}$:
+			\[
+				P_{2}\cdot P_{5} = \frac{1}{16}\int\limits_{-1}^{1}\left( 3x^{2}-1 \right)(63x^{5}-70x^{3}+15x)\dif x = \ldots
+			\]
+	\end{itemize}
+
+\tbw{orthogonal functions}
 
 \subsection{Basis set}
 
