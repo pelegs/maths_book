@@ -29,7 +29,7 @@ Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock
 Basic Definitions	chapters/intro/trigonomentry.tex	/^\\subsection{Basic Definitions}$/;"	u	section:Introduction""Trigonometric functions
 Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Introduction""Relations and Functions
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
-Basis set	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Basis set}$/;"	u	section:Functions as vectors
+Basis sets	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Basis sets}$/;"	u	section:Functions as vectors
 Calulating eigenvectors	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Calulating eigenvectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
 Cartesian Products	chapters/intro/math_symbols_sets.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Cartesian Products	sed_test.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Mathematical Symbols and Sets
@@ -561,6 +561,7 @@ eq:cross_product_to_dot_product_part1	chapters/linear_algebra_intuitive/vectors.
 eq:cross_product_to_dot_product_part2	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:cross_product_to_dot_product_part2}$/;"	l
 eq:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{eq:cube roots of 1}$/;"	l
 eq:cylinder_to_cartesian	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:cylinder_to_cartesian}$/;"	l
+eq:derivative_as_linear_opeator	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:derivative_as_linear_opeator}$/;"	l
 eq:determinant_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_2x2}$/;"	l
 eq:determinant_3x3	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_3x3}$/;"	l
 eq:determinant_AB	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_AB}$/;"	l
@@ -662,6 +663,7 @@ eq:numbers_subsets	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:numbers_su
 eq:numbers_subsets	sed_test.tex	/^	\\label{eq:numbers_subsets}$/;"	l
 eq:open_interval	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:open_interval}$/;"	l
 eq:open_interval	sed_test.tex	/^	\\label{eq:open_interval}$/;"	l
+eq:operator_definition	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:operator_definition}$/;"	l
 eq:opposite vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:opposite vector}$/;"	l
 eq:ortho_vec_R2	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:ortho_vec_R2}$/;"	l
 eq:outer_product	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:outer_product}$/;"	l
@@ -776,6 +778,7 @@ fig:cross_product_in_R2	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label
 fig:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{fig:cube roots of 1}$/;"	l
 fig:cylindrical_coords	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:cylindrical_coords}$/;"	l
 fig:det_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:det_2x2}$/;"	l
+fig:first_n_Legendre_polynomials	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{fig:first_n_Legendre_polynomials}$/;"	l
 fig:kernel_subspace	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:kernel_subspace}$/;"	l
 fig:line_plane_R3	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:line_plane_R3}$/;"	l
 fig:linear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:linear transformation grid}$/;"	l
@@ -1661,6 +1664,7 @@ inkscape	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/s
 inkscape	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+isum	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\newcounter{isum}$/;"	N
 layer1	design/chapter.svg	/^     id="layer1">$/;"	i
 layer1	figures/chapters/ftcrics/tapir.svg	/^     transform="translate(-56.908255,-52.23855)">$/;"	i
 layer1	figures/chapters/tapir_70s.svg	/^     transform="translate(-44.468839,-129.1333)">$/;"	i

@@ -240,19 +240,106 @@ This brings up an interesting question: what does it mean when the scalar produc
 	\end{equation}
 
 	Let's check two combinations from the first $7$ Legendre polynomials to see that they functions are indeed orthogonal:
-	\begin{itemize}
-		\item $P_{1}$ and $P_{3}$:
+	\begin{listitemize}
+		\item[${P_{1}}$ and $P_{3}$]
 			\[
 				P_{1}\cdot P_{3} = \frac{1}{2}\int\limits_{-1}^{1}\left(5x^{4}-3x^{2}\right)\dif x = \frac{1}{2}\left.\left(x^{5}-x^{3}\right)\right|_{-1}^{1} = 1-1-1+1 = 0.
 			\]
-		\item $P_{2}$ and $P_{5}$:
-			\[
-				P_{2}\cdot P_{5} = \frac{1}{16}\int\limits_{-1}^{1}\left( 3x^{2}-1 \right)(63x^{5}-70x^{3}+15x)\dif x = \ldots
-			\]
-	\end{itemize}
+		\item[$P_{2}$ and $P_{5}$]
+			\begin{align*}
+				P_{2}\cdot P_{5} &= \frac{1}{16}\int\limits_{-1}^{1}\left( 3x^{2}-1 \right)(63x^{5}-70x^{3}+15x)\dif x\\
+								 &= \frac{1}{16} \int_{-1}^{1}\left(189x^{7}-210x^{5}+45x^{3}-63x^{5}+70x^{3}-15x\right) \dif x\\
+								 &= \frac{1}{16}\left.\left(27x^{8}-42x^{6}+15x^{4}-12x^{6}+23x^{4}-7.5x^{2}\right)\right|_{-1}^{1}\\
+								 &= \frac{1}{16}\left[\left(27-42+15-12+23-7.5\right) - \left(27-42+15-12+23-7.5\right)\right]\\
+								 &= 0.
+			\end{align*}
+	\end{listitemize}
 
-\tbw{orthogonal functions}
+\newcounter{isum}
+\pgfplotsset{summand/.initial=max}
+\pgfmathdeclarefunction{sum}{2}{%
+\begingroup%
+\pgfkeys{/pgf/fpu,/pgf/fpu/output format=fixed}%
+\edef\myfun{\pgfkeysvalueof{/pgfplots/summand}}%
+\pgfmathsetmacro{\mysum}{0}%
+\pgfmathsetmacro{\myx}{#2}%
+\pgfmathtruncatemacro{\imax}{#1}%
+\setcounter{isum}{1}%
+\loop
+\pgfmathsetmacro{\mysum}{\mysum+\myfun(\value{isum},#2)}%
+\ifnum\value{isum}<\imax\relax
+\stepcounter{isum}\repeat
+\pgfmathparse{\mysum}%
+\pgfmathsmuggle\pgfmathresult\endgroup%
+}%
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			xmin=-1, xmax=1,
+			ymin=-1, ymax=1,
+			declare function={L(\n,\x)=2^{-\n}*;},
+		]
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The first $n$ Legendre polynomials.}
+	\label{fig:first_n_Legendre_polynomials}
+\end{figure}
 
-\subsection{Basis set}
+\subsection{Basis sets}
 
 \subsection{Operators}
+In the context of vectors, linear transformations are functions that obey the two properties of scalability and additivity (\autoref{sec:intuitive_linear_trans}). With smooth real functions we can introduce a similar idea: \emph{linear operators}. In our context, an operator is itself a function, however instead of being applied to vectors it is applied to smooth functions in some interval $[a,b]$, i.e.
+\begin{equation}
+	O:C^{\infty}\to C^{\infty}.
+	\label{eq:operator_definition}
+\end{equation}
+
+\begin{example}{Operator}{}
+	Let $O$ be an operator $O:C^{\infty}\to C^{\infty}$ defined as
+	\[
+		O \left( f(x) \right) = 2\left[f(x)\right]^{2}.
+	\]
+	The following table shows some results of applying $O$ to different smooth functions:
+	\begin{center}
+		{\renewcommand*{\arraystretch}{1.5}
+		\begin{tabular}{ll}
+			\toprule
+			$f(x)$ & $O \left( f(x) \right)$\\
+			\midrule
+			$x$ & $2x^{2}$\\
+			$x^{2}$ & $2x^{4}$\\
+			$x^{2}+1$ & $2 \left( x^{2}+1 \right)^{2}$\\
+			$\sqrt{\frac{x}{2}}$ & $x$\\
+			$e^{x}$ & $2e^{2x}$\\
+			$\sin(x)$ & $2\sin^{2}(x)$\\
+			\bottomrule
+		\end{tabular}
+	}
+	\end{center}
+\end{example}
+
+A \emph{linear operator} is therefore an operator which behaves like a linear transformation, i.e. given the operator $O:C^{\infty}\to C^{\infty}$ it is linear if it obeys the following two criteria:
+\begin{descitemize}
+	\item[Scalability] for any $\alpha\in\Rs$ and $f\in C^{\infty}$,
+		\[
+			O \left( \alpha f(x) \right) = \alpha O \left( f(x) \right).
+		\]
+	\item[Additivity] for any $f,g\in C^{\infty}$,
+		\[
+			O \left( f(x)+g(x) \right) = O \left( f(x) \right) + O \left( g(x) \right).
+		\]
+\end{descitemize}
+
+One very well known operator which obeys these two criteria is the derivative operator: recall that for any real number $\alpha$ and smooth functions $f,g$,
+\begin{align}
+	f' \left( \alpha x \right) &= \alpha f'(x)\nonumber,\\
+	\left( f(x)+g(x) \right)' &= f'(x) + g'(x).
+	\label{eq:derivative_as_linear_opeator}
+\end{align}
+
+We can therefore apply to derivatives all the general ideas we learned about linear transformations! This is very useful, and will be used in later chapters.
+
+In fact, in some cases we can even express the derivative opeator as a matrix: \ldots
+\tbw{polynomials an the derivative operator in matrix form}
