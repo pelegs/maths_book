@@ -502,8 +502,8 @@ eq:Cartesian_product_multiple_sets	chapters/intro/math_symbols_sets.tex	/^	\\lab
 eq:Cartesian_product_multiple_sets	sed_test.tex	/^	\\label{eq:Cartesian_product_multiple_sets}$/;"	l
 eq:Euler's identity	chapters/intro/complex_numbers.tex	/^	\\label{eq:Euler's identity}$/;"	l
 eq:Euler's_formula	chapters/intro/complex_numbers.tex	/^	\\label{eq:Euler's_formula}$/;"	l
-eq:Legendre_polynomial_general	chapters/linear_algebra_intuitive/function_spaces.tex	/^		\\label{eq:Legendre_polynomial_general}$/;"	l
-eq:Legendre_polynomials_first_7	chapters/linear_algebra_intuitive/function_spaces.tex	/^		\\label{eq:Legendre_polynomials_first_7}$/;"	l
+eq:Legendre_polynomial_general	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:Legendre_polynomial_general}$/;"	l
+eq:Legendre_polynomials_first_7	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:Legendre_polynomials_first_7}$/;"	l
 eq:Rn	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:Rn}$/;"	l
 eq:adding vectors	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:adding vectors}$/;"	l
 eq:addition_bra-ket	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:addition_bra-ket}$/;"	l
@@ -1664,7 +1664,7 @@ inkscape	figures/symbols/exmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/s
 inkscape	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
-isum	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\newcounter{isum}$/;"	N
+isum	settings.tex	/^\\newcounter{isum}$/;"	N
 layer1	design/chapter.svg	/^     id="layer1">$/;"	i
 layer1	figures/chapters/ftcrics/tapir.svg	/^     transform="translate(-56.908255,-52.23855)">$/;"	i
 layer1	figures/chapters/tapir_70s.svg	/^     transform="translate(-44.468839,-129.1333)">$/;"	i

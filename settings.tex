@@ -37,7 +37,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usepackage{tikzpagenodes}
-\usetikzlibrary{backgrounds, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective, tikzmark, fpu, matrix, fit, shapes, shadows}
+\usetikzlibrary{backgrounds, math, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective, tikzmark, fpu, matrix, fit, shapes, shadows}
 
 \makeatletter
 \tikzoption{canvas is plane}[]{\@setOxy#1}
@@ -61,6 +61,36 @@
 	frame/.style={draw=#1, rounded corners, fill=#1!20},
 	perp/.style={black!50, thick, dashed},
 	component/.style = {line width=5pt, draw=#1},
+}
+	
+
+% Legendre polynomials
+% Shamelessly stolen from https://tex.stackexchange.com/questions/595780/recursive-function-in-pgfplots
+\tikzset{
+	evaluate={
+		function legendre(\x,\p) {
+			if \p == 0 then {
+				return 1;
+			} else {
+				return legendre2(\x, \p);
+			};
+		};
+		function legendre2(\x, \p) {
+			if \p == 1 then {
+				return \x;
+			} else {
+				return (1/\p)*((2*\p-1)*\x*legendre(\x, \p-1) + (1-\p)*legendre(\x, \p-2));
+			};
+		};
+		function legendre3(\n, \x){
+			\S = 0;
+			int \A; \A = 3;
+			for \k in {1,...,\A}{
+				\S=\A;
+			};
+			return \S;
+		};
+	},
 }
 
 \newcommand{\draworigin}{\fill (0,0) circle (0.075);}
@@ -815,3 +845,22 @@
 % \let\ori@chapter\@chapter
 % \def\@chapter[#1]#2{\ori@chapter[\boldmath#1]{\boldmath#2}}
 % \makeatother
+
+% Testing sums in PGFPlots
+\newcounter{isum}
+\pgfplotsset{summand/.initial=max}
+\pgfmathdeclarefunction{sum}{2}{%
+\begingroup%
+\pgfkeys{/pgf/fpu,/pgf/fpu/output format=fixed}%
+\edef\myfun{\pgfkeysvalueof{/pgfplots/summand}}%
+\pgfmathsetmacro{\mysum}{0}%
+\pgfmathsetmacro{\myx}{#2}%
+\pgfmathtruncatemacro{\imax}{#1}%
+\setcounter{isum}{1}%
+\loop
+\pgfmathsetmacro{\mysum}{\mysum+\myfun(\value{isum},#2)}%
+\ifnum\value{isum}<\imax\relax
+\stepcounter{isum}\repeat
+\pgfmathparse{\mysum}%
+\pgfmathsmuggle\pgfmathresult\endgroup%
+}%

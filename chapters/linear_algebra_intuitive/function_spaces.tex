@@ -220,70 +220,66 @@ This brings up an interesting question: what does it mean when the scalar produc
 	\end{align*}
 	Much like with vectors in $\Rs[n]$ we say that these two functions are orthogonal. In turn, this means that we can use them to form an orthonormal basis set to express all smooth functions on the same interval. In fact - a very similar idea, i.e. using infinite series of trigonometric functions to construct other functions, is used to form the \emph{Fourier series}, which we explore in greater depth in \autoref{chapter:fourier}).
 
-	The \emph{Legendre polynomial} are an infinite set of orthogonal polynomials defined on the interval $[-1,1]$, which arise in many different situations throughout science such as the wave functions of the electrons in a Hydrogen-like atom. The first few Legendre polynomials are
-	\begin{align}
-		P_{0}(x) &= 1,\nonumber\\
-		P_{1}(x) &= x,\nonumber\\
-		P_{2}(x) &= \frac{1}{2}\left(3x^{2}-1\right),\nonumber\\
-		P_{3}(x) &= \frac{1}{2}\left(5x^{3}-3x\right),\nonumber\\
-		P_{4}(x) &= \frac{1}{8}\left(35x^{4}-30x^{2}+3\right),\nonumber\\
-		P_{5}(x) &= \frac{1}{8}\left(63x^{5}-70x^{3}+15x\right),\nonumber\\
-		P_{6}(x) &= \frac{1}{16}\left(231x^{6}-315x^{4}+105x^{2}-5\right),\\
-		\vdots\nonumber
-		\label{eq:Legendre_polynomials_first_7}
-	\end{align}
+The \emph{Legendre polynomial} are an infinite set of orthogonal polynomials defined on the interval $[-1,1]$, which arise in many different situations throughout science such as the wave functions of the electrons in a Hydrogen-like atom. The first few Legendre polynomials are
+\begin{align}
+	P_{0}(x) &= 1,\nonumber\\
+	P_{1}(x) &= x,\nonumber\\
+	P_{2}(x) &= \frac{1}{2}\left(3x^{2}-1\right),\nonumber\\
+	P_{3}(x) &= \frac{1}{2}\left(5x^{3}-3x\right),\nonumber\\
+	P_{4}(x) &= \frac{1}{8}\left(35x^{4}-30x^{2}+3\right),\nonumber\\
+	P_{5}(x) &= \frac{1}{8}\left(63x^{5}-70x^{3}+15x\right),\nonumber\\
+	P_{6}(x) &= \frac{1}{16}\left(231x^{6}-315x^{4}+105x^{2}-5\right),\\
+	\vdots\nonumber
+	\label{eq:Legendre_polynomials_first_7}
+\end{align}
 
-	with the general formula for the $n$-th Legendre polynomial being
-	\begin{equation}
-		P_{n}(x) = \frac{1}{2^{n}}\sum\limits_{k=0}^{n}\binom{n}{k}\left(x-1\right)^{n-k}\left(x+1\right)^{k}.
-		\label{eq:Legendre_polynomial_general}
-	\end{equation}
+with the general formula for the $n$-th Legendre polynomial being
+\begin{equation}
+	P_{n}(x) = \frac{1}{2^{n}}\sum\limits_{k=0}^{n}\binom{n}{k}\left(x-1\right)^{n-k}\left(x+1\right)^{k}.
+	\label{eq:Legendre_polynomial_general}
+\end{equation}
 
-	Let's check two combinations from the first $7$ Legendre polynomials to see that they functions are indeed orthogonal:
-	\begin{listitemize}
-		\item[${P_{1}}$ and $P_{3}$]
-			\[
-				P_{1}\cdot P_{3} = \frac{1}{2}\int\limits_{-1}^{1}\left(5x^{4}-3x^{2}\right)\dif x = \frac{1}{2}\left.\left(x^{5}-x^{3}\right)\right|_{-1}^{1} = 1-1-1+1 = 0.
-			\]
-		\item[$P_{2}$ and $P_{5}$]
-			\begin{align*}
-				P_{2}\cdot P_{5} &= \frac{1}{16}\int\limits_{-1}^{1}\left( 3x^{2}-1 \right)(63x^{5}-70x^{3}+15x)\dif x\\
-								 &= \frac{1}{16} \int_{-1}^{1}\left(189x^{7}-210x^{5}+45x^{3}-63x^{5}+70x^{3}-15x\right) \dif x\\
-								 &= \frac{1}{16}\left.\left(27x^{8}-42x^{6}+15x^{4}-12x^{6}+23x^{4}-7.5x^{2}\right)\right|_{-1}^{1}\\
-								 &= \frac{1}{16}\left[\left(27-42+15-12+23-7.5\right) - \left(27-42+15-12+23-7.5\right)\right]\\
-								 &= 0.
-			\end{align*}
-	\end{listitemize}
+Let's check two combinations from the first $7$ Legendre polynomials to see that they functions are indeed orthogonal:
+\begin{listitemize}
+	\item[${P_{1}}$ and $P_{3}$]
+		\[
+			P_{1}\cdot P_{3} = \frac{1}{2}\int\limits_{-1}^{1}\left(5x^{4}-3x^{2}\right)\dif x = \frac{1}{2}\left.\left(x^{5}-x^{3}\right)\right|_{-1}^{1} = 1-1-1+1 = 0.
+		\]
+	\item[$P_{2}$ and $P_{5}$]
+		\begin{align*}
+			P_{2}\cdot P_{5} &= \frac{1}{16}\int\limits_{-1}^{1}\left( 3x^{2}-1 \right)(63x^{5}-70x^{3}+15x)\dif x\\
+							 &= \frac{1}{16} \int_{-1}^{1}\left(189x^{7}-210x^{5}+45x^{3}-63x^{5}+70x^{3}-15x\right) \dif x\\
+							 &= \frac{1}{16}\left.\left(27x^{8}-42x^{6}+15x^{4}-12x^{6}+23x^{4}-7.5x^{2}\right)\right|_{-1}^{1}\\
+							 &= \frac{1}{16}\left[\left(27-42+15-12+23-7.5\right) - \left(27-42+15-12+23-7.5\right)\right]\\
+							 &= 0.
+		\end{align*}
+\end{listitemize}
 
-\newcounter{isum}
-\pgfplotsset{summand/.initial=max}
-\pgfmathdeclarefunction{sum}{2}{%
-\begingroup%
-\pgfkeys{/pgf/fpu,/pgf/fpu/output format=fixed}%
-\edef\myfun{\pgfkeysvalueof{/pgfplots/summand}}%
-\pgfmathsetmacro{\mysum}{0}%
-\pgfmathsetmacro{\myx}{#2}%
-\pgfmathtruncatemacro{\imax}{#1}%
-\setcounter{isum}{1}%
-\loop
-\pgfmathsetmacro{\mysum}{\mysum+\myfun(\value{isum},#2)}%
-\ifnum\value{isum}<\imax\relax
-\stepcounter{isum}\repeat
-\pgfmathparse{\mysum}%
-\pgfmathsmuggle\pgfmathresult\endgroup%
-}%
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-			vector plane,
-			xmin=-1, xmax=1,
-			ymin=-1, ymax=1,
-			declare function={L(\n,\x)=2^{-\n}*;},
-		]
+			width=10cm, height=10cm,
+			xlabel={$x$},
+			ylabel={$y$},
+			xmin=-1.2, xmax=1.2,
+			ymin=-1.2, ymax=1.2,
+			xtick={-1,-0.5,...,1},
+			ytick={-1,-0.5,...,1},
+			samples=100,
+			grid=major,
+			major grid style={black!10},
+			% !!!!!!! ------ ADD LEGEND ------ !!!!!!! %
+			]
+			\foreach \k in {0,...,5}{
+				\edef\drawplot{\noexpand
+					\addplot[function, xcol\k, domain=-1:1] {legendre(x, \k)};
+				}
+				\drawplot
+			}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{The first $n$ Legendre polynomials.}
+	\caption{The first $6$ Legendre polynomials.}
 	\label{fig:first_n_Legendre_polynomials}
 \end{figure}
 
