@@ -1,6 +1,8 @@
 \section{Functions as vectors}
 \begin{note}{Calculus ahead!}{}
 	This section uses ideas discussed in the chapter about $1$-dimensional real calculus (\autoref{chapter:calculus_1D}). While strict knowledge of calculus is not necessary, some concepts would be rather difficult to understand without it.
+	
+	In addition, this section is merely a brief introduction to a broader idea, and is not meant in any way to be an exhaustive analysis of the topic.
 \end{note}
 
 \subsection{Properties of vectors}
@@ -271,12 +273,12 @@ Let's check two combinations from the first $7$ Legendre polynomials to see that
 			major grid style={black!10},
 			% !!!!!!! ------ ADD LEGEND ------ !!!!!!! %
 			]
-			\foreach \k in {0,...,5}{
-				\edef\drawplot{\noexpand
-					\addplot[function, xcol\k, domain=-1:1] {legendre(x, \k)};
-				}
-				\drawplot
-			}
+			% \foreach \k in {0,...,5}{
+			% 	\edef\drawplot{\noexpand
+			% 		\addplot[function, xcol\k, domain=-1:1] {legendre(x, \k)};
+			% 	}
+			% 	\drawplot
+			% }
 		\end{axis}
 	\end{tikzpicture}
 	\caption{The first $6$ Legendre polynomials.}
@@ -337,5 +339,76 @@ One very well known operator which obeys these two criteria is the derivative op
 
 We can therefore apply to derivatives all the general ideas we learned about linear transformations! This is very useful, and will be used in later chapters.
 
-In fact, in some cases we can even express the derivative opeator as a matrix: \ldots
-\tbw{polynomials an the derivative operator in matrix form}
+In fact, in some cases we can even express the derivative opeator as a matrix: consider the following set of real smooth functions:
+\begin{equation}
+	B = \left\{1, x, x^{2}, x^{3}, \dots \right\}.
+	\label{eq:polynomial_basis_set}
+\end{equation}
+We can write any smooth function as an infinite sum of the functions in $B$, i.e. a Maclaurin expansion (\autoref{sec:taylor_series}). Therefore, the set spans $C^{\infty}$. For example,
+\[
+	\eu^{x} = 1 + x + \frac{1}{2}x^{2} + \frac{1}{3!}x^{3} + \frac{1}{4!}x^{4} + \dots
+\]
+Since all the terms of the series are needed in order to express all the possible functions in $C^{\infty}$, it is also has a minimal set which spans $C^{\infty}$ - and thus $B$ is a basis set of $C^{\infty}$.
+
+\begin{note}{Orthogonality of $\bm{B}$}{}
+	$B$ is not an orthogonal set on $\Rs$, since e.g.
+	\[
+		x\cdot x^{2} = \int\limits_{-\infty}^{\infty}x^{3}\dif x = \left.\frac{1}{4}x^{4}\right|_{-\infty}^{\infty} = \infty+\infty = \infty.
+	\]
+\end{note}
+
+We can represent any function spanned by $B$ as an infinite column vector, where each component is the respective coefficient of $1, x, x^{2}, \dots$ in the function's Maclaurin expansion. For example,
+\[
+	{\NiceMatrixOptions{cell-space-limits=3pt}
+		\eu^{x}=
+		\begin{bNiceMatrix}
+			1 \\ 1 \\ \frac{1}{2} \\ \frac{1}{3!} \\ \frac{1}{4!} \\ \vdots
+		\end{bNiceMatrix}
+	}
+\]
+
+The basis functions in $B$ can then be written as
+\[
+	1=\colvec{1;0;0;0;\vdots},\quad x=\colvec{0;1;0;0;\vdots},\quad x^{2} = \colvec{0;0;1;0;\vdots}, \quad x^{3}=\colvec{0;0;0;1;\vdots},\quad\dots
+\]
+
+Recall the first derivative of a general $n$-degree polynomial
+\[
+	P(x)=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+\dots+a_{n}x^{n}
+\]
+(\autoref{eq:polynomial_1st_derivative}):
+
+\[
+	P'(x) = a_{1} + 2a_{2}x + 3a_{3}x^{2} + 4a_{4}x^{3} + \dots + na^{n}x^{n-1}.
+\]
+
+We can describe the derivative as follows: for any $n$ we set the coefficient of $x^{n-1}$ in the derivative to $na_{n}$, and set the coefficient of $x^{n}$ to be zero:
+\[
+	\colvec{a_{0};a_{1};a_{2};a_{3};\vdots} \mapsto \colvec{a_{1};2a_{2};3a_{3};4a_{4};\vdots},
+\]
+and the effect on the basis vector is then
+\[
+	\begin{tabular}{cccc}
+		$\colvec{1;0;0;0;\vdots}$ & $\colvec{0;1;0;0;\vdots}$ & $\colvec{0;0;1;0;\vdots}$ & $\colvec{0;0;0;1;\vdots}$ \\
+		$\downmapsto$ & $\downmapsto$ & $\downmapsto$ & $\downmapsto$ \\
+		$\colvec{0;0;0;0;\vdots}$ & $\colvec{1;0;0;0;\vdots}$ & $\colvec{0;2;0;0;\vdots}$ & $\colvec{0;0;3;0;\vdots}$ \\
+	\end{tabular}
+\]
+
+Now we can easily write the matrix representation of the derivative in this basis:
+\begin{equation}
+	D =
+	\begin{bmatrix}
+		0 & 1 & 0 & 0 & \dots\\
+		0 & 0 & 2 & 0 & \dots\\
+		0 & 0 & 0 & 3 & \dots\\
+		\vdots & \vdots & \vdots & \vdots & \ddots\\
+	\end{bmatrix}
+	\label{eq:derivative_matrix}
+\end{equation}
+
+\begin{note}{Infinite dimensions}{}
+It is important to note that we didn't define what infinite column vectors and matrices are, and a-priori there is no guarantee that we can even perform any of the operations we use for finite-dimensional vectors and matrices. However, what we showed here is correct - but a more advanced and rigorous linear algebra is needed in order to prove it.
+\end{note}
+
+\subsection{Eigenfunctions}

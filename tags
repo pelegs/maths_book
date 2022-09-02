@@ -49,6 +49,7 @@ Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subs
 Differential equations	chapters/differential_equations/preface.tex	/^\\chapter{Differential equations}$/;"	c
 Dual vectors	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\section{Dual vectors}\\label{section:dual_vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Duality	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Duality}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
+Eigenfunctions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Eigenfunctions}$/;"	u	section:Functions as vectors
 Eigenvectors and eigenvalues	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\section{Eigenvectors and eigenvalues}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Exercises	chapters/calculus_1D/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:1-dimension real calculus
 Exercises	chapters/differential_equations/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Differential equations
@@ -206,6 +207,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\czhat	settings.tex	/^\\newcommand{\\czhat}{\\textcolor{xdarkgreen}{\\hat{z}}}$/;"	C
 \\defeq	settings.tex	/^\\newcommand{\\defeq}{:=}$/;"	C
 \\descitemlabel	settings.tex	/^\\newcommand{\\descitemlabel}[1]{%$/;"	C
+\\downmapsto	settings.tex	/^\\newcommand{\\downmapsto}{\\rotatebox[origin=c]{-90}{$\\scriptstyle\\mapsto$}\\mkern2mu}$/;"	C
 \\draworigin	settings.tex	/^\\newcommand{\\draworigin}{\\fill (0,0) circle (0.075);}$/;"	C
 \\eb	settings.tex	/^\\newcommand{\\eb}[1]{\\hat{e}_{#1}}$/;"	C
 \\eqdef	settings.tex	/^\\newcommand{\\eqdef}{=:}$/;"	C
@@ -562,6 +564,7 @@ eq:cross_product_to_dot_product_part2	chapters/linear_algebra_intuitive/vectors.
 eq:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{eq:cube roots of 1}$/;"	l
 eq:cylinder_to_cartesian	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{eq:cylinder_to_cartesian}$/;"	l
 eq:derivative_as_linear_opeator	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:derivative_as_linear_opeator}$/;"	l
+eq:derivative_matrix	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:derivative_matrix}$/;"	l
 eq:determinant_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_2x2}$/;"	l
 eq:determinant_3x3	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_3x3}$/;"	l
 eq:determinant_AB	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{eq:determinant_AB}$/;"	l
@@ -670,6 +673,7 @@ eq:outer_product	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\labe
 eq:outer_product	chapters/linear_algebra_intuitive/dual_spaces.tex	/^	\\label{eq:outer_product}$/;"	l
 eq:outer_product_simple_example	chapters/linear_algebra_intuitive/dual_spaces.tex	/^	\\label{eq:outer_product_simple_example}$/;"	l
 eq:periodic function	chapters/intro/relations_functions.tex	/^	\\label{eq:periodic function}$/;"	l
+eq:polynomial_basis_set	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:polynomial_basis_set}$/;"	l
 eq:polynomial_function	chapters/intro/polynomials.tex	/^	\\label{eq:polynomial_function}$/;"	l
 eq:powers of i	chapters/intro/complex_numbers.tex	/^	\\label{eq:powers of i}$/;"	l
 eq:powers_using_e	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:powers_using_e}$/;"	l
