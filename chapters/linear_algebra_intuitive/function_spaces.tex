@@ -301,10 +301,11 @@ In the context of vectors, linear transformations are functions that obey the tw
 	\]
 	The following table shows some results of applying $O$ to different smooth functions:
 	\begin{center}
-		{\renewcommand*{\arraystretch}{1.5}
-		\begin{tabular}{ll}
+		\begin{NiceTabular}{ll}[
+			cell-space-limits=3pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+			]
 			\toprule
-			$f(x)$ & $O \left( f(x) \right)$\\
+			\RowStyle{\bfseries}$f(x)$ & $O \left( f(x) \right)$\\
 			\midrule
 			$x$ & $2x^{2}$\\
 			$x^{2}$ & $2x^{4}$\\
@@ -313,8 +314,7 @@ In the context of vectors, linear transformations are functions that obey the tw
 			$e^{x}$ & $2e^{2x}$\\
 			$\sin(x)$ & $2\sin^{2}(x)$\\
 			\bottomrule
-		\end{tabular}
-	}
+		\end{NiceTabular}
 	\end{center}
 \end{example}
 
@@ -372,15 +372,17 @@ The basis functions in $B$ can then be written as
 	1=\colvec{1;0;0;0;\vdots},\quad x=\colvec{0;1;0;0;\vdots},\quad x^{2} = \colvec{0;0;1;0;\vdots}, \quad x^{3}=\colvec{0;0;0;1;\vdots},\quad\dots
 \]
 
-Recall the first derivative of a general $n$-degree polynomial
+Recall that the first derivative of a general $n$-degree polynomial
 \[
 	P(x)=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+\dots+a_{n}x^{n}
 \]
-(\autoref{eq:polynomial_1st_derivative}):
+
+is
 
 \[
 	P'(x) = a_{1} + 2a_{2}x + 3a_{3}x^{2} + 4a_{4}x^{3} + \dots + na^{n}x^{n-1}.
 \]
+(\autoref{eq:polynomial_1st_derivative})
 
 We can describe the derivative as follows: for any $n$ we set the coefficient of $x^{n-1}$ in the derivative to $na_{n}$, and set the coefficient of $x^{n}$ to be zero:
 \[
@@ -388,10 +390,10 @@ We can describe the derivative as follows: for any $n$ we set the coefficient of
 \]
 and the effect on the basis vector is then
 \[
-	\begin{tabular}{cccc}
-		$\colvec{1;0;0;0;\vdots}$ & $\colvec{0;1;0;0;\vdots}$ & $\colvec{0;0;1;0;\vdots}$ & $\colvec{0;0;0;1;\vdots}$ \\
-		$\downmapsto$ & $\downmapsto$ & $\downmapsto$ & $\downmapsto$ \\
-		$\colvec{0;0;0;0;\vdots}$ & $\colvec{1;0;0;0;\vdots}$ & $\colvec{0;2;0;0;\vdots}$ & $\colvec{0;0;3;0;\vdots}$ \\
+	\begin{tabular}{lcccc}
+		$P(x)$ & $\colvec{1;0;0;0;\vdots}$ & $\colvec{0;1;0;0;\vdots}$ & $\colvec{0;0;1;0;\vdots}$ & $\colvec{0;0;0;1;\vdots}$ \\
+		& $\downmapsto$ & $\downmapsto$ & $\downmapsto$ & $\downmapsto$ \\
+		$P'(x)$ & $\colvec{0;0;0;0;\vdots}$ & $\colvec{1;0;0;0;\vdots}$ & $\colvec{0;2;0;0;\vdots}$ & $\colvec{0;0;3;0;\vdots}$ \\
 	\end{tabular}
 \]
 
@@ -407,8 +409,51 @@ Now we can easily write the matrix representation of the derivative in this basi
 	\label{eq:derivative_matrix}
 \end{equation}
 
+Since the derivative transforms the first basis vector into the zero vector (i.e. the derivative of all constants is always zero), $D$ has a column of zeros. Having a zero column means that the determinant of the derivative is zero. This makes sense: the derivative ``looses'' a dimension, i.e. it isn't an injection: as mentioned, all constants are transformed into zero - and thus the derivative isn't invertible. The closest we get to recover an original function given its derivative is by using the anti-derivative (i.e. indefinite integrals) - but this gives us only a family of functions and not the any specific one we used.
+
 \begin{note}{Infinite dimensions}{}
 It is important to note that we didn't define what infinite column vectors and matrices are, and a-priori there is no guarantee that we can even perform any of the operations we use for finite-dimensional vectors and matrices. However, what we showed here is correct - but a more advanced and rigorous linear algebra is needed in order to prove it.
 \end{note}
 
+We can use the Gram-Schmidt process to orthogonalize the basis $B$. In order to avoid infinite scalar products we use the interval $I=[-1,1]$. First, let's quickly calculate the first three square norms of $B$:
+\begin{align*}
+	\gnorm{1}^{2} &= \int\limits_{-1}^{1}1\cdot1\dif x = \left.x\phantom{\mid}\right|_{-1}^{1} = 2,\\
+	\gnorm{x}^{2} &= \int\limits_{-1}^{1}x\cdot x\dif x = \int\limits_{-1}^{1}x^{2}\dif x = \left.\frac{1}{3}x^{3}\right|_{-1}^{1} = \frac{2}{3},\\
+	\gnorm{x^{2}}^{2} &= \int\limits_{-1}^{1}x^{4}\cdot x\dif x = \left.\frac{1}{5}x^{5}\right|_{-1}^{1} = \frac{2}{5},\\
+	\vdots\\
+	\gnorm{x^{n}}^{2} &= \int\limits_{-1}^{1}x^{2n}\cdot x\dif x = \left.\frac{1}{2n+1}x^{2n}\right|_{-1}^{1} = \frac{2}{2n+1}.
+\end{align*}
+The following table summarizes the dot product of any two of the basis functions $1,x,x^{2}$ and $x^{3}$ on $[-1,1]$:
+
+\begin{center}
+	\begin{NiceTabular}{>{\columncolor{\tabcol!50}}l|llll}[
+		cell-space-limits=4pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+		]
+		\toprule
+		\RowStyle{\bfseries}& $1$ & $x$ & $x^{2}$ & $x^{3}$\\
+		\midrule
+		$1$ &   $2$ & $0$ & $\frac{2}{3}$ & $0$ \\
+		$x$ &   $0$ & $\frac{2}{3}$ & $0$ & $\frac{2}{5}$ \\
+		$x^{2}$ & $\frac{2}{3}$ & $0$ & $\frac{2}{5}$ & $0$ \\
+		$x^{3}$ & $0$ & $\frac{2}{5}$ & $0$ & $\frac{2}{7}$ \\
+		\bottomrule
+	\end{NiceTabular}
+\end{center}
+
+Using these values we can now apply the GSP (we use the braket notation as to not confuse the scalar product with the regular product):
+\begin{align*}
+	1 &\longrightarrow 1,\\
+	x &\longrightarrow x - \frac{\inpr{1}{x}}{2} = x-0 = x,\\
+	x^{2} &\longrightarrow x^{2} - \frac{\inpr{1}{x^{2}}}{2} - \frac{\inpr{x}{x^{2}}}{\frac{2}{3}}x = x^{2}-\frac{1}{3},\\
+	x^{3} &\longrightarrow x^{3} - \frac{\inpr{1}{x^{3}}}{2} - \frac{\inpr{x}{x^{3}}}{\frac{2}{3}}x - \frac{\inpr{x^{2}}{x^{3}}}{\frac{2}{5}}x^{2} = x^{3}-\frac{\frac{2}{5}}{\frac{2}{3}}x = x^{3} - \frac{3}{5}x.
+\end{align*}
+
+The resulting orthogonal basis set is exactly the Legendre polynomials, up to scaling! This is not really suprising, as the Legendre polynomials are orthogonal, after all.
+
 \subsection{Eigenfunctions}
+Some operators have \emph{eigenfunctions}: functions that are scaled when the operator is applied to them. In the case of the derivative operator, for example, one such function is the exponent function, since
+\begin{equation}
+	\left[ \eu^{\alpha x} \right]' = \alpha \eu^{\alpha x}.
+	\label{eq:exponent_derivative_fspace}
+\end{equation}
+The corresponding eigenvalue of $\eu^{\alpha x}$ is therefore $\alpha$.

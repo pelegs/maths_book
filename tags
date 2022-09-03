@@ -217,6 +217,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\fiveSpheres	chapters/intro/combinatorics.tex	/^\\newcommand{\\fiveSpheres}[2]{$/;"	C
 \\ghl	settings.tex	/^\\newcommand{\\ghl}[1]{\\textcolor{xgreen}{#1}}$/;"	C
 \\gnorm	settings.tex	/^\\newcommand{\\gnorm}[1]{\\left\\|\\,  #1 \\, \\right\\|}$/;"	C
+\\inpr	settings.tex	/^\\newcommand{\\inpr}[2]{\\langle #1,#2 \\rangle}$/;"	C
 \\iu	settings.tex	/^\\newcommand{\\iu}{\\mathrm{i}\\mkern1mu}$/;"	C
 \\listitemlabel	settings.tex	/^\\newcommand{\\listitemlabel}[1]{%$/;"	C
 \\nbtitlestretch	figures/cover/cover.tex	/^\\newcommand{\\nbtitlestretch}{\\spaceskip0.6em}$/;"	C
@@ -577,6 +578,7 @@ eq:eigenvec_rearranged_3	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\
 eq:eigenvector_matrix_form	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:eigenvector_matrix_form}$/;"	l
 eq:eigenvector_matrix_form_indeces	chapters/linear_algebra_intuitive/eigenvectors.tex	/^	\\label{eq:eigenvector_matrix_form_indeces}$/;"	l
 eq:exponent	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponent}$/;"	l
+eq:exponent_derivative_fspace	chapters/linear_algebra_intuitive/function_spaces.tex	/^	\\label{eq:exponent_derivative_fspace}$/;"	l
 eq:exponents_properties	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq:exponents_properties}$/;"	l
 eq:factorial_def	chapters/intro/combinatorics.tex	/^	\\label{eq:factorial_def}$/;"	l
 eq:factorial_def_recursive	chapters/intro/combinatorics.tex	/^	\\label{eq:factorial_def_recursive}$/;"	l
