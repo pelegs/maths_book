@@ -9,7 +9,6 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
-1-dimension real calculus	chapters/calculus_1D/preface.tex	/^\\chapter{1-dimension real calculus}\\label{chapter:calculus_1D}$/;"	c
 3D Linear transformations	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subsection{3D Linear transformations}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Linear transformations
 A bit about more general vector spaces and their duals	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{A bit about more general vector spaces and their duals}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
 Algebraic approach	chapters/intro/complex_numbers.tex	/^\\subsection{Algebraic approach}$/;"	u	section:Introduction""Complex Numbers
@@ -29,7 +28,7 @@ Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock
 Basic Definitions	chapters/intro/trigonomentry.tex	/^\\subsection{Basic Definitions}$/;"	u	section:Introduction""Trigonometric functions
 Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Introduction""Relations and Functions
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
-Basis sets	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Basis sets}$/;"	u	section:Functions as vectors
+Basis sets	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Basis sets}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Calulating eigenvectors	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Calulating eigenvectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
 Cartesian Products	chapters/intro/math_symbols_sets.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Cartesian Products	sed_test.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Mathematical Symbols and Sets
@@ -49,7 +48,7 @@ Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subs
 Differential equations	chapters/differential_equations/preface.tex	/^\\chapter{Differential equations}$/;"	c
 Dual vectors	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\section{Dual vectors}\\label{section:dual_vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Duality	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Duality}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
-Eigenfunctions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Eigenfunctions}$/;"	u	section:Functions as vectors
+Eigenfunctions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Eigenfunctions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Eigenvectors and eigenvalues	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\section{Eigenvectors and eigenvalues}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Exercises	chapters/calculus_1D/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:1-dimension real calculus
 Exercises	chapters/differential_equations/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Differential equations
@@ -64,9 +63,9 @@ Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subse
 Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 Formulating plant nutrient solutions	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Formulating plant nutrient solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Some real life uses of linear algebra
 From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
-Function values as vector components	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Function values as vector components}$/;"	u	section:Functions as vectors
+Function values as vector components	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Function values as vector components}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Functionals	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Functionals}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
-Functions as vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\section{Functions as vectors}$/;"	s
+Functions as vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\section{Functions as vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
 Graphs	chapters/intro/trigonomentry.tex	/^\\subsection{Graphs}$/;"	u	section:Introduction""Trigonometric functions
 Hunter-pray population growth	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Hunter-pray population growth}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Some real life uses of linear algebra
@@ -108,23 +107,24 @@ Norm and products	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subs
 Norm, polar coordinates and spherical coordinates	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Norm, polar coordinates and spherical coordinates}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Normal vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Normal vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Operations	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Operations}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
-Operators	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Operators}$/;"	u	section:Functions as vectors
+Operators	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Operators}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Polynomial functions	chapters/intro/polynomials.tex	/^\\section{Polynomial functions}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Primary components analsis	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Primary components analsis}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Some real life uses of linear algebra
 Problems	chapters/intro/exercises.tex	/^\\subsection{Problems}$/;"	u	section:Introduction""Exercises
-Properties of vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Properties of vectors}$/;"	u	section:Functions as vectors
+Properties of vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Properties of vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Radians	chapters/intro/trigonomentry.tex	/^\\subsection{Radians}$/;"	u	section:Introduction""Trigonometric functions
+Real calculus in 1D	chapters/calculus_1D/preface.tex	/^\\chapter{Real calculus in 1D}\\label{chapter:calculus_1D}$/;"	c
 Real functions	chapters/intro/relations_functions.tex	/^\\subsection{Real functions}$/;"	u	section:Introduction""Relations and Functions
 Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relations and Functions}\\label{sec:relations_and_functions}$/;"	s	chapter:Introduction
 Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots of complex numbers}$/;"	u	section:Introduction""Complex Numbers
 Row vectors and the outer product	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Row vectors and the outer product}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
 Scalar multiplication and addition of vectors	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Scalar multiplication and addition of vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""The Bra-Ket notation
-Scalar product, norm	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Scalar product, norm}$/;"	u	section:Functions as vectors
+Scalar product, norm	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Scalar product, norm}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:1-dimension real calculus
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Sets and subsets	sed_test.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Mathematical Symbols and Sets
 Simple combinatorics and the binomial coefficients	chapters/intro/combinatorics.tex	/^\\section{Simple combinatorics and the binomial coefficients}$/;"	s	chapter:Introduction
-Smooth functions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Smooth functions}$/;"	u	section:Functions as vectors
+Smooth functions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Smooth functions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Solutions	chapters/intro/exercises.tex	/^\\subsection{Solutions}$/;"	u	section:Introduction""Exercises
 Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Some examples	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Some examples}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
@@ -207,7 +207,6 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\czhat	settings.tex	/^\\newcommand{\\czhat}{\\textcolor{xdarkgreen}{\\hat{z}}}$/;"	C
 \\defeq	settings.tex	/^\\newcommand{\\defeq}{:=}$/;"	C
 \\descitemlabel	settings.tex	/^\\newcommand{\\descitemlabel}[1]{%$/;"	C
-\\downmapsto	settings.tex	/^\\newcommand{\\downmapsto}{\\rotatebox[origin=c]{-90}{$\\scriptstyle\\mapsto$}\\mkern2mu}$/;"	C
 \\draworigin	settings.tex	/^\\newcommand{\\draworigin}{\\fill (0,0) circle (0.075);}$/;"	C
 \\eb	settings.tex	/^\\newcommand{\\eb}[1]{\\hat{e}_{#1}}$/;"	C
 \\eqdef	settings.tex	/^\\newcommand{\\eqdef}{=:}$/;"	C
@@ -217,7 +216,6 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\fiveSpheres	chapters/intro/combinatorics.tex	/^\\newcommand{\\fiveSpheres}[2]{$/;"	C
 \\ghl	settings.tex	/^\\newcommand{\\ghl}[1]{\\textcolor{xgreen}{#1}}$/;"	C
 \\gnorm	settings.tex	/^\\newcommand{\\gnorm}[1]{\\left\\|\\,  #1 \\, \\right\\|}$/;"	C
-\\inpr	settings.tex	/^\\newcommand{\\inpr}[2]{\\langle #1,#2 \\rangle}$/;"	C
 \\iu	settings.tex	/^\\newcommand{\\iu}{\\mathrm{i}\\mkern1mu}$/;"	C
 \\listitemlabel	settings.tex	/^\\newcommand{\\listitemlabel}[1]{%$/;"	C
 \\nbtitlestretch	figures/cover/cover.tex	/^\\newcommand{\\nbtitlestretch}{\\spaceskip0.6em}$/;"	C
@@ -267,6 +265,7 @@ cc	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/ele
 cc	figures/chapters/tapir_voronoi.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/cover/tapir.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/ideas/SkateBoardBoy.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/ideas/speech_17.svg	/^  >$/;"	n	uri:http://web.resource.org/cc/
 cc	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	n	uri:http://creativecommons.org/ns#
@@ -276,7 +275,7 @@ cc	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="h
 cc	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://web.resource.org/cc/
 cc	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://creativecommons.org/ns#
 cc	figures/symbols/solve_hand_only.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://creativecommons.org/ns#
-chapter:calculus_1D	chapters/calculus_1D/preface.tex	/^\\chapter{1-dimension real calculus}\\label{chapter:calculus_1D}$/;"	l
+chapter:calculus_1D	chapters/calculus_1D/preface.tex	/^\\chapter{Real calculus in 1D}\\label{chapter:calculus_1D}$/;"	l
 chapter:intro	chapters/intro/preface.tex	/^\\chapter{Introduction}\\label{chapter:intro}$/;"	l
 chapter:linear algebra intuitive	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	l
 chapter:linear algebra rigorous	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	l
@@ -350,6 +349,12 @@ circle3224	figures/ideas/Coloured dot pattern fills.svg	/^           style="opac
 circle3224	figures/linear_algebra/tapir_transform.svg	/^           style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;str/;"	i
 circle3224	figures/linear_algebra/tapir_transform2.svg	/^           style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;str/;"	i
 clean	Makefile	/^clean:$/;"	t
+clip-0	figures/chapters/tapir_skater.svg	/^       id="clip-0"><path$/;"	d
+clip-0	figures/chapters/tapir_skater.svg	/^       id="clip-0"><path$/;"	i
+clip-1	figures/chapters/tapir_skater.svg	/^       id="clip-1"><path$/;"	d
+clip-1	figures/chapters/tapir_skater.svg	/^       id="clip-1"><path$/;"	i
+clip-2	figures/chapters/tapir_skater.svg	/^       id="clip-2"><path$/;"	d
+clip-2	figures/chapters/tapir_skater.svg	/^       id="clip-2"><path$/;"	i
 clip1	figures/chapters/ftcrics/tapir_ft.svg	/^       id="clip1">$/;"	d
 clip1	figures/chapters/ftcrics/tapir_ft.svg	/^       id="clip1">$/;"	i
 clip1	figures/chapters/tapir_butterfly.svg	/^       id="clip1">$/;"	d
@@ -403,6 +408,7 @@ dc	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/ele
 dc	figures/chapters/tapir_voronoi.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/cover/tapir.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/ideas/SkateBoardBoy.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/ideas/speech_17.svg	/^  >$/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://purl.org/dc/elements/1.1/
 dc	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	n	uri:http://purl.org/dc/elements/1.1/
@@ -419,10 +425,12 @@ defs2	figures/chapters/tapir_butterfly.svg	/^     id="defs2">$/;"	i
 defs2	figures/chapters/tapir_comics.svg	/^     id="defs2">$/;"	i
 defs2	figures/chapters/tapir_dissolve.svg	/^     id="defs2">$/;"	i
 defs2	figures/chapters/tapir_rainbow.svg	/^     id="defs2">$/;"	i
+defs2	figures/chapters/tapir_skater.svg	/^     id="defs2"><marker$/;"	i
 defs2	figures/chapters/tapir_stars.svg	/^     id="defs2">$/;"	i
 defs2	figures/chapters/tapir_strawberry_two.svg	/^     id="defs2" \/>$/;"	i
 defs2	figures/chapters/tapir_warhol.svg	/^     id="defs2">$/;"	i
 defs2	figures/cover/tapir.svg	/^     id="defs2">$/;"	i
+defs2	figures/ideas/skater_tapir.svg	/^     id="defs2"><inkscape:path-effect$/;"	i
 defs2	figures/linear_algebra/tapir_transform.svg	/^     id="defs2">$/;"	i
 defs2	figures/linear_algebra/tapir_transform2.svg	/^     id="defs2">$/;"	i
 defs2649	figures/ideas/Coloured dot pattern fills.svg	/^     id="defs2649">$/;"	i
@@ -758,6 +766,9 @@ feGaussianBlur12157	figures/chapters/tapir_rainbow.svg	/^         id="feGaussian
 feGaussianBlur12161	figures/chapters/tapir_rainbow.svg	/^         id="feGaussianBlur12161" \/>$/;"	i
 feGaussianBlur12165	figures/chapters/tapir_rainbow.svg	/^         id="feGaussianBlur12165" \/>$/;"	i
 feGaussianBlur12169	figures/chapters/tapir_rainbow.svg	/^         id="feGaussianBlur12169" \/>$/;"	i
+feGaussianBlur15182	figures/chapters/tapir_skater.svg	/^         id="feGaussianBlur15182" \/><\/filter><\/defs><g$/;"	i
+feGaussianBlur4170	figures/chapters/tapir_skater.svg	/^         id="feGaussianBlur4170" \/><\/filter><g$/;"	i
+feGaussianBlur4170	figures/ideas/skater_tapir.svg	/^         id="feGaussianBlur4170" \/><\/filter><\/defs><g$/;"	i
 feGaussianBlur9339	figures/chapters/tapir_butterfly.svg	/^         id="feGaussianBlur9339" \/>$/;"	i
 feTurbulence9143	figures/chapters/tapir_butterfly.svg	/^         result="result1" \/>$/;"	i
 fig:	chapters/linear_algebra_intuitive/eigenvectors.tex	/^		\\label{fig:}$/;"	l
@@ -838,6 +849,12 @@ filter12163	figures/chapters/tapir_rainbow.svg	/^       height="1.2930094">$/;"	
 filter12163	figures/chapters/tapir_rainbow.svg	/^       height="1.2930094">$/;"	i
 filter12167	figures/chapters/tapir_rainbow.svg	/^       height="1.2930094">$/;"	d
 filter12167	figures/chapters/tapir_rainbow.svg	/^       height="1.2930094">$/;"	i
+filter15184	figures/chapters/tapir_skater.svg	/^       height="1.0184946"><feGaussianBlur$/;"	d
+filter15184	figures/chapters/tapir_skater.svg	/^       height="1.0184946"><feGaussianBlur$/;"	i
+filter4168	figures/chapters/tapir_skater.svg	/^       height="1.9082403"><feGaussianBlur$/;"	d
+filter4168	figures/chapters/tapir_skater.svg	/^       height="1.9082403"><feGaussianBlur$/;"	i
+filter4168	figures/ideas/skater_tapir.svg	/^       height="1.9082403"><feGaussianBlur$/;"	d
+filter4168	figures/ideas/skater_tapir.svg	/^       height="1.9082403"><feGaussianBlur$/;"	i
 filter9141	figures/chapters/tapir_butterfly.svg	/^       inkscape:auto-region="true">$/;"	d
 filter9141	figures/chapters/tapir_butterfly.svg	/^       inkscape:auto-region="true">$/;"	i
 filter9337	figures/chapters/tapir_butterfly.svg	/^       height="1.1702004">$/;"	d
@@ -856,9 +873,12 @@ g1060	figures/cover/tapir.svg	/^       id="g1060">$/;"	i
 g1063	figures/chapters/tapir_butterfly.svg	/^       transform="matrix(-0.44765569,0,0,0.44765569,-207.44002,215.36111)">$/;"	i
 g1063	figures/chapters/tapir_dissolve.svg	/^       transform="matrix(-0.447656,0,0,0.447656,-207.44,215.361)">$/;"	i
 g1063	figures/cover/tapir.svg	/^       transform="matrix(-0.44765569,0,0,0.44765569,-207.44002,215.36111)">$/;"	i
+g11649	figures/chapters/tapir_skater.svg	/^     transform="translate(19.954212,63.463915)"><g$/;"	i
 g121318	figures/chapters/tapir_comics.svg	/^         inkscape:label="text">$/;"	i
 g124454	figures/chapters/tapir_comics.svg	/^         inkscape:label="stars">$/;"	i
 g125874	figures/chapters/tapir_comics.svg	/^         inkscape:label="main_star">$/;"	i
+g12817	figures/chapters/tapir_skater.svg	/^     transform="translate(-0.26643606,4.6263331)"><path$/;"	i
+g13255	figures/chapters/tapir_skater.svg	/^     style="filter:url(#filter15184)"><path$/;"	i
 g13495	figures/chapters/tapir_comics.svg	/^       transform="translate(19.98431,-31.22135)">$/;"	i
 g13495	figures/linear_algebra/tapir_transform.svg	/^             transform="translate(19.98431,-31.22135)">$/;"	i
 g13495	figures/linear_algebra/tapir_transform2.svg	/^             transform="translate(19.98431,-31.22135)">$/;"	i
@@ -958,6 +978,8 @@ g3030	figures/symbols/solve_hand_only.svg	/^       transform="translate(136.8013
 g3032	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 g3032	figures/symbols/solve.svg	/^         clip-path="url(#clipPath3036)"><g$/;"	i
 g3032	figures/symbols/solve_hand_only.svg	/^         clip-path="url(#clipPath3036)"><g$/;"	i
+g3051	figures/chapters/tapir_skater.svg	/^     transform="rotate(11.562908,619.28117,-237.13876)"><path$/;"	i
+g3051	figures/ideas/skater_tapir.svg	/^     transform="rotate(11.562908,689.86108,-343.00455)"><path$/;"	i
 g3264	figures/chapters/ftcrics/tapir_ft.svg	/^         id="g3264">$/;"	i
 g3264	figures/chapters/tapir_comics.svg	/^         id="g3264">$/;"	i
 g3264	figures/chapters/tapir_fourier.svg	/^         id="g3264">$/;"	i
@@ -1029,6 +1051,7 @@ g35678	figures/chapters/tapir_voronoi.svg	/^       id="g35678" \/>$/;"	i
 g36160	figures/chapters/tapir_voronoi.svg	/^       id="g36160" \/>$/;"	i
 g367	figures/symbols/solve.svg	/^         transform="matrix(0.04655546,-1.1305258e-5,-1.1305258e-5,-0.04655546,-439.65469,517.780/;"	i
 g3673	figures/chapters/tapir_comics.svg	/^     inkscape:export-ydpi="560.27002">$/;"	i
+g3836	figures/ideas/SkateBoardBoy.svg	/^   <g id="g3836" stroke-width="7.2" stroke="#000" transform="translate(.59173 21.856)" fill-rule/;"	i
 g3874	figures/chapters/tapir_butterfly.svg	/^         transform="matrix(0.29177864,0,0,0.29177864,-45.54265,-107.05637)">$/;"	i
 g4065	figures/chapters/tapir_dissolve.svg	/^       id="g4065">$/;"	d
 g4065	figures/chapters/tapir_dissolve.svg	/^       id="g4065">$/;"	i
@@ -1040,6 +1063,21 @@ g4078	figures/linear_algebra/tapir_transform2.svg	/^       id="g4078">$/;"	d
 g4078	figures/linear_algebra/tapir_transform2.svg	/^       id="g4078">$/;"	i
 g41484	figures/chapters/tapir_warhol.svg	/^         transform="matrix(-0.23260486,0,0,0.23260486,-323.83567,302.54886)">$/;"	i
 g41486	figures/chapters/tapir_warhol.svg	/^       transform="matrix(0.12083561,0,0,0.12083561,-294.27804,303.93201)">$/;"	i
+g4325	figures/chapters/tapir_skater.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4325	figures/ideas/SkateBoardBoy.svg	/^   <g id="g4325" stroke-width="7.2" stroke="#000" transform="matrix(.96228 -.27205 .27205 .96228/;"	i
+g4325	figures/ideas/skater_tapir.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4335	figures/chapters/tapir_skater.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4335	figures/ideas/SkateBoardBoy.svg	/^   <g id="g4335" stroke-width="7.2" stroke="#000" transform="matrix(-.33162 .94341 -.94341 -.331/;"	i
+g4335	figures/ideas/skater_tapir.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4335-4	figures/chapters/tapir_skater.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4335-4	figures/ideas/SkateBoardBoy.svg	/^   <g id="g4335-4" stroke-width="7.2" stroke="#000" transform="matrix(-.33162 .94341 -.94341 -.3/;"	i
+g4335-4	figures/ideas/skater_tapir.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4335-6	figures/chapters/tapir_skater.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4335-6	figures/ideas/SkateBoardBoy.svg	/^   <g id="g4335-6" stroke-width="7.2" stroke="#000" transform="matrix(-.33162 .94341 -.94341 -.3/;"	i
+g4335-6	figures/ideas/skater_tapir.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4335-7	figures/chapters/tapir_skater.svg	/^       fill-rule="evenodd"><path$/;"	i
+g4335-7	figures/ideas/SkateBoardBoy.svg	/^   <g id="g4335-7" stroke-width="7.2" stroke="#000" transform="matrix(-.33162 .94341 -.94341 -.3/;"	i
+g4335-7	figures/ideas/skater_tapir.svg	/^       fill-rule="evenodd"><path$/;"	i
 g4419	figures/ideas/Coloured dot pattern fills.svg	/^       transform="translate(-0.03585417)">$/;"	i
 g44680	figures/chapters/tapir_voronoi.svg	/^       style="stroke:none">$/;"	i
 g4508	figures/chapters/tapir_dissolve.svg	/^       id="g4508">$/;"	d
@@ -1089,6 +1127,9 @@ g4840-949	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opa
 g4840-96	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
 g4840-97	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
 g4986	figures/ideas/Coloured dot pattern fills.svg	/^       style="stroke-width:0.61454493">$/;"	i
+g4992	figures/ideas/SkateBoardBoy.svg	/^   <g id="g4992" transform="translate(-30 10)" fill-rule="evenodd">$/;"	i
+g5115	figures/ideas/SkateBoardBoy.svg	/^   <g id="g5115" stroke="#000" stroke-width="7.2" fill="#ffe6d5" fill-rule="evenodd">$/;"	i
+g5121	figures/ideas/SkateBoardBoy.svg	/^   <g id="g5121" stroke="#000" stroke-width="7.2" fill="#ffe6d5" fill-rule="evenodd">$/;"	i
 g5243	figures/chapters/tapir_comics.svg	/^           inkscape:label="fill_back">$/;"	i
 g5253	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
 g5253-4	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
@@ -1188,6 +1229,9 @@ g5288-7-98	figures/chapters/tapir_stars.svg	/^         style="fill:#ffffff;fill-
 g5330	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
 g5330-1	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
 g5330-3	figures/chapters/tapir_stars.svg	/^       clip-path="url(#clipPath20041)">$/;"	i
+g5491	figures/chapters/tapir_skater.svg	/^     transform="matrix(0.03173243,0.02299275,-0.02299275,0.03173243,74.101535,11.663084)"><g$/;"	i
+g5491	figures/ideas/SkateBoardBoy.svg	/^  <g id="g5491">$/;"	i
+g5491	figures/ideas/skater_tapir.svg	/^     transform="matrix(0.03173243,0.02299275,-0.02299275,0.03173243,54.313808,-4.6327473)"><g$/;"	i
 g54917	figures/chapters/ftcrics/tapir_ft.svg	/^         transform="matrix(16.465401,0,0,16.465401,135.63105,-1219.1681)">$/;"	i
 g54917	figures/chapters/tapir_comics.svg	/^         transform="matrix(16.465401,0,0,16.465401,135.63105,-1219.1681)">$/;"	i
 g54917	figures/chapters/tapir_fourier.svg	/^         transform="matrix(16.465401,0,0,16.465401,135.63105,-1219.1681)">$/;"	i
@@ -1324,6 +1368,8 @@ g6228	figures/linear_algebra/tapir_transform.svg	/^       id="g6228">$/;"	i
 g6228	figures/linear_algebra/tapir_transform2.svg	/^       id="g6228">$/;"	d
 g6228	figures/linear_algebra/tapir_transform2.svg	/^       id="g6228">$/;"	i
 g6414	figures/chapters/tapir_rainbow.svg	/^       style="mix-blend-mode:normal;fill:#8cc9de;fill-opacity:1;stroke:none;stroke-width:2.64583/;"	i
+g6419	figures/chapters/tapir_skater.svg	/^     transform="matrix(-0.06709021,-0.0151824,-0.0151824,0.06709021,8.1114266,5.914785)"><path$/;"	i
+g6419	figures/ideas/skater_tapir.svg	/^     transform="matrix(-0.06709021,-0.0151824,-0.0151824,0.06709021,-11.676301,-10.381048)"><pat/;"	i
 g6814	figures/chapters/tapir_rainbow.svg	/^       style="mix-blend-mode:normal;fill:#76d98c;fill-opacity:1;stroke:none;stroke-width:2.64583/;"	i
 g6815	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
 g6815-3	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
@@ -1383,6 +1429,8 @@ g7275	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity
 g7275-3	figures/chapters/tapir_stars.svg	/^       style="fill:#ffffff;fill-opacity:1">$/;"	i
 g7493	figures/symbols/solve.svg	/^       transform="rotate(13.342332,-295.15733,2576.2291)"><rect$/;"	i
 g77373	figures/chapters/ftcrics/tapir.svg	/^       transform="matrix(0.35277777,0,0,0.35277777,56.908255,51.57539)">$/;"	i
+g7889	figures/chapters/tapir_skater.svg	/^       id="g7889"><g$/;"	d
+g7889	figures/chapters/tapir_skater.svg	/^       id="g7889"><g$/;"	i
 g7945	figures/chapters/tapir_rainbow.svg	/^       id="g7945">$/;"	d
 g7945	figures/chapters/tapir_rainbow.svg	/^       id="g7945">$/;"	i
 g7945	figures/linear_algebra/tapir_transform.svg	/^       id="g7945">$/;"	d
@@ -1404,6 +1452,10 @@ g8442	figures/linear_algebra/tapir_transform2.svg	/^       id="g8442">$/;"	i
 g8568	figures/chapters/tapir_dissolve.svg	/^       id="g8568">$/;"	d
 g8568	figures/chapters/tapir_dissolve.svg	/^       id="g8568">$/;"	i
 g8595	figures/chapters/tapir_butterfly.svg	/^           transform="translate(-37.295329,-18.536224)">$/;"	i
+g8612	figures/chapters/tapir_skater.svg	/^       transform="matrix(0.35277778,0,0,0.35277778,-80.005133,-76.262593)"><use$/;"	i
+g8616	figures/chapters/tapir_skater.svg	/^       transform="matrix(0.35277778,0,0,0.35277778,-80.005133,-76.262593)"><use$/;"	i
+g8620	figures/chapters/tapir_skater.svg	/^       transform="matrix(0.35277778,0,0,0.35277778,-80.005133,-76.262593)"><use$/;"	i
+g8624	figures/chapters/tapir_skater.svg	/^       transform="matrix(0.35277778,0,0,0.35277778,-80.005133,-76.262593)"><use$/;"	i
 g87357	figures/chapters/tapir_warhol.svg	/^         transform="matrix(-0.23260486,0,0,0.23260486,-323.83567,302.54886)">$/;"	i
 g87359	figures/chapters/tapir_warhol.svg	/^       transform="matrix(0.12083561,0,0,0.12083561,-284.26715,310.98745)">$/;"	i
 g87371	figures/chapters/tapir_warhol.svg	/^         transform="matrix(-0.23260486,0,0,0.23260486,-323.83567,302.54886)">$/;"	i
@@ -1423,6 +1475,122 @@ g93534-0	figures/chapters/tapir_comics.svg	/^         transform="matrix(3.779527
 g93534-0	figures/chapters/tapir_fourier.svg	/^         transform="matrix(3.7795276,0,0,3.7795276,26.615103,-476.62605)">$/;"	i
 g93534-0	figures/linear_algebra/tapir_transform.svg	/^         transform="matrix(3.7795276,0,0,3.7795276,26.615103,-476.62605)">$/;"	i
 g93534-0	figures/linear_algebra/tapir_transform2.svg	/^         transform="matrix(3.7795276,0,0,3.7795276,26.615103,-476.62605)">$/;"	i
+g9780	figures/chapters/tapir_skater.svg	/^     transform="matrix(0.35277778,0,0,0.35277778,-57.294983,-120.8569)"><use$/;"	i
+g9784	figures/chapters/tapir_skater.svg	/^     transform="matrix(0.35277778,0,0,0.35277778,-83.452682,-106.72503)"><use$/;"	i
+glyph-0-0	figures/chapters/tapir_skater.svg	/^         id="glyph-0-0" \/><g$/;"	i
+glyph-0-1	figures/chapters/tapir_skater.svg	/^         id="glyph-0-1"><path$/;"	i
+glyph-0-10	figures/chapters/tapir_skater.svg	/^         id="glyph-0-10"><path$/;"	i
+glyph-0-11	figures/chapters/tapir_skater.svg	/^         id="glyph-0-11"><path$/;"	i
+glyph-0-12	figures/chapters/tapir_skater.svg	/^         id="glyph-0-12"><path$/;"	i
+glyph-0-13	figures/chapters/tapir_skater.svg	/^         id="glyph-0-13"><path$/;"	i
+glyph-0-14	figures/chapters/tapir_skater.svg	/^         id="glyph-0-14"><path$/;"	i
+glyph-0-15	figures/chapters/tapir_skater.svg	/^         id="glyph-0-15"><path$/;"	i
+glyph-0-16	figures/chapters/tapir_skater.svg	/^         id="glyph-0-16"><path$/;"	i
+glyph-0-17	figures/chapters/tapir_skater.svg	/^         id="glyph-0-17"><path$/;"	i
+glyph-0-18	figures/chapters/tapir_skater.svg	/^         id="glyph-0-18"><path$/;"	i
+glyph-0-19	figures/chapters/tapir_skater.svg	/^         id="glyph-0-19"><path$/;"	i
+glyph-0-2	figures/chapters/tapir_skater.svg	/^         id="glyph-0-2"><path$/;"	i
+glyph-0-20	figures/chapters/tapir_skater.svg	/^         id="glyph-0-20"><path$/;"	i
+glyph-0-21	figures/chapters/tapir_skater.svg	/^         id="glyph-0-21"><path$/;"	i
+glyph-0-22	figures/chapters/tapir_skater.svg	/^         id="glyph-0-22"><path$/;"	i
+glyph-0-23	figures/chapters/tapir_skater.svg	/^         id="glyph-0-23"><path$/;"	i
+glyph-0-24	figures/chapters/tapir_skater.svg	/^         id="glyph-0-24"><path$/;"	i
+glyph-0-25	figures/chapters/tapir_skater.svg	/^         id="glyph-0-25"><path$/;"	i
+glyph-0-26	figures/chapters/tapir_skater.svg	/^         id="glyph-0-26"><path$/;"	i
+glyph-0-27	figures/chapters/tapir_skater.svg	/^         id="glyph-0-27"><path$/;"	i
+glyph-0-28	figures/chapters/tapir_skater.svg	/^         id="glyph-0-28"><path$/;"	i
+glyph-0-29	figures/chapters/tapir_skater.svg	/^         id="glyph-0-29"><path$/;"	i
+glyph-0-3	figures/chapters/tapir_skater.svg	/^         id="glyph-0-3"><path$/;"	i
+glyph-0-30	figures/chapters/tapir_skater.svg	/^         id="glyph-0-30"><path$/;"	i
+glyph-0-31	figures/chapters/tapir_skater.svg	/^         id="glyph-0-31"><path$/;"	i
+glyph-0-32	figures/chapters/tapir_skater.svg	/^         id="glyph-0-32"><path$/;"	i
+glyph-0-33	figures/chapters/tapir_skater.svg	/^         id="glyph-0-33"><path$/;"	i
+glyph-0-34	figures/chapters/tapir_skater.svg	/^         id="glyph-0-34"><path$/;"	i
+glyph-0-35	figures/chapters/tapir_skater.svg	/^         id="glyph-0-35"><path$/;"	i
+glyph-0-36	figures/chapters/tapir_skater.svg	/^         id="glyph-0-36"><path$/;"	i
+glyph-0-37	figures/chapters/tapir_skater.svg	/^         id="glyph-0-37"><path$/;"	i
+glyph-0-38	figures/chapters/tapir_skater.svg	/^         id="glyph-0-38"><path$/;"	i
+glyph-0-4	figures/chapters/tapir_skater.svg	/^         id="glyph-0-4"><path$/;"	i
+glyph-0-5	figures/chapters/tapir_skater.svg	/^         id="glyph-0-5"><path$/;"	i
+glyph-0-6	figures/chapters/tapir_skater.svg	/^         id="glyph-0-6"><path$/;"	i
+glyph-0-7	figures/chapters/tapir_skater.svg	/^         id="glyph-0-7"><path$/;"	i
+glyph-0-8	figures/chapters/tapir_skater.svg	/^         id="glyph-0-8"><path$/;"	i
+glyph-0-9	figures/chapters/tapir_skater.svg	/^         id="glyph-0-9"><path$/;"	i
+glyph-1-0	figures/chapters/tapir_skater.svg	/^         id="glyph-1-0" \/><g$/;"	i
+glyph-1-1	figures/chapters/tapir_skater.svg	/^         id="glyph-1-1"><path$/;"	i
+glyph-1-10	figures/chapters/tapir_skater.svg	/^         id="glyph-1-10"><path$/;"	i
+glyph-1-11	figures/chapters/tapir_skater.svg	/^         id="glyph-1-11"><path$/;"	i
+glyph-1-12	figures/chapters/tapir_skater.svg	/^         id="glyph-1-12"><path$/;"	i
+glyph-1-13	figures/chapters/tapir_skater.svg	/^         id="glyph-1-13"><path$/;"	i
+glyph-1-14	figures/chapters/tapir_skater.svg	/^         id="glyph-1-14"><path$/;"	i
+glyph-1-15	figures/chapters/tapir_skater.svg	/^         id="glyph-1-15"><path$/;"	i
+glyph-1-16	figures/chapters/tapir_skater.svg	/^         id="glyph-1-16"><path$/;"	i
+glyph-1-17	figures/chapters/tapir_skater.svg	/^         id="glyph-1-17"><path$/;"	i
+glyph-1-18	figures/chapters/tapir_skater.svg	/^         id="glyph-1-18"><path$/;"	i
+glyph-1-19	figures/chapters/tapir_skater.svg	/^         id="glyph-1-19"><path$/;"	i
+glyph-1-2	figures/chapters/tapir_skater.svg	/^         id="glyph-1-2"><path$/;"	i
+glyph-1-20	figures/chapters/tapir_skater.svg	/^         id="glyph-1-20"><path$/;"	i
+glyph-1-21	figures/chapters/tapir_skater.svg	/^         id="glyph-1-21"><path$/;"	i
+glyph-1-3	figures/chapters/tapir_skater.svg	/^         id="glyph-1-3"><path$/;"	i
+glyph-1-4	figures/chapters/tapir_skater.svg	/^         id="glyph-1-4"><path$/;"	i
+glyph-1-5	figures/chapters/tapir_skater.svg	/^         id="glyph-1-5"><path$/;"	i
+glyph-1-6	figures/chapters/tapir_skater.svg	/^         id="glyph-1-6"><path$/;"	i
+glyph-1-7	figures/chapters/tapir_skater.svg	/^         id="glyph-1-7"><path$/;"	i
+glyph-1-8	figures/chapters/tapir_skater.svg	/^         id="glyph-1-8"><path$/;"	i
+glyph-1-9	figures/chapters/tapir_skater.svg	/^         id="glyph-1-9"><path$/;"	i
+glyph-10-0	figures/chapters/tapir_skater.svg	/^         id="glyph-10-0" \/><g$/;"	i
+glyph-10-1	figures/chapters/tapir_skater.svg	/^         id="glyph-10-1"><path$/;"	i
+glyph-10-2	figures/chapters/tapir_skater.svg	/^         id="glyph-10-2"><path$/;"	i
+glyph-10-3	figures/chapters/tapir_skater.svg	/^         id="glyph-10-3"><path$/;"	i
+glyph-10-4	figures/chapters/tapir_skater.svg	/^         id="glyph-10-4"><path$/;"	i
+glyph-11-0	figures/chapters/tapir_skater.svg	/^         id="glyph-11-0" \/><g$/;"	i
+glyph-11-1	figures/chapters/tapir_skater.svg	/^         id="glyph-11-1"><path$/;"	i
+glyph-11-2	figures/chapters/tapir_skater.svg	/^         id="glyph-11-2"><path$/;"	i
+glyph-2-0	figures/chapters/tapir_skater.svg	/^         id="glyph-2-0" \/><g$/;"	i
+glyph-2-1	figures/chapters/tapir_skater.svg	/^         id="glyph-2-1"><path$/;"	i
+glyph-2-2	figures/chapters/tapir_skater.svg	/^         id="glyph-2-2"><path$/;"	i
+glyph-2-3	figures/chapters/tapir_skater.svg	/^         id="glyph-2-3"><path$/;"	i
+glyph-2-4	figures/chapters/tapir_skater.svg	/^         id="glyph-2-4"><path$/;"	i
+glyph-2-5	figures/chapters/tapir_skater.svg	/^         id="glyph-2-5"><path$/;"	i
+glyph-2-6	figures/chapters/tapir_skater.svg	/^         id="glyph-2-6"><path$/;"	i
+glyph-3-0	figures/chapters/tapir_skater.svg	/^         id="glyph-3-0" \/><g$/;"	i
+glyph-3-1	figures/chapters/tapir_skater.svg	/^         id="glyph-3-1"><path$/;"	i
+glyph-3-10	figures/chapters/tapir_skater.svg	/^         id="glyph-3-10"><path$/;"	i
+glyph-3-11	figures/chapters/tapir_skater.svg	/^         id="glyph-3-11"><path$/;"	i
+glyph-3-12	figures/chapters/tapir_skater.svg	/^         id="glyph-3-12"><path$/;"	i
+glyph-3-13	figures/chapters/tapir_skater.svg	/^         id="glyph-3-13"><path$/;"	i
+glyph-3-14	figures/chapters/tapir_skater.svg	/^         id="glyph-3-14"><path$/;"	i
+glyph-3-15	figures/chapters/tapir_skater.svg	/^         id="glyph-3-15"><path$/;"	i
+glyph-3-16	figures/chapters/tapir_skater.svg	/^         id="glyph-3-16"><path$/;"	i
+glyph-3-17	figures/chapters/tapir_skater.svg	/^         id="glyph-3-17"><path$/;"	i
+glyph-3-18	figures/chapters/tapir_skater.svg	/^         id="glyph-3-18"><path$/;"	i
+glyph-3-19	figures/chapters/tapir_skater.svg	/^         id="glyph-3-19"><path$/;"	i
+glyph-3-2	figures/chapters/tapir_skater.svg	/^         id="glyph-3-2"><path$/;"	i
+glyph-3-20	figures/chapters/tapir_skater.svg	/^         id="glyph-3-20"><path$/;"	i
+glyph-3-21	figures/chapters/tapir_skater.svg	/^         id="glyph-3-21"><path$/;"	i
+glyph-3-22	figures/chapters/tapir_skater.svg	/^         id="glyph-3-22"><path$/;"	i
+glyph-3-23	figures/chapters/tapir_skater.svg	/^         id="glyph-3-23"><path$/;"	i
+glyph-3-24	figures/chapters/tapir_skater.svg	/^         id="glyph-3-24"><path$/;"	i
+glyph-3-3	figures/chapters/tapir_skater.svg	/^         id="glyph-3-3"><path$/;"	i
+glyph-3-4	figures/chapters/tapir_skater.svg	/^         id="glyph-3-4"><path$/;"	i
+glyph-3-5	figures/chapters/tapir_skater.svg	/^         id="glyph-3-5"><path$/;"	i
+glyph-3-6	figures/chapters/tapir_skater.svg	/^         id="glyph-3-6"><path$/;"	i
+glyph-3-7	figures/chapters/tapir_skater.svg	/^         id="glyph-3-7"><path$/;"	i
+glyph-3-8	figures/chapters/tapir_skater.svg	/^         id="glyph-3-8"><path$/;"	i
+glyph-3-9	figures/chapters/tapir_skater.svg	/^         id="glyph-3-9"><path$/;"	i
+glyph-4-0	figures/chapters/tapir_skater.svg	/^         id="glyph-4-0" \/><g$/;"	i
+glyph-4-1	figures/chapters/tapir_skater.svg	/^         id="glyph-4-1"><path$/;"	i
+glyph-5-0	figures/chapters/tapir_skater.svg	/^         id="glyph-5-0" \/><g$/;"	i
+glyph-5-1	figures/chapters/tapir_skater.svg	/^         id="glyph-5-1"><path$/;"	i
+glyph-5-2	figures/chapters/tapir_skater.svg	/^         id="glyph-5-2"><path$/;"	i
+glyph-6-0	figures/chapters/tapir_skater.svg	/^         id="glyph-6-0" \/><g$/;"	i
+glyph-6-1	figures/chapters/tapir_skater.svg	/^         id="glyph-6-1"><path$/;"	i
+glyph-7-0	figures/chapters/tapir_skater.svg	/^         id="glyph-7-0" \/><g$/;"	i
+glyph-7-1	figures/chapters/tapir_skater.svg	/^         id="glyph-7-1"><path$/;"	i
+glyph-8-0	figures/chapters/tapir_skater.svg	/^         id="glyph-8-0" \/><g$/;"	i
+glyph-8-1	figures/chapters/tapir_skater.svg	/^         id="glyph-8-1"><path$/;"	i
+glyph-9-0	figures/chapters/tapir_skater.svg	/^         id="glyph-9-0" \/><g$/;"	i
+glyph-9-1	figures/chapters/tapir_skater.svg	/^         id="glyph-9-1"><path$/;"	i
 glyph0-0	figures/chapters/tapir_butterfly.svg	/^         id="glyph0-0">$/;"	i
 glyph0-0	figures/chapters/tapir_dissolve.svg	/^         id="glyph0-0">$/;"	i
 glyph0-0	figures/chapters/tapir_warhol.svg	/^         id="glyph0-0">$/;"	i
@@ -1560,6 +1728,7 @@ glyph4-2	figures/chapters/tapir_dissolve.svg	/^         id="glyph4-2">$/;"	i
 glyph4-2	figures/chapters/tapir_warhol.svg	/^         id="glyph4-2">$/;"	i
 glyph4-2	figures/cover/tapir.svg	/^         id="glyph4-2">$/;"	i
 grid17067	figures/symbols/lightmark.svg	/^       originy="-77.858657" \/>$/;"	i
+grid397	figures/chapters/tapir_skater.svg	/^       originy="20.000003" \/><\/sodipodi:namedview><defs$/;"	i
 image1168	figures/chapters/tapir_strawberry_two.svg	/^         style="stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-o/;"	i
 image4554	figures/chapters/ftcrics/tapir_ft.svg	/^         y="0" \/>$/;"	i
 image4554	figures/chapters/tapir_comics.svg	/^         y="0" \/>$/;"	i
@@ -1652,6 +1821,7 @@ inkscape	figures/chapters/tapir_comics.svg	/^   xmlns:svg="http:\/\/www.w3.org\/
 inkscape	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/chapters/tapir_fourier.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/chapters/tapir_rainbow.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/chapters/tapir_skater.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/chapters/tapir_stars.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/chapters/tapir_strawberry_two.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/chapters/tapir_voronoi.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
@@ -1659,6 +1829,7 @@ inkscape	figures/chapters/tapir_warhol.svg	/^   xmlns:svg="http:\/\/www.w3.org\/
 inkscape	figures/cover/tapir.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/ideas/comics_tile.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/ideas/skater_tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/ideas/speech_17.svg	/^  >$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
 inkscape	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
@@ -1684,6 +1855,7 @@ layer1	figures/chapters/tapir_voronoi.svg	/^     transform="translate(-31.490623
 layer1	figures/chapters/tapir_warhol.svg	/^     transform="translate(334.7247,-337.68039)">$/;"	i
 layer1	figures/cover/tapir.svg	/^     id="layer1">$/;"	i
 layer1	figures/ideas/Coloured dot pattern fills.svg	/^     id="layer1">$/;"	i
+layer1	figures/ideas/SkateBoardBoy.svg	/^ <g id="layer1" transform="translate(955.74 -135.22)">$/;"	i
 layer1	figures/ideas/comics_tile.svg	/^     transform="translate(7.5189924,-74.751329)">$/;"	i
 layer1	figures/ideas/tom_Summer_Leaves.svg	/^     style="display:inline">$/;"	i
 layer1	figures/linear_algebra/tapir_transform.svg	/^     transform="translate(-39.226521,-107.33628)">$/;"	i
@@ -1756,6 +1928,8 @@ linearGradient8597	figures/chapters/tapir_butterfly.svg	/^       y2="-128.19991"
 linearGradient8597	figures/chapters/tapir_butterfly.svg	/^       y2="-128.19991" \/>$/;"	i
 linearGradient8599	figures/chapters/tapir_butterfly.svg	/^       y2="-126.72735" \/>$/;"	d
 linearGradient8599	figures/chapters/tapir_butterfly.svg	/^       y2="-126.72735" \/>$/;"	i
+marker1176	figures/chapters/tapir_skater.svg	/^       preserveAspectRatio="xMidYMid"><path$/;"	d
+marker1176	figures/chapters/tapir_skater.svg	/^       preserveAspectRatio="xMidYMid"><path$/;"	i
 metadata2652	figures/ideas/Coloured dot pattern fills.svg	/^     id="metadata2652">$/;"	i
 metadata3026	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
 metadata3026	figures/symbols/solve.svg	/^     id="metadata3026"><rdf:RDF><cc:Work$/;"	i
@@ -1779,9 +1953,11 @@ namedview3358	figures/ideas/tapir4.svg	/^     inkscape:current-layer="svg3356" \
 namedview52752	figures/ideas/comics_tile.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview7	figures/chapters/tapir_comics.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview7	figures/chapters/tapir_rainbow.svg	/^     fit-margin-bottom="0" \/>$/;"	i
+namedview7	figures/chapters/tapir_skater.svg	/^     inkscape:current-layer="svg5"><inkscape:grid$/;"	i
 namedview7	figures/chapters/tapir_stars.svg	/^     inkscape:snap-global="false" \/>$/;"	i
 namedview7	figures/chapters/tapir_strawberry_two.svg	/^     inkscape:current-layer="layer1" \/>$/;"	i
 namedview7	figures/chapters/tapir_warhol.svg	/^     fit-margin-bottom="0" \/>$/;"	i
+namedview7	figures/ideas/skater_tapir.svg	/^     inkscape:current-layer="svg5" \/><defs$/;"	i
 namedview7	figures/linear_algebra/tapir_transform.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview7	figures/linear_algebra/tapir_transform2.svg	/^     fit-margin-bottom="0" \/>$/;"	i
 namedview77388	figures/chapters/ftcrics/tapir.svg	/^     inkscape:current-layer="layer1" \/>$/;"	i
@@ -1809,13 +1985,16 @@ ns9a9fc74b0101	figures/linear_algebra/tapir_transform2.svg	/^   xmlns:svg="http:
 nsa112770d0101	figures/chapters/ftcrics/tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsa38356550101	figures/cover/tapir.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/2000/svg
 nsa3d6851c0101	figures/chapters/tapir_warhol.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
+nsae766d050101	figures/ideas/skater_tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://www.w3.org/2000/svg
 nsb3b43d700101	figures/chapters/tapir_butterfly.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/2000/svg
 nsbc24fafd0101	figures/ideas/butterfly.svg	/^<svg width="531.56" height="660" version="1.1" viewBox="0 0 531.5625 660" xmlns="http:\/\/www.w3/;"	n	uri:http://www.w3.org/2000/svg
 nsbe6b4ee60101	figures/chapters/ftcrics/tapir_ft.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsc02fd07d0101	figures/chapters/tapir_strawberry_two.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsc22175c90101	figures/chapters/tapir_70s.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 nsce9c53780101	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+nsea9ef2660101	figures/ideas/SkateBoardBoy.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://www.w3.org/2000/svg
 nsf2bcd3f80101	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.w3.org/2000/svg
+nsf4fd5d790101	figures/chapters/tapir_skater.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://www.w3.org/2000/svg
 nsf68529080101	figures/symbols/solve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
 nsf7c62ec20101	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 odm	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://product.corel.com/CGS/11/cddns/
@@ -1899,8 +2078,12 @@ path-effect15264	figures/cover/tapir.svg	/^       effect="skeletal" \/>$/;"	d
 path-effect15264	figures/cover/tapir.svg	/^       effect="skeletal" \/>$/;"	i
 path-effect2417	figures/chapters/tapir_rainbow.svg	/^       simplify_just_coalesce="false" \/>$/;"	d
 path-effect2417	figures/chapters/tapir_rainbow.svg	/^       simplify_just_coalesce="false" \/>$/;"	i
+path-effect2417	figures/chapters/tapir_skater.svg	/^       simplify_just_coalesce="false" \/><circle$/;"	d
+path-effect2417	figures/chapters/tapir_skater.svg	/^       simplify_just_coalesce="false" \/><circle$/;"	i
 path-effect2417	figures/chapters/tapir_warhol.svg	/^       simplify_just_coalesce="false" \/>$/;"	d
 path-effect2417	figures/chapters/tapir_warhol.svg	/^       simplify_just_coalesce="false" \/>$/;"	i
+path-effect2417	figures/ideas/skater_tapir.svg	/^       simplify_just_coalesce="false" \/><circle$/;"	d
+path-effect2417	figures/ideas/skater_tapir.svg	/^       simplify_just_coalesce="false" \/><circle$/;"	i
 path-effect2417	figures/linear_algebra/tapir_transform.svg	/^       simplify_just_coalesce="false" \/>$/;"	d
 path-effect2417	figures/linear_algebra/tapir_transform.svg	/^       simplify_just_coalesce="false" \/>$/;"	i
 path-effect2417	figures/linear_algebra/tapir_transform2.svg	/^       simplify_just_coalesce="false" \/>$/;"	d
@@ -1956,8 +2139,14 @@ path1009	figures/chapters/tapir_fourier.svg	/^     id="path1009" \/>$/;"	i
 path1011	figures/chapters/ftcrics/tapir_ft.svg	/^     id="path1011" \/>$/;"	i
 path1011	figures/chapters/tapir_fourier.svg	/^     id="path1011" \/>$/;"	i
 path1012	figures/chapters/tapir_rainbow.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1012	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
+path1012	figures/ideas/skater_tapir.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
 path1012-1	figures/chapters/tapir_rainbow.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1012-1	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
+path1012-1	figures/ideas/skater_tapir.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
 path1012-1-2	figures/chapters/tapir_rainbow.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1012-1-2	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><\/g><g$/;"	i
+path1012-1-2	figures/ideas/skater_tapir.svg	/^       inkscape:connector-curvature="0" \/><\/g><g$/;"	i
 path1013	figures/chapters/ftcrics/tapir_ft.svg	/^     id="path1013" \/>$/;"	i
 path1013	figures/chapters/tapir_fourier.svg	/^     id="path1013" \/>$/;"	i
 path1015	figures/chapters/ftcrics/tapir_ft.svg	/^     id="path1015" \/>$/;"	i
@@ -2021,16 +2210,24 @@ path1062	figures/chapters/tapir_dissolve.svg	/^         id="path1062" \/>$/;"	i
 path1062	figures/chapters/tapir_warhol.svg	/^         id="path1062" \/>$/;"	i
 path1062	figures/cover/tapir.svg	/^         id="path1062" \/>$/;"	i
 path1066	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="cscccsc" \/>$/;"	i
+path1066	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cscccsc" \/><path$/;"	i
+path1066	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="cscccsc" \/><path$/;"	i
 path1067	figures/chapters/tapir_butterfly.svg	/^           sodipodi:nodetypes="ccssssccssscsscccscccscccscccccscccccscccscsccccccccccscccscccccc/;"	i
 path1067	figures/chapters/tapir_dissolve.svg	/^         sodipodi:nodetypes="ccssssccssscsscccscccscccscccccscccccscccscsccccccccccscccscccccccs/;"	i
 path1067	figures/cover/tapir.svg	/^         sodipodi:nodetypes="ccssssccssscsscccscccscccscccccscccccscccscsccccccccccscccscccccccs/;"	i
 path1068	figures/chapters/tapir_rainbow.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1068	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
+path1068	figures/ideas/skater_tapir.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
 path1069	figures/chapters/tapir_butterfly.svg	/^           sodipodi:nodetypes="cccscssccsccsccscscscscsscscssccccccccsccscsssccccccccsscscsccccc/;"	i
 path1069	figures/chapters/tapir_dissolve.svg	/^         sodipodi:nodetypes="cccscssccsccsccscscscscsscscssccccccccsccscsssccccccccsscscscccccsc/;"	i
 path1069	figures/cover/tapir.svg	/^         sodipodi:nodetypes="cccscssccsccsccscscscscsscscssccccccccsccscsssccccccccsscscscccccsc/;"	i
 path1070	figures/chapters/tapir_rainbow.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1070	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
+path1070	figures/ideas/skater_tapir.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
 path1072-2	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="ccscc" \/>$/;"	i
 path1091	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="cczcccc" \/>$/;"	i
+path1091	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cczcccc" \/><path$/;"	i
+path1091	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="cczcccc" \/><path$/;"	i
 path10914	figures/chapters/tapir_stars.svg	/^       sodipodi:nodetypes="ssssssssscsssccssssssscssssscsssssssssssscsscssssscssccssccsssscssscs/;"	i
 path1111	figures/chapters/tapir_rainbow.svg	/^           id="path1111" \/>$/;"	i
 path1111	figures/linear_algebra/tapir_transform.svg	/^           id="path1111" \/>$/;"	i
@@ -2090,15 +2287,59 @@ path1161-9-87-7-5	figures/chapters/tapir_stars.svg	/^               inkscape:tra
 path1161-9-87-8	figures/chapters/tapir_stars.svg	/^             inkscape:transform-center-y="0.044304272" \/>$/;"	i
 path1161-9-9	figures/chapters/tapir_stars.svg	/^           inkscape:transform-center-y="-0.014268749" \/>$/;"	i
 path1169	figures/chapters/tapir_dissolve.svg	/^           id="path1169" \/>$/;"	i
+path1174	figures/chapters/tapir_skater.svg	/^         id="path1174" \/><\/marker><inkscape:path-effect$/;"	i
 path1176	figures/chapters/tapir_warhol.svg	/^           style="fill:#fb4e2e;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap/;"	i
 path11867	figures/chapters/tapir_stars.svg	/^       sodipodi:nodetypes="ccc" \/>$/;"	i
+path11959	figures/chapters/tapir_skater.svg	/^       id="path11959" \/><path$/;"	i
 path1225	figures/chapters/tapir_rainbow.svg	/^         style="fill:#492f1d;fill-opacity:1;stroke:none;stroke-width:0.30939;stroke-miterlimit:4/;"	i
+path1225	figures/chapters/tapir_skater.svg	/^       style="fill:#492f1d;fill-opacity:1;stroke:none;stroke-width:0.30939;stroke-miterlimit:4;s/;"	i
+path1225	figures/ideas/skater_tapir.svg	/^       style="fill:#492f1d;fill-opacity:1;stroke:none;stroke-width:0.30939;stroke-miterlimit:4;s/;"	i
 path1225-5	figures/chapters/tapir_rainbow.svg	/^         style="fill:#291a10;fill-opacity:1;stroke:none;stroke-width:0.30939;stroke-miterlimit:4/;"	i
+path1225-5	figures/chapters/tapir_skater.svg	/^       style="fill:#291a10;fill-opacity:1;stroke:none;stroke-width:0.30939;stroke-miterlimit:4;s/;"	i
+path1225-5	figures/ideas/skater_tapir.svg	/^       style="fill:#291a10;fill-opacity:1;stroke:none;stroke-width:0.30939;stroke-miterlimit:4;s/;"	i
 path1225-5-6	figures/chapters/tapir_rainbow.svg	/^         d="m -25.007812,568.55664 c -0.951815,0.16719 -2.111538,0.8706 -3.47461,2.61328 -1.3597/;"	i
+path1225-5-6	figures/chapters/tapir_skater.svg	/^       sodipodi:type="inkscape:offset" \/><path$/;"	i
+path1225-5-6	figures/ideas/skater_tapir.svg	/^       sodipodi:type="inkscape:offset" \/><path$/;"	i
 path1225-5-6-2	figures/chapters/tapir_rainbow.svg	/^         d="m -24.851562,569.16016 c -0.951815,0.16719 -2.111538,0.8706 -3.47461,2.61328 -1.3597/;"	i
+path1225-5-6-2	figures/chapters/tapir_skater.svg	/^       transform="matrix(0.15469525,0,0,0.15469525,96.676991,51.52142)" \/><path$/;"	i
+path1225-5-6-2	figures/ideas/skater_tapir.svg	/^       transform="matrix(0.15469525,0,0,0.15469525,96.676991,51.52142)" \/><path$/;"	i
 path1225-9	figures/chapters/tapir_rainbow.svg	/^         id="path1225-9" \/>$/;"	i
+path1225-9	figures/chapters/tapir_skater.svg	/^       id="path1225-9" \/><path$/;"	i
+path1225-9	figures/ideas/skater_tapir.svg	/^       id="path1225-9" \/><path$/;"	i
+path12705	figures/chapters/tapir_skater.svg	/^       id="path12705" \/><path$/;"	i
+path12713	figures/chapters/tapir_skater.svg	/^       id="path12713" \/><path$/;"	i
+path12721	figures/chapters/tapir_skater.svg	/^       id="path12721" \/><path$/;"	i
+path12737	figures/chapters/tapir_skater.svg	/^       id="path12737" \/><path$/;"	i
 path1275	figures/chapters/tapir_dissolve.svg	/^           id="path1275" \/>$/;"	i
+path12758	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cc" \/><path$/;"	i
+path12760	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cc" \/><path$/;"	i
+path12762	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cc" \/><path$/;"	i
+path12764	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cc" \/><path$/;"	i
+path12766	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cc" \/><path$/;"	i
+path12787	figures/chapters/tapir_skater.svg	/^       id="path12787" \/><path$/;"	i
 path1310	figures/chapters/tapir_dissolve.svg	/^           id="path1310" \/>$/;"	i
+path13211	figures/chapters/tapir_skater.svg	/^       transform="matrix(0.15469525,0,0,0.15469525,96.676991,51.52142)" \/><path$/;"	i
+path13213	figures/chapters/tapir_skater.svg	/^       sodipodi:type="inkscape:offset" \/><path$/;"	i
+path13215	figures/chapters/tapir_skater.svg	/^       style="fill:#291a10;fill-opacity:1;stroke:none;stroke-width:0.30939;stroke-miterlimit:4;s/;"	i
+path13217	figures/chapters/tapir_skater.svg	/^       style="fill:#492f1d;fill-opacity:1;stroke:none;stroke-width:0.266487px;stroke-linecap:but/;"	i
+path13219	figures/chapters/tapir_skater.svg	/^       id="path13219" \/><path$/;"	i
+path13221	figures/chapters/tapir_skater.svg	/^       style="fill:#492f1d;fill-opacity:1;stroke:none;stroke-width:0.30939;stroke-miterlimit:4;s/;"	i
+path13223	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cczzzzzzzccczzzc" \/><path$/;"	i
+path13225	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="zcccczz" \/><path$/;"	i
+path13227	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="ccc" \/><path$/;"	i
+path13229	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="zcccczz" \/><path$/;"	i
+path13231	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="zzzzzzzzzzz" \/><path$/;"	i
+path13233	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="zssczzzzz" \/><path$/;"	i
+path13235	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="czzzzc" \/><path$/;"	i
+path13237	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="czcscsccsccc" \/><path$/;"	i
+path13239	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cssczzcc" \/><path$/;"	i
+path13241	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
+path13243	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cscccsc" \/><path$/;"	i
+path13245	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
+path13247	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
+path13249	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cczcccc" \/><path$/;"	i
+path13251	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><path$/;"	i
+path13253	figures/chapters/tapir_skater.svg	/^       inkscape:connector-curvature="0" \/><\/g><ellipse$/;"	i
 path13412	figures/symbols/exmark.svg	/^         sodipodi:nodetypes="scccccsss" \/>$/;"	i
 path13415	figures/symbols/exmark.svg	/^         sodipodi:nodetypes="scccccsss" \/>$/;"	i
 path13443	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="pupil" \/>$/;"	i
@@ -2160,6 +2401,7 @@ path1422-2	figures/chapters/tapir_butterfly.svg	/^           id="path1422-2" \/>
 path1422-2	figures/chapters/tapir_dissolve.svg	/^           id="path1422-2" \/>$/;"	i
 path1422-2	figures/chapters/tapir_warhol.svg	/^           id="path1422-2" \/>$/;"	i
 path1422-2	figures/cover/tapir.svg	/^           id="path1422-2" \/>$/;"	i
+path1424	figures/chapters/tapir_skater.svg	/^     sodipodi:nodetypes="cc" \/><g$/;"	i
 path1425	figures/chapters/tapir_butterfly.svg	/^           id="path1425" \/>$/;"	i
 path1425	figures/chapters/tapir_dissolve.svg	/^           id="path1425" \/>$/;"	i
 path1425	figures/chapters/tapir_warhol.svg	/^           id="path1425" \/>$/;"	i
@@ -2177,6 +2419,8 @@ path1434	figures/chapters/tapir_dissolve.svg	/^           id="path1434" \/>$/;"	
 path1434	figures/chapters/tapir_warhol.svg	/^           id="path1434" \/>$/;"	i
 path1434	figures/cover/tapir.svg	/^           id="path1434" \/>$/;"	i
 path1437	figures/chapters/tapir_rainbow.svg	/^         style="fill:#492f1d;fill-opacity:1;stroke:none;stroke-width:0.266488px;stroke-linecap:b/;"	i
+path1437	figures/chapters/tapir_skater.svg	/^       style="fill:#492f1d;fill-opacity:1;stroke:none;stroke-width:0.266487px;stroke-linecap:but/;"	i
+path1437	figures/ideas/skater_tapir.svg	/^       style="fill:#492f1d;fill-opacity:1;stroke:none;stroke-width:0.266487px;stroke-linecap:but/;"	i
 path1437-0	figures/chapters/tapir_butterfly.svg	/^           id="path1437-0" \/>$/;"	i
 path1437-0	figures/chapters/tapir_dissolve.svg	/^           id="path1437-0" \/>$/;"	i
 path1437-0	figures/chapters/tapir_warhol.svg	/^           id="path1437-0" \/>$/;"	i
@@ -2209,28 +2453,42 @@ path1455	figures/cover/tapir.svg	/^           id="path1455" \/>$/;"	i
 path1458	figures/chapters/tapir_butterfly.svg	/^           id="path1458" \/>$/;"	i
 path1458	figures/chapters/tapir_dissolve.svg	/^           id="path1458" \/>$/;"	i
 path1458	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="cczzzzzzzccczzzc" \/>$/;"	i
+path1458	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cczzzzzzzccczzzc" \/><path$/;"	i
 path1458	figures/chapters/tapir_warhol.svg	/^           id="path1458" \/>$/;"	i
 path1458	figures/cover/tapir.svg	/^           id="path1458" \/>$/;"	i
+path1458	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="cczzzzzzzccczzzc" \/><path$/;"	i
 path1460-0	figures/chapters/tapir_rainbow.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0	figures/chapters/tapir_rainbow.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
+path1460-0	figures/chapters/tapir_skater.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
+path1460-0	figures/chapters/tapir_skater.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0	figures/chapters/tapir_warhol.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0	figures/chapters/tapir_warhol.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
+path1460-0	figures/ideas/skater_tapir.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
+path1460-0	figures/ideas/skater_tapir.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0	figures/linear_algebra/tapir_transform.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0	figures/linear_algebra/tapir_transform.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0	figures/linear_algebra/tapir_transform2.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0	figures/linear_algebra/tapir_transform2.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0-1	figures/chapters/tapir_rainbow.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0-1	figures/chapters/tapir_rainbow.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
+path1460-0-1	figures/chapters/tapir_skater.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
+path1460-0-1	figures/chapters/tapir_skater.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0-1	figures/chapters/tapir_warhol.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0-1	figures/chapters/tapir_warhol.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
+path1460-0-1	figures/ideas/skater_tapir.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
+path1460-0-1	figures/ideas/skater_tapir.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0-1	figures/linear_algebra/tapir_transform.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0-1	figures/linear_algebra/tapir_transform.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0-1	figures/linear_algebra/tapir_transform2.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0-1	figures/linear_algebra/tapir_transform2.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0-7	figures/chapters/tapir_rainbow.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0-7	figures/chapters/tapir_rainbow.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
+path1460-0-7	figures/chapters/tapir_skater.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
+path1460-0-7	figures/chapters/tapir_skater.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0-7	figures/chapters/tapir_warhol.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0-7	figures/chapters/tapir_warhol.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
+path1460-0-7	figures/ideas/skater_tapir.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
+path1460-0-7	figures/ideas/skater_tapir.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0-7	figures/linear_algebra/tapir_transform.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
 path1460-0-7	figures/linear_algebra/tapir_transform.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	i
 path1460-0-7	figures/linear_algebra/tapir_transform2.svg	/^       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:40;stroke-linecap:round;strok/;"	d
@@ -2339,6 +2597,8 @@ path20059	figures/chapters/tapir_stars.svg	/^         id="path20059" \/>$/;"	i
 path20063	figures/chapters/tapir_stars.svg	/^         id="path20063" \/>$/;"	i
 path202	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path204	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
+path20492	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cc" \/><path$/;"	i
+path20494	figures/chapters/tapir_skater.svg	/^       id="path20494" \/><\/g><path$/;"	i
 path206	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path208	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path210	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
@@ -2358,6 +2618,7 @@ path21796	figures/linear_algebra/tapir_transform.svg	/^               inkscape:l
 path21796	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="shadow12" \/>$/;"	i
 path218	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path2182	figures/chapters/tapir_dissolve.svg	/^           id="path2182" \/>$/;"	i
+path2198	figures/chapters/tapir_skater.svg	/^     sodipodi:nodetypes="csscc" \/><g$/;"	i
 path220	figures/symbols/solve.svg	/^   style="fill:#0093dd" \/>$/;"	i
 path2205	figures/chapters/tapir_rainbow.svg	/^           id="path2205" \/>$/;"	i
 path2205	figures/linear_algebra/tapir_transform.svg	/^           id="path2205" \/>$/;"	i
@@ -2432,6 +2693,7 @@ path2807	figures/symbols/solve.svg	/^             id="path2807" \/><path$/;"	i
 path2807	figures/symbols/solve_hand_only.svg	/^             id="path2807" \/><path$/;"	i
 path2809	figures/symbols/solve.svg	/^             id="path2809" \/><path$/;"	i
 path2809	figures/symbols/solve_hand_only.svg	/^             id="path2809" \/><path$/;"	i
+path2816	figures/ideas/SkateBoardBoy.svg	/^   <path id="path2816" d="m-632.84 174.25c-47.407-0.0552-71.455 37.009-92.031 78.062-1.5714-5.27/;"	i
 path2834	figures/chapters/tapir_dissolve.svg	/^           id="path2834" \/>$/;"	i
 path28925	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="shadow7" \/>$/;"	i
 path28925	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow7" \/>$/;"	i
@@ -2489,9 +2751,12 @@ path3366	figures/chapters/tapir_fourier.svg	/^       inkscape:label="outline" \/
 path3366	figures/ideas/tapir4.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
 path3366	figures/linear_algebra/tapir_transform.svg	/^             inkscape:label="outline" \/>$/;"	i
 path3366	figures/linear_algebra/tapir_transform2.svg	/^             inkscape:label="outline" \/>$/;"	i
+path3518	figures/chapters/tapir_skater.svg	/^     ry="1.5012497" \/><g$/;"	i
+path3518	figures/ideas/skater_tapir.svg	/^     ry="1.5012497" \/><g$/;"	i
 path3560	figures/chapters/tapir_rainbow.svg	/^           id="path3560" \/>$/;"	i
 path3560	figures/linear_algebra/tapir_transform.svg	/^           id="path3560" \/>$/;"	i
 path3560	figures/linear_algebra/tapir_transform2.svg	/^           id="path3560" \/>$/;"	i
+path3590	figures/ideas/SkateBoardBoy.svg	/^    <path id="path3590" fill="#f60" d="m-714.62 136.31c0.19515 1.8518 0.36443 3.71 0.75 5.625 0./;"	i
 path3596	figures/chapters/tapir_dissolve.svg	/^           id="path3596" \/>$/;"	i
 path36078	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="shadow1" \/>$/;"	i
 path36078	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow1" \/>$/;"	i
@@ -2499,13 +2764,22 @@ path36078	figures/chapters/tapir_fourier.svg	/^       inkscape:label="shadow1" \
 path36078	figures/linear_algebra/tapir_transform.svg	/^               inkscape:label="shadow1" \/>$/;"	i
 path36078	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="shadow1" \/>$/;"	i
 path3647	figures/chapters/tapir_dissolve.svg	/^           id="path3647" \/>$/;"	i
+path3649	figures/ideas/SkateBoardBoy.svg	/^    <path id="path3649" fill="#ff7f2a" d="m-647.94 117.38c-0.0256 0.1409-0.069 0.26472-0.0937 0./;"	i
 path3650	figures/symbols/solve.svg	/^             ry="9.7166033" \/><\/g><\/g><\/g><\/g><\/svg>$/;"	i
 path3650	figures/symbols/solve_hand_only.svg	/^             ry="9.7166033" \/><\/g><\/g><\/g><\/g><\/svg>$/;"	i
+path3652	figures/ideas/SkateBoardBoy.svg	/^    <path id="path3652" fill="#f60" d="m-574.47 126.62c-0.25051 0.38349-0.53606 0.70083-0.78125 /;"	i
+path3655	figures/ideas/SkateBoardBoy.svg	/^    <path id="path3655" fill="#aad400" d="m-574.47 126.62c-8.3216-2.6374-16.973-4.9774-26.188-6./;"	i
+path3657	figures/ideas/SkateBoardBoy.svg	/^   <path id="path3657" d="m-1078.8 330.1c0 3.9052-3.1658 7.0711-7.071 7.0711-3.9053 0-7.0711-3.1/;"	i
+path3657-6	figures/ideas/SkateBoardBoy.svg	/^   <path id="path3657-6" d="m-1078.8 330.1c0 3.9052-3.1658 7.0711-7.071 7.0711-3.9053 0-7.0711-3/;"	i
+path3687	figures/ideas/SkateBoardBoy.svg	/^   <path id="path3687" stroke="#000" stroke-width="5.6578" fill="none" d="m-568.95 332.36c0 10.8/;"	i
+path3716	figures/ideas/SkateBoardBoy.svg	/^   <path id="path3716" d="m-579.83 375.56c0 14.505-23.518 26.264-52.528 26.264s-52.528-11.759-52/;"	i
+path3719	figures/ideas/SkateBoardBoy.svg	/^   <path id="path3719" d="m-662.4 222.65c-8.4633 0-15.841 2.363-19.594 5.8438-4.0745-2.345-10.08/;"	i
 path3738	figures/chapters/tapir_rainbow.svg	/^           id="path3738" \/>$/;"	i
 path3738	figures/linear_algebra/tapir_transform.svg	/^           id="path3738" \/>$/;"	i
 path3738	figures/linear_algebra/tapir_transform2.svg	/^           id="path3738" \/>$/;"	i
 path3839	figures/symbols/solve.svg	/^             id="path3839" \/><path$/;"	i
 path3839	figures/symbols/solve_hand_only.svg	/^             id="path3839" \/><path$/;"	i
+path3842	figures/ideas/SkateBoardBoy.svg	/^   <path id="path3842" d="m-613.65 298.65c0 12.274-9.4975 22.223-21.213 22.223s-21.213-9.9497-21/;"	i
 path38723	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="shadow6" \/>$/;"	i
 path38723	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow6" \/>$/;"	i
 path38723	figures/chapters/tapir_fourier.svg	/^       inkscape:label="shadow6" \/>$/;"	i
@@ -2527,6 +2801,7 @@ path39872	figures/chapters/tapir_comics.svg	/^         inkscape:label="shadow4" 
 path39872	figures/chapters/tapir_fourier.svg	/^       transform="scale(-1,1)" \/>$/;"	i
 path39872	figures/linear_algebra/tapir_transform.svg	/^               inkscape:label="shadow4" \/>$/;"	i
 path39872	figures/linear_algebra/tapir_transform2.svg	/^               inkscape:label="shadow4" \/>$/;"	i
+path399	figures/chapters/tapir_skater.svg	/^     sodipodi:nodetypes="cc" \/><path$/;"	i
 path40105	figures/chapters/ftcrics/tapir_ft.svg	/^       inkscape:label="highlight1" \/>$/;"	i
 path40105	figures/chapters/tapir_comics.svg	/^         inkscape:label="highlight1" \/>$/;"	i
 path40105	figures/chapters/tapir_fourier.svg	/^       inkscape:label="highlight1" \/>$/;"	i
@@ -2545,7 +2820,53 @@ path41637	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscsc
 path4168	figures/ideas/tapir3.svg	/^<path id="path4168" d="m679.4 625.65c-0.17049-0.17049-8.7195-0.51341-18.998-0.76205-19.982-0.483/;"	i
 path4175	figures/chapters/tapir_dissolve.svg	/^           id="path4175" \/>$/;"	i
 path41799	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscscccscccssssssssssssssssssssssssssscssssssssscssssssssssssssc/;"	i
+path4207-9	figures/ideas/SkateBoardBoy.svg	/^   <path id="path4207-9" d="m-597.97 1093.1c8.5862 32.354-36.917 73.266-80.795 77.878-97.741 10./;"	i
+path4207-9-5	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4207-9-5" stroke="#000" stroke-width="7.2" fill="#f9f9f9" d="m-388.18 1006.8c1/;"	i
+path4207-9-8	figures/ideas/SkateBoardBoy.svg	/^   <path id="path4207-9-8" style="block-progression:tb;color:#000000;text-transform:none;text-in/;"	i
+path4207-9-8-6	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4207-9-8-6" style="block-progression:tb;color:#000000;text-transform:none;text/;"	i
 path4267	figures/chapters/tapir_dissolve.svg	/^           id="path4267" \/>$/;"	i
+path4298	figures/chapters/tapir_skater.svg	/^         style="fill:#6c5353" \/><\/g><rect$/;"	i
+path4298	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4298" fill="#008080" d="m-272.74 1214c0 25.663-114.72 88.893-268.7 88.893s-278/;"	i
+path4298	figures/ideas/skater_tapir.svg	/^         style="fill:#6c5353" \/><\/g><rect$/;"	i
+path4298-2	figures/chapters/tapir_skater.svg	/^         style="fill:#241c1c" \/><path$/;"	i
+path4298-2	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4298-2" transform="translate(6.0609 20.203)" fill="#ff0" d="m-278.8 1201.9c0 2/;"	i
+path4298-2	figures/ideas/skater_tapir.svg	/^         style="fill:#241c1c" \/><path$/;"	i
+path4329	figures/chapters/tapir_skater.svg	/^         d="m -1137.4,1355.4 c 0,26.779 -21.709,48.487 -48.487,48.487 -26.779,0 -48.487,-21.708 /;"	i
+path4329	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4329" d="m-1137.4 1355.4c0 26.779-21.709 48.487-48.487 48.487-26.779 0-48.487-/;"	i
+path4329	figures/ideas/skater_tapir.svg	/^         d="m -1137.4,1355.4 c 0,26.779 -21.709,48.487 -48.487,48.487 -26.779,0 -48.487,-21.708 /;"	i
+path4329-0	figures/chapters/tapir_skater.svg	/^         d="m -1137.4,1355.4 c 0,26.779 -21.709,48.487 -48.487,48.487 -26.779,0 -48.487,-21.708 /;"	i
+path4329-0	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4329-0" d="m-1137.4 1355.4c0 26.779-21.709 48.487-48.487 48.487-26.779 0-48.48/;"	i
+path4329-0	figures/ideas/skater_tapir.svg	/^         d="m -1137.4,1355.4 c 0,26.779 -21.709,48.487 -48.487,48.487 -26.779,0 -48.487,-21.708 /;"	i
+path4329-5	figures/chapters/tapir_skater.svg	/^         d="m -1137.4,1355.4 c 0,26.779 -21.709,48.487 -48.487,48.487 -26.779,0 -48.487,-21.708 /;"	i
+path4329-5	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4329-5" d="m-1137.4 1355.4c0 26.779-21.709 48.487-48.487 48.487-26.779 0-48.48/;"	i
+path4329-5	figures/ideas/skater_tapir.svg	/^         d="m -1137.4,1355.4 c 0,26.779 -21.709,48.487 -48.487,48.487 -26.779,0 -48.487,-21.708 /;"	i
+path4329-9	figures/chapters/tapir_skater.svg	/^         d="m -1137.4,1355.4 c 0,26.779 -21.709,48.487 -48.487,48.487 -26.779,0 -48.487,-21.708 /;"	i
+path4329-9	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4329-9" d="m-1137.4 1355.4c0 26.779-21.709 48.487-48.487 48.487-26.779 0-48.48/;"	i
+path4329-9	figures/ideas/skater_tapir.svg	/^         d="m -1137.4,1355.4 c 0,26.779 -21.709,48.487 -48.487,48.487 -26.779,0 -48.487,-21.708 /;"	i
+path4331	figures/chapters/tapir_skater.svg	/^         d="m -993.99,1340.3 c 0,16.179 -13.116,29.294 -29.294,29.294 -16.179,0 -29.294,-13.116 /;"	i
+path4331	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4331" transform="translate(-159.6 16.162)" fill="#fff" d="m-993.99 1340.3c0 16/;"	i
+path4331	figures/ideas/skater_tapir.svg	/^         d="m -993.99,1340.3 c 0,16.179 -13.116,29.294 -29.294,29.294 -16.179,0 -29.294,-13.116 /;"	i
+path4331-2	figures/chapters/tapir_skater.svg	/^         d="m -993.99,1340.3 c 0,16.179 -13.116,29.294 -29.294,29.294 -16.179,0 -29.294,-13.116 /;"	i
+path4331-2	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4331-2" transform="translate(-159.6 16.162)" fill="#fff" d="m-993.99 1340.3c0 /;"	i
+path4331-2	figures/ideas/skater_tapir.svg	/^         d="m -993.99,1340.3 c 0,16.179 -13.116,29.294 -29.294,29.294 -16.179,0 -29.294,-13.116 /;"	i
+path4331-4	figures/chapters/tapir_skater.svg	/^         d="m -993.99,1340.3 c 0,16.179 -13.116,29.294 -29.294,29.294 -16.179,0 -29.294,-13.116 /;"	i
+path4331-4	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4331-4" transform="translate(-159.6 16.162)" fill="#fff" d="m-993.99 1340.3c0 /;"	i
+path4331-4	figures/ideas/skater_tapir.svg	/^         d="m -993.99,1340.3 c 0,16.179 -13.116,29.294 -29.294,29.294 -16.179,0 -29.294,-13.116 /;"	i
+path4331-5	figures/chapters/tapir_skater.svg	/^         d="m -993.99,1340.3 c 0,16.179 -13.116,29.294 -29.294,29.294 -16.179,0 -29.294,-13.116 /;"	i
+path4331-5	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4331-5" transform="translate(-159.6 16.162)" fill="#fff" d="m-993.99 1340.3c0 /;"	i
+path4331-5	figures/ideas/skater_tapir.svg	/^         d="m -993.99,1340.3 c 0,16.179 -13.116,29.294 -29.294,29.294 -16.179,0 -29.294,-13.116 /;"	i
+path4333	figures/chapters/tapir_skater.svg	/^         d="m -1248.5,1061.5 c 0,7.2526 -5.8793,13.132 -13.132,13.132 -7.2526,0 -13.132,-5.8794 /;"	i
+path4333	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4333" transform="translate(80.812 294.96)" fill="#808080" d="m-1248.5 1061.5c0/;"	i
+path4333	figures/ideas/skater_tapir.svg	/^         d="m -1248.5,1061.5 c 0,7.2526 -5.8793,13.132 -13.132,13.132 -7.2526,0 -13.132,-5.8794 /;"	i
+path4333-2	figures/chapters/tapir_skater.svg	/^         d="m -1248.5,1061.5 c 0,7.2526 -5.8793,13.132 -13.132,13.132 -7.2526,0 -13.132,-5.8794 /;"	i
+path4333-2	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4333-2" transform="translate(80.812 294.96)" fill="#808080" d="m-1248.5 1061.5/;"	i
+path4333-2	figures/ideas/skater_tapir.svg	/^         d="m -1248.5,1061.5 c 0,7.2526 -5.8793,13.132 -13.132,13.132 -7.2526,0 -13.132,-5.8794 /;"	i
+path4333-8	figures/chapters/tapir_skater.svg	/^         d="m -1248.5,1061.5 c 0,7.2526 -5.8793,13.132 -13.132,13.132 -7.2526,0 -13.132,-5.8794 /;"	i
+path4333-8	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4333-8" transform="translate(80.812 294.96)" fill="#808080" d="m-1248.5 1061.5/;"	i
+path4333-8	figures/ideas/skater_tapir.svg	/^         d="m -1248.5,1061.5 c 0,7.2526 -5.8793,13.132 -13.132,13.132 -7.2526,0 -13.132,-5.8794 /;"	i
+path4333-9	figures/chapters/tapir_skater.svg	/^         d="m -1248.5,1061.5 c 0,7.2526 -5.8793,13.132 -13.132,13.132 -7.2526,0 -13.132,-5.8794 /;"	i
+path4333-9	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4333-9" transform="translate(80.812 294.96)" fill="#808080" d="m-1248.5 1061.5/;"	i
+path4333-9	figures/ideas/skater_tapir.svg	/^         d="m -1248.5,1061.5 c 0,7.2526 -5.8793,13.132 -13.132,13.132 -7.2526,0 -13.132,-5.8794 /;"	i
 path44106	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscscccscccssssssssssssssssssssssssssscssssssssscssssssssssssssc/;"	i
 path442	figures/chapters/tapir_dissolve.svg	/^           id="path442" \/>$/;"	i
 path44452	figures/chapters/tapir_voronoi.svg	/^         id="path44452" \/>$/;"	i
@@ -2646,7 +2967,11 @@ path44654	figures/chapters/tapir_voronoi.svg	/^         id="path44654" \/>$/;"	i
 path44656	figures/chapters/tapir_voronoi.svg	/^         id="path44656" \/>$/;"	i
 path44658	figures/chapters/tapir_voronoi.svg	/^         id="path44658" \/>$/;"	i
 path44668	figures/chapters/tapir_voronoi.svg	/^         id="path44668" \/>$/;"	i
+path4503	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4503" d="m-147.63 373.58c-13.965 2.525-20.264 7.8861-26.312 10.327-35.185 2.12/;"	i
+path4503-6	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4503-6" d="m-942.63 619.76c-0.0395-14.191 4.0953-21.356 5.403-27.744-14.625-32/;"	i
 path4507	figures/chapters/tapir_voronoi.svg	/^       id="path4507" \/>$/;"	i
+path4507	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4507" stroke-linecap="round" d="m-143.53 408.47c15.457-4.2538 37.951-1.1126 38/;"	i
+path4507-4	figures/ideas/SkateBoardBoy.svg	/^    <path id="path4507-4" stroke-linecap="round" d="m-907.99 617.97c-1.3914 15.971 5.7621 37.527/;"	i
 path4560	figures/ideas/Coloured dot pattern fills.svg	/^         sodipodi:nodetypes="cccc" \/>$/;"	i
 path4562	figures/ideas/Coloured dot pattern fills.svg	/^         style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;strok/;"	i
 path4563	figures/chapters/tapir_dissolve.svg	/^           id="path4563" \/>$/;"	i
@@ -2824,6 +3149,9 @@ path5241	figures/chapters/tapir_comics.svg	/^             id="path5241" \/>$/;"	
 path5245	figures/chapters/tapir_dissolve.svg	/^           id="path5245" \/>$/;"	i
 path5269	figures/chapters/tapir_dissolve.svg	/^           id="path5269" \/>$/;"	i
 path53324	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscscccscccssssssssssssssssssssssssssscssssssssscssssssssssssssc/;"	i
+path5369	figures/ideas/SkateBoardBoy.svg	/^   <path id="path5369" stroke="#000" stroke-width="3.6" fill="none" d="m-550.98 427.27c-33.941 1/;"	i
+path5369-9	figures/ideas/SkateBoardBoy.svg	/^   <path id="path5369-9" stroke="#000" stroke-width="3.6" fill="none" d="m-516.24 426.81c73.496 /;"	i
+path5369-9-6	figures/ideas/SkateBoardBoy.svg	/^   <path id="path5369-9-6" stroke="#000" stroke-width="3.6" fill="none" d="m-750.15 422.98c-71.2/;"	i
 path53887	figures/chapters/ftcrics/tapir_ft.svg	/^           ry="0.21081159" \/>$/;"	i
 path53887	figures/chapters/tapir_comics.svg	/^           ry="0.21081159" \/>$/;"	i
 path53887	figures/chapters/tapir_fourier.svg	/^           ry="0.21081159" \/>$/;"	i
@@ -3540,6 +3868,10 @@ path6390	figures/chapters/tapir_rainbow.svg	/^           id="path6390" \/>$/;"	i
 path6390	figures/linear_algebra/tapir_transform.svg	/^           id="path6390" \/>$/;"	i
 path6390	figures/linear_algebra/tapir_transform2.svg	/^           id="path6390" \/>$/;"	i
 path6412	figures/chapters/tapir_rainbow.svg	/^         id="path6412" \/>$/;"	i
+path6421	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc/;"	i
+path6421	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc/;"	i
+path6425	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc/;"	i
+path6425	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc/;"	i
 path6509	figures/chapters/tapir_dissolve.svg	/^           id="path6509" \/>$/;"	i
 path65146	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscscccscccssssssssssssssssssssssssssscssssssssscssssssssssssssc/;"	i
 path6549	figures/chapters/tapir_dissolve.svg	/^           id="path6549" \/>$/;"	i
@@ -3576,17 +3908,122 @@ path73504	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscsc
 path7362	figures/chapters/tapir_dissolve.svg	/^           id="path7362" \/>$/;"	i
 path7569	figures/chapters/tapir_dissolve.svg	/^           id="path7569" \/>$/;"	i
 path757	figures/chapters/tapir_dissolve.svg	/^           id="path757" \/>$/;"	i
+path7572	figures/chapters/tapir_skater.svg	/^           id="path7572" \/><\/g><g$/;"	i
+path7575	figures/chapters/tapir_skater.svg	/^           id="path7575" \/><\/g><g$/;"	i
+path7578	figures/chapters/tapir_skater.svg	/^           id="path7578" \/><\/g><g$/;"	i
+path7581	figures/chapters/tapir_skater.svg	/^           id="path7581" \/><\/g><g$/;"	i
+path7584	figures/chapters/tapir_skater.svg	/^           id="path7584" \/><\/g><g$/;"	i
+path7587	figures/chapters/tapir_skater.svg	/^           id="path7587" \/><\/g><g$/;"	i
+path7590	figures/chapters/tapir_skater.svg	/^           id="path7590" \/><\/g><g$/;"	i
+path7593	figures/chapters/tapir_skater.svg	/^           id="path7593" \/><\/g><g$/;"	i
+path7596	figures/chapters/tapir_skater.svg	/^           id="path7596" \/><\/g><g$/;"	i
+path7599	figures/chapters/tapir_skater.svg	/^           id="path7599" \/><\/g><g$/;"	i
+path7602	figures/chapters/tapir_skater.svg	/^           id="path7602" \/><\/g><g$/;"	i
+path7605	figures/chapters/tapir_skater.svg	/^           id="path7605" \/><\/g><g$/;"	i
+path7608	figures/chapters/tapir_skater.svg	/^           id="path7608" \/><\/g><g$/;"	i
+path7611	figures/chapters/tapir_skater.svg	/^           id="path7611" \/><\/g><g$/;"	i
+path7614	figures/chapters/tapir_skater.svg	/^           id="path7614" \/><\/g><g$/;"	i
+path7617	figures/chapters/tapir_skater.svg	/^           id="path7617" \/><\/g><g$/;"	i
+path7620	figures/chapters/tapir_skater.svg	/^           id="path7620" \/><\/g><g$/;"	i
+path7623	figures/chapters/tapir_skater.svg	/^           id="path7623" \/><\/g><g$/;"	i
+path7626	figures/chapters/tapir_skater.svg	/^           id="path7626" \/><\/g><g$/;"	i
+path7629	figures/chapters/tapir_skater.svg	/^           id="path7629" \/><\/g><g$/;"	i
+path7632	figures/chapters/tapir_skater.svg	/^           id="path7632" \/><\/g><g$/;"	i
+path7635	figures/chapters/tapir_skater.svg	/^           id="path7635" \/><\/g><g$/;"	i
+path7638	figures/chapters/tapir_skater.svg	/^           id="path7638" \/><\/g><g$/;"	i
+path7641	figures/chapters/tapir_skater.svg	/^           id="path7641" \/><\/g><g$/;"	i
+path7644	figures/chapters/tapir_skater.svg	/^           id="path7644" \/><\/g><g$/;"	i
+path7647	figures/chapters/tapir_skater.svg	/^           id="path7647" \/><\/g><g$/;"	i
 path7650	figures/chapters/ftcrics/tapir_ft.svg	/^       sodipodi:nodetypes="ccccccccc" \/>$/;"	i
 path7650	figures/chapters/tapir_comics.svg	/^         sodipodi:nodetypes="ccccccccc" \/>$/;"	i
 path7650	figures/chapters/tapir_fourier.svg	/^       sodipodi:nodetypes="ccccccccc" \/>$/;"	i
+path7650	figures/chapters/tapir_skater.svg	/^           id="path7650" \/><\/g><g$/;"	i
 path7650	figures/linear_algebra/tapir_transform.svg	/^               sodipodi:nodetypes="ccccccccc" \/>$/;"	i
 path7650	figures/linear_algebra/tapir_transform2.svg	/^               sodipodi:nodetypes="ccccccccc" \/>$/;"	i
+path7653	figures/chapters/tapir_skater.svg	/^           id="path7653" \/><\/g><g$/;"	i
+path7656	figures/chapters/tapir_skater.svg	/^           id="path7656" \/><\/g><g$/;"	i
 path7659	figures/chapters/tapir_dissolve.svg	/^           id="path7659" \/>$/;"	i
+path7659	figures/chapters/tapir_skater.svg	/^           id="path7659" \/><\/g><g$/;"	i
+path7662	figures/chapters/tapir_skater.svg	/^           id="path7662" \/><\/g><g$/;"	i
+path7665	figures/chapters/tapir_skater.svg	/^           id="path7665" \/><\/g><g$/;"	i
+path7668	figures/chapters/tapir_skater.svg	/^           id="path7668" \/><\/g><g$/;"	i
+path7671	figures/chapters/tapir_skater.svg	/^           id="path7671" \/><\/g><g$/;"	i
+path7674	figures/chapters/tapir_skater.svg	/^           id="path7674" \/><\/g><g$/;"	i
+path7677	figures/chapters/tapir_skater.svg	/^           id="path7677" \/><\/g><g$/;"	i
 path7679	figures/chapters/tapir_dissolve.svg	/^           id="path7679" \/>$/;"	i
+path7680	figures/chapters/tapir_skater.svg	/^           id="path7680" \/><\/g><g$/;"	i
+path7683	figures/chapters/tapir_skater.svg	/^           id="path7683" \/><\/g><g$/;"	i
+path7687	figures/chapters/tapir_skater.svg	/^           id="path7687" \/><\/g><g$/;"	i
+path7690	figures/chapters/tapir_skater.svg	/^           id="path7690" \/><\/g><g$/;"	i
+path7693	figures/chapters/tapir_skater.svg	/^           id="path7693" \/><\/g><g$/;"	i
 path7694	figures/chapters/tapir_dissolve.svg	/^           id="path7694" \/>$/;"	i
+path7696	figures/chapters/tapir_skater.svg	/^           id="path7696" \/><\/g><g$/;"	i
 path7698	figures/chapters/tapir_dissolve.svg	/^           id="path7698" \/>$/;"	i
+path7699	figures/chapters/tapir_skater.svg	/^           id="path7699" \/><\/g><g$/;"	i
+path7702	figures/chapters/tapir_skater.svg	/^           id="path7702" \/><\/g><g$/;"	i
+path7705	figures/chapters/tapir_skater.svg	/^           id="path7705" \/><\/g><g$/;"	i
+path7708	figures/chapters/tapir_skater.svg	/^           id="path7708" \/><\/g><g$/;"	i
+path7711	figures/chapters/tapir_skater.svg	/^           id="path7711" \/><\/g><g$/;"	i
+path7714	figures/chapters/tapir_skater.svg	/^           id="path7714" \/><\/g><g$/;"	i
+path7717	figures/chapters/tapir_skater.svg	/^           id="path7717" \/><\/g><g$/;"	i
+path7720	figures/chapters/tapir_skater.svg	/^           id="path7720" \/><\/g><g$/;"	i
+path7723	figures/chapters/tapir_skater.svg	/^           id="path7723" \/><\/g><g$/;"	i
+path7726	figures/chapters/tapir_skater.svg	/^           id="path7726" \/><\/g><g$/;"	i
+path7729	figures/chapters/tapir_skater.svg	/^           id="path7729" \/><\/g><g$/;"	i
+path7732	figures/chapters/tapir_skater.svg	/^           id="path7732" \/><\/g><g$/;"	i
+path7735	figures/chapters/tapir_skater.svg	/^           id="path7735" \/><\/g><g$/;"	i
+path7738	figures/chapters/tapir_skater.svg	/^           id="path7738" \/><\/g><g$/;"	i
+path7741	figures/chapters/tapir_skater.svg	/^           id="path7741" \/><\/g><g$/;"	i
+path7744	figures/chapters/tapir_skater.svg	/^           id="path7744" \/><\/g><g$/;"	i
+path7747	figures/chapters/tapir_skater.svg	/^           id="path7747" \/><\/g><g$/;"	i
+path7751	figures/chapters/tapir_skater.svg	/^           id="path7751" \/><\/g><g$/;"	i
+path7754	figures/chapters/tapir_skater.svg	/^           id="path7754" \/><\/g><g$/;"	i
+path7757	figures/chapters/tapir_skater.svg	/^           id="path7757" \/><\/g><g$/;"	i
+path7760	figures/chapters/tapir_skater.svg	/^           id="path7760" \/><\/g><g$/;"	i
+path7763	figures/chapters/tapir_skater.svg	/^           id="path7763" \/><\/g><g$/;"	i
+path7766	figures/chapters/tapir_skater.svg	/^           id="path7766" \/><\/g><g$/;"	i
+path7770	figures/chapters/tapir_skater.svg	/^           id="path7770" \/><\/g><g$/;"	i
+path7773	figures/chapters/tapir_skater.svg	/^           id="path7773" \/><\/g><g$/;"	i
+path7776	figures/chapters/tapir_skater.svg	/^           id="path7776" \/><\/g><g$/;"	i
+path7779	figures/chapters/tapir_skater.svg	/^           id="path7779" \/><\/g><g$/;"	i
+path7782	figures/chapters/tapir_skater.svg	/^           id="path7782" \/><\/g><g$/;"	i
+path7785	figures/chapters/tapir_skater.svg	/^           id="path7785" \/><\/g><g$/;"	i
+path7788	figures/chapters/tapir_skater.svg	/^           id="path7788" \/><\/g><g$/;"	i
+path7791	figures/chapters/tapir_skater.svg	/^           id="path7791" \/><\/g><g$/;"	i
+path7794	figures/chapters/tapir_skater.svg	/^           id="path7794" \/><\/g><g$/;"	i
+path7797	figures/chapters/tapir_skater.svg	/^           id="path7797" \/><\/g><g$/;"	i
+path7800	figures/chapters/tapir_skater.svg	/^           id="path7800" \/><\/g><g$/;"	i
+path7803	figures/chapters/tapir_skater.svg	/^           id="path7803" \/><\/g><g$/;"	i
+path7806	figures/chapters/tapir_skater.svg	/^           id="path7806" \/><\/g><g$/;"	i
+path7809	figures/chapters/tapir_skater.svg	/^           id="path7809" \/><\/g><g$/;"	i
+path7812	figures/chapters/tapir_skater.svg	/^           id="path7812" \/><\/g><g$/;"	i
+path7815	figures/chapters/tapir_skater.svg	/^           id="path7815" \/><\/g><g$/;"	i
+path7818	figures/chapters/tapir_skater.svg	/^           id="path7818" \/><\/g><g$/;"	i
+path7821	figures/chapters/tapir_skater.svg	/^           id="path7821" \/><\/g><g$/;"	i
+path7824	figures/chapters/tapir_skater.svg	/^           id="path7824" \/><\/g><g$/;"	i
+path7827	figures/chapters/tapir_skater.svg	/^           id="path7827" \/><\/g><g$/;"	i
+path7830	figures/chapters/tapir_skater.svg	/^           id="path7830" \/><\/g><g$/;"	i
+path7833	figures/chapters/tapir_skater.svg	/^           id="path7833" \/><\/g><g$/;"	i
 path78350	figures/chapters/tapir_70s.svg	/^           sodipodi:nodetypes="csscscccscccssssssssssssssssssssssssssscssssssssscssssssssssssssc/;"	i
+path7836	figures/chapters/tapir_skater.svg	/^           id="path7836" \/><\/g><g$/;"	i
+path7839	figures/chapters/tapir_skater.svg	/^           id="path7839" \/><\/g><g$/;"	i
+path7843	figures/chapters/tapir_skater.svg	/^           id="path7843" \/><\/g><g$/;"	i
+path7847	figures/chapters/tapir_skater.svg	/^           id="path7847" \/><\/g><g$/;"	i
+path7850	figures/chapters/tapir_skater.svg	/^           id="path7850" \/><\/g><g$/;"	i
+path7854	figures/chapters/tapir_skater.svg	/^           id="path7854" \/><\/g><g$/;"	i
+path7858	figures/chapters/tapir_skater.svg	/^           id="path7858" \/><\/g><g$/;"	i
+path7862	figures/chapters/tapir_skater.svg	/^           id="path7862" \/><\/g><g$/;"	i
 path7865	figures/chapters/tapir_dissolve.svg	/^           id="path7865" \/>$/;"	i
+path7866	figures/chapters/tapir_skater.svg	/^           id="path7866" \/><\/g><g$/;"	i
+path7870	figures/chapters/tapir_skater.svg	/^           id="path7870" \/><\/g><g$/;"	i
+path7873	figures/chapters/tapir_skater.svg	/^           id="path7873" \/><\/g><g$/;"	i
+path7876	figures/chapters/tapir_skater.svg	/^           id="path7876" \/><\/g><g$/;"	i
+path7879	figures/chapters/tapir_skater.svg	/^           id="path7879" \/><\/g><g$/;"	i
+path7883	figures/chapters/tapir_skater.svg	/^           id="path7883" \/><\/g><g$/;"	i
+path7886	figures/chapters/tapir_skater.svg	/^           id="path7886" \/><\/g><\/g><clipPath$/;"	i
+path7891	figures/chapters/tapir_skater.svg	/^         id="path7891" \/><\/clipPath><clipPath$/;"	i
+path7894	figures/chapters/tapir_skater.svg	/^         id="path7894" \/><\/clipPath><clipPath$/;"	i
+path7897	figures/chapters/tapir_skater.svg	/^         id="path7897" \/><\/clipPath><filter$/;"	i
 path7910	figures/chapters/tapir_dissolve.svg	/^           id="path7910" \/>$/;"	i
 path8032	figures/chapters/tapir_comics.svg	/^           inkscape:label="main_star_fill" \/>$/;"	i
 path8060	figures/chapters/tapir_dissolve.svg	/^           id="path8060" \/>$/;"	i
@@ -3660,8 +4097,14 @@ path83780-9	figures/chapters/tapir_fourier.svg	/^           d="M -8.0233271,74.8
 path83780-9	figures/linear_algebra/tapir_transform.svg	/^           d="M -8.0233271,74.83728 A 0.21400906,0.21081159 0 0 0 -8.2373362,74.626468 V 74.8372/;"	i
 path83780-9	figures/linear_algebra/tapir_transform2.svg	/^           d="M -8.0233271,74.83728 A 0.21400906,0.21081159 0 0 0 -8.2373362,74.626468 V 74.8372/;"	i
 path852	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="czzzzc" \/>$/;"	i
+path852	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="czzzzc" \/><path$/;"	i
+path852	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="czzzzc" \/><path$/;"	i
 path854	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="zssczzzzz" \/>$/;"	i
+path854	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="zssczzzzz" \/><path$/;"	i
+path854	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="zssczzzzz" \/><path$/;"	i
 path854-7	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="cssczzcc" \/>$/;"	i
+path854-7	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="cssczzcc" \/><path$/;"	i
+path854-7	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="cssczzcc" \/><path$/;"	i
 path8549	figures/chapters/tapir_rainbow.svg	/^           id="path8549" \/>$/;"	i
 path8549	figures/linear_algebra/tapir_transform.svg	/^           id="path8549" \/>$/;"	i
 path8549	figures/linear_algebra/tapir_transform2.svg	/^           id="path8549" \/>$/;"	i
@@ -3699,6 +4142,8 @@ path9037	figures/chapters/tapir_dissolve.svg	/^           id="path9037" \/>$/;"	
 path9077	figures/chapters/tapir_dissolve.svg	/^           id="path9077" \/>$/;"	i
 path9106	figures/chapters/tapir_dissolve.svg	/^           id="path9106" \/>$/;"	i
 path912	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="zzzzzzzzzzz" \/>$/;"	i
+path912	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="zzzzzzzzzzz" \/><path$/;"	i
+path912	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="zzzzzzzzzzz" \/><path$/;"	i
 path9208	figures/chapters/tapir_dissolve.svg	/^           id="path9208" \/>$/;"	i
 path928	figures/chapters/tapir_stars.svg	/^       id="path928" \/>$/;"	i
 path9369	figures/chapters/tapir_dissolve.svg	/^           id="path9369" \/>$/;"	i
@@ -3718,6 +4163,8 @@ path961	figures/chapters/tapir_fourier.svg	/^     id="path961" \/>$/;"	i
 path963	figures/chapters/ftcrics/tapir_ft.svg	/^     id="path963" \/>$/;"	i
 path963	figures/chapters/tapir_fourier.svg	/^     id="path963" \/>$/;"	i
 path963	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="czcscsccsccc" \/>$/;"	i
+path963	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="czcscsccsccc" \/><path$/;"	i
+path963	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="czcscsccsccc" \/><path$/;"	i
 path9643	figures/chapters/tapir_rainbow.svg	/^           id="path9643" \/>$/;"	i
 path9643	figures/linear_algebra/tapir_transform.svg	/^           id="path9643" \/>$/;"	i
 path9643	figures/linear_algebra/tapir_transform2.svg	/^           id="path9643" \/>$/;"	i
@@ -3739,8 +4186,14 @@ path977	figures/chapters/tapir_fourier.svg	/^     id="path977" \/>$/;"	i
 path979	figures/chapters/ftcrics/tapir_ft.svg	/^     id="path979" \/>$/;"	i
 path979	figures/chapters/tapir_fourier.svg	/^     id="path979" \/>$/;"	i
 path980	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="zcccczz" \/>$/;"	i
+path980	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="zcccczz" \/><path$/;"	i
+path980	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="zcccczz" \/><path$/;"	i
 path980-5	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="ccc" \/>$/;"	i
+path980-5	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="ccc" \/><path$/;"	i
+path980-5	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="ccc" \/><path$/;"	i
 path980-9	figures/chapters/tapir_rainbow.svg	/^         sodipodi:nodetypes="zcccczz" \/>$/;"	i
+path980-9	figures/chapters/tapir_skater.svg	/^       sodipodi:nodetypes="zcccczz" \/><path$/;"	i
+path980-9	figures/ideas/skater_tapir.svg	/^       sodipodi:nodetypes="zcccczz" \/><path$/;"	i
 path981	figures/chapters/ftcrics/tapir_ft.svg	/^     id="path981" \/>$/;"	i
 path981	figures/chapters/tapir_fourier.svg	/^     id="path981" \/>$/;"	i
 path983	figures/chapters/ftcrics/tapir_ft.svg	/^     id="path983" \/>$/;"	i
@@ -4534,6 +4987,7 @@ rdf	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/el
 rdf	figures/chapters/tapir_voronoi.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/cover/tapir.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/ideas/SkateBoardBoy.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/ideas/speech_17.svg	/^  >$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdf	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
@@ -4629,6 +5083,17 @@ rect3645	figures/chapters/tapir_comics.svg	/^       inkscape:label="fill" \/>$/;
 rect3645	figures/chapters/tapir_fourier.svg	/^       inkscape:label="fill" \/>$/;"	i
 rect3645	figures/linear_algebra/tapir_transform.svg	/^             inkscape:label="fill" \/>$/;"	i
 rect3645	figures/linear_algebra/tapir_transform2.svg	/^             inkscape:label="fill" \/>$/;"	i
+rect3682	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3682" d="m-861.24 375.16c-11.819 34.687-6.9528 66.036 0 96.969 43.103-4.5171 87/;"	i
+rect3845	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3845" d="m-939.46 459.61c9.9414-36.242 45.078-47.289 76.967-61.582l20.527 25.65/;"	i
+rect3845-44	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3845-44" d="m-417.65 401.05c32.855-11.535 65.709-6.0109 98.564 1.1943l-0.39809 /;"	i
+rect3845-6	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3845-6" d="m-540.89 887.25c-19.646-30.222-22.421-62.854-23.513-95.726l31.909-7./;"	i
+rect3845-6-0	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3845-6-0" d="m-742.05 920.16c-14.907-34.348-5.5439-66.489 8.8768-98.171l32.724 /;"	i
+rect3845-6-3	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3845-6-3" d="m-563.47 1014.8c5.3179-37.728 7.4105-75.456 28.147-113.18l31.153 7/;"	i
+rect3845-6-3-0	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3845-6-3-0" d="m-758.68 1079.3c-1.7058-52.866-2.6853-105.73 16.758-158.6l32.336/;"	i
+rect3849	figures/ideas/SkateBoardBoy.svg	/^   <rect id="rect3849" ry="15.714" fill-rule="evenodd" rx="14.286" transform="rotate(15.466)" he/;"	i
+rect3849-4	figures/ideas/SkateBoardBoy.svg	/^   <rect id="rect3849-4" ry="15.714" fill-rule="evenodd" rx="14.286" transform="matrix(.026334 ./;"	i
+rect3849-43	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3849-43" d="m-543.28 852.59 27.939-8.3273c7.5846-2.2606 15.692 2.636 18.179 10./;"	i
+rect3849-43-3	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect3849-43-3" d="m-738.71 869.07 31.822 1.9725c7.8991 0.48963 13.825 7.879 13.286 /;"	i
 rect4030	figures/ideas/Coloured dot pattern fills.svg	/^       style="opacity:1;vector-effect:none;fill:url(#pattern4230);fill-opacity:1;fill-rule:eveno/;"	i
 rect4032	figures/ideas/Coloured dot pattern fills.svg	/^       y="170.58424" \/>$/;"	i
 rect4034	figures/ideas/Coloured dot pattern fills.svg	/^       style="opacity:1;vector-effect:none;fill:url(#pattern4250);fill-opacity:1;fill-rule:eveno/;"	i
@@ -4641,6 +5106,9 @@ rect4048	figures/ideas/Coloured dot pattern fills.svg	/^       y="197.24847" \/>
 rect4050	figures/ideas/Coloured dot pattern fills.svg	/^       style="opacity:1;vector-effect:none;fill:url(#pattern4242);fill-opacity:1;fill-rule:eveno/;"	i
 rect4052	figures/ideas/Coloured dot pattern fills.svg	/^       y="223.9127" \/>$/;"	i
 rect4061	figures/ideas/Coloured dot pattern fills.svg	/^       id="rect4061" \/>$/;"	i
+rect4102	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect4102" d="m-707.44 626.09c-40.394 93.032-43.187 146.04-53.656 198.22 46.486 19.4/;"	i
+rect4102-1	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect4102-1" fill-rule="evenodd" fill-opacity=".094118" d="m-723.37 827.95c-25.376 1/;"	i
+rect4102-4	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect4102-4" fill-rule="evenodd" fill-opacity=".18824" d="m-588.05 623.37c18.923 69./;"	i
 rect41474	figures/chapters/tapir_warhol.svg	/^         y="337.68039" \/>$/;"	i
 rect4156	figures/ideas/Coloured dot pattern fills.svg	/^       id="rect4156" \/>$/;"	i
 rect4163	figures/ideas/Coloured dot pattern fills.svg	/^       id="rect4163" \/>$/;"	i
@@ -4661,6 +5129,20 @@ rect4665	figures/chapters/tapir_comics.svg	/^         id="rect4665" \/>$/;"	i
 rect4665	figures/chapters/tapir_fourier.svg	/^         id="rect4665" \/>$/;"	i
 rect4665	figures/linear_algebra/tapir_transform.svg	/^         id="rect4665" \/>$/;"	i
 rect4665	figures/linear_algebra/tapir_transform2.svg	/^         id="rect4665" \/>$/;"	i
+rect4793	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect4793" d="m-763.68 1050.3c21.487 15.909 36.053 4.1358 52.528 0 10.231 17.717 2.1/;"	i
+rect4793-2	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect4793-2" d="m-566.4 993.23c19.538 18.25 35.348 8.209 52.187 5.9737 8.1493 18.766/;"	i
+rect4997-7	figures/chapters/tapir_skater.svg	/^       fill="#808080" \/><g$/;"	i
+rect4997-7	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect4997-7" d="m-643.3 1165.1c-24.881 10.781-36.082 15.177-15.344 40.656 12.882 22./;"	i
+rect4997-7	figures/ideas/skater_tapir.svg	/^       fill="#808080" \/><g$/;"	i
+rect4997-7-2	figures/chapters/tapir_skater.svg	/^       fill="#808080" \/><rect$/;"	i
+rect4997-7-2	figures/ideas/SkateBoardBoy.svg	/^   <path id="rect4997-7-2" d="m-394.78 1084.3c-24.881 10.781-36.082 15.177-15.344 40.656 12.882 /;"	i
+rect4997-7-2	figures/ideas/skater_tapir.svg	/^       fill="#808080" \/><rect$/;"	i
+rect5007	figures/chapters/tapir_skater.svg	/^       fill="#808080" \/><g$/;"	i
+rect5007	figures/ideas/SkateBoardBoy.svg	/^   <rect id="rect5007" transform="rotate(-47.552)" fill-rule="evenodd" rx="4.4094" ry="5.7481" h/;"	i
+rect5007	figures/ideas/skater_tapir.svg	/^       fill="#808080" \/><g$/;"	i
+rect5007-4	figures/chapters/tapir_skater.svg	/^       fill="#808080" \/><g$/;"	i
+rect5007-4	figures/ideas/SkateBoardBoy.svg	/^   <rect id="rect5007-4" transform="rotate(-47.552)" fill-rule="evenodd" rx="4.4094" ry="5.7481"/;"	i
+rect5007-4	figures/ideas/skater_tapir.svg	/^       fill="#808080" \/><g$/;"	i
 rect5355	figures/chapters/tapir_warhol.svg	/^         y="337.68039" \/>$/;"	i
 rect54625	figures/chapters/ftcrics/tapir_ft.svg	/^           inkscape:export-ydpi="292.75482" \/>$/;"	i
 rect54625	figures/chapters/tapir_comics.svg	/^           inkscape:export-ydpi="292.75482" \/>$/;"	i
@@ -4818,6 +5300,7 @@ sodipodi	figures/chapters/tapir_comics.svg	/^   xmlns:svg="http:\/\/www.w3.org\/
 sodipodi	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/chapters/tapir_fourier.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/chapters/tapir_rainbow.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/chapters/tapir_skater.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/chapters/tapir_stars.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/chapters/tapir_strawberry_two.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/chapters/tapir_voronoi.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
@@ -4825,6 +5308,7 @@ sodipodi	figures/chapters/tapir_warhol.svg	/^   xmlns:svg="http:\/\/www.w3.org\/
 sodipodi	figures/cover/tapir.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/ideas/comics_tile.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/ideas/skater_tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/ideas/speech_17.svg	/^  >$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
 sodipodi	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
@@ -4934,6 +5418,7 @@ svg	figures/chapters/tapir_comics.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\
 svg	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/chapters/tapir_fourier.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/chapters/tapir_rainbow.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/chapters/tapir_skater.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/chapters/tapir_stars.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/chapters/tapir_strawberry_two.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/chapters/tapir_voronoi.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/2000/svg
@@ -4941,6 +5426,7 @@ svg	figures/chapters/tapir_warhol.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\
 svg	figures/cover/tapir.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/ideas/comics_tile.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/ideas/skater_tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/ideas/speech_17.svg	/^  >$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/ideas/tapir2.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	n	uri:http://www.w3.org/2000/svg
@@ -4957,6 +5443,7 @@ svg1021	figures/chapters/tapir_70s.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000
 svg1022	figures/chapters/ftcrics/tapir_ft.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg1022	figures/chapters/tapir_fourier.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg16337	figures/symbols/lightmark.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
+svg2	figures/ideas/SkateBoardBoy.svg	/^<svg xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/www.w3.org\/20/;"	i
 svg2	figures/ideas/tom_Summer_Leaves.svg	/^   inkscape:export-ydpi="36.986565">$/;"	i
 svg2655	figures/ideas/Coloured dot pattern fills.svg	/^   sodipodi:docname="Coloured dot pattern fills.svg">$/;"	i
 svg3020	figures/symbols/1582806988hand-pencil-write-freesvgorg.svg	/^<svg xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/" xmlns:cc="http:\/\/creativecommons.org\/n/;"	i
@@ -4966,9 +5453,11 @@ svg3356	figures/ideas/tapir4.svg	/^   sodipodi:docname="Palaeotherium.svg">$/;"	
 svg4156	figures/ideas/tapir3.svg	/^<svg id="svg4156" xmlns:rdf="http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#" xmlns="http:\/\/w/;"	i
 svg5	figures/chapters/tapir_comics.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg5	figures/chapters/tapir_rainbow.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
+svg5	figures/chapters/tapir_skater.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	i
 svg5	figures/chapters/tapir_stars.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg5	figures/chapters/tapir_strawberry_two.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg5	figures/chapters/tapir_warhol.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
+svg5	figures/ideas/skater_tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	i
 svg5	figures/linear_algebra/tapir_transform.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg5	figures/linear_algebra/tapir_transform2.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
 svg52750	figures/ideas/comics_tile.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	i
@@ -6414,11 +6903,18 @@ use150973	figures/chapters/tapir_comics.svg	/^         inkscape:tile-y0="28.9613
 use150975	figures/chapters/tapir_comics.svg	/^         inkscape:tile-y0="28.961346" \/>$/;"	i
 use150977	figures/chapters/tapir_comics.svg	/^         inkscape:tile-y0="28.961346" \/>$/;"	i
 use150979	figures/chapters/tapir_comics.svg	/^         inkscape:tile-y0="28.961346" \/>$/;"	i
+use8610	figures/chapters/tapir_skater.svg	/^         id="use8610" \/><\/g><g$/;"	i
+use8614	figures/chapters/tapir_skater.svg	/^         id="use8614" \/><\/g><g$/;"	i
+use8618	figures/chapters/tapir_skater.svg	/^         id="use8618" \/><\/g><g$/;"	i
+use8622	figures/chapters/tapir_skater.svg	/^         id="use8622" \/><\/g><\/g><g$/;"	i
+use9778	figures/chapters/tapir_skater.svg	/^       id="use9778" \/><\/g><g$/;"	i
+use9782	figures/chapters/tapir_skater.svg	/^       id="use9782" \/><\/g><\/svg>$/;"	i
 xlink	figures/chapters/ftcrics/tapir_ft.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/chapters/tapir_butterfly.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/chapters/tapir_comics.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/chapters/tapir_dissolve.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/chapters/tapir_fourier.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink
+xlink	figures/chapters/tapir_skater.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg"><sodipodi:namedview$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/chapters/tapir_stars.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/chapters/tapir_strawberry_two.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink
 xlink	figures/chapters/tapir_warhol.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/1999/xlink
