@@ -1,1 +1,122 @@
 \section{Sequences and series}
+A \emph{sequence} is an indexed collection of \emph{elements}. By \textit{indexed} we mean that the order of the elements in a sequence matters (unlike with sets): changing the order of any element changes the sequence as a whole. The following are some examples of sequences composed of real numbers:
+\begin{itemize}
+	\item $1,-3,0,-7,2,1.5,4,0,1,-0.35,\sqrt{2}$.
+	\item $0,1,2,1,1,-1,0$.
+	\item $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}, \dots$
+	\item $0,1,0,1,0,1,0,1,0,1,0,1,0,1,\dots$
+\end{itemize}
+The examples above present two more properties of sequences:
+\begin{itemize}
+	\item Elements may repeat (unlike in the case of sets), and
+	\item sequences can be either \emph{finite} (as in the first two examples), or \emph{infinite} (as in the latter two examples).
+\end{itemize}
+
+The number of elements in a sequence is called its \emph{length}. In the case of infinite sequences we say that their length equals $\infty$ (inifinity). The elements of a sequence $a$ are usually indexed using a subscript, such that $a_{1}$ is the first element in the sequence, $a_{2}$ is the second element in the sequence, etc. - and generally $a_{i}$ is the $i$-th element in the sequence, where $i\in\mathbb{N}$.
+
+We can therefore define a sequence somewhat more formally as a function from a subset of the natural numbers to the real numbers:
+\begin{equation}
+	a:N\to\Rs,
+\end{equation}
+where $N\subseteq\mathbb{N}$.
+\begin{example}{Sequences as functions}{}
+	The following $9$-element sequence $a$
+	\begin{center}
+		\begin{tikzpicture}
+			\matrix[matrix of math nodes, nodes={anchor=center, minimum width=13mm}, row 1/.style={nodes={font=\large}}] (seq)
+			{3, & 4, & \frac{1}{2}, & 0, & 2, & 6, & -\frac{2}{3}, & 0, & -1.\\};
+			\foreach \k in {1,...,9}{
+				\node[xred, below of=seq-1-\k] (a-\k) {$a(\k)$};
+				\draw[xred, -stealth] (a-\k) -- (seq-1-\k);
+			}
+		\end{tikzpicture}
+	\end{center}
+	
+	can be viewed as a function
+	\[
+		a:\left\{1,2,\dots,9\right\}\to\Rs,
+	\]
+	or more precisely as a function
+	\[
+		a:\left\{1,2,\dots,9\right\}\to\left\{-1,-\frac{2}{3},0,\frac{1}{2},2,3,4,6\right\}.
+	\]
+
+	\vspace{2em}
+	The follow infinite sequence $b$
+	\begin{center}
+		\begin{tikzpicture}
+			\matrix[matrix of math nodes, nodes={anchor=center, minimum width=13mm}, row 1/.style={nodes={font=\large}}] (seq)
+			{1, & \frac{1}{2}, & \frac{1}{3}, & \frac{1}{4}, &  \frac{1}{5}, & \frac{1}{6}, & \frac{1}{7}, & \dots \\};
+			\foreach \k in {1,...,7}{
+				\node[xpurple, below of=seq-1-\k] (a-\k) {$b(\k)$};
+				\draw[xpurple, -stealth] (a-\k) -- (seq-1-\k);
+			}
+		\end{tikzpicture}
+	\end{center}
+	can be viewed as a function
+	\[
+		b:\mathbb{N}\to(0,1].
+	\]
+\end{example}
+
+Since sequences can be viewed as functions, they can be defined using formulas: for example, the sequence
+\[
+	1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots
+\]
+can be defined using the simple formula
+\[
+	a_{n}=\frac{1}{n}.
+\]
+
+\begin{example}{Some sequences defined using formulas}{}
+	\renewcommand*{\arraystretch}{3}
+	\centering
+	\begin{tabular}{rll}
+		$(-1)^{n}$ & $\Rightarrow$ & $-1,1,-1,1,-1,1,-1,1,-1,\dots$\\
+		$3n+4$ & $\Rightarrow$ & $7,10,13,16,19,22,\dots$\\
+		$(n+1)^{2}$ & $\Rightarrow$ & $4,9,16,25,36,49,\dots$\\
+		$\begin{cases}
+			\colorbox{xred!20}{2n+1} & \text{if}\ n\text{ is odd},\\
+			\colorbox{xblue!20}{n-1}  & \text{if}\ n\text{ is even}.
+		\end{cases}$ & $\Rightarrow$ & $\colorbox{xred!20}{3},\colorbox{xblue!20}{1},\colorbox{xred!20}{7},\colorbox{xblue!20}{3},\colorbox{xred!20}{11},\colorbox{xblue!20}{5},\colorbox{xred!20}{15},\colorbox{xblue!20}{7}, \dots$\\
+	\end{tabular}
+\end{example}
+
+Sequences can also be defined using \emph{recursion}, where the value of an element is defined using previous values and a \emph{starting value}. For example:
+\[
+	a_{n} = a_{n-1}^{2}-2,
+\]
+with the starting value $a_{1}=3$. We the get that
+\[
+	a_{2} = a_{1}^{2}-2 = 3^{2}-2 = 7,
+\]
+and thus
+\[
+	a_{3} = a_{2}^{2}-2 = 7^{2}-2 = 47,
+\]
+etc.
+
+\begin{example}{The Fibonacci sequnce}{}
+	The \emph{Fibonacci sequences} is a well-known sequence defined using the following recursive rule:
+	\[
+		F_{n} = F_{n-1} + F_{n-2},
+	\]
+	with $F_{1}=F_{2}=1$. The first few elements of the sequence are therefore
+	\[
+		1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,\dots
+	\]
+	\centering
+	% \begin{tikzpicture}[]
+	% 	\pgfmathsetmacro{\phi}{1.618033988749}
+	% 	\foreach \k in {1,2,...,14}{
+	% 		\pgfmathsetmacro{\F}{int(ceil((\phi^\k-(\phi)^(-\k))/sqrt(5)))}
+	% 		\pgfmathsetmacro{\n}{\k-1}
+	% 		\pgfmathsetmacro{\m}{\k-2}
+	% 		\node (F\k) at (0.7*\k,0) {$\F,$};
+	% 		\ifnum \k>2
+	% 			\draw[-stealth, xred] (F\k.north) to [out=90, in=90] (F\n);
+	% 			\draw[-stealth, xred] (F\k.north) to [out=90, in=90] (F\m);
+	% 		\fi
+	% 	}
+	% \end{tikzpicture}
+\end{example}
