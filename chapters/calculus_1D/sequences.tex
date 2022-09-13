@@ -1,4 +1,5 @@
 \section{Sequences and series}
+\subsection{Basics}
 A \emph{sequence} is an indexed collection of \emph{elements}. By \textit{indexed} we mean that the order of the elements in a sequence matters (unlike with sets): changing the order of any element changes the sequence as a whole. The following are some examples of sequences composed of real numbers:
 \begin{itemize}
 	\item $1,-3,0,-7,2,1.5,4,0,1,-0.35,\sqrt{2}$.
@@ -148,3 +149,163 @@ etc.
 	\caption{A graphical representation of the Fibonacci sequence: two squares of side $1$ are placed adjacent to each other on the plane. In each subsequent step a new square is place such that its side is equal to the combined sides of the previous two squares. This way, the side of each square in the sequence follows the Fibonacci sequence. In each square we draw a quarter circle centered on one of the vertices, such that we get the famous \emph{golden ratio} helix.}
 	\label{fig:Fib_graphical}
 \end{figure}
+
+\begin{note}{Focus of section}{}
+	From now on in the section we will focus on infinite sequences only.
+\end{note}
+
+\subsection{Types of sequences}%
+\label{sub:Types of sequences}
+Consider the sequence $a_{n}=n^{2}$. Since $n\in\mathbb{N}$, for any $n,\ a_{n+1} > a_{n}$, since $(n+1)^{2} > n^{2}$ (see \autoref{fig:n^2_seq}). We say that such a sequence is \emph{increasing}. In fact, for a sequence to be increasing some sequential elements can be equal: for example, the sequence $c_{n}=1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,\dots$ is also a increasing sequence. Thus, the definition of a increasing sequence is the following:
+
+\begin{definition}{increasing sequence}
+	A sequence $a_{n}$ is said to be \textit{increasing} if for any $n\in\mathbb{N},\ a_{n+1}\geq a_{n}$.
+\end{definition}
+If we change the condition to $a_{n+1}>a_{n}$ we say that such a sequence is \emph{strictly increasing}. In the above examples $a_{n}$ is a strictly increasing sequence, while $c_{n}$ is just increasing (since for some indeces $n,\ c_{n+1}=c_{n}$).
+
+Similarly, a \emph{decreasing} sequence is a sequence $b_{n}$ for which for any $n\in\mathbb{N},\ b_{n+1}\leq b_{n}$. An example of such sequence is $b_{n}=\frac{1}{n}$ (see \autoref{fig:1/n_seq}). ANd of course, if we change the condition to $b_{n+1}<b_{n}$ then the sequence is \emph{strictly decreasing}.
+
+Generally, a sequence that is either increasin or decreasing is said to be \emph{monotone}. If a sequence is monotone starting only from a certain $n$, we say that the sequence is \emph{eventually monotone} (i.e. \textit{eventually increasing} or \textit{eventually decreasing}). An example of such sequence is $d_{n}=(n-5)^{2}$ (\autoref{fig:(n-5)^2_seq}): for $N\in{1,2,3,4,5}$ it is decreasing, but starting from $n=5$ it is increasing for any $n$.
+
+As an example of a sequence which isn't monote, consider the sequence $e_{n}=\sin(n)$: for some values of $n,\ e_{n+1}>e_{n}$ and for some other values $e_{n+1}<e_{n}$ (see \autoref{fig:sin(n)_seq}).
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=21,
+			ymin=0, ymax=400,
+			axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$a_{n}=n^{2}$},
+			xtick={1,...,20},
+			ticklabel style={font=\small},
+			domain={0:20},
+			samples=21,
+		]
+		\addplot[xred, only marks, mark=*] {x^2};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The sequence $a_{n}=n^{2}$ is increasing, and is in fact \textit{strictly} increasing.}
+	\label{fig:n^2_seq}
+\end{figure}
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=21,
+			ymin=0, ymax=1.1,
+			axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$b_{n}=\frac{1}{n}$},
+			xtick={1,...,20},
+			ticklabel style={font=\small},
+			domain={0:20},
+			samples=21,
+		]
+		\addplot[xblue, only marks, mark=*] {1/x};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The sequence $b_{n}=\frac{1}{n}$ is decreasing, and is in fact \textit{strictly} decreasing.}
+	\label{fig:1/n_seq}
+\end{figure}
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=21,
+			ymin=0, ymax=250,
+			axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$d_{n}=(n-5)^{2}$},
+			xtick={1,...,20},
+			ticklabel style={font=\small},
+			domain={0:20},
+			samples=21,
+		]
+		\addplot[xpurple, only marks, mark=*] {(x-5)^2};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The sequence $d_{n}=(n-5)^{2}$ starts as a decreasing sequence, but starting from $n=5$ it is increasing, making it an \textit{eventually increasing sequence}.}
+	\label{fig:(n-5)^2_seq}
+\end{figure}
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=21,
+			ymin=-1.1, ymax=1.1,
+			x axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$e_{n}=\sin(n)$},
+			xtick={1,...,20},
+			ticklabel style={font=\small},
+			domain={0:20},
+			samples=21,
+		]
+		\addplot[black!20, dashed, samples=150] {sin(deg(x))};
+		\addplot[xorange, only marks, mark=*] {sin(deg(x))};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The sequence $e_{n}=\sin(n)$ is neither increasing nor decreasing. For reference, the function $\sin(x)$ is plotted as a dashed line behind $e_{n}$.}
+	\label{fig:sin(n)_seq}
+\end{figure}
+
+The following are two ways to determine whether a sequence $a_{n}$ is monotone:
+\begin{descitemize}
+	\item[Difference test] if $a_{n+1}-a_{n}\geq0$ for all $n\in\mathbb{N}$, then the sequence is increasing. If $a_{n+1}-a_{n}\leq0$ for all $n\in\mathbb{N}$ then the sequence is decreasing.
+	\item[Ratio test] if $\frac{a_{n}+1}{a_{n}}\geq1$ for all $n\in\mathbb{N}$ then the sequence is increasing, and if $\frac{a_{n+1}}{a_{n}}<1$ for all $n\in\mathbb{N}$ then the sequence is decreasing.
+\end{descitemize}
+
+\begin{example}{Difference test}{}
+	Given the sequence $a_{n}=\frac{n}{n+1}$, we look at the difference $a_{n+1}-a_{n}$:
+	\begin{align*}
+		a_{n+1}-a_{n} &= \frac{n+1}{n+2}-\frac{n}{n+1} = \frac{(n+1)(n+1)-(n+2)n}{(n+1)(n+2)}\\
+					  &= \frac{n^{2}+2n+1-n^{2}-2n}{(n+1)(n+2)} = \frac{1}{(n+1)(n+2)} < 1\quad \forall n\in\mathbb{N}.
+	\end{align*}
+	The last (in)equality stems from the fact that no matter what $n$ we subtitute into $(n+1)(n+2)$, the result will be greater than $1$, and thus $\frac{1}{(n+1)(n+2)}$ is always smaller than $1$. Therefore, $a_{n}$ is a decreasing sequence.
+\end{example}
+
+\begin{example}{Ratio test}{}
+	Given the sequence $b_{n}=\frac{2^{n}}{n^{2}}$, the ratio of $a_{n+1}$ to $a_{n}$ is
+	\[
+		\frac{a_{n+1}}{a_{n}} = \frac{\frac{2^{n+1}}{(n+1)^{2}}}{\frac{2^{n}}{n^{2}}} = 2\frac{n^{2}}{(n+1)^{2}}.
+	\]
+	Let's look at the first few approximated values of the ratio $\frac{n^{2}}{(n+1)^{2}}$:
+	\begin{center}
+		\begin{NiceTabular}{p{2mm}l}[
+			cell-space-limits=3pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+			]
+			\toprule
+			\RowStyle{\bfseries} $n$ & $\frac{n^{2}}{(n+1)^{2}}$ \\
+			\midrule
+			0 & 0\\
+			1 & 0.25\\
+			2 & 0.44444\ldots\\
+			3 & 0.5625\\
+			4 & 0.64\\
+			5 & 0.69444\ldots\\
+			6 & 0.7346938775510204\\
+			7 & 0.765625\\
+			8 & 0.7901234567901234\\
+			9 & 0.81\\
+			10 & 0.8264462809917356\\
+			11 & 0.840277777\ldots\\
+			12 & 0.8520710059171598\\
+			13 & 0.8622448979591837\\
+			\bottomrule
+		\end{NiceTabular}
+	\end{center}
+	We see that for any $n\geq3,\ \frac{n^{2}}{(n+1)^{2}}>\frac{1}{2}$, and therefore $2\frac{n^{2}}{(n+1)^{2}}>1$. Thus, the sequence is eventually increasing.
+\end{example}

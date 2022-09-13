@@ -26,6 +26,7 @@ Arrow1Mend	figures/linear_algebra/tapir_transform.svg	/^       inkscape:isstock=
 Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	d
 Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	i
 Basic Definitions	chapters/intro/trigonomentry.tex	/^\\subsection{Basic Definitions}$/;"	u	section:Introduction""Trigonometric functions
+Basics	chapters/calculus_1D/sequences.tex	/^\\subsection{Basics}$/;"	u	section:Sequences and series
 Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Introduction""Relations and Functions
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Basis sets	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Basis sets}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
@@ -156,6 +157,7 @@ TriangleOutM	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:issto
 TriangleOutM	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	i
 Trigonometric functions	chapters/intro/trigonomentry.tex	/^\\section{Trigonometric functions}\\label{section:trigonometry}$/;"	s	chapter:Introduction
 Types of matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Types of matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
+Types of sequences	chapters/calculus_1D/sequences.tex	/^\\subsection{Types of sequences}%$/;"	u	section:Sequences and series
 Useful theorems	chapters/intro/trigonomentry.tex	/^\\subsection{Useful theorems}$/;"	u	section:Introduction""Trigonometric functions
 Vector spaces	chapters/linear_algebra_rigorous/vectors.tex	/^\\section{Vector spaces}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
@@ -777,6 +779,8 @@ fig:	chapters/linear_algebra_intuitive/eigenvectors.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/linear_trans.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{fig:}$/;"	l
+fig:(n-5)^2_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:(n-5)^2_seq}$/;"	l
+fig:1/n_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:1\/n_seq}$/;"	l
 fig:Fib_graphical	chapters/calculus_1D/sequences.tex	/^	\\label{fig:Fib_graphical}$/;"	l
 fig:R2_infinite_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:R2_infinite_solutions}$/;"	l
 fig:R2_num_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:R2_num_solutions}$/;"	l
@@ -804,6 +808,7 @@ fig:line_plane_R3	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\labe
 fig:linear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:linear transformation grid}$/;"	l
 fig:linear_equations_2_vars	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:linear_equations_2_vars}$/;"	l
 fig:matrix_matrix_product_elements	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:matrix_matrix_product_elements}$/;"	l
+fig:n^2_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:n^2_seq}$/;"	l
 fig:nonlinear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:nonlinear transformation grid}$/;"	l
 fig:norm 2D vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:norm 2D vector}$/;"	l
 fig:normalVec	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:normalVec}$/;"	l
@@ -823,6 +828,7 @@ fig:rotationT	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:ro
 fig:rotation_around_axis	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:rotation_around_axis}$/;"	l
 fig:rotation_in_yz	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:rotation_in_yz}$/;"	l
 fig:sin and cos graphs	chapters/intro/trigonomentry.tex	/^	\\label{fig:sin and cos graphs}$/;"	l
+fig:sin(n)_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:sin(n)_seq}$/;"	l
 fig:single vector LT	chapters/linear_algebra_intuitive/linear_trans.tex	/^		\\label{fig:single vector LT}$/;"	l
 fig:skew_in_x	chapters/linear_algebra_intuitive/matrices.tex	/^			\\label{fig:skew_in_x}$/;"	l
 fig:span of a single vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:span of a single vector}$/;"	l
@@ -5425,6 +5431,7 @@ stop868	figures/linear_algebra/tapir_transform.svg	/^         style="stop-color:
 stop868	figures/linear_algebra/tapir_transform2.svg	/^         style="stop-color:#5bcefa;stop-opacity:1" \/>$/;"	i
 stop870	figures/linear_algebra/tapir_transform.svg	/^         id="stop870" \/>$/;"	i
 stop870	figures/linear_algebra/tapir_transform2.svg	/^         id="stop870" \/>$/;"	i
+sub:Types of sequences	chapters/calculus_1D/sequences.tex	/^\\label{sub:Types of sequences}$/;"	l
 svg	design/chapter.svg	/^   sodipodi:docname="chapter.svg">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/chapters/ftcrics/tapir.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 svg	figures/chapters/ftcrics/tapir_ft.svg	/^   xmlns:svg="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
