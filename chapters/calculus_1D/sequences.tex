@@ -105,18 +105,46 @@ etc.
 	\[
 		1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,\dots
 	\]
-	\centering
-	% \begin{tikzpicture}[]
-	% 	\pgfmathsetmacro{\phi}{1.618033988749}
-	% 	\foreach \k in {1,2,...,14}{
-	% 		\pgfmathsetmacro{\F}{int(ceil((\phi^\k-(\phi)^(-\k))/sqrt(5)))}
-	% 		\pgfmathsetmacro{\n}{\k-1}
-	% 		\pgfmathsetmacro{\m}{\k-2}
-	% 		\node (F\k) at (0.7*\k,0) {$\F,$};
-	% 		\ifnum \k>2
-	% 			\draw[-stealth, xred] (F\k.north) to [out=90, in=90] (F\n);
-	% 			\draw[-stealth, xred] (F\k.north) to [out=90, in=90] (F\m);
-	% 		\fi
-	% 	}
-	% \end{tikzpicture}
+	See \autoref{fig:Fib_graphical} for a graphical representation of the Fibonacci sequence.
+
 \end{example}
+
+\begin{figure}
+	\pgfmathsetmacro{\scale}{0.5}
+	\pgfmathsetmacro{\helixscale}{28.34677*\scale} % Ratio of cm to bp
+	\centering
+	\begin{tikzpicture}[scale=\scale]
+		\def\horizontal{{-1,-1,1,1}}
+		\def\vertical{{1,-1,-1,1}}
+		\def\center{{1,0}}
+		\pgfmathsetmacro{\phi}{1.618033988749} % Golden ratio
+		\pgfmathsetmacro{\x}{0}
+		\pgfmathsetmacro{\y}{0}
+		\foreach \n in {1,...,8}{
+			% Calcs
+			\pgfmathsetmacro{\k}{\n+1}
+			\pgfmathsetmacro{\Fib}{int(ceil((\phi^(\k-1)-(\phi)^(-(\k-1)))/sqrt(5)))} % Fibonacci sequence
+			\pgfmathsetmacro{\dx}{\Fib*\horizontal[mod(\n,4)]}
+			\pgfmathsetmacro{\dy}{\Fib*\vertical[mod(\n,4)]}
+			\pgfmathsetmacro{\dcx}{\center[mod(\n,2)]}
+			\pgfmathsetmacro{\dcy}{\center[mod(\n+1,2)]}
+
+			\coordinate (s) at (\x,\y);
+			\coordinate (e) at ({\x+\dx},{\y+\dy});
+			\coordinate (o) at ({\x+\dcx*\dx},{\y+\dcy*\dy}); % dx, dy, dx, dy, dx, dy, ...
+
+			% Draw
+			\pgfmathsetmacro{\m}{int(mod(\n,8))}
+			\draw[thick, fill=xcol\m!20] (s) rectangle (e) node[midway, font=\tiny] {$\Fib$};
+			\pic[draw, thick, angle radius=\helixscale*\Fib] {angle=s--o--e};
+
+			% Re-calc
+			\pgfmathparse{\x+\dx}
+			\xdef\x{\pgfmathresult}
+			\pgfmathparse{\y+\dy}
+			\xdef\y{\pgfmathresult}
+		}
+	\end{tikzpicture}
+	\caption{A graphical representation of the Fibonacci sequence: two squares of side $1$ are placed adjacent to each other on the plane. In each subsequent step a new square is place such that its side is equal to the combined sides of the previous two squares. This way, the side of each square in the sequence follows the Fibonacci sequence. In each square we draw a quarter circle centered on one of the vertices, such that we get the famous \emph{golden ratio} helix.}
+	\label{fig:Fib_graphical}
+\end{figure}

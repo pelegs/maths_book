@@ -28,7 +28,7 @@ Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock
 Basic Definitions	chapters/intro/trigonomentry.tex	/^\\subsection{Basic Definitions}$/;"	u	section:Introduction""Trigonometric functions
 Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Introduction""Relations and Functions
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
-Basis sets	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Basis sets}$/;"	u	section:Functions as vectors
+Basis sets	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Basis sets}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Calulating eigenvectors	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Calulating eigenvectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
 Cartesian Products	chapters/intro/math_symbols_sets.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Cartesian Products	sed_test.tex	/^\\subsection{Cartesian Products}$/;"	u	section:Mathematical Symbols and Sets
@@ -48,7 +48,7 @@ Developing intuition	chapters/linear_algebra_intuitive/linear_trans.tex	/^\\subs
 Differential equations	chapters/differential_equations/preface.tex	/^\\chapter{Differential equations}$/;"	c
 Dual vectors	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\section{Dual vectors}\\label{section:dual_vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Duality	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Duality}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
-Eigenfunctions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Eigenfunctions}$/;"	u	section:Functions as vectors
+Eigenfunctions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Eigenfunctions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Eigenvectors and eigenvalues	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\section{Eigenvectors and eigenvalues}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Exercises	chapters/calculus_1D/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Real calculus in 1D
 Exercises	chapters/differential_equations/exercises.tex	/^\\section{Exercises}$/;"	s	chapter:Differential equations
@@ -63,9 +63,9 @@ Finding solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subse
 Finite fields	chapters/linear_algebra_rigorous/fields.tex	/^\\subsection{Finite fields}$/;"	u	section:Linear algebra\\\\(rigorous approach)""Fields
 Formulating plant nutrient solutions	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Formulating plant nutrient solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Some real life uses of linear algebra
 From transformations to matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{From transformations to matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
-Function values as vector components	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Function values as vector components}$/;"	u	section:Functions as vectors
+Function values as vector components	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Function values as vector components}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Functionals	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Functionals}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
-Functions as vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\section{Functions as vectors}$/;"	s
+Functions as vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\section{Functions as vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Geometric approach	chapters/intro/complex_numbers.tex	/^\\subsection{Geometric approach}$/;"	u	section:Introduction""Complex Numbers
 Graphs	chapters/intro/trigonomentry.tex	/^\\subsection{Graphs}$/;"	u	section:Introduction""Trigonometric functions
 Hunter-pray population growth	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Hunter-pray population growth}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Some real life uses of linear algebra
@@ -107,11 +107,11 @@ Norm and products	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subs
 Norm, polar coordinates and spherical coordinates	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Norm, polar coordinates and spherical coordinates}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Normal vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Normal vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Operations	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Operations}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
-Operators	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Operators}$/;"	u	section:Functions as vectors
+Operators	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Operators}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Polynomial functions	chapters/intro/polynomials.tex	/^\\section{Polynomial functions}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Primary components analsis	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\subsection{Primary components analsis}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Some real life uses of linear algebra
 Problems	chapters/intro/exercises.tex	/^\\subsection{Problems}$/;"	u	section:Introduction""Exercises
-Properties of vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Properties of vectors}$/;"	u	section:Functions as vectors
+Properties of vectors	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Properties of vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Radians	chapters/intro/trigonomentry.tex	/^\\subsection{Radians}$/;"	u	section:Introduction""Trigonometric functions
 Real calculus in 1D	chapters/calculus_1D/preface.tex	/^\\chapter{Real calculus in 1D}\\label{chapter:calculus_1D}$/;"	c
 Real functions	chapters/intro/relations_functions.tex	/^\\subsection{Real functions}$/;"	u	section:Introduction""Relations and Functions
@@ -119,12 +119,12 @@ Relations and Functions	chapters/intro/relations_functions.tex	/^\\section{Relat
 Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots of complex numbers}$/;"	u	section:Introduction""Complex Numbers
 Row vectors and the outer product	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Row vectors and the outer product}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
 Scalar multiplication and addition of vectors	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Scalar multiplication and addition of vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""The Bra-Ket notation
-Scalar product, norm	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Scalar product, norm}$/;"	u	section:Functions as vectors
-Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:Real calculus in 1D
+Scalar product, norm	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Scalar product, norm}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
+Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Sets and subsets	sed_test.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Mathematical Symbols and Sets
 Simple combinatorics and the binomial coefficients	chapters/intro/combinatorics.tex	/^\\section{Simple combinatorics and the binomial coefficients}$/;"	s	chapter:Introduction
-Smooth functions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Smooth functions}$/;"	u	section:Functions as vectors
+Smooth functions	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Smooth functions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
 Solutions	chapters/intro/exercises.tex	/^\\subsection{Solutions}$/;"	u	section:Introduction""Exercises
 Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Solutions}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Some examples	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Some examples}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
@@ -777,6 +777,7 @@ fig:	chapters/linear_algebra_intuitive/eigenvectors.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/linear_trans.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{fig:}$/;"	l
+fig:Fib_graphical	chapters/calculus_1D/sequences.tex	/^	\\label{fig:Fib_graphical}$/;"	l
 fig:R2_infinite_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:R2_infinite_solutions}$/;"	l
 fig:R2_num_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:R2_num_solutions}$/;"	l
 fig:R2_num_solutions_multi	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:R2_num_solutions_multi}$/;"	l
