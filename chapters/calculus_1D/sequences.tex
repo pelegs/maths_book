@@ -309,3 +309,84 @@ The following are two ways to determine whether a sequence $a_{n}$ is monotone:
 	\end{center}
 	We see that for any $n\geq3,\ \frac{n^{2}}{(n+1)^{2}}>\frac{1}{2}$, and therefore $2\frac{n^{2}}{(n+1)^{2}}>1$. Thus, the sequence is eventually increasing.
 \end{example}
+
+Some sequences are \emph{bounded} from below: this means that their elements never get smaller than some constant $\underline{M}\in\Rs$. For example, consider the simple sequence $a_{n}=n$, where $n=\left\{1,2,3,4,\dots\right\}$: there is no element in the sequence that is smaller than $1$. Therefore, $a_{n}$ is bounded from below by $1$. Of course, one may argue that $b_{n}$ is also bounded from below by $0$, or $-6$, or in fact any negative number. This is true, however we are usually interested in the \textit{maximal} number $\underline{M}$ that bounds the sequence from below, which in this case is $\underline{M}=1$. We call that number the \emph{infimum} of the sequence, and denote it as $\inf a_{n}$.
+
+Similarly, a sequence $a_{n}$ can be bounded from above by some number $\overline{M}\in\Rs$, i.e. there exist no $n$ for which $a_{n}>\overline{M}$. We call the \textit{minimal} such number the \emph{supremum} of the sequence $a_{n}$, denoted $\sup a_{n}$. For example, the sequence $b_{n}=\frac{1}{n}$ is bounded from above by any real number $x\geq1$, and therefore $\sup b_{n}=1$. In fact, $b_{n}$ is also bounded from below by $\underline{M}=0$, and therefore we say that it is \emph{bounded}. Another example of a sequence that is bounded is $e_{n}=\sin(n)$, which is bounded from below by $\underline{M}=-1$ and from above by $\overline{M}=1$.
+
+\begin{example}{Bounded and unbounded sequences}{}
+	The following table shows some examples of sequences that are bounded from below, from above, or neither:
+
+	\begin{center}
+		\begin{NiceTabular}{llcc}[
+			cell-space-limits=3pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+			]
+			\toprule
+			\RowStyle{\bfseries} $a_{n}$ & First 5 elements & $\inf a_{n}$ & $\sup a_{n}$\\
+			\midrule
+			$n^{2}-n$ & $0,2,6,12,20,\dots$ & $0$ & - \\
+			$\frac{n}{n+1}$ & $\frac{1}{2},\frac{2}{3},\frac{3}{4},\frac{4}{5},\frac{5}{6},\dots$ & $\frac{1}{2}$ & $1$ \\
+			$\eu^{-n}$ & $\eu^{-1},\eu^{-2},\eu^{-3},\eu^{-4},\eu^{-5},\ldots$ & $0$ & $\eu^{-1}$\\
+			$\log(n)$ & $0,\log(2),\log(3),\log(4),\log(5),\dots$ & $0$ & - \\
+			$(-1)^{n}$ & $-1,1,-1,1,-1,\dots$ & $-1$ & $1$\\
+			$(-1)^{n}n$ & $-1,2,-3,4,-5,\ldots$ & - & - \\
+			$(-2)^{n}$ & $-2,4,-8,16,-32,\dots$ & - & - \\
+			\bottomrule
+		\end{NiceTabular}
+	\end{center}
+\end{example}
+
+\subsection{Subsequences}
+Given any sequence $a_{n}$, we can remove from it any number of its elements (including $0$ elements) and get a new sequence $b_{n}$ which is a \emph{subsequence} of $a_{n}$. For example, let $a_{n}=n^{2}-5n$. We can remove each 2nd element from $a_{n}$ (i.e. those with indices $2,4,6,8,\ldots$) and get the following sequence $b_{n}$:
+
+\begin{tikzpicture}[node distance=5mm]
+	\node (a0) at (0,0) {$a_{n}=$};
+	\foreach \n in {1,...,14}{
+		\pgfmathsetmacro{\ai}{int(\n^2-5*\n)}
+		\pgfmathsetmacro{\m}{int(\n-1)}
+		\pgfmathsetmacro{\c}{int(mod(\n,2))}
+		\ifnum \c=1
+			\def\col{xred}
+		\else
+			\def\col{xblue}
+		\fi
+		\node[draw=black, right of=a\m, anchor=west, rounded corners, fill=\col!20] (a\n) {$\ai$};
+		\node[right of=a\n, anchor=north east, xshift=1mm] (comma) {$,$};
+	}
+	\node[right of=comma, xshift=-1mm] (dots1) {$\dots$};
+	
+	\node[below of=a0, yshift=-15mm] (b0) {$b_{n}=$};
+	\foreach \n in {1,...,7}{
+		\pgfmathsetmacro{\bi}{int((2*\n-1)^2-5*(2*\n-1))}
+		\pgfmathsetmacro{\m}{int(\n-1)}
+		\pgfmathsetmacro{\k}{2*\n-1}
+		\node[draw=black, right of=b\m, anchor=west, rounded corners, fill=xred!20] (b\n) {$\bi$};
+		\node[right of=b\n, anchor=north east, xshift=1mm] (comma) {$,$};
+		\draw[vector, thin] (a\k) -- (b\n);
+	}
+	\node[right of=comma, xshift=-1mm] (dots2) {$\dots$};
+\end{tikzpicture}
+
+% \begin{align*}
+% 	a_{n}&=
+% 	\begin{NiceArray}{llllllllllllll}[name=an, corners=NE, margin, hvlines]
+% 		\CodeBefore
+% 			\chessboardcolors{xred!30}{xblue!30}
+% 		\Body
+% 		-4 & -1 & 4 & 11 & 20 & 31 & 44 & 59 & 76 & 95 & 116 & 139 & 164 & 191 \\
+% 	\end{NiceArray}\dots\\[1cm]
+% 	b_{n}&=
+% 	\begin{NiceArray}{lllllll}[name=bn, corners=NE, margin, hvlines]
+% 		\CodeBefore
+% 			\rowcolor{xred!30}{1}
+% 		\Body
+% 		-4 & 4 & 20 & 44 & 76 & 116 & 164 \\
+% 	\end{NiceArray}\dots
+% \end{align*}
+% \begin{tikzpicture}[overlay, remember picture]
+% 	\foreach \k in {1,...,7}{
+% 		\pgfmathsetmacro{\m}{2*\k-1}
+% 		\draw[vector, thin] ($(an-1-\m)-(4pt,7pt)$) to [out=-90, in=90, looseness=0.4] ($(bn-1-\k)+(0,5pt)$);
+% 	}
+% \end{tikzpicture}
+

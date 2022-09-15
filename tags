@@ -131,6 +131,7 @@ Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{So
 Some examples	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Some examples}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
 Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Special cases	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Special cases}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
+Subsequences	chapters/calculus_1D/sequences.tex	/^\\subsection{Subsequences}$/;"	u	section:Sequences and series
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
 Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
