@@ -339,7 +339,7 @@ Similarly, a sequence $a_{n}$ can be bounded from above by some number $\overlin
 \subsection{Subsequences}
 Given any sequence $a_{n}$, we can remove from it any number of its elements (including $0$ elements) and get a new sequence $b_{n}$ which is a \emph{subsequence} of $a_{n}$. For example, let $a_{n}=n^{2}-5n$. We can remove each 2nd element from $a_{n}$ (i.e. those with indices $2,4,6,8,\ldots$) and get the following sequence $b_{n}$:
 
-\begin{tikzpicture}[node distance=5mm]
+\begin{tikzpicture}[node distance=6mm]
 	\node (a0) at (0,0) {$a_{n}=$};
 	\foreach \n in {1,...,14}{
 		\pgfmathsetmacro{\ai}{int(\n^2-5*\n)}
@@ -351,7 +351,7 @@ Given any sequence $a_{n}$, we can remove from it any number of its elements (in
 			\def\col{xblue}
 		\fi
 		\node[draw=black, right of=a\m, anchor=west, rounded corners, fill=\col!20] (a\n) {$\ai$};
-		\node[right of=a\n, anchor=north east, xshift=1mm] (comma) {$,$};
+		\node[right of=a\n, anchor=north east, xshift=1pt] (comma) {$,$};
 	}
 	\node[right of=comma, xshift=-1mm] (dots1) {$\dots$};
 	
@@ -361,32 +361,21 @@ Given any sequence $a_{n}$, we can remove from it any number of its elements (in
 		\pgfmathsetmacro{\m}{int(\n-1)}
 		\pgfmathsetmacro{\k}{2*\n-1}
 		\node[draw=black, right of=b\m, anchor=west, rounded corners, fill=xred!20] (b\n) {$\bi$};
-		\node[right of=b\n, anchor=north east, xshift=1mm] (comma) {$,$};
-		\draw[vector, thin] (a\k) -- (b\n);
+		\node[right of=b\n, anchor=north east, xshift=1pt] (comma) {$,$};
+		\draw[vector, thin] ($(a\k)-(10pt,7pt)$) to [out=-90, in=90, looseness=0.4] (b\n);
 	}
 	\node[right of=comma, xshift=-1mm] (dots2) {$\dots$};
-\end{tikzpicture}
+\end{tikzpicture}.
 
-% \begin{align*}
-% 	a_{n}&=
-% 	\begin{NiceArray}{llllllllllllll}[name=an, corners=NE, margin, hvlines]
-% 		\CodeBefore
-% 			\chessboardcolors{xred!30}{xblue!30}
-% 		\Body
-% 		-4 & -1 & 4 & 11 & 20 & 31 & 44 & 59 & 76 & 95 & 116 & 139 & 164 & 191 \\
-% 	\end{NiceArray}\dots\\[1cm]
-% 	b_{n}&=
-% 	\begin{NiceArray}{lllllll}[name=bn, corners=NE, margin, hvlines]
-% 		\CodeBefore
-% 			\rowcolor{xred!30}{1}
-% 		\Body
-% 		-4 & 4 & 20 & 44 & 76 & 116 & 164 \\
-% 	\end{NiceArray}\dots
-% \end{align*}
-% \begin{tikzpicture}[overlay, remember picture]
-% 	\foreach \k in {1,...,7}{
-% 		\pgfmathsetmacro{\m}{2*\k-1}
-% 		\draw[vector, thin] ($(an-1-\m)-(4pt,7pt)$) to [out=-90, in=90, looseness=0.4] ($(bn-1-\k)+(0,5pt)$);
-% 	}
-% \end{tikzpicture}
+\begin{note}{Order of elements in a subsequence}{}
+	A subsequence must preserve the order of the original sequence, since all we do in practice is removing elements from the original sequence, without changing the order of the remaining elements.
+\end{note}
 
+Let's look at a more formal defintion of a subsequence, which uses the choice of indices instead of removing elements:
+\begin{definition}{Subsequence}{}
+	A subsequence of a sequence $a_{n}$ is a sequence $a_{n_{k}}$, where $n_{k}$ is a \textbf{strictly increasing} sequence of natural numbers.
+\end{definition}
+
+To create a subsequence using the above defintion, one can first create a sequence of indices $n_{k}$, and then subtitute only those indices into $n$ in $a_{n}$. For example, given the sequence $a_{n}=n^{2}-5n$ from before, we can define a sequence of indices $n_{k}=1,3,5,7,9,11,\dots$, which would then yield the subsequence $b_{n}$ shown before.
+
+The reason we define $n_{k}$ to be strictly increasing is to avoid changing the order of the elements from the original sequeunce $a_{n}$: for example, if we allowed $n_{k}$ to be ``just'' increasing, we might end up with a case where there are two subsequent equal indices, e.g. $n_{k}=1,3,5,8,9,9,10,\dots$. That would mean that we repeat an element from $a_{n}$ \textbf{twice or more} in the subsequence (in the example this would be $a_{9}$), rendering it invalid as a subsequence, since as mentioned before - a subsequence must perserve the order of the original sequence.
