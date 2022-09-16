@@ -97,7 +97,7 @@ and thus
 \]
 etc.
 
-\begin{example}{The Fibonacci sequnce}{}
+\begin{example}{The Fibonacci sequence}{}
 	The \emph{Fibonacci sequences} is a well-known sequence defined using the following recursive rule:
 	\[
 		F_{n} = F_{n-1} + F_{n-2},
@@ -341,7 +341,7 @@ Given any sequence $a_{n}$, we can remove from it any number of its elements (in
 
 \begin{tikzpicture}[node distance=6mm]
 	\node (a0) at (0,0) {$a_{n}=$};
-	\foreach \n in {1,...,14}{
+	\foreach \n in {1,...,13}{
 		\pgfmathsetmacro{\ai}{int(\n^2-5*\n)}
 		\pgfmathsetmacro{\m}{int(\n-1)}
 		\pgfmathsetmacro{\c}{int(mod(\n,2))}
@@ -365,7 +365,7 @@ Given any sequence $a_{n}$, we can remove from it any number of its elements (in
 		\draw[vector, thin] ($(a\k)-(10pt,7pt)$) to [out=-90, in=90, looseness=0.4] (b\n);
 	}
 	\node[right of=comma, xshift=-1mm] (dots2) {$\dots$};
-\end{tikzpicture}.
+\end{tikzpicture}
 
 \begin{note}{Order of elements in a subsequence}{}
 	A subsequence must preserve the order of the original sequence, since all we do in practice is removing elements from the original sequence, without changing the order of the remaining elements.
@@ -376,6 +376,59 @@ Let's look at a more formal defintion of a subsequence, which uses the choice of
 	A subsequence of a sequence $a_{n}$ is a sequence $a_{n_{k}}$, where $n_{k}$ is a \textbf{strictly increasing} sequence of natural numbers.
 \end{definition}
 
-To create a subsequence using the above defintion, one can first create a sequence of indices $n_{k}$, and then subtitute only those indices into $n$ in $a_{n}$. For example, given the sequence $a_{n}=n^{2}-5n$ from before, we can define a sequence of indices $n_{k}=1,3,5,7,9,11,\dots$, which would then yield the subsequence $b_{n}$ shown before.
+To create a subsequence using the above defintion, one can first create a sequence of indices $n_{k}$, and then subtitute only those indices into $n$ in $a_{n}$. For example, given the sequence $a_{n}=n^{2}-5n$ from before, we can define a sequence of indices $n_{k}=1,3,5,7,9,11,\dots$ which would then yield the subsequence $b_{n}$ shown before.
 
 The reason we define $n_{k}$ to be strictly increasing is to avoid changing the order of the elements from the original sequeunce $a_{n}$: for example, if we allowed $n_{k}$ to be ``just'' increasing, we might end up with a case where there are two subsequent equal indices, e.g. $n_{k}=1,3,5,8,9,9,10,\dots$. That would mean that we repeat an element from $a_{n}$ \textbf{twice or more} in the subsequence (in the example this would be $a_{9}$), rendering it invalid as a subsequence, since as mentioned before - a subsequence must perserve the order of the original sequence.
+
+Subsequences share all of the above-mentioned properties of the original sequence: if the original sequence is increasing or decreasing - so do all of its subsequences, and if it is bounded from above or below - so do all of its subsequences. Let's prove two of these properties:
+
+\begin{proof}{Rising sequences and their subsequences}{}
+	\textbf{Claim}: given an \textbf{increasing} sequence $a_{n}$, all of its subsequences are also increasing sequences themselves.
+
+	\vspace{1em}
+	\textbf{Proof}: using contradiction. Let $a_{n}$ be an increasing sequence, and $b_{n}$ a subsequence of $a_{n}$ which isn't increasing. From the fact that $b_{n}$ is not an increasing sequence we know that there exist at least two indices $k,m$ such that $k<m$ but $b_{k}>b_{m}$. Since any $b_{n}$ is an element of $a_{n}$ without change of order, we can substitute $b_{k}=a_{i}$ for some index $i$ and $b_{m}=a_{j}$ for some index $j$, such that $i<j$ (since $k<m$ - this is exactly the idea of preserving the order of $a_{n}$). We therefore get that $a_{i}=b_{k}>b_{m}=a_{j}$, or simply $a_{i}>a_{j}$ even though $i<j$ - in contradiction to $a_{n}$ being an increasing sequence. Therefore there can be no subsequence of $a_{n}$ that isn't an increasing sequence.
+\end{proof}
+
+\begin{proof}{Bounded sequences and their subsequences}{}
+	\textbf{Claim}: given a sequence $a_{n}$ which is \textbf{bounded from below}, all of its subsequences are also bounded from below.
+
+	\vspace{1em}
+	\textbf{Proof}: also using contradiction. Let $a_{n}$ be a sequence bounded from below by $\inf a_{n}=\underline{M}$. Let $b_{n}$ be a subsequence of $a_{n}$ that isn't bounded from below - i.e. there exist an element $b_{i}$ such that $b_{i}<\underline{M}$. Since $b_{n}$ is a subsequence of $a_{n}$, $b_{i}=a_{j}$ for some index $j$. Therefore $a_{j}=b_{i}<\underline{M}$ in contradiction to $\underline{M}$ being the infimum of $a_{n}$. Therefore, a subsequence of a sequence bounded from below can not be unbounded from below.
+\end{proof}
+
+\begin{challenge}{Further proofs}{}
+	\begin{enumerate}
+		\item Prove that all subsequences of a decreasing sequence are themselves decreasing.
+		\item Prove that all subsequences of a sequence bounded from above are themselves bounded from above.
+		\item Prove that all subsequences of a \textbf{strictly} increasing/decreasing sequence are themselves increasing or decreasing, respectively.
+		\item Given a bounded sequence $a_{n}$ with $\inf a_{n}=\underline{M}$, can it have a subseqeunce $b_{n}$ with $\inf b_{n}\neq \underline{M}$? If yes - give an example. If no - prove your claim.
+	\end{enumerate}
+\end{challenge}
+
+\subsection{Convergance}
+As you probably noticed by now, some infinite sequences seem to approach a certain value as we increase $n$. That is to say, the bigger $n$ is, the closer such a sequence $a_{n}$ gets to a certain value $L\in\Rs$. For example, the sequence $b_{n}=\frac{1}{n}$ approaches to $L=0$ as we increase $n$ (see again \autoref{fig:1/n_seq}). The sequence $a_{n}=\frac{1}{n^{2}+1}$ approaches the value $L=1$ as we increase $n$ (see \autoref{fig:1/n^2+1_seq}). On the contrary, the sequence $d_{n}=(n-5)^{2}$ eventually increase in such a way that it ``approaches'' $L=\infty$, while $e_{n}=\sin(n)$ doesn't approach any value and instead endlessly ``jumps'' around in a repeated manner.
+
+The formal term for the behaviour of $a_{n}$ and $b_{n}$ is called \emph{convergance}, and it is one of the most important properties of infinite sequences. In this subsection we will define, analyze, and explain it in detail. To begin, we can divide all infinite sequences into three separate types:
+\begin{itemize}
+	\item Sequences which do not converge into any value (e.g. $\sin(n),\ \cos(n),$ etc.).
+	\item Sequences that ``go to'' positive or negative infinity (sometimes said to be "exploding").
+	\item Sequences which converge to a finite number $L\in\Rs$.
+\end{itemize}
+
+Let us start with a more precise analysis of the second type: sequences that ``explode'' to either positive or negative infinity. In essence, a sequence which goes to positive infinity is one which has a lower boundry $\underline{M}$ but not upper boundry $\overline{M}$, that is - given any real number $R$ the sequence eventually passes it, or more precisely: all the elements after a certain point are greater than $R$.
+
+Take for example the sequence $a_{n}=n^{2}$. It most certainly has a lower boundry, specifically $\inf a_{n}=1$. On the other hand, given any $R\in\Rs$ eventually the values of $a_{n}$ pass it. For example, given $R=100$, the elements of $a_{n}$ pass it after just $10$ elements (since $a_{11}=11^{2}=121>100$). The number $R=1,000,000$ is passed after $1000$ elements, etc. No matter how big $R$ is, \textbf{eventually} $a_{n}$ will pass it. Therefore, we say that $a_{n}$ ``goes to'' infinity, and denote the fact by writing
+\begin{equation}
+	\lim\limits_{n\to\infty}a_{n}=\infty.
+\end{equation}
+(read: \textit{the limit of $a_{n}$ as $n$ goes to inifinity equals infinity})
+
+A more formal definition of this behaviour is as follows:
+\begin{definition}{Sequence going to inifnity}{}
+	Let $a_{n}$ be an infinite sequence. If for any $R\in\Rs$ there exist $n_{R}\in\mathbb{N}$ such that for any $n>n_{R},\ a_{n}>R$, the sequence is said to be going to positive infinity, and denote
+\[
+	\lim\limits_{n\to\infty}a_{n}=\infty.
+\]
+\end{definition}
+
+Of course, for negative infinity the behaviour is very similar: a sequence $a_{n}$ with an upper boundry $\overline{M}$ and no lower bound $\underline{M}$ is said to be \emph{going to negative infinity}, since for any $R\in\Rs$ there exist an $n_{R}\in\mathbb{N}$ for which if $n>n_{R}$ then $a_{n}<R$.
