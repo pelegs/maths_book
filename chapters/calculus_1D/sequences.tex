@@ -488,7 +488,7 @@ Generally speaking, proving that a sequence goes to either positive or negative 
 	\label{fig:n/2_seq}
 \end{figure}
 
-To show that this is true for any $R\in\Rs$ we should do the following: given a real number $R$ find an index $n_{0}$ such that $a_{n_{0}}\geq R$. Since $a_{n}$ is a strictly increasing sequence, that would mean that for any $n>n_{0},\ a_{n}>a_{n_{0}}\geq R$, or simply $a_{n}>R$. In the case of $a_{n}=\frac{n}{2}$ we can simply choose the closest integer to $R$ that is also bigger than $R$ (i.e. if $R=2.3$ we choose $n_{0}=3$, if $R=100.7$ we choose $n_{0}=101$, etc.). We can use the \emph{ceiling} operator, which does exactly this: for any given $x\in\Rs$, its ceiling (denoted $\ceil{x}$) is the closest integer which is bigger than or equal to $x$, or more formally:
+To show that this is true for any $R\in\Rs$ we should do the following: given a real number $R$ find an index $n_{0}$ such that $a_{n_{0}}\geq R$. Since $a_{n}$ is a strictly increasing sequence, that would mean that for any $n>n_{0},\ a_{n}>a_{n_{0}}\geq R$, or simply $a_{n}>R$. In the case of $a_{n}=\frac{n}{2}$ we can simply choose the closest integer to $2R$ that is also bigger than $2R$ (i.e. if $R=2.3$ we choose $n_{0}=3$, if $R=100.7$ we choose $n_{0}=101$, etc.). We can use the \emph{ceiling} operator, which does exactly this: for any given $x\in\Rs$, its ceiling (denoted $\ceil{x}$) is the closest integer which is bigger than or equal to $x$, or more formally:
 
 \begin{definition}{Ceiling and floor operators}{}
 	Let $x\in\Rs$. Then
@@ -500,4 +500,18 @@ To show that this is true for any $R\in\Rs$ we should do the following: given a 
 	i.e. - $\ceil{x}$ is the \textbf{minimal} integer $n$ that is \textbf{bigger than or equal} to $x$, and $\floor{x}$ is the \textbf{maximal} integer $n$ that is \textbf{smaller than or equal} to $x$.
 \end{definition}
 
-Now that we have 
+Now that we have chosen $n_{0}=\ceil{2R}$ we can use this to show step by step that that indeed $\lim\limits_{n\to\infty}=\infty$ by using several subtitutions: for any $n>n_{0}$ we get that
+
+\vspace{1em}
+\[
+	a_{n} = \frac{n}{2} \tikzmark{gt}{>} \frac{n_{0}}{2} = \frac{\ceil{2R}}{2} \tikzmark{geq}{\geq}\frac{2R}{2} = R,
+\]
+\tikz[overlay, remember picture, node distance=1cm]{
+	\node (GT) at (pic cs:gt) {};
+	\node (GEQ) at (pic cs:geq) {};
+	\node[xred, above of=GT, font=\smaller] (GTtxt) {since $n>n_{0}$};
+	\node[xblue, below of=GEQ, font=\smaller] (GEQtxt) {since $\ceil{2R}\geq2R$};
+	\draw[-stealth, xred] (GTtxt) -- (GT);
+	\draw[-stealth, xblue] (GEQtxt) -- (GEQ);
+}
+or simply $a_{n}>R$.
