@@ -471,17 +471,16 @@ Generally speaking, proving that a sequence goes to either positive or negative 
 		\begin{axis}[
 			vector plane,
 			width=10cm, height=7cm,
-			xmin=0, xmax=101,
-			ymin=0, ymax=60,
+			xmin=0, xmax=21,
+			ymin=0, ymax=12,
 			axis line style={-stealth, thick},
 			xlabel={$n$},
 			ylabel={$a_{n}=\frac{n}{2}$},
-			% xtick={1,...,20},
 			ticklabel style={font=\small},
-			domain={0:100},
-			samples=100,
+			domain={0:20},
+			samples=20,
 		]
-		\addplot[xred, only marks, mark=*, mark options={scale=0.1}] {x/2};
+		\addplot[xred, only marks, mark=*] {x/2};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{The sequence $a_{n}=\frac{n}{2}$ goes to positive infinity as $n$ increases.}
@@ -507,11 +506,11 @@ Now that we have chosen $n_{0}=\ceil{2R}$ we can use this to show step by step t
 	a_{n} = \frac{n}{2} \tikzmark{gt}{>} \frac{n_{0}}{2} = \frac{\ceil{2R}}{2} \tikzmark{geq}{\geq}\frac{2R}{2} = R,
 \]
 \tikz[overlay, remember picture, node distance=1cm]{
-	\node (GT) at (pic cs:gt) {};
-	\node (GEQ) at (pic cs:geq) {};
-	\node[xred, above of=GT, font=\smaller] (GTtxt) {since $n>n_{0}$};
-	\node[xblue, below of=GEQ, font=\smaller] (GEQtxt) {since $\ceil{2R}\geq2R$};
-	\draw[-stealth, xred] (GTtxt) -- (GT);
-	\draw[-stealth, xblue] (GEQtxt) -- (GEQ);
+	\node[xred, font=\smaller] (gttxt) at ($(pic cs:gt)+(0,1cm)$) {since $n>n_{0}$};
+	\draw[-stealth, xred] ($(gttxt)+(3pt,-5pt)$) -- ($(pic cs:gt)+(3pt,9pt)$);
+	\node[xblue, font=\smaller] (geqtxt) at ($(pic cs:geq)-(0,1cm)$) {since $\ceil{2R}\geq2R$};
+	\draw[-stealth, xblue] ($(geqtxt)+(3pt,5pt)$) -- ($(pic cs:geq)+(3pt,-5pt)$);
 }
+
+\vspace{2em}
 or simply $a_{n}>R$.
