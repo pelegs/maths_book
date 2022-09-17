@@ -194,6 +194,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\boxgrid	settings.tex	/^\\newcommand{\\boxgrid}[6]{$/;"	C
 \\cancelcol	settings.tex	/^\\newcommand{\\cancelcol}[2][xred]{ % This is such a silly solution...$/;"	C
 \\ceco	settings.tex	/^\\newcommand{\\ceco}[1]{\\cellcolor{#1}}$/;"	C
+\\ceil	settings.tex	/^\\newcommand{\\ceil}[1]{\\lceil #1 \\rceil}$/;"	C
 \\chapternumsize	settings.tex	/^\\newcommand{\\chapternumsize}{\\fontsize{70}{70}\\selectfont}$/;"	C
 \\chaptertitlesize	settings.tex	/^\\newcommand{\\chaptertitlesize}{\\fontsize{30}{30}\\selectfont}$/;"	C
 \\cmplxsol	chapters/intro/complex_numbers.tex	/^\\newcommand{\\cmplxsol}[1]{$/;"	C
@@ -219,6 +220,7 @@ Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s
 \\false	settings.tex	/^\\newcommand{\\false}{\\textcolor{xred}{\\textbf{false}}}$/;"	C
 \\falseprop	settings.tex	/^\\newcommand{\\falseprop}[1]{$/;"	C
 \\fiveSpheres	chapters/intro/combinatorics.tex	/^\\newcommand{\\fiveSpheres}[2]{$/;"	C
+\\floor	settings.tex	/^\\newcommand{\\floor}[1]{\\lfloor #1 \\rfloor}$/;"	C
 \\ghl	settings.tex	/^\\newcommand{\\ghl}[1]{\\textcolor{xgreen}{#1}}$/;"	C
 \\gnorm	settings.tex	/^\\newcommand{\\gnorm}[1]{\\left\\|\\,  #1 \\, \\right\\|}$/;"	C
 \\inpr	settings.tex	/^\\newcommand{\\inpr}[2]{\\langle #1,#2 \\rangle}$/;"	C
@@ -541,6 +543,7 @@ eq:bra-ket_orthonormal_basis	chapters/linear_algebra_intuitive/braket_notation.t
 eq:bra-ket_spanning_vectors	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra-ket_spanning_vectors}$/;"	l
 eq:bra_as_operator	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra_as_operator}$/;"	l
 eq:bra_ket_def	chapters/linear_algebra_intuitive/braket_notation.tex	/^	\\label{eq:bra_ket_def}$/;"	l
+eq:ceiling	chapters/calculus_1D/sequences.tex	/^		\\label{eq:ceiling}$/;"	l
 eq:characteristic_polynomial	chapters/linear_algebra_intuitive/eigenvectors.tex	/^		\\label{eq:characteristic_polynomial}$/;"	l
 eq:closed_interval	chapters/intro/math_symbols_sets.tex	/^	\\label{eq:closed_interval}$/;"	l
 eq:closed_interval	sed_test.tex	/^	\\label{eq:closed_interval}$/;"	l
@@ -810,6 +813,7 @@ fig:line_plane_R3	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\labe
 fig:linear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:linear transformation grid}$/;"	l
 fig:linear_equations_2_vars	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:linear_equations_2_vars}$/;"	l
 fig:matrix_matrix_product_elements	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:matrix_matrix_product_elements}$/;"	l
+fig:n/2_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:n\/2_seq}$/;"	l
 fig:n^2_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:n^2_seq}$/;"	l
 fig:nonlinear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:nonlinear transformation grid}$/;"	l
 fig:norm 2D vector	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:norm 2D vector}$/;"	l

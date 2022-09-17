@@ -408,6 +408,29 @@ Subsequences share all of the above-mentioned properties of the original sequenc
 \subsection{Convergance}
 As you probably noticed by now, some infinite sequences seem to approach a certain value as we increase $n$. That is to say, the bigger $n$ is, the closer such a sequence $a_{n}$ gets to a certain value $L\in\Rs$. For example, the sequence $b_{n}=\frac{1}{n}$ approaches to $L=0$ as we increase $n$ (see again \autoref{fig:1/n_seq}). The sequence $a_{n}=\frac{1}{n^{2}+1}$ approaches the value $L=1$ as we increase $n$ (see \autoref{fig:1/n^2+1_seq}). On the contrary, the sequence $d_{n}=(n-5)^{2}$ eventually increase in such a way that it ``approaches'' $L=\infty$, while $e_{n}=\sin(n)$ doesn't approach any value and instead endlessly ``jumps'' around in a repeated manner.
 
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=21,
+			ymin=0, ymax=2,
+			x axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$e_{n}=\sin(n)$},
+			xtick={1,...,20},
+			ticklabel style={font=\small},
+			domain={0:20},
+			samples=21,
+		]
+		\addplot[xred, only marks, mark=*] {1/x^2+1};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The sequence $a_{n}=\frac{1}{n^{2}}+1$ approaches the value $L=1$ as $n$ increases.}
+	\label{fig:sin(n)_seq}
+\end{figure}
+
 The formal term for the behaviour of $a_{n}$ and $b_{n}$ is called \emph{convergance}, and it is one of the most important properties of infinite sequences. In this subsection we will define, analyze, and explain it in detail. To begin, we can divide all infinite sequences into three separate types:
 \begin{itemize}
 	\item Sequences which do not converge into any value (e.g. $\sin(n),\ \cos(n),$ etc.).
@@ -423,12 +446,58 @@ Take for example the sequence $a_{n}=n^{2}$. It most certainly has a lower bound
 \end{equation}
 (read: \textit{the limit of $a_{n}$ as $n$ goes to inifinity equals infinity})
 
+\begin{note}{Another limit notation}{}
+	Another common notation used to denote that a sequence $a_{n}$ is going to infinity as $n$ increases is the following:
+	\[
+		a_{n} \xrightarrow[]{n\to\infty} \infty.
+	\]
+\end{note}
+
 A more formal definition of this behaviour is as follows:
 \begin{definition}{Sequence going to inifnity}{}
-	Let $a_{n}$ be an infinite sequence. If for any $R\in\Rs$ there exist $n_{R}\in\mathbb{N}$ such that for any $n>n_{R},\ a_{n}>R$, the sequence is said to be going to positive infinity, and denote
+	Let $a_{n}$ be an infinite sequence. If for any $R\in\Rs$ there exist $n_{R}\in\mathbb{N}$ such that for any $n>n_{R},\ a_{n}>R$, the sequence is said to be going to positive infinity. We denote this fact by writing
 \[
 	\lim\limits_{n\to\infty}a_{n}=\infty.
 \]
 \end{definition}
 
 Of course, for negative infinity the behaviour is very similar: a sequence $a_{n}$ with an upper boundry $\overline{M}$ and no lower bound $\underline{M}$ is said to be \emph{going to negative infinity}, since for any $R\in\Rs$ there exist an $n_{R}\in\mathbb{N}$ for which if $n>n_{R}$ then $a_{n}<R$.
+
+Generally speaking, proving that a sequence goes to either positive or negative infinity follows a certain pattern, which we will examplify using the sequence $a_{n}=\frac{n}{2}$ (\autoref{fig:n/2_seq}). It should be clear that the sequence goes to positive infinity as $n$ increases, since we can make the values of $a_{n}$ as large as we want by substituting a respective $n$ into $\frac{n}{2}$: for example, given $R=1000$ we can subtitute $n=2000$, yielding $a_{2000}=\frac{2000}{2}=1000$, and thus any $a_{n}$ where $n>2000$ will be bigger than $R=1000$. For $R=1,000,000$ we can substitute $n=2,000,000$ and so forth.
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=101,
+			ymin=0, ymax=60,
+			axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$a_{n}=\frac{n}{2}$},
+			% xtick={1,...,20},
+			ticklabel style={font=\small},
+			domain={0:100},
+			samples=100,
+		]
+		\addplot[xred, only marks, mark=*, mark options={scale=0.1}] {x/2};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The sequence $a_{n}=\frac{n}{2}$ goes to positive infinity as $n$ increases.}
+	\label{fig:n/2_seq}
+\end{figure}
+
+To show that this is true for any $R\in\Rs$ we should do the following: given a real number $R$ find an index $n_{0}$ such that $a_{n_{0}}\geq R$. Since $a_{n}$ is a strictly increasing sequence, that would mean that for any $n>n_{0},\ a_{n}>a_{n_{0}}\geq R$, or simply $a_{n}>R$. In the case of $a_{n}=\frac{n}{2}$ we can simply choose the closest integer to $R$ that is also bigger than $R$ (i.e. if $R=2.3$ we choose $n_{0}=3$, if $R=100.7$ we choose $n_{0}=101$, etc.). We can use the \emph{ceiling} operator, which does exactly this: for any given $x\in\Rs$, its ceiling (denoted $\ceil{x}$) is the closest integer which is bigger than or equal to $x$, or more formally:
+
+\begin{definition}{Ceiling and floor operators}{}
+	Let $x\in\Rs$. Then
+	\begin{align}
+		\ceil{x} &= \min\left(\left\{ n\in\mathbb{N} | n\geq x\right\}\right).\\
+		\floor{x} &= \max\left(\left\{ n\in\mathbb{N} | n\leq x\right\}\right).
+		\label{eq:ceiling}
+	\end{align}
+	i.e. - $\ceil{x}$ is the \textbf{minimal} integer $n$ that is \textbf{bigger than or equal} to $x$, and $\floor{x}$ is the \textbf{maximal} integer $n$ that is \textbf{smaller than or equal} to $x$.
+\end{definition}
+
+Now that we have 
