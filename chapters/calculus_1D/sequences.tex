@@ -341,7 +341,7 @@ Given any sequence $a_{n}$, we can remove from it any number of its elements (in
 
 \begin{tikzpicture}[node distance=6mm]
 	\node (a0) at (0,0) {$a_{n}=$};
-	\foreach \n in {1,...,13}{
+	\foreach \n in {1,...,12}{
 		\pgfmathsetmacro{\ai}{int(\n^2-5*\n)}
 		\pgfmathsetmacro{\m}{int(\n-1)}
 		\pgfmathsetmacro{\c}{int(mod(\n,2))}
@@ -350,19 +350,19 @@ Given any sequence $a_{n}$, we can remove from it any number of its elements (in
 		\else
 			\def\col{xblue}
 		\fi
-		\node[draw=black, right of=a\m, anchor=west, rounded corners, fill=\col!20] (a\n) {$\ai$};
+		\node[right of=a\m, element={\col!30}] (a\n) {$\ai$};
 		\node[right of=a\n, anchor=north east, xshift=1pt] (comma) {$,$};
 	}
 	\node[right of=comma, xshift=-1mm] (dots1) {$\dots$};
 	
 	\node[below of=a0, yshift=-15mm] (b0) {$b_{n}=$};
-	\foreach \n in {1,...,7}{
+	\foreach \n in {1,...,6}{
 		\pgfmathsetmacro{\bi}{int((2*\n-1)^2-5*(2*\n-1))}
 		\pgfmathsetmacro{\m}{int(\n-1)}
-		\pgfmathsetmacro{\k}{2*\n-1}
-		\node[draw=black, right of=b\m, anchor=west, rounded corners, fill=xred!20] (b\n) {$\bi$};
+		\pgfmathsetmacro{\k}{int(2*\n-1)}
+		\node[right of=b\m, element={xred!30}] (b\n) {$\bi$};
 		\node[right of=b\n, anchor=north east, xshift=1pt] (comma) {$,$};
-		\draw[vector, thin] ($(a\k)-(10pt,7pt)$) to [out=-90, in=90, looseness=0.4] (b\n);
+		\draw[-stealth] (a\k.south) to [out=-90, in=90, looseness=0.4] (b\n.north);
 	}
 	\node[right of=comma, xshift=-1mm] (dots2) {$\dots$};
 \end{tikzpicture}
@@ -514,3 +514,44 @@ Now that we have chosen $n_{0}=\ceil{2R}$ we can use this to show step by step t
 
 \vspace{2em}
 or simply $a_{n}>R$.
+
+\vspace{2em}
+\begin{example}{The sequence $\log(n)$}{}
+	Let's show that the sequence $a_{n}=\log(n)$ (see graph below) goes to infinity as $n$ increases: first, we note that $\log(n)$ is a strictly increasing sequence bounded from below by $\underline{M}=0$. Now, given some positive $R\in\Rs$ we chose $n_{0}=\ceil{\eu^{R}}$ and thus get that for any $n>n_{0}$
+	\[
+		a_{n} > a_{n_{0}} = \log\left(n_{0}\right) = \log\left(\ceil{\eu^{R}}\right) \geq \log\left(\eu^{R}\right) = R.
+	\]
+
+	altogther we get $a_{n}>R$, and therefore $\lim\limits_{n\to\infty}\log(n)=\infty$.
+
+	\vspace{2em}
+	\begin{center}
+		\begin{tikzpicture}[]
+			\begin{axis}[
+				vector plane,
+				width=10cm, height=7cm,
+				xmin=0, xmax=51,
+				ymin=0, ymax=6,
+				axis line style={-stealth, thick},
+				xlabel={$n$},
+				ylabel={$a_{n}=\log(n)$},
+				ticklabel style={font=\small},
+				domain={0:50},
+				samples=50,
+				]
+				\addplot[xred, only marks, mark=*] {ln(x)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+
+	\textbf{Note}: this proof works because $\log(n)$ is a \textit{strictly} increasing sequence. If it were only an increasing sequence we would not be guaranteed that $n>n_{0}$ means that $a_{n}>a_{n_{0}}$, and the entire process would not yield that $\log(n)$ always passes any given real number $R$. Indeed, by naively looking at the graph above we may be mistaken to think that $\log(n)$ actually approaches some finite number, say $4.5$ or so, and doesn't go to infinity. This is of course not the case.
+\end{example}
+
+\begin{example}{A sequence which goes to negative infinity}{}
+	Let us now show that the sequence $a_{n}=-\sqrt{n}$ goes to negative infinity. We first note that $-\sqrt{n}$ is always negative, is decreasing and bouned from above by $\overline{M}=0$. For any given negative $R\in\Rs$ we choose $n_{0}=\floor{R^{2}}$, and thus for any $n>n_{0}$ we get
+	\[
+		a_{n} < a_{n_{0}} = -\sqrt{n_{0}} = -\sqrt{\floor{R^{2}}} \leq -\sqrt{R^{2}} = -|R| = R.
+	\]
+
+	\tbw{is this example actually necessery? It seems reduntant unless we show something "new", and just inverting everything is not that new...}
+\end{example}
