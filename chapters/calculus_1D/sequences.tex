@@ -405,7 +405,7 @@ Subsequences share all of the above-mentioned properties of the original sequenc
 	\end{enumerate}
 \end{challenge}
 
-\subsection{Convergance}
+\subsection{Limits}
 As you probably noticed by now, some infinite sequences seem to approach a certain value as we increase $n$. That is to say, the bigger $n$ is, the closer such a sequence $a_{n}$ gets to a certain value $L\in\Rs$. For example, the sequence $b_{n}=\frac{1}{n}$ approaches to $L=0$ as we increase $n$ (see again \autoref{fig:1/n_seq}). The sequence $a_{n}=\frac{1}{n^{2}+1}$ approaches the value $L=1$ as we increase $n$ (see \autoref{fig:1/n^2+1_seq}). On the contrary, the sequence $d_{n}=(n-5)^{2}$ eventually increase in such a way that it ``approaches'' $L=\infty$, while $e_{n}=\sin(n)$ doesn't approach any value and instead endlessly ``jumps'' around in a repeated manner.
 
 \begin{figure}[]
@@ -418,33 +418,41 @@ As you probably noticed by now, some infinite sequences seem to approach a certa
 			ymin=0, ymax=2,
 			x axis line style={-stealth, thick},
 			xlabel={$n$},
-			ylabel={$e_{n}=\sin(n)$},
-			xtick={1,...,20},
+			ylabel={$a_{n}=\frac{1}{n^{2}}+1$},
+			% xtick={1,...,20},
 			ticklabel style={font=\small},
 			domain={0:20},
 			samples=21,
 		]
 		\addplot[xred, only marks, mark=*] {1/x^2+1};
+		\addplot[thick, dashed] {1};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{The sequence $a_{n}=\frac{1}{n^{2}}+1$ approaches the value $L=1$ as $n$ increases.}
 	\label{fig:sin(n)_seq}
 \end{figure}
 
-The formal term for the behaviour of $a_{n}$ and $b_{n}$ is called \emph{convergance}, and it is one of the most important properties of infinite sequences. In this subsection we will define, analyze, and explain it in detail. To begin, we can divide all infinite sequences into three separate types:
-\begin{itemize}
-	\item Sequences which do not converge into any value (e.g. $\sin(n),\ \cos(n),$ etc.).
-	\item Sequences that ``go to'' positive or negative infinity (sometimes said to be "exploding").
+The formal term for the behaviour of $a_{n}$ and $b_{n}$ is called \emph{convergance}, and it is one of the most important properties of infinite sequences. In this subsection we will define, analyze, and explain it in detail. To begin, we can divide all infinite sequences into two separate categories:
+\begin{enumerate}
 	\item Sequences which converge to a finite number $L\in\Rs$.
-\end{itemize}
+	\item Sequences which do not converge to any finite number.
+\end{enumerate}
 
-Let us start with a more precise analysis of the second type: sequences that ``explode'' to either positive or negative infinity. In essence, a sequence which goes to positive infinity is one which has a lower boundry $\underline{M}$ but not upper boundry $\overline{M}$, that is - given any real number $R$ the sequence eventually passes it, or more precisely: all the elements after a certain point are greater than $R$.
+Sequences in the second category are said to be \emph{diverging}, and they can be further split into two separate categories:
+\begin{enumerate}[label=\roman*.]
+	\item Sequences which diverge to either positive or negative infinity.
+	\item Sequences which neither converge nor diverge to $\pm\infty$.
+\end{enumerate}
 
-Take for example the sequence $a_{n}=n^{2}$. It most certainly has a lower boundry, specifically $\inf a_{n}=1$. On the other hand, given any $R\in\Rs$ eventually the values of $a_{n}$ pass it. For example, given $R=100$, the elements of $a_{n}$ pass it after just $10$ elements (since $a_{11}=11^{2}=121>100$). The number $R=1,000,000$ is passed after $1000$ elements, etc. No matter how big $R$ is, \textbf{eventually} $a_{n}$ will pass it. Therefore, we say that $a_{n}$ ``goes to'' infinity, and denote the fact by writing
+Let us start with a more precise analysis of sequences that diverge to $\pm\infty$. In essence, a sequence which diverges to positive infinity is a sequence that is bounded from below but not from above, that is - given any real number $R$ the sequence eventually passes it. In other words, all the elements in the suquence \textit{after a certain value of} $n$ are greater than $R$, for any $R$ that we choose.
+
+Take for example the sequence $a_{n}=n^{2}$. It most certainly has a lower boundry, namely $\inf a_{n}=1$. On the other hand, given any $R\in\Rs$ eventually the values of $a_{n}$ pass it. For example, given $R=100$, the elements of $a_{n}$ pass it after just $10$ elements (since $a_{11}=11^{2}=121>100$). The number $R=1,000,000$ is passed after $1000$ elements, etc. No matter how big $R$ is, \textbf{eventually} $a_{n}$ will pass it. Therefore, we say that $a_{n}$ \textit{goes to infinity}, and denote it by writing
 \begin{equation}
 	\lim\limits_{n\to\infty}a_{n}=\infty.
+	\label{eq:first_limit}
 \end{equation}
-(read: \textit{the limit of $a_{n}$ as $n$ goes to inifinity equals infinity})
+
+The notation $\lim$ is short for \emph{limit}. While it can be argued that a divergent sequence has no limit, sometimes the term is used in the case of divergence to $\pm\infty$.
 
 \begin{note}{Another limit notation}{}
 	Another common notation used to denote that a sequence $a_{n}$ is going to infinity as $n$ increases is the following:
@@ -477,7 +485,7 @@ Generally speaking, proving that a sequence goes to either positive or negative 
 			xlabel={$n$},
 			ylabel={$a_{n}=\frac{n}{2}$},
 			ticklabel style={font=\small},
-			domain={0:20},
+			domain={1:21},
 			samples=20,
 		]
 		\addplot[xred, only marks, mark=*] {x/2};
@@ -487,7 +495,9 @@ Generally speaking, proving that a sequence goes to either positive or negative 
 	\label{fig:n/2_seq}
 \end{figure}
 
-To show that this is true for any $R\in\Rs$ we should do the following: given a real number $R$ find an index $n_{0}$ such that $a_{n_{0}}\geq R$. Since $a_{n}$ is a strictly increasing sequence, that would mean that for any $n>n_{0},\ a_{n}>a_{n_{0}}\geq R$, or simply $a_{n}>R$. In the case of $a_{n}=\frac{n}{2}$ we can simply choose the closest integer to $2R$ that is also bigger than $2R$ (i.e. if $R=2.3$ we choose $n_{0}=3$, if $R=100.7$ we choose $n_{0}=101$, etc.). We can use the \emph{ceiling} operator, which does exactly this: for any given $x\in\Rs$, its ceiling (denoted $\ceil{x}$) is the closest integer which is bigger than or equal to $x$, or more formally:
+To show that this is true for any $R\in\Rs$ we should do the following: given a real number $R$ find an index $n_{0}$ such that $a_{n_{0}}\geq R$. Since $a_{n}$ is a strictly increasing sequence, that would mean that for any $n>n_{0},\ a_{n}>a_{n_{0}}\geq R$, or simply $a_{n}>R$. In the case of $a_{n}=\frac{n}{2}$ we can simply choose the closest integer to $2R$ that is also bigger than $2R$ (i.e. if $R=2.3$ we choose $n_{0}=3$, if $R=100.7$ we choose $n_{0}=101$, etc.).
+
+To always get an integer \textit{equal to or bigger than} $R$ we can use the \emph{ceiling} operator. For any given $x\in\Rs$, its ceiling (denoted $\ceil{x}$) is the closest integer which is bigger than or equal to $x$, or more formally:
 
 \begin{definition}{Ceiling and floor operators}{}
 	Let $x\in\Rs$. Then
@@ -499,7 +509,7 @@ To show that this is true for any $R\in\Rs$ we should do the following: given a 
 	i.e. - $\ceil{x}$ is the \textbf{minimal} integer $n$ that is \textbf{bigger than or equal} to $x$, and $\floor{x}$ is the \textbf{maximal} integer $n$ that is \textbf{smaller than or equal} to $x$.
 \end{definition}
 
-Now that we have chosen $n_{0}=\ceil{2R}$ we can use this to show step by step that that indeed $\lim\limits_{n\to\infty}=\infty$ by using several subtitutions: for any $n>n_{0}$ we get that
+Using the value $n_{0}=\ceil{2R}$ we can show, step by step, that indeed $\lim\limits_{n\to\infty}=\infty$ by using several subtitutions: for any $n>n_{0}$ we get that
 
 \vspace{1em}
 \[
@@ -555,3 +565,53 @@ or simply $a_{n}>R$.
 
 	\tbw{is this example actually necessery? It seems reduntant unless we show something "new", and just inverting everything is not that new...}
 \end{example}
+
+The next type of sequences we ananlyze are those sequences that converge to a real number $L$ as $n$ increases, i.e. as $n$ increases the terms of the sequence get closer and closer to $L$. A classical example for such a sequence is $a_{n}=\frac{1}{n}$ (\autoref{fig:1/n_seq}): as $n$ increases, the terms $\frac{1}{n}$ become smaller and smaller (while always being positive) and the sequence as a whole approaches $L=0$.
+
+Sequences don't have to approach a limit from above: some sequences approach a limit from below, while others may \emph{oscillate} around the limit.
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=21,
+			ymin=0, ymax=2,
+			x axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}$},
+			ticklabel style={font=\small},
+			domain={1:21},
+			samples=21,
+		]
+		\addplot[xred, only marks, mark=*] {1/(1+e^(-0.25*(x-5)))};
+		\addplot[thick, dashed] {1};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The logistic sequence $a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}$ approaches the value $L=1$ from below as $n\to\infty$.}
+	\label{fig:logistic_seq}
+\end{figure}
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=71,
+			ymin=-2, ymax=2,
+			x axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}$},
+			ticklabel style={font=\small},
+			domain={1:71},
+			samples=71,
+		]
+		% \addplot[thin] {cos(deg(x))/(0.1*x)};
+		\addplot[xred, only marks, mark=*] {cos(deg(x))/(0.1*x)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The logistic sequence $a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}$ approaches the value $L=1$ from below as $n\to\infty$.}
+	\label{fig:logistic_seq}
+\end{figure}

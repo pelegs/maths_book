@@ -39,7 +39,6 @@ Common mathematical notations	sed_test.tex	/^\\subsection{Common mathematical no
 Complex Numbers	chapters/intro/complex_numbers.tex	/^\\section{Complex Numbers}\\label{sec:complex numbers}$/;"	s	chapter:Introduction
 Components	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Components}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Composition of functions	chapters/intro/relations_functions.tex	/^\\subsection{Composition of functions}$/;"	u	section:Introduction""Relations and Functions
-Convergance	chapters/calculus_1D/sequences.tex	/^\\subsection{Convergance}$/;"	u	section:Sequences and series
 Decompositions	chapters/linear_algebra_intuitive/decompositions.tex	/^\\section{Decompositions}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Definition	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""The Bra-Ket notation
 Definition	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Definition}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
@@ -86,6 +85,7 @@ Inverse matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{I
 Kernel and null space	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Kernel and null space}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Layer_x0020_1	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^ <g id="Layer_x0020_1">$/;"	i
 Layer_x0020_1	figures/symbols/solve.svg	/^           style="image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-render/;"	i
+Limits	chapters/calculus_1D/sequences.tex	/^\\subsection{Limits}$/;"	u	section:Sequences and series
 Limits of real functions	chapters/calculus_1D/function_limits.tex	/^\\section{Limits of real functions}$/;"	s	chapter:Real calculus in 1D
 Linear algebra\\\\(intuitive approach)	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	c
 Linear algebra\\\\(rigorous approach)	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	c
@@ -600,6 +600,7 @@ eq:exponents_properties	chapters/intro/exponentials_logarithms.tex	/^	\\label{eq
 eq:factorial_def	chapters/intro/combinatorics.tex	/^	\\label{eq:factorial_def}$/;"	l
 eq:factorial_def_recursive	chapters/intro/combinatorics.tex	/^	\\label{eq:factorial_def_recursive}$/;"	l
 eq:first equation in law of sines	chapters/intro/trigonomentry.tex	/^	\\label{eq:first equation in law of sines}$/;"	l
+eq:first_limit	chapters/calculus_1D/sequences.tex	/^	\\label{eq:first_limit}$/;"	l
 eq:function_basics	chapters/intro/relations_functions.tex	/^	\\label{eq:function_basics}$/;"	l
 eq:function_by_formula	chapters/intro/relations_functions.tex	/^	\\label{eq:function_by_formula}$/;"	l
 eq:functional_def	chapters/linear_algebra_intuitive/dual_spaces.tex	/^	\\label{eq:functional_def}$/;"	l
@@ -812,6 +813,7 @@ fig:kernel_subspace	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fi
 fig:line_plane_R3	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:line_plane_R3}$/;"	l
 fig:linear transformation grid	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\label{fig:linear transformation grid}$/;"	l
 fig:linear_equations_2_vars	chapters/linear_algebra_intuitive/linear_systems.tex	/^	\\label{fig:linear_equations_2_vars}$/;"	l
+fig:logistic_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:logistic_seq}$/;"	l
 fig:matrix_matrix_product_elements	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:matrix_matrix_product_elements}$/;"	l
 fig:n/2_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:n\/2_seq}$/;"	l
 fig:n^2_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:n^2_seq}$/;"	l
