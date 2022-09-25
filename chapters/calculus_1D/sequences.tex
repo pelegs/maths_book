@@ -429,7 +429,7 @@ As you probably noticed by now, some infinite sequences seem to approach a certa
 		\end{axis}
 	\end{tikzpicture}
 	\caption{The sequence $a_{n}=\frac{1}{n^{2}}+1$ approaches the value $L=1$ as $n$ increases.}
-	\label{fig:sin(n)_seq}
+	\label{fig:1/n^2+1_seq}
 \end{figure}
 
 The formal term for the behaviour of $a_{n}$ and $b_{n}$ is called \emph{convergance}, and it is one of the most important properties of infinite sequences. In this subsection we will define, analyze, and explain it in detail. To begin, we can divide all infinite sequences into two separate categories:
@@ -568,7 +568,7 @@ or simply $a_{n}>R$.
 
 The next type of sequences we ananlyze are those sequences that converge to a real number $L$ as $n$ increases, i.e. as $n$ increases the terms of the sequence get closer and closer to $L$. A classical example for such a sequence is $a_{n}=\frac{1}{n}$ (\autoref{fig:1/n_seq}): as $n$ increases, the terms $\frac{1}{n}$ become smaller and smaller (while always being positive) and the sequence as a whole approaches $L=0$.
 
-Sequences don't have to approach a limit from above: some sequences approach a limit from below, while others may \emph{oscillate} around the limit.
+Sequences don't have to approach a limit from above: some sequences approach a limit from below (\autoref{fig:logistic_seq}), while others may \emph{oscillate} around the limit (\autoref{fig:converging_cosine_seq}).
 
 \begin{figure}[]
 	\centering
@@ -576,14 +576,14 @@ Sequences don't have to approach a limit from above: some sequences approach a l
 		\begin{axis}[
 			vector plane,
 			width=10cm, height=7cm,
-			xmin=0, xmax=21,
+			xmin=0, xmax=36,
 			ymin=0, ymax=2,
 			x axis line style={-stealth, thick},
 			xlabel={$n$},
 			ylabel={$a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}$},
 			ticklabel style={font=\small},
-			domain={1:21},
-			samples=21,
+			domain={1:36},
+			samples=36,
 		]
 		\addplot[xred, only marks, mark=*] {1/(1+e^(-0.25*(x-5)))};
 		\addplot[thick, dashed] {1};
@@ -600,18 +600,93 @@ Sequences don't have to approach a limit from above: some sequences approach a l
 			vector plane,
 			width=10cm, height=7cm,
 			xmin=0, xmax=71,
-			ymin=-2, ymax=2,
+			ymin=-4, ymax=4,
 			x axis line style={-stealth, thick},
 			xlabel={$n$},
-			ylabel={$a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}$},
+			ylabel={$a_{n}=\frac{\cos(n)}{10n}$},
 			ticklabel style={font=\small},
 			domain={1:71},
 			samples=71,
 		]
-		% \addplot[thin] {cos(deg(x))/(0.1*x)};
-		\addplot[xred, only marks, mark=*] {cos(deg(x))/(0.1*x)};
+		\addplot[thin, domain={2:71}] {cos(deg(x))/(0.1*x)};
+		\addplot[xdarkgreen, only marks, mark=*] {cos(deg(x))/(0.1*x)};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{The logistic sequence $a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}$ approaches the value $L=1$ from below as $n\to\infty$.}
-	\label{fig:logistic_seq}
+	\caption{The sequence $a_{n}=\frac{\cos(n)}{10n}$ approaches, with oscillations, the limit $L=0$. A line connecting the elements is drawn to help see the progression of the sequence.}
+	\label{fig:converging_cosine_seq}
 \end{figure}
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			vector plane,
+			width=10cm, height=7cm,
+			xmin=0, xmax=51,
+			ymin=0, ymax=1.1,
+			x axis line style={-stealth, thick},
+			xlabel={$n$},
+			ylabel={$a_{n+1}=\exp(-2a_{n})$},
+			ticklabel style={font=\small},
+			domain={1:51},
+			samples=50,
+		]
+		\addplot[xdarkblue!75!black, mark=*, mark options={xblue}] coordinates {
+(1,1.00000)
+(2,0.13534)
+(3,0.76287)
+(4,0.21746)
+(5,0.64732)
+(6,0.27400)
+(7,0.57811)
+(8,0.31468)
+(9,0.53294)
+(10,0.34443)
+(11,0.50215)
+(12,0.36630)
+(13,0.48066)
+(14,0.38239)
+(15,0.46544)
+(16,0.39421)
+(17,0.45456)
+(18,0.40288)
+(19,0.44675)
+(20,0.40922)
+(21,0.44112)
+(22,0.41386)
+(23,0.43705)
+(24,0.41724)
+(25,0.43410)
+(26,0.41970)
+(27,0.43197)
+(28,0.42150)
+(29,0.43042)
+(30,0.42281)
+(31,0.42929)
+(32,0.42376)
+(33,0.42847)
+(34,0.42446)
+(35,0.42788)
+(36,0.42496)
+(37,0.42745)
+(38,0.42533)
+(39,0.42714)
+(40,0.42559)
+(41,0.42691)
+(42,0.42579)
+(43,0.42674)
+(44,0.42593)
+(45,0.42662)
+(46,0.42603)
+(47,0.42654)
+(48,0.42610)
+(49,0.42647)
+(50,0.42616)
+		};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The sequence defined by the recursive formula $a_{n+1}=\exp(-2a_{n})$ with $a_{1}=1$ converges to the limit $L\approx0.4263027510068627$, or more precisely $\frac{1}{2}W(2)$, where $W$ is the Lambert $W$ function.}
+	\label{fig:convergent_recursive_seq}
+\end{figure}
+
+

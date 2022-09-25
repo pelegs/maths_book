@@ -786,6 +786,7 @@ fig:	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:}$/;"	
 fig:	chapters/linear_algebra_intuitive/linear_trans.tex	/^		\\label{fig:}$/;"	l
 fig:	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{fig:}$/;"	l
 fig:(n-5)^2_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:(n-5)^2_seq}$/;"	l
+fig:1/n^2+1_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:1\/n^2+1_seq}$/;"	l
 fig:1/n_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:1\/n_seq}$/;"	l
 fig:Fib_graphical	chapters/calculus_1D/sequences.tex	/^	\\label{fig:Fib_graphical}$/;"	l
 fig:R2_infinite_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:R2_infinite_solutions}$/;"	l
@@ -803,6 +804,8 @@ fig:basicLinearTrans	chapters/linear_algebra_intuitive/linear_trans.tex	/^	\\lab
 fig:building_reflect_2x2	chapters/linear_algebra_intuitive/matrices.tex	/^	\\label{fig:building_reflect_2x2}$/;"	l
 fig:complex number	chapters/intro/complex_numbers.tex	/^	\\label{fig:complex number}$/;"	l
 fig:complex number 2	chapters/intro/complex_numbers.tex	/^	\\label{fig:complex number 2}$/;"	l
+fig:convergent_recursive_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:convergent_recursive_seq}$/;"	l
+fig:converging_cosine_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:converging_cosine_seq}$/;"	l
 fig:cross product	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:cross product}$/;"	l
 fig:cross_product_in_R2	chapters/linear_algebra_intuitive/vectors.tex	/^	\\label{fig:cross_product_in_R2}$/;"	l
 fig:cube roots of 1	chapters/intro/complex_numbers.tex	/^	\\label{fig:cube roots of 1}$/;"	l
