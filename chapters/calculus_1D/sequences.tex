@@ -169,21 +169,14 @@ Generally, a sequence that is either increasin or decreasing is said to be \emph
 
 As an example of a sequence which isn't monote, consider the sequence $e_{n}=\sin(n)$: for some values of $n,\ e_{n+1}>e_{n}$ and for some other values $e_{n+1}<e_{n}$ (see \autoref{fig:sin(n)_seq}).
 
+\pgfplotsset{
+}
+
 \begin{figure}[]
 	\centering
 	\begin{tikzpicture}[]
 		\begin{axis}[
-			vector plane,
-			width=10cm, height=7cm,
-			xmin=0, xmax=21,
-			ymin=0, ymax=400,
-			axis line style={-stealth, thick},
-			xlabel={$n$},
-			ylabel={$a_{n}=n^{2}$},
-			xtick={1,...,20},
-			ticklabel style={font=\small},
-			domain={0:20},
-			samples=21,
+			sequence plot={20}{0}{400}{a_{n}=n^{2}},
 		]
 		\addplot[xred, only marks, mark=*] {x^2};
 		\end{axis}
@@ -196,17 +189,7 @@ As an example of a sequence which isn't monote, consider the sequence $e_{n}=\si
 	\centering
 	\begin{tikzpicture}[]
 		\begin{axis}[
-			vector plane,
-			width=10cm, height=7cm,
-			xmin=0, xmax=21,
-			ymin=0, ymax=1.1,
-			axis line style={-stealth, thick},
-			xlabel={$n$},
-			ylabel={$b_{n}=\frac{1}{n}$},
-			xtick={1,...,20},
-			ticklabel style={font=\small},
-			domain={0:20},
-			samples=21,
+			sequence plot={20}{0}{1.5}{b_{n}=\frac{1}{n}},
 		]
 		\addplot[xblue, only marks, mark=*] {1/x};
 		\end{axis}
@@ -219,17 +202,7 @@ As an example of a sequence which isn't monote, consider the sequence $e_{n}=\si
 	\centering
 	\begin{tikzpicture}[]
 		\begin{axis}[
-			vector plane,
-			width=10cm, height=7cm,
-			xmin=0, xmax=21,
-			ymin=0, ymax=250,
-			axis line style={-stealth, thick},
-			xlabel={$n$},
-			ylabel={$d_{n}=(n-5)^{2}$},
-			xtick={1,...,20},
-			ticklabel style={font=\small},
-			domain={0:20},
-			samples=21,
+			sequence plot={20}{0}{250}{d_{n}=(x-5)^{2}},
 		]
 		\addplot[xpurple, only marks, mark=*] {(x-5)^2};
 		\end{axis}
@@ -242,17 +215,7 @@ As an example of a sequence which isn't monote, consider the sequence $e_{n}=\si
 	\centering
 	\begin{tikzpicture}[]
 		\begin{axis}[
-			vector plane,
-			width=10cm, height=7cm,
-			xmin=0, xmax=21,
-			ymin=-1.1, ymax=1.1,
-			x axis line style={-stealth, thick},
-			xlabel={$n$},
-			ylabel={$e_{n}=\sin(n)$},
-			xtick={1,...,20},
-			ticklabel style={font=\small},
-			domain={0:20},
-			samples=21,
+			sequence plot={20}{-1.1}{1.1}{e_{n}=\sin(n)},
 		]
 		\addplot[black!20, dashed, samples=150] {sin(deg(x))};
 		\addplot[xorange, only marks, mark=*] {sin(deg(x))};
@@ -538,18 +501,10 @@ or simply $a_{n}>R$.
 	\begin{center}
 		\begin{tikzpicture}[]
 			\begin{axis}[
-				vector plane,
-				width=10cm, height=7cm,
-				xmin=0, xmax=51,
-				ymin=0, ymax=6,
-				axis line style={-stealth, thick},
-				xlabel={$n$},
-				ylabel={$a_{n}=\log(n)$},
-				ticklabel style={font=\small},
-				domain={0:50},
-				samples=50,
-				]
-				\addplot[xred, only marks, mark=*] {ln(x)};
+				sequence plot={50}{0}{6}{a_{n}=\log(n)},
+				xtick={0,10,...,50},
+			]
+			\addplot[xred, only marks, mark=*] {ln(x)};
 			\end{axis}
 		\end{tikzpicture}
 	\end{center}
@@ -566,7 +521,7 @@ or simply $a_{n}>R$.
 	\tbw{is this example actually necessery? It seems reduntant unless we show something "new", and just inverting everything is not that new...}
 \end{example}
 
-The next type of sequences we ananlyze are those sequences that converge to a real number $L$ as $n$ increases, i.e. as $n$ increases the terms of the sequence get closer and closer to $L$. A classical example for such a sequence is $a_{n}=\frac{1}{n}$ (\autoref{fig:1/n_seq}): as $n$ increases, the terms $\frac{1}{n}$ become smaller and smaller (while always being positive) and the sequence as a whole approaches $L=0$.
+The next type of sequences we ananlyze are those sequences that converge to a real number $L$ as $n$ increases - i.e. as $n$ increases, the terms of the sequence get closer and closer to $L$. A classical example for such a sequence is $a_{n}=\frac{1}{n}$ (\autoref{fig:1/n_seq}): as $n$ increases, the terms $\frac{1}{n}$ become smaller and smaller (while always being positive) and the sequence as a whole approaches $L=0$.
 
 Sequences don't have to approach a limit from above: some sequences approach a limit from below (\autoref{fig:logistic_seq}), while others may \emph{oscillate} around the limit (\autoref{fig:converging_cosine_seq}).
 
@@ -574,16 +529,7 @@ Sequences don't have to approach a limit from above: some sequences approach a l
 	\centering
 	\begin{tikzpicture}[]
 		\begin{axis}[
-			vector plane,
-			width=10cm, height=7cm,
-			xmin=0, xmax=36,
-			ymin=0, ymax=2,
-			x axis line style={-stealth, thick},
-			xlabel={$n$},
-			ylabel={$a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}$},
-			ticklabel style={font=\small},
-			domain={1:36},
-			samples=36,
+			sequence plot={20}{0}{2}{a_{n}=\frac{1}{1+\exp(\frac{5-x}{4})}},
 		]
 		\addplot[xred, only marks, mark=*] {1/(1+e^(-0.25*(x-5)))};
 		\addplot[thick, dashed] {1};
@@ -597,16 +543,8 @@ Sequences don't have to approach a limit from above: some sequences approach a l
 	\centering
 	\begin{tikzpicture}[]
 		\begin{axis}[
-			vector plane,
-			width=10cm, height=7cm,
-			xmin=0, xmax=71,
-			ymin=-4, ymax=4,
-			x axis line style={-stealth, thick},
-			xlabel={$n$},
-			ylabel={$a_{n}=\frac{\cos(n)}{10n}$},
-			ticklabel style={font=\small},
-			domain={1:71},
-			samples=71,
+			sequence plot={71}{-4}{4}{a_{n}=\frac{\cos(n)}{10n}},
+			xtick={0,10,...,70},
 		]
 		\addplot[thin, domain={2:71}] {cos(deg(x))/(0.1*x)};
 		\addplot[xdarkgreen, only marks, mark=*] {cos(deg(x))/(0.1*x)};
@@ -620,16 +558,8 @@ Sequences don't have to approach a limit from above: some sequences approach a l
 	\centering
 	\begin{tikzpicture}[]
 		\begin{axis}[
-			vector plane,
-			width=10cm, height=7cm,
-			xmin=0, xmax=51,
-			ymin=0, ymax=1.1,
-			x axis line style={-stealth, thick},
-			xlabel={$n$},
-			ylabel={$a_{n+1}=\exp(-2a_{n})$},
-			ticklabel style={font=\small},
-			domain={1:51},
-			samples=50,
+			sequence plot={50}{0}{1.1}{a_{n}=\exp{-2a_{n}}},
+			xtick={0,10,...,50},
 		]
 		\addplot[xdarkblue!75!black, mark=*, mark options={xblue}] coordinates {
 (1,1.00000)
@@ -689,4 +619,37 @@ Sequences don't have to approach a limit from above: some sequences approach a l
 	\label{fig:convergent_recursive_seq}
 \end{figure}
 
+We define convergence in a similar way to how we defined that a sequence goes to $\infty$: in that case we had to show that for any $R\in\Rs$ the sequence eventually surpasses $R$ and no element is ever again equal to or smaller than $R$. In the case of convergence to some finite number $L\in\Rs$ we will show that for any distance $\varepsilon$ from $L$ - no matter how small! - the sequence eventually stays within $\varepsilon$ of $L$.
 
+Let us use the simplest convergence example to explain this idea: $a_{n}=\frac{1}{n}$, which converges to $L=0$. Given a small number $\varepsilon$, say $\varepsilon=\frac{1}{10}$, eventually the sequence stays at most within $\frac{1}{10}$ of $L=0$. This happens starting from $n_{0}=10$: any element thereafter is smaller than $\frac{1}{10}$, which means that it is withing $\varepsilon=\frac{1}{10}$ of $L=0$ (see \autoref{fig:1/n_convergence}).
+
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			sequence plot={30}{-0.5}{1.2}{a_{n}=\frac{1}{n}},
+			xtick={0,10,...,30},
+			xticklabel style={yshift=-10pt},
+			extra y ticks={-0.1,0,0.1},
+			extra y tick labels={$-\varepsilon$, $L=0$, $\varepsilon$},
+			y axis line style={stealth-stealth, thick},
+		]
+		\addplot[thick, name path=A] {0.1};
+		\addplot[thick, name path=B] {-0.1};
+		\addplot[xgreen, opacity=0.15] fill between[of=A and B];
+		\addplot[xred, only marks, mark=*] {1/x};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The sequence $a_{n}=\frac{1}{n}$. For any $n>10$, the element $a_{n}$ is withing $\varepsilon=\frac{1}{10}$ of the limit $L=0$. The interval $\left(-\varepsilon,\varepsilon\right)=\left(-\frac{1}{10},\frac{1}{10}\right)$ on the $y$-axis is highlighted in green.}
+	\label{fig:1/n_convergence}
+\end{figure}
+
+We can repeat this for different value of $\varepsilon$: given $\varepsilon=\frac{1}{100}$, for any $n>100$ the elements $a_{n}$ are guaranteed to be within $\pm\frac{1}{100}$ of $L=0$. Given $\varepsilon=\frac{1}{5000}$, for any $n>5000$ the elements $a_{n}$ are within $\pm\frac{1}{5000}$ of $L=0$, etc. In general, given any real $\varepsilon$, no matter how small, we can set $n_{0}=\ceil{\frac{1}{\varepsilon}}$, and then for any $n>n_{0}$ we get that
+\begin{equation}
+	a_{n} < a_{n_{0}} = \frac{1}{n_{0}} = \frac{1}{\ceil{\frac{1}{\varepsilon}}} < \frac{1}{\frac{1}{\varepsilon}} = \varepsilon,
+\end{equation}
+i.e. altogther
+\begin{equation}
+	a_{n} < \varepsilon,
+\end{equation}
+and therefore $a_{n}$ is within $\pm\varepsilon$ of $L=0$.

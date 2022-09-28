@@ -191,7 +191,21 @@
 		ztick=\empty,
 		view={50}{40},
 	},
+	sequence plot/.style n args={4}{
+		vector plane,
+		width=10cm, height=7cm,
+		xmin=0, xmax=#1,
+		ymin=#2, ymax=#3,
+		axis line style={-stealth, thick},
+		xlabel={$n$},
+		ylabel={$#4$},
+		xtick={1,...,#1},
+		ticklabel style={font=\small},
+		domain={0:#1},
+		samples=#1+1,
+	},
 }
+
 \pgfkeys{
 	/pgfplots/vector plane/.style={
 		axis x line=middle,
