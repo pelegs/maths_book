@@ -638,18 +638,67 @@ Let us use the simplest convergence example to explain this idea: $a_{n}=\frac{1
 		\addplot[thick, name path=B] {-0.1};
 		\addplot[xgreen, opacity=0.15] fill between[of=A and B];
 		\addplot[xred, only marks, mark=*] {1/x};
+		\draw[-stealth, very thick] (10,0.5) -- node[above, yshift=5mm] {$n=10$} (10,0.2);
 		\end{axis}
 	\end{tikzpicture}
 	\caption{The sequence $a_{n}=\frac{1}{n}$. For any $n>10$, the element $a_{n}$ is withing $\varepsilon=\frac{1}{10}$ of the limit $L=0$. The interval $\left(-\varepsilon,\varepsilon\right)=\left(-\frac{1}{10},\frac{1}{10}\right)$ on the $y$-axis is highlighted in green.}
 	\label{fig:1/n_convergence}
 \end{figure}
 
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[]
+		\begin{axis}[
+			sequence plot={70}{-0.5}{1.2}{a_{n}=\frac{1}{n}},
+			xtick={0,10,...,70},
+			xticklabel style={yshift=-10pt},
+			extra y ticks={-0.1,0,0.1},
+			extra y tick labels={$-\varepsilon$, $L=0$, $\varepsilon$},
+			y axis line style={stealth-stealth, thick},
+		]
+		\addplot[thick, name path=A] {0.05};
+		\addplot[thick, name path=B] {-0.05};
+		\addplot[xgreen, opacity=0.15] fill between[of=A and B];
+		\addplot[xred, only marks, mark=*, mark options={scale=0.5}] {1/x};
+		\draw[-stealth, very thick] (20,0.4) -- node[above, yshift=5mm] {$n=20$} (20,0.1);
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Same as \autoref{fig:1/n_convergence} except here $\varepsilon=0.05$, and thus $n_{0}=\ceil{\frac{1}{0.05}}=20$. Therefore, starting fom $n=20$ all the elements of the sequence are within the interval $(-0.05,0.05)$. Note: the values of the sequence are drawn with smaller filled circles to prevent overlap between subsequent points.}
+	\label{fig:1/n_convergence2}
+\end{figure}
+
 We can repeat this for different value of $\varepsilon$: given $\varepsilon=\frac{1}{100}$, for any $n>100$ the elements $a_{n}$ are guaranteed to be within $\pm\frac{1}{100}$ of $L=0$. Given $\varepsilon=\frac{1}{5000}$, for any $n>5000$ the elements $a_{n}$ are within $\pm\frac{1}{5000}$ of $L=0$, etc. In general, given any real $\varepsilon$, no matter how small, we can set $n_{0}=\ceil{\frac{1}{\varepsilon}}$, and then for any $n>n_{0}$ we get that
+
+\vspace{2em}
 \begin{equation}
-	a_{n} < a_{n_{0}} = \frac{1}{n_{0}} = \frac{1}{\ceil{\frac{1}{\varepsilon}}} < \frac{1}{\frac{1}{\varepsilon}} = \varepsilon,
+	a_{n} \tikzmark{st1}{\ <\ } a_{n_{0}} = \frac{1}{n_{0}} = \frac{1}{\ceil{\frac{1}{\varepsilon}}} \tikzmark{leq}{\ \leq\ } \frac{1}{\frac{1}{\varepsilon}} = \varepsilon,
 \end{equation}
+\tikz[overlay, remember picture, node distance=1cm]{
+	\node[xred, font=\smaller] (st1txt) at ($(pic cs:st1)+(0,1cm)$) {since $a_{n}$ is strictly decreasing};
+	\draw[-stealth, xred] ($(st1txt)+(5pt,-5pt)$) -- ($(pic cs:st1)+(5pt,9pt)$);
+	\node[xblue, font=\smaller] (leqtxt) at ($(pic cs:leq)-(0,1cm)$) {since $\ceil{\frac{1}{x}}\geq\frac{1}{x}$};
+	\draw[-stealth, xblue] ($(leqtxt)+(5pt,7pt)$) -- ($(pic cs:leq)+(5pt,-5pt)$);
+}
+
+\vspace{2em}
 i.e. altogther
 \begin{equation}
 	a_{n} < \varepsilon,
 \end{equation}
 and therefore $a_{n}$ is within $\pm\varepsilon$ of $L=0$.
+
+\begin{example}{Convergence}{}
+	Let's prove that the sequence $a_{n}=\frac{n+1}{n^{2}}$ converges to $L=0$ as $n\to\infty$. For any $\varepsilon\in\Rs$ we chose $n_{0}=\ceil{\frac{\varepsilon}{2}}$. Since $a_{n}$ is a strictly decreasing sequence\footnote{Show that!}, we get that for any $n>n_{0}$:
+	\[
+		a_{n} < a_{n_{0}} = \frac{n_{0}+1}{n_{0}^{2}}.
+	\]
+	Note the following: for any $x>1,\ x^{3}>x>1$. Therefore if we replace both $n_{0}$ and $1$ in the numerator of the expression $\frac{n_{0}+1}{n_{0}^{2}}$ by $n_{0}^{3}$ we are guaranteed to get a number bigger than $\frac{n_{0}+1}{n_{0}^{2}}$. We can therefore continue with the substitution:
+	\[
+		\frac{n_{0}+1}{n_{0}^{2}} < \frac{n_{0}^{3}+n_{0}^{3}}{n_{0}^{2}} = \frac{2n_{0}^{3}}{n_{0}^{2}} = 2n_{0} = 2\frac{\varepsilon}{2} = \varepsilon,
+	\]
+	and therefore altogther we get that
+	\[
+		a_{n} < \varepsilon,
+	\]
+	and thus $a_{n}$ converges to $L=0$ as $n$ increases to $\infty$.
+\end{example}

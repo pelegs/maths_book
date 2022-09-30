@@ -788,6 +788,7 @@ fig:	chapters/linear_algebra_intuitive/vectors.tex	/^		\\label{fig:}$/;"	l
 fig:(n-5)^2_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:(n-5)^2_seq}$/;"	l
 fig:1/n^2+1_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:1\/n^2+1_seq}$/;"	l
 fig:1/n_convergence	chapters/calculus_1D/sequences.tex	/^	\\label{fig:1\/n_convergence}$/;"	l
+fig:1/n_convergence2	chapters/calculus_1D/sequences.tex	/^	\\label{fig:1\/n_convergence2}$/;"	l
 fig:1/n_seq	chapters/calculus_1D/sequences.tex	/^	\\label{fig:1\/n_seq}$/;"	l
 fig:Fib_graphical	chapters/calculus_1D/sequences.tex	/^	\\label{fig:Fib_graphical}$/;"	l
 fig:R2_infinite_solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^		\\label{fig:R2_infinite_solutions}$/;"	l
