@@ -26,7 +26,7 @@ Arrow1Mend	figures/linear_algebra/tapir_transform.svg	/^       inkscape:isstock=
 Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	d
 Arrow1Mend	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	i
 Basic Definitions	chapters/intro/trigonomentry.tex	/^\\subsection{Basic Definitions}$/;"	u	section:Introduction""Trigonometric functions
-Basics	chapters/calculus_1D/sequences.tex	/^\\subsection{Basics}$/;"	u	section:Sequences and series
+Basics	chapters/calculus_1D/sequences.tex	/^\\subsection{Basics}$/;"	u	section:Real calculus in 1D""Sequences and series
 Basics	chapters/intro/relations_functions.tex	/^\\subsection{Basics}$/;"	u	section:Introduction""Relations and Functions
 Basics	chapters/linear_algebra_intuitive/vectors.tex	/^\\subsection{Basics}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Vectors
 Basis sets	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Basis sets}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
@@ -85,7 +85,7 @@ Inverse matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{I
 Kernel and null space	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Kernel and null space}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
 Layer_x0020_1	figures/symbols/nexxuz_Loose_Leaf_Paper.svg	/^ <g id="Layer_x0020_1">$/;"	i
 Layer_x0020_1	figures/symbols/solve.svg	/^           style="image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-render/;"	i
-Limits	chapters/calculus_1D/sequences.tex	/^\\subsection{Limits}$/;"	u	section:Sequences and series
+Limits	chapters/calculus_1D/sequences.tex	/^\\subsection{Limits}$/;"	u	section:Real calculus in 1D""Sequences and series
 Limits of real functions	chapters/calculus_1D/function_limits.tex	/^\\section{Limits of real functions}$/;"	s	chapter:Real calculus in 1D
 Linear algebra\\\\(intuitive approach)	chapters/linear_algebra_intuitive/preface.tex	/^\\chapter{Linear algebra\\\\(intuitive approach)}\\label{chapter:linear algebra intuitive}$/;"	c
 Linear algebra\\\\(rigorous approach)	chapters/linear_algebra_rigorous/preface.tex	/^\\chapter{Linear algebra\\\\(rigorous approach)}\\label{chapter:linear algebra rigorous}$/;"	c
@@ -122,7 +122,7 @@ Roots of complex numbers	chapters/intro/complex_numbers.tex	/^\\subsection{Roots
 Row vectors and the outer product	chapters/linear_algebra_intuitive/dual_spaces.tex	/^\\subsection{Row vectors and the outer product}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Dual vectors
 Scalar multiplication and addition of vectors	chapters/linear_algebra_intuitive/braket_notation.tex	/^\\subsection{Scalar multiplication and addition of vectors}$/;"	u	section:Linear algebra\\\\(intuitive approach)""The Bra-Ket notation
 Scalar product, norm	chapters/linear_algebra_intuitive/function_spaces.tex	/^\\subsection{Scalar product, norm}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Functions as vectors
-Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s
+Sequences and series	chapters/calculus_1D/sequences.tex	/^\\section{Sequences and series}$/;"	s	chapter:Real calculus in 1D
 Sets and subsets	chapters/intro/math_symbols_sets.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Introduction""Mathematical Symbols and Sets
 Sets and subsets	sed_test.tex	/^\\subsection{Sets and subsets}$/;"	u	section:Mathematical Symbols and Sets
 Simple combinatorics and the binomial coefficients	chapters/intro/combinatorics.tex	/^\\section{Simple combinatorics and the binomial coefficients}$/;"	s	chapter:Introduction
@@ -132,7 +132,7 @@ Solutions	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{So
 Some examples	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Some examples}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
 Some real life uses of linear algebra	chapters/linear_algebra_intuitive/real_life_examples.tex	/^\\section{Some real life uses of linear algebra}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
 Special cases	chapters/linear_algebra_intuitive/eigenvectors.tex	/^\\subsection{Special cases}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Eigenvectors and eigenvalues
-Subsequences	chapters/calculus_1D/sequences.tex	/^\\subsection{Subsequences}$/;"	u	section:Sequences and series
+Subsequences	chapters/calculus_1D/sequences.tex	/^\\subsection{Subsequences}$/;"	u	section:Real calculus in 1D""Sequences and series
 Symmetry Groups	chapters/groups/preface.tex	/^\\chapter{Symmetry Groups}$/;"	c
 Systems and matrix form	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\subsection{Systems and matrix form}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Systems of linear equations
 Systems of linear equations	chapters/linear_algebra_intuitive/linear_systems.tex	/^\\section{Systems of linear equations}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)
@@ -159,7 +159,7 @@ TriangleOutM	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:issto
 TriangleOutM	figures/linear_algebra/tapir_transform2.svg	/^       inkscape:isstock="true">$/;"	i
 Trigonometric functions	chapters/intro/trigonomentry.tex	/^\\section{Trigonometric functions}\\label{section:trigonometry}$/;"	s	chapter:Introduction
 Types of matrices	chapters/linear_algebra_intuitive/matrices.tex	/^\\subsection{Types of matrices}$/;"	u	section:Linear algebra\\\\(intuitive approach)""Matrices
-Types of sequences	chapters/calculus_1D/sequences.tex	/^\\subsection{Types of sequences}%$/;"	u	section:Sequences and series
+Types of sequences	chapters/calculus_1D/sequences.tex	/^\\subsection{Types of sequences}%$/;"	u	section:Real calculus in 1D""Sequences and series
 Useful theorems	chapters/intro/trigonomentry.tex	/^\\subsection{Useful theorems}$/;"	u	section:Introduction""Trigonometric functions
 Vector spaces	chapters/linear_algebra_rigorous/vectors.tex	/^\\section{Vector spaces}$/;"	s	chapter:Linear algebra\\\\(rigorous approach)
 Vectors	chapters/linear_algebra_intuitive/vectors.tex	/^\\section{Vectors}$/;"	s	chapter:Linear algebra\\\\(intuitive approach)

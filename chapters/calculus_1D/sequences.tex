@@ -432,6 +432,18 @@ A more formal definition of this behaviour is as follows:
 \]
 \end{definition}
 
+\begin{note}{Chain of inequality}{}
+	Note the following: say we have $5$ real numbers $k_{1},\dots,k_{5}$. If
+	\[
+		k_{1} > k_{2} > k_{3} = k_{4} \geq k_{5}.
+	\]
+	then we know that
+	\[
+		k_{1} > k_{5}.
+	\]
+	This might seem obvious - but is worth noting before we move on, as we will be using similar chains of inequalities in up-coming proofs.
+\end{note}
+
 Of course, for negative infinity the behaviour is very similar: a sequence $a_{n}$ with an upper boundry $\overline{M}$ and no lower bound $\underline{M}$ is said to be \emph{going to negative infinity}, since for any $R\in\Rs$ there exist an $n_{R}\in\mathbb{N}$ for which if $n>n_{R}$ then $a_{n}<R$.
 
 Generally speaking, proving that a sequence goes to either positive or negative infinity follows a certain pattern, which we will examplify using the sequence $a_{n}=\frac{n}{2}$ (\autoref{fig:n/2_seq}). It should be clear that the sequence goes to positive infinity as $n$ increases, since we can make the values of $a_{n}$ as large as we want by substituting a respective $n$ into $\frac{n}{2}$: for example, given $R=1000$ we can subtitute $n=2000$, yielding $a_{2000}=\frac{2000}{2}=1000$, and thus any $a_{n}$ where $n>2000$ will be bigger than $R=1000$. For $R=1,000,000$ we can substitute $n=2,000,000$ and so forth.
@@ -694,7 +706,7 @@ and therefore $a_{n}$ is within $\pm\varepsilon$ of $L=0$.
 	\]
 	Note the following: for any $x>1,\ x^{3}>x>1$. Therefore if we replace both $n_{0}$ and $1$ in the numerator of the expression $\frac{n_{0}+1}{n_{0}^{2}}$ by $n_{0}^{3}$ we are guaranteed to get a number bigger than $\frac{n_{0}+1}{n_{0}^{2}}$. We can therefore continue with the substitution:
 	\[
-		\frac{n_{0}+1}{n_{0}^{2}} < \frac{n_{0}^{3}+n_{0}^{3}}{n_{0}^{2}} = \frac{2n_{0}^{3}}{n_{0}^{2}} = 2n_{0} = 2\frac{\varepsilon}{2} = \varepsilon,
+		\frac{n_{0}+1}{n_{0}^{2}} < \frac{n_{0}^{3}+n_{0}^{3}}{n_{0}^{2}} = \frac{2n_{0}^{3}}{n_{0}^{2}} = 2n_{0} = \cancel{2}\frac{\varepsilon}{\cancel{2}} = \varepsilon,
 	\]
 	and therefore altogther we get that
 	\[
