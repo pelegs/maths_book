@@ -1727,7 +1727,51 @@ Normalizing $\vec{n}_{\mathbf{P}}$ will then yield the normal vector $\normalVec
 	The vector $\vec{m}=-\normalVec{n}{P}$ has all the properties of $\normalVec{n}{P}$, and is indeed a normal vector to $\mathbf{P}$. The choice of which of the two vectors to use depends on the application. For now, we do not elaborate on this further.
 \end{note}
 
-To wrap up the vectors section, we present and solve a single problem in the following example.
+\subsection{Examples}
+To wrap up the vectors section, we solve some problems which cover the material presented in the section:
+
+\begin{example}{Vector form of gravitational force}{gravityforce}
+  According to Newton's law of gravity, given two objects $O_{1}$ and $O_{2}$ with masses $m_{1}$ and $m_{2}$ respectively, each of them would feel a gravitational force of attraction \textbf{in the direction of the other object} with the following magnitude:
+  \[
+    F = G \frac{m_{1}m_{2}}{r^{2}},
+  \]
+  where $G$ is a universal constant and $r$ is the distance between the two objects.
+  
+  Say we put $O_{1}$ and $O_{2}$ on an axis system such that their positions are $\vec{r}_{1} = \colvec{x_{1};y_{1};z_{1}}$ and $\vec{r}_{2}=\colvec{x_{2};y_{2};z_{2}}$, respectively (see below figure for a 2-dimensions representation)\dots
+
+  The system therefore has two forces:
+  \begin{itemize}
+    \item $\vec{F}_{12}$: the gravitational force acting on object $O_{1}$ as a result of $O_{2}$. It points from $O_{1}$ towards $O_{2}$.
+    \item $\vec{F}_{21}$: the gravitational force acting on $O_{2}$ as a result of $O_{1}$. It points from $O_{2}$ towards $O_{1}$.
+  \end{itemize}
+
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      linear plane no ticks,
+      width=7cm, height=7cm,
+     ]
+     \coordinate (O1) at (2,3);
+     \coordinate (O2) at (-3,-2);
+     \draw[thick, black, fill=xred ] (O1) circle (0.3) node[right, xshift=2mm ] {$O_{1}$};
+     \draw[thick, black, fill=xblue] (O2) circle (0.2) node[below, yshift=-2mm] {$O_{2}$};
+     \draw[dashed] (O1) -- (O2);
+     \draw[vector, xblue] (O1) -- ($(O1)!0.3!(O2)$) node[midway, above, xshift=-2mm] {$\vec{F}_{12}$};
+     \draw[vector, xred ] (O2) -- ($(O2)!0.3!(O1)$) node[midway, above, xshift=-2mm] {$\vec{F}_{21}$};
+    \end{axis}
+  \end{tikzpicture}
+
+  \flushleft
+  Find the explicit form of each of the two force vectors.
+
+  \vspace{1em}
+  \textbf{Solution}
+
+  The two vectors $\vec{F}_{12}$ and $\vec{F}_{21}$ both lie on the line connecting $O_{1}$ and $O_{2}$. Therefore, their orientations are exactly opposite, and since their magnitudes have to be equal (see the force definition above), the two vectors are simply the opposite of eachother, i.e.
+  \[
+    \vec{F}_{12} = -\vec{F}_{21}.
+  \]
+\end{example}
 
 \begin{example}{Reflection of light rays}{reflection}
 	A ray light hits a mirror, modelled by the plane $\mathbf{P}$ which is defined by the normal vector $\normalVec{n}{P}$. The direction of the light ray is given by $\vec{d}$. What is the direction of the reflected light ray $\vec{r}$? Recall that both the incident and reflected rays are at the same angle in respect to the normal vector of $\normalVec{n}{P}$, and that the incident ray lie on the plane defined by $\vec{d}$ and $\normalVec{n}{P}$.
@@ -1757,6 +1801,9 @@ To wrap up the vectors section, we present and solve a single problem in the fol
 %note: this figure needs to be converted into pespective view or something, right now its a bit meh
 
 \flushleft
+
+\textbf{Solution}
+
 We can rotate our viewpoint of the problem, looking at $\mathbf{P}$ from the side and in such a way that we look head-on at the plane spanned by $\normalVec{n}{P}$ and $\vec{d}$:
 
 \vspace{1em}
