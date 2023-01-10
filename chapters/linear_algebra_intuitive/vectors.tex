@@ -1771,6 +1771,23 @@ To wrap up the vectors section, we solve some problems which cover the material 
   \[
     \vec{F}_{12} = -\vec{F}_{21}.
   \]
+  We therefore need to calculate only a single force vector $\vec{F}$ and we automatically get the other force vector as $-\vec{F}$. We will thus first find the explicit form of the vector $\vec{F}=\vec{F}_{12}$, and using this form easily find $\vec{F}_{21}$ as $-\vec{F}$.
+
+  To get the explicit form of $\vec{F}$ we should find its magnitude and direction. The magnitude is given by
+  \[
+    \norm{F} = G\frac{m_{1}m_{2}}{r^{2}},
+  \]
+  and since we are given $G, m_{1}$ and $m_{2}$ as parameters, we only need to express $r^{2}$ as a function of the positions $\vec{r}_{1}$ and $\vec{r}_{2}$ of the two objects. Given any two vectors, we can find their relative distance by simply \textit{subtracting} one vector from the other. The result is a vector connecting the two given vectors, and its norm would be the distance between the vectors. Therefore, we find that
+  \[
+    r^{2} = \gnorm{\vec{r}_{1}-\vec{r}_{2}}^{2} = \gnorm{\colvec{x_{2}-x_{1};y_{2}-y_{1};z_{2}-z_{1}}}^{2} = \left( x_{2}-x_{1} \right)^{2} + \left( y_{2}-y_{1} \right)^{2} + \left( z_{2}-z_{1} \right)^{2}.
+  \]
+  (note that the order of subtraction forces the resulting vector to point from $O_{1}$ towards $O_{2}$. This will become handy soon)
+
+  As with any norm, the expression $\left( x_{2}-x_{1} \right)^{2} + \left( y_{2}-y_{1} \right)^{2} + \left( z_{2}-z_{1} \right)^{2}$ can be written as the dot product a vector with itself, namely $\vec{\Delta r} = \vec{r}_{2}-\vec{r}_{1} = \colvec{x_{2}-x_{1};y_{2}-y_{1};z_{2}-z_{1}}$, and we get the following simple relationship:
+  \[
+    r^{2} = \innerproduct{r_{2}-r_{1}}.
+  \]
+
 \end{example}
 
 \begin{example}{Reflection of light rays}{reflection}
