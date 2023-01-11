@@ -1737,7 +1737,7 @@ To wrap up the vectors section, we solve some problems which cover the material 
   \]
   where $G$ is a universal constant and $r$ is the distance between the two objects.
   
-  Say we put $O_{1}$ and $O_{2}$ on an axis system such that their positions are $\vec{r}_{1} = \colvec{x_{1};y_{1};z_{1}}$ and $\vec{r}_{2}=\colvec{x_{2};y_{2};z_{2}}$, respectively (see below figure for a 2-dimensions representation)\dots
+  Say we put $O_{1}$ and $O_{2}$ on an axis system such that their positions are $\vec{r}_{1} = \colvec{x_{1};y_{1};z_{1}}$ and $\vec{r}_{2}=\colvec{x_{2};y_{2};z_{2}}$, respectively (see below figure for a 2-dimensions representation).
 
   The system therefore has two forces:
   \begin{itemize}
@@ -1747,22 +1747,27 @@ To wrap up the vectors section, we solve some problems which cover the material 
 
   \centering
   \begin{tikzpicture}
+    \pgfmathsetmacro{\xa}{3}
+    \pgfmathsetmacro{\ya}{3}
+    \pgfmathsetmacro{\xb}{-5}
+    \pgfmathsetmacro{\yb}{-2}
     \begin{axis}[
       linear plane no ticks,
-      width=7cm, height=7cm,
+      width=12cm, height=7cm,
+      xmin=-7, xmax=7,
      ]
-     \coordinate (O1) at (2,3);
-     \coordinate (O2) at (-3,-2);
-     \draw[thick, black, fill=xred ] (O1) circle (0.3) node[right, xshift=2mm ] {$O_{1}$};
-     \draw[thick, black, fill=xblue] (O2) circle (0.2) node[below, yshift=-2mm] {$O_{2}$};
+     \coordinate (O1) at (\xa,\ya);
+     \coordinate (O2) at (\xb,\yb);
+     \draw[thick, black, fill=xred!75 ] (O1) circle (0.3) node[right, xshift=+2mm] {$O_{1}$};
+     \draw[thick, black, fill=xblue!75] (O2) circle (0.2) node[below, yshift=-2mm] {$O_{2}$};
      \draw[dashed] (O1) -- (O2);
      \draw[vector, xblue] (O1) -- ($(O1)!0.3!(O2)$) node[midway, above, xshift=-2mm] {$\vec{F}_{12}$};
-     \draw[vector, xred ] (O2) -- ($(O2)!0.3!(O1)$) node[midway, above, xshift=-2mm] {$\vec{F}_{21}$};
+     \draw[vector, xred ] (O2) -- ($(O2)!0.3!(O1)$) node[midway, below, xshift=+2mm] {$\vec{F}_{21}$};
     \end{axis}
   \end{tikzpicture}
 
   \flushleft
-  Find the explicit form of each of the two force vectors.
+  Find the explicit form of each of the two force vectors, i.e. using only the parameters $G, m_{1}$ and $m_{2}$, and the positions $\vec{r}_{1}$ and $\vec{r}_{2}$.
 
   \vspace{1em}
   \textbf{Solution}
@@ -1773,19 +1778,39 @@ To wrap up the vectors section, we solve some problems which cover the material 
   \]
   We therefore need to calculate only a single force vector $\vec{F}$ and we automatically get the other force vector as $-\vec{F}$. We will thus first find the explicit form of the vector $\vec{F}=\vec{F}_{12}$, and using this form easily find $\vec{F}_{21}$ as $-\vec{F}$.
 
-  To get the explicit form of $\vec{F}$ we should find its magnitude and direction. The magnitude is given by
+  To get the explicit form of $\vec{F}$ we should find its magnitude $\alpha\in\Rs$ and direction $\hat{v}\in\Rs{3}$, and then we can write
   \[
-    \norm{F} = G\frac{m_{1}m_{2}}{r^{2}},
+    \vec{F} = \alpha\hat{v}.
   \]
-  and since we are given $G, m_{1}$ and $m_{2}$ as parameters, we only need to express $r^{2}$ as a function of the positions $\vec{r}_{1}$ and $\vec{r}_{2}$ of the two objects. Given any two vectors, we can find their relative distance by simply \textit{subtracting} one vector from the other. The result is a vector connecting the two given vectors, and its norm would be the distance between the vectors. Therefore, we find that
+
+  We start with the magnitude: since the magnitude of the gravitational force is given by
+  \[
+    \alpha = \norm{F} = G\frac{m_{1}m_{2}}{r^{2}},
+  \]
+  and since we are given $G, m_{1}$ and $m_{2}$ as parameters, we are only left with expressing $r^{2}$ as a function of the positions $\vec{r}_{1}$ and $\vec{r}_{2}$ of the two objects. Given any two vectors, we can find their relative distance by simply \textit{subtracting} one vector from the other. The result is a vector connecting the two given vectors, and its norm would be the distance between the vectors. Therefore, we find that
   \[
     r^{2} = \gnorm{\vec{r}_{1}-\vec{r}_{2}}^{2} = \gnorm{\colvec{x_{2}-x_{1};y_{2}-y_{1};z_{2}-z_{1}}}^{2} = \left( x_{2}-x_{1} \right)^{2} + \left( y_{2}-y_{1} \right)^{2} + \left( z_{2}-z_{1} \right)^{2}.
   \]
   (note that the order of subtraction forces the resulting vector to point from $O_{1}$ towards $O_{2}$. This will become handy soon)
 
-  As with any norm, the expression $\left( x_{2}-x_{1} \right)^{2} + \left( y_{2}-y_{1} \right)^{2} + \left( z_{2}-z_{1} \right)^{2}$ can be written as the dot product a vector with itself, namely $\vec{\Delta r} = \vec{r}_{2}-\vec{r}_{1} = \colvec{x_{2}-x_{1};y_{2}-y_{1};z_{2}-z_{1}}$, and we get the following simple relationship:
+  \vspace{1em}
+  We can therefore write the magnitude of $\vec{F}$ as
   \[
-    r^{2} = \innerproduct{r_{2}-r_{1}}.
+    F = G\frac{m_{1}m_{2}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}^{2}}.
+  \]
+
+  The direction of $\vec{F}$ is the same direction as $\vec{\Delta r}$, i.e. from $O_{1}$ to $O_{2}$. By normalizing $\vec{\Delta r}$ we get a vector pointing in the direction we want, with norm $1$:
+  \[
+    \hat{r} = \frac{\vec{r}_{2}-\vec{r}_{1}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}}.
+  \]
+
+  Altogether we get that $\vec{F}$ has the form
+  \[
+    \vec{F}_{12} = \vec{F} = \alpha\hat{v} = \frac{Gm_{1}m_{2}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}^{3}}\left(\vec{r}_{2}-\vec{r}_{1}\right),
+  \]
+  and also
+  \[
+    \vec{F}_{21} = -\vec{F} = -\frac{Gm_{1}m_{2}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}^{3}}\left(\vec{r}_{2}-\vec{r}_{1}\right) = \frac{Gm_{1}m_{2}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}^{3}}\left(\vec{r}_{1}-\vec{r}_{2}\right).
   \]
 
 \end{example}
