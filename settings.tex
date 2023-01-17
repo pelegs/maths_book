@@ -105,28 +105,28 @@
 		every axis/.append style={
 			font=\small,
 		},
-		graph2d/.style={
-		axis x line=middle,
-		axis y line=middle,
-		every axis x label/.style={
-			at={(ticklabel* cs:1.01)},
-			anchor=west,
-		},
-		every axis y label/.style={
-			at={(ticklabel* cs:1.01)},
-			anchor=south,
-		},
-		axis line style={stealth-stealth, thick},
-		label style={font=\large},
-		xlabel=$x$,
-		ylabel=$y$,
-		tick label style={font=\small},
-		samples=200,
-		grid=both,
-		grid style={line width=.1pt, draw=gray!20},
-		major grid style={line width=.2pt,draw=gray!50},
-		minor tick num=4,
-	},
+    graph2d/.style={
+      axis x line=middle,
+      axis y line=middle,
+      every axis x label/.style={
+        at={(ticklabel* cs:1.01)},
+        anchor=west,
+      },
+      every axis y label/.style={
+        at={(ticklabel* cs:1.01)},
+        anchor=south,
+      },
+      axis line style={stealth-stealth, thick},
+      label style={font=\large},
+      xlabel=$x$,
+      ylabel=$y$,
+      tick label style={font=\small},
+      samples=200,
+      grid=both,
+      grid style={line width=.1pt, draw=gray!20},
+      major grid style={line width=.2pt,draw=gray!50},
+      minor tick num=4,
+    },
 	function/.style={line width=1.5pt},
 	vector plane no ticks/.style={
 		vector plane,
@@ -581,6 +581,7 @@
 \newcommand{\adj}{\text{adj}}
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\Err}{\text{Err}}
 
 % Highlights
 \newcommand{\rhl}[1]{\textcolor{xred}{#1}}
