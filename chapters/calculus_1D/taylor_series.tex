@@ -1,13 +1,47 @@
 \section{Taylor series}
+Say we wish to calculate the value of $\cos(x)$ at some non-trivial value, e.g. $x=\frac{\pi}{7}$, or $x=1.0423$. Of course today we can simply use a computer or a calculator - but how do these even calculate such values? Moreover, a lot of these values are non-algebraic, meaning that we can't express them as decimal fractions to an infinite precision. What if for some important calculation we need to know the value of $\eu^{3.153}$ down to 15 digits, but our calculator only shows 10 digits after the period?
+
+We can answer all these questions by using \emph{approximations} instead of precise values. For example, we know values such as $\sin\left(\frac{\pi}{2}\right)$ with infinite precision (it's exactly $1$), but in the case of less trivial values such as the ones discussed above, we can instead settle for an approximation, as long as it is \textit{close enough} to the actual value for our needs. By ``close enough'' we essentially mean \textit{within some given error range}, e.g. in the case of $\eu^{3.153}$ above, 15 digits of precision means that we want that the value we get is no more than $10^{-15}$ away from the actual value. Let's write this mathematically: if we denote $a$ as our approximation of $\eu^{3.153}$, then
+\[
+  \lvert a-\eu^{3.153}\rvert \leq 10^{-15}.
+\]
+More generally, given a value $y$ and and we want to know it to within an \emph{error range} $\Delta$, then for an approximation $a$ to be acceptable, the following must be true:
+\begin{equation}
+  \lvert a-y \rvert \leq \Delta.
+  \label{eq:error_range}
+\end{equation}
+
+A good method to approximate functions would allow us to get as precise as we wish, given that we put enough ``work'' into finding an approximated value, e.g. we could use it to get an approximation of $\eu^{3.153}$ up to $\Delta=10^{-15}$, but we could also use it to get an approximation up to $\Delta=10^{-20}$ or $\Delta=10^{-30}$ or any other value - we will simply have to do more calculations to reach such low error ranges. Generaly, the more precise we want our approximation to be, we would need to make more calculations.
+
 Unlike most real functions, polynomials are relatively easy to calculate for any real value $x$. For example, to correctly calculate the value of the polynomial $P(x)=x^{2}-2x+5$ we simply need to know how to perform the following operations: addition, subtraction, muliplication and raising by an integer power, all operations that are easy for both humans and computers to perform.
 
-Ideally, we would like to use polynomials for all calculations, e.g. given the function $f(x) = \cos(x)$ it would be great if we could find some polynomial $P(x)$ of a finite order $n$ for which $P(x)=\cos(x)$. Unfortunately such a polynomials does not exist, nor does such polynomials exist for $\sin(x), \sqrt{x}, \EU{x}, a^{x}\ \left(a>0\right)$ or any of the so-called fundamental functions and their compositions (except, of course, polynomials). The reason for this fact is rather complicated, but in short it lies in the fact that these functions are \textit{non-algebric}\footnote{technically $\sqrt{x}$ is algebraic, and there are indeed many methods to calculate its values - but non of these methods are as simple as calculating a polynomial\dots except the one we discuss in this section.}.
+Ideally, we would like to use polynomials to approximate all functions, e.g. given the function $f(x) = \cos(x)$ it would be great if we could find some polynomial $P(x)$ of a finite order $n$ for which $P(x)=\cos(x)$. Unfortunately such a polynomial does not exist, nor does such polynomials exist for $\sin(x), \sqrt{x}, \exp(x), a^{x}\ \left(a>0\right)$ or any other of the so-called fundamental functions and their compositions (except, of course, polynomials). The reason for this unfortunate reality is rather complicated, but in short it lies in the fact that these functions are \textit{non-algebric}\footnote{technically $\sqrt{x}$ is algebraic, and there are indeed many methods to calculate its values - but non of these methods are as simple as calculating a polynomial\dots except the one we discuss in this section.}.
 
-However, we do know at least one value of each of these functions with infinite precision in at least one $x\in\Rs$, sometimes at several values of $x$ or even at infinitely many values of $x$. For example, we know that $\cos(0)=1$ and $\cos\left(\frac{1}{2}\pi\right)=0$. From symmetry we thus know that $\cos(\pi)=-1$ and $\cos\left(\frac{3}{4}\pi\right)=0$. Since $\cos(x)$ is periodic, i.e. $\cos\left(x+2\pi k\right)=\cos(x)$ for any $k\in\mathbb{Z}$, we actually know infinitely many values of the function. For $\EU{x}$ we know that $\EU{0}=1$ and $\EU{1}=\eu$. One can argue that since $\eu$ is not algebraic, we don't \textit{really} know its value (i.e. we can't calculate it an infinite precision), but even it that case we still definitely know the value of $\EU{0}$ with inifnite precision.
+However, as mentioned before, for each of these functions, we know at least some values with inifinite precision. For example, we know that $\cos(0)=1$ and $\cos\left(\frac{1}{2}\pi\right)=0$. From symmetry we thus know that $\cos(\pi)=-1$ and $\cos\left(\frac{3}{4}\pi\right)=0$. Since $\cos(x)$ is periodic, i.e. $\cos\left(x+2\pi k\right)=\cos(x)$ for any $k\in\mathbb{Z}$, we actually know infinitely many values of the function. For $\exp(x)$ we know that $\EU{0}=1$. \autoref{tab:function_values_infinite_precision} lists some known values of common fundamental functions.
 
-We can use this knowledge to constract a polynomial which approximates the function's value in any $x\in\Rs$ to whatever precision we wish, given that a specific condition is met. We will describe this condition later, but first let's use an example function to construct such a polynomial: $\EU{x}$. Since we only know $\EU{0}$ with infinite precision, we can use it as a simple approximation of $\Eu{x}$, i.e
+\begin{table}[htpb]
+	\centering
+	\caption{Some known values of common fundamental functions. Each such value is known to an infinite precision.}
+	\label{tab:function_values_infinite_precision}
+	\begin{NiceTabular}{lll}[
+			cell-space-limits=3pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+		]
+		\toprule
+		\RowStyle{\bfseries} Function & $x$ & $f(x)$\\
+		\midrule
+    $\sqrt{x}$ & $4$ & $2$\\
+    $\sin(x)$ & $0$ & $0$\\
+    $\cos(x)$ & $0$ & $1$\\
+    $\tan(x)$ & $0$ & $0$\\
+    $\exp(x)$ & $0$ & $1$\\
+    $\log(x)$ & $1$ & $0$\\
+		\bottomrule
+	\end{NiceTabular}
+\end{table}
+
+We can use this knowledge to constract a polynomial which approximates the function's value for any $x\in\Rs$ to whatever precision we wish, given that a specific condition is met. We will describe this condition later, but first let's use an example function to construct such a polynomial: $\exp(x)$. Since we only know $\EU{0}$ with infinite precision, we can use it as a simple approximation of $\exp(x)$, which we denote $T_{0}(x)$:
 \begin{equation}
-  \EU{x} = 1.
+  T_{0}(x) = 1.
   \label{eq:zero_order_approx_exp}
 \end{equation}
 (see \autoref{fig:zero_order_approx_exp})
@@ -17,63 +51,93 @@ We can use this knowledge to constract a polynomial which approximates the funct
   \begin{tikzpicture}
     \begin{axis}[
       graph2d,
-      width=12cm, height=12cm,
-      xmin=-4, xmax=5,
+      width=10cm, height=10cm,
+      xmin=-2, xmax=4,
       ymin=-1, ymax=17,
       major grid style={black!10},
       minor grid style={black!5},
     ]
-      \addplot[function, xred] {exp(x)};
-      \addplot[function, xblue] {1};
+      \addplot[function, xred] {exp(x)} node[above, pos=0.1, xshift=-5mm]{$\exp(x)$};
+      \addplot[function, xblue] {1} node[above, pos=0.85]{$T_{0}(x)=1$};
       \foreach \xi in {-3.5, -3, ..., -0.5, 0.5, 1, ..., 3} {
         \edef\temp{\noexpand\draw[thick, dashed] (\xi, 1) -- (\xi, {exp(\xi)});}
           \temp
         }
     \end{axis}
   \end{tikzpicture}
-  \caption{The 0th-order approximation $\Eu{x}=1$. The dashed lines show the diffence between the approximation and the actual function as $x$ diverges from $0$.}
+  \caption{The 0th-order approximation $\exp(x)=1$. The dashed lines show $\Delta_{0}(x)$ as $x$ diverges from $0$.}
   \label{fig:zero_order_approx_exp}
 \end{figure}
 
-Will call this the \emph{0th-order approximation} of $\EU{x}$ and denote it by $T_{0}(x)$. Obviously, this is not a particularly good approximation: it gets better as we approach $x=0$, but rapidly diverges from the actual value of $\EU{x}$ as we change $x$. More precisely, the absolute difference between $\EU{x}$ and our approximation is
+We call $T_{0}(x)$ the \emph{0th-order approximation} of $\exp(x)$. Obviously, this is not a particularly good approximation: it's perhaps ok-ish for values \textit{really} close to $x=0$, but rapidly diverges from the actual value of $\exp(x)$ as we change $x$. More precisely, the error $\Delta_{0}(x)$ is
 \begin{equation}
-  \Err_{0}(x) = \lvert \EU{x} - T_{0}(x) \rvert = \lvert \EU{x}-1 \rvert,
+  \Delta_{0}(x) = \lvert \exp(x) - T_{0}(x) \rvert = \lvert \exp(x)-1 \rvert,
   \label{eq:exp_err_0}
 \end{equation}
-i.e. the error essentialy grows as $\EU{x}$ which is\dots not great.
+i.e. the error essentialy grows as $\exp(x)$ which is\dots not great.
 
-Ok, then perhaps we can add another term to the approximation? After all, our notation pretty much suggests that\footnote{more like \textit{screams} it.}. We know that close to a point $a$ a function behaves pretty much like its derivative at that point. We also know the value of the derivative of $\EU{x}$ at $x=0$, i.e. $\exp'(0)=1$, so we can add a line of slop $m=1$ to our approximation, yielding:
+Ok, then perhaps we can add another term to the approximation? After all, our notation pretty much suggests that there are more terms we can use\footnote{more like \textit{screams} it.}. We know that close to a point $a$ a differential function $f(x)$ behaves pretty much like its \textit{derivative} at that point, $f'(a)$. We also know the value of the derivative of $\exp(x)$ at $x=0$, i.e. $\exp'(0)=1$, so we can add a line of slope $m=1$ to our approximation, yielding:
 \begin{equation}
-  \EU{x} = 1 + x\cdot\exp'\left(0\right) = 1+x.
+  \exp(x) = 1 + x\cdot\exp'\left(0\right) = 1+x.
   \label{eq:first_order_approx_exp}
 \end{equation}
 
-Of course, we call this the \emph{1st-order approximation} of $\EU{x}$. Looking at \autoref{fig:first_order_approx_exp} we see that this approximation is better than the previous one, at least for positive values of $x$ and values close to $x=0$. The error behaves a bit better, i.e
+Unsurprisingly, we call $T_{1}(x)$ the \emph{1st-order approximation} of $\exp(x)$. Looking at \autoref{fig:first_order_approx_exp} we see that this approximation is better than the previous one, at least for values near $x=0$. In other words, the error $\Delta_{1}$ behaves a bit better than $\Delta_{0}$:
 \begin{equation}
-  \Err_{1}(x) = \lvert \EU{x} - T_{1}(x) \rvert = \lvert \EU{x}-x-1 \rvert,
+  \Delta_{1}(x) = \lvert \exp(x) - T_{1}(x) \rvert = \lvert \exp(x)-x-1 \rvert.
   \label{eq:exp_err_1}
 \end{equation}
-which still generally grows as $\EU{x}$, but closer to $x=0$ it grows more like $\EU{x}-x$, so still not great - but definitely an improvement over $\Err_{0}(x)$.
 
 \begin{figure}
   \centering
   \begin{tikzpicture}
     \begin{axis}[
       graph2d,
-      width=12cm, height=12cm,
+      width=10cm, height=10cm,
       xmin=-5, xmax=5,
       ymin=-4, ymax=19,
       major grid style={black!10},
       minor grid style={black!5},
     ]
-      \addplot[function, xred] {exp(x)};
-      \addplot[function, xblue] {1+x};
-      \foreach \xi in {-4.5, -4, ..., -2, 1, 1.5, ..., 3} {
-        \edef\temp{\noexpand\draw[thick, dashed] (\xi, {\xi+1}) -- (\xi, {exp(\xi)});}
-          \temp
-        }
+      \addplot[function, xred] {exp(x)} node[above, pos=0.1, xshift=-5mm]{$\exp(x)$};
+      \addplot[function, xblue] {1+x} node[below, pos=0.9, rotate=27]{$T_{1}(x)$};
     \end{axis}
   \end{tikzpicture}
-  \caption{The 1st-order approximation $\EU{x}=1+x$.}
+  \caption{The 1st-order approximation $T_{1}(x)=1+x$.}
   \label{fig:first_order_approx_exp}
 \end{figure}
+
+Similarly to $\Delta_{0}(x)$, $\Delta_{1}(x)$ also generally grows as $\exp(x)$. However, closer to $x=0$ it behaves like $\exp(x)-x$, so still not great - but definitely an improvement over $\Delta_{0}(x)$. In practical terms, this means that by using $T_{!}(x)$ we would generally get better approximations than $T_{0}(x)$, at least close to $x=0$. But we can do better!
+
+The next step is of course to add an $x^{2}$ term. The second derivative of $\exp(x)$ is also $\exp(x)$, and at $x=0$ also equal to $1$. This time we will divide the term by $2$ (for know just accept it as is, it would be explained when we formalize the method). Altogether, we get
+\begin{equation}
+  T_{2}(x) = 1 + x + \frac{x^{2}}{2}.
+  \label{eq:second_order_approx_exp}
+\end{equation}
+(see \autoref{fig:second_order_approx_exp})
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      graph2d,
+      width=10cm, height=10cm,
+      xmin=-4, xmax=4,
+      ymin=-1, ymax=13,
+      major grid style={black!10},
+      minor grid style={black!5},
+    ]
+      \addplot[function, xred] {exp(x)} node[above, pos=0.1, xshift=-5mm]{$\exp(x)$};
+      \addplot[function, xblue] {1+x+x^2/2} node[below, pos=0.7, yshift=-9mm]{$T_{2}(x)$};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The 2nd-order approximation $T_{2}(x)=1+x+\frac{x^{2}}{2}$.}
+  \label{fig:second_order_approx_exp}
+\end{figure}
+
+Definitely an improvement, but why stop here? We know all the derivatives of $\exp(x)$ at $x=0$: they are all $1$, since $\exp'(x)=\exp(x)$. We can continue adding power terms, giving us
+\begin{equation}
+  T_{n}(x) = 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{3!} + \frac{x^{4}}{4!} + \dots + \frac{x^{n}}{n!}.
+  \label{eq:n_order_approx_exp}
+\end{equation}
+(again, for now you should just just accept the coefficients $\frac{1}{n!}$, they would be explained soon)
