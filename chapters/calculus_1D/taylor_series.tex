@@ -11,11 +11,9 @@ More generally, given a value $y$ and and we want to know it to within an \emph{
   \label{eq:error_range}
 \end{equation}
 
-A good method to approximate functions would allow us to get as precise as we wish, given that we put enough ``work'' into finding an approximated value, e.g. we could use it to get an approximation of $\eu^{3.153}$ up to $\Delta=10^{-15}$, but we could also use it to get an approximation up to $\Delta=10^{-20}$ or $\Delta=10^{-30}$ or any other value - we will simply have to do more calculations to reach such low error ranges. Generaly, the more precise we want our approximation to be, we would need to make more calculations.
+A good method to approximate functions would allow us to get as precise as we wish, given that we put enough ``work'' into finding an approximated value, e.g. we could use it to get an approximation of $\eu^{3.153}$ up to $\Delta=10^{-15}$, but we could also use it to get an approximation up to $\Delta=10^{-20}$ or $\Delta=10^{-30}$ or any other value - we will simply have to do more calculations to reach such low error ranges. Generaly, the more precise we want our approximation to be, the more calculation we would need to carry out.
 
-Unlike most real functions, polynomials are relatively easy to calculate for any real value $x$. For example, to correctly calculate the value of the polynomial $P(x)=x^{2}-2x+5$ we simply need to know how to perform the following operations: addition, subtraction, muliplication and raising by an integer power, all operations that are easy for both humans and computers to perform.
-
-Ideally, we would like to use polynomials to approximate all functions, e.g. given the function $f(x) = \cos(x)$ it would be great if we could find some polynomial $P(x)$ of a finite order $n$ for which $P(x)=\cos(x)$. Unfortunately such a polynomial does not exist, nor does such polynomials exist for $\sin(x), \sqrt{x}, \exp(x), a^{x}\ \left(a>0\right)$ or any other of the so-called fundamental functions and their compositions (except, of course, polynomials). The reason for this unfortunate reality is rather complicated, but in short it lies in the fact that these functions are \textit{non-algebric}\footnote{technically $\sqrt{x}$ is algebraic, and there are indeed many methods to calculate its values - but non of these methods are as simple as calculating a polynomial\dots except the one we discuss in this section.}.
+Unlike most real functions, polynomials are relatively easy to calculate for any real value $x$, since we simply need to perform the following operations: addition, subtraction, muliplication and raising by an integer power, all operations that are easy for both humans and computers to perform. Ideally, we would like to use polynomials to approximate all functions, e.g. given the function $f(x) = \cos(x)$ it would be great if we could find some polynomial $P(x)$ of a finite order $n$ for which $P(x)=\cos(x)$. Unfortunately such a polynomial does not exist, nor does such polynomials exist for $\sin(x), \sqrt{x}, \exp(x), a^{x}\ \left(a>0\right)$ or any other of the so-called fundamental functions and their compositions (except, of course, polynomials). The reason for this unfortunate reality is rather complicated, but in short it lies in the fact that these functions are \textit{non-algebric}\footnote{technically $\sqrt{x}$ is algebraic, and there are indeed many methods to calculate its values - but non of these methods are as simple as calculating a polynomial\dots except the one we discuss in this section.}.
 
 However, as mentioned before, for each of these functions, we know at least some values with inifinite precision. For example, we know that $\cos(0)=1$ and $\cos\left(\frac{1}{2}\pi\right)=0$. From symmetry we thus know that $\cos(\pi)=-1$ and $\cos\left(\frac{3}{4}\pi\right)=0$. Since $\cos(x)$ is periodic, i.e. $\cos\left(x+2\pi k\right)=\cos(x)$ for any $k\in\mathbb{Z}$, we actually know infinitely many values of the function. For $\exp(x)$ we know that $\EU{0}=1$. \autoref{tab:function_values_infinite_precision} lists some known values of common fundamental functions.
 
@@ -39,7 +37,7 @@ However, as mentioned before, for each of these functions, we know at least some
 	\end{NiceTabular}
 \end{table}
 
-We can use this knowledge to constract a polynomial which approximates the function's value for any $x\in\Rs$ to whatever precision we wish, given that a specific condition is met. We will describe this condition later, but first let's use an example function to construct such a polynomial: $\exp(x)$. Since we only know $\EU{0}$ with infinite precision, we can use it as a simple approximation of $\exp(x)$, which we denote $T_{0}(x)$:
+We can use this knowledge to constract a polynomial with $n$ terms, which approximates the function's value for any $x\in\Rs$ to whatever precision we wish, given that a specific condition is met. We will describe this condition later, but first let us use an example function to construct such a polynomial: $\exp(x)$. Since we only know $\EU{0}$ with infinite precision, we can use it as a simple approximation of $\exp(x)$, which we denote $T_{0}(x)$:
 \begin{equation}
   T_{0}(x) = 1.
   \label{eq:zero_order_approx_exp}
@@ -135,9 +133,79 @@ The next step is of course to add an $x^{2}$ term. The second derivative of $\ex
   \label{fig:second_order_approx_exp}
 \end{figure}
 
-Definitely an improvement, but why stop here? We know all the derivatives of $\exp(x)$ at $x=0$: they are all $1$, since $\exp'(x)=\exp(x)$. We can continue adding power terms, giving us
+Definitely an improvement, but why stop here? We know all the derivatives of $\exp(x)$ at $x=0$: they are all $1$, since $\exp'(x)=\exp(x)$. We can continue adding power terms, yielding the following general approximation:
 \begin{equation}
-  T_{n}(x) = 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{3!} + \frac{x^{4}}{4!} + \dots + \frac{x^{n}}{n!}.
+  T_{n}(x) = 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{3!} + \frac{x^{4}}{4!} + \cdots + \frac{x^{n}}{n!} = \sum\limits_{k=0}^{n}\frac{x^{k}}{k!}.
   \label{eq:n_order_approx_exp}
 \end{equation}
-(again, for now you should just just accept the coefficients $\frac{1}{n!}$, they would be explained soon)
+(again, for now you should just accept the coefficients $\frac{1}{n!}$, they would be explained soon)
+
+The higher $n$ is, the more term are in the approximation and it gets more precise (see \autoref{fig:exp_approx}). Of course this means that we need to carry out more calculations, as suggested earlier.
+
+\newcommand{\taylorExp}[1]{
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        graph2d,
+        width=7.5cm, height=6cm,
+        xmin=-5, xmax=5,
+        ymin=-4, ymax=13,
+        major grid style={black!10},
+        minor grid style={black!5},
+        declare function={expTaylor(\k,\x)=\x^\k/factorial(\k);},
+        ]
+        \addplot[function, xred] {exp(x)} node[above, pos=0.1, xshift=-5mm]{$\exp(x)$};
+        \pgfmathtruncatemacro{\n}{#1}
+        \addplot[function, xblue, summand=expTaylor] {1+sum(\n,\x)};
+        \node[draw=xblue, thick, rounded corners, fill=white, align=left, text=xblue] at (-4,10) {$n=\n$};
+      \end{axis}
+    \end{tikzpicture}
+  \end{subfigure}
+  \hfill
+}
+
+% \begin{figure}
+%   \centering
+%   \taylorExp{1}
+%   \taylorExp{2}
+%   \taylorExp{3}
+%   \taylorExp{4}
+%   \taylorExp{5}
+%   \taylorExp{6}
+%   \taylorExp{7}
+%   \taylorExp{8}
+%   \caption{The function $\exp(x)$ and its approximation $T_{n}(x)$ for several values of $n$.}
+%   \label{fig:exp_approx}
+% \end{figure}
+
+This kind of approximation, where we use a polynomial to approximate a real function, is called a \emph{Taylor series} (sometimes also \emph{Taylor expansion}). To calculate the Taylor series of a real function $f(x)$, we must first select a value of $a\in\Rs$ for which we know $f(a)$ with infinite precision (e.g. $x=0$ in the case of $\exp(x)$). The function $f$ must also be infinitely differentiable at $a$, i.e. the $k$-th order derivative $f^{(k)}(a)$ must exist for any $k\in\mathbb{N}$, and we must know its value with inifinite precision. If these conditions are met, then the Taylor series of order $n$ of $f(x)$ at $x=a$ is given by
+\begin{equation}
+  T_{n}(x) = \sum\limits_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^{k}.
+  \label{eq:taylor_series}
+\end{equation}
+
+\begin{example}{Taylor exansion of $\exp(x)$}{}
+  Let us verify that using \autoref{eq:taylor_series} indeed yields \autoref{eq:n_order_approx_exp}: since we're using $a=0$, we need to know the value $\exp^{(k)}(0)$ for any $k\in\mathbb{N}$. This is pretty simple: the $k$-th derivative of $\exp(x)$ is $\exp(x)$, and therefore $\exp^{(k)}(0)=1$ for any $k\in\mathbb{N}$. Substituting $a=0$ and $f^{(k)}(x)=1$ to \autoref{eq:taylor_series} gives back \autoref{eq:n_order_approx_exp}.
+\end{example}
+
+\begin{example}{Taylor series of $\sin(x)$ and $\cos(x)$}{}
+  Now let's calculate the Taylor series of $\sin(x)$ and $\cos(x)$, denoting them as $T^{\text{s}}_{n}(x)$ and $T^{\text{c}}_{n}(x)$, respectively. For both the functions we can use $a=0$ since we know the values of the functions at these points: $\sin(0)=0,\ \cos(0)=1$. The $k$-th order derivative of $\sin(x)$ depends on the value of $k$ modulo $4$, i.e. the derivatives are a repeating sequence of $4$ element:
+  \[
+    \tikzmark{a}{}\sin(x) \xrightarrow[]{\od{}{x}} \cos(x) \xrightarrow[]{\od{}{x}} -\sin(x) \xrightarrow[]{\od{}{x}} -\cos(x)\ \tikzmark{b}{}
+  \]
+  \tikz[overlay, remember picture]{\draw[thick, ->](pic cs:b) to[out=-10, in=190, looseness=1]node[midway, below]{$\od{}{x}$}(pic cs:a)}
+
+  \vspace{1em}
+  Since each \textbf{even} order derivative of $\sin(x)$ is $\pm\sin(x)$, and $\pm\sin(0)=0$, we can ignore these terms, since they will vanish from the sum. We therefore need to ``run'' the sum only for \emph{odd} values, which we can write as $m=2k+1$. It's important to notice that the values of the derivatives ``jump'' between positive and negative valiues, i.e. $+\cos(0),-\cos(0),+\cos(0),-\cos(0),\dots = +1,-1,+1,-1,\dots$. We therefore set the derivative term to be $(-1)^{k}$. Altogether we get
+  \[
+    T^{\text{s}}_{n}(x) = \sum\limits_{k=0}^{n}\frac{(-1)^{k}}{(2k+1)!}x^{2k+1}.
+  \]
+
+  Similarly, the Taylor series for $\cos(x)$ would have only half of its terms non-zero, but the parity is opposite in comparison to $\sin(x)$: this time, the odd terms disappear, and we're left with only the even terms. Therefore we use $m=2k$, and altogether get
+  \[
+    T^{\text{c}}_{n}(x) = \sum\limits_{k=0}^{n}\frac{(-1)^{k}}{(2k)!}x^{2k}.
+  \]
+\end{example}
+
+\tbw{When reaching the proof that in the limit $n\to\infty$ the Taylor series equals the function, mention how this can be used to prove Euler's theorem}
