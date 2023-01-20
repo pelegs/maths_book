@@ -1,7 +1,8 @@
 \section{Taylor series}
+\subsection{Introduction}
 Say we wish to calculate the value of $\cos(x)$ at some non-trivial value, e.g. $x=\frac{\pi}{7}$, or $x=1.0423$. Of course today we can simply use a computer or a calculator - but how do these even calculate such values? Moreover, a lot of these values are non-algebraic, meaning that we can't express them as decimal fractions to an infinite precision. What if for some important calculation we need to know the value of $\eu^{3.153}$ down to 15 digits, but our calculator only shows 10 digits after the period?
 
-We can answer all these questions by using \emph{approximations} instead of precise values. For example, we know values such as $\sin\left(\frac{\pi}{2}\right)$ with infinite precision (it's exactly $1$), but in the case of less trivial values such as the ones discussed above, we can instead settle for an approximation, as long as it is \textit{close enough} to the actual value for our needs. By ``close enough'' we essentially mean \textit{within some given error range}, e.g. in the case of $\eu^{3.153}$ above, 15 digits of precision means that we want that the value we get is no more than $10^{-15}$ away from the actual value. Let's write this mathematically: if we denote $a$ as our approximation of $\eu^{3.153}$, then
+We can answer all these questions by using \emph{approximations} instead of precise values. For example, we know values such as $\sin\left(\frac{\pi}{2}\right)$ with infinite precision (it's exactly $1$), but in the case of less trivial values such as the ones discussed above, we can instead settle for an approximation, as long as it is \textit{close enough} to the actual value for our needs. By ``close enough'' we essentially mean \textit{within some given error range}, e.g. in the case of $\eu^{3.153}$ above, 15 digits of precision means that we want that the value we get is no more than $10^{-15}$ away from the actual value. Let us write this mathematically: if we denote $a$ as our approximation of $\eu^{3.153}$, then
 \[
   \lvert a-\eu^{3.153}\rvert \leq 10^{-15}.
 \]
@@ -13,13 +14,13 @@ More generally, given a value $y$ and and we want to know it to within an \emph{
 
 A good method to approximate functions would allow us to get as precise as we wish, given that we put enough ``work'' into finding an approximated value, e.g. we could use it to get an approximation of $\eu^{3.153}$ up to $\Delta=10^{-15}$, but we could also use it to get an approximation up to $\Delta=10^{-20}$ or $\Delta=10^{-30}$ or any other value - we will simply have to do more calculations to reach such low error ranges. Generaly, the more precise we want our approximation to be, the more calculation we would need to carry out.
 
-Unlike most real functions, polynomials are relatively easy to calculate for any real value $x$, since we simply need to perform the following operations: addition, subtraction, muliplication and raising by an integer power, all operations that are easy for both humans and computers to perform. Ideally, we would like to use polynomials to approximate all functions, e.g. given the function $f(x) = \cos(x)$ it would be great if we could find some polynomial $P(x)$ of a finite order $n$ for which $P(x)=\cos(x)$. Unfortunately such a polynomial does not exist, nor does such polynomials exist for $\sin(x), \sqrt{x}, \exp(x), a^{x}\ \left(a>0\right)$ or any other of the so-called fundamental functions and their compositions (except, of course, polynomials). The reason for this unfortunate reality is rather complicated, but in short it lies in the fact that these functions are \textit{non-algebric}\footnote{technically $\sqrt{x}$ is algebraic, and there are indeed many methods to calculate its values - but non of these methods are as simple as calculating a polynomial\dots except the one we discuss in this section.}.
+Unlike most real functions, polynomials are relatively easy to calculate for any real value $x$, since we simply need to perform the following operations: addition, subtraction, muliplication and raising by an integer power, all operations that are easy for both humans and computers to perform. Ideally, we would like to use polynomials to approximate all functions, e.g. given the function $f(x) = \cos(x)$ it would be great if we could find some polynomial $P(x)$ of a finite order $n$ for which $P(x)=\cos(x)$. Unfortunately such a polynomial does not exist, nor does such polynomials exist for $\sin(x), \sqrt{x}, \exp(x), a^{x}\ \left(a>0\right)$ or any other of the so-called elemntary functions and their compositions (except, of course, polynomials). The reason for this unfortunate reality is rather complicated, but in short it lies in the fact that these functions are \textit{non-algebric}\footnote{technically $\sqrt{x}$ is algebraic, and there are indeed many methods to calculate its values - but non of these methods are as simple as calculating a polynomial\dots except the one we discuss in this section.}.
 
-However, as mentioned before, for each of these functions, we know at least some values with inifinite precision. For example, we know that $\cos(0)=1$ and $\cos\left(\frac{1}{2}\pi\right)=0$. From symmetry we thus know that $\cos(\pi)=-1$ and $\cos\left(\frac{3}{4}\pi\right)=0$. Since $\cos(x)$ is periodic, i.e. $\cos\left(x+2\pi k\right)=\cos(x)$ for any $k\in\mathbb{Z}$, we actually know infinitely many values of the function. For $\exp(x)$ we know that $\EU{0}=1$. \autoref{tab:function_values_infinite_precision} lists some known values of common fundamental functions.
+However, as mentioned before, for each of these functions, we know at least some values with inifinite precision. For example, we know that $\cos(0)=1$ and $\cos\left(\frac{1}{2}\pi\right)=0$. From symmetry we thus know that $\cos(\pi)=-1$ and $\cos\left(\frac{3}{4}\pi\right)=0$. Since $\cos(x)$ is periodic, i.e. $\cos\left(x+2\pi k\right)=\cos(x)$ for any $k\in\mathbb{Z}$, we actually know infinitely many values of the function. For $\exp(x)$ we know that $\EU{0}=1$. \autoref{tab:function_values_infinite_precision} lists some known values of common elemntary functions.
 
 \begin{table}[htpb]
 	\centering
-	\caption{Some known values of common fundamental functions. Each such value is known to an infinite precision.}
+	\caption{Some known values of common elemntary functions. Each such value is known to an infinite precision.}
 	\label{tab:function_values_infinite_precision}
 	\begin{NiceTabular}{lll}[
 			cell-space-limits=3pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
@@ -165,32 +166,37 @@ The higher $n$ is, the more term are in the approximation and it gets more preci
   \hfill
 }
 
-% \begin{figure}
-%   \centering
-%   \taylorExp{1}
-%   \taylorExp{2}
-%   \taylorExp{3}
-%   \taylorExp{4}
-%   \taylorExp{5}
-%   \taylorExp{6}
-%   \taylorExp{7}
-%   \taylorExp{8}
-%   \caption{The function $\exp(x)$ and its approximation $T_{n}(x)$ for several values of $n$.}
-%   \label{fig:exp_approx}
-% \end{figure}
+\begin{figure}
+  \centering
+  \taylorExp{1}
+  \taylorExp{2}
+  \taylorExp{3}
+  \taylorExp{4}
+  \taylorExp{5}
+  \taylorExp{6}
+  \taylorExp{7}
+  \taylorExp{8}
+  \caption{The function $\exp(x)$ and its approximation $T_{n}(x)$ for several values of $n$.}
+  \label{fig:exp_approx}
+\end{figure}
 
 This kind of approximation, where we use a polynomial to approximate a real function, is called a \emph{Taylor series} (sometimes also \emph{Taylor expansion}). To calculate the Taylor series of a real function $f(x)$, we must first select a value of $a\in\Rs$ for which we know $f(a)$ with infinite precision (e.g. $x=0$ in the case of $\exp(x)$). The function $f$ must also be infinitely differentiable at $a$, i.e. the $k$-th order derivative $f^{(k)}(a)$ must exist for any $k\in\mathbb{N}$, and we must know its value with inifinite precision. If these conditions are met, then the Taylor series of order $n$ of $f(x)$ at $x=a$ is given by
 \begin{equation}
   T_{n}(x) = \sum\limits_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^{k}.
   \label{eq:taylor_series}
 \end{equation}
+We say that a Taylor series as described above is \textit{expanded about} the point $x=a$.
+
+\begin{note}{Maclaurin series}{}
+  A Taylor series with $a=0$, i.e. where the series is expanded about $x=0$, is called a \emph{Maclaurin series}.
+\end{note}
 
 \begin{example}{Taylor exansion of $\exp(x)$}{}
   Let us verify that using \autoref{eq:taylor_series} indeed yields \autoref{eq:n_order_approx_exp}: since we're using $a=0$, we need to know the value $\exp^{(k)}(0)$ for any $k\in\mathbb{N}$. This is pretty simple: the $k$-th derivative of $\exp(x)$ is $\exp(x)$, and therefore $\exp^{(k)}(0)=1$ for any $k\in\mathbb{N}$. Substituting $a=0$ and $f^{(k)}(x)=1$ to \autoref{eq:taylor_series} gives back \autoref{eq:n_order_approx_exp}.
 \end{example}
 
 \begin{example}{Taylor series of $\sin(x)$ and $\cos(x)$}{}
-  Now let's calculate the Taylor series of $\sin(x)$ and $\cos(x)$, denoting them as $T^{\text{s}}_{n}(x)$ and $T^{\text{c}}_{n}(x)$, respectively. For both the functions we can use $a=0$ since we know the values of the functions at these points: $\sin(0)=0,\ \cos(0)=1$. The $k$-th order derivative of $\sin(x)$ depends on the value of $k$ modulo $4$, i.e. the derivatives are a repeating sequence of $4$ element:
+  Now let us calculate the Taylor series of $\sin(x)$ and $\cos(x)$, denoting them as $T^{\text{s}}_{n}(x)$ and $T^{\text{c}}_{n}(x)$, respectively. For both the functions we can use $a=0$ since we know the values of the functions at these points: $\sin(0)=0,\ \cos(0)=1$. The $k$-th order derivative of $\sin(x)$ depends on the value of $k$ modulo $4$, i.e. the derivatives are a repeating sequence of $4$ element:
   \[
     \tikzmark{a}{}\sin(x) \xrightarrow[]{\od{}{x}} \cos(x) \xrightarrow[]{\od{}{x}} -\sin(x) \xrightarrow[]{\od{}{x}} -\cos(x)\ \tikzmark{b}{}
   \]
@@ -199,13 +205,17 @@ This kind of approximation, where we use a polynomial to approximate a real func
   \vspace{1em}
   Since each \textbf{even} order derivative of $\sin(x)$ is $\pm\sin(x)$, and $\pm\sin(0)=0$, we can ignore these terms, since they will vanish from the sum. We therefore need to ``run'' the sum only for \emph{odd} values, which we can write as $m=2k+1$. It's important to notice that the values of the derivatives ``jump'' between positive and negative valiues, i.e. $+\cos(0),-\cos(0),+\cos(0),-\cos(0),\dots = +1,-1,+1,-1,\dots$. We therefore set the derivative term to be $(-1)^{k}$. Altogether we get
   \[
-    T^{\text{s}}_{n}(x) = \sum\limits_{k=0}^{n}\frac{(-1)^{k}}{(2k+1)!}x^{2k+1}.
+    T^{\text{s}}_{n}(x) = x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\frac{x^{7}}{7!}+\cdots\pm\frac{x^{2n+1}}{(2n+1)!} = \sum\limits_{k=0}^{n}\frac{(-1)^{k}}{(2k+1)!}x^{2k+1}.
   \]
 
   Similarly, the Taylor series for $\cos(x)$ would have only half of its terms non-zero, but the parity is opposite in comparison to $\sin(x)$: this time, the odd terms disappear, and we're left with only the even terms. Therefore we use $m=2k$, and altogether get
   \[
-    T^{\text{c}}_{n}(x) = \sum\limits_{k=0}^{n}\frac{(-1)^{k}}{(2k)!}x^{2k}.
+    T^{\text{c}}_{n}(x) = 1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\frac{x^{6}}{6!}+\cdots\pm\frac{x^{2n}}{(2n)!} = \sum\limits_{k=0}^{n}\frac{(-1)^{k}}{(2k)!}x^{2k}.
   \]
 \end{example}
 
 \tbw{When reaching the proof that in the limit $n\to\infty$ the Taylor series equals the function, mention how this can be used to prove Euler's theorem}
+
+\subsection{Coefficients}
+\subsection{Convergence}
+\subsection{Remainder}
