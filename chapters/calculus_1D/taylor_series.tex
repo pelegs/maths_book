@@ -166,19 +166,19 @@ The higher $n$ is, the more term are in the approximation and it gets more preci
   \hfill
 }
 
-\begin{figure}
-  \centering
-  \taylorExp{1}
-  \taylorExp{2}
-  \taylorExp{3}
-  \taylorExp{4}
-  \taylorExp{5}
-  \taylorExp{6}
-  \taylorExp{7}
-  \taylorExp{8}
-  \caption{The function $\exp(x)$ and its approximation $T_{n}(x)$ for several values of $n$.}
-  \label{fig:exp_approx}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \taylorExp{1}
+%   \taylorExp{2}
+%   \taylorExp{3}
+%   \taylorExp{4}
+%   \taylorExp{5}
+%   \taylorExp{6}
+%   \taylorExp{7}
+%   \taylorExp{8}
+%   \caption{The function $\exp(x)$ and its approximation $T_{n}(x)$ for several values of $n$.}
+%   \label{fig:exp_approx}
+% \end{figure}
 
 This kind of approximation, where we use a polynomial to approximate a real function, is called a \emph{Taylor series} (sometimes also \emph{Taylor expansion}). To calculate the Taylor series of a real function $f(x)$, we must first select a value of $a\in\Rs$ for which we know $f(a)$ with infinite precision (e.g. $x=0$ in the case of $\exp(x)$). The function $f$ must also be infinitely differentiable at $a$, i.e. the $k$-th order derivative $f^{(k)}(a)$ must exist for any $k\in\mathbb{N}$, and we must know its value with inifinite precision. If these conditions are met, then the Taylor series of order $n$ of $f(x)$ at $x=a$ is given by
 \begin{equation}
@@ -216,6 +216,29 @@ We say that a Taylor series as described above is \textit{expanded about} the po
 
 \tbw{When reaching the proof that in the limit $n\to\infty$ the Taylor series equals the function, mention how this can be used to prove Euler's theorem}
 
-\subsection{Coefficients}
-\subsection{Convergence}
 \subsection{Remainder}
+Recall that one of the requirements we put on an approximation of a function $f(x)$ is that it can get \textit{as close} to $f(x)$ as we want, for any point $x=a$ on some interval $(b,c)$ where $b<c\in\mathbb{R}$. This means that given an approximation $T_{n}(x)$ we can write the function to be approximated as
+\begin{equation}
+  f(x) = T_{n}(x) + R_{n}(x),
+  \label{eq:approximation_remainder}
+\end{equation}
+i.e. that the function to be approximated can be written as the some of out approximation $T_{n}(x)$, and a \emph{remainder} which we can make as small as we want. ``As small as we want'' means that
+\begin{equation}
+  \lim\limits_{n\to\infty}R_{n}(x) = 0,
+  \label{eq:remainder_to_zero}
+\end{equation}
+or writing this in another way
+\begin{equation}
+  \lim\limits_{n\to \infty}T_{n}(x)=f(x).
+  \label{eq:approximation_precise}
+\end{equation}
+The last equation shows exactly what we expect of $T_{n}(x)$: as we increase $n$ the approximation gets closer and closer to the function $f(x)$ which we are approximating.
+
+In essence, Taylor series do exactly that for functions which are infinitely differentiable on some interval: at the limit $n\to\infty$ they give back the function itself (\autoref{eq:approximation_precise}). This is called \emph{Taylor's theorem}.
+\begin{note}{No proof}{}
+  We won't prove Taylor's theorem here since it requires some more formal calculus. Instead, we would just take as granted that it is indeed true.
+\end{note}
+
+The convergence of the Taylor series allows us to prove some theorems about several functions, one of which we will use soon. For now though we concentrate on the use of Taylor series as approximations. Using approximations is always a balance between getting a more precise approximation on one hand, and not doing too much work on the other hand. For example, if we want to use the Taylor series of $\exp(x)$ to calculate $\exp(3.153)$ up to $10^{-15}$, we want to know the minimum value of $n$ such that the remainder $R_{n}(x)$ is smaller then or equal to $10^{-15}$. Any higher $n$ would also give us an approximation within that range, however it will require us to calculate more terms of $T_{n}(x)$. Therefore, we should find a way to estimate $R_{n}(x)$ as a function of $n$, and determine the minimum amount of $n$ needed for an approximation within the desired range.
+
+\subsection{Coefficients}
