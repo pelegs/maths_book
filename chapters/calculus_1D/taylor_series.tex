@@ -4,11 +4,11 @@ Say we wish to calculate the value of $\cos(x)$ at some non-trivial value, e.g. 
 
 We can answer all these questions by using \emph{approximations} instead of precise values. For example, we know values such as $\sin\left(\frac{\pi}{2}\right)$ with infinite precision (it's exactly $1$), but in the case of less trivial values such as the ones discussed above, we can instead settle for an approximation, as long as it is \textit{close enough} to the actual value for our needs. By ``close enough'' we essentially mean \textit{within some given error range}, e.g. in the case of $\eu^{3.153}$ above, 15 digits of precision means that we want that the value we get is no more than $10^{-15}$ away from the actual value. Let us write this mathematically: if we denote $a$ as our approximation of $\eu^{3.153}$, then
 \[
-  \lvert a-\eu^{3.153}\rvert \leq 10^{-15}.
+  \left| a-\eu^{3.153}\right| \leq 10^{-15}.
 \]
 More generally, given a value $y$ and and we want to know it to within an \emph{error range} $\Delta$, then for an approximation $a$ to be acceptable, the following must be true:
 \begin{equation}
-  \lvert a-y \rvert \leq \Delta.
+  \left| a-y \right| \leq \Delta.
   \label{eq:error_range}
 \end{equation}
 
@@ -70,7 +70,7 @@ We can use this knowledge to constract a polynomial with $n$ terms, which approx
 
 We call $T_{0}(x)$ the \emph{0th-order approximation} of $\exp(x)$. Obviously, this is not a particularly good approximation: it's perhaps ok-ish for values \textit{really} close to $x=0$, but rapidly diverges from the actual value of $\exp(x)$ as we change $x$. More precisely, the error $\Delta_{0}(x)$ is
 \begin{equation}
-  \Delta_{0}(x) = \lvert \exp(x) - T_{0}(x) \rvert = \lvert \exp(x)-1 \rvert,
+  \Delta_{0}(x) = \left| \exp(x) - T_{0}(x) \right| = \left| \exp(x)-1 \right|,
   \label{eq:exp_err_0}
 \end{equation}
 i.e. the error essentialy grows as $\exp(x)$ which is\dots not great.
@@ -83,7 +83,7 @@ Ok, then perhaps we can add another term to the approximation? After all, our no
 
 Unsurprisingly, we call $T_{1}(x)$ the \emph{1st-order approximation} of $\exp(x)$. Looking at \autoref{fig:first_order_approx_exp} we see that this approximation is better than the previous one, at least for values near $x=0$. In other words, the error $\Delta_{1}$ behaves a bit better than $\Delta_{0}$:
 \begin{equation}
-  \Delta_{1}(x) = \lvert \exp(x) - T_{1}(x) \rvert = \lvert \exp(x)-x-1 \rvert.
+  \Delta_{1}(x) = \left| \exp(x) - T_{1}(x) \right| = \left| \exp(x)-x-1 \right|.
   \label{eq:exp_err_1}
 \end{equation}
 
@@ -166,19 +166,19 @@ The higher $n$ is, the more term are in the approximation and it gets more preci
   \hfill
 }
 
-% \begin{figure}
-%   \centering
-%   \taylorExp{1}
-%   \taylorExp{2}
-%   \taylorExp{3}
-%   \taylorExp{4}
-%   \taylorExp{5}
-%   \taylorExp{6}
-%   \taylorExp{7}
-%   \taylorExp{8}
-%   \caption{The function $\exp(x)$ and its approximation $T_{n}(x)$ for several values of $n$.}
-%   \label{fig:exp_approx}
-% \end{figure}
+\begin{figure}
+  \centering
+  \taylorExp{1}
+  \taylorExp{2}
+  \taylorExp{3}
+  \taylorExp{4}
+  \taylorExp{5}
+  \taylorExp{6}
+  \taylorExp{7}
+  \taylorExp{8}
+  \caption{The function $\exp(x)$ and its approximation $T_{n}(x)$ for several values of $n$.}
+  \label{fig:exp_approx}
+\end{figure}
 
 This kind of approximation, where we use a polynomial to approximate a real function, is called a \emph{Taylor series} (sometimes also \emph{Taylor expansion}). To calculate the Taylor series of a real function $f(x)$, we must first select a value of $a\in\Rs$ for which we know $f(a)$ with infinite precision (e.g. $x=0$ in the case of $\exp(x)$). The function $f$ must also be infinitely differentiable at $a$, i.e. the $k$-th order derivative $f^{(k)}(a)$ must exist for any $k\in\mathbb{N}$, and we must know its value with inifinite precision. If these conditions are met, then the Taylor series of order $n$ of $f(x)$ at $x=a$ is given by
 \begin{equation}
@@ -239,6 +239,124 @@ In essence, Taylor series do exactly that for functions which are infinitely dif
   We won't prove Taylor's theorem here since it requires some more formal calculus. Instead, we would just take as granted that it is indeed true.
 \end{note}
 
-The convergence of the Taylor series allows us to prove some theorems about several functions, one of which we will use soon. For now though we concentrate on the use of Taylor series as approximations. Using approximations is always a balance between getting a more precise approximation on one hand, and not doing too much work on the other hand. For example, if we want to use the Taylor series of $\exp(x)$ to calculate $\exp(3.153)$ up to $10^{-15}$, we want to know the minimum value of $n$ such that the remainder $R_{n}(x)$ is smaller then or equal to $10^{-15}$. Any higher $n$ would also give us an approximation within that range, however it will require us to calculate more terms of $T_{n}(x)$. Therefore, we should find a way to estimate $R_{n}(x)$ as a function of $n$, and determine the minimum amount of $n$ needed for an approximation within the desired range.
+The convergence of the Taylor series allows us to prove some theorems about several functions, one of which we will use soon. For now though we concentrate on the use of Taylor series as approximations.
+
+Using approximations is always a balance between getting a more precise approximation on one hand, and not doing too much work on the other hand. For example, if we want to use the Taylor series of $\exp(x)$ to calculate $\exp(3.153)$ up to $10^{-15}$, we want to know the minimum value of $n$ such that the remainder $R_{n}(x)$ is smaller then or equal to $10^{-15}$. Any higher $n$ would also give us an approximation within that range, however it will require us to calculate more terms of $T_{n}(x)$. Therefore, we should find a way to estimate $R_{n}(x)$ as a function of $n$, and determine the minimum amount of $n$ needed for an approximation within the desired range.
+
+How do we go about that? Say we have the following:
+\begin{itemize}
+  \item A function $f(x)$,
+  \item a point $x_{0}$ for which we want to know the value $f\left(x_{0}\right)$,
+  \item a number of terms $n$ for the Taylor series, and
+  \item a point $a$ for which we know precisely the values of $f^{(k)}(a)$ for $k=0,1,2,\dots,n$ and which we use to expand the Taylor series,
+\end{itemize}
+then the remainder $R_{n}\left(x_{0}\right)$ is a number of the following form:
+
+\begin{equation}
+  R_{n}\left(x_{0}\right) = \left| \frac{f^{\left(n+1\right)}(c)}{(n+1)!}\left(x_{0}-a\right)^{n+1} \right|,
+  \label{eq:taylor_remainder_bound}
+\end{equation}
+where $c$ is some point between $a$ and $x_{0}$: if $a>x_{0}$ then $c\in\left[x_{0},a\right]$, and if $a<x_{0}$ then $c\in\left[a,x_{0}\right]$.
+
+This definition might seem a bit much at first, so let us understand it better: according to \autoref{eq:taylor_remainder_bound} the remainder of the approximation of a function $f(x)$ at point $x_{0}$ about $a$ using the Taylor series $T_{n}(x)$ is some number $R_{n}\left(x_{0}\right)$. This number is unknown, otherwise we would know the value we wish to approximate. Instead, we do know that there exist some value $c$ between $a$ and $x_{0}$ such that the remainder $R_{n}\left(x_{0}\right)$ is equal to what shown in \autoref{eq:taylor_remainder_bound}.
+
+(figure?)
+
+In order to estimate the remainder in a usefull way, we can maximize it: if we know the value $c$ for which $R_{n}\left(x_{0}\right)$ is maximal, we know that the actual remainder, which is the error of our estimation, is less than or equal to the remainder.That way we not only have an approximation of $f\left(x_{0}\right)$, but also an estimation of how big the error in approximation could be.
+
+\begin{note}{Two different numbers $c$}{}
+  The number $c$ which maximizes $R_{n}\left(x_{0}\right)$ is \textbf{not} the same as the number $c$ for which $T_{n}\left(x_{0}\right) + R_{n}\left(x_{0}\right) = f\left(x_{0}\right)$, otherwise we would have the exact value of $f\left(x_{0}\right)$. Instead, it is the value which \textbf{maximizes} $R_{n}\left(x_{0}\right)$ so we can estimate the error in approximation.
+\end{note}
+
+\begin{example}{Estimating the error in approximation}{}
+  We will now approximate $\eu$ using $n=6$ terms of the respective Taylor series, and estimate the maximum error of estimation. First we notice that $\eu=exp(1)$, so we would use the following:
+  \begin{itemize}
+    \item The function $\exp(x)$,
+    \item The point $x_{0}=1$ to approximate $\exp(1)=\eu$,
+    \item The point $a=0$ for which we know the value $\exp(0)=1$ (which is any order derivative of $\exp(0)$), and
+    \item $n=6$ terms for the Taylor series.
+  \end{itemize}
+  Since in our case $(x-a)^{k}=(1-0)^{k}=1^{k}=1$, and $\exp^{(k)}(0)=\exp(0)=1$ for any $k$, we simply get
+  \[
+    \eu = \exp(1) = 1 + 1 + \frac{1}{2} + \frac{1}{3!} + \frac{1}{4!} + \frac{1}{5!} + \frac{1}{6!} \approx 2.718056.
+  \]
+
+  To estimate the error of the approximation, we should find the maximal value of
+  \[
+    R_{6}(1) = \left| \frac{\exp(c)}{6!} \right|.
+  \]
+  in the interval $[0,1]$. Since $\exp(x)>0$, we can drop the absolute value since the expression must be positive. And since $\exp(x)$ always increases so does $R_{6}$ as a function of $c$, and we therefore know that its maximum value is when $c=1$.
+
+  This gives a maximum remainder $R = \frac{\exp(1)}{6!}$. However, to use this we still need the value of $\exp(1)$ which is exactly what we are trying to caluclate\dots instead, we will use a known inequality: $\eu<3$, and therefore
+  \[
+    R<\frac{3}{6!}=\frac{3}{720}=0.00416666\dots<0.004167.
+  \]
+\end{example}
+
+\begin{example}{Another approximation and estimation of its error}{}
+  Since $\tan\left(\frac{\pi}{4}\right)=1$, we can use $\arctan(x)$ to yield $\pi$: $\arctan(1)=\frac{\pi}{4}$ and therefore $4\times\arctan(1)=\pi$. To approximate $\arctan(x)$ at $x_{0}=1$ we would use the following Taylor series:
+  \[
+    T_{n}(x) = x - \frac{x^{3}}{3} + \frac{x^{5}}{5} - \frac{x^{7}}{7} + \frac{x^{9}}{9} - \cdots + (-1)^{n}\frac{x^{2n+1}}{2n+1}.
+  \]
+  (you should verify for yourself that this is indeed the Taylor series of $\arctan(x)$ expanded about $a=0$)
+
+  Plugging $x=1$ and $n=9$ we get
+  \[
+    T_{n}\left(1\right) = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} = \frac{105-35+21-15+11}{105} = \frac{87}{105}.
+  \]
+  Multiplying by $4$ gives us
+  \[
+    4\frac{87}{105} \approx 3.3142857,
+  \]
+  which is an ok-ish approximation of $\pi$, definitely for such a low effort. Let us now estimate the maximum error of the approximation: plugging $x_{0}=1$, $a=0$, $f(x)=\arctan(x)$ and $n=9$ into \autoref{eq:taylor_remainder_bound} we get
+  \[
+    R = \left| \frac{\arctan^{(10)}(c)}{10!} \right|.
+  \]
+  (since $x_{0}-a$ = $1-0$ = 1)
+
+  The $10$-th derivative of $\arctan(x)$ is the following monstrosity\footnote{calculated using \textit{sympy}, because doing this by hand is pure masochism.}:
+  \[
+    \arctan^{(10)}(x) = \frac{725760 x \left(- \frac{256 x^{8}}{\left(x^{2} + 1\right)^{4}} + \frac{512 x^{6}}{\left(x^{ 2} + 1\right)^{3}} - \frac{336 x^{4}}{\left(x^{2} + 1\right)^{2}} + \frac{80 x^{2}}{x^{2} + 1} - 5\right)}{ \left(x^{2} + 1\right)^{6}}.
+  \]
+
+  Plugging back into $R$ (recall the absolute value) yields
+  \[
+    R = \left| \frac{\arctan^{(10)}(c)}{10!} \right|.
+  \]
+  It's not easy to find an estimation for the maximum value of $R$ on $[0,1]$, however by using a computer\footnote{yeah, that's kind of cheating\ldots} we can say for sure that it is smaller than $\frac{1.55\times10^{7}}{10!}=$
+\end{example}
+
+\tbw{Hmmm\ldots the 2nd example needs some work.}
+\tbw{How to choose $n$ when max error is given.}
+
+Before continuing to discussing the Taylor series coefficients, let us show a use of Taylor's theorem to prove Eurler's formula.
+\begin{proof}
+  Euler's formula (\autoref{eq:euler_formula}) states that
+  \[
+    \eu^{\iu x} = \cos(x) + \iu\sin(x).
+  \]
+  We can express both $\cos(x)$ and $\sin(x)$ using infinite Taylor series:
+  \begin{itemize}
+    \item $\cos(x) = 1-\frac{x^{2}}{2}+\frac{x^{4}}{4!}-\frac{x^{6}}{6!}+\cdots$.
+    \item $\sin(x) = x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\frac{x^{7}}{7!}+\cdots$.
+  \end{itemize}
+  Therefore, $\cos(x)+\iu\sin(x)$ can be written as
+  \begin{align*}
+    \cos(x) + \iu\sin(x) &= \left(1-\frac{x^{2}}{2}+\frac{x^{4}}{4!}-\frac{x^{6}}{6!}+\cdots\right) + \iu\left(x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\frac{x^{7}}{7!}+\cdots\right)\\
+                         &= 1+\iu x - \frac{x^{2}}{2} -\iu\frac{x^{3}}{3!} + \frac{x^{4}}{4!} + \iu\frac{x^{5}}{5!} - \frac{x^{6}}{6!} - \iu\frac{x^{7}}{7!} + \cdots\\
+                         &= 1 +\iu x + \frac{(\iu x)^{2}}{2} + \frac{\left(\iu x\right)^{3}}{3!} + \frac{(\iu x)^{4}}{4!} + \frac{\left(\iu x\right)^{5}}{5!} + \frac{(\iu x)^{6}}{6!} + \frac{(\iu x)^{7}}{7!} + \cdots\\
+                         &= \eu^{\iu x}.
+  \end{align*}
+
+  The last equation is true since the powers of $\iu$ are a repeating sequence of period $4$:
+  
+  \centering
+  \begin{tabular}{lllllllll}
+    $\iu^{0}$ & $\iu^{1}$ & $\iu^{2}$ & $\iu^{3}$ & $\iu^{4}$ & $\iu^{5}$ & $\iu^{6}$ & $\iu^{7}$ & $\dots$\\
+    $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & \dots\\
+    $1$ & $\iu$ & $-1$ & $-\iu$ & $1$ & $\iu$ & $-1$ & $-\iu$ & $\dots$\\
+  \end{tabular}
+
+\end{proof}
 
 \subsection{Coefficients}
