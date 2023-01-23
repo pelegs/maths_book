@@ -356,7 +356,79 @@ Before continuing to discussing the Taylor series coefficients, let us show a us
     $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ & \dots\\
     $1$ & $\iu$ & $-1$ & $-\iu$ & $1$ & $\iu$ & $-1$ & $-\iu$ & $\dots$\\
   \end{tabular}
-
 \end{proof}
 
 \subsection{Coefficients}
+Up until now we simply took the coefficients $\frac{1}{n!}$ of the Taylor series for granted. Let us now understand how these coefficient come about.
+
+As stated before, in the limit $n\to\infty$ the Taylor series of a function $f(x)$ equals $f(x)$ precisely (given all conditions for $f(x)$ are met):
+\begin{align}
+  f(x) & = T(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^{2} + \frac{f'''(a)}{3!}(x-a)^{3} + \dots\\
+       &= \sum\limits_{k=0}^{\infty}\frac{f^{(k)}(a)}{k!}(x-a)^{k}.
+  \label{eq:taylor_precise}
+\end{align}
+Let us now imagine we don't know the coefficients $\frac{1}{k!}$ and instead call them $\lambda_{0}, \lambda_{1}, \lambda_{2}, \dots$:
+\begin{equation}
+  f(x) = \sum\limits_{k=0}^{\infty}\lambda_{k}f^{(k)}(a)(x-a)^{k}.
+  \label{eq:taylor_unknown_coeffs}
+\end{equation}
+
+Deriving both sides of \autoref{eq:taylor_unknown_coeffs} yields
+\begin{align}
+  f'(x) &= \sum\limits_{k=0}^{\infty}\lambda_{k}f^{(k)}(a)\cdot k(x-a)^{k-1}\\
+        &= \lambda_{1}f'(a) + 2\lambda_{2}f''(a)(x-a) + 3\lambda_{3}f'''(a)(x-a)^{2} + \dots
+  \label{eq:taylor_unknown_coeffs_1st_derivative}
+\end{align}
+
+Subtituting $x=a$ we get $f'(a)$ on the lhs and on the rhs all the terms with the an expression of the form $(x-a)^{k-1}$ go to zero. We are thus left with
+\[
+  f'(a) = \lambda_{1}f'(a),
+\]
+or simply
+\begin{equation}
+  \lambda_{1} = 1.
+  \label{eq:Taylor_1st_coefficient}
+\end{equation}
+
+Deriving \autoref{eq:taylor_unknown_coeffs} again, subtituting $\lambda_{1}=1$ we get
+\[
+  f''(x) = 2\lambda_{2}f''(a) + 3\cdot2\lambda_{3}f'''(a)(x-a) + 4\cdot3\lambda_{4}f^{(4)}(a)(x-a)^{3} + \dots
+\]
+and subtituting $x=a$ again makes all the terms of the form $(x-a)^{k-2}$ to go to zero, giving us
+\[
+  f''(a) = 2\lambda_{2}f''(a),
+\]
+i.e.
+\begin{equation}
+  \lambda_{2} = \frac{1}{2}.
+  \label{eq:Taylor_2nd_coefficient}
+\end{equation}
+
+We can repeat this process again:
+\[
+  f'''(x) = 3\cdot2\lambda_{3}f'''(a) + 4\cdot3\cdot2f^{(4)}(a)(x-a) + 5\cdot4\cdot3f^{(5)}(a)(x-a)^{2} + \dots
+\]
+and subtituting $x=a$ gives
+\[
+  f'''(a) = 3!\lambda_{3}f'''(a),
+\]
+i.e.
+\begin{equation}
+  \lambda_{3} = \frac{1}{3!}.
+  \label{eq:Taylor_3rd_coefficient}
+\end{equation}
+
+We can see that in general, the $m$-th derivative of \autoref{eq:taylor_unknown_coeffs} would be
+\begin{equation}
+  f^{(m)}(x) = \sum\limits_{k=m}^{\infty}k!\lambda_{k}f^{(k)}(a)(x-a)^{k-m},
+  \label{eq:Taylor_nth_coefficient}
+\end{equation}
+and subtituting $x=a$ would take all terms with index $k>m$ to zero, leaving us with
+\[
+  f^{(m)}(a) = m!\lambda_{m}f^{(m)}(a),
+\]
+and thus
+\begin{equation}
+  \lambda_{m} = \frac{1}{m!}.
+  \label{eq:Taylor_mth_coefficient}
+\end{equation}
