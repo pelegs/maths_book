@@ -1,3 +1,4 @@
-A mathematics book for natural science students (i.e. not for mathematicians and engineers).
+A mathematics book for natural science students.
+The always-updating PDF of the current state of the book can be found [here](https://github.com/pelegs/maths_book/blob/main/bookmain.pdf).
 
-Based on a course I gave in the University of Göttingen (Germany) in 2020 and 2021.
+Parts of the book are based on a course I taught in the University of Göttingen (Germany) between 2018 and 2021.
