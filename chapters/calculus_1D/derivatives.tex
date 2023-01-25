@@ -1,1 +1,31 @@
 \section{Derivatives}
+One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the ability to quantitatively describe the way it behaves as we change its argument $x$. At any given point a function can either increase in its value, decrease in its value, or stay constant. We would like to develop a method that is able to tell us exactly how such function changes at any given point.
+
+\begin{example}{Quantitative measure of change}{}
+  Compare the following three functions on the domain $x\in[a,b]$:
+
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        graph2d,
+        axis line style={-stealth, thick},
+        xmin=1, xmax=6,
+        ymin=0, ymax=20,
+        domain={1:6},
+        xticklabels={,,,,,,$b$},
+        extra x ticks={1},
+        extra x tick labels={$a$},
+        extra x tick style={grid=none},
+        yticklabels={},
+      ]
+       \addplot[function, xred] {exp(x)};
+       \addplot[function, xgreen] {x^2};
+       \addplot[function, xblue] {x^(1.5)};
+    \end{axis}
+  \end{tikzpicture}
+
+  \flushleft
+  While all three functions are increasing on $[a,b]$, it is clear that the rate of increase between the functions is different: the red function increases faster than the green one, which in turn increases faster than the blue one. In fact, even within each function the increase is not uniform: the more $x$ increases so does the rate of increase of the function.
+\end{example}
+
+To start developing a method to quantitatively measure the rate of increase of a function, we can first consider one of the simplest functions: $f(x)=x^{2}$. If we "zoom in" on any point of the function we would see that it "straightens out" - the more we zoom in, the more it looks like a straight line (\autoref{eq:zoom_in}).
