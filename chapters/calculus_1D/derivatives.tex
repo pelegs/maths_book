@@ -29,3 +29,28 @@ One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the abil
 \end{example}
 
 To start developing a method to quantitatively measure the rate of increase of a function, we can first consider one of the simplest functions: $f(x)=x^{2}$. If we "zoom in" on any point of the function we would see that it "straightens out" - the more we zoom in, the more it looks like a straight line (\autoref{eq:zoom_in}).
+
+\newcommand{\xsqrzoomin}[4]{
+  \begin{tikzpicture}
+    \begin{axis}[
+        graph2d,
+        axis line style={-stealth, thick},
+        xmin=#1, xmax=#2,
+        % ymin=0, ymax=20,
+        domain={#1:#2},
+        xticklabels={},
+        yticklabels={},
+      ]
+       \addplot[function, xred] {x^2};
+       \draw[thick] (#3,{(#3)^2}) rectangle (#4,{(#4)^2});
+    \end{axis}
+  \end{tikzpicture}
+}
+
+\begin{figure}
+  \centering
+  \xsqrzoomin{-10}{10}{2}{3}
+  \caption{}
+  \label{fig:}
+\end{figure}
+
