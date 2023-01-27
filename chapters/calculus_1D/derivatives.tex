@@ -30,32 +30,44 @@
 %
 % To start developing a method to quantitatively measure the rate of increase of a function, we can first consider one of the simplest functions: $f(x)=x^{2}$. If we "zoom in" on any point of the function we would see that it "straightens out" - the more we zoom in, the more it looks like a straight line (\autoref{eq:zoom_in}).
 %
-\newcommand{\xsqrzoomin}[2]{
-  \begin{tikzpicture}
-    \pgfmathsetmacro{\c}{#1}
-    \pgfmathsetmacro{\cmin}{\c-#2}
-    \pgfmathsetmacro{\cmax}{\c+#2}
-    \begin{axis}[
-        graph2d,
-        axis line style={-stealth, thick},
-        samples=200,
-        xmin=\cmin, xmax=\cmax,
-        ymin=\cmin, ymax=\cmax,
-        domain={\cmin:\cmax},
-        extra x ticks={\cmin},
-        extra x tick style={grid=none},
-        declare function={f(\x)=sin(deg(\x^3-2*\x-\x+3));}
-      ]
-       \addplot[function, xred] {f(x)-f(\c)+\c};
-       % \draw[thick] ({\c-#1,\c-#1}) rectangle ({\c+#1,\c+#2});
-    \end{axis}
-  \end{tikzpicture}
-}
 
 \begin{figure}
   \centering
-  \xsqrzoomin{1.5}{1}
+  \begin{tikzpicture}
+    \begin{axis}[
+        zoomin={1}{1},
+      ]
+      \addplot[function, xred] {f(x)};
+      \draw[thick] (1.4,1.4) rectangle (1.6,1.6);
+      \node (1rnw) at (1.4,1.6) {};
+      \node (1rne) at (1.6,1.6) {};
+      \node (1rse) at (1.6,1.4) {};
+      \node (1rsw) at (1.4,1.4) {};
+    \end{axis}
+    \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-7cm}}
+    \begin{axis}[
+        zoomin={0.1}{0.1},
+      ]
+      \addplot[function, xred] {f(x)};
+      \draw[thick] (1.49,1.49) rectangle (1.51,1.51);
+      \node (01anw) at (1.4,1.6) {};
+      \node (01ane) at (1.6,1.6) {};
+      \node (01ase) at (1.6,1.4) {};
+      \node (01asw) at (1.4,1.4) {};
+    \end{axis}
+    \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-7cm}}
+    \begin{axis}[
+        zoomin={0.01}{0.01},
+      ]
+      \node (test2) at (1.5,1.5) {};
+      \addplot[function, xred] {f(x)};
+    \end{axis}
+    % Lines
+    \draw[thick, dashed] (1rnw) -- (01anw);
+    \draw[thick, dashed] (1rne) -- (01ane);
+    \draw[thick, dashed] (1rse) -- (01ase);
+    \draw[thick, dashed] (1rsw) -- (01asw);
+  \end{tikzpicture}
   \caption{}
   \label{fig:}
 \end{figure}
-
