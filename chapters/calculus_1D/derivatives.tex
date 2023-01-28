@@ -1,35 +1,34 @@
 \section{Derivatives}
-% One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the ability to quantitatively describe the way it behaves as we change its argument $x$. At any given point a function can either increase in its value, decrease in its value, or stay constant. We would like to develop a method that is able to tell us exactly how such function changes at any given point.
-%
-% \begin{example}{Quantitative measure of change}{}
-%   Compare the following three functions on the domain $x\in[a,b]$:
-%
-%   \centering
-%   \begin{tikzpicture}
-%     \begin{axis}[
-%         graph2d,
-%         axis line style={-stealth, thick},
-%         xmin=1, xmax=6,
-%         ymin=0, ymax=20,
-%         domain={1:6},
-%         xticklabels={,,,,,,$b$},
-%         extra x ticks={1},
-%         extra x tick labels={$a$},
-%         extra x tick style={grid=none},
-%         yticklabels={},
-%       ]
-%        \addplot[function, xred] {exp(x)};
-%        \addplot[function, xgreen] {x^2};
-%        \addplot[function, xblue] {x^(1.5)};
-%     \end{axis}
-%   \end{tikzpicture}
-%
-%   \flushleft
-%   While all three functions are increasing on $[a,b]$, it is clear that the rate of increase between the functions is different: the red function increases faster than the green one, which in turn increases faster than the blue one. In fact, even within each function the increase is not uniform: the more $x$ increases so does the rate of increase of the function.
-% \end{example}
-%
-% To start developing a method to quantitatively measure the rate of increase of a function, we can first consider one of the simplest functions: $f(x)=x^{2}$. If we "zoom in" on any point of the function we would see that it "straightens out" - the more we zoom in, the more it looks like a straight line (\autoref{eq:zoom_in}).
-%
+One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the ability to quantitatively describe the way it behaves as we change its argument $x$. At any given point a function can either increase in its value, decrease in its value, or stay constant. We would like to develop a method that is able to tell us exactly how such function changes at any given point.
+
+\begin{example}{Quantitative measure of change}{}
+  Compare the following three functions on the domain $x\in[a,b]$:
+
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        graph2d,
+        axis line style={-stealth, thick},
+        xmin=1, xmax=6,
+        ymin=0, ymax=20,
+        domain={1:6},
+        xticklabels={,,,,,,$b$},
+        extra x ticks={1},
+        extra x tick labels={$a$},
+        extra x tick style={grid=none},
+        yticklabels={},
+      ]
+       \addplot[function, xred] {exp(x)};
+       \addplot[function, xgreen] {x^2};
+       \addplot[function, xblue] {x^(1.5)};
+    \end{axis}
+  \end{tikzpicture}
+
+  \flushleft
+  While all three functions are increasing on $[a,b]$ it is clear that the rate of increase between the functions is different: the red function increases faster than the green one, which in turn increases faster than the blue one. In fact, even within each function the increase is not uniform: the more $x$ increases so does the rate of increase of the function.
+\end{example}
+
+To start developing a method to quantitatively measure the rate of change in a real function, we can first notice a property of some functions: if we zoom in on any point of the function we would see that the more we zoom in the more the function ``straightens out'', i.e. the function look more and more like a straight line (\autoref{fig:zoom_in}).
 
 \begin{figure}
   \centering
@@ -58,6 +57,8 @@
     \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-7cm}}
     \begin{axis}[
         zoomin={0.01}{0.01},
+        xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3},
+        yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3},
       ]
       \node (test2) at (1.5,1.5) {};
       \addplot[function, xred] {f(x)};
@@ -68,6 +69,6 @@
     \draw[thick, dashed] (1rse) -- (01ase);
     \draw[thick, dashed] (1rsw) -- (01asw);
   \end{tikzpicture}
-  \caption{}
-  \label{fig:}
+  \caption{Zooming in on a real function.}
+  \label{fig:zoom_in}
 \end{figure}
