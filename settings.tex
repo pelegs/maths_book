@@ -206,7 +206,7 @@
 	},
   zoomin/.style n args={2}{
     graph2d,
-    width=7cm, height=7cm,
+    width=6.5cm, height=6.5cm,
     axis line style={-stealth, thick},
     samples=100,
     xmin={1.5-#1}, xmax={1.5+#1},
@@ -214,7 +214,7 @@
     domain={{1.5-#1}:{1.5+#1}},
     extra x ticks={1.5-#1},
     extra x tick style={grid=none},
-    declare function={f(\x)=sin(deg(\x^3-2*\x-\x+3))+0.546;}
+    declare function={f(\x)=sin(deg(\x^3-3*\x+3))+0.546;}
   },
 }
 

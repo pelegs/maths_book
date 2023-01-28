@@ -43,24 +43,31 @@ To start developing a method to quantitatively measure the rate of change in a r
       \node (1rse) at (1.6,1.4) {};
       \node (1rsw) at (1.4,1.4) {};
     \end{axis}
-    \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-7cm}}
+    \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-6.5cm}}
     \begin{axis}[
         zoomin={0.1}{0.1},
       ]
       \addplot[function, xred] {f(x)};
-      \draw[thick] (1.49,1.49) rectangle (1.51,1.51);
       \node (01anw) at (1.4,1.6) {};
       \node (01ane) at (1.6,1.6) {};
       \node (01ase) at (1.6,1.4) {};
       \node (01asw) at (1.4,1.4) {};
+      \draw[thick] (1.49,1.49) rectangle (1.51,1.51);
+      \node (01rnw) at (1.49,1.51) {};
+      \node (01rne) at (1.51,1.51) {};
+      \node (01rse) at (1.51,1.49) {};
+      \node (01rsw) at (1.49,1.49) {};
     \end{axis}
-    \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-7cm}}
+    \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-6.5cm}}
     \begin{axis}[
         zoomin={0.01}{0.01},
         xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3},
         yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3},
       ]
-      \node (test2) at (1.5,1.5) {};
+      \node (001anw) at (1.49,1.51) {};
+      \node (001ane) at (1.51,1.51) {};
+      \node (001ase) at (1.51,1.49) {};
+      \node (001asw) at (1.49,1.49) {};
       \addplot[function, xred] {f(x)};
     \end{axis}
     % Lines
@@ -68,7 +75,14 @@ To start developing a method to quantitatively measure the rate of change in a r
     \draw[thick, dashed] (1rne) -- (01ane);
     \draw[thick, dashed] (1rse) -- (01ase);
     \draw[thick, dashed] (1rsw) -- (01asw);
+
+    \draw[thick, dashed] (01rnw) -- (001anw);
+    \draw[thick, dashed] (01rne) -- (001ane);
+    \draw[thick, dashed] (01rse) -- (001ase);
+    \draw[thick, dashed] (01rsw) -- (001asw);
   \end{tikzpicture}
-  \caption{Zooming in on a real function.}
+  \caption{Zooming in on a real function at $x=1.5$. Note how the more we zoom in, the more the function becomes ``linear'' and we can approximate its slope at $x=1.5$ as being $m=-1$.}
   \label{fig:zoom_in}
 \end{figure}
+
+This works for any point of all of the real fundamental functions and their compositions, except for some special points which we will discuss later. To quantify this ``linearity'' given a point on some function we can measure the slope of the line when we zoom in enough. In \autoref{fig:zoom_in} for example, at $x=1.5$ the slope would be approximately $m=-1$.
