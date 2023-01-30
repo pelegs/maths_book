@@ -1,0 +1,54 @@
+\section{Linear functions} % (fold)
+\label{sec:Linear functions}
+% section Linear functions (end)
+
+One simple family of functions are the \emph{linear functions}. These are functions of the form
+\begin{equation}
+  f(x) = mx+b,
+  \label{eq:linear_funcs_def}
+\end{equation}
+where $m$ and $b$ are both real numbers. We call $m$ the \emph{slope} of $f$, while $b$ is the \emph{free variable} of $f$. The slope of a linear function is simply the change in its value as we increase $x$, and is constant everywhere: for example, take the function $f(x)=2x-1$. Its slope is $m=2$ and the free variable is $b=-1$ (see \autoref{fig:2x-1}). At $x=2$, the function has the value $f(2)=4-1=3$. Increasing $x$ by $\Delta x=3$ to $x=5$ gives $f(5)=10-1=9$, an increase of $\Delta y=9-3=6$ i.e. $2\Delta x$. At $x=8$, another $\Delta x=3$, the function has the value $f(8)=16-1=15$ - again, an increase of $\Delta y=2\Delta x=6$.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      graph2d,
+      width=12cm, height=12cm,
+      xmin=-4, xmax=4,
+      ymin=-4, ymax=4,
+      domain={-4:4},
+    ]
+    \addplot[function, xred] {2*x-1} node[pos=0.4, above, rotate=63] {$f(x)=2x-1$};
+    \draw[very thick, decorate, decoration={brace, amplitude=3pt, mirror, raise=5pt}]
+         (1,1) -- (2,1) node[midway, below, yshift=-5pt] {$\Delta x=1$};
+    \draw[very thick, decorate, decoration={brace, amplitude=3pt, raise=5pt}]
+         (1,1) -- (1,3) node[midway, above, rotate=90, yshift=5pt] {$\Delta y=2$};
+     \draw[thick, dashed] (1,3) -- (2,3);
+     \draw[thick, dashed] (2,1) -- (2,3);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The function $f(x)=2x-1$.}
+  \label{fig:2x-1}
+\end{figure}
+
+We can therefore write
+\begin{equation}
+  m = \frac{\Delta y}{\Delta x}.
+  \label{eq:linear_slope_def}
+\end{equation}
+
+On the other hand, the free variable $b$ is the value of the function at $x=0$, since then $mx=0$:
+\begin{equation}
+  b = f(0).
+  \label{eq:linear_free_var}
+\end{equation}
+
+Two linear functions with the same slope are always parallel, while two linear functions with the same free variable meet at $x=0$.
+
+From a geometric point of view, the slope of a linear function is
+\begin{equation}
+  m = \tan\left(\theta\right),
+  \label{eq:slope_angle}
+\end{equation}
+where $\theta$ is the angle between the $x$-axis and the line represented by the function. We will discuss trigonometric functions in \autoref{sec:trigonometry}.

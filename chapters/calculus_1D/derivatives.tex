@@ -85,4 +85,32 @@ To start developing a method to quantitatively measure the rate of change in a r
   \label{fig:zoom_in}
 \end{figure}
 
-This works for any point of all of the real fundamental functions and their compositions, except for some special points which we will discuss later. To quantify this ``linearity'' given a point on some function we can measure the slope of the line when we zoom in enough. In \autoref{fig:zoom_in} for example, at $x=1.5$ the slope would be approximately $m=-1$.
+This works for almost all point of each of the real fundamental functions and their compositions (except for some special points which we will discuss later). To quantify this ``linearity'', at some point $x_{0}$ on some function $f(x)$, we can measure the slope of the line we get when we zoom in enough on the function at $x_{0}$, i.e. the point $\left(x_{0},f\left(x_{0}\right)\right)$. In \autoref{fig:zoom_in}, for example, at $x=1.5$ the slope would be approximately $m=-1$.
+
+To calculate the slope we can start by marking another point $a$ on the function, i.e. $\left(a,f\left(a\right)\right)$, such that $a$ is a bit to the left of $x_{0}$: $a=x_{0}+\Delta x$. We then connect the two points $\left(x_{0},f\left(x_{0}\right)\right)$ and $\left(a,f(a)\right)$ with a line. The slope of the line would be the difference in the $y$-values of the points divided by the difference in their $x$-values (see \autoref{fig:line_two_points_function}).
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      graph2d,
+      xmin=0, xmax=2,
+      ymin=0, ymax=2,
+      domain={0:2},
+      samples=100,
+      xticklabels={},
+      yticklabels={},
+      axis line style={-stealth, thick},
+      declare function={f(\x)=-sin(deg(\x^3-3*\x+3))+2;}
+    ]
+      \pgfmathsetmacro{\xx}{1.35}
+      \pgfmathsetmacro{\yy}{f(\xx)}
+      \pgfmathsetmacro{\xa}{1.6}
+      \pgfmathsetmacro{\ya}{f(\xa)}
+      \addplot[function, xred] {f(x)} node[pos=0.15, left] {$f(x)$};
+      \draw (\xx,\yy) -- (\xa,\ya);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:line_two_points_function}
+\end{figure}
