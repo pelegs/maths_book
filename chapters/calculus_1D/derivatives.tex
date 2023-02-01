@@ -28,87 +28,95 @@ One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the abil
   While all three functions are increasing on $[a,b]$ it is clear that the rate of increase between the functions is different: the red function increases faster than the green one, which in turn increases faster than the blue one. In fact, even within each function the increase is not uniform: the more $x$ increases so does the rate of increase of the function.
 \end{example}
 
-To start developing a method to quantitatively measure the rate of change in a real function, we can first notice a property of some functions: if we zoom in on any point of the function we would see that the more we zoom in the more the function ``straightens out'', i.e. the function look more and more like a straight line (\autoref{fig:zoom_in}).
+To start developing a method to quantitatively measure the rate of change in a real function, we can first notice a property of some functions: if we zoom in on any point of the function we would see that the more we zoom in the more the function ``straightens out'', i.e. the function looks more and more like a straight line (\autoref{fig:zoom_in}).
 
+\pgfmathsetmacro{\zoomcen}{3.8}
+\pgfmathsetmacro{\zoomSlope}{DzoomG(\zoomcen)}
+\tikzset{
+  bslope/.style={very thick, xblue},
+  gslope/.style={very thick, xgreen},
+}
 \begin{figure}
   \centering
   \begin{tikzpicture}
+    \pgfmathsetmacro{\za}{1}
+    \pgfmathsetmacro{\zb}{0.2}
+    \pgfmathsetmacro{\zc}{0.04}
+    \pgfmathsetmacro{\R}{0.03}
     \begin{axis}[
-        zoomin={1}{1},
+      zoomin={\zoomcen}{\za},
+      name=ax1,
       ]
-      \addplot[function, xred] {f(x)};
-      \draw[thick] (1.4,1.4) rectangle (1.6,1.6);
-      \node (1rnw) at (1.4,1.6) {};
-      \node (1rne) at (1.6,1.6) {};
-      \node (1rse) at (1.6,1.4) {};
-      \node (1rsw) at (1.4,1.4) {};
+      \draw[bslope] (\zoomcen,\zoomcen) -- ({\zoomcen+\za},{\zoomcen+\za*\zoomSlope});
+      \draw[bslope] (\zoomcen,\zoomcen) -- ({\zoomcen-\za},{\zoomcen-\za*\zoomSlope});
+      \addplot[function, xred] {zoomF(x,\zoomcen)};
+      \fill (\zoomcen,\zoomcen) circle ({\R*\za});
+      \coordinate (c1) at ({\zoomcen-\zb},{\zoomcen-\zb});
+      \coordinate (c2) at ({\zoomcen-\zb},{\zoomcen+\zb});
+      \coordinate (c3) at ({\zoomcen+\zb},{\zoomcen+\zb});
+      \coordinate (c4) at ({\zoomcen+\zb},{\zoomcen-\zb});
+      \draw (c1) rectangle (c3);
     \end{axis}
-    \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-6.5cm}}
     \begin{axis}[
-        zoomin={0.1}{0.1},
+      zoomin={\zoomcen}{\zb},
+      name=ax2,
+      at={($(ax1.south east)+(2cm,0)$)},
       ]
-      \addplot[function, xred] {f(x)};
-      \node (01anw) at (1.4,1.6) {};
-      \node (01ane) at (1.6,1.6) {};
-      \node (01ase) at (1.6,1.4) {};
-      \node (01asw) at (1.4,1.4) {};
-      \draw[thick] (1.49,1.49) rectangle (1.51,1.51);
-      \node (01rnw) at (1.49,1.51) {};
-      \node (01rne) at (1.51,1.51) {};
-      \node (01rse) at (1.51,1.49) {};
-      \node (01rsw) at (1.49,1.49) {};
+      \draw[bslope] (\zoomcen,\zoomcen) -- ({\zoomcen+\zb},{\zoomcen+\zb*\zoomSlope});
+      \draw[bslope] (\zoomcen,\zoomcen) -- ({\zoomcen-\zb},{\zoomcen-\zb*\zoomSlope});
+      \addplot[function, xred] {zoomF(x,\zoomcen)};
+      \fill (\zoomcen,\zoomcen) circle ({\R*\zb});
+      \coordinate (d1) at ({\zoomcen-\zc},{\zoomcen-\zc});
+      \coordinate (d2) at ({\zoomcen-\zc},{\zoomcen+\zc});
+      \coordinate (d3) at ({\zoomcen+\zc},{\zoomcen+\zc});
+      \coordinate (d4) at ({\zoomcen+\zc},{\zoomcen-\zc});
+      \draw (d1) rectangle (d3);
     \end{axis}
-    \pgftransformcm{1}{0}{0}{1}{\pgfpoint{0}{-6.5cm}}
     \begin{axis}[
-        zoomin={0.01}{0.01},
-        xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3},
-        yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3},
+      zoomin={\zoomcen}{\zc},
+      name=ax3,
+      anchor=north west,
+      at={($(ax2.south west)+(0,-2cm)$)},
       ]
-      \node (001anw) at (1.49,1.51) {};
-      \node (001ane) at (1.51,1.51) {};
-      \node (001ase) at (1.51,1.49) {};
-      \node (001asw) at (1.49,1.49) {};
-      \addplot[function, xred] {f(x)};
+      \draw[bslope] (\zoomcen,\zoomcen) -- ({\zoomcen+\zc},{\zoomcen+\zc*\zoomSlope});
+      \draw[bslope] (\zoomcen,\zoomcen) -- ({\zoomcen-\zc},{\zoomcen-\zc*\zoomSlope});
+      \addplot[function, xred] {zoomF(x,\zoomcen)};
+      \fill (\zoomcen,\zoomcen) circle ({\R*\zc});
     \end{axis}
-    % Lines
-    \draw[thick, dashed] (1rnw) -- (01anw);
-    \draw[thick, dashed] (1rne) -- (01ane);
-    \draw[thick, dashed] (1rse) -- (01ase);
-    \draw[thick, dashed] (1rsw) -- (01asw);
-
-    \draw[thick, dashed] (01rnw) -- (001anw);
-    \draw[thick, dashed] (01rne) -- (001ane);
-    \draw[thick, dashed] (01rse) -- (001ase);
-    \draw[thick, dashed] (01rsw) -- (001asw);
+    \draw[dashed] (c3) -- (ax2.north west);
+    \draw[dashed] (c4) -- (ax2.south west);
+    \draw[dashed] (d1) -- (ax3.north west);
+    \draw[dashed] (d4) -- (ax3.north east);
   \end{tikzpicture}
-  \caption{Zooming in on a real function at $x=1.5$. Note how the more we zoom in, the more the function becomes ``linear'' and we can approximate its slope at $x=1.5$ as being $m=-1$.}
+  \caption{Zooming in on a real function at $x=\zoomcen$. Note how the more we zoom in on the function at $x=\zoomcen$, the more the it becomes linear (compare to the blue line).}
   \label{fig:zoom_in}
 \end{figure}
 
-This works for almost all point of each of the real fundamental functions and their compositions (except for some special points which we will discuss later). To quantify this ``linearity'', at some point $x_{0}$ on some function $f(x)$, we can measure the slope of the line we get when we zoom in enough on the function at $x_{0}$, i.e. the point $\left(x_{0},f\left(x_{0}\right)\right)$. In \autoref{fig:zoom_in}, for example, at $x=1.5$ the slope would be approximately $m=-1$.
+This works for almost all the points of any of the real fundamental functions and their compositions (except for some special points which we will discuss later). Of course, we would like to quantify this ``linearity''. We can chose some point $x_{0}$ on some function $f(x)$ and measure the slope of the line we get when we zoom in enough on the point $p_{0}=\left(x_{0},f\left(x_{0}\right)\right)$. In \autoref{fig:zoom_in}, for example, at $x=\zoomcen$ the slope would be approximately $m=-0.4$.
 
-To calculate the slope we can start by marking another point $a$ on the function, i.e. $\left(a,f\left(a\right)\right)$, such that $a$ is a bit to the left of $x_{0}$: $a=x_{0}+\Delta x$. We then connect the two points $\left(x_{0},f\left(x_{0}\right)\right)$ and $\left(a,f(a)\right)$ with a line. The slope of the line would be the difference in the $y$-values of the points divided by the difference in their $x$-values (see \autoref{fig:line_two_points_function}).
+To calculate the slope we can start by marking another point on the function at some distance to the left of $x_{0}$: $x_{1}=x_{0}+\Delta x$. We then connect the two points $\left(x_{0},f\left(x_{0}\right)\right)$ and $\left(a,f(a)\right)$ with a line. The slope of the line would be the difference in the $y$-values of the points divided by the difference in their $x$-values (see \autoref{fig:line_two_points_function}).
 
 \begin{figure}
   \centering
   \begin{tikzpicture}
+    \pgfmathsetmacro{\za}{2}
+    \pgfmathsetmacro{\dxa}{0.15}
     \begin{axis}[
-      graph2d,
-      xmin=0, xmax=2,
-      ymin=0, ymax=2,
-      domain={0:2},
-      samples=100,
-      xticklabels={},
-      yticklabels={},
-      axis line style={-stealth, thick},
-      declare function={f(\x)=-sin(deg(\x^3-3*\x+3))+2;}
-    ]
-      \pgfmathsetmacro{\xx}{1.35}
-      \pgfmathsetmacro{\yy}{f(\xx)}
-      \pgfmathsetmacro{\xa}{1.6}
-      \pgfmathsetmacro{\ya}{f(\xa)}
-      \addplot[function, xred] {f(x)} node[pos=0.15, left] {$f(x)$};
-      \draw (\xx,\yy) -- (\xa,\ya);
+      zoomin={\zoomcen}{\za},
+      xticklabels={,},
+      yticklabels={,},
+      ]
+      \addplot[function, xred] {zoomF(x,\zoomcen)};
+      \addplot[only marks, mark=*] coordinates {
+          (\zoomcen,{zoomF(\zoomcen,\zoomcen)})
+          ({\zoomcen+\dxa},{zoomF({\zoomcen+\dxa},\zoomcen)})
+        };
+      \draw[bslope] (\zoomcen,\zoomcen) -- ({\zoomcen+\za},{\zoomcen+\za*\zoomSlope});
+      \draw[bslope] (\zoomcen,\zoomcen) -- ({\zoomcen-\za},{\zoomcen-\za*\zoomSlope});
+      \draw (\zoomcen,{zoomF(\zoomcen,\zoomcen)}) -- ({\zoomcen+\dxa},{zoomF({\zoomcen+\dxa},\zoomcen)});
+      \pgfmathsetmacro{\m}{(zoomF(\zoomcen+\dxa,\zoomcen)-\zoomcen)/\dxa}
+      \draw[gslope] (\zoomcen,\zoomcen) -- ({\zoomcen+\za},{\zoomcen+\za*\m});
+      \draw[gslope] (\zoomcen,\zoomcen) -- ({\zoomcen-\za},{\zoomcen-\za*\m});
     \end{axis}
   \end{tikzpicture}
   \caption{}

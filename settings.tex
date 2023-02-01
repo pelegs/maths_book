@@ -62,6 +62,11 @@
 	perp/.style={black!50, thick, dashed},
 	component/.style = {line width=5pt, draw=#1},
 	element/.style = {draw=black, anchor=west, circle, minimum size=7mm, fill=#1},
+  declare function={
+    zoomG(\x)=-(\x-2.4)^3+2*(\x-2.4)^2;
+    zoomF(\x,\a)=zoomG(\x)-zoomG(\a)+\a;
+    DzoomG(\x)=-(5*\x-12)*(15*\x-56)/25;
+  },
 }
 
 % Legendre polynomials
@@ -209,12 +214,17 @@
     width=6.5cm, height=6.5cm,
     axis line style={-stealth, thick},
     samples=100,
-    xmin={1.5-#1}, xmax={1.5+#1},
-    ymin={1.5-#1}, ymax={1.5+#1},
-    domain={{1.5-#1}:{1.5+#1}},
-    extra x ticks={1.5-#1},
-    extra x tick style={grid=none},
-    declare function={f(\x)=sin(deg(\x^3-3*\x+3))+0.546;}
+    xmin={#1-#2}, xmax={#1+#2},
+    ymin={#1-#2}, ymax={#1+#2},
+    domain={{#1-#2}:{#1+#2}},
+    % extra x ticks={#1-#2},
+    % extra x tick style={grid=none},
+    xticklabel style={/pgf/number format/fixed,
+                      /pgf/number format/precision=3},
+    yticklabel style={/pgf/number format/fixed,
+                      /pgf/number format/precision=3},
+    major grid style={draw=gray!15},
+    minor grid style={draw=gray!10},
   },
 }
 
