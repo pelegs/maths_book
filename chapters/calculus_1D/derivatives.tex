@@ -28,7 +28,7 @@ One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the abil
   While all three functions are increasing on $[a,b]$ it is clear that the rate of increase between the functions is different: the red function increases faster than the green one, which in turn increases faster than the blue one. In fact, even within each function the increase is not uniform: the more $x$ increases so does the rate of increase of the function.
 \end{example}
 
-To start developing a method to quantitatively measure the rate of change in a real function, we can first notice a property of some functions: if we zoom in on any point of the function we would see that the more we zoom in the more the function ``straightens out'', i.e. the function looks more and more like a straight line (\autoref{fig:zoom_in}).
+To start developing a method to quantitatively measure the rate of change in a real function, we can first notice a property of some functions: if we zoom in on some point of the function $\bm{p}=\left(a,f\left(a\right)\right)$ we would see that the more we zoom in the more the the function behaves like a straight line around $\bm{p}$ (\autoref{fig:zoom_in}). We can define the limit of this zoom (i.e. when the zoom factor goes to infinity) as the slope of the function at the $\bm{p}$.
 
 \tikzset{
   bslope/.style={very thick, dashed, #1},
@@ -118,4 +118,46 @@ To start developing a method to quantitatively measure the rate of change in a r
   \end{tikzpicture}
   \caption{Zooming in on a real function $f$ at two points: $\bm{p}_{a}=\left(a,f(a)\right)$ (upper right) and $\bm{p}_{b}=\left(b,f(b)\right)$ (bottom right). Note how around each of the points, the function looks somewhat linear: this is more pronounced around $\bm{p}_{b}$ where the function looks linear in the entire zoomed-in area, while near $\bm{p}_{a}$ it looks linear only near the point itself even though the zoom factor is higher.}
   \label{fig:zoom_in}
+\end{figure}
+
+How can we quantify this idea? Let us consider some real function $f$ and a point $\bm{p}_{0} = \left(x_{0},f\left(x_{0}\right)\right)$ on the function. We can then define another point to the right of $x_{0}$: $\bm{p}_{1}=\left(x_{1},f\left(x_{1}\right)\right)$. Since $x_{1}$ is to the right of $x_{0}$ we can write it as $x_{1}=x_{0}+\Delta x$, where $\Delta x>0$. We then connect the two points with a line (\autoref{fig:x0_x1_line}). The slope of this line can then be calculated using \autoref{eq:linear_slope_def}:
+\begin{equation}
+  m_{1} = \frac{\Delta y}{\Delta x} = \frac{f\left(x_{1}\right)-f\left(x_{0}\right)}{x_{1}-x_{0}} = \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{x_{0}+\Delta x - x_{0}} = \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}.
+  \label{eq:derivative_slope_def}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      graph2d,
+      width=7cm, height=7cm,
+      xmin=0, xmax=4.5,
+      ymin=0, ymax=5,
+      xticklabels={,},
+      yticklabels={,},
+      declare function={
+        fd(\x)=4*exp(-(\x-2)^2/1.5^2);
+        Dfd(\x)=-8*(\x-2)/9*fd(\x);
+      },
+    ]
+    \pgfmathsetmacro{\xa}{2.05}
+    \pgfmathsetmacro{\xb}{2.2}
+    \pgfmathsetmacro{\m}{(fd(\xb)-fd(\xa))/(\xb-\xa)}
+    % Line between points and its slope
+    \draw[xred, very thick] (\xa, {fd(\xa)}) -- (\xb,{fd(\xb)});
+    \addplot[function, xred, dashed] {\m*(x-\xa)+fd(\xa)};
+    % Derivatie at x0
+    \pgfmathsetmacro{\M}{Dfd(\xa)}
+    \addplot[function, xgreen, dashed] {\M*(x-\xa)+fd(\xa)};
+    % Function + points on it
+    \addplot[function, xblue] {fd(x)};
+    \addplot[only marks, mark=*] coordinates {
+        (\xa,{fd(\xa)})
+        (\xb,{fd(\xb)})
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Text.}
+  \label{fig:x0_x1_line}
 \end{figure}
