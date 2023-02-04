@@ -122,42 +122,159 @@ To start developing a method to quantitatively measure the rate of change in a r
 
 How can we quantify this idea? Let us consider some real function $f$ and a point $\bm{p}_{0} = \left(x_{0},f\left(x_{0}\right)\right)$ on the function. We can then define another point to the right of $x_{0}$: $\bm{p}_{1}=\left(x_{1},f\left(x_{1}\right)\right)$. Since $x_{1}$ is to the right of $x_{0}$ we can write it as $x_{1}=x_{0}+\Delta x$, where $\Delta x>0$. We then connect the two points with a line (\autoref{fig:x0_x1_line}). The slope of this line can then be calculated using \autoref{eq:linear_slope_def}:
 \begin{equation}
-  m_{1} = \frac{\Delta y}{\Delta x} = \frac{f\left(x_{1}\right)-f\left(x_{0}\right)}{x_{1}-x_{0}} = \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{x_{0}+\Delta x - x_{0}} = \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}.
+  m = \frac{\Delta y}{\Delta x} = \frac{f\left(x_{1}\right)-f\left(x_{0}\right)}{x_{1}-x_{0}} = \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{x_{0}+\Delta x - x_{0}} = \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}.
   \label{eq:derivative_slope_def}
 \end{equation}
 
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[node distance=13pt]
+    \pgfmathsetmacro{\R}{3}
+    \pgfmathsetmacro{\c}{1.5}
+    \pgfmathsetmacro{\xa}{1.5}
+    \pgfmathsetmacro{\xb}{3.5}
     \begin{axis}[
       graph2d,
-      width=7cm, height=7cm,
-      xmin=0, xmax=4.5,
-      ymin=0, ymax=5,
+      width=9cm, height=9cm,
+      xmin=0, xmax=4,
+      ymin=0, ymax=4,
       xticklabels={,},
       yticklabels={,},
+      grid=major,
+      major grid style={draw=black!2},
+      extra x tick style={
+        tick label style={xblue},
+        major grid style=black!0,
+      },
+      extra x ticks={\xa, \xb},
+      extra x tick labels={$x_{0}$, $x_{1}$},
+      extra y tick style={
+        tick label style={xblue},
+        major grid style=black!0,
+      },
+      extra y ticks={{fd(\xa)}, {fd(\xb)}},
+      extra y tick labels={$f\left(x_{0}\right)$, $f\left(x_{1}\right)$},
+      axis line style={-stealth},
+      domain={0:4},
+      samples=100,
       declare function={
-        fd(\x)=4*exp(-(\x-2)^2/1.5^2);
-        Dfd(\x)=-8*(\x-2)/9*fd(\x);
+        fd(\x)=sqrt(\R^2-(\x-\c)^2)-1;
+        Dfd(\x)=-(\x-\c)/sqrt(\R^2-(\x-\c)^2);
       },
     ]
-    \pgfmathsetmacro{\xa}{2.05}
-    \pgfmathsetmacro{\xb}{2.2}
+    % Coordinate lines lines
+    \tikzset{prp/.style={perp, black!20}}
+    \draw[prp] (\xa,0) -- (\xa,{fd(\xa});
+    \draw[prp] (\xb,0) -- (\xb,{fd(\xb});
+    \draw[prp] (0,{fd(\xa)}) -- (\xa,{fd(\xa});
+    \draw[prp] (0,{fd(\xb)}) -- (\xb,{fd(\xb});
+    % Derivative slope at x=\c
     \pgfmathsetmacro{\m}{(fd(\xb)-fd(\xa))/(\xb-\xa)}
     % Line between points and its slope
     \draw[xred, very thick] (\xa, {fd(\xa)}) -- (\xb,{fd(\xb)});
-    \addplot[function, xred, dashed] {\m*(x-\xa)+fd(\xa)};
-    % Derivatie at x0
-    \pgfmathsetmacro{\M}{Dfd(\xa)}
-    \addplot[function, xgreen, dashed] {\M*(x-\xa)+fd(\xa)};
+    % \addplot[function, xred, dashed] {\m*(x-\xa)+fd(\xa)};
+    % % Derivatie at x0
+    % \pgfmathsetmacro{\M}{Dfd(\xa)}
+    % \addplot[function, xgreen, dashed] {\M*(x-\xa)+fd(\xa)};
     % Function + points on it
     \addplot[function, xblue] {fd(x)};
     \addplot[only marks, mark=*] coordinates {
         (\xa,{fd(\xa)})
         (\xb,{fd(\xb)})
       };
+    % Labels
+    \coordinate (p0) at (\xa,{fd(\xa)});
+    \coordinate (p1) at (\xb,{fd(\xb)});
+    \node[above of=p0] (p0lbl) {$\bm{p}_{0}$};
+    \node[above of=p1] (p1lbl) {$\bm{p}_{1}$};
     \end{axis}
   \end{tikzpicture}
   \caption{Text.}
   \label{fig:x0_x1_line}
 \end{figure}
+
+We can then take the limit of \autoref{eq:derivative_slope_def} as $\Delta x\to 0$ (\autoref{fig:derivate_limit}):
+\begin{equation}
+  M = \lim\limits_{\Delta x\to 0} \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}.
+  \label{eq:derivative_def}
+\end{equation}
+This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, and it tells us, quantitatively, how $f$ locally behaves at $x_{0}$, i.e. how much does it increase, decrease or stay the same around $x_{0}$.
+
+\newcommand{\derivFig}[1]{
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\R}{3}
+    \pgfmathsetmacro{\c}{1.5}
+    \pgfmathsetmacro{\xa}{1.5}
+    \pgfmathsetmacro{\xb}{\xa+#1}
+    \begin{axis}[
+      graph2d,
+      width=6cm, height=6cm,
+      xmin=0, xmax=4,
+      ymin=0, ymax=4,
+      xticklabels={,},
+      yticklabels={,},
+      grid=major,
+      major grid style={draw=black!2},
+      axis line style={-stealth},
+      domain={0:4},
+      samples=40,
+      declare function={
+        fd(\x)=sqrt(\R^2-(\x-\c)^2)-1;
+        Dfd(\x)=-(\x-\c)/sqrt(\R^2-(\x-\c)^2);
+      },
+    ]
+    % Derivative slope at x=\c
+    \pgfmathsetmacro{\m}{(fd(\xb)-fd(\xa))/(\xb-\xa)}
+    % Line between points and its slope
+    % \draw[xred, very thick] (\xa, {fd(\xa)}) -- (\xb,{fd(\xb)});
+    \addplot[function, xred] {\m*(x-\xa)+fd(\xa)};
+    % Derivatie at x0
+    \pgfmathsetmacro{\M}{Dfd(\xa)}
+    \addplot[function, xgreen] {\M*(x-\xa)+fd(\xa)};
+    % Function + points on it
+    \addplot[function, xblue] {fd(x)};
+    \addplot[only marks, mark=*] coordinates {
+        (\xa,{fd(\xa)})
+        (\xb,{fd(\xb)})
+      };
+    % Labels
+    \end{axis}
+  \end{tikzpicture}
+}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \derivFig{2.5}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \derivFig{2.2}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \derivFig{2}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \derivFig{1.2}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \derivFig{0.3}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \derivFig{0.1}
+  \end{subfigure}
+  \hfill
+  \caption{Test.}
+  \label{fig:derivate_limit}
+\end{figure}
+
