@@ -201,7 +201,7 @@ We can then take the limit of \autoref{eq:derivative_slope_def} as $\Delta x\to 
 This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, and it tells us, quantitatively, how $f$ locally behaves at $x_{0}$, i.e. how much does it increase, decrease or stay the same around $x_{0}$.
 
 \newcommand{\derivFig}[1]{
-  \begin{tikzpicture}
+  \begin{tikzpicture}[node distance=10pt]
     \pgfmathsetmacro{\R}{3}
     \pgfmathsetmacro{\c}{1.5}
     \pgfmathsetmacro{\xa}{1.5}
@@ -210,9 +210,15 @@ This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, an
       graph2d,
       width=6cm, height=6cm,
       xmin=0, xmax=4,
-      ymin=0, ymax=4,
+      ymin=-0.5, ymax=3.5,
       xticklabels={,},
       yticklabels={,},
+      extra x tick style={
+        tick label style={xblue},
+        major grid style=black!0,
+      },
+      extra x ticks={\xa, \xb},
+      extra x tick labels={},
       grid=major,
       major grid style={draw=black!2},
       axis line style={-stealth},
@@ -225,8 +231,12 @@ This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, an
     ]
     % Derivative slope at x=\c
     \pgfmathsetmacro{\m}{(fd(\xb)-fd(\xa))/(\xb-\xa)}
+    % Brace
+    \draw[thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+          (\xa,0) -- (\xb,0) node[midway, below, yshift=-5pt]{$\Delta x$};
+    \draw[perp] (\xa,0) -- (\xa,{fd(\xa)});
+    \draw[perp] (\xb,0) -- (\xb,{fd(\xb)});
     % Line between points and its slope
-    % \draw[xred, very thick] (\xa, {fd(\xa)}) -- (\xb,{fd(\xb)});
     \addplot[function, xred] {\m*(x-\xa)+fd(\xa)};
     % Derivatie at x0
     \pgfmathsetmacro{\M}{Dfd(\xa)}
@@ -238,6 +248,10 @@ This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, an
         (\xb,{fd(\xb)})
       };
     % Labels
+    \coordinate (p0) at (\xa,{fd(\xa)});
+    \coordinate (p1) at (\xb,{fd(\xb)});
+    \node[above of=p0] (p0lbl) {$\bm{p}_{0}$};
+    \node[below of=p1] (p1lbl) {$\bm{p}_{1}$};
     \end{axis}
   \end{tikzpicture}
 }
@@ -246,22 +260,22 @@ This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, an
   \centering
   \begin{subfigure}[b]{0.45\textwidth}
     \centering
-    \derivFig{2.5}
+    \derivFig{2.4}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\textwidth}
     \centering
-    \derivFig{2.2}
+    \derivFig{2.0}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\textwidth}
     \centering
-    \derivFig{2}
+    \derivFig{1.5}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\textwidth}
     \centering
-    \derivFig{1.2}
+    \derivFig{1}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\textwidth}
@@ -274,7 +288,104 @@ This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, an
     \derivFig{0.1}
   \end{subfigure}
   \hfill
-  \caption{Test.}
+  \caption{As $\Delta x\to 0$, $\bm{p}_{1}$ approaches $\bm{p}_{0}$ and the slope of the red line connecting the two points approches the slope $M$ of the green line at $\bm{p}_{0}$.}
   \label{fig:derivate_limit}
 \end{figure}
 
+\begin{example}{Validation of the derivative using a linear function}{linear_derivative}
+  Given a linear function $f(x)=mx+b$, we expect that the derivative of $f$ at any point $x_{0}$ would equal $m$, since the entire function is a line connecting all the points on the function itself. Let us check that:
+  \begin{align*}
+    M &= \lim\limits_{\Delta x\to 0}\frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}\\
+      &= \lim\limits_{\Delta x\to 0}\frac{m\left(x_{0}+\Delta x\right)+\cancel{b}-\left(mx_{0}+\cancel{b}\right)}{\Delta x}\\
+      &= \lim\limits_{\Delta x\to 0}\frac{\cancel{mx_{0}}+m\Delta x-\cancel{mx_{0}}}{\Delta x}\\
+      &= \lim\limits_{\Delta x\to 0}\frac{m\cancel{\Delta x}}{\cancel{\Delta x}}\\
+      &= m.
+  \end{align*}
+\end{example}
+
+\begin{example}{Derivative of $x^{2}$}{derivative_x^2}
+  Unlike for a linear function, we shouldn't expect the derivate of $f(x)=x^{2}$ to be constant at any point. However, we can easily calculate what the derivative would be at some point $x_{0}$:
+  \begin{align*}
+    M &= \lim\limits_{\Delta x\to 0}\frac{\left(x_{0}+\Delta x\right)^{2}-x_{0}^{2}}{\Delta x}\\
+      &= \lim\limits_{\Delta x\to 0}\frac{\cancel{x_{0}^{2}}+2x_{0}\Delta x-\left(\Delta x\right)^{2}-\cancel{x_{0}^{2}}}{\Delta x}\\
+      &= \lim\limits_{\Delta x\to 0}\frac{\cancel{\Delta x}\left(2x_{0}-\Delta x\right)}{\cancel{\Delta x}}\\
+      &= \lim\limits_{\Delta x\to 0}2x_{0}-\Delta x\\
+      &= 2x_{0}.
+  \end{align*}
+  I.e. we see that any point $x_{0}$ the derivative of $f(x)=x^{2}$ is simply $2x_{0}$.
+
+  For example, at $x_{0}=3$ the derivative is $M=6$, and at $x_{0}=0$ the derivative is $M=0$.
+\end{example}
+
+Up until now we have regarded the derivative as a property of some point on some function $f$. However, since we can calculate the derivative at each point of the function\footnote{except for some points which we will discuss later.}, we can collect all these points together to form a new function, which we call the \emph{derivative} of $f$ and denote as $f'$ (read: ``$f$-prime'').
+
+In \autoref{example:linear_derivative} we saw that the derivative of a linear function at any point gives the same value $m$ (namely the slope of the linear function). Therefore, this derivative is itself a \textit{constant} function $f'(x)=m$. When we calculated the derivative of $f(x)=x^{2}$ (\autoref{example:derivative_x^2}), we found that it depends on the point where it was calculated, using the relation $f'(x)=2x$, which is a linear function with slope $2$ that goes through the origin.
+
+Let us now calculate the derivative of some common functions.
+\begin{example}{Derivative of $ax^{n}$}{derivative_ax^n}
+  The derivative of the function $f(x)=ax^{n}$ (where $a\in\Rs$ is a constant) is (recall the binomial expansion, \autoref{eq:binomial_expansion_n}):
+  \begin{align*}
+    f'(x) &= \lim\limits_{\Delta x\to 0}\frac{a(x+\Delta x)^{n}-ax^{n}}{\Delta x}\\
+          &= \lim\limits_{\Delta x\to 0}\frac{a\left[\cancel{x^{n}} + nx^{n-1}\Delta x + \binom{2}{n}x^{n-2}\left(\Delta x\right)^{2} + \dots + nx\left(\Delta x\right)^{n-1} + \left(\Delta x\right)^{n}\right]-\cancel{ax^{n}}}{\Delta x}.
+  \end{align*}
+  We can take $\Delta x$ out of the numerator and cancel it out with the $\Delta x$ in the denominator:
+  \begin{align*}
+    f'(x) &= \lim\limits_{\Delta x\to 0}\frac{a\cancel{\Delta x}\left[ nx^{n-1} + \binom{2}{n}x^{n-2}\Delta x + \dots + nx\left(\Delta x\right)^{n-2} + \left(\Delta x\right)^{n-1} \right]}{\cancel{\Delta x}}\\
+          &= \lim\limits_{\Delta x\to 0}a\left[ nx^{n-1} + \binom{2}{n}x^{n-2}\Delta x + \dots + nx\left(\Delta x\right)^{n-2} + \left(\Delta x\right)^{n-1} \right].
+  \end{align*}
+  Since all expressions except $nx^{n-1}$ have some power of $\Delta x$ in them, in the limit $\Delta x\to 0$ they all vanish, leaving us with
+  \[
+    f'(x) = anx^{n-1}.
+  \]
+
+  This derivative is commonly described as the power of $x$ being reduced by $1$ and the expression gaining a factor of $n$ (i.e. the power before reducing it).
+\end{example}
+
+\begin{example}{Derivative of $a^{x}$}{}
+  \tbw{Note}:
+
+  Use the fact that $\lim\limits_{h\to 0}\frac{a^{h}-1}{h}=\log(a)$. Therefore we also get that $\lim\limits_{h\to 0}\frac{\eu^{h}-1}{h}=\log(\eu)=1$.
+\end{example}
+
+\begin{example}{Derivative of $\sin(x)$}{}
+  Calculating the derivative of $\sin(x)$:
+  \begin{align*}
+    \sin'(x) &= \lim\limits_{\Delta x\to 0}\frac{\sin\left(x+\Delta x\right)-\sin(x)}{\Delta x}\\
+             &= \lim\limits_{\Delta x\to 0}\frac{\sin(x)\cos\left(\Delta x\right)+\cos(x)\sin\left(\Delta x\right)-\sin(x)}{\Delta x}.
+  \end{align*}
+  We can separate the three terms into three limits:
+  \[
+    \sin'(x) = \lim\limits_{\Delta x\to 0}\frac{\sin(x)\left[\cos\left(\Delta x\right)-1\right]}{\Delta x} + \lim\limits_{\Delta x\to 0}\frac{\cos(x)\sin\left(\Delta x\right)}{\Delta x}.
+  \]
+  The second limit equals $\cos(x)$, since $\lim\limits_{c\to 0}\frac{\sin(c)}{c}=1$ (\autoref{eq:XXX}). Since $\sin(x)$ does not change as we decrease $\Delta x$, we can regard it as a constant and take it out of the limit:
+  \[
+    \sin'(x) = \sin(x)\lim\limits_{\Delta x\to 0}\frac{\cos\left(\Delta x\right)-1}{\Delta x} + \cos(x).
+  \]
+  Using the double angle identity (\autoref{eq:double_angle}) on $\cos\left(\Delta x\right)$ we get that
+  \[
+    \cos\left(\Delta x\right) = 1-2\sin^{2}\left(\frac{\Delta x}{2}\right),
+  \]
+  and by plugging this back into the derivative calculation we get:
+  \begin{align*}
+    \sin'(x) &= \lim\limits_{\Delta x\to 0}\frac{-2\sin^{2}\left(\frac{\Delta x}{2}\right)}{\Delta x} + \cos(x)\\
+             &= \lim\limits_{\Delta x\to 0}\frac{-\cancel{\frac{2}{2}}\sin^{2}\left(\frac{\Delta x}{2}\right)}{\frac{\Delta x}{2}} + \cos(x)\\
+             &= \cos(x),
+  \end{align*}
+  since $\lim\limits_{h\to0}\frac{\sin^{2}(h)}{h}=0$ (\autoref{eq:XXX}).
+
+  \tbw{in the limit section show and prove this limit}
+\end{example}
+
+\begin{example}{Derivatie of $\sqrt{x}$}{}
+  The derivative of the function $f(x)=\sqrt{x}$ is:
+  \[
+    f'(x) = \lim\limits_{\Delta x\to 0}\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\Delta x}.
+  \]
+  We can multiply the numerator and denominator each by $\sqrt{x+\Delta x}+\sqrt{x}$. This would allow us to use the relation $(a-b)(a+b)=a^{2}-b^{2}$:
+  \begin{align*}
+    f'(x) &= \lim\limits_{\Delta x\to 0}\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\Delta x}\\
+          &= \lim\limits_{\Delta x\to 0}\frac{\cancelcol[xred]{x}+\cancelcol[xblue]{\Delta x}-\cancelcol[xred]{x}}{\cancelcol[xblue]{\Delta x}\left(\sqrt{x+\Delta x}+\sqrt{x}\right)}\\
+          &= \frac{1}{\sqrt{x}+\sqrt{x}}\\
+          &= \frac{1}{2\sqrt{x}}.
+  \end{align*}
+\end{example}

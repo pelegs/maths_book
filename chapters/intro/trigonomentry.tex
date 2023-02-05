@@ -137,7 +137,7 @@ Using this definition, the angle $\theta$ can take any value between $\ang{0}$ a
 		\def\R{3}
 		\draw[very thick, fill=xpurple!15] (0,0) circle (\R);
 		\foreach \th in {0, 45, 90, 135, 180, 200, 270, 330}{
-			\draw[ultra thick, densely dashed, white] (0,0) -- ({1.05*\R*cos(\th)},{1.05*\R*sin(\th)});
+			\draw[ultra thick, densely dashed, xpurple!75!black!40] (0,0) -- ({1.05*\R*cos(\th)},{1.05*\R*sin(\th)});
 			\draw[very thick] ({0.95*\R*cos(\th)},{0.95*\R*sin(\th)}) -- ({1.05*\R*cos(\th)},{1.05*\R*sin(\th)});
 			\node at ({1.075*\R*cos(\th)},{1.075*\R*sin(\th)}) (\th) {};
 		}
@@ -334,7 +334,7 @@ The following are some useful facts and connections between trigonometric functi
 		\begin{align}
 			\sin(2\theta) &= 2\sin(\theta)\cos(\theta) = \frac{2\tan \left( \theta \right)}{1+\tan^{2} \left( \theta \right)}.\\
 			\cos(2\theta) &= 1-2\sin^{2}(\theta) = \frac{1-\tan^{2} \left( \theta \right) }{1+\tan^{2} \left( \theta \right)}.
-			\label{eq:tan_double_angles}
+			\label{eq:double_angles}
 		\end{align}
 	
 	\item Half angle:
