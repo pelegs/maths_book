@@ -1,4 +1,9 @@
 \section{Derivatives}
+\label{sec:derivatives}
+
+\subsection{Introduction}
+\label{sub:introduction}
+
 One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the ability to quantitatively describe the way it behaves as we change its argument $x$. At any given point a function can either increase in its value, decrease in its value, or stay constant. We would like to develop a method that is able to tell us exactly how such function changes at any given point.
 
 \begin{example}{Quantitative measure of change}{}
@@ -28,7 +33,7 @@ One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the abil
   While all three functions are increasing on $[a,b]$ it is clear that the rate of increase between the functions is different: the red function increases faster than the green one, which in turn increases faster than the blue one. In fact, even within each function the increase is not uniform: the more $x$ increases so does the rate of increase of the function.
 \end{example}
 
-To start developing a method to quantitatively measure the rate of change in a real function, we can first notice a property of some functions: if we zoom in on some point of the function $\bm{p}=\left(a,f\left(a\right)\right)$ we would see that the more we zoom in the more the the function behaves like a straight line around $\bm{p}$ (\autoref{fig:zoom_in}). We can define the limit of this zoom (i.e. when the zoom factor goes to infinity) as the slope of the function at the $\bm{p}$.
+All fundamental real functions have the following property: if we zoom in a lot on some point $\bm{p}$ on the function $f$, i.e. $\bm{p}=\left(a,f\left(a\right)\right)$, we would see that the function behaves somewhat like a straight line around $\bm{p}$ (\autoref{fig:zoom_in}). The more we zoom in, the more the function seems to be linear around $\bm{p}$. At the limit where the zoom factor is inifinite, the line around $\bm{p}$ has the same direction (i.e. slope) as the tangent line to the function at $\bm{p}$ (\autoref{fig:derivative_slope}). We call this slope the \emph{derivative} of the function at the $x$ value of $\bm{p}$ (i.e. at $x=a$), and denote it as $f'(a)$.
 
 \tikzset{
   bslope/.style={very thick, dashed, #1},
@@ -37,8 +42,9 @@ To start developing a method to quantitatively measure the rate of change in a r
   \centering
   \begin{tikzpicture}
     \pgfmathsetmacro{\zo}{1}
-    \pgfmathsetmacro{\za}{0.02}
+    \pgfmathsetmacro{\za}{0.06}
     \pgfmathsetmacro{\zb}{0.1}
+    \pgfmathsetmacro{\zc}{0.005}
     \pgfmathsetmacro{\a}{3.75}
     \pgfmathsetmacro{\b}{3.1}
     \pgfmathsetmacro{\R}{0.03}
@@ -63,6 +69,8 @@ To start developing a method to quantitatively measure the rate of change in a r
       ylabel=$y$,
       name=ax1,
       ]
+      \coordinate (a) at (\a, {zoomF(\a,\a)});
+      \coordinate (b) at (\b, {zoomF(\b,\a)});
       \addplot[only marks, mark=*] coordinates {
           (\a,{zoomF(\a,\a)})
           (\b,{zoomF(\b,\a)})
@@ -80,6 +88,8 @@ To start developing a method to quantitatively measure the rate of change in a r
       \coordinate (cb3) at ({\b+\zb},{zoomF(\b,\a)+\zb});
       \coordinate (cb4) at ({\b+\zb},{zoomF(\b,\a)-\zb});
       \draw (cb1) rectangle (cb3);
+      \node[right of=a, xshift=15pt] (btxt) {$\bm{p}_{a}=\left(a,f(a)\right)$};
+      \node[right of=b, xshift=15pt] (btxt) {$\bm{p}_{b}=\left(b,f(b)\right)$};
     \end{axis}
     \begin{axis}[
       zoomin={\a}{\za},
@@ -87,40 +97,167 @@ To start developing a method to quantitatively measure the rate of change in a r
       at={($(ax1.south east)+(-6cm,7cm)$)},
       ]
       \coordinate (a) at (\a, {zoomF(\a,\a)});
-      % \draw[bslope={xblue}] (\a,\a) -- ({\a+\za},{\a+\za*\ma});
-      % \draw[bslope={xblue}] (\a,\a) -- ({\a-\za},{\a-\za*\ma});
+      \coordinate (cc1) at ({\a-\zc},{\a-\zc});
+      \coordinate (cc2) at ({\a-\zc},{\a+\zc});
+      \coordinate (cc3) at ({\a+\zc},{\a+\zc});
+      \coordinate (cc4) at ({\a+\zc},{\a-\zc});
+      \draw (cc1) rectangle (cc3);
       \addplot[function, xred] {zoomF(x,\a)};
       \addplot[only marks, mark=*] coordinates {
           (\a,\a)
         };
-      \node[above right of=a, yshift=-3pt] (atxt) {$\bm{p}_{a}=\left(a,f(a)\right)$};
     \end{axis}
     \begin{axis}[
       zoomin={\b}{\zb},
       name=zoom_b,
-      at={($(ax1.south east)+(-7cm,-7cm)$)},
+      at={($(ax1.south east)+(-7cm,-6cm)$)},
       ]
       \addplot[only marks, mark=*] coordinates {
           (\b,\b)
         };
       \coordinate (b) at (\b, {zoomF(\b,\b)});
-      \draw[bslope={xdarkgreen}] (\b,\b) -- ({\b+\zb},{\b+\zb*\mb});
-      \draw[bslope={xdarkgreen}] (\b,\b) -- ({\b-\zb},{\b-\zb*\mb});
       \addplot[function, xred] {zoomF(x,\b)};
       \fill (\b,\b) circle ({\R*\zb});
-      \node[right of=b, anchor=west, xshift=-20pt] (btxt) {$\bm{p}_{b}=\left(b,f(b)\right)$};
+    \end{axis}
+    \begin{axis}[
+      zoomin={\a}{\zc},
+      width=5cm, height=5cm,
+      name=zoom_c,
+      at={($(zoom_a.south east)+(2cm,1cm)$)},
+      ]
+      \coordinate (a) at (\a, {zoomF(\a,\a)});
+      \addplot[function, xred] {zoomF(x,\a)};
+      \addplot[only marks, mark=*] coordinates {
+          (\a,\a)
+        };
     \end{axis}
     % To a
     \draw[dashed] (ca2) -- (zoom_a.south west);
     \draw[dashed] (ca3) -- (zoom_a.south east);
     \draw[dashed] (cb1) -- (zoom_b.north west);
     \draw[dashed] (cb4) -- (zoom_b.north east);
+    \draw[dashed] (cc3) -- (zoom_c.north west);
+    \draw[dashed] (cc4) -- (zoom_c.south west);
   \end{tikzpicture}
   \caption{Zooming in on a real function $f$ at two points: $\bm{p}_{a}=\left(a,f(a)\right)$ (upper right) and $\bm{p}_{b}=\left(b,f(b)\right)$ (bottom right). Note how around each of the points, the function looks somewhat linear: this is more pronounced around $\bm{p}_{b}$ where the function looks linear in the entire zoomed-in area, while near $\bm{p}_{a}$ it looks linear only near the point itself even though the zoom factor is higher.}
   \label{fig:zoom_in}
 \end{figure}
 
-How can we quantify this idea? Let us consider some real function $f$ and a point $\bm{p}_{0} = \left(x_{0},f\left(x_{0}\right)\right)$ on the function. We can then define another point to the right of $x_{0}$: $\bm{p}_{1}=\left(x_{1},f\left(x_{1}\right)\right)$. Since $x_{1}$ is to the right of $x_{0}$ we can write it as $x_{1}=x_{0}+\Delta x$, where $\Delta x>0$. We then connect the two points with a line (\autoref{fig:x0_x1_line}). The slope of this line can then be calculated using \autoref{eq:linear_slope_def}:
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[node distance=13pt]
+    \tikzset{
+      derivative line/.style={xred, very thick, densely dotted},
+      declare function={
+        f(\x) = 5*exp(-(\x-6)^2/1.5^2);
+        df(\x) = -8/9*(\x-6)*f(\x);
+      },
+    }
+    \pgfmathsetmacro{\a}{5.9}
+    \pgfmathsetmacro{\m}{df(\a)}
+    \pgfmathsetmacro{\zf}{0.1}
+    \begin{axis}[
+        name=main,
+        graph2d,
+        width=12cm, height=12cm, 
+        xmin=1, xmax=10,
+        ymin=0, ymax=9,
+        axis line style={-stealth, thick},
+        extra x ticks={\a},
+        extra x tick label={$a$},
+        extra x tick style={
+          major x tick style={draw, xblue},
+          tick label style={xblue},
+          grid=none,
+        },
+        extra y ticks={f(\a)},
+        extra y tick label={$f(a)$},
+        extra y tick style={
+          major y tick style={draw, xblue},
+          tick label style={xblue},
+          grid=none,
+        },
+        xticklabels={},
+        yticklabels={},
+        domain={0:10},
+        grid=both,
+        minor grid style={draw=black!3},
+        major grid style={draw=black!3},
+      ]
+      \draw[derivative line] ({\a-2},{f(\a)-2*\m}) -- ({\a+2},{f(\a)+2*\m}) node[pos=0.7, above, rotate={atan(\m)}] {$m=f'(a)$};
+      \addplot[function, xblue] {f(x)};
+      \addplot[only marks, mark=*] coordinates {
+          (\a,{f(\a)})
+        };
+      \coordinate (c1) at ({\a-\zf},{f(\a)-\zf});
+      \coordinate (c2) at ({\a-\zf},{f(\a)+\zf});
+      \coordinate (c3) at ({\a+\zf},{f(\a)+\zf});
+      \coordinate (c4) at ({\a+\zf},{f(\a)-\zf});
+      \draw[thick] (c1) rectangle (c3);
+    \end{axis}
+    \begin{axis}[
+        at={($(main.south west)+(1cm,7cm)$)},
+        name=zoom,
+        width=5cm, height=5cm,
+        xmin=\a-\zf, xmax=\a+\zf,
+        ymin=f(\a)-\zf, ymax=f(\a)+\zf,
+        axis line style={-stealth, thick},
+        xticklabels={},
+        yticklabels={},
+        domain={\a-\zf:\a+\zf},
+        grid=both,
+        minor grid style={draw=black!3},
+        major grid style={draw=black!3},
+      ]
+      \draw[derivative line] ({\a-2},{f(\a)-2*\m}) -- ({\a+2},{f(\a)+2*\m});
+      \addplot[function, xblue] {f(x)};
+      \addplot[only marks, mark=*] coordinates {
+          (\a,{f(\a)})
+        };
+      \coordinate (A) at (\a,{f(\a)});
+      \node[above left of=A] {$\left(a,f(a)\right)$};
+    \end{axis}
+  \draw[dashed] (c2) -- (zoom.south west);
+  \draw[dashed] (c3) -- (zoom.south east);
+  \end{tikzpicture}
+  \caption{The derivative of the function $f(x)$ at $x=a$ is equal to the slope of the tangent line to $f$ at the point $\left(a,f(a)\right)$.}
+  \label{fig:derivative_slope}
+\end{figure}
+
+\subsection{Sign and stationary points}
+\label{sub:sign and stationary points}
+The derivative of a function at some point $a$ can be one of four possible categories:
+\begin{itemize}
+  \item Positive numbers, meaning that the function \textbf{increases} at $a$.
+  \item Negative numbers, meaning that the function \textbf{decreases} at $a$.
+  \item Zero, meaning that $a$ is a \emph{stationary point}.
+  \item Undefined, which can mean different things and which we will address later.
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      graph2d,
+      width=12cm, height=10cm,
+      axis line style={-stealth, thick},
+      xmin=0, xmax=12,
+      ymin=0, ymax=10,
+      domain={0:12},
+      declare function={
+        f(\x) = 0.15*(\x-8)^3+1.2*(\x-8)^2+(\x-8)+1;
+      }
+    ]
+    \addplot[function, xgreen] {f(x)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Text.}
+  \label{fig:x0_x1_line}
+\end{figure}
+
+\subsection{Calculating the derivative}
+\label{sub:calculating the derivative}
+How can we quantify the derivative? Let us consider some real function $f$ and a point $\bm{p}_{0} = \left(x_{0},f\left(x_{0}\right)\right)$ on the function. We can then define another point to the right of $x_{0}$: $\bm{p}_{1}=\left(x_{1},f\left(x_{1}\right)\right)$. Since $x_{1}$ is to the right of $x_{0}$ we can write it as $x_{1}=x_{0}+\Delta x$, where $\Delta x>0$. We then connect the two points with a line (\autoref{fig:x0_x1_line}). The slope of this line can then be calculated using \autoref{eq:linear_slope_def}:
 \begin{equation}
   m = \frac{\Delta y}{\Delta x} = \frac{f\left(x_{1}\right)-f\left(x_{0}\right)}{x_{1}-x_{0}} = \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{x_{0}+\Delta x - x_{0}} = \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}.
   \label{eq:derivative_slope_def}
