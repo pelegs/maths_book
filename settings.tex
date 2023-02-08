@@ -905,3 +905,9 @@
 \pgfmathparse{\mysum}%
 \pgfmathsmuggle\pgfmathresult\endgroup%
 }%
+
+\newcommand{\SignOf}[1]{
+  \ifthenelse{#1<0}{<}{
+    \ifthenelse{#1>0}{>}{=}
+  }
+}

@@ -4,7 +4,7 @@
 \subsection{Introduction}
 \label{sub:introduction}
 
-One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the ability to quantitatively describe the way it behaves as we change its argument $x$. At any given point a function can either increase in its value, decrease in its value, or stay constant. We would like to develop a method that is able to tell us exactly how such function changes at any given point.
+One of the most important tools in analyzing real functions is the ability to quantitatively describe the way they behaves as we change the argument $x$. At any given point a function can either increase in its value, decrease in its value, stay constant or be undefined. In this section we will explore a method which enables us to quantitatively measure the change in a function's value at (almost) any point in its domain.
 
 \begin{example}{Quantitative measure of change}{}
   Compare the following three functions on the domain $x\in[a,b]$:
@@ -30,10 +30,10 @@ One of the most important tool in analyzing a function $f:\Rs\to\Rs$ is the abil
   \end{tikzpicture}
 
   \flushleft
-  While all three functions are increasing on $[a,b]$ it is clear that the rate of increase between the functions is different: the red function increases faster than the green one, which in turn increases faster than the blue one. In fact, even within each function the increase is not uniform: the more $x$ increases so does the rate of increase of the function.
+  While all three functions are increasing on $[a,b]$ it is clear that the rate of increase is different in each function: the red function increases faster than the green one, which in turn increases faster than the blue one. In fact, even within each function the increase is not uniform: the more $x$ increases so does the rate of increase of each of the functions.
 \end{example}
 
-All fundamental real functions have the following property: if we zoom in a lot on some point $\bm{p}$ on the function $f$, i.e. $\bm{p}=\left(a,f\left(a\right)\right)$, we would see that the function behaves somewhat like a straight line around $\bm{p}$ (\autoref{fig:zoom_in}). The more we zoom in, the more the function seems to be linear around $\bm{p}$. At the limit where the zoom factor is inifinite, the line around $\bm{p}$ has the same direction (i.e. slope) as the tangent line to the function at $\bm{p}$ (\autoref{fig:derivative_slope}). We call this slope the \emph{derivative} of the function at the $x$ value of $\bm{p}$ (i.e. at $x=a$), and denote it as $f'(a)$.
+Any fundamental real function has the following property: if we zoom in enough on some point $\bm{p}=\left(a,f\left(a\right)\right)$ on the function, we would see that it behaves somewhat like a straight line around $\bm{p}$ (\autoref{fig:zoom_in}). In fact, the more we zoom in, the more the function becomes linear around $\bm{p}$. At the limit where the zoom factor is inifinite, the function is exactly linear around $\bm{p}$, and has the same direction (i.e. slope) as the tangent line to the function at $\bm{p}$ (\autoref{fig:derivative_slope}). We call this slope the \emph{derivative} of $f$ at $x=a$, and denote it as $f'(a)$.
 
 \tikzset{
   bslope/.style={very thick, dashed, #1},
@@ -159,7 +159,7 @@ All fundamental real functions have the following property: if we zoom in a lot 
     \begin{axis}[
         name=main,
         graph2d,
-        width=12cm, height=12cm, 
+        width=11cm, height=11cm, 
         xmin=1, xmax=10,
         ymin=0, ymax=9,
         axis line style={-stealth, thick},
@@ -226,17 +226,22 @@ All fundamental real functions have the following property: if we zoom in a lot 
 
 \subsection{Sign and stationary points}
 \label{sub:sign and stationary points}
-The derivative of a function at some point $a$ can be one of four possible categories:
+The derivative of a function $f$ at the point $a$ can be one of four possible categories (\autoref{fig:derivative_sign}):
 \begin{itemize}
-  \item Positive numbers, meaning that the function \textbf{increases} at $a$.
-  \item Negative numbers, meaning that the function \textbf{decreases} at $a$.
-  \item Zero, meaning that $a$ is a \emph{stationary point}.
-  \item Undefined, which can mean different things and which we will address later.
+  \item $f(a)>0$, meaning that $f$ \textbf{increases} at $a$.
+  \item $f(a)<0$, meaning that $f$ \textbf{decreases} at $a$.
+  \item $f(a)=0$, meaning that $a$ is a \emph{stationary point}.
+  \item $f(a)$ is undefined, which can mean different things and which we will address later.
 \end{itemize}
 
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[node distance=8pt]
+    \pgfmathsetmacro{\a}{2}
+    \pgfmathsetmacro{\b}{3.122}
+    \pgfmathsetmacro{\c}{6}
+    \pgfmathsetmacro{\d}{7.544}
+    \pgfmathsetmacro{\e}{9.6}
     \begin{axis}[
       graph2d,
       width=12cm, height=10cm,
@@ -244,15 +249,51 @@ The derivative of a function at some point $a$ can be one of four possible categ
       xmin=0, xmax=12,
       ymin=0, ymax=10,
       domain={0:12},
+      xticklabels={},
+      yticklabels={},
+      extra x ticks={\a, \b, \c, \d, \e},
+      extra x tick labels={$x_{1}$, $x_{2}$, $x_{3}$, $x_{4}$, $x_{5}$},
+      extra x tick style={
+        major x tick style={draw, xblue},
+        tick label style={xblue},
+        grid=none,
+      },
+      grid=both,
+      major grid style={black!3},
+      minor grid style={black!3},
       declare function={
         f(\x) = 0.15*(\x-8)^3+1.2*(\x-8)^2+(\x-8)+1;
+        Df(\x) = (9*\x^2-96*\x+212)/20;
       }
     ]
     \addplot[function, xgreen] {f(x)};
+    \addplot[only marks, mark=*] coordinates {
+        (\a,{f(\a)})
+        (\b,{f(\b)})
+        (\c,{f(\c)})
+        (\d,{f(\d)})
+        (\e,{f(\e)})
+      };
+    \foreach \x in {\a, \b, \c, \d, \e}{
+      \pgfmathsetmacro{\M}{Df(\x)}
+      \pgfmathsetmacro{\N}{sqrt(1/(1+(\M)^2))} % normalizes the length of the line
+      \edef\drawSlope{\noexpand\draw[vector, xred] ({\x-\N},{f(\x)-\N*\M}) -- ({\x+\N},{f(\x)+\N*\M});}
+      \edef\drawDashes{\noexpand\draw[dashed, xblue!20] (\x,0) -- (\x,{f(\x)});}
+      \edef\createCoord{\noexpand\coordinate (p-\x) at (\x, {f(\x)});}
+      \drawSlope
+      \drawDashes
+      \createCoord
+    }
+    % I would love to do this proceduraly, but it keeps giving me errors so manually it is ¯\_(ツ)_/¯
+    \node[left of=p-\a, text=xred, xshift=-20pt] {$f'\left(x_{1}\right)>0$};
+    \node[above of=p-\b, text=xred, yshift=5pt] {$f'\left(x_{2}\right)=0$};
+    \node[left of=p-\c, text=xred, xshift=-20pt] {$f'\left(x_{3}\right)<0$};
+    \node[below of=p-\d, text=xred] {$f'\left(x_{4}\right)=0$};
+    \node[left of=p-\e, text=xred, xshift=-20pt] {$f'\left(x_{5}\right)>0$};
     \end{axis}
   \end{tikzpicture}
-  \caption{Text.}
-  \label{fig:x0_x1_line}
+  \caption{The derivative of a function $f(x)$ at some points $\bm{p}_{i}=\left(x_{i},f\left(x_{i}\right)\right)$ on the function: when $f$ increases the derivative is positive ($\bm{p}_{1},\bm{p}_{5}$), when it decreases the derivative is negative ($\bm{p}_{3}$), and when it is stationary the derivative equals zero ($\bm{p}_{2},\bm{p}_{4}$). The slope of the tangent line to $f$ at each of the points $\bm{p}_{i}$ is drawn as an arrow to make its sign (positive, negative or zero) more clear.}
+  \label{fig:derivative_sign}
 \end{figure}
 
 \subsection{Calculating the derivative}
