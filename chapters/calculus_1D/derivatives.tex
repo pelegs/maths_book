@@ -567,3 +567,39 @@ Let us now calculate the derivative of some common functions.
           &= \frac{1}{2\sqrt{x}}.
   \end{align*}
 \end{example}
+
+\autoref{tab:common_derivatives} lists some common functions and their derivatives.
+\begin{table}[htpb]
+	\centering
+	\caption{Some common real functions and their derivatives.}
+	\label{tab:common_derivatives}
+	\begin{NiceTabular}{lll}[
+			cell-space-limits=3pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+		]
+		\toprule
+    \RowStyle{\bfseries} $f(x)$ & $f'(x)$ & Remarks\\
+		\midrule
+    $c$ & $0$ & $c\in\Rs$\\
+    $mx+b$ & $m$ $m,b\in\Rs$\\
+    $ax^{2}$ & $2ax$ & $a\in\Rs$ \\
+    $ax^{n}$ & $nax^{n-1}$ & $a\in\Rs$\\
+    $\sqrt{x}$ & $\frac{1}{2\sqrt{x}}$ & $x\geq0$\\
+    $\eu^{x}$ & $\eu^{x}$ &\\
+    $a^{x}$ & $a^{x}\log(a)$ & $a>0$\\
+    $\log(x)$ & $\frac{1}{x}$ & $x>0$\\
+    $\log_{b}(x)$ & $\frac{1}{x\log(b)}$ & $x,b>0$\\
+    $\sin(x)$ & $\cos(x)$ & \\
+    $\cos(x)$ & $\sin(x)$ & \\
+    $\tan(x)$ & $\frac{1}{\cos^{2}(x)}=1+\tan^{2}(x)$ & $x\notin\left\{\frac{\pi}{2}+k\right\},k\in\mathbb{Z}$\\
+    $\arcsin(x)$ & $\frac{1}{\sqrt{1-x^{2}}}$ & $-1<x<1$\\
+    $\arccos(x)$ & $-\frac{1}{\sqrt{1-x^{2}}}$ & $-1<x<1$ \\
+    $\arctan(x)$ & $\frac{1}{1+x^{2}}$ & \\
+    $\sinh(x)$ & $\cosh(x)$ & \\
+    $\cosh(x)$ & $\sinh(x)$ & \\
+    $\tanh(x)$ & $1-\tanh^{2}(x)$ & \\
+		\bottomrule
+	\end{NiceTabular}
+\end{table}
+
+\section{Linearity and combined functions}
+\label{sec:section name}

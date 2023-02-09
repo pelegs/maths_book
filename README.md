@@ -1,6 +1,6 @@
 A mathematics book for natural science students.
 
-Current number of pages: 269.
+Current number of pages: 271.
 
 The always-updating PDF of the current state of the book can be found [here](https://github.com/pelegs/maths_book/blob/main/bookmain.pdf).
 
