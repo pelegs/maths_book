@@ -296,6 +296,14 @@ The derivative of a function $f$ at the point $a$ can be one of four possible ca
   \label{fig:derivative_sign}
 \end{figure}
 
+\tbw{a graph of a ``complicated'' function together with its derivative}
+
+\tbw{when the derivative isn't defined}
+
+\tbw{differentiability on an interval}
+
+\tbw{a summary of what we learned so far}
+
 \subsection{Calculating the derivative}
 \label{sub:calculating the derivative}
 How can we quantify the derivative? Let us consider some real function $f$ and a point $\bm{p}_{0} = \left(x_{0},f\left(x_{0}\right)\right)$ on the function. We can then define another point to the right of $x_{0}$: $\bm{p}_{1}=\left(x_{1},f\left(x_{1}\right)\right)$. Since $x_{1}$ is to the right of $x_{0}$ we can write it as $x_{1}=x_{0}+\Delta x$, where $\Delta x>0$. We then connect the two points with a line (\autoref{fig:x0_x1_line}). The slope of this line can then be calculated using \autoref{eq:linear_slope_def}:
@@ -495,34 +503,50 @@ This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, an
   For example, at $x_{0}=3$ the derivative is $M=6$, and at $x_{0}=0$ the derivative is $M=0$.
 \end{example}
 
-Up until now we have regarded the derivative as a property of some point on some function $f$. However, since we can calculate the derivative at each point of the function\footnote{except for some points which we will discuss later.}, we can collect all these points together to form a new function, which we call the \emph{derivative} of $f$ and denote as $f'$ (read: ``$f$-prime'').
+Up until now we have regarded the derivative as a property of some point on a function $f$. However, since we can calculate the derivative at each point of the function\footnote{except for some points which we will discuss later.}, we can collect all these points together to form a new function, which we call the \emph{derivative} of $f$ and denote as $f'$ (read: ``$f$-prime'').
 
 In \autoref{example:linear_derivative} we saw that the derivative of a linear function at any point gives the same value $m$ (namely the slope of the linear function). Therefore, this derivative is itself a \textit{constant} function $f'(x)=m$. When we calculated the derivative of $f(x)=x^{2}$ (\autoref{example:derivative_x^2}), we found that it depends on the point where it was calculated, using the relation $f'(x)=2x$, which is a linear function with slope $2$ that goes through the origin.
 
 Let us now calculate the derivative of some common functions.
 \begin{example}{Derivative of $ax^{n}$}{derivative_ax^n}
-  The derivative of the function $f(x)=ax^{n}$ (where $a\in\Rs$ is a constant) is (recall the binomial expansion, \autoref{eq:binomial_expansion_n}):
+  The derivative of the function $f(x)=x^{n}$ (where $a\in\Rs$ is a constant) is (recall the binomial expansion, \autoref{eq:binomial_expansion_n}):
   \begin{align*}
-    f'(x) &= \lim\limits_{\Delta x\to 0}\frac{a(x+\Delta x)^{n}-ax^{n}}{\Delta x}\\
-          &= \lim\limits_{\Delta x\to 0}\frac{a\left[\cancel{x^{n}} + nx^{n-1}\Delta x + \binom{2}{n}x^{n-2}\left(\Delta x\right)^{2} + \dots + nx\left(\Delta x\right)^{n-1} + \left(\Delta x\right)^{n}\right]-\cancel{ax^{n}}}{\Delta x}.
+    f'(x) &= \lim\limits_{\Delta x\to 0}\frac{(x+\Delta x)^{n}-x^{n}}{\Delta x}\\
+          &= \lim\limits_{\Delta x\to 0}\frac{\cancel{x^{n}} + nx^{n-1}\Delta x + \binom{2}{n}x^{n-2}\left(\Delta x\right)^{2} + \dots + nx\left(\Delta x\right)^{n-1} + \left(\Delta x\right)^{n}-\cancel{x^{n}}}{\Delta x}.
   \end{align*}
   We can take $\Delta x$ out of the numerator and cancel it out with the $\Delta x$ in the denominator:
   \begin{align*}
-    f'(x) &= \lim\limits_{\Delta x\to 0}\frac{a\cancel{\Delta x}\left[ nx^{n-1} + \binom{2}{n}x^{n-2}\Delta x + \dots + nx\left(\Delta x\right)^{n-2} + \left(\Delta x\right)^{n-1} \right]}{\cancel{\Delta x}}\\
-          &= \lim\limits_{\Delta x\to 0}a\left[ nx^{n-1} + \binom{2}{n}x^{n-2}\Delta x + \dots + nx\left(\Delta x\right)^{n-2} + \left(\Delta x\right)^{n-1} \right].
+    f'(x) &= \lim\limits_{\Delta x\to 0}\frac{\cancel{\Delta x}\left[ nx^{n-1} + \binom{2}{n}x^{n-2}\Delta x + \dots + nx\left(\Delta x\right)^{n-2} + \left(\Delta x\right)^{n-1} \right]}{\cancel{\Delta x}}\\
+          &= \lim\limits_{\Delta x\to 0} nx^{n-1} + \binom{2}{n}x^{n-2}\Delta x + \dots + nx\left(\Delta x\right)^{n-2} + \left(\Delta x\right)^{n-1}.
   \end{align*}
   Since all expressions except $nx^{n-1}$ have some power of $\Delta x$ in them, in the limit $\Delta x\to 0$ they all vanish, leaving us with
   \[
-    f'(x) = anx^{n-1}.
+    f'(x) = nx^{n-1}.
   \]
 
   This derivative is commonly described as the power of $x$ being reduced by $1$ and the expression gaining a factor of $n$ (i.e. the power before reducing it).
 \end{example}
 
 \begin{example}{Derivative of $a^{x}$}{}
-  \tbw{Note}:
+  Calculating the derivative of $a^{x}$:
 
-  Use the fact that $\lim\limits_{h\to 0}\frac{a^{h}-1}{h}=\log(a)$. Therefore we also get that $\lim\limits_{h\to 0}\frac{\eu^{h}-1}{h}=\log(\eu)=1$.
+  \begin{align*}
+    \left(a^{x}\right)' &= \lim\limits_{\Delta x\to 0}\frac{a^{x+\Delta x}-a^{x}}{\Delta x}\\
+                        &= \lim\limits_{\Delta x\to 0}\frac{a^{x}(a^{\Delta x}-1)}{\Delta x}\\
+                        &= a^{x}\lim\limits_{\Delta x\to 0}\frac{a^{\Delta x}-1}{\Delta x}.
+  \end{align*}
+  (we take $a^{x}$ out of the limit expression because it isn't affected by a change in $\Delta x$)
+
+  According to \autoref{eq:limit_def_log}, the limit in the last expression is one of the defintions of $\ln(a)$, and therefore
+  \[
+    \left(a^{x}\right)' = a^{x}\ln(x).
+  \]
+
+  In the case where $a=\eu$, we get
+  \[
+    \left(\eu^{x}\right)' = \eu^{x}\ln(\eu) = \eu^{x},
+  \]
+  i.e. $\eu^{x}$ is its own derivative.
 \end{example}
 
 \begin{example}{Derivative of $\sin(x)$}{}
@@ -580,14 +604,14 @@ Let us now calculate the derivative of some common functions.
     \RowStyle{\bfseries} $f(x)$ & $f'(x)$ & Remarks\\
 		\midrule
     $c$ & $0$ & $c\in\Rs$\\
-    $mx+b$ & $m$ $m,b\in\Rs$\\
-    $ax^{2}$ & $2ax$ & $a\in\Rs$ \\
-    $ax^{n}$ & $nax^{n-1}$ & $a\in\Rs$\\
+    $mx+b$ & $m$ & $m,b\in\Rs$\\
+    $x^{2}$ & $2x$ & \\
+    $x^{n}$ & $nx^{n-1}$ & \\
     $\sqrt{x}$ & $\frac{1}{2\sqrt{x}}$ & $x\geq0$\\
     $\eu^{x}$ & $\eu^{x}$ &\\
     $a^{x}$ & $a^{x}\log(a)$ & $a>0$\\
-    $\log(x)$ & $\frac{1}{x}$ & $x>0$\\
-    $\log_{b}(x)$ & $\frac{1}{x\log(b)}$ & $x,b>0$\\
+    $\ln(x)$ & $\frac{1}{x}$ & $x>0$\\
+    $\log_{b}(x)$ & $\frac{1}{x\ln(b)}$ & $x,b>0$\\
     $\sin(x)$ & $\cos(x)$ & \\
     $\cos(x)$ & $\sin(x)$ & \\
     $\tan(x)$ & $\frac{1}{\cos^{2}(x)}=1+\tan^{2}(x)$ & $x\notin\left\{\frac{\pi}{2}+k\right\},k\in\mathbb{Z}$\\
@@ -602,4 +626,55 @@ Let us now calculate the derivative of some common functions.
 \end{table}
 
 \section{Linearity and combined functions}
-\label{sec:section name}
+\label{sec:linearity_of_the_derivative}
+
+More often than not we need to derive functions which aren't simple fundamental functions. For example, we might want to derive the polynomial
+\[
+  P(x)=2x^{4}-3x^{3}-2x+7.
+\]
+Using the rule we found in \autoref{example:derivative_ax^n} we can derive each term of $P$ separately, yielding the following:
+\[
+  \left(2x^{4}\right)'=8x^{3},\quad \left(-3x^{3}\right)'=-9x^{2},\quad \left(-2x\right)'=-2,\quad \left(7\right)'=0.
+\]
+
+But how do we derive the entire polynomial? Luckily for us there's an exceedingly simple rule for getting the derivative of any addition of two functions: we simply derive each of the functions separately and add the result. For example, the derivative of $P$ is simply the sum of the derivatives of each of the terms of $P$:
+\[
+  P'(x) = 8x^{3}-9x^{2}-2.
+\]
+
+\begin{example}{Derivatives of sums}{}
+  The derivative of the function
+  \[
+    f(x) = 4x^{7} + \sin(x) + 5^{x} + \log_{7}(x)
+  \]
+  is
+  \begin{align*}
+    f'(x) &= \left(4x^{7}\right)' + \left(\sin(x)\right)' + \left(5^{x}\right)' + \left(\log_{7}(x)\right)'\\
+          &= 28x^{6} + \cos(x) + 5^{x}\ln(5) + \frac{1}{x\ln(7)}.
+  \end{align*}
+\end{example}
+
+In the most general case, given two real functions $f$ and $g$ which are differentiable over some interval $I$, then for any $x\in I$
+\begin{equation}
+  \left(\left[f+g\right](x)\right)' = f'(x)+g'(x).
+  \label{eq:derivative_additivity}
+\end{equation}
+
+A similar idea also applies to functions which are scaled by a real number $\alpha$: if $f$ is differentiable on some interval $I$, then for any $x\in I$
+\begin{equation}
+  \left(\alpha f(x)\right)' = \alpha f'(x).
+  \label{eq:derivative_scalability}
+\end{equation}
+
+\begin{example}{Derivative of scaled functions}{}
+  The derivative of the function
+  \[
+    f(x) = \frac{1}{2}\cos(x)
+  \]
+  is simply
+  \[
+    f'(x) = -\frac{1}{2}\sin(x).
+  \]
+\end{example}
+
+\tbw{the derivative as a linear operator}
