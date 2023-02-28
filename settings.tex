@@ -37,7 +37,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usepackage{tikzpagenodes}
-\usetikzlibrary{backgrounds, math, positioning, calc, decorations.pathreplacing, decorations.text, angles, quotes, perspective, tikzmark, fpu, matrix, fit, shapes, shadows}
+\usetikzlibrary{backgrounds, math, positioning, calc, decorations.pathreplacing, decorations.text, decorations.markings, quotes, perspective, tikzmark, fpu, matrix, fit, shapes, shadows}
 
 \makeatletter
 \tikzoption{canvas is plane}[]{\@setOxy#1}
@@ -62,6 +62,7 @@
 	perp/.style={black!50, thick, dashed},
 	component/.style = {line width=5pt, draw=#1},
 	element/.style = {draw=black, anchor=west, circle, minimum size=7mm, fill=#1},
+  arcnode/.style 2 args = {decorate, decoration={raise=#1, markings, mark=at position 0.5 with {\node[inner sep=0] {#2};}}},
   declare function={
     zoomG(\x)=-(\x-2.4)^3+2*(\x-2.4)^2;
     zoomF(\x,\a)=zoomG(\x)-zoomG(\a)+\a;
