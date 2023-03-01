@@ -1,0 +1,1712 @@
+\begin{equation}
+	\vec{v} = \colvec{v_{1};v_{2};\vdots;v_{n}}.
+	\label{eq:column vector}
+\end{equation}
+%
+% \begin{figure}[h]
+% 	\centering
+% 	\begin{tikzpicture}[every node/.style={font=\large}]
+% 		\pgfmathsetmacro{\ux}{2.5}
+% 		\pgfmathsetmacro{\uy}{2}
+% 		\begin{axis}[
+% 			vector plane,
+% 			width=8cm, height=8cm,
+% 			xmin=-1, xmax=3,
+% 			ymin=-1, ymax=3,
+% 			xticklabels={,},
+% 			yticklabels={,},
+% 			extra x ticks={\ux},
+% 			extra x tick labels={$u^{x}$},
+% 			extra x tick style={color=xred},
+% 			extra y ticks={\uy},
+% 			extra y tick labels={$u^{y}$},
+% 			extra y tick style={color=xred},
+% 			]
+% 			\draw[dashed, black!50] (0,\uy) -- (\ux,\uy) -- (\ux,0);
+% 			\draw (\ux,0.1) -- ({\ux+0.1},0.1) -- ({\ux+0.1},0);
+% 			\draw (0.1,\uy) -- (0.1,{\uy+0.1}) -- (0,{\uy+0.1});
+% 			\draw[vector, xred] (0,0) -- (\ux,\uy) node[above] {$\vec{u}=\colvec{u_{x};u_{y}}$};
+% 			\draw[fill] (0,0) circle[radius=2pt];
+% 			\addplot[only marks, mark=*] coordinates {(0,0)};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% 	\caption{Placing a 2-dimensional vector $\vu$ on the 2-dimensional Cartesian coordinate system, showing its $x$- and $y$-components.}
+% 	\label{fig:vector components}
+% \end{figure}
+%
+% \begin{note}{Order of components}{}
+% 	The order of the components of a vector is important, and should always be consistent. In the case of $2$- and $3$-dimensional the order is always $v_{x},v_{y},v_{z}$.
+% \end{note}
+%
+% \begin{example}{Vector components in two dimensions}{}
+% 	The following five $2$-dimensional vectors are decomposed each into its $x$- and $y$-components:
+%
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 			vector plane,
+% 			width=9cm, height=9cm,
+% 			xmin=-3, xmax=3,
+% 			ymin=-3, ymax=3,
+% 			minor tick num=1,
+% 			]
+% 			\veccomp{u}{-2}{1}{xred}
+% 			\veccomp{v}{1.5}{1}{xblue}
+% 			\veccomp{w}{-0.5}{2}{xpurple}
+% 			\veccomp{a}{0.5}{-2}{xgreen}
+% 			\veccomp{b}{-1}{-2}{xorange}
+% 			\draw[fill] (0,0) circle[radius=2pt];
+% 		\end{axis}
+% 	\end{tikzpicture}
+% \end{example}
+%
+% \begin{example}{Vector components in three dimensions}{}
+% 	The following $3$-dimensional vector is decomposed into its $x$-, $y$- and $z$-components:
+% 	(THIS NEEDS TO BE IMPROVED AND FINISHED)
+%
+% 	\centering
+% 	\tdplotsetmaincoords{75}{120}
+% 	\begin{tikzpicture}[
+% 			scale=5,
+% 			tdplot_main_coords,
+% 			vector guide/.style={dashed, thick, gray}
+% 		]
+% 		%standard tikz coordinate definition using x, y, z coords
+% 		\coordinate (O) at (0,0,0);
+%
+% 		%tikz-3dplot coordinate definition using x, y, z coords
+% 		\pgfmathsetmacro{\ax}{0.8}
+% 		\pgfmathsetmacro{\ay}{0.8}
+% 		\pgfmathsetmacro{\az}{0.8}
+%
+% 		\coordinate (P) at (\ax,\ay,\az);
+%
+% 		%draw axes
+% 		\draw[vector] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+% 		\draw[vector] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+% 		\draw[vector] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+%
+% 		%draw a vector from O to P
+% 		\draw[vector, xred] (O) -- (P);
+%
+% 		%draw guide lines to components
+% 		\draw[vector guide]         (O) -- (\ax,\ay,0);
+% 		\draw[vector guide] (\ax,\ay,0) -- (P);
+% 		\draw[vector guide]         (P) -- (0,0,\az);
+% 		\draw[vector guide] (\ax,\ay,0) -- (0,\ay,0);
+% 		\draw[vector guide] (\ax,\ay,0) -- (0,\ay,0);
+% 		\draw[vector guide] (\ax,\ay,0) -- (\ax,0,0);
+% 		\node[tdplot_main_coords, anchor=east] at (\ax,-0.05,0) {$v_{x}$};
+% 		\node[tdplot_main_coords, anchor=west] at (-0.05,\ay,0) {$v_{y}$};
+% 		\node[tdplot_main_coords, anchor=south] at (0.075,0,\az){$v_{z}$};
+% 	\end{tikzpicture}
+% \end{example}
+%
+% The column form of a vector is essentially equivalent to an order list of $n$ real numbers, i.e. $(v_{1},v_{2},\dots,v_{n})$. Why then are we using the column form and not the list form (mostly known as \emph{row vectors})? In fact, we could use either form - and even using both interchangeably - and with only minor adjusments the entire chapter would stay the same as it is now. However, there are some advantages of using only a single form, and consider the other form as a different object altogether. This idea will become clearer in \autoref{section:dual_vectors} and will be used to its fullest extent in future chapters when discussing \emph{covariant vectors}, \emph{contravarient vectors}, and in general \emph{tensors}. For now, we stick with the column form of vectors to stay consistent with common notation.
+%
+% However, the row form of vectors hints at the space in which they exist: $n$-dimensional vectors live in a space we call $\Rs[n]$. Recall from \autoref{chapter:intro} that the set $\Rs[n]$ is a Cartesian product made up of $n$ times the set of real numbers, i.e.
+% \begin{equation}
+% 	\Rs[n] = \underbrace{\mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}}_{n}.
+% 	\label{eq:Rn}
+% \end{equation}
+%
+% Each member of this set is a list of $n$ real numbers, and their order inside the list matters - very similar to vectors, be they in row or column form. For this reason, we refer to $\Rs[n]$ as the space of $n$-dimensional real vectors. As mentioned, in this chapter we use $\Rs[2]$ (the 2-dimensional real space) and $\Rs[3]$ (the 3-dimensional real space) for most ideas and examples.
+%
+% \subsection{Norm, polar coordinates and spherical coordinates}
+% Looking at vectors in $\Rs[2]$, it is rather straight-forward to calculate their norm: since the origin, the head of the vector and the point $v_{x}$ form a right triangle (see \autoref{fig:norm 2D vector}), we can use the Pythagorean theorem to calculate the norm of the vector, which is equal to the hypotenous of said triangle:
+% \begin{equation}
+% 	\norm{v} = \sqrt{v_{x}^{2} + v_{y}^{2}}.
+% 	\label{eq:2D vector norm}
+% \end{equation}
+%
+% Much like complex numbers, vectors in $\Rs[2]$ can be expressed using \emph{polar coordinates}, i.e. using the norm of the vector and its angle $\theta$ relative to the $x$-axis (cf. \autoref{eq:basic_trig_rearrange} and \autoref{eq:complex_components_geometric}). The relation between the cartesian and polar coordinates is
+% \begin{align}
+% 	v_{x} &= \norm{v}\cos(\theta),\nonumber\\
+% 	v_{y} &= \norm{v}\sin(\theta).
+% 	\label{eq:2D_polar_coords}
+% \end{align}
+%
+% To calculate $\theta$ from $v_{x}$ and $v_{y}$ we use the definition of $\tan(\theta)$ (see \autoref{section:trigonometry}), and get that
+% \begin{equation}
+% 	\tan(\theta) = \frac{v_{y}}{v_{x}},
+% 	\label{eq:}
+% \end{equation}
+% i.e.
+% \begin{equation}
+% 	\theta = \arctan \left( \frac{v_{y}}{v_{x}} \right).
+% 	\label{eq:}
+% \end{equation}
+%
+% \begin{figure}[h]
+% 	\centering
+% 	\begin{tikzpicture}[every node/.style={font=\large}]
+% 		\pgfmathsetmacro{\vx}{2.5}
+% 		\pgfmathsetmacro{\vy}{2}
+% 		\pgfmathsetmacro{\an}{atan(\vy/\vx)}
+% 		\begin{axis}[
+% 			vector plane,
+% 			width=9cm, height=9cm,
+% 			xmin=-1, xmax=3,
+% 			ymin=-1, ymax=3,
+% 			xticklabels={,},
+% 			yticklabels={,},
+% 			]
+% 			\fill[xgreen, fill opacity=0.07] (0,0) -- (\vx,\vy) -- (\vx,0);
+% 			\draw[dashed, black!50] (\vx,\vy) -- (\vx,0);
+% 			\draw (\vx,0.1) -- ({\vx-0.1},0.1) -- ({\vx-0.1},0);
+% 			\draw[vector, black] (0,0) -- node[midway, above, rotate=\an] {$\norm{v}=\sqrt{v_{x}^{2}+v_{y}^{2}}$} (\vx,\vy) node[above] {$\vec{v}=\colvec{v_{x};v_{y}}$};
+% 			\draw[fill] (0,0) circle[radius=2pt];
+% 			\draw[xgreen, ultra thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+% 			(0,0) -- (\vx,0) node[midway, below, yshift=-7pt]{$v_{x}$};
+% 			\draw[xgreen, ultra thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+% 			(\vx,0) -- (\vx,\vy) node[midway, right, xshift=7pt]{$v_{y}$};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% 	\caption{Calculating the norm of a 2-dimensional column vector.}
+% 	\label{fig:norm 2D vector}
+% \end{figure}
+%
+% In $\Rs[3]$ the norm of a vector $\vec{v}$ is similarily
+% \begin{equation}
+% 	\norm{v} = \sqrt{v_{x}^{2} + v_{y}^{2} + v_{z}^{2}}.
+% 	\label{eq:norm 3D vector}
+% \end{equation}
+%
+% \begin{challenge}{Norm of a 3D vector}{}
+% 	Show why \autoref{eq:norm 3D vector} is valid, by calculating the length $AB$ in the following figure, depicting a box of sides $\textcolor{xblue}{\bm{a}},\textcolor{xgreen}{\bm{b}}$ and $\textcolor{xpurple}{\bm{c}}$:
+%
+% 	\centering
+% 	\begin{tikzpicture}[every path/.style={very thick}, node distance=1mm]
+% 		\pgfmathsetmacro{\xside}{4};
+% 		\pgfmathsetmacro{\yside}{2};
+% 		\pgfmathsetmacro{\zside}{3};
+%
+% 		\coordinate (1) at (0,0,0);
+% 		\coordinate (2) at (\xside,0,0);
+% 		\coordinate (3) at (0,\yside,0);
+% 		\coordinate (4) at (\xside,\yside,0);
+% 		\coordinate (5) at (0,0,\zside);
+% 		\coordinate (6) at (\xside,0,\zside);
+% 		\coordinate (7) at (0,\yside,\zside);
+% 		\coordinate (8) at (\xside,\yside,\zside);
+%
+% 		\draw (1) -- (2);
+% 		\draw (1) -- (3);
+% 		\draw (1) -- (5);
+% 		\draw[densely dotted, red] (5) -- (4);
+% 		\draw (5) -- (7);
+% 		\draw (6) -- (8);
+% 		\draw (2) -- (4);
+% 		\draw (2) -- (6);
+% 		\draw (3) -- (4);
+% 		\draw (3) -- (7);
+% 		\draw (4) -- (8);
+% 		\draw (5) -- (6);
+% 		\draw (7) -- (8);
+%
+% 		\node[left=of 5] {$A$};
+% 		\node[above=of 4] {$B$};
+%
+% 		\draw[xblue, thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+% 		(5) -- (6) node[midway, below, yshift=-5pt]{$a$};
+% 		\draw[xgreen, thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+% 		(6) -- (2) node[midway, right, xshift=2pt, yshift=-8pt]{$b$};
+% 		\draw[xpurple, thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+% 		(2) -- (4) node[midway, right, xshift=5pt]{$c$};
+% 	\end{tikzpicture}
+% \end{challenge}
+%
+% Generalizing the vector norms in $\Rs[2]$ and $\Rs[3]$ to $\Rs[n]$ yields the following form:
+% \begin{equation}
+% 	\norm{v} = \sqrt{v_{1}^{2} + v_{2}^{2} + v_{3}^{2} + \dots + v_{n}^{2}} = \sqrt{\sum\limits_{i=1}^{n}v_{i}^{2}}.
+% 	\label{eq:norm nD vector}
+% \end{equation}
+%
+% \begin{note}{Other norms}{}
+% 	The norm shown here is called the $2$-norm. There are other possible norm that can be defined, and are used in different situations, such as the $1$-norm (also the called \emph{taxicab norm}), general $p$-norm where $p\geq1$ is a real number, the zero-norm, the max-norm, and many others. However, for the purpose of this chapter we use only the standard $2$-norm, since it is the most useful for describing basic concepts of linear algebra and its uses.
+% \end{note}
+%
+% $\Rs[3]$ has its own version of polar coordinates, sometimes refered to as \emph{cylindrical coordinates}. These coordinates are similar to the polar coordinates in $\Rs[2]$, with an additional ``height'' component: the three coordinates are $\rho, \varphi$ and $z$, where
+% \begin{itemize}
+% 	\item $\rho$ is the norm of the projection of $\vec{v}$ onto the $xy$-plane\footnote{$\rho$ is used instead of $r$ to prevent confusion with the polar coordinates in $\Rs[2]$},
+% 	\item $\varphi$ is the angle between the projection of $\vec{v}$ and the $x$-axis.
+% 	\item $z$ is the distance between the head of $\vec{v}$ to the $xy$-plane.
+% \end{itemize}
+%
+% \begin{figure}
+% 	\centering
+% 	\tdplotsetmaincoords{70}{45}
+% 	\begin{tikzpicture}[tdplot_main_coords]
+% 		\pgfmathsetmacro{\R}{3}
+% 		\pgfmathsetmacro{\phi}{45}
+% 		\pgfmathsetmacro{\z}{3}
+% 		\pgfmathsetmacro{\pL}{3}
+% 		\coordinate (v) at ({\R*cos(\phi)},{\R*sin(\phi)},\z);
+% 		\coordinate (v_proj) at ({\R*cos(\phi)},{\R*sin(\phi)},0);
+% 		\fill[xpurple!\pL0] (\pL,\pL,0) -- (\pL,-\pL,0) -- (-\pL,-\pL,0) -- (-\pL,\pL,0) -- cycle;
+% 		\node[xdarkpurple] (xy) at ({-\pL+0.5},{-\pL+0.5},0) {$\bm{xy}$};
+% 		\draw[thick, xpurple, fill=xpurple!20] (0,0,0) -- ({\R*0.6},0,0) arc (0:\phi:{\R*0.6}) -- cycle;
+% 		\draw[opacity=0] (0,0,0) -- ({\R*0.45},0,0) arc (0:\phi:{\R*0.45}) node[pos=0.4, xpurple, text opacity=1] {$\varphi$};
+% 		\draw[vector, xdarkpurple] (0,0,0) -- (3,0,0) node[pos=1.15] {$x$};
+% 		\draw[vector, xdarkpurple] (0,0,0) -- (0,3,0) node[pos=1.05, above] {$y$};
+% 		\draw[vector, xdarkpurple] (0,0,0) -- (0,0,3) node[pos=1.1] {$z$};
+% 		\draw[thick] (0,0,0) circle (\R);
+% 		\draw[vector, xred] (0,0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+% 		\draw[xdarkred!75, dashed] (v) -- (v_proj) node[midway, right] {$z$};
+% 		\draw[vector, xdarkred!75] (0,0,0) -- node [pos=0.85, above, yshift=-2pt] {$\rho$} (v_proj) node[pos=1.2] {$\vec{v}_{\text{proj}}$};
+% 	\end{tikzpicture}
+% 	\caption{The cylindrical coordinates $\rho,\varphi,z$.}
+% 	\label{fig:cylindrical_coords}
+% \end{figure}
+%
+% The conversion between cylindrical and cartesian coordinates is given by
+% \begin{align}
+% 	x &= \rho\cos(\varphi),\nonumber\\
+% 	y &= \rho\sin(\varphi),\nonumber\\
+% 	z &= z.
+% 	\label{eq:cylinder_to_cartesian}
+% \end{align}
+%
+% Yet another useful set of coordinates in $\Rs[3]$ are the \emph{spherical coordinates}. Given a vector $\vec{v}$, instead of using two length coordinates, the spherical coordinate system uses two angles $\varphi$ and $\theta$: $\varphi$ is the angle between the projection of $\vec{v}$ onto the $xy$-plane, and $\theta$ the angle between $\vec{v}$ and the $z$-axis. The third coordinate is then the norm of $\vec{v}$, denoted $r$. See \autoref{fig:spherical_coords} for a graphical representation.
+%
+% \tbw{a nice figure for spherical coordinates}
+%
+% \subsection{Operations}
+% Scaling a vector $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ by a real number $\alpha$ is done by multiplying each of its components by $\alpha$, i.e.
+% \begin{equation}
+% 	\alpha\vec{v} = \colvec{\alpha v_{1};\alpha v_{2};\vdots;\alpha v_{n}}.
+% 	\label{eq:scaling vectors}
+% \end{equation}
+%
+% We can prove \autoref{eq:scaling vectors} by directly calculating the norm of a scaled vector $\vec{w}=\alpha\vec{v}$:
+% \begin{proof}{Scaling a column vector}{}
+% 	Let $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ and $\vec{w}=\colvec{\alpha v_{1};\alpha v_{2};\vdots;\alpha v_{n}}$, where $\alpha\in\mathbb{R}$. Then $\vec{w}$ has the following norm:
+% 	\begin{align*}
+% 		\norm{w} &= \sqrt{\sum\limits_{i=1}^{n}(\alpha v_{i})^{2}}\\
+% 		&= \sqrt{(\alpha v_{1})^{2} + (\alpha v_{2})^{2} + \dots + (\alpha v_{1})^{2}}\\
+% 		&= \sqrt{\alpha^{2}v_{1}^{2} + \alpha^{2}v_{2}^{2} + \dots + \alpha^{2}v_{n}^{2}}\\
+% 		&= \sqrt{\alpha^{2}\left( v_{1}^{2} + v_{2}^{2} + \dots + v_{n}^{2} \right)}\\
+% 		&= \alpha\sqrt{v_{1}^{2} + v_{2}^{2} + \dots + v_{n}^{2}}\\
+% 		&= \alpha\norm{v}.
+% 	\end{align*}
+%
+% 	This shows that indeed $\vec{w}=\alpha\vec{v}$.
+% \end{proof}
+%
+% Another idea we can prove in column form is vector normalization (\autoref{eq:normalized vector}), by showing that dividing each component of a vector by its norm gives a vector of unit norm:
+% \begin{proof}{Norm of a vector}{}
+% 	Let $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$. Its norm is then $\norm{v}=\sqrt{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}}$. Scaling $\vec{v}$ by $\frac{1}{\norm{v}}$ yields
+% 	\begin{equation*}
+% 		\hat{v} = \frac{1}{\norm{v}}\colvec{v_{1};v_{2};\vdots;v_{n}} = \frac{1}{\sqrt{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}}}\colvec{v_{1};v_{2};\vdots;v_{n}}
+% 	\end{equation*}
+%
+% 	The norm of $\hat{v}$ is therefore
+% 	\begin{align*}
+% 		\left\| \hat{v} \right\| &= \sqrt{\frac{v_{1}^{2}}{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}} + \frac{v_{2}^{2}}{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}} + \dots + \frac{v_{n}^{2}}{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}}}\\
+% 		&= \sqrt{\frac{1}{v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2}}\left(v_{1}^{2}+v_{2}^{2}+\dots+v_{n}^{2} \right)}\\
+% 		&= \sqrt{1} = 1,
+% 	\end{align*}
+%
+% 	i.e. $\hat{v}$ is indeed a unit vector.
+% \end{proof}
+%
+% \begin{example}{Normalizing a vector}{normalizing a vector}
+% 	Let's normalize the vector $\vec{v}=\colvec{0;4;-3}$. Its norm is
+% 	\[
+% 		\norm{v} = \sqrt{0^{2}+4^{2}+(-3)^{2}} = \sqrt{0+16+9} = \sqrt{25} = 5.
+% 	\]
+% 	Therefore $\hat{v}$ (the normalized $\vec{v}$) is
+% 	\[
+% 		\hat{v} = \colvec{0;\frac{4}{5};-\frac{3}{5}}.
+% 	\]
+%
+% 	By calculating the norm of $\hat{v}$ directly, we can see that it is indeed a unit vector:
+% 	\begin{align*}
+% 		\left\|\hat{v}\right\| = \sqrt{0^{2} + \frac{4^{2}}{5^{2}} + \frac{3^{2}}{5^{2}}} = \sqrt{\frac{0^{2}+4^{2}+3^{2}}{5^{2}}} = \sqrt{\frac{16+9}{25}} = \sqrt{\frac{25}{25}} = \sqrt{1} = 1.
+% 	\end{align*}
+% \end{example}
+%
+% The addition of two column vectors $\vec{u}=\colvec{u_{1};u_{2};\vdots;u_{n}}$ and $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$ is done by adding their respective components together, i.e.
+% \begin{equation}
+% 	\vec{u} + \vec{v} = \colvec{u_{1}+v_{1};u_{2}+v_{2};\vdots;u_{n}+v_{n}}.
+% 	\label{eq:adding vectors}
+% \end{equation}
+%
+% \tbw{how this addition is the same as the one shown in \autoref{fig:vector addition geometric}.}
+%
+% \begin{note}{No addition of vectors of different number of components!}{}
+% 	Two vectors can only be added together if they have the same number of components. The addition of vectors with different number of components is undefined.
+% \end{note}
+%
+% \subsection{Linear combinations, spans and linear dependency}
+% As seen above, scaling a vector by a scalar results in a vector that has the same number of dimensions as the original vector. The same is true for adding two vectors: both of them must be of the same dimension, and the result is also a vector of the same dimension. Therefore, any combination of scaling and addition of vectors results in a vector of the same dimension as the original vector(s). This kind of combination is called a \emph{linear combination}.
+%
+% Let's define linear combinations a little more formaly:
+%
+% \begin{definition}{Linear combinations}{}
+% 	A linear combination of $n$ vectors $\vec{v}_{1}, \vec{v}_{2}, \dots, \vec{v}_{n}$ of the same dimension, using $n$ scalars $\alpha_{1},\alpha_{2},\dots,\alpha_{n}$, is an expression of the form
+% 	\begin{equation}
+% 		\vec{w} = \alpha_{1}\vec{v}_{1} + \alpha_{2}\vec{v}_{2} + \dots + \alpha_{n}\vec{v}_{n} = \sum\limits_{i=1}^{n}\alpha_{i}\vec{v}_{i}.
+% 		\label{eq:linear combination}
+% 	\end{equation}
+% \end{definition}
+%
+% Linear combinations of real vectors have geometric meaningsc: we start with the set of all linear combinations of a single vector $\vec{v}\in\Rs[n]$, i.e.
+% \begin{equation}
+% 	V = \left\{\alpha\vec{v} \mid \alpha\in\mathbb{R} \right\}.
+% 	\label{eq:span of a single vector}
+% \end{equation}
+% The set $V$ represents a line in the direction of $\vec{v}$ going through the origin (see \autoref{fig:span of a single vector}). The set $V$ is itself a vector space of dimension $1$, and as such a \emph{subspace} of $\Rs[n]$. We say that it is the \emph{span} of the vector $\vec{v}$ (i.e. the vector $\vec{v}$ \emph{spans} the subspace $V$).
+%
+% \def\veccolor{xred}
+% \tikzset{
+% 	dline/.style={densely dotted, thick, \veccolor!50!gray},
+% }
+% \begin{figure}[h]
+% 	\centering
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\centering
+% 		\begin{tikzpicture}
+% 			\begin{axis}[
+% 					vector plane,
+% 					width=7cm, height=7cm,
+% 					xticklabels={,},
+% 					yticklabels={,},
+% 					declare function={
+% 						ax=2; ay=1;
+% 						bx=0; by=0;
+% 						f(\x)=(by-ay)/(bx-ax)*(\x-ax)+ay;
+% 					},
+% 				]
+% 				\coordinate (A) at ({ax}, {ay});
+% 				\coordinate (B) at ({bx}, {by});
+% 				\draw[vector, \veccolor] (0,0) -- (A) node [above] {$\vec{v}$};
+% 				\draw[dline] (A) -- (6,{f(6)});
+% 				\draw[dline] (B) -- (-6,{f(-6)});
+% 			\end{axis}
+% 		\end{tikzpicture}
+% 		\caption{$\Rs[2]$}
+% 	\end{subfigure}
+% 	\hfill
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\centering
+% 		\begin{tikzpicture}
+% 			\begin{axis}[
+% 					width=8cm, height=8cm,
+% 					axis lines=center,
+% 					z buffer=sort,
+% 					xmin=-4, xmax=4,
+% 					ymin=-4, ymax=4,
+% 					zmin=-4, zmax=4,
+% 					xtick=\empty,
+% 					ytick=\empty,
+% 					ztick=\empty,
+% 					view={330}{20},
+% 				]
+% 				% Below surface
+% 				\draw[stealth-, thick] (0,0,-4) -- (0,0,0);
+% 				\draw[dline] (-4,-2.67,-4) -- (0,0,0);
+%
+% 				% Surface
+% 				\addplot3[surf, faceted color=xblue!50!black!50, fill=xblue!20, opacity=0.5, domain=-4:4, samples=7] {0};
+%
+% 				% Above surface
+% 				\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
+% 				\draw[axisline] (0,-4,0) -- (0,4,0) node[pos=1.075] {$y$};
+% 				\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
+% 				\draw[dline] (3,2,3) -- (4,2.67,4);
+% 				\draw[vector, \veccolor] (0,0,0) -- (3,2,3) node[above, right] {$\vec{v}$};
+% 				\draw[dashed, black!50] (3,2,3) -- (3,2,0) -- (0,0,0);
+% 			\end{axis}
+% 		\end{tikzpicture}
+% 		\caption{$\Rs[3]$}
+% 	\end{subfigure}
+% 	\caption{The span of a single vector $\color{xred}{\bm{\vec{v}}}$, shown as a dashed line: in $\Rs[2]$ (left) and $\Rs[3]$ (right).}
+% 	\label{fig:span of a single vector}
+% \end{figure}
+%
+% Similarily, the set of all linear combinations of two vectors $\vec{u},\vec{v}\in\Rs[n]$ that are not scales of each other (i.e. there is no such $\alpha\in\mathbb{R}$ for which $\vec{v}=\alpha\vec{u}$),
+% \begin{equation}
+% 	V = \left\{\alpha\vec{u}+\beta\vec{v} \mid \alpha,\beta\in\mathbb{R} \right\},
+% 	\label{eq:span of a two vectors}
+% \end{equation}
+% is a plane that goes through the origin (see \autoref{fig:span of two vectors}). Such vectors are also said to be \emph{non-collinear}.
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 				width=8cm, height=8cm,
+% 				axis lines=center,
+% 				z buffer=sort,
+% 				xmin=-4, xmax=4,
+% 				ymin=-4, ymax=4,
+% 				zmin=-4, zmax=4,
+% 				xtick=\empty,
+% 				ytick=\empty,
+% 				ztick=\empty,
+% 				view={50}{20},
+% 			]
+% 			% Behind surface at z=0
+% 			\draw[stealth-, thick] (0,0,-4) -- (0,0,0);
+% 			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=-4:0, samples=7] {0.4*y};
+%
+% 			% Surface at z=0
+% 			\addplot3[surf, faceted color=xblue!50!black!50, fill=xblue!20, opacity=0.9, domain=-4:4, samples=7] {0};
+%
+% 			% Back axis line
+% 			\draw[axisline] (0,0,0) -- (0,4,0) node[pos=1.075] {$y$};
+% 			
+% 			% Infront of surface at z=0
+% 			\addplot3[surf, faceted color=xgreen!50!black!50, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=0:4, samples=7] {0.4*y};
+%
+% 			% Vectors
+% 			\draw[vector] (0,0,0) -- (-2,3,1.2) node[pos=1.15, fill=white, rounded corners] {$\vec{a}$};
+% 			\draw[vector] (0,0,0) -- (+3,3,1.2) node[pos=1.12, fill=white, rounded corners] {$\vec{b}$};
+%
+% 			% Front axis lines
+% 			\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
+% 			\draw[stealth-, thick] (0,-4,0) -- (0,0,0);
+% 			\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% 	\caption{Two vectors $\vec{a}$ and $\vec{b}$ span a plane (colored green) in $\Rs[3]$. The $xy$-plane (i.e. $z=0$) is shown in blue for emphasis.}
+% 	\label{fig:span of two vectors}
+% \end{figure}
+%
+% \begin{example}{Spanning $\bm{\Rs[2]}$ using two non-collinear vectors}{}
+% 	Since any two non-collinear vectors span a 2-dimensional subspace of $\Rs[n]$, in $\Rs[2]$ this means that any vector $\vec{w}$ can be written as a linear combination of any two vectors $\vec{u},\vec{v}$ that are not a scale of each other. For example, we can take the vector
+% 	\[
+% 		\vec{w} = \colvec{7;-1},
+% 	\]
+% 	and write it as a linear combination of any two non-collinear vectors, say
+% 	\[
+% 		\vec{u}=\colvec{2;-3},\ \vec{v}=\colvec{0;5}.
+% 	\]
+%
+% 	The equation which forces the relation is
+% 	\[
+% 		\colvec{7;-1} = \alpha\colvec{2;-3} + \beta\colvec{0;5},
+% 	\]
+% 	and we should solve it for $\alpha$ and $\beta$. This is possible since the equation above is actually a system of two equations in two variables (namely $\alpha$ and $\beta$):
+% 	\[
+% 		\begin{cases}
+% 			\ 7  = 2\alpha,\\
+% 			\ -1 = -3\alpha + 5\beta.
+% 		\end{cases}
+% 	\]
+% 	The solution for the system is $\alpha=3.5$ and $\beta=1.9\tikz{\node(AAA){};}$, and therefore
+% 	\[
+% 		\colvec{7;-1} = 3.5\colvec{2;-3} + 1.9\colvec{0;5}.
+% 	\]
+% \end{example}
+% %\solvesym{AAA}
+%
+% Generalizing the example above, any vector $\vec{w}=\colvec{w_{x};w_{y}}$ can be written as a linear combination of two vectors $\vec{u}=\colvec{u_{x};u_{y}}$ and $\vec{v}=\colvec{v_{x};v_{y}}$, as long as $\vec{u}$ and $\vec{v}$ are non-collinear. Let's prove this:
+% \begin{proof}{$\bm{\Rs[2]}$ is spanned by any two non-collinear vectors in $\bm{\Rs[2]}$}{fd}
+% 	Let $\vec{u},\vec{v}\in\Rs[2]$ be two non-collinear vectors. Their non-collinearity means that the equation
+% 	\begin{equation}
+% 		\vec{u} = \alpha\vec{v}
+% 		\label{eq:collinear vectors}
+% 	\end{equation}
+% 	has no solution, i.e. the system
+% 	\begin{equation}
+% 		\begin{cases}
+% 			&u_{x} = \alpha v_{x}\\
+% 			&u_{y} = \alpha v_{y}
+% 		\end{cases}
+% 		\label{eq:collinear system}
+% 	\end{equation}
+% 	has no solution. The system has solution only when $u_{x}v_{y} = u_{y}v_{x}$, and so the restriction is translated to the simple equation
+% 	\begin{equation}
+% 		u_{x}v_{y} \neq u_{y}v_{x}.
+% 		\label{eq:restriction}
+% 	\end{equation}
+%
+% 	The system which defines $\vec{w}$ as a linear combination of $\vec{u}$ and $\vec{v}$ is
+% 	\begin{equation}
+% 		\begin{cases}
+% 			&w_{x} = \alpha u_{x} + \beta v_{x}\\
+% 			&w_{y} = \alpha u_{y} + \beta v_{y}\\
+% 		\end{cases}
+% 		\label{eq:linear combination of two vectors}
+% 	\end{equation}
+%
+% 	Isolating $\alpha$ using the first equation yields
+% 	\begin{equation}
+% 		\alpha = \frac{w_{x}-\beta v_{x}}{u_{x}},
+% 		\label{eq:isolation1}
+% 	\end{equation}
+% 	and subtituting it into the second equation yields
+% 	\begin{equation}
+% 		\beta = \frac{w_{y}-\alpha u_{y}}{v_{y}} = \frac{w_{y}-\frac{w_{x}-\beta v_{x}}{u_{x}}}{v_{y}},
+% 		\label{eq:isolation2}
+% 	\end{equation}
+% 	which rearranges into
+% 	\begin{equation}
+% 		\beta = \frac{u_{x} w_{y} - u_{y} w_{x}}{u_{x} v_{y} - u_{y} v_{x}},
+% 		\label{eq:test}
+% 	\end{equation}
+% 	and thus
+% 	\begin{equation}
+% 		\alpha = \frac{- v_{x} w_{y} + v_{y} w_{x}}{u_{x} v_{y} - u_{y} v_{x}}.
+% 		\label{eq:test2}
+% 	\end{equation}
+%
+% 	We can see that $\alpha$ and $\beta$ exist iff $u_{x}v_{y}\neq u_{y}v_{x}$, which is guaranteed by \autoref{eq:restriction}. Therefore, $\alpha$ and $\beta$ always exist when $\vec{u}$ and $\vec{v}$ are non-collinear, and thus any vector in $\Rs[2]$ can be written as a linear combination of any two non-collinear vectors in $\Rs[2]$, i.e. any two non-collinear vectors in $\Rs[2]$ span $\Rs[2]$.
+% \end{proof}
+%
+% Going a step further, any three vectors $\vec{u},\vec{v},\vec{w}\in\Rs[n]$ that are not coplanar span a 3-dimensional subspace of $\Rs[n]$ going through the origin. To generalize the notion of collinear and coplanar vectors to higher dimensions we introduct the concept of \emph{linear dependency} of a set of vectors:
+%
+% \begin{definition}{Linear dependent set of vectors}{linear dependency}
+% 	A set of $n$ vectors
+% 	\begin{equation}
+% 		S = \left\{ \vec{v}_{1}, \vec{v}_{2}, \dots, \vec{v}_{n} \right\}
+% 		\label{eq:set of n vectors}
+% 	\end{equation}
+% 	is said to be linearly dependent if there exist a linear combination
+% 	\begin{equation}
+% 		\alpha_{1}\vec{v}_{1} + \alpha_{2}\vec{v}_{2} + \dots + \alpha_{n}\vec{v}_{n} = \vec{0},
+% 		\label{eq:set of n vectors}
+% 	\end{equation}
+% 	and \textbf{at least} one the coefficients $\alpha_{i}\neq0$.
+% \end{definition}
+%
+% The following examples shows that the definition above reduces to colinarity and coplanary in the case of $2$ and $3$ vectors:
+% \begin{example}{Linear dependency of $2$ vectors}{}
+% 	Let $\vec{u}$ and $\vec{v}$ be two linearly dependent vectors in $\Rs[n]$. Then there exist a linear combination
+% 	\[
+% 		\alpha\vec{u} + \beta\vec{v} = \vec{0},
+% 	\]
+% 	with either $\alpha\neq0$ or $\beta\neq0$ (or both). We can look at the different possible cases:
+% 	\begin{itemize}
+% 		\item $\alpha\neq0,\ \beta=0$: in this case $\alpha\vec{u}=\vec{0}$, i.e. $\vec{u}=0$.
+% 		\item $\alpha=0,\ \beta\neq0$: in this case $\beta\vec{v}=\vec{0}$, i.e. $\vec{v}=0$.
+% 		\item $\alpha\neq0,\ \beta\neq0$: in this case we can rearrange the equation and get
+% 			\[
+% 				\vec{u} = -\frac{\beta}{\alpha}\vec{v},
+% 			\]
+% 			i.e. $\vec{u}$ and $\vec{v}$ are scales of each other and thus are collinear.
+% 	\end{itemize}
+% 	What we learn from this is that two vectors form a linearly dependent set if at least one of the is the zero vector, or if they are collinear.
+%
+% \end{example}
+%
+% \begin{example}{Linear dependency of $3$ vectors}{}
+% 	Now, let $\vec{u},\vec{v}$ and $\vec{w}$ be three linearly dependent vectors in $\Rs[n]$. Then there exists a linear combination
+% 	\[
+% 		\alpha\vec{u} + \beta\vec{v} + \gamma\vec{w} = \vec{0},
+% 	\]
+% 	with either $\alpha\neq0$ or $\beta\neq0$ or $\gamma\neq0$ or any combination where two of the coefficients are non-zero, or all of the coefficients are non-zero. Again, we look at all the possible cases:
+% 	\begin{itemize}
+% 		\item $\alpha\neq0,\ \beta=\gamma=0$: we get $\alpha\vec{u} = \vec{0}$, thus $\vec{u}=\vec{0}$.
+% 		\item $\alpha=0,\ \beta\neq0,\ \gamma=0$: we get $\beta\vec{v} = \vec{0}$, thus $\vec{v}=\vec{0}$.
+% 		\item $\alpha=\beta=0,\ \gamma\neq0$: we get $\gamma\vec{w} = \vec{0}$, thus $\vec{w}=\vec{0}$.
+% 		\item $\alpha\neq0,\ \beta\neq0, \gamma=0$: we get that $\vec{u}$ and $\vec{v}$ are collinear, since this is exactly as the case for two linearly dependent vectors.
+% 		\item $\alpha\neq0,\ \beta=0, \gamma\neq0$: similar to the previous case, this time $\vec{u}$ and $\vec{w}$ are collinear.
+% 		\item $\alpha=0,\ \beta\neq0, \gamma\neq0$: similar to the previous case, this time $\vec{v}$ and $\vec{w}$ are collinear.
+% 		\item $\alpha\neq0,\ \beta\neq0,\ \gamma\neq0$: by rearranging we get
+% 			\[
+% 				\vec{w} = -\frac{1}{\gamma}\left( \alpha\vec{u} + \beta\vec{v} \right),
+% 			\]
+% 			i.e. $\vec{w}$ lies on the the plane spanned by $\vec{u}$ and $\vec{v}$. If we isolate $\vec{u}$ or $\vec{v}$ instead, we get the same result: the isolated vector is a lienar combination of the other two vectors, and thus lies on the plan spanned by these vectors.
+% 	\end{itemize}
+% 	From this example we learn that three vectors form a linearly dependent set if one or more of the vectors is the zero vector, or if any two vectors in the set are collinear, or if all three vectors are coplanar.
+% \end{example}
+%
+% Just like the case of $2$ and $3$ vectors seen above, any set of $m\leq n$ vectors in $\Rs[n]$ that are \textbf{not} linearly dependent span an $m$-dimensional subspace of $\Rs[n]$ (which goes throught the origin) - i.e. any vector $\vec{v}\in\Rs[n]$ can be written as a linear combination of these vectors. We call such a set a \emph{basis set} of $\Rs[n]$.
+%
+% \begin{example}{Basis sets in $n$ dimensions}{}
+% 	The following three vectors are non coplanar (i.e. they are linearly independent), and thus form a basis set of $\Rs[3]$:
+% 	\[
+% 		B = \left\{ \colvec{0;4;5},\ \colvec{4;2;-2},\ \colvec{1;0;-5} \right\}.
+% 	\]
+% 	This means that any vector in $\Rs[3]$ can be written as a linear combination of these vectors. We can show this by writing a generic vector $\vec{v}=\colvec{x;y;z}\in\Rs[3]$ as a linear combination of the vectors:
+% 	\[
+% 		\vec{v} = \colvec{x;y;z} = \alpha\colvec{0;4;5} + \beta\colvec{4;2;-2} + \gamma\colvec{1;0;-5},
+% 	\]
+% 	which can be expanded to the system of equations
+% 	\[
+% 		\begin{cases}
+% 			& x = \cancel{0\alpha}+4\beta+1\gamma,\\
+% 			& y = 4\alpha+2\beta+\cancel{0\gamma},\\
+% 			& z = 5\alpha-2\beta-5\gamma.
+% 		\end{cases}
+% 	\]
+%
+% 	The solution of the above system gives the coefficients of the linear combination to yield any vector in $\Rs[3]$:
+% 	\begin{align*}
+% 		\alpha &= -\frac{5x}{31} + \frac{9y}{31} - \frac{z}{31},\\
+% 		\beta  &= \frac{10x}{31} - \frac{5y}{62} + \frac{2z}{31},\\
+% 		\gamma &= -\frac{9x}{31} + \frac{10y}{31} - \frac{8z}{31}.
+% 	\end{align*}
+%
+% 	For example, to yield the vector $\vec{v}=\colvec{1;-1;0}$ we sustitute $x=1,\ y=-1,\ z=0$ into the above solutions, and get that the following coefficients are needed:
+% 	\[
+% 		\alpha=-\frac{28}{62},\ \beta=\frac{25}{62},\ \gamma=-\frac{38}{62},
+% 	\]
+% 	i.e.
+% 	\[
+% 		-\frac{28}{62}\colvec{0;4;5} + \frac{25}{62}\colvec{4;2;-2} -\frac{38}{62}\colvec{1;0;-5} = \colvec{1;-1;0}.
+% 	\]
+% 	(you, the reader, should verify this!)
+% \end{example}
+%
+% The way we described what a basis set is, while being accurate and general, does not give us any particular intuition about what basis sets actually \textit{do}, and why do we even bother with them. To understand this, consider some vector $\vec{v}\in\Rs[2]$. Without defining some frame of reference, as far as we're considered $\vec{v}$ is merely some arrow floating in space:
+%
+% \pgfmathsetmacro{\vx}{-2}
+% \pgfmathsetmacro{\vy}{4}
+% \pgfmathsetmacro{\Vnorm}{sqrt(\vx*\vx+\vy*\vy)}
+% \pgfmathsetmacro{\Vth}{atan2(\vy,\vx)}
+% \begin{center}
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 			empty,
+% 			width=5cm, height=5cm,
+% 			]
+% 			\coordinate (v) at (\vx,\vy);
+% 			\draw[vector, xred] (0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% \end{center}
+%
+% Note that $\vec{v}$ still has all the properties any other general vector has: it a norm and a direction. However, we can't say anything meaningful about this direction, except maybe that it is roughly pointing up and to left. In order to make any sense of $\vec{v}$ we have to choose some frame of reference, i.e. two axes. We can of course use the usual horizontal and vertical directions (which we usually call $x$ and $y$):
+%
+% \begin{center}
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 			vector plane,
+% 			width=5cm, height=5cm,
+% 			xticklabels={,},
+% 			yticklabels={,},
+% 			grid=none,
+% 			]
+% 			\coordinate (v) at (\vx,\vy);
+% 			\draw[perp] (v) -- (\vx,0) node[pos=1.2] {$v_{x}$};
+% 			\draw[perp] (v) -- (0,\vy) node[pos=1.3] {$v_{y}$};
+% 			\draw[vector, xred] (0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% \end{center}
+%
+% Having this frame of reference, i.e. the $x$- and $y$-axes, we can calculate the components of $\vec{v}$ \textbf{in relation to these axes} by droping two perpendicular lines, one for each axis. But there's nothing really special about these axes, they are just convinent to draw on a flat paper. We could use any other two non-colinear directions, for example the following $x'$ and $y'$:
+%
+% \begin{center}
+% 	\begin{tikzpicture}
+% 		\pgfmathsetmacro{\th}{23}
+% 		\begin{axis}[
+% 			vector plane,
+% 			anchor=origin,
+% 			rotate around={{-\th}:(current axis.origin)},
+% 			axis lines*=center,
+% 			width=5cm, height=5cm,
+% 			xlabel={$x'$},
+% 			ylabel={$y'$},
+% 			xticklabels={,},
+% 			yticklabels={,},
+% 			grid=none,
+% 			]
+% 			\pgfmathsetmacro{\vxp}{\Vnorm*cos(\Vth+\th)}
+% 			\pgfmathsetmacro{\vyp}{\Vnorm*sin(\Vth+\th)}
+% 			\coordinate (v) at (\vxp, \vyp);
+% 			\draw[perp] (v) -- (\vxp,0) node[pos=1.2] {$v_{x'}$};
+% 			\draw[perp] (v) -- (0,\vyp) node[pos=1.3] {$v_{y'}$};
+% 			\draw[vector, xred] (0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% \end{center}
+%
+% Notice how $\vec{v}$ stays the same, the only difference is how we will describe its components using the $x',y'$ axes system. We are of course not restricted to having two perpendicular axes, e.g. the following $x'',y''$ axes:
+%
+% \begin{center}
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 			empty,
+% 			width=5cm, height=5cm,
+% 			]
+% 			\draw[stealth-stealth, thick] (-3,-1) -- (4,1) node[pos=1.1] {$x''$};
+% 			\draw[stealth-stealth, thick] (-3,2) -- (4,-2) node[pos=1.1] {$y''$};
+% 			\coordinate (v) at (\vx, \vy);
+% 			\draw[vector, xred] (0,0) -- (v) node[pos=1.1] {$\vec{v}$};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% \end{center}
+%
+% \tbw{improve the above figure}
+%
+% The axis system we use as a reference is the basis set we use to describe vectors, except one detail: a basis set also tells us what is the unit of measurement in the direction of each basis vector. This is of course the norm of that basis vector.
+%
+% \tbw{show a vector drawn from integer amounts of 2 basis vectors}
+%
+% Having described basis sets in somewhat general terms, we can now define them a bit more precisely:
+%
+% \begin{definition}{Basis sets}{basis sets}
+% 	Let $B$ be a \textbf{linearly independent set} of vectors in $\Rs[n]$. If any vector $\vec{v}\in\mathbb{\Rs[n]}$ can be written as a linear combination of the vectors in $B$, then $B$ is called a basis set of $\Rs[n]$. The \emph{dimension} of $B$ is the number of vectors in $B$.
+% \end{definition}
+%
+% The dimension of a basis set $B$ of $\Rs[n]$ is always $n$. In fact, in a later chapter we will see that the dimension of a vector space is defined by the dimension of its basis sets, i.e. given a vector space $V$ and a basis set $B\subseteq V$, the dimension of $V$ is equal to $|B|$, or mathematically
+% \begin{equation}
+% 	\dim(V) = |B|.
+% 	\label{eq:dimension of a vector space}
+% \end{equation}
+%
+% It can be easily shown that any set of vectors in $\Rs[n]$ which has more than $n$ vectors must be a linearly dependent set:
+%
+% \begin{proof}{Sets with more than $\bm{n}$ vectors in $\bm{\Rs[n]}$}{label}
+% 	Let $S$ be a set of $m\in\mathbb{N}$ vectors in $\Rs[n]$, where $m>n$. Given a vector $\vec{v}\in S$ and the set of all vectors in $S$ except $\vec{v}$ (call this set $\tilde{S}$), there are two possibilities:
+% 	\begin{itemize}
+% 		\item $\tilde{S}$ is a linearly dependent set in $\Rs[n]$. In this case, the addition of $\vec{v}$ doesn't change this fact, i.e. the set $S$ as a whole is linearly dependent.
+% 		\item The set $\tilde{S}$ is linearly independent, and since it has $n$ vectors it forms a basis set of $\Rs[n]$. Therefore, $\vec{v}$ can be written as a linear combination of the vectors in $\tilde{S}$, and thus the inclusion of $\vec{v}$ in $S$ makes $S$ a linearly dependent set.
+% 	\end{itemize}
+% \end{proof}
+%
+% Let us now take a vector, for example $\vec{v}=\colvec{1;-3;7}$, and span it by three different basis sets:
+% \[
+% 	B_{1} = \left\{ \colvec{1;0;0},\ \colvec{0;1;0},\ \colvec{0;0;1} \right\}\quad B_{2} = \left\{ \colvec{5;1;2},\ \colvec{0;1;0},\ \colvec{4;-1;1} \right\},\quad B_{3} = \left\{ \colvec{-1;0;2},\ \colvec{0;2;-3},\ \colvec{2;2;3} \right\}.
+% \]
+%
+% As can be seen in \autoref{fig:vector in different basis sets}, for each basis set the coefficients (colored) are different. In this context we call the coefficients the \emph{coordinates} of $\vec{v}$ in that basis set. In the basis set $\left\{ \colvec{1;0;0},\ \colvec{0;1;0},\ \colvec{0;0;1} \right\}$ the coordinates of $\vec{v}$ are $(1,-3,7)$ (as we will see next, it is not a coincidense that these are equal to its components as a column vector), and in the basis set $\left\{ \colvec{5;1;2},\ \colvec{0;1;0},\ \colvec{4;-1;1} \right\}$ its coordinates are $(9,-23,-11)$.
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{tikzpicture}[node distance=1.75cm]
+% 		\node (1-37) {$\vec{v}=\colvec{1;-3;7}$};
+% 		\node[above right of=1-37, xshift=3cm] (std) {$\textcolor{xred}{\bm{1}}\colvec{1;0;0} \textcolor{xred}{\bm{-3}}\colvec{0;1;0} \textcolor{xred}{\bm{+7}}\colvec{0;0;1}$};
+% 		\node[below=of std.west, anchor=west] (b1) {$\textcolor{xblue}{\bm{9}}\colvec{5;1;2} \textcolor{xblue}{\bm{-23}}\colvec{0;1;0} \textcolor{xblue}{\bm{-11}}\colvec{4;-1;1}$};
+% 		\node[below=of b1.west, anchor=west] (b2) {$\textcolor{xgreen}{\bm{1.4}}\colvec{-1;0;2} \textcolor{xgreen}{\bm{+0.3}}\colvec{0;2;-3} \textcolor{xgreen}{\bm{+1.2}}\colvec{2;2;3}$};
+% 	% !!!!!!!!!! LAST BASIS SET IS SOMEHOW WRONG - CHECK !!!!!!!!!! %
+%
+% 		\draw[-stealth, thick] (1-37.east) to [out=0, in=180, looseness=0.7] node[pos=0.5, above, yshift=2pt] {$\textcolor{xred}{B_{1}}$} (std.west);
+% 		\draw[-stealth, thick] (1-37.east) to [out=0, in=180, looseness=0.7] node[pos=0.6, above, yshift=0pt] {$\textcolor{xblue}{B_{2}}$} (b1.west);
+% 		\draw[-stealth, thick] (1-37.east) to [out=0, in=180, looseness=0.7] node[pos=0.7, above, yshift=3pt] {$\textcolor{xgreen}{B_{3}}$} (b2.west);
+% 	\end{tikzpicture}
+% 	\caption{The vector $\vec{v}=\colvec{1;-3;7}$ spanned in three different basis sets.}
+% 	\label{fig:vector in different basis sets}
+% \end{figure}
+%
+% Changing the coordinates of a vector between different basis sets is called \emph{basis transformation}, and is generally done using \emph{matrices}. We will discuss this in more details in the next sections of this chapter. For now, let's look at a graphical representation of a vector being expressed in a different basis set (\autoref{fig:vector in two different basis sets}): in the figure, we see that the vector $\vw=\colvec{2;3}$ can be written in the basis set $B=\left\{ \textcolor{xred}{\colvec{2;1}},\ \textcolor{xblue}{\colvec{-4;2}} \right\}$ using the coefficients $2$ and $\frac{1}{2}$, i.e.
+% \[
+% 	\vw = \textcolor{xpurple}{\colvec{2;3}} = 2\textcolor{xred}{\colvec{2;1}} +\frac{1}{2}\textcolor{xblue}{\colvec{-4;2}}.
+% \]
+% Therefore, in the basis set $B$, the coordinates of $\vw$ are $\left(2,\frac{1}{2}\right)$.
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{subfigure}[t]{0.45\textwidth}
+% 		\centering
+% 		\begin{tikzpicture}
+% 			\begin{axis}[
+% 					vector plane,
+% 					width=7.5cm, height=7.5cm,
+% 					xmin=-4, xmax=4,
+% 					ymin=-4, ymax=4,
+% 					xtick={-4,-3,...,4},
+% 					ytick={-4,-3,...,4},
+% 				]
+% 				\draw[vector, xpurple] (0,0) -- (2,3) node[pos=1.1] {$\vec{w}$};
+% 				\draw[vector, xred] (0,0) -- (2,1) node[pos=1.1] {$\vec{v}$};
+% 				\draw[vector, xblue] (0,0) -- (-4,2) node[above right] {$\vec{u}$};
+% 				\addplot[only marks, mark=*] coordinates {(0,0)};
+% 			\end{axis}
+% 		\end{tikzpicture}
+% 	\end{subfigure}
+% 	\hfill
+% 	\begin{subfigure}[t]{0.45\textwidth}
+% 		\centering
+% 		\begin{tikzpicture}
+% 			\begin{axis}[
+% 					vector plane,
+% 					width=7.5cm, height=7.5cm,
+% 					xmin=-4, xmax=4,
+% 					ymin=-4, ymax=4,
+% 					xtick={-4,-3,...,4},
+% 					ytick={-4,-3,...,4},
+% 				]
+% 				\draw[vector, xpurple] (0,0) -- (2,3);
+% 				\draw[vector, xred] (0,0) -- (2,1);
+% 				\draw[vector, xred] (2,1) -- (4,2);
+% 				\draw[vector, xblue] (4,2) -- (2,3);
+% 				\addplot[only marks, mark=*] coordinates {(0,0)};
+% 			\end{axis}
+% 		\end{tikzpicture}
+% 	\end{subfigure}
+% 	\caption{The vector $\vw=\textcolor{xpurple}{\colvec{2;3}}$ is spanned using the vectors $\vu=\textcolor{xred}{\colvec{2;1}}$ and $\vv=\textcolor{xblue}{\colvec{-4;2}}$, yielding the coordinates $\left( 2,\frac{1}{2} \right)$ in the basis set $B$.}
+% 	\label{fig:vector in two different basis sets}
+% \end{figure}
+%
+% A basis set $B$ in which all vectors are \emph{orthogonal} (i.e. are at $\ang{90}$) to each other is called a \emph{orthogonal basis set}. If all vectors are unit vectors as well, i.e. their norms all equal to $1$, the basis set is then an \emph{orthonormal basis set}.
+%
+% \begin{example}{Orthogonal and orthonormal basis sets}{orthobasis}
+% 	The vectors $\vec{a}=\colvec{1;1}$ and $\vec{b}=\colvec{-1;1}$ are linearly independent and thus form a basis set of $\Rs[2]$. We can calculate their respective angles in relation to the $x$-axis ($\theta_{a}$ and $\theta_{b}$) to find the angle between them ($\varphi$):
+%
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 				vector plane,
+% 				width=6cm, height=4.6cm,
+% 				xmin=-1.5, xmax=1.5,
+% 				ymin=-0.5, ymax=1.5,
+% 				xtick={-1,...,1},
+% 				ytick={1},
+% 			]
+% 			\draw[thick, fill=xred!20] (0,0) -- (0.6,0) arc (0:45:0.6) -- cycle;
+% 			\draw[thick, fill=xblue!20] (0,0) -- (-0.6,0) arc (180:135:0.6) -- cycle;
+% 			\draw[thick, fill=xpurple!20] (0,0) -- (0.424,0.424) arc (45:135:0.6) -- cycle;
+% 			\draw[vector] (0,0) -- (1,1) node[pos=1.1] {$\vec{a}$};
+% 			\draw[vector] (0,0) -- (-1,1) node[pos=1.1] {$\vec{b}$};
+% 			\node at (0.4,0.14) {$\theta_{a}$};
+% 			\node at (-0.4,0.14) {$\theta_{b}$};
+% 			\node at (0,0.35) {$\varphi$};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% \end{figure}
+%
+% The angle of $\vec{a}$ is
+% \[
+% 	\theta_{a} = \arctan\left( \frac{a_{y}}{a_{x}} \right) = \arctan(1) = \frac{\pi}{4}\ (=\ang{45}).
+% \]
+% Similarily, the angle $\alpha_{b}$ also equals $\frac{\pi}{4}$. Therefore, $\varphi=2\frac{\pi}{4}=\frac{\pi}{2}$ ($=\ang{90}$) - i.e. $\vec{a}$ and $\vec{b}$ are orthogonal, and thus form an orthogonal basis set of $\Rs[2]$.
+%
+% To get a similar \textit{orthonormal} basis set we can simply normalize the two vectors. We start with $\vec{a}$: its norm is
+% \[
+% 	\norm{a} = \sqrt{1^{2}+1^{2}} = \sqrt{2}.
+% \]
+%
+% Thus, the vector $\hat{a}=\frac{1}{\sqrt{2}}\vec{a}=\colvec{\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}}$ is a unit vector. The same argument is valid for $\vec{b}$, i.e. $\hat{b}=\frac{1}{2}\vec{b}=\colvec{-\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}}$. We therefore get that
+% \[
+% 	\left\{ \colvec{\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}},\ \colvec{-\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}} \right\}
+% \]
+% is an orthonormal basis set of $\Rs[2]$.
+% \end{example}
+%
+% \begin{challenge}{Orthonormal basis sets of $\Rs[2]$}{}
+% Show that all orthonormal basis sets of $\Rs[2]$ are rotations of the set
+% \[
+% 	\left\{ \colvec{\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}},\ \colvec{-\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}} \right\}
+% \]
+% as a whole (i.e.\ each rotation angle is applied to both vectors).
+% \end{challenge}
+%
+% See example below for such sets in $\Rs[2]$ and $\Rs[3]$.
+%
+% One common orthonormal basis set in any $\Rs[n]$ is the so-called \emph{standard basis set}. We saw the standard basis set in $\Rs[3]$ in \autoref{fig:vector in different basis sets}: it is the set $B_{1}=\left\{ \colvec{1;0;0},\ \colvec{0;1;0},\ \colvec{0;0;1} \right\}$. Note how in this set, each vector has a special structure: one of its components is $1$ while the rest are $0$. In the first basis vector the non-zero component is the first component of the vector, in the second basis vector it is the second component, and in the third basis vector it is the third component. In $\Rs[2]$ the standard basis set is simply $\left\{ \colvec{1;0},\ \colvec{0;1} \right\}$, and generally in $\Rs[n]$ it is
+% \begin{equation}
+% 	B = \left\{ \colvec{1;0;0;\vdots;0;0},\ \colvec{0;1;0;\vdots;0;0},\ \colvec{0;0;1;\vdots;0;0}, \dots, \colvec{0;0;0;\vdots;1;0},\ \colvec{0;0;0;\vdots;0;1} \right\},
+% 	\label{eq:std basis set}
+% \end{equation}
+% i.e. in the $n$-th basis vector the $n$-th component is $1$ while the rest are $0$. The standard basis vectors are generally labeled as $\eb{1},\ \eb{2},\ \dots,\ \eb{n}$ - they get the ``hat`` symbol since they are all unit length.
+%
+% In $\Rs[2]$ and $\Rs[3]$ we give $\eb{1},\ \eb{2}$ and $\eb{3}$ special notations: $\hat{x},\ \hat{y}$ and $\hat{z}$, respectively (obviously $\hat{z}$ doesn't exists in $\Rs[2]$). For historical reasons, these vectors are sometimes denoted in physics textbooks as $\hat{i},\ \hat{j}$ and $\hat{k}$.
+%
+% \subsection{The scalar product}
+% When given two vectors $\vu,\vv\in\Rs[n]$ it is often useful to know the angle between them: if the two vectors are linearly dependent then the angle is either $\ath=0$ if they point in the same direction, or $\ath=\pi$ if the point in opposite directions (remember: we measure angles in radians). Otherwise, the angle $\ath$ can take any value in $(0,\pi)$. Angles are always measured on a plane, and in the case of two linearly independent vectors that plane is of course the one spanned by the two vectors (\autoref{fig:angle between two vectors}).
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 				width=8cm, height=8cm,
+% 				axis lines=center,
+% 				z buffer=sort,
+% 				xmin=-4, xmax=4,
+% 				ymin=-4, ymax=4,
+% 				zmin=-4, zmax=4,
+% 				xtick=\empty,
+% 				ytick=\empty,
+% 				ztick=\empty,
+% 				view={50}{10},
+% 			]
+% 			% Behind surface at z=0
+% 			\draw[stealth-, thick] (0,0,-4) -- (0,0,0);
+% 			\addplot3[surf, faceted color=black!25, fill=black!10, opacity=0.95, domain=-4:4, y domain=-4:0, samples=7] {0.5*y};
+%
+% 			% Back axis line
+% 			\draw[axisline] (0,0,0) -- (0,4,0) node[pos=1.075] {$y$};
+% 			
+% 			% Infront of surface at z=0
+% 			\addplot3[surf, faceted color=black!25, fill=black!10, opacity=0.95, domain=-4:4, y domain=0:4, samples=7] {0.5*y};
+%
+% 			% Angle and vectors
+% 			%\draw[thick, fill=white] (0,0,0) -- (1,0.667,0.334) arc (1:0:22.494) -- cycle;
+% 			\draw[vector, xred]  (0,0,0) -- (-1,3,1.5) node [pos=1.1] {$\vec{u}$};
+% 			\draw[vector, xblue] (0,0,0) -- (3,3,1.5) node [pos=1.1] {$\vec{v}$};
+%
+% 			% Front axis lines
+% 			\draw[axisline] (-4,0,0) -- (4,0,0) node[pos=1.05] {$x$};
+% 			\draw[stealth-, thick] (0,-4,0) -- (0,0,0);
+% 			\draw[-stealth, thick] (0,0,0) -- (0,0,4) node[pos=1.075] {$z$};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% 	\caption{The angle between two linearly independent vectors lies on the plane spanned by the vectors.}
+% 	\label{fig:angle between two vectors}
+% \end{figure}
+%
+% If considering only the plane the vectors span, we can rotate it such that one of the vectors, say $\vu$, lies horizotally (see \autoref{fig:angle between two vectors in plane}). We then drop a perpendicular line from the head of the $\vu$ to the horizontal vector $\vv$. We call the length from the origin to the intersection point of $\vv$ and the perpendicular line the \emph{projection} of $\vu$ onto $\vv$, and denote it as $\projection$.
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\Large
+% 		\coordinate (o) at (0,0);
+% 		\coordinate (u) at (2.5,1.94);
+% 		\coordinate (v) at (3.6,0);
+% 		\coordinate (uv) at ($(u)+(v)$);
+% 		\filldraw[xpurple!20, draw=xpurple, thick] let
+% 		\p1=(u),\p2=(v),\n1={atan2(\y1,\x1)},\n2={atan2(\y2,\x2)}
+% 		in (o) -- ($(o)!1cm!(v)$) arc[start angle=\n2, end angle=\n1, radius=1cm]
+% 		node [text=xpurple, yshift=1pt] at ($(o)!7mm!(uv)$) {$\theta$};
+%
+% 		\draw[vector, xred] (o) -- ++(u) node [pos=1.1] {$\vec{u}$};
+% 		\draw[vector, xblue] (o) -- ++(v) node [pos=1.1] {$\vec{v}$};
+% 		\filldraw (o) circle (0.03);
+%
+% 		\draw[thick, densely dashed] (u) -- ++(0,-1.94);
+% 		\filldraw[black] ($(u)+(0,-1.94)$) circle (0.04);
+% 		\draw [black, thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}]
+% 		(o) -- ($(u)+(0,-1.94)$) node[midway, below , yshift=-5pt]{$\projection$};
+% 	\end{tikzpicture}
+% 	\caption{The projection of a vector $\vu$ onto another vector $\vv$ in the plane spanned by the two vectors.}
+% 	\label{fig:angle between two vectors in plane}
+% \end{figure}
+%
+% Since the origin, the head of $\vu$ and the intersection point of the perpendicular line with $\vv$ form a right triangle, using basic trigonometry we find that the cosine of the angle $\ath$ is
+% \begin{equation}
+% 	\cos\left(\ath\right) = \frac{\projection}{\gnorm{\vu}}.
+% 	\label{eq:cos from projection}
+% \end{equation}
+%
+% We can now use this construct to define a product between $\vu$ and $\vv$: their \emph{scalar product}. We define it as following:
+% \begin{equation}
+% 	\vu \cdot \vv = \projection \cdot \gnorm{\vv}.
+% 	\label{eq:scalar product}
+% \end{equation}
+%
+% Subtituting \autoref{eq:cos from projection} into \autoref{eq:scalar product} gives a very nice relation between the scalar product of two vectors and the angle between them:
+% \begin{equation}
+% 	\cos\left( \ath \right) = \frac{\vu\cdot\vv}{\gnorm{\vu}\gnorm{\vv}}.
+% 	\label{eq:cos defined via scalar product}
+% \end{equation}
+% The angle between the two vectors is then isolated by applying the $\arccos$ function on the right-hand side of \autoref{eq:cos defined via scalar product}. A common form of this equation is the following:
+% \begin{equation}
+% 	\vu\cdot\vv = \gnorm{\vu}\gnorm{\vv}\cos\left( \ath \right).
+% 	\label{eq:scalar product via cos}
+% \end{equation}
+%
+% Note that the scalar product returns a number, i.e. in the terms of linear algebra - a scalar, and hence its name. Since it is commonly denoted with a dot between the two vectors, it is sometimes refered to as the \emph{dot product}. A common notation for the scalar product is the so-called \emph{bracket notation}:
+% \[
+% 	\langle \vec{a},\vec{b} \rangle.
+% \]
+% Sometimes the comma in the notation is replaced by a vertical separator line:
+% \[
+% 	\langle \vec{a}\mid\vec{b} \rangle.
+% \]
+% This notation is very common in physics, and especially quantum physics where it is very useful and helps in simplifying many calculations. This will be discussed in more details in chapter/section TBD.
+%
+% Later in the section we will examine some common properties of the scalar product, and see how we can calculate it directly from the vectors in their column form. Beofre we do that, let's use what we learned about the scalar product so far to solve some easy problems in the examples below.
+%
+% \begin{example}{Angle between two vectors}{}
+% 	Find the scalar product of the vectors
+% 	\[
+% 		\vec{a} = \colvec{1;1},\ \vec{b}=\colvec{-1;1}.
+% 	\]
+%
+% 	\textbf{Solution}:
+% 	
+% 	As seen in \autoref{example:orthobasis}, the angle between $\vec{a}$ and $\vec{b}$ is $\frac{\pi}{2}$. Therefore, their scalar product is 
+% 	\begin{align*}
+% 		\vec{a}\cdot\vec{b} &= \norm{a}\norm{b}\cos\left(\theta\right)\\
+% 		&= \sqrt{2}\sqrt{2}\cos\left( \frac{\pi}{2} \right)\\
+% 		&= 2\cdot0 = 0.
+% 	\end{align*}
+% \end{example}
+%
+% \begin{example}{Scalar product of two vectors}{scalar product two vectors}
+% 	Calculate the scalar product of the two vectors $\vec{u}=\colvec{2;3;-1},\ \vec{v}=\colvec{-1;0;2}$, given that the angle between them is $\theta\approx2.069\approx\ang{118.561}$.
+%
+% 	\vspace{1em}
+% 	\textbf{Solution}:
+%
+% 	The norms of the two vectors are
+% 	\begin{align*}
+% 		\norm{u} &= \sqrt{2^{2}+3^{2}+(-1)^{2}} = \sqrt{4+9+1} = \sqrt{14} \approx 3.742,\\
+% 		\norm{v} &= \sqrt{(-1)^{2}+0^{2}+2^{2}} = \sqrt{1+4} = \sqrt{5} \approx 2.236.\\
+% 	\end{align*}
+%
+% 	Therefore, their scalar product is
+% 	\[
+% 		\vec{u}\cdot\vec{v} \approx \sqrt{14}\sqrt{5}\cos(2.069) \approx -4.
+% 	\]
+% \end{example}
+%
+% The scalar product of any two vectors $\vec{u},\vec{v}$ has two important properties:
+% \begin{itemize}
+% 	\item It is commutative, i.e. $\vec{u}\cdot\vec{v} = \vec{v}\cdot\vec{u}$.
+% 	\item Scalars can be taken out of the product, i.e. $\left(\alpha \vec{v}\right)\cdot\vec{u} = \vec{v}\cdot\left( \alpha\vec{u} \right) = \alpha\left( \vec{u}\cdot\vec{v} \right)$.
+% 	\item It equals zero in only one of two cases:
+% 		\begin{enumerate}
+% 			\item One of the vectors (or both) is the zero vector, or
+% 			\item The angle $\theta$ between the vectors is $\frac{\pi}{2}$, since then $\cos(\theta)=\cos\left(\frac{\pi}{2}\right)=0$.
+% 		\end{enumerate}
+% \end{itemize}
+%
+% When the angle between two vectors is $\frac{\pi}{2}$ (remember: this is equivalent to $\ang{90}$), we say that the two vectors are \emph{orthogonal} to eacth other. Note that in the special case of 2- and 3-dimensional we say that the vectors are \emph{perpendicular} to each other.
+%
+% This is such an important fact that we will put effort into framing it nicely, so you (the reader) could memorize it well. How well should you memorize this? Such that if someone wakes you up in the middle of the night and asked you, you could easily repeat it\footnote{For a humble fee, I'm willing to do this - just write me an email and we can discuss the terms ;)}.
+%
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{tikzpicture}[
+% 			%background rectangle/.style={fill=olive!2},
+% 			%show background rectangle,
+% 			every node/.style={inner sep=0pt, text=xverydarkblue},
+% 			node distance=12mm
+% 		]
+% 		\Large
+%
+% 		% Text
+% 		\node[text width=8cm, align=center] (u dot v){
+% 			$\vec{u}\cdot\vec{v} = 0$
+% 		};
+% 		\node[align=center, below of=u dot v](equiv) {$\Updownarrow$};
+% 		\node[align=center, below of=equiv](orthogonal) {$\vec{u}$ and $\vec{v}$ are orthogonal};
+%
+% 		% Corners
+% 		\node[shift={(-1cm,1cm)}, anchor=north west](CNW) at (u dot v.north west) {\pgfornament[width=1.75cm, color=xverydarkblue]{63}};
+% 		\node[shift={(1cm,1cm)}, anchor=north east](CNE) at (u dot v.north east) {\pgfornament[width=1.75cm, symmetry=v, color=xverydarkblue]{63}};
+% 		\node[shift={(-1cm,-3.7cm)}, anchor=south west](CSW) at (u dot v.south west) {\pgfornament[width=1.75cm, symmetry=h, color=xverydarkblue]{37}};
+% 		\node[shift={(1cm,-3.7cm)}, anchor=south east](CSE) at (u dot v.south east) {\pgfornament[width=1.75cm, symmetry=c, color=xverydarkblue]{41}};
+%
+% 		% Frames
+% 		\color{xverydarkblue}
+% 		\pgfornamenthline{CNW}{CNE}{north}{86}
+% 		\pgfornamenthline{CSW}{CSE}{south}{86}
+% 		\pgfornamentvline{CNW}{CSW}{west}{86}
+% 		\pgfornamentvline{CNE}{CSE}{east}{86}
+% 	\end{tikzpicture}
+% \end{figure}
+%
+% Calculating the scalar product of two vectors in $\Rs[n]$ using their column form is extremely straight-forward: it is nothing more than the sum of the component-wise product of the two vectors, i.e. given
+% \[
+% 	\vec{u}=\colvec{u_{1};u_{2};\vdots;u_{n}},\ \vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}},
+% \]
+% the scalar product $\vec{u}\cdot\vec{v}$ is
+% \begin{equation}
+% 	\vec{u}\cdot\vec{v} = u_{1}v_{1} + u_{2}v_{2} + \cdots + u_{n}v_{n} = \sum\limits_{k=1}^{n}u_{i}v_{i}.
+% 	\label{eq:scalar product in column form}
+% \end{equation}
+%
+% \begin{example}{Angle between two vectors}{}
+% 	Calculate the scalar product of the two vectors $\vec{a}=\colvec{1;1}$ and $\vec{b}=\colvec{-1;1}$ using the above formula (\autoref{eq:scalar product in column form}).
+%
+% 	\vspace{1em}
+% 	\textbf{Solution}:
+% 	
+% 	We simply substitute $\vec{a}$ and $\vec{b}$ into the equation:
+% 	\[
+% 		\vec{a}\cdot\vec{b} = 1\cdot(-1) + 1\cdot1 = -1+1 = 0,
+% 	\]
+% 	which is exactly the result we got using the previous method.
+% \end{example}
+%
+% \begin{example}{Scalar product of two vectors - algebraicly}{}
+% 	Calculate the scalar product $\vec{u}\cdot\vec{v}$ from \autoref{example:scalar product two vectors} using \autoref{eq:scalar product in column form}.
+%
+% 	\vspace{1em}
+% 	\textbf{Solution}:
+%
+% 	\[
+% 		\vec{u}\cdot\vec{v} = 2\cdot(-1) + 3\cdot0 + (-1)\cdot2 = -2-2 = -4,
+% 	\]
+% 	exactly the result we got in \autoref{example:scalar product two vectors}.
+% \end{example}
+%
+% For any given a $2$-dimensional vector $\vec{v}=\colvec{x;y}$ there is only a single orthogonal direction (\autoref{fig:R2_ortho}). We can use \autoref{eq:scalar product in column form} to find a general formula for a vector $\vec{v^{\perp}}$ representing this direction:
+% \[
+% 	0 = \vec{v}\cdot\vec{v}^{\perp} = \colvec{x;y}\cdot\colvec{a;b} = xa + yb.
+% \]
+%
+% The solution for the above equation is the vector
+% \begin{equation}
+% 	\vec{v}^{\perp} = \colvec{-y;x}.
+% 	\label{eq:ortho_vec_R2}
+% \end{equation}
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 			vector plane,
+% 			width=7cm, height=7cm,
+% 			xticklabels={,},
+% 			yticklabels={,},
+% 			xmin=-2, xmax=2,
+% 			ymin=-2, ymax=2,
+% 			]
+% 			\pgfmathsetmacro{\vx}{1}
+% 			\pgfmathsetmacro{\vy}{1.5}
+% 			\pgfmathsetmacro{\nv}{sqrt(\vx^2+\vy^2)}
+% 			\tikzset{every node/.style={font=\Large}}
+% 			\draw[vector, xred] (0,0) -- (\vx,\vy) node [pos=1.1] {$\vec{v}$};
+% 			\addplot[thin, black!75, dashed] {-\vx/\vy*\x};
+% 			\draw[vector, xpurple] (0,0) -- (-\vy/\nv,\vx/\nv) node [above, yshift=5pt] {$\vec{v}_{\perp}$};
+% 			\draw[vector, xorange] (0,0) -- (\vy/\nv,-\vx/\nv) node [below, yshift=-5pt] {$-\vec{v}_{\perp}$};
+% 			\addplot[only marks, mark=*] coordinates {(0,0)};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% 	\caption{A vector $\textcolor{xred}{\vec{v}}$ and its orthogonal direction, signified by a dashed line. Two vectors $\textcolor{xpurple}{\vec{v}^{\perp}}$ and $\textcolor{xorange}{\vec{v}^{\perp}}$ are drawn on the orthogonal direction.}
+% 	\label{fig:R2_ortho}
+% \end{figure}
+%
+% The norm of a vector can be calculated using the scalar product: given a vector $\vec{v}=\colvec{v_{1};v_{2};\vdots;v_{n}}$,
+% \begin{equation}
+% 	\vec{v}\cdot\vec{v} = v_{1}v_{1} + v_{2}v_{2} + \cdots + v_{n}v_{n} = v_{1}^{2} + v_{2}^{2} + \cdots + v_{n}^{2} = \norm{v}^{2}.
+% 	\label{eq:scalar product to norm}
+% \end{equation}
+%
+% We therefore usually define the norm in terms of the scalar product:
+% \begin{equation}
+% 	\norm{v} = \sqrt{\vec{v}\cdot\vec{v}}.
+% 	\label{eq:norm from scalar product}
+% \end{equation}
+% This might seem unconsequential at the moment, but it will become very useful when we generalize linear algebra to more abstract vector spaces (\autoref{chapter:linear algebra rigorous}).
+%
+% Any vector can be \emph{decomposed} into its projections on $n$ orthogonal directions. In fact, this is exactly what we do when we write a vector as a linear combination of the vectors of an orthogonal basis: consider for example the vector
+% \[
+% 	\vec{v} = \colvec{v_{1};v_{2};\vdots;v_{n}}.
+% \]
+% It can be written as the linear combination
+% \[
+% 	\vec{v} = v_{1}\eb{1} + v_{2}\eb{2} + \cdots + v_{n}\eb{n} = \sum\limits_{i=1}^{n}v_{i}\eb{i},
+% \]
+% where in turn any element $v_{i}$ is the projection of $\vec{v}$ on the basis vector $\eb{i}$:
+% \begin{equation}
+% 	v_{i} = \proj{\eb{i}}{\vec{v}},
+% 	\label{eq:}
+% \end{equation}
+% and thus the component $v_{i}\eb{i}=\left(\proj{\eb{i}}{\vec{v}}\right)\eb{i}$ is itself a vector of norm $v_{i}$ pointing at the direction $\eb{i}$. In general, given an orthogonal basis set $B=\left\{ \vec{b}_{1},\ \vec{b}_{2},\ \cdots,\ \vec{b}_{n} \right\}$, any vector in $\Rs[n]$ can be decomposed as follows:
+% \begin{equation}
+% 	\vec{v} = \sum\limits_{i=1}^{n}\left(\proj{\hat{b}_{i}}{\vec{v}}\right)\hat{b}_{i}.
+% 	\label{eq:vector decomposition to orthogonal directions}
+% \end{equation}
+%
+% In the case where $B$ is an orthonormal basis set, we know that each of its vector is a unit vector (i.e. $\norm{b_{i}}=1$), and using \autoref{eq:scalar product} we can re-write \autoref{eq:vector decomposition to orthogonal directions} as
+% \begin{equation}
+% 	\vec{v} = \sum\limits_{i=1}^{n}\left( \vec{v}\cdot\hat{b}_{i} \right)\hat{b}_{i}.
+% 	\label{eq:vector decomposition in orthonormal basis set}
+% \end{equation}
+%
+% \begin{example}{Decomposing a vector}{}
+% 	EXAMPLE TBD
+% \end{example}
+%
+%
+% \subsection{The cross product}
+% Another commonly used product of two vectors is the so-called \emph{cross product}. Unlike the scalar product, it is only really valid in $\Rs[2],\ \Rs[3]$ and $\Rs[7]$, of which we will focus on $\Rs[3]$ and touch a bit on its uses in $\Rs[2]$. Also in contrast to the scalar product, the cross product in $\Rs[3]$ results in a vector rather than a scalar - therefore the product is sometimes known as the \emph{vector product}. The cross product uses the notation $\vec{a}\times\vec{b}$, from which it derives its name.
+%
+% We start with the definition of the cross product in $\Rs[2]$: the cross product of two vectors $\vu=\vutd$ and $\vv=\vvtd$ is the (signed) area of the parallelogram defined by the two vectors (see \autoref{fig:cross_product_in_R2}).
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\begin{axis}[
+% 			vector plane,
+% 			xmin=-1, xmax=4,
+% 			ymin=-1, ymax=4,
+% 			xticklabels={,},
+% 			yticklabels={,},
+% 		]
+% 			\tikzset{every node/.style={font=\large}}
+% 			\fill[xpurple, opacity=0.2] (0,0) -- (1,2.5) -- (3,3) -- (2,0.5) -- cycle;
+% 			\draw[vector, xred] (0,0) -- (1,2.5) node[midway, above left] {$\vec{u}$};
+% 			\draw[vector, xblue] (0,0) -- (2,0.5) node[midway, above] {$\vec{v}$};
+% 			\draw[vector, xred, dashed] (2,0.5) -- (3,3);
+% 			\draw[vector, xblue, dashed] (1,2.5,0) -- (3,3);
+% 			\node[xpurple] at (1.5,1.75) {$\vec{u}\times\vec{v}$};
+% 			\addplot[only marks, mark=*] coordinates {(0,0)};
+% 		\end{axis}
+% 	\end{tikzpicture}
+% 	\caption{The cross product in $\Rs[2]$  of two vectors $\vu=\vutd$ and $\vv=\vvtd$ as the signed area of the parallogram defined by the vectors.}
+% 	\label{fig:cross_product_in_R2}
+% \end{figure}
+%
+% The value of the parallelogram defined by $\vu$ and $\vv$ is
+% \begin{equation}
+% 	\vu\times\vv = \gnorm{\vu}\gnorm{\vv}\sin \left( \ath \right),
+% 	\label{eq:cross_product_geometric_area}
+% \end{equation}
+% where $\ath$ is the angle between the vectors. This is extremely similar to the scalar product, and we can use this fact to find how to calculate the cross product from vectors in column form: if we replace $\vu$ by a vector orthogonal to it, denoted by $\vu^{\perp}$, the cross product is then
+% \begin{equation}
+% 	\vu\times\vv = \gnorm{\vu^{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right),
+% 	\label{eq:cross_product_to_dot_product_part1}
+% \end{equation}
+% since the angle between $\vu^{\perp}$ and $\vv$ is $\frac{\pi}{2}$ more than that between $\vu$ and $\vv$. Using the fact that $\sin \left( \theta+\frac{\pi}{2} \right) = \cos \left( \theta \right)$, we get the equality
+% \begin{align}
+% 	\vu\times\vv &= \gnorm{\vu^{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right)\nonumber\\
+% 				 &= \gnorm{\vu^{\perp}}\gnorm{\vv}\cos \left( \ath \right)\nonumber\\
+% 				 &= \vu^{\perp}\cdot\vv.
+% 	\label{eq:cross_product_to_dot_product_part2}
+% \end{align}
+% In $\Rs[2]$, any vector $\vu=\vutd$ has two vectors orthogonal to it: $\colvec{\textcolor{xred}{-b};\textcolor{xred}{a}}$ and $\colvec{\textcolor{xred}{b};\textcolor{xred}{-a}}$. Choosing the former gives
+% \begin{equation}
+% 	\vu\times\vv = \colvec{\textcolor{xred}{-b};\textcolor{xred}{a}} \cdot \vvtd = -\textcolor{xred}{b}\textcolor{xblue}{c}+\textcolor{xred}{a}\textcolor{xblue}{d},
+% 	\label{eq:cross_product_2d_algebraic}
+% \end{equation}
+% while choosing the latter gives
+% \begin{equation}
+% 	\vu\times\vv = \colvec{\textcolor{xred}{b};\textcolor{xred}{-a}} \cdot \vvtd = \textcolor{xred}{b}\textcolor{xblue}{c}-\textcolor{xred}{a}\textcolor{xblue}{d}.
+% 	\label{eq:}
+% \end{equation}
+% These two forms are the opposite of each other - i.e. if one yields the value $4$, the other yields the value $-4$. We will see which one is used in a moment.
+%
+% On to $\Rs[3]$: geometrically, the cross product of two vectors $\vu,\vv\in\Rs[3]$ is defined as a \textbf{vector} $\vw\in\Rs[3]$ which is \textbf{orthogonal to both} $\vu$ and $\vv$, and with norm of the same magnitude as the product would have in $\Rs[2]$, i.e.
+% \begin{equation}
+% 	\gnorm{\vw} = \gnorm{\vu}\gnorm{\vv}\sin\left(\ath\right).
+% 	\label{eq:cross product geometry}
+% \end{equation}
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\huge
+%
+% 	% Plane
+% 		\draw[-, dashed, very thick, fill=xgreen!30] (0,0,0) -- (0,0,7) -- (7,0,7) -- (7,0,0) -- cycle;
+%
+% 	% Coordinates
+% 		\coordinate (o) at (1,0,3);
+% 		\coordinate (u) at (2,0,2.5);
+% 		\coordinate (v) at (4,0,-2);
+% 		\coordinate (w) at (0,3,0);
+%
+% 	% Angle
+% 		\draw[very thick, xpurple, cap=round] (2,0,4.2) arc [start angle=-70, end angle=33, x radius=0.7, y radius=0.4];
+% 		\node[text=xpurple] at ($(o)+(0.5,-0.13,0)$) {\large$\theta$};
+%
+% 	% Vectors
+% 		\draw[vector, xred] (o) -- ++(u) node [pos=1.1, xshift=3pt] {$\vec{u}$};
+% 		\draw[vector, xblue] (o) -- ++(v) node [pos=1.1, xshift=-5pt] {$\vec{v}$};
+% 		\draw[vector, xpurple] (o) -- ++(w) node [pos=1.1, xshift=1cm] {$\vw=\vu\times\vv$};
+%
+% 	% Perpendiculars
+% 		\tikzset{rightangle/.style={-, thick, fill=gray!50, fill opacity=0.5}}
+% 		\draw[rightangle] (o) -- ++(0.3,0,-0.15) -- ++(0,0.3,0) -- ++(-0.3,0,0.15) -- cycle;
+% 		\draw[rightangle] (o) -- ++(0.4,0,0.5) -- ++(0,0.3,0) -- ++(-0.4,0,-0.5) -- cycle;
+% 	\end{tikzpicture}
+% 	\caption{The cross product of the vectors $\vu$ and $\vv$ relative to the plane spanned by the two vectors.}
+% 	\label{fig:cross product}
+% \end{figure}
+%
+% The direction of $\vu\times\vv$ is determined by the \emph{right-hand rule}: using a person's right hand, when $\vu$ points in the direction of their index finger and $\vv$ points in the direction of their middle finger, then vector $\vw=\vu\times\vv$ points in the direction of their thumb:
+%
+% \begin{figure}[H]
+% \centering
+% \includegraphics[scale=0.35]{figures/linear_algebra/rhr.pdf}
+% \end{figure}
+%
+% The cross product is \textbf{anti-commutative}, i.e. changing the order of the vectors results in inverting the product:
+%   \begin{equation*}
+%   \vu\times\vv = -\left( \vv\times\vu \right).
+%   \end{equation*}
+%
+% When the vectors are given as column vectors $\vu=\colvec{\textcolor{xred}{u_{x}};\textcolor{xred}{u_{y}};\textcolor{xred}{u_{z}}},\ \vv=\colvec{\textcolor{xblue}{v_{x}};\textcolor{xblue}{v_{y}};\textcolor{xblue}{v_{z}}}$, the resulting cross product is
+%
+% \begin{equation}
+% 	\vu\times\vv = \begin{pmatrix}\textcolor{xred}{u_{y}}\textcolor{xblue}{v_{z}}-\textcolor{xred}{u_{z}}\textcolor{xblue}{v_{y}}\\\textcolor{xred}{u_{z}}\textcolor{xblue}{v_{x}}-\textcolor{xred}{u_{x}}\textcolor{xblue}{v_{z}}\\\textcolor{xred}{u_{x}}\textcolor{xblue}{v_{y}}-\textcolor{xred}{u_{y}}\textcolor{xblue}{v_{x}}\end{pmatrix}
+% 	\label{eq:cross product calculation}
+% \end{equation}
+%
+% \begin{note}{The cross product of the standard basis vectors}{}
+% 	The cross product of two of the standard basis vectors in $\Rs[3]$ is the third basis vector. Its sign ($\pm$) is determined by a cyclic rule:
+% 	\begin{equation*}
+% 		\text{sign}\left( \eb{i}\times\eb{j} \right) =
+% 		\begin{cases}
+% 			1 & \text{if } (i,j)\in \left\{(1,2),\ (2,3),\ (3,1)\right\},\\
+% 			-1 & \text{if } (i,j)\in \left\{(3,2),\ (2,1),\ (1,3)\right\},\\
+% 			0 & \text{otherwise}.
+% 		\end{cases}
+% 	\end{equation*}
+% \end{note}
+% \begin{challenge}{Orthogonalily of the cross product}{}
+% 	Using component calculation and utilizing the dot product, show that $\vec{a}\times\vec{v}$ is indeed orthogonal to both $\vec{a}$ and $\vec{b}$.
+% \end{challenge}
+%
+% \subsection{The Gram–Schmidt process}
+% While all basis sets of a given space are equaly good at spanning that space\footnote{\href{https://knowyourmeme.com/memes/theyre-good-dogs-brent}{they're good basis sets Brent}}, as humans we sometimes prefer using orthonormal basis sets due to their nice properties. One such property of orthonormal basis sets, which we will use in a later section, is that the scalar product of any two vectors of the set is the Kronecker's delta - i.e. given an orthonormal basis set
+% \[
+% 	B=\left\{\vec{b}_{1},\vec{b}_{2},\dots,\vec{b}_{n}\right\},
+% \]
+% for any two basis vectors $\vec{b_{i}}$ and $\vec{b}_{j}$,
+% \[
+% 	\vec{b}_{i} \cdot \vec{b}_{j} = \delta_{ij} =
+% 	\begin{cases}
+% 		1 &\text{ if } i=j,\\
+% 		0 &\text{ if } i\neq j.\\
+% 	\end{cases}
+% \]
+%
+% However, most basis sets are not orthonormal\footnote{since there are countlessly infinitely many basis sets for any space, the meaning of ``most'' in this context is that the probability that a random basis set is not orthonormal is greater than the probability that it is orthonormal.}. How can we construct an orthonormal basis set from a given basis set?
+%
+% In the unlikely case that the given basis set is orthogonal, the answer is simple: normalize each of the basis vectors. When the given basis set in not orthogonal we can use the \emph{Gram-Schmidt process} (GSP), which takes a basis set and transforms it into an orthonormal basis set.
+%
+% In order to understand the GSP, one must first understand the following fact: given a vector $\vec{v}$ and a plane $P$ which contains the vector, we can always write $\vec{v}$ as the sum of any two orthogonal vectors $\vec{a}$ and $\vec{b}$ in $P$, i.e.
+% \begin{equation}
+% 	\vec{v} = \vec{a} + \vec{b},
+% 	\label{eq:simple_vector_sum}
+% \end{equation}
+% where all the above vectors lie on the same plane (see \autoref{fig:orthogonal_decomposition_vector_in_plane}).
+%
+% \begin{figure}
+% 	\centering
+% 	\pgfmathsetmacro{\vx}{4}
+% 	\pgfmathsetmacro{\vy}{4}
+% 	\pgfmathsetmacro{\vnorm}{sqrt(\vx*\vx+\vy*\vy)}
+% 	\pgfmathsetmacro{\uAx}{1}
+% 	\pgfmathsetmacro{\uAy}{2}
+% 	\pgfmathsetmacro{\uBx}{-\uAy}
+% 	\pgfmathsetmacro{\uBy}{\uAx}
+% 	\pgfmathsetmacro{\unorm}{sqrt(\uAx*\uAx + \uAy*\uAy)}
+% 	\pgfmathsetmacro{\uAproj}{(\uAx*\vx+\uAy*\vy)/\unorm)}
+% 	\pgfmathsetmacro{\uBproj}{(\uBx*\vx+\uBy*\vy)/\unorm)}
+% 	\pgfmathsetmacro{\wAx}{2}
+% 	\pgfmathsetmacro{\wAy}{0.2}
+% 	\pgfmathsetmacro{\wBx}{-\wAy}
+% 	\pgfmathsetmacro{\wBy}{\wAx}
+% 	\pgfmathsetmacro{\wnorm}{sqrt(\wAx*\wAx + \wAy*\wAy)}
+% 	\pgfmathsetmacro{\wAproj}{(\wAx*\vx+\wAy*\vy)/\wnorm)}
+% 	\pgfmathsetmacro{\wBproj}{(\wBx*\vx+\wBy*\vy)/\wnorm)}
+% 	\begin{subfigure}[]{0.45\textwidth}
+% 		\begin{center}
+% 			\begin{tikzpicture}
+% 				\tikzset{every node/.style={font=\Large}}
+% 				\begin{axis}[
+% 					empty,
+% 					width=6cm, height=6cm,
+% 					xmin=-2, xmax=7,
+% 					ymin=-2, ymax=7,
+% 					]
+% 					% Defs
+% 					\coordinate (O) at (0,0);
+% 					\coordinate (v) at (\vx,\vx);
+% 					\coordinate (u1) at ({\uAx/\unorm*\uAproj},{\uAy/\unorm*\uAproj});
+% 					\coordinate (u2) at ({\uBx/\unorm*\uBproj},{\uBy/\unorm*\uBproj});
+% 					% Drawing
+% 					\draw[vector] (O) -- (v) node[pos=1.1] {$\vec{v}$};
+% 					\draw[vector, xred,  dashed] (O) -- (u1) node[pos=1.13] {$\vec{u}_{1}$};
+% 					\draw[vector, xblue, dashed] (O) -- (u2) node[pos=1.35] {$\vec{u}_{2}$};
+% 				\end{axis}
+% 			\end{tikzpicture}
+% 		\end{center}
+% 		\caption{}
+% 		\label{fig:}
+% 	\end{subfigure}
+% 	\begin{subfigure}[]{0.45\textwidth}
+% 		\begin{center}
+% 			\begin{tikzpicture}
+% 				\tikzset{every node/.style={font=\Large}}
+% 				\begin{axis}[
+% 					empty,
+% 					width=6cm, height=6cm,
+% 					xmin=-2, xmax=7,
+% 					ymin=-2, ymax=7,
+% 					]
+% 					\coordinate (w1) at ({\wAx/\wnorm*\wAproj},{\wAy/\wnorm*\wAproj});
+% 					\coordinate (w2) at ({\wBx/\wnorm*\wBproj},{\wBy/\wnorm*\wBproj});
+% 					% Defs
+% 					% Drawing
+% 					\draw[vector] (O) -- (v) node[pos=1.1] {$\vec{v}$};
+% 					\draw[vector, xdarkgreen, dashed] (O) -- (w1) node[pos=1.2] {$\vec{w}_{1}$};
+% 					\draw[vector, xorange,    dashed] (O) -- (w2) node[pos=1.2] {$\vec{w}_{2}$};
+% 				\end{axis}
+% 			\end{tikzpicture}
+% 		\end{center}
+% 		\caption{}
+% 		\label{fig:}
+% 	\end{subfigure}
+% 	\caption{The same vector $\vec{v}$ decomposed into two sets of orthogonal components: (a) \textcolor{xred}{$u_{1}$} and \textcolor{xblue}{$u_{2}$}; (b) \textcolor{xdarkgreen}{$w_{1}$} and \textcolor{xorange}{$w_{2}$}. There are infinitely many such orthogonal sets on any plane containing $\vec{v}$.}
+% 	\label{fig:orthogonal_decomposition_vector_in_plane}
+% \end{figure}
+%
+% Rearranging \autoref{eq:simple_vector_sum}, we get that
+%
+% \begin{align}
+% 	\vec{a} &= \vec{v}-\vec{b},\ \text{and}\nonumber\\
+% 	\vec{b} &= \vec{v}-\vec{a}.
+% \end{align}
+%
+% \tbw{Finish this subsection}
+%
+% \subsection{Normal vectors}
+% A special kind of vector in $\Rs[3]$ is the so-called \emph{normal vector} to a plane $\mathbf{P}$: this vector, usually denoted as $\normalVec{n}{P}$, is pointing at the orthogonal direction to any vector of the plane (see XXX). Given one knows three points on the plane, its normal vector can be calculated: say the following three points in $\mathbf{P}$ are given (for visualizing the following steps see YYY):
+% \tbw{Change XXX and YYY to the right refs}
+% \begin{align}
+% 	p &= (p_{x}, p_{y}, p_{z})\nonumber\\
+% 	q &= (q_{x}, q_{y}, q_{z})\nonumber\\
+% 	r &= (r_{x}, r_{y}, r_{z}),
+% 	\label{eq:three points in a plane}
+% \end{align}
+%
+% \begin{figure}
+% 	\centering
+% 	\begin{subfigure}{0.3\textwidth}
+% 		\begin{tikzpicture}
+% 			\begin{axis}[
+% 					width=5cm, height=5cm,
+% 					axis line style={draw=none},
+% 					tick style={draw=none},
+% 					z buffer=sort,
+% 					xmin=-4, xmax=4,
+% 					ymin=-4, ymax=4,
+% 					zmin=-4, zmax=4,
+% 					xtick=\empty,
+% 					ytick=\empty,
+% 					ztick=\empty,
+% 					view={50}{20},
+% 				]
+% 				\addplot3[surf, faceted color=xgreen!50!black!25, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=-4:4, samples=7] {0.4*y};
+% 				\draw[vector] (0,0,0) -- (0,-1.2,3) node[pos=1.3] {$\normalVec{n}{P}$};
+% 				\draw[thick, fill=black!50, fill opacity=0.3] (0,1,0.4) -- (0,0.62860932,1.32847669) -- (0,-0.37139068,0.92847669) -- (0,0,0) -- cycle;
+% 				\draw[thick, fill=black!50, fill opacity=0.3] (0,0,0) -- (0,-0.37139068,0.92847669) -- (1,-0.37139068,0.92847669) -- (1,0,0) -- cycle;
+% 				\node[text=xgreen] at (4,3,3) {$\mathbf{P}$};
+% 			\end{axis}
+% 		\end{tikzpicture}
+% 		\caption{The normal vector to $\mathbf{P}$.}
+% 		\label{fig:normalVec1}
+% 	\end{subfigure}
+% 	\begin{subfigure}{0.3\textwidth}
+% 		\begin{tikzpicture}
+% 			\begin{axis}[
+% 					width=5cm, height=5cm,
+% 					axis line style={draw=none},
+% 					tick style={draw=none},
+% 					z buffer=sort,
+% 					xmin=-4, xmax=4,
+% 					ymin=-4, ymax=4,
+% 					zmin=-4, zmax=4,
+% 					xtick=\empty,
+% 					ytick=\empty,
+% 					ztick=\empty,
+% 					view={50}{20},
+% 				]
+% 				\addplot3[surf, faceted color=xgreen!50!black!25, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=-4:4, samples=7] {0.4*y};
+% 				\addplot3[only marks, mark=*, point meta=explicit symbolic,nodes near coords] coordinates {
+% 					(1,2,0.8)[$p$] (-2,-0.5,-0.2)[$q$] (1.5,-2,-0.8)[$r$]
+% 				};
+% 			\end{axis}
+% 		\end{tikzpicture}
+% 		\caption{Finding three points on the plane.}
+% 		\label{fig:normalVec2}
+% 	\end{subfigure}
+% 	\begin{subfigure}{0.3\textwidth}
+% 		\begin{tikzpicture}
+% 			\begin{axis}[
+% 					width=5cm, height=5cm,
+% 					axis line style={draw=none},
+% 					tick style={draw=none},
+% 					z buffer=sort,
+% 					xmin=-4, xmax=4,
+% 					ymin=-4, ymax=4,
+% 					zmin=-4, zmax=4,
+% 					xtick=\empty,
+% 					ytick=\empty,
+% 					ztick=\empty,
+% 					view={50}{20},
+% 				]
+% 				\addplot3[surf, faceted color=xgreen!50!black!25, fill=xgreen!20, opacity=0.9, domain=-4:4, y domain=-4:4, samples=7] {0.4*y};
+% 				\draw[vector, xred]  (1,2,0.8) -- (-2,-0.5,-0.2) node[midway, above] {$\vec{v}_{pq}$};
+% 				\draw[vector, xblue] (1,2,0.8) -- (1.5,-2,-0.8)  node[midway, right, yshift=-2pt] {$\vec{v}_{pr}$};
+% 				\addplot3[only marks, mark=*, point meta=explicit symbolic,nodes near coords] coordinates {
+% 					(1,2,0.8)[$p$] (-2,-0.5,-0.2)[$q$] (1.5,-2,-0.8)[$r$]
+% 				};
+% 			\end{axis}
+% 		\end{tikzpicture}
+% 		\caption{Finding two vectors on the plane.}
+% 		\label{fig:normalVec3}
+% 	\end{subfigure}
+% 	\caption{A normal vector $\normalVec{n}{P}$ to the plane $\mathbf{P}$.}
+% 	\label{fig:normalVec}
+% \end{figure}
+%
+% We can get two vectors lying on the plane by first considering the points as vectors, i.e.
+% \begin{equation}
+% 	\vec{p} = \colvec{p_{x};p_{y};p_{z}},\ \vec{q} = \colvec{q_{x};q_{y};q_{z}},\ \vec{r} = \colvec{r_{x};r_{y};r_{z}}.
+% 	\label{eq:three points in a plane as vectors}
+% \end{equation}
+%
+% Then, we calculate two vectors on the plane by subtraction, e.g.
+% \begin{align}
+% 	\vec{v}_{pq} &= \vec{q} - \vec{p} = \colvec{q_{x}-p_{x};q_{y}-p_{y};q_{z}-p_{z}},\nonumber\\
+% 	\vec{v}_{pr} &= \vec{r} - \vec{p} = \colvec{r_{x}-p_{x};r_{y}-p_{y};r_{z}-p_{z}}.
+% 	\label{eq:two vectors in the plane}
+% \end{align}
+%
+% The normal vector $\hat{n}_{\bm{p}}$ must be orthogonal to both $\vec{v}_{pq}$ and $\vec{v}_{pr}$ - and so we use the cross product to find its direction:
+% \begin{equation}
+% 	\vec{n}_{\mathbf{P}} = \vec{v}_{pq} \times \vec{v}_{pr} = \colvec{(q_{y}-p_{y})(r_{z}-p_{z}) - (r_{y}-p_{y})(q_{z}-p_{z});(p_{x}-q_{x})(r_{z}-p_{z}) - (r_{x}-p_{x})(q_{z}-p_{z});(q_{x}-p_{x})(r_{y}-p_{y}) - (r_{x}-p_{x})(p_{y}-q_{y})}.
+% 	\label{eq:normal to plane}
+% \end{equation}
+%
+% Normalizing $\vec{n}_{\mathbf{P}}$ will then yield the normal vector $\normalVec{n}{P}$\footnote{I leave this as a challenge to the reader, because I'm lazy.}.
+%
+% \begin{note}{Sign of normal vectors}{}
+% 	The vector $\vec{m}=-\normalVec{n}{P}$ has all the properties of $\normalVec{n}{P}$, and is indeed a normal vector to $\mathbf{P}$. The choice of which of the two vectors to use depends on the application. For now, we do not elaborate on this further.
+% \end{note}
+%
+% \subsection{Examples}
+% To wrap up the vectors section, we solve some problems which cover the material presented in the section:
+%
+% \begin{example}{Vector form of gravitational force}{gravityforce}
+%   According to Newton's law of gravity, given two objects $O_{1}$ and $O_{2}$ with masses $m_{1}$ and $m_{2}$ respectively, each of them would feel a gravitational force of attraction \textbf{in the direction of the other object} with the following magnitude:
+%   \[
+%     F = G \frac{m_{1}m_{2}}{r^{2}},
+%   \]
+%   where $G$ is a universal constant and $r$ is the distance between the two objects.
+%   
+%   Say we put $O_{1}$ and $O_{2}$ on an axis system such that their positions are $\vec{r}_{1} = \colvec{x_{1};y_{1};z_{1}}$ and $\vec{r}_{2}=\colvec{x_{2};y_{2};z_{2}}$, respectively (see below figure for a 2-dimensions representation).
+%
+%   The system therefore has two forces:
+%   \begin{itemize}
+%     \item $\vec{F}_{12}$: the gravitational force acting on object $O_{1}$ as a result of $O_{2}$. It points from $O_{1}$ towards $O_{2}$.
+%     \item $\vec{F}_{21}$: the gravitational force acting on $O_{2}$ as a result of $O_{1}$. It points from $O_{2}$ towards $O_{1}$.
+%   \end{itemize}
+%
+%   \centering
+%   \begin{tikzpicture}
+%     \pgfmathsetmacro{\xa}{3}
+%     \pgfmathsetmacro{\ya}{3}
+%     \pgfmathsetmacro{\xb}{-5}
+%     \pgfmathsetmacro{\yb}{-2}
+%     \begin{axis}[
+%       linear plane no ticks,
+%       width=12cm, height=7cm,
+%       xmin=-7, xmax=7,
+%      ]
+%      \coordinate (O1) at (\xa,\ya);
+%      \coordinate (O2) at (\xb,\yb);
+%      \draw[thick, black, fill=xred!75 ] (O1) circle (0.3) node[right, xshift=+2mm] {$O_{1}$};
+%      \draw[thick, black, fill=xblue!75] (O2) circle (0.2) node[below, yshift=-2mm] {$O_{2}$};
+%      \draw[dashed] (O1) -- (O2);
+%      \draw[vector, xblue] (O1) -- ($(O1)!0.3!(O2)$) node[midway, above, xshift=-2mm] {$\vec{F}_{12}$};
+%      \draw[vector, xred ] (O2) -- ($(O2)!0.3!(O1)$) node[midway, below, xshift=+2mm] {$\vec{F}_{21}$};
+%     \end{axis}
+%   \end{tikzpicture}
+%
+%   \flushleft
+%   Find the explicit form of each of the two force vectors, i.e. using only the parameters $G, m_{1}$ and $m_{2}$, and the positions $\vec{r}_{1}$ and $\vec{r}_{2}$.
+%
+%   \vspace{1em}
+%   \textbf{Solution}
+%
+%   The two vectors $\vec{F}_{12}$ and $\vec{F}_{21}$ both lie on the line connecting $O_{1}$ and $O_{2}$. Therefore, their orientations are exactly opposite, and since their magnitudes have to be equal (see the force definition above), the two vectors are simply the opposite of eachother, i.e.
+%   \[
+%     \vec{F}_{12} = -\vec{F}_{21}.
+%   \]
+%   We therefore need to calculate only a single force vector $\vec{F}$ and we automatically get the other force vector as $-\vec{F}$. We will thus first find the explicit form of the vector $\vec{F}=\vec{F}_{12}$, and using this form easily find $\vec{F}_{21}$ as $-\vec{F}$.
+%
+%   To get the explicit form of $\vec{F}$ we should find its magnitude $\alpha\in\Rs$ and direction $\hat{v}\in\Rs{3}$, and then we can write
+%   \[
+%     \vec{F} = \alpha\hat{v}.
+%   \]
+%
+%   We start with the magnitude: since the magnitude of the gravitational force is given by
+%   \[
+%     \alpha = \norm{F} = G\frac{m_{1}m_{2}}{r^{2}},
+%   \]
+%   and since we are given $G, m_{1}$ and $m_{2}$ as parameters, we are only left with expressing $r^{2}$ as a function of the positions $\vec{r}_{1}$ and $\vec{r}_{2}$ of the two objects. Given any two vectors, we can find their relative distance by simply \textit{subtracting} one vector from the other. The result is a vector connecting the two given vectors, and its norm would be the distance between the vectors. Therefore, we find that
+%   \[
+%     r^{2} = \gnorm{\vec{r}_{1}-\vec{r}_{2}}^{2} = \gnorm{\colvec{x_{2}-x_{1};y_{2}-y_{1};z_{2}-z_{1}}}^{2} = \left( x_{2}-x_{1} \right)^{2} + \left( y_{2}-y_{1} \right)^{2} + \left( z_{2}-z_{1} \right)^{2}.
+%   \]
+%   (note that the order of subtraction forces the resulting vector to point from $O_{1}$ towards $O_{2}$. This will become handy soon)
+%
+%   \vspace{1em}
+%   We can therefore write the magnitude of $\vec{F}$ as
+%   \[
+%     F = G\frac{m_{1}m_{2}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}^{2}}.
+%   \]
+%
+%   The direction of $\vec{F}$ is the same direction as $\vec{\Delta r}$, i.e. from $O_{1}$ to $O_{2}$. By normalizing $\vec{\Delta r}$ we get a vector pointing in the direction we want, with norm $1$:
+%   \[
+%     \hat{r} = \frac{\vec{r}_{2}-\vec{r}_{1}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}}.
+%   \]
+%
+%   Altogether we get that $\vec{F}$ has the form
+%   \[
+%     \vec{F}_{12} = \vec{F} = \alpha\hat{v} = \frac{Gm_{1}m_{2}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}^{3}}\left(\vec{r}_{2}-\vec{r}_{1}\right),
+%   \]
+%   and also
+%   \[
+%     \vec{F}_{21} = -\vec{F} = -\frac{Gm_{1}m_{2}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}^{3}}\left(\vec{r}_{2}-\vec{r}_{1}\right) = \frac{Gm_{1}m_{2}}{\gnorm{\vec{r}_{2}-\vec{r}_{1}}^{3}}\left(\vec{r}_{1}-\vec{r}_{2}\right).
+%   \]
+%
+% \end{example}
+%
+% \begin{example}{Reflection of light rays}{reflection}
+% 	A ray light hits a mirror, modelled by the plane $\mathbf{P}$ which is defined by the normal vector $\normalVec{n}{P}$. The direction of the light ray is given by $\vec{d}$. What is the direction of the reflected light ray $\vec{r}$? Recall that both the incident and reflected rays are at the same angle in respect to the normal vector of $\normalVec{n}{P}$, and that the incident ray lie on the plane defined by $\vec{d}$ and $\normalVec{n}{P}$.
+%
+% \centering
+% \begin{tikzpicture}
+% 	\begin{axis}[
+% 			width=6.5cm, height=6.5cm,
+% 			axis line style={draw=none},
+% 			tick style={draw=none},
+% 			z buffer=sort,
+% 			xmin=-4, xmax=4,
+% 			ymin=-4, ymax=4,
+% 			zmin=-4, zmax=4,
+% 			xtick=\empty,
+% 			ytick=\empty,
+% 			ztick=\empty,
+% 			view={80}{15},
+% 		]
+% 		\addplot3[surf, faceted color=xblue!50, fill=xblue!20, opacity=0.9, domain=-4:4, y domain=-4:4, samples=7] {0.4*y};
+% 		\draw[vector] (0,0,0) -- (0,-0.6,1.5) node[pos=1.2] {$\normalVec{n}{P}$};
+% 		\draw[vector, xred] (0,-2,1) -- (0,0,0) node[pos=-0.1] {$\vec{d}$};
+% 		\draw[vector, xgreen] (0,0,0) -- (0,0.76,2.1) node[pos=1.1] {$\vec{r}$};
+% 		\node[text=xblue!50!black] at (4,2.5,1.5) {$\mathbf{P}$};
+% 	\end{axis}
+% \end{tikzpicture}
+% %note: this figure needs to be converted into pespective view or something, right now its a bit meh
+%
+% \flushleft
+%
+% \textbf{Solution}
+%
+% We can rotate our viewpoint of the problem, looking at $\mathbf{P}$ from the side and in such a way that we look head-on at the plane spanned by $\normalVec{n}{P}$ and $\vec{d}$:
+%
+% \vspace{1em}
+% \centering
+% \begin{tikzpicture}
+% 	\draw[thick, xred, fill=xred!20] (0,0) -- (0,1) arc (90:135:1) -- cycle;
+% 	\draw[thick, xgreen, fill=xgreen!20] (0,0) -- (0,1) arc (90:45:1);
+% 	\node[xred] at (-0.25,0.6) {$\theta$};
+% 	\node[xgreen] at (0.25,0.6) {$\theta$};
+% 	\draw[line width=2pt, xblue] (-2,0) -- (2,0) node[above] {$\mathbf{P}$};
+% 	\draw[vector] (0,0) -- (0,2.5) node[pos=1.1] {$\normalVec{n}{P}$};
+% 	\draw[vector, xred] (-2,2) -- (0,0) node[pos=-0.1] {$\vec{d}$};
+% 	\draw[vector, xred, dashed] (0,0) -- (2,-2) node[pos=1.1] {$\vec{d}$};
+% 	\draw[vector, xgreen] (0,0) -- (2,2) node[pos=1.05] {$\vec{r}$};
+% \end{tikzpicture}
+%
+% \flushleft
+% (the dashed red vector in the above figure represents the vector incident ray, $\vec{d}$, moved such that its origin lies at the origin of the other vectors)
+%
+% As with any vector, we can decompose $\vec{d}$ to its projections on the vectors of an orthonormal basis set (\autoref{eq:vector decomposition in orthonormal basis set}). Since we reduced the problem to two dimensions, we need a basis of two orthonormal directions: we choose one to be $\normalVec{n}{P}$, and the other orthogonal to it (in the figure above it is in the horizontal direction) which we call $\hat{p}$. The decomposition of $\vec{d}$ then reads:
+% \[
+% 	\vec{d} = \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} + \left( \vec{d}\cdot\hat{p} \right)\hat{p}.
+% \]
+% Since there are only two vectors in the basis set $\left\{ \normalVec{n}{P},\hat{p} \right\}$, we can actually write the component $\left( \vec{d}\cdot\hat{p} \right)\hat{p}$ as $\vec{d}-\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P}$, yielding a rather silly looking expression for $\vec{d}$:
+% \[
+% 	\vec{d} = \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} + \left[ \vec{d}-\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} \right].
+% \]
+% However, in closer inspection the above expression is not at all silly, and is actually very similar to the reflected vector $\vec{r}$: since they are both of same norm and oposing directions with respect to the direction $\normalVec{n}{P}$, we can write $\vec{r}$ as
+% \[
+% 	\vec{r} = -\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} + \left[ \vec{d}-\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} \right].
+% \]
+% From the above expressions for $\vec{d}$ and $\vec{r}$ we can isolate an expression for $\vec{r}$ as a function of $\vec{d}$ and $\normalVec{n}{P}$:
+% \begin{align*}
+% 	\vec{r} &= d - \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P} - \left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P}\\
+% 	&= d-2\left( \vec{d}\cdot\normalVec{n}{P} \right)\normalVec{n}{P}.
+% \end{align*}
+% \end{example}
+%
+% \tbw{discussion about right- and left-handed spaces/orientations}
