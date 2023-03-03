@@ -6,22 +6,33 @@
 	A \textit{real vector} is an object with a \emph{magnitude} (also called \emph{norm}) and a \emph{direction}.
 \end{definition}
 
-In this chapter we refer to real vectors simply as \textit{vectors}.
+In this chapter we refer to real vectors simply as \textit{vectors}. Vectors can have $1,2,3,\dots$ number of dimensions. $2$-dimensional vectors can be drawn as arrows on a plane:
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector, xred] (0,0) -- ++(2,3);
+    \draw[vector, xblue] (-1,0) -- ++(-1,2);
+    \draw[vector, xgreen] (0,-1) -- ++(-3,0);
+    \draw[vector, xpurple] (2,0) -- ++(-1,-3);
+    \draw[vector, xorange] (-4,2) -- ++(0,-4);
+    \draw[vector, black] (-7,1) -- ++(1,-1);
+  \end{tikzpicture}
+\end{center}
 
-\begin{example}{Real vectors}{real vectors}
-	The following are all vectors in 2-dimensional space depicted as arrows:
-  
-	\vspace{1em}
+Similarly, $3$-dimensional vectors can be drawn as arrows in space:
+% Work needs to be done on this illustration.
+\begin{center}
 	\centering
-	\begin{tikzpicture}
-		\draw[vector, xred] (0,0) -- ++(2,3);
-		\draw[vector, xblue] (-1,0) -- ++(-1,2);
-		\draw[vector, xgreen] (0,-1) -- ++(-3,0);
-		\draw[vector, xpurple] (2,0) -- ++(-1,-3);
-		\draw[vector, xorange] (-4,2) -- ++(0,-4);
-		\draw[vector, black] (-7,1) -- ++(1,-1);
+	\tdplotsetmaincoords{70}{45}
+	\begin{tikzpicture}[tdplot_main_coords]
+    \draw[vector, xorange] (0,0,0) -- (2,-3,-3);
+		\draw[black!40, very thick, opacity=1, fill=gray, fill opacity=0.2] (4,4,0) -- (4,-4,0) -- (-4,-4,0) -- (-4,4,0) -- cycle;
+    \draw[vector, xred] (0,0,0) -- (3,2,2);
+    \draw[vector, xblue] (-2,-1,0) -- (-3,-1,3);
+    \draw[vector, xpurple] (-3,3,0) -- ++(3,-4,0.5);
 	\end{tikzpicture}
-\end{example}
+\end{center}
+
+Unfortunately, it is difficult (if not impossible) to draw higher-dimensional vectors. In this chapter we will use mostly $2$-dimensional vectors and sometimes also $3$-dimensional vectors to illustrate the basic concepts of vectors and linear algenra, while most of these concepts apply in higher dimensions as well.
 
 Vectors are usually denoted in one of the following ways:
 
@@ -35,13 +46,9 @@ Vectors are usually denoted in one of the following ways:
 
 In this book we use the first notation style, i.e. an arrow above the letter. In addition vectors will almost always be denoted using lowercase Lating script.
 
-When discussing vectors in a single context, we always consider them starting at the same point, called the \emph{origin}, and \emph{translating} (moving) vectors around in space does not change their properties: only their norms and directions matter.
+When discussing vectors in a single context, we always consider them starting at the same point, called the \emph{origin}, and \emph{translating} (moving) vectors around in space does not change their properties: only their norms and directions matter. For example, we can draw the $2$-dimensional vectors from before such that their origins all lie on the same point:
 
-\begin{example}{Real vectors}{real vectors}
-	The vectors from the previous example, translated (moved) such that their origins all lie on the same point:
-  
-	\vspace{1em}
-	\centering
+\begin{center}
 	\begin{tikzpicture}
 		\draw[vector, xred] (0,0) -- ++(2,3);
 		\draw[vector, xblue] (0,0) -- ++(-1,2);
@@ -51,14 +58,11 @@ When discussing vectors in a single context, we always consider them starting at
 		\draw[vector, black] (0,0) -- ++(1,-1);
 		\fill (0,0) circle (0.05);
 	\end{tikzpicture}
-\end{example}
+\end{center}
 
-A vector can be scaled by a real number $\alpha$: when this happens, its norm is multiplied by $\alpha$ while its direction stays the same. We call $\alpha$ a \emph{scalar}.
+Any vector can be scaled by a real number $\alpha$: when this happens, its norm is multiplied by $\alpha$ while its direction stays the same. We call $\alpha$ a \emph{scalar}. For example, the vector $\color{xred}{\vec{v}}$ on the left is scaled here by different scalars $\alpha=2,2.5,-1$ and $-2$:
 
-\begin{example}{Scaling vectors}{scaling vectors}
-	The following vector $\vec{v}$ scaled by different scalars $\alpha=2,2.5,-1,-2$:
-
-	\centering
+\begin{center}
 	\begin{tikzpicture}[every node/.style={midway, left, xshift=-2mm}]
 		\Large
 		\draw[vector, xred] (0,0) -- ++(1.5,1) node {$\vec{v}$};
@@ -67,7 +71,7 @@ A vector can be scaled by a real number $\alpha$: when this happens, its norm is
 		\draw[stealth-, thick, xgreen!85!black] (7.5,0) -- ++(1.5,1) node {$-1\cdot \vec{v}$};
 		\draw[stealth-, thick, black] (9.5,0) -- ++(3,2) node {$-2\cdot \vec{v}$};
 	\end{tikzpicture}
-\end{example}
+\end{center}
 
 \begin{note}{Negative scale}{negative scale}
 	As can be seen in the example above, when scaling a vector by a negative amount its direction reverses. However, we consider two opposing direction (i.e. directions that are $\ang{180}$ apart) as being the same direction.
@@ -172,7 +176,7 @@ Any vector $\vec{v}$ always has an \emph{opposite} vector, denoted $-\vec{v}$. T
 \end{equation}
 
 \subsection{Components}
-In order to be able to use vectors for actual calculations we must somehow quantify their properties. When quantifying geometric shapes we often first define some unit of measurement, for example a centimeter (\si{cm}). We then use this unit to measure the length of different objects (\autoref{fig:unit_geometry}).
+In order to be able to use vectors for actual calculations we must somehow quantify their properties. When quantifying geometric shapes we often first define some unit of measurement, for example a centimeter (\si{cm}). We then use this unit to measure the length of different objects.
 
 While this simple approach works well for describing lengths, in the case of vectors we also want to quantify directions - which becomes a bit complicated in higher dimensions if we use angles. Instead, we use more than one unit of measurement; in fact, we use a unit of measurement for each dimension, which we call a \emph{unit vector}. For example, we can choose the following two vectors $\color{xred}{\vec{e}_{1}}$ and $\color{xblue}{\vec{e}_{2}}$ to be our unit vectors:
 
@@ -186,29 +190,3 @@ While this simple approach works well for describing lengths, in the case of vec
 \end{tikzpicture}
 
 \flushleft
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}
-    \tikzset{
-      unit/.style={very thick, |-|, xred},
-    }
-    \draw[unit] (-3,0) -- (-2,0) node[midway, above] (unit) {$d$};
-    \node[below of=unit, anchor=center] {Unit length};
-
-    % Rectangle
-    \draw[very thick, xblue] (0, -2) rectangle (2,-1);
-    \draw[unit] (0,-0.7) -- (1,-0.7);
-    \draw[unit] (1,-0.7) -- (2,-0.7);
-    \draw[unit] (2.3,-1) -- (2.3,-2);
-    \node[anchor=center] at (1,-2.5) {Perimeter: $6\cdot d$};
-
-    % Triangle side
-    \draw[very thick, xpurple] (1,1) -- (2.8,1) -- (2.8,3.4) -- cycle;
-
-    % !!!!!!!
-    % Continue figure!!
-  \end{tikzpicture}
-  \caption{Using a defined unit measurement to measure the lengths of different geometric objects.}
-  \label{fig:unit_geometry}
-\end{figure}
