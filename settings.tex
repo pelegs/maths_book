@@ -604,6 +604,13 @@
 \newcommand{\ceil}[1]{\lceil #1 \rceil}
 \newcommand{\Err}{\text{Err}}
 
+% Colored math symbols
+\newcommand{\xr}[1]{\color{xred}{#1}\color{normaltextcolor}}
+\newcommand{\xb}[1]{\color{xblue}{#1}\color{normaltextcolor}}
+\newcommand{\xg}[1]{\color{xgreen}{#1}\color{normaltextcolor}}
+\newcommand{\xp}[1]{\color{xpurple}{#1}\color{normaltextcolor}}
+\newcommand{\xo}[1]{\color{xorange}{#1}\color{normaltextcolor}}
+
 % Highlights
 \newcommand{\rhl}[1]{\textcolor{xred}{#1}}
 \newcommand{\bhl}[1]{\textcolor{xblue}{#1}}
@@ -630,9 +637,9 @@
 \newcommand{\rowvec}[1]{\rcvector[,\;]{#1}}
 
 % Colored (common) vectors and angles I use
-\renewcommand{\vu}{\textcolor{xred}{\vec{u}}}
-\newcommand{\vv}{\textcolor{xblue}{\vec{v}}}
-\newcommand{\vw}{\textcolor{xpurple}{\vec{w}}}
+\renewcommand{\vu}{\xr{\vec{u}}}
+\newcommand{\vv}{\xb{\vec{v}}}
+\newcommand{\vw}{\xp{\vec{w}}}
 \newcommand{\ath}{\textcolor{xpurple}{\theta}}
 \newcommand{\vutd}{\colvec{\textcolor{xred}{a};\textcolor{xred}{b}}}
 \newcommand{\vvtd}{\colvec{\textcolor{xblue}{c};\textcolor{xblue}{d}}}
