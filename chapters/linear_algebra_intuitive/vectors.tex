@@ -184,9 +184,9 @@ While this simple approach works well for describing lengths, in the case of vec
   \begin{tikzpicture}
     \coordinate (O) at (0,0);
     \coordinate (e1) at (1,0.5);
-    \coordinate (e2) at (-0.3,1.2);
+    \coordinate (e2) at (-0.5,0.5);
     \draw[vector, xred] (O) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
-    \draw[vector, xblue] (3,0) -- ++(e2) node[midway, left] {$\vec{e}_{2}$};
+    \draw[vector, xblue] (3,0) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
   \end{tikzpicture}
 \end{center}
 
@@ -253,60 +253,96 @@ We see that using these basis vectors, $\xp{\vec{v}}=3\xr{\vec{e}_{1}}+2\xb{\vec
 This notation is frequently refered to as a \emph{column vector}, and the numbers are called \emph{coordinates} or \emph{components}. The components themselves are usually denoted using the same symbol used for the vector (without the arrow sign) and an index: for example, the two components of the vector $\xp{\vec{v}}=\colvec{\xr{3};\xb{2}}$ are $\xr{v^{1}}=\xr{3}$ and $\xb{v^{2}}=\xb{2}$.
 
 \begin{note}{Index notation}{}
-  In this book we use upper-index notation to denote components of column vectors. Do not mistkae these for powers! The reason for this choice (as opposed to lowe-index notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
+  In this book we use upper-index notation to denote components of column vectors. Do not mistake these for powers! The reason for this choice (as opposed to lowe-index notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
 \end{note}
+
+Vectors have different components when using different basis vectors. For example, we can use the following two vectors $\xdg{\vec{d}_{1}}$ and $\xo{\vec{d}_{2}}$ as basis vectors:
+
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (e1b) at (1,0);
+    \coordinate (e2b) at (0,1);
+    \draw[vector, xdarkgreen] (O) -- ++(e1b) node[midway, above] {$\vec{d}_{1}$};
+    \draw[vector, xorange] (3,0) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+Using these new basis vectors, the vector $\xp{\vec{v}}$ from earlier has the following column representation:
+
+\vspace{-1.2em}
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (v) at ($2*(e1b)+2.5*(e2b)$);
+    \draw[vector, xdarkgreen] (O) -- ++(e1b) node[midway, below] {$\vec{d}_{1}$};
+    \draw[vector, xdarkgreen] (e1b) -- ++(e1b) node[midway, below] {$\vec{d}_{1}$};
+    \draw[vector, xorange] ($2*(e1b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
+    \draw[vector, xorange] ($2*(e1b)+(e2b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
+    \draw[vector, xorange] ($2*(e1b)+2*(e2b)$) -- ++($0.5*(e2b)$) node[midway, right] {$\frac{1}{2}\vec{d}_{2}$};
+    \draw[vector, xpurple] (O) -- (v) node[above] {$\vec{v}$};
+    \draw[->, thick] (3,1.3) -- ++(1,0);
+    \node at (5,1.3) {$\xp{\vec{v}}=\colvec{\xdg{2};\xo{2.5}}$};
+  \end{tikzpicture}
+\end{center}
+and its components are $\xdg{v^{1}}=2$ and $\xo{v^{2}}=2.5$.
 
 Since any vector in $2$-dimensional space can be written as a column of two numbers, we refer to the space itself as $\Rs[2]$. We can use any two vectors as basis vectors in $\Rs[2]$, as long as they are not pointing in the same direction, i.e. as long as they are not scales of each other:
 \begin{equation}
   \xb{\vec{e}_{2}} \neq \alpha\xr{\vec{e}_{1}},
   \label{eq:basis_vectors_not_scales}
 \end{equation}
-where $\alpha$ is a real number.
-
-The space $\Rs[2]$ can be placed in a Cartesian coordinate system, such that the origin of all vectors is at the point $(0,0)$:
-
-\begin{center}
-  \begin{tikzpicture}[]
-    \begin{axis}[
-      vector plane,
-      width=7cm, height=7cm,
-      xmin=-5, xmax=5,
-      ymin=-5, ymax=5,
-      xticklabels={},
-      yticklabels={},
-    ]
-    \draw[vector, xred] (0,0) -- (2,3);
-    \draw[vector, xblue] (0,0) -- (-1,2);
-    \draw[vector, xgreen] (0,0) -- (-3,0);
-    \draw[vector, xpurple] (0,0) -- (-1,-3);
-    \draw[vector, xorange] (0,0) -- (0,-4);
-    \draw[vector, black] (0,0) -- (1,-1);
-    \fill (0,0) circle (0.1);
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+where $\alpha$ is a real number. This also means that the zero vector can't be used as a basis vector.
 
 \begin{note}{Coordinates of the basis vectors}{}
-  No matter what two vectors $\vec{u}, \vec{v}$ are used as basis vectors for $\Rs[2]$, their column vector representation would always be $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$.
+  No matter which two vectors $\vec{u}, \vec{v}$ are used as basis vectors for $\Rs[2]$, their column vector representation would always be $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$. This is because
+  \begin{align*}
+    \vec{u} &= 1\cdot\vec{u}+ 0\cdot\vec{v},\\
+    \vec{v} &= 0\cdot\vec{u} + 1\cdot\vec{v}.
+  \end{align*}
 \end{note}
-
-Two commonly used basis vectors in $\Rs[2]$ are the so-called \emph{standard basis vectors}, commonly denoted $\hat{x}$ and $\hat{y}$. The vector $\hat{x}$ is a unit vector pointing in the $x$-direction and the vector $\hat{y}$ is a unit vector poiniting in the $y$-direction:
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}[]
-    \begin{axis}[
-      vector plane,
-      width=10cm, height=10cm,
-      xmin=-2, xmax=2,
-      ymin=-2, ymax=2,
-      xtick={-2,-1,1,2},
-      ytick={-2,-1,1,2},
-    ]
-    \draw[vector, xred] (0,0) -- (1,0) node[midway, above] {$\hat{x}$};
-    \draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{The two standard basis vectors $\hat{x}$ and $\hat{y}$ drawn in a Cartesian coordinate system.}
-  \label{fig:standard_basis_R2}
-\end{figure}
+%
+%
+% The space $\Rs[2]$ can be placed in a Cartesian coordinate system, such that the origin of all vectors is at the point $(0,0)$:
+%
+% \begin{center}
+%   \begin{tikzpicture}[]
+%     \begin{axis}[
+%       vector plane,
+%       width=7cm, height=7cm,
+%       xmin=-5, xmax=5,
+%       ymin=-5, ymax=5,
+%       xticklabels={},
+%       yticklabels={},
+%     ]
+%     \draw[vector, xred] (0,0) -- (2,3);
+%     \draw[vector, xblue] (0,0) -- (-1,2);
+%     \draw[vector, xgreen] (0,0) -- (-3,0);
+%     \draw[vector, xpurple] (0,0) -- (-1,-3);
+%     \draw[vector, xorange] (0,0) -- (0,-4);
+%     \draw[vector, black] (0,0) -- (1,-1);
+%     \fill (0,0) circle (0.1);
+%     \end{axis}
+%   \end{tikzpicture}
+% \end{center}
+%
+% Two commonly used basis vectors in $\Rs[2]$ are the so-called \emph{standard basis vectors}, commonly denoted $\hat{x}$ and $\hat{y}$. The vector $\hat{x}$ is a unit vector pointing in the $x$-direction and the vector $\hat{y}$ is a unit vector poiniting in the $y$-direction:
+%
+% \begin{figure}
+%   \centering
+%   \begin{tikzpicture}[]
+%     \begin{axis}[
+%       vector plane,
+%       width=10cm, height=10cm,
+%       xmin=-2, xmax=2,
+%       ymin=-2, ymax=2,
+%       xtick={-2,-1,1,2},
+%       ytick={-2,-1,1,2},
+%     ]
+%     \draw[vector, xred] (0,0) -- (1,0) node[midway, above] {$\hat{x}$};
+%     \draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
+%     \end{axis}
+%   \end{tikzpicture}
+%   \caption{The two standard basis vectors $\hat{x}$ and $\hat{y}$ drawn in a Cartesian coordinate system.}
+%   \label{fig:standard_basis_R2}
+% \end{figure}
