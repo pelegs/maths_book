@@ -288,18 +288,15 @@ In this new coordinate system, the vector $\xp{\vec{v}}$ from earlier has the fo
 
 This brings us to an important idea, which unfortunately might confuse those who are new to the topic: \textbf{vectors and their column representation are two separate things!} Vectors are objects with a length (norm) and a direction. They don't ``care'' about how \textit{we} describe them numerically: no matter what coordinate system we use, vectors remain the same - it's their \textit{representation} which changes.
 
-\begin{note}{Coordinates of the basis vectors}{}
-  Since the column representation of vectors depends on the coordinate syste, one must always be sure with which basis vectors they are working - otherwise mistakes are bound to happen and calculations might make no sense.
-\end{note}
+In fact, not only does the choice of coordinate system affect the column representation of all vectors\footnote{except the zero vector, which is always $\vec{0}=\colvec{0;0}$}, two different vectors \textbf{can have the same column representation using two different coordinate systems.}. For example. let's say we choose any two non-zero vectors to be used as basis vectors: $\vec{u}$ and $\vec{v}$. Then the following is always true:
+\begin{align*}
+  \vec{u} &= 1\cdot\vec{u} + 0\cdot\vec{v},\\
+  \vec{v} &= 0\cdot\vec{u} + 1\cdot\vec{v}.
+\end{align*}
 
-\begin{note}{Coordinates of the basis vectors}{}
-  No matter which two vectors $\vec{u}, \vec{v}$ are used as basis vectors for $\Rs[2]$, their column vector representation would always be $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$. This is because
-  \begin{align*}
-    \vec{u} &= 1\cdot\vec{u}+ 0\cdot\vec{v},\\
-    \vec{v} &= 0\cdot\vec{u} + 1\cdot\vec{v}.
-  \end{align*}
-\end{note}
+Therefore, the column representations of $\vec{u}$ and $\vec{v}$ will be exactly $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$. This means that the column vectors $\colvec{1;0}$ and $\colvec{0;1}$ can represent \textbf{any} two (non-zero) vectors we wish! So remember: you must always be sure with which basis vectors you are working. Otherwise, mistakes are bound to happen and calculations might make no sense.
 
+\subsection{The space $\Rs[2]$}
 Since the column representation of vectors in $2$-dimensions has two entries, it is common to refer to the set of all $2$-dimensional vectors as $\Rs\times\Rs$ or simply $\Rs[2]$.
 
 Any two vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ can be used as basis vectors in $\Rs[2]$, as long as they are not pointing in the same direction, i.e. as long as they are not scales of each other:
