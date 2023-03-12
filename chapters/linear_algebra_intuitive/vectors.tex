@@ -32,7 +32,7 @@ Similarly, $3$-dimensional vectors can be drawn as arrows in space:
 	\end{tikzpicture}
 \end{center}
 
-Unfortunately, it is difficult (if not impossible) to draw higher-dimensional vectors. In this chapter we will use mostly $2$-dimensional vectors and sometimes also $3$-dimensional vectors to illustrate the basic concepts of vectors and linear algenra, while most of these concepts apply in higher dimensions as well.
+Unfortunately, it is difficult (if not impossible) to draw higher-dimensional vectors. For now, we will concentrate on $2$-dimensional vectors and explore their properties. Later in the section we will apply what we learned from $2$-dimensional vectors to $3$-dimensional vectors and higher-dimensional vectors as well.
 
 Vectors are usually denoted in one of the following ways:
 
@@ -296,7 +296,64 @@ In fact, not only does the choice of coordinate system affect the column represe
 
 Therefore, the column representations of $\vec{u}$ and $\vec{v}$ will be exactly $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$. This means that the column vectors $\colvec{1;0}$ and $\colvec{0;1}$ can represent \textbf{any} two (non-zero) vectors we wish! So remember: you must always be sure with which basis vectors you are working. Otherwise, mistakes are bound to happen and calculations might make no sense.
 
-\subsection{The space $\Rs[2]$}
+\tbw{more examples?}
+
+\subsection{Vector operations, norm and the zero vector in column form}
+Previously we how to scale and add vectors (the latter using the parallogram method). Let us now see how we perform these operations using the column representation of vectors. We will use following two vectors as basis vectors:
+
+\begin{center}
+  \begin{tikzpicture}
+    % !! Use same basis vectors and v from before?.. !!
+    \coordinate (e1c) at (1,0.5);
+    \coordinate (e2c) at (-0.5,1);
+    \draw[vector, xred] (O) -- ++(e1c) node[midway, above] {$\vec{e}_{1}$};
+    \draw[vector, xblue] (3,0) -- ++(e2c) node[midway, right] {$\vec{e}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+We start with some vector $\xp{\vec{v}}$ and draw its components as well:
+
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (vc) at ($(e1c)-1.5*(e2c)$);
+    \draw[vector, xpurple] (O) -- ++(vc) node[midway, below left] {$\vec{v}$};
+    \draw[vector, xred, dashed] (O) -- ++(e1c) node[midway, above left] {$\vec{e}_{1}$};
+    \draw[vector, xblue, dashed] (e1c) -- ++($-1*(e2c)$) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($(e1c)-(e2c)$) -- ++($-0.5*(e2c)$) node[midway, above right] {$\frac{1}{2}\vec{e}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+We see that $\xp{1\cdot\vec{v}}=\xr{\vec{e}_{1}}-\xb{1.5\cdot\vec{e}_{2}}$, i.e. $\xp{\vec{v}}=\colvec{\xr{1};\xb{-1.5}}$. What then would be the components of, say, $2\xp{\vec{v}}$? First we scale $\xp{\vec{v}}$ by $\xp{2}$: remember, this just means "stretching" the vector by $\xp{2}$, keeping it pointing in the same direction:
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector, xpurple] (O) -- ++(vc) node[midway, below left] {$\vec{v}$};
+    \draw[vector, xpurple] (5,0) -- ++($2*(vc)$) node[midway, below left] {$2\vec{v}$};
+    \draw[->, thick] (2.5,-0.5) -- ++(1.5,0) node[midway, above] {$2\times$};
+  \end{tikzpicture}
+\end{center}
+
+Now we use the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ to get the column representation of $\xp{2\vec{v}}$:
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector, xpurple] (O) -- ++($2*(vc)$) node[midway, below left] {$2\vec{v}$};
+    \draw[vector, xred, dashed] (O) -- ++(e1c) node[midway, above left] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] (e1c) -- ++(e1c) node[midway, above left] {$\vec{e}_{1}$};
+    \draw[vector, xblue, dashed] ($2*(e1c)$) -- ++($-1*(e2c)$) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($2*(e1c)-(e2c)$) -- ++($-1*(e2c)$) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($2*(e1c)-2*(e2c)$) -- ++($-1*(e2c)$) node[midway, above right] {$\vec{e}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+We get that $\xp{2\vec{v}}=\xr{2\vec{e}_{1}}-\xb{3\vec{e}_{2}}$, i.e. $\xp{2\vec{v}}=\colvec{\xr{2};\xb{-3}}=\colvec{\xr{2\cdot1};\xb{2\cdot(-1.5)}}$ - scaling $\xp{\vec{v}}$ by $\xp{2}$ simply multiplied both its components by $\xp{2}$.
+
+This is in fact true for any vector and any scalar, using any coordinate system: scaling a vector by a scalar $\alpha$ results in multiplying each of its components by $\alpha$:
+\begin{equation}
+  \vec{u} = \colvec{\xr{u^{1}};\xb{u^{2}}}\quad\Longrightarrow\quad \alpha\vec{u} = \colvec{\xr{\alpha\cdot u^{1}};\xb{\alpha\cdot u^{2}}}.
+  \label{eq:label}
+\end{equation}
+
+\subsection{The space $\Rs[2]$ and the standard basis set}
 Since the column representation of vectors in $2$-dimensions has two entries, it is common to refer to the set of all $2$-dimensional vectors as $\Rs\times\Rs$ or simply $\Rs[2]$.
 
 Any two vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ can be used as basis vectors in $\Rs[2]$, as long as they are not pointing in the same direction, i.e. as long as they are not scales of each other:
