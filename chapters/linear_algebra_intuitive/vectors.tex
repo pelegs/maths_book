@@ -146,7 +146,7 @@ Two vectors can be added together to yield a third vector: $\vu+\vv=\vw$. To fin
 	\label{fig:vector addition geometric}
 \end{figure}
 
-The addition of vectors as depicted here is commutative, i.e. $\vu+\vv = \vv+\vu$. This can be seen by using the \emph{parallogram law of vector addition} as depicted in \autoref{fig:parallelogram}: drawing the two vectors $\vu, \vv$ and their translated copies (each such that its origin lies on the other vector's head) results in a parallelogram.
+The addition of vectors as depicted here is commutative, i.e. $\vu+\vv = \vv+\vu$. This can be seen by using the \emph{parallelogram law of vector addition} as depicted in \autoref{fig:parallelogram}: drawing the two vectors $\vu, \vv$ and their translated copies (each such that its origin lies on the other vector's head) results in a parallelogram.
 
 \begin{figure}[h]
 	\centering
@@ -220,7 +220,7 @@ We see that using these basis vectors, $\xp{\vec{v}}=3\xr{\vec{e}_{1}}+2\xb{\vec
   \draw[->, thick, xblue] (v2txt) -- ($(v2b)+(10pt,0)$);
 \end{tikzpicture}
 
-\begin{example}{Vectors from basis vectors}{}
+\begin{example}{Vectors from basis vectors}{more vectors same basis}
   Two more vectors represented as sums of the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$:
 
   \begin{center}
@@ -232,7 +232,7 @@ We see that using these basis vectors, $\xp{\vec{v}}=3\xr{\vec{e}_{1}}+2\xb{\vec
       \draw[vector, xblue, dashed] ($2*(e1)$) -- ++($-1*(e2)$) node[midway, right] {$-\vec{e}_{2}$};
       \draw[vector, xblue, dashed] ($2*(e1)-(e2)$) -- ++($-1*(e2)$) node[midway, right] {$-\vec{e}_{2}$};
       \fill (O) circle (0.05);
-      \node[right of=O, xshift=3cm, anchor=west] (u_math) {$\xo{\vec{u}}=2\xr{\vec{e}_{1}}-2\xb{\vec{e}_{2}}\quad\longrightarrow\quad\xo{\vec{u}}=\colvec{\xr{1};\xb{-2}}$};
+      \node[right of=O, xshift=3cm, anchor=west] (u_math) {$\xo{\vec{u}}=2\xr{\vec{e}_{1}}-2\xb{\vec{e}_{2}}\quad\longrightarrow\quad\xo{\vec{u}}=\xtwocolvec{2}{-2}$};
     \end{tikzpicture}
 
     \vspace{1.5em}
@@ -245,12 +245,12 @@ We see that using these basis vectors, $\xp{\vec{v}}=3\xr{\vec{e}_{1}}+2\xb{\vec
       \draw[vector, xblue, dashed] ($-3*(e1)$) -- ++(e2) node[midway, left] {$\vec{e}_{2}$};
       \draw[vector, xblue, dashed] ($-3*(e1)+(e2)$) -- ++($0.5*(e2)$) node[midway, left] {$\frac{1}{2}\vec{e}_{2}$};
       \fill (O) circle (0.05);
-      \node[right of=O, anchor=west] (u_math2) {$\xg{\vec{w}}=-3\xr{\vec{e}_{1}}+1.5\xb{\vec{e}_{2}}\quad\longrightarrow\quad\xg{\vec{w}}=\colvec{\xr{-3};\xb{1.5}}$};
+      \node[right of=O, anchor=west] (u_math2) {$\xg{\vec{w}}=-3\xr{\vec{e}_{1}}+1.5\xb{\vec{e}_{2}}\quad\longrightarrow\quad\xg{\vec{w}}=\xtwocolvec{-3}{1.5}$};
     \end{tikzpicture}
   \end{center}
 \end{example}
 
-This notation is frequently refered to as a \emph{column vector}, and the numbers are called \emph{coordinates} or \emph{components}. The components themselves are usually denoted using the same symbol used for the vector (without the arrow sign) and an index: for example, the two components of the vector $\xp{\vec{v}}=\colvec{\xr{3};\xb{2}}$ are $\xr{v^{1}}=\xr{3}$ and $\xb{v^{2}}=\xb{2}$.
+This notation is frequently refered to as a \emph{column vector}, and the numbers are called \emph{coordinates} or \emph{components}. The components themselves are usually denoted using the same symbol used for the vector (without the arrow sign) and an index: for example, the two components of the vector $\xp{\vec{v}}=\xtwocolvec{3}{2}$ are $\xr{v^{1}}=\xr{3}$ and $\xb{v^{2}}=\xb{2}$.
 
 \begin{note}{Index notation}{}
   In this book we use upper-index notation to denote components of column vectors. Do not mistake these for powers! The reason for this choice (as opposed to lowe-index notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
@@ -274,13 +274,13 @@ In this new coordinate system, the vector $\xp{\vec{v}}$ from earlier has the fo
 \begin{center}
   \begin{tikzpicture}
     \coordinate (O) at (0,0);
-    \coordinate (v) at ($2*(e1b)+2.5*(e2b)$);
+    \coordinate (vb) at ($2*(e1b)+2.5*(e2b)$);
     \draw[vector, xdarkgreen] (O) -- ++(e1b) node[midway, below] {$\vec{d}_{1}$};
     \draw[vector, xdarkgreen] (e1b) -- ++(e1b) node[midway, below] {$\vec{d}_{1}$};
     \draw[vector, xorange] ($2*(e1b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
     \draw[vector, xorange] ($2*(e1b)+(e2b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
     \draw[vector, xorange] ($2*(e1b)+2*(e2b)$) -- ++($0.5*(e2b)$) node[midway, right] {$\frac{1}{2}\vec{d}_{2}$};
-    \draw[vector, xpurple] (O) -- (v) node[above] {$\vec{v}$};
+    \draw[vector, xpurple] (O) -- (vb) node[above] {$\vec{v}$};
     \node[anchor=west] (txt1) at (3.5,1.3) {$\xp{\vec{v}}=2\xdg{\vec{d}_{1}}+2.5\xo{\vec{d}_{2}}\quad\longrightarrow\quad\xp{\vec{v}}=\colvec{\xdg{2};\xo{2.5}}$};
   \end{tikzpicture}
 \end{center}
@@ -299,59 +299,102 @@ Therefore, the column representations of $\vec{u}$ and $\vec{v}$ will be exactly
 \tbw{more examples?}
 
 \subsection{Vector operations, norm and the zero vector in column form}
-Previously we how to scale and add vectors (the latter using the parallogram method). Let us now see how we perform these operations using the column representation of vectors. We will use following two vectors as basis vectors:
+Previously we saw how to scale and add vectors (the latter using the parallogram method). Let us now see how we perform these operations using the column representation of vectors. We will use the same basis vectors as before:
 
 \begin{center}
   \begin{tikzpicture}
     % !! Use same basis vectors and v from before?.. !!
-    \coordinate (e1c) at (1,0.5);
-    \coordinate (e2c) at (-0.5,1);
-    \draw[vector, xred] (O) -- ++(e1c) node[midway, above] {$\vec{e}_{1}$};
-    \draw[vector, xblue] (3,0) -- ++(e2c) node[midway, right] {$\vec{e}_{2}$};
+    \draw[vector, xred] (O) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
+    \draw[vector, xblue] (3,0) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
   \end{tikzpicture}
 \end{center}
 
-We start with some vector $\xp{\vec{v}}$ and draw its components as well:
+We start with the vector $\xp{\vec{v}}$ from before, i.e. $\xp{3\cdot\vec{v}}=\xr{\vec{e}_{1}}+\xb{2\cdot\vec{e}_{2}}$ and $\xp{\vec{v}}=\xtwocolvec{3}{2}$:
 
 \begin{center}
   \begin{tikzpicture}
-    \coordinate (vc) at ($(e1c)-1.5*(e2c)$);
-    \draw[vector, xpurple] (O) -- ++(vc) node[midway, below left] {$\vec{v}$};
-    \draw[vector, xred, dashed] (O) -- ++(e1c) node[midway, above left] {$\vec{e}_{1}$};
-    \draw[vector, xblue, dashed] (e1c) -- ++($-1*(e2c)$) node[midway, above right] {$\vec{e}_{2}$};
-    \draw[vector, xblue, dashed] ($(e1c)-(e2c)$) -- ++($-0.5*(e2c)$) node[midway, above right] {$\frac{1}{2}\vec{e}_{2}$};
+    \coordinate (v) at ($3*(e1)+2*(e2)$);
+    \draw[vector, xpurple] (O) -- ++(v) node[midway, left] {$\vec{v}$};
+    \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] (e1) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] ($2*(e1)$) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xblue, dashed] ($3*(e1)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($3*(e1)+(e2)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
+    \fill (O) circle (0.05);
   \end{tikzpicture}
 \end{center}
 
-We see that $\xp{1\cdot\vec{v}}=\xr{\vec{e}_{1}}-\xb{1.5\cdot\vec{e}_{2}}$, i.e. $\xp{\vec{v}}=\colvec{\xr{1};\xb{-1.5}}$. What then would be the components of, say, $2\xp{\vec{v}}$? First we scale $\xp{\vec{v}}$ by $\xp{2}$: remember, this just means "stretching" the vector by $\xp{2}$, keeping it pointing in the same direction:
+What then would be the components of, say, $\frac{1}{2}\xp{\vec{v}}$? First we scale $\xp{\vec{v}}$ by $\xp{\frac{1}{2}}$: remember, this just means ``squeezing'' the vector to $\xp{\frac{1}{2}}$ its former length, keeping it pointing in the same direction:
 
 \begin{center}
   \begin{tikzpicture}
-    \draw[vector, xpurple] (O) -- ++(vc) node[midway, below left] {$\vec{v}$};
-    \draw[vector, xpurple] (5,0) -- ++($2*(vc)$) node[midway, below left] {$2\vec{v}$};
-    \draw[->, thick] (2.5,-0.5) -- ++(1.5,0) node[midway, above] {$2\times$};
+    \draw[vector, xpurple] (O) -- ++(v) node[midway, above left] {$\vec{v}$};
+    \draw[vector, xpurple] (5,0) -- ++($0.5*(v)$) node[midway, above left] {$\frac{1}{2}\vec{v}$};
+    \draw[->, thick] (2.5,1) -- ++(1.5,0) node[midway, above] {$\frac{1}{2}\times$};
   \end{tikzpicture}
 \end{center}
 
-Now we use the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ to get the column representation of $\xp{2\vec{v}}$:
+Now we use the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ to get the column representation of $\xp{\frac{1}{2}\vec{v}}$:
 \begin{center}
   \begin{tikzpicture}
-    \draw[vector, xpurple] (O) -- ++($2*(vc)$) node[midway, below left] {$2\vec{v}$};
-    \draw[vector, xred, dashed] (O) -- ++(e1c) node[midway, above left] {$\vec{e}_{1}$};
-    \draw[vector, xred, dashed] (e1c) -- ++(e1c) node[midway, above left] {$\vec{e}_{1}$};
-    \draw[vector, xblue, dashed] ($2*(e1c)$) -- ++($-1*(e2c)$) node[midway, above right] {$\vec{e}_{2}$};
-    \draw[vector, xblue, dashed] ($2*(e1c)-(e2c)$) -- ++($-1*(e2c)$) node[midway, above right] {$\vec{e}_{2}$};
-    \draw[vector, xblue, dashed] ($2*(e1c)-2*(e2c)$) -- ++($-1*(e2c)$) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xpurple] (O) -- ++($0.5*(v)$) node[midway, above left] {$\frac{1}{2}\vec{v}$};
+    \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] (e1) -- ++($0.5*(e1)$) node[midway, below] {$\frac{1}{2}\vec{e}_{1}$};
+    \draw[vector, xblue, dashed] ($1.5*(e1)$) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
   \end{tikzpicture}
 \end{center}
 
-We get that $\xp{2\vec{v}}=\xr{2\vec{e}_{1}}-\xb{3\vec{e}_{2}}$, i.e. $\xp{2\vec{v}}=\colvec{\xr{2};\xb{-3}}=\colvec{\xr{2\cdot1};\xb{2\cdot(-1.5)}}$ - scaling $\xp{\vec{v}}$ by $\xp{2}$ simply multiplied both its components by $\xp{2}$.
+We get that $\xp{\frac{1}{2}\vec{v}}=\xr{1.5\vec{e}_{1}}+\xb{1\vec{e}_{2}}$, i.e. $\xp{\frac{1}{2}\vec{v}}=\xtwocolvec{1.5}{1}=\xtwocolvec{\frac{1}{2}\cdot3}{\frac{1}{2}\cdot2}$ - i.e. scaling $\xp{\vec{v}}$ by $\xp{\frac{1}{2}}$ simply multiplied both its components by $\xp{\frac{1}{2}}$.
 
 This is in fact true for any vector and any scalar, using any coordinate system: scaling a vector by a scalar $\alpha$ results in multiplying each of its components by $\alpha$:
 \begin{equation}
-  \vec{u} = \colvec{\xr{u^{1}};\xb{u^{2}}}\quad\Longrightarrow\quad \alpha\vec{u} = \colvec{\xr{\alpha\cdot u^{1}};\xb{\alpha\cdot u^{2}}}.
-  \label{eq:label}
+  \vec{u} = \xtwocolvec{u^{1}}{u^{2}}\quad\Longrightarrow\quad \alpha\vec{u} = \xtwocolvec{\alpha\cdot u^{1}}{\alpha\cdot u^{2}}.
+  \label{eq:column_representation_scaling}
 \end{equation}
+
+Now let's add two vectors together: $\xp{\vec{v}}-\xdg{\vec{w}}$ (the same $\xdg{\vec{w}}$ from \autoref{example:more vectors same basis}), again using the same basis vectors. We saw that $\xp{\vec{v}}=\xtwocolvec{3}{2}$ and $\xdg{\vec{w}}=\xtwocolvec{-3}{1.5}$. Using the parallelogram method their addition is the following vector $\vec{a}$:
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector, xpurple] (O) -- ++(v) node[midway, above left] {$\vec{v}$};
+    \draw[vector, xdarkgreen] (v) -- ++(w) node[midway, above] {$\vec{w}$};
+    \draw[vector] (O) -- ++($(v)+(w)$) node[midway, left, xshift=-5pt] {$\vec{a}=\xp{\vec{v}}+\xdg{\vec{w}}$};
+  \end{tikzpicture}
+\end{center}
+
+Now we calculate the components of $\vec{a}$ in the basis $\xr{\vec{e}_{1}},\xb{\vec{e}_{2}}$:
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector] (O) -- ++($(v)+(w)$) node[midway, left, xshift=-5pt] {$\vec{a}$};
+    \draw[vector, xblue, dashed] (O) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] (e2) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($2*(e2)$) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($3*(e2)$) -- ++($0.5*(e2)$) node[midway, above right] {$\frac{1}{2}\vec{e}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+We see that $\vec{a}=\xr{0\cdot\vec{e}_{1}}+\xb{3.5\vec{e}_{2}}=\xtwocolvec{0}{3.5} = \xtwocolvec{3+(-3)}{2+1.5}$, so the column representation of the addition of two vectors is simply the addition of their components. This is always true:
+\begin{equation}
+  \vec{u}=\xtwocolvec{u^{1}}{u^{2}},\ \vec{v}=\xtwocolvec{v^{1}}{v^{2}}\quad\Longrightarrow\quad\vec{u}+\vec{v}=\xtwocolvec{u^{1}+v^{1}}{u^{2}+v^{2}}.
+  \label{eq:column_representation_addition}
+\end{equation}
+
+\begin{note}{Scaling and addition using different coordinate systems}{}
+This is only true if the column representation of the two vectors is in the same coordinate system (i.e. using the same basis vectors). Adding two column vectors in different coordinate systems (i.e. using different basis vectors) requires changing one of the column representation to the basis of the other one.
+\end{note}
+
+In general, we say that using the column representation, vector scaling and addition is done \emph{component-wise}.
+
+Using both \autoref{eq:column_representation_addition} and \autoref{eq:column_representation_scaling} we see that the zero vector $\vec{0}$ must have the following column representation using any basis set:
+\begin{equation}
+  \vec{0} = \xtwocolvec{0}{0}.
+  \label{eq:column_representation_zero_vec}
+\end{equation}
+
+\begin{challenge}{Text}{}
+  Prove that indeed $\vec{0}=\xtwocolvec{0}{0}$ using any basis set.
+\end{challenge}
 
 \subsection{The space $\Rs[2]$ and the standard basis set}
 Since the column representation of vectors in $2$-dimensions has two entries, it is common to refer to the set of all $2$-dimensional vectors as $\Rs\times\Rs$ or simply $\Rs[2]$.

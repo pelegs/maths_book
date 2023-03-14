@@ -103,6 +103,25 @@
 \newcommand{\tikzinline}[1]{\tikz[baseline=-0.5ex]{#1}}
 \newcommand{\tikzhl}[3]{\tikzinline{\node[fill=#1!20](#2){$#3$}}}
 
+% Draw basis vector expansion for a 2D vector
+% (use inside a TikZ env)
+\newcommand{\basisvecs}[4]{
+  % #1: 1st basis vector: a
+  % #2: 2nd basis vector: b
+  % #3: 1st basis component
+  % #4: 2nd basis component
+  \def\aint{\intpart{#3}}
+  \pgfmathsetmacro{\ainteger}{abs(\aint)}
+  \def\afrac{0.\fracpart{#3}}
+  \pgfmathparse{ifthenelse(\aint>=0,+1.0,-1.0)}\pgfmathsetmacro{\asign}{\pgfmathresult}%
+  \def\bint{\intpart{#4}}
+  \def\bfrac{0.\fracpart{#4}}
+  \pgfmathparse{ifthenelse(\bint>=0,+1.0,-1.0)}\pgfmathsetmacro{\bsign}{\pgfmathresult}%
+
+  % \ainteger
+  % 1st basis vector loop
+}
+
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween, colormaps, colorbrewer, patchplots}
 \usepgfmodule{nonlineartransformations}
@@ -638,7 +657,9 @@
 \newcommand{\rowvec}[1]{\rcvector[,\;]{#1}}
 
 % Colored 2D and 3D column vectors
-% \newcommand{\xcolvec}[1]
+\newcommand{\xtwocolvec}[2]{
+  \colvec{\xr{#1};\xb{#2}}
+}
 
 % Colored (common) vectors and angles I use
 \renewcommand{\vu}{\xr{\vec{u}}}
@@ -700,6 +721,14 @@
 \newcommand{\Vj}[1]{
 	v_{\textcolor{xblue}{#1}}
 }
+
+% Get the integer and fraction parts of a decimal number
+\makeatletter
+\newcommand{\intpart}[1]{\expandafter\int@part#1..\@nil}
+\def\int@part#1.#2.#3\@nil{\if\relax#1\relax0\else#1\fi}
+\newcommand{\fracpart}[1]{\expandafter\frac@part#1..\@nil}
+\def\frac@part#1.#2.#3\@nil{\if\relax#2\relax0\else#2\fi}
+\makeatother
 
 % Non-linear transformations
 \makeatletter
