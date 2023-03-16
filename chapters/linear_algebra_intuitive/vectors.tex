@@ -256,7 +256,7 @@ This notation is frequently refered to as a \emph{column vector}, and the number
   In this book we use upper-index notation to denote components of column vectors. Do not mistake these for powers! The reason for this choice (as opposed to lowe-index notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
 \end{note}
 
-The set of basis vectors used to represent vectors as columns is sometimes called a \emph{coordinate system}. We will see different common coordinate systems soon. Vectors have different components in different coordinate systems. For example, we can use the following two vectors $\xdg{\vec{d}_{1}}$ and $\xo{\vec{d}_{2}}$ as basis vectors:
+Vectors have different components when we use different basis vectors to describe them. For example, we can use the following two vectors $\xdg{\vec{d}_{1}}$ and $\xo{\vec{d}_{2}}$ as basis vectors:
 
 \begin{center}
   \begin{tikzpicture}
@@ -268,7 +268,7 @@ The set of basis vectors used to represent vectors as columns is sometimes calle
   \end{tikzpicture}
 \end{center}
 
-In this new coordinate system, the vector $\xp{\vec{v}}$ from earlier has the following column representation:
+Using these new basis vectors, the vector $\xp{\vec{v}}$ from earlier has the following column representation:
 
 \vspace{-1.2em}
 \begin{center}
@@ -281,22 +281,24 @@ In this new coordinate system, the vector $\xp{\vec{v}}$ from earlier has the fo
     \draw[vector, xorange] ($2*(e1b)+(e2b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
     \draw[vector, xorange] ($2*(e1b)+2*(e2b)$) -- ++($0.5*(e2b)$) node[midway, right] {$\frac{1}{2}\vec{d}_{2}$};
     \draw[vector, xpurple] (O) -- (v) node[above] {$\vec{v}$};
-    \node[anchor=west] (txt1) at (3.5,1.3) {$\xp{\vec{v}}=2\xdg{\vec{d}_{1}}+2.5\xo{\vec{d}_{2}}\quad\longrightarrow\quad\xp{\vec{v}}=\colvec{\xdg{2};\xo{2.5}}$};
+    \draw[->, thick] (3,1.3) -- ++(1,0);
+    \node at (5,1.3) {$\xp{\vec{v}}=\colvec{\xdg{2};\xo{2.5}}$};
   \end{tikzpicture}
 \end{center}
-(i.e. its components are $\xdg{v^{1}}=\xdg{2}$ and $\xo{v^{2}}=\xo{2.5}$)
+and its components are $\xdg{v^{1}}=\xdg{2}$ and $\xo{v^{2}}=\xo{2.5}$.
 
-This brings us to an important idea, which unfortunately might confuse those who are new to the topic: \textbf{vectors and their column representation are two separate things!} Vectors are objects with a length (norm) and a direction. They don't ``care'' about how \textit{we} describe them numerically: no matter what coordinate system we use, vectors remain the same - it's their \textit{representation} which changes.
+\begin{note}{Coordinates of the basis vectors}{}
+  Since the column representation of vectors is different when different basis vectors are used, one must always be sure with which basis vectors they are working - otherwise mistakes are bound to happen and calculations might make no sense.
+\end{note}
 
-In fact, not only does the choice of coordinate system affect the column representation of all vectors\footnote{except the zero vector, which is always $\vec{0}=\colvec{0;0}$}, two different vectors \textbf{can have the same column representation using two different coordinate systems.}. For example. let's say we choose any two non-zero vectors to be used as basis vectors: $\vec{u}$ and $\vec{v}$. Then the following is always true:
-\begin{align*}
-  \vec{u} &= 1\cdot\vec{u} + 0\cdot\vec{v},\\
-  \vec{v} &= 0\cdot\vec{u} + 1\cdot\vec{v}.
-\end{align*}
+\begin{note}{Coordinates of the basis vectors}{}
+  No matter which two vectors $\vec{u}, \vec{v}$ are used as basis vectors for $\Rs[2]$, their column vector representation would always be $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$. This is because
+  \begin{align*}
+    \vec{u} &= 1\cdot\vec{u}+ 0\cdot\vec{v},\\
+    \vec{v} &= 0\cdot\vec{u} + 1\cdot\vec{v}.
+  \end{align*}
+\end{note}
 
-Therefore, the column representations of $\vec{u}$ and $\vec{v}$ will be exactly $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$. This means that the column vectors $\colvec{1;0}$ and $\colvec{0;1}$ can represent \textbf{any} two (non-zero) vectors we wish! So remember: you must always be sure with which basis vectors you are working. Otherwise, mistakes are bound to happen and calculations might make no sense.
-
-\subsection{The space $\Rs[2]$}
 Since the column representation of vectors in $2$-dimensions has two entries, it is common to refer to the set of all $2$-dimensional vectors as $\Rs\times\Rs$ or simply $\Rs[2]$.
 
 Any two vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ can be used as basis vectors in $\Rs[2]$, as long as they are not pointing in the same direction, i.e. as long as they are not scales of each other:
@@ -334,7 +336,7 @@ The space $\Rs[2]$ can be placed inside a Cartesian coordinate system, such that
   \end{tikzpicture}
 \end{center}
 
-Using these basis vectors, any vector $\vec{v}$ has components that are equal to the coordinates of the point $\bm{p}$ at its head: $v^{1}=\bm{p}_{x}$ and $v^{2}=\bm{p}_{y}$ (see \autoref{fig:vectors_std_basis_coords}).
+Using these basis vectors, any vector $\vec{v}$ has components that are equal to the coordinates of the point at it head (see \autoref{fig:vectors_std_basis_coords}).
 
 \begin{figure}
   \centering

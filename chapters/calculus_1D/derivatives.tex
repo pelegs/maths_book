@@ -359,7 +359,7 @@ How can we quantify the derivative? Let us consider some real function $f$ and a
     % Line between points and its slope
     \draw[xred, very thick] (\xa, {fd(\xa)}) -- (\xb,{fd(\xb)});
     % \addplot[function, xred, dashed] {\m*(x-\xa)+fd(\xa)};
-    % % Derivatie at x0
+    % % Derivative at x0
     % \pgfmathsetmacro{\M}{Dfd(\xa)}
     % \addplot[function, xgreen, dashed] {\M*(x-\xa)+fd(\xa)};
     % Function + points on it
@@ -424,7 +424,7 @@ This limit is defined as \emph{the derivative} of $f$ at the point $x=x_{0}$, an
     \draw[perp] (\xb,0) -- (\xb,{fd(\xb)});
     % Line between points and its slope
     \addplot[function, xred] {\m*(x-\xa)+fd(\xa)};
-    % Derivatie at x0
+    % Derivative at x0
     \pgfmathsetmacro{\M}{Dfd(\xa)}
     \addplot[function, xgreen] {\M*(x-\xa)+fd(\xa)};
     % Function + points on it
@@ -578,7 +578,7 @@ Let us now calculate the derivative of some common functions.
   \tbw{in the limit section show and prove this limit}
 \end{example}
 
-\begin{example}{Derivatie of $\sqrt{x}$}{}
+\begin{example}{Derivative of $\sqrt{x}$}{}
   The derivative of the function $f(x)=\sqrt{x}$ is:
   \[
     f'(x) = \lim\limits_{\Delta x\to 0}\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\Delta x}.

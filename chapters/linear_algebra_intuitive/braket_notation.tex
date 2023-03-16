@@ -10,7 +10,7 @@ In this section we introduce a special vector notation widely used in physics: t
 \subsection{Definition}
 Up until now we presented the theory of linear algebra based on real numbers: all of the vectors we used were real vectors, i.e. of the form $\vec{v}\in\Rs[n]$, where $n\in\mathbb{N}$. All of the matrices used were also made up of real components - and so were of course the scalars themselves, which we defined simply as real numbers.
 
-However, it is aparently useful in many cases to use linear algebra in the context of complex numbers: instead of working with spaces of the form $\Rs[n]$ we can use spaces of the form $\Cs[n]$, e.g. a vector in $\Cs[3]$ can be the following:
+However, it is apparently useful in many cases to use linear algebra in the context of complex numbers: instead of working with spaces of the form $\Rs[n]$ we can use spaces of the form $\Cs[n]$, e.g. a vector in $\Cs[3]$ can be the following:
 \[
 	\vec{v} = \colvec{1-i;2+3i;\pi+\sqrt{2}i}.
 \]
@@ -31,7 +31,7 @@ we can get its row form by transposing it, i.e. we look at $\vec{v}^{\top}$. How
 	\vec{v}^{\top} = \colvec{v_{1};v_{2};\vdots;v_{n}}^{\top} = \rowvec{\sconj{v_{1}};\sconj{v_{2}};\dots;\sconj{v_{n}}}.
 	\label{eq:row_vector_complex_star_notation}
 \end{equation}
-To be consistent with the usual notation used in physics (and have more succisent, we introduce the following changes:
+  To be more succinct we can adopt some changes in notation widely used in physics. 
 \begin{itemize}
 	\item The complex conjugate of the number $z\in\Cs$ is changed to $\sconj{C}$.
 	\item The star notation is also used for transpose (this is normaly called \emph{conjugate transpose}, and is sometimes denoted by $u^{\dagger}$).
@@ -94,7 +94,7 @@ Let us write the properties of the scalar product adjusted to the bra-ket notati
 \end{descitemize}
 
 \begin{note}{Hilbert spaces}
-Generally speaking, any vector space that is ``equiped'' with a norm complying with these properties is called a \emph{Hilbert space}. We will discuss such spaces in more details later in the book.
+ Generally speaking, any vector space that is ``equipped'' with a norm complying with these properties is called a \emph{Hilbert space}. We will discuss such spaces in more details later in the book.
 \end{note}
 
 There is an interesting way one can interpret the scalar product: instead of as an operation acting on two vectors, we can view a bra as an operator acting on a ket and returning a scalar. Mathematically this is written as
@@ -183,7 +183,7 @@ The bra version is essentialy the same:
 	\alpha\bra{u} = \bra{u}\alpha = \rowvec{\alpha \sconj{u_{1}};\sconj{\alpha u_{2}};\dots;\sconj{\alpha u_{n}}}.
 	\label{eq:scaling_bra}
 \end{equation}
-Normaly, scaling a ket is written with the scalar on the left, and scaling a bra is written with scalar on the right. However, in some instances the other forms are used (we will see such case soon).
+Normally, scaling a ket is written with the scalar on the left, and scaling a bra is written with scalar on the right. However, in some instances the other forms are used (we will see such case soon).
 
 Adding two kets or two bras is also quote simple:
 \begin{align}
