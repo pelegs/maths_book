@@ -921,7 +921,9 @@
 }
 
 \newcommand{\tbw}[1]{
-	\textcolor{xred}{\textbf{!}}\ \colorbox{xred!20}{\textbf{To be written/to do}: #1}\ \textcolor{xred}{\textbf{!}}
+  \begin{tcolorbox}[colback=xred!10!white, colframe=xred!30, coltitle=black, title=\faExclamationCircle\ To write/do \faExclamationCircle]
+    #1
+  \end{tcolorbox}
 }
 
 % Testing boldface in titles
