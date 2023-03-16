@@ -104,7 +104,7 @@ We can again go about solving this by directly counting all possible combination
 
 We then proceed to puting a red sphere in the 3rd spot, and counting all the possible combinations, i.e. the other red sphere being in the 4th or 5th spots (combinations 8 and 9). Again, all other options were already counted. We're then left with only a single combination: the red spheres being in the 4th and 5th spots. Altogether we have counted $10$ distinct combinations.
 
-In the general case, we want to know how many combinations are there of arrainging $n$ spheres in a row, when $k$ of them are red and the other $n-k$ blue. A convinient way of representing this number is using the \emph{binomial coefficients}, which are defined as
+In the general case, we want to know how many combinations are there of arrainging $n$ spheres in a row, when $k$ of them are red and the other $n-k$ blue. A convenient way of representing this number is using the \emph{binomial coefficients}, which are defined as
 
 \begin{equation}
 	\binom{n}{k} = \frac{n!}{k!(n-k)!}.
@@ -112,7 +112,7 @@ In the general case, we want to know how many combinations are there of arraingi
 \end{equation}
 
 \begin{note}{Binom pronounciation}{}
-	Reading the binom notation outloud we say "$n$ choose $k$", since we are choosing $k$ objects out of a total of $n$ objects.
+	Reading the binom notation aloud we say "$n$ choose $k$", since we are choosing $k$ objects out of a total of $n$ objects.
 \end{note}
 
 We expect then that $\binom{5}{2}=10$, since this is what we got in the example above. Let's verify this:
@@ -247,7 +247,7 @@ and the coefficients being the binomial coefficients $\binom{n}{k}$. Putting thi
 	\label{eq:binomial_expansion_n}
 \end{align}
 
-\begin{example}{Exapnding $\bm{(a+b)^{4}}$ using binomial coefficients}{}
+\begin{example}{Expanding $\bm{(a+b)^{4}}$ using binomial coefficients}{}
 	Let's use the above patterns to expand $(a+b)^{4}$. Looking at Pascal's triangle, the coefficients in row $n=4$ are $1,4,6,4,1$. Starting with the powers $a^{4}$ and $b^{0}=1$ and then decreasing and increasing the powers of $a$ and $b$, respectively, we write all terms:
 	\[
 		(a+b)^{4} = a^{4} + 4a^{3}b + 6a^{2}b^{2} + 4ab^{3} + b^{4}.

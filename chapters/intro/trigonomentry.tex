@@ -380,7 +380,7 @@ The area $S$ of a triangle $\triangle ABC$ can be calculated using the length $L
 		\draw[very thick, fill=xblue!20] (A) node[left] {$A$} -- (B) node[above] {$B$} node[midway, above left] {$c$} -- node[midway, right] {$a$} (C) node[right] {$C$} -- cycle node[midway, below] {$b$};
 		\draw[thick, dashed] (B) -- (D) node[midway, left] {$h$};
 		\draw[thick] (D) -- ++(0.2,0) -- ++(0,0.2) -- ++(-0.2,0);
-		\pic[draw, thick, angle radius=11mm, angle eccentricity=0.7, "$\alpha$"] {angle=C--A--B};
+		\pic[draw, thick, angle radius =11cm, angle eccentricity=0.7, "$\alpha$"] {angle=C--A--B};
 	\end{tikzpicture}
 	\caption{The area of a triangle using the side $b$ as a base, and its corresponding height to the point $B$. The angle opposing the side $A$ is marked as $\alpha$.}
 	\label{fig:area of a triangle}
@@ -424,7 +424,7 @@ i.e. in a triangle, the ratio between any side and the sine of its opposing angl
 
 		% "local bounding box" gives the pic its label
 		\pic[local bounding box=alpha, draw, thick, angle radius=11mm, angle eccentricity=0.7, "$\alpha$"] {angle=B--A--C};
-		\pic[local bounding box=beta, draw, thick, angle radius=7mm, angle eccentricity=0.6, "$\beta$"] {angle=C--B--A};
+	        \pic[local bounding box=beta, draw, thick, angle radius=7mm, angle eccentricity=0.6, "$\beta$"] {angle=C--B--A};
 		\pic[local bounding box=gamma, draw, thick, angle radius=11mm, angle eccentricity=0.7, "$\gamma$"] {angle=A--C--B};
 
 		\node[above right of=alpha, xshift=2mm] (alphatxt) {$\ang{30.79}$};

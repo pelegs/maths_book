@@ -13,7 +13,7 @@ The examples above present two more properties of sequences:
 	\item sequences can be either \emph{finite} (as in the first two examples), or \emph{infinite} (as in the latter two examples).
 \end{itemize}
 
-The number of elements in a sequence is called its \emph{length}. In the case of infinite sequences we say that their length equals $\infty$ (inifinity). The elements of a sequence $a$ are usually indexed using a subscript, such that $a_{1}$ is the first element in the sequence, $a_{2}$ is the second element in the sequence, etc. - and generally $a_{i}$ is the $i$-th element in the sequence, where $i\in\mathbb{N}$.
+The number of elements in a sequence is called its \emph{length}. In the case of infinite sequences we say that their length equals $\infty$ (infinity). The elements of a sequence $a$ are usually indexed using a subscript, such that $a_{1}$ is the first element in the sequence, $a_{2}$ is the second element in the sequence, etc. - and generally $a_{i}$ is the $i$-th element in the sequence, where $i\in\mathbb{N}$.
 
 We can therefore define a sequence somewhat more formally as a function from a subset of the natural numbers to the real numbers:
 \begin{equation}
@@ -395,7 +395,7 @@ As you probably noticed by now, some infinite sequences seem to approach a certa
 	\label{fig:1/n^2+1_seq}
 \end{figure}
 
-The formal term for the behaviour of $a_{n}$ and $b_{n}$ is called \emph{convergance}, and it is one of the most important properties of infinite sequences. In this subsection we will define, analyze, and explain it in detail. To begin, we can divide all infinite sequences into two separate categories:
+The formal term for the behaviour of $a_{n}$ and $b_{n}$ is called \emph{convergence}, and it is one of the most important properties of infinite sequences. In this subsection we will define, analyze, and explain it in detail. To begin, we can divide all infinite sequences into two separate categories:
 \begin{enumerate}
 	\item Sequences which converge to a finite number $L\in\Rs$.
 	\item Sequences which do not converge to any finite number.
@@ -525,12 +525,12 @@ or simply $a_{n}>R$.
 \end{example}
 
 \begin{example}{A sequence which goes to negative infinity}{}
-	Let us now show that the sequence $a_{n}=-\sqrt{n}$ goes to negative infinity. We first note that $-\sqrt{n}$ is always negative, is decreasing and bouned from above by $\overline{M}=0$. For any given negative $R\in\Rs$ we choose $n_{0}=\floor{R^{2}}$, and thus for any $n>n_{0}$ we get
+	Let us now show that the sequence $a_{n}=-\sqrt{n}$ goes to negative infinity. We first note that $-\sqrt{n}$ is always negative, is decreasing and bounded from above by $\overline{M}=0$. For any given negative $R\in\Rs$ we choose $n_{0}=\floor{R^{2}}$, and thus for any $n>n_{0}$ we get
 	\[
 		a_{n} < a_{n_{0}} = -\sqrt{n_{0}} = -\sqrt{\floor{R^{2}}} \leq -\sqrt{R^{2}} = -|R| = R.
 	\]
 
-	\tbw{is this example actually necessery? It seems reduntant unless we show something "new", and just inverting everything is not that new...}
+	\tbw{is this example actually necessary? Yes reinforcement is fine-JS}
 \end{example}
 
 The next type of sequences we ananlyze are those sequences that converge to a real number $L$ as $n$ increases - i.e. as $n$ increases, the terms of the sequence get closer and closer to $L$. A classical example for such a sequence is $a_{n}=\frac{1}{n}$ (\autoref{fig:1/n_seq}): as $n$ increases, the terms $\frac{1}{n}$ become smaller and smaller (while always being positive) and the sequence as a whole approaches $L=0$.
