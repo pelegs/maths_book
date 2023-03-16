@@ -384,83 +384,86 @@ We see that $\vec{a}=\xr{0\cdot\vec{e}_{1}}+\xb{3.5\vec{e}_{2}}=\xtwocolvec{0}{3
 This is only true if the column representation of the two vectors is in the same coordinate system (i.e. using the same basis vectors). Adding two column vectors in different coordinate systems (i.e. using different basis vectors) requires changing one of the column representation to the basis of the other one.
 \end{note}
 
-In general, we say that using the column representation, vector scaling and addition is done \emph{component-wise}.
-
-Using both \autoref{eq:column_representation_addition} and \autoref{eq:column_representation_scaling} we see that the zero vector $\vec{0}$ must have the following column representation using any basis set:
+Negating a vector can be thought of as multiplying it by the scalar $\alpha=-1$. Therefore, given a vector $\vec{v}=\xtwocolvec{v^{1}}{v^{2}}$, its opposite would be
 \begin{equation}
-  \vec{0} = \xtwocolvec{0}{0}.
+  -\vec{v}=\xtwocolvec{-v^{1}}{-v^{2}}.
+  \label{eq:column_representation_opposite}
+\end{equation}
+
+And finally, since $\vec{0}=\vec{v}+\left(-\vec{v}\right)$ for any $\vec{v}$, we get that
+\begin{equation}
+  \vec{0} = \xtwocolvec{v^{1}}{v^{2}}+\left(-1\xtwocolvec{v^{1}}{v^{2}}\right) = \xtwocolvec{v^{1}}{v^{2}}+\xtwocolvec{-v^{1}}{-v^{2}} = \xtwocolvec{v^{1}-v^{1}}{v^{2}-v^{2}} = \xtwocolvec{0}{0}.
   \label{eq:column_representation_zero_vec}
 \end{equation}
 
-\begin{challenge}{Text}{}
-  Prove that indeed $\vec{0}=\xtwocolvec{0}{0}$ using any basis set.
-\end{challenge}
+\begin{summary}{Column representation of vectors}{}
+  Scaling and adding vectors using their column representation is rather simple:
+  \begin{enumerate}
+    \item Scaling a vector by a scalar $\alpha$ is done by multiplying each of the vector's components by $\alpha$: $\alpha\xtwocolvec{v^{1}}{v^{2}}=\xtwocolvec{\alpha v^{1}}{\alpha v^{2}}$.
+    \item Adding two vectors is done by adding their respective components: $\xtwocolvec{u^{1}}{u^{2}}+\xtwocolvec{v^{1}}{v^{2}}=\xtwocolvec{u^{1}+v^{1}}{u^{2}+v^{2}}$.
+    In general, we say that using the column representation, vector scaling and addition is done \emph{component-wise}.
+    \item Using the above operations we get that the opposite of a vector $\xtwocolvec{v^{1}}{v^{2}}$ is $\xtwocolvec{-v^{1}}{-v^{2}}$.
+    \item We also get that the zero vector is always $\vec{0}=\xtwocolvec{0}{0}$.
+
+  \end{enumerate}
+\end{summary}
 
 \subsection{The space $\Rs[2]$ and the standard basis set}
-Since the column representation of vectors in $2$-dimensions has two entries, it is common to refer to the set of all $2$-dimensional vectors as $\Rs\times\Rs$ or simply $\Rs[2]$.
+We can place vectors on a two-dimensional Cartesian coordinate system, such that their origin coincide with the axis-origin (the point $\bm{O}=(0,0)$). We then mark the point where its head lies as $\bm{p}=(p_{x},p_{y})$:
 
-Any two vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ can be used as basis vectors in $\Rs[2]$, as long as they are not pointing in the same direction, i.e. as long as they are not scales of each other:
-\begin{equation}
-  \xb{\vec{e}_{2}} \neq \alpha\xr{\vec{e}_{1}},
-  \label{eq:basis_vectors_not_scales}
-\end{equation}
-where $\alpha$ is a real number. This also means that the zero vector can't be used as a basis vector. We will elaborate on that point later on.
+\begin{center}
+  \begin{tikzpicture}[]
+    \pgfmathsetmacro{\px}{8}
+    \pgfmathsetmacro{\py}{4}
+    \begin{axis}[
+      vector plane,
+      width=7cm, height=7cm,
+      xmin=-1, xmax=10,
+      ymin=-1, ymax=10,
+      xticklabels={},
+      yticklabels={},
+      extra x ticks={\px},
+      extra x tick labels={$p_{x}$},
+      extra y ticks={\py},
+      extra y tick labels={$p_{y}$},
+    ]
+    \coordinate (vec2d) at (\px,\py);
+    \fill[xorange!25!gray] (vec2d) circle (0.2) node[above] {$\bm{p}=(p_{x},p_{y})$};
+    \draw[xorange!25!gray, dashed] (vec2d) -- (\px,0);
+    \draw[xorange!25!gray, dashed] (vec2d) -- (0,\py);
+    \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above] {$\vec{u}$};
+    \fill (0,0) circle (0.2) node[] (O2) {};
+    \end{axis}
+    \node[below left of=O2] {$\bm{O}=(0,0)$};
+  \end{tikzpicture}
+\end{center}
 
-\subsection{Cartesian coordiantes and the standard basis vectors}
+This arrangement has a fitting basis set, which we call the \emph{standard basis set of $\Rs[2]$}:
+\begin{enumerate}
+  \item $\xr{\hat{x}}$: a vector of unit length in the direction of the $x$-axis, i.e. from the origin of the axes to point $(1,0)$.
+  \item $\xb{\hat{y}}$: a vector of unit length in the direction of the $y$-axis, i.e. from the origin of the axes to point $(0,1)$.
+\end{enumerate}
 
-The space $\Rs[2]$ can be placed inside a Cartesian coordinate system, such that the origin of all vectors is at the point $\bm{O}=(0,0)$. It is then very common to use the following two vectors as basis vectors: $\xr{\hat{x}}$, a vector of norm $1$ pointing in the direction of the $x$-axis, and $\xb{\hat{y}}$, a vector of norm $1$ pointing in the direction of the $y$-axis:
-
-\colorlet{xbcol}{black!30}
 \begin{center}
   \begin{tikzpicture}[]
     \begin{axis}[
       vector plane,
-      width=5cm, height=5cm,
-      xmin=-2, xmax=2,
-      ymin=-2, ymax=2,
-      xtick={-2,-1,1,2},
-      ytick={-2,-1,1,2},
-      axis line style={xbcol},
-      tick style={xbcol},
-      ticklabel style={xbcol},
-      xlabel style={xbcol},
-      ylabel style={xbcol},
-      major grid style={black!2},
+      width=7cm, height=7cm,
+      xmin=-1, xmax=10,
+      ymin=-1, ymax=10,
+      xticklabels={},
+      yticklabels={},
+      extra x ticks={4},
+      extra x tick labels={(1,0)},
+      extra y ticks={4},
+      extra y tick labels={(0,1)},
     ]
-    \draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
-    \draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
-    \fill (0,0) circle (0.05);
+    \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above] {$\vec{u}$};
+    \draw[vector, xred] (0,0) -- (4,0) node[midway, below] {$\hat{x}$};
+    \draw[vector, xblue] (0,0) -- (0,4) node[midway, left] {$\hat{y}$};
+    \fill (0,0) circle (0.2) node[] (O2) {};
     \end{axis}
   \end{tikzpicture}
 \end{center}
 
-Using these basis vectors, any vector $\vec{v}$ has components that are equal to the coordinates of the point $\bm{p}$ at its head: $v^{1}=\bm{p}_{x}$ and $v^{2}=\bm{p}_{y}$ (see \autoref{fig:vectors_std_basis_coords}).
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}[]
-    \begin{axis}[
-      vector plane,
-      width=10cm, height=10cm,
-      xmin=-3, xmax=3,
-      ymin=-3, ymax=3,
-      xticklabels={},
-      yticklabels={},
-      axis line style={black!30},
-      tick style={black!30},
-      grid=both,
-      major grid style={black!10},
-      minor grid style={black!5},
-      minor tick num=4,
-    ]
-    \draw[vector, xred] (0,0) -- (1,0) node[midway, below] (xh) {$\hat{x}$} node[anchor=north west] {$(1,0)$};
-    \draw[vector, xblue] (0,0) -- (0,1) node[midway, left] (yh) {$\hat{y}$} node[anchor=south east] {$(0,1)$};
-    \draw[vector, xpurple] (0,0) -- (2,1) node[midway, above] {$\vec{v}$} node[anchor=west] {$(2,1)$};
-    \draw[vector, xdarkgreen] (0,0) -- (-2.6,1.2) node[midway, above] {$\vec{u}$} node[anchor=south, xshift=5] {$(-2.6,1.2)$};
-    \draw[vector, xorange] (0,0) -- (-2,-2) node[midway, above] {$\vec{w}$} node[anchor=north east] {$(-2,-2)$};
-    \fill (0,0) circle (0.05);
-    \end{axis}
-  \end{tikzpicture}
-  \caption{The standard basis vectors $\xr{\hat{x}}=\colvec{\xr{1};\xb{0}}$ and $\xb{\hat{y}}=\colvec{\xr{0};\xb{1}}$ on a $2$-dimensional Cartesian coordinate system, together with the vectors $\xp{\vec{v}}=\colvec{\xr{2};\xb{1}}$, $\xdg{\vec{u}}=\colvec{\xr{-2.6};\xb{1.2}}$ and $\xo{\vec{w}}=\colvec{\xr{-2};\xb{-2}}$.}
-  \label{fig:vectors_std_basis_coords}
-\end{figure}
+Using the standard basis set, the first component of any vector is simply $p_{x}$ and the second component is $p_{y}$, i.e. $\xo{\vec{u}}=\xtwocolvec{p_{x}}{p_{y}}$. For example, we see that the vector $\xo{\vec{u}}$ in the above figure has the column represented $\xo{\vec{u}}=\xtwocolvec{2}{1}$.

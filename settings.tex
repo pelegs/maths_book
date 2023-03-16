@@ -335,6 +335,7 @@
 \definecolor{xpink}{HTML}{F690EA}
 \definecolor{xgrayblue}{HTML}{49B095}
 \definecolor{xgraycyan}{HTML}{5AA1B9}
+\definecolor{xturquoise}{HTML}{37D190}
 
 % Dark colors
 \colorlet{xdarkred}{red!85!black}
@@ -518,6 +519,9 @@
 	quotestyle/.style={
 		common={gray}{\textbf{"}},
 	},
+	Summarystyle/.style={
+		common={xturquoise}{\textbf{\faPuzzlePiece}},
+	},
 }
 
 \newtcbtheorem[auto counter, number within=chapter]{definition}{Definition}{defstyle}{def}
@@ -527,6 +531,7 @@
 \newtcbtheorem[auto counter, number within=chapter]{example}{Example}{examplestyle}{example}
 \newtcbtheorem[auto counter, number within=chapter]{note}{Note}{notestyle}{note}
 \newtcbtheorem[auto counter, number within=chapter]{challenge}{Challenge}{challengestyle}{challenge}
+\newtcbtheorem[auto counter, number within=chapter]{summary}{Summary}{Summarystyle}{summary}
 \newtcbtheorem[]{nquote}{Quote}{quotestyle}{quote}
 
 %---------%
