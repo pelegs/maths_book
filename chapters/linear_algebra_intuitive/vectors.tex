@@ -505,7 +505,7 @@ Using the standard basis set, the first component of any vector is simply $p_{x}
 It's common to call $\xr{u^{1}}$ simply $\xr{x}$, and $\xb{u^{y}}$ simply $\xb{y}$, and therefore the components of some vector $\xo{\vec{u}}$ are called $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively.
 
 \subsection{Polar coordinates}
-Using the 2-dimensional Cartesian plane we can define an alternative coordinate system for vectors: notice that each vector $\xdg{\vec{u}}=\xtwocolvec{u^{x}}{u^{y}}$ defines a right triangle together with the $x$-axis; The side on the $x$-axis and the side parallel to the $y$-axis are then $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively:
+Using the 2-dimensional Cartesian plane we can define an alternative coordinate system for vectors: notice that each vector $\xo{\vec{u}}=\xtwocolvec{u^{x}}{u^{y}}$ defines a right triangle together with the $x$-axis; The side on the $x$-axis and the side parallel to the $y$-axis are then $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively:
 
 \begin{center}
   \begin{tikzpicture}[every node/.style={font=\Large}]
@@ -523,7 +523,7 @@ Using the 2-dimensional Cartesian plane we can define an alternative coordinate 
     ]
     \coordinate (vec2d) at (\px,\py);
     \draw[gray, dashed] (vec2d) -- (\px,0);
-    \draw[vector, xdarkgreen] (0,0) -- (vec2d) node[midway, above left] {$\vec{u}$};
+    \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above left] {$\vec{u}$};
     \draw[thick] (1.75,0) -- (1.75,0.25) -- (2,0.25);
 		\draw[xred, very thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}] (0,0) -- (\px,0) node[midway, below , yshift=-5pt]{$u^{x}$};
 		\draw[xblue, very thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}] (\px,0) -- (\px,\py) node[midway, right, xshift=5pt]{$u^{y}$};
@@ -534,29 +534,97 @@ Using the 2-dimensional Cartesian plane we can define an alternative coordinate 
   \end{tikzpicture}
 \end{center}
 
-Due to the Pythagorean theorem we know that the norm of $\xdg{\vec{u}}$ is
+Due to the Pythagorean theorem we know that the norm of $\xo{\vec{u}}$ is
 \begin{equation}
-  \xdg{\norm{u}} = \sqrt{\left(\xr{u^{x}}\right)^{2} + \left(\xb{u^{y}}\right)^{2}},
+  \xo{\norm{u}} = \sqrt{\left(\xr{u^{x}}\right)^{2} + \left(\xb{u^{y}}\right)^{2}},
   \label{eq:pythagorean_vec_norm}
 \end{equation}
-and due to trigonometry, the angle $\xp{\theta}$ between $\xdg{\vec{u}}$ and the $x$-axis is
+and due to trigonometry, the angle $\xp{\theta}$ between $\xo{\vec{u}}$ and the $x$-axis is
 \begin{equation}
   \xp{\theta} = \arctan\left(\frac{\xb{u^{y}}}{\xr{u^{x}}}\right).
   \label{eq:label}
 \end{equation}
 
-The alternative coordinate system, called the \emph{polar coordinate system}, uses a tuple of numbers: $\left(\xg{r},\xp{\theta}\right)$ - where $\xdg{r}=\xdg{\norm{u}}$. The conversion from the coordinates $\left(\xdg{r},\xp{\theta}\right)$ to the column form $\xtwocolvec{u^{x}}{u^{y}}$ is therefore
+The alternative coordinate system, called the \emph{polar coordinate system}, uses a tuple of numbers: $\left(\xo{r},\xp{\theta}\right)$ - where $\xo{r}=\xo{\norm{u}}$. The conversion from the coordinates $\left(\xo{r},\xp{\theta}\right)$ to the column form $\xtwocolvec{u^{x}}{u^{y}}$ is therefore
 \begin{align*}
-  \xr{u^{x}} &= \xdg{r}\cos(\xp{\theta}),\\\nonumber
-  \xb{u^{y}} &= \xdg{r}\sin(\xp{\theta}).
+  \xr{u^{x}} &= \xo{r}\cos(\xp{\theta}),\\\nonumber
+  \xb{u^{y}} &= \xo{r}\sin(\xp{\theta}).
 \end{align*}
 (cf. \autoref{eq:basic_trig_rearrange})
 
 \tbw{examples of transitioning between coords sys}
 
+Before we continue with the topic, let's use what we learned to solve some simple problems:
+
 \tbw{example: turtle Joe's travels}
 
-\tbw{example: $n$ people pulling on rope, force equals 0 when arranged in a regular polygon. Use Lagrange's trigonometric identities to prove}
+\begin{example}{Force on an onject}{forces}
+  Consider a simplified game of ``tug of war'', where two people $\xr{A}$ and $\xdg{B}$ are pulling on some object (black circle) using two ropes of the same length $L$ directly opposite to one another\footnote{A key to solving all mathematical problems is being able to draw a simplified schematic of the situation. That is most definitely \textit{not} an excuse for the lousy drawing\dots}:
+
+  \vspace{1em}
+  \tikzset{
+    person/.style 2 args={fill=#1, circle, label={[text=white]center:$#2$}, minimum size=15pt, inner sep=0pt},
+    rope/.style={line width=4pt, xorange!75},
+    ropeb/.style={rope, draw=xorange!50!black!75, dashed},
+  }
+  \begin{center}
+    \begin{tikzpicture}
+      \node[person={black}{}, minimum size=5pt] (O) at (0,0) {};
+      \node[person={xred}{A}] (A) at (2,0) {};
+      \node[person={xgreen}{B}] (B) at (-2,0) {};
+      \draw[rope] (A) -- (O);
+      \draw[rope] (B) -- (O);
+      \draw[ropeb] (A) -- (O);
+      \draw[ropeb] (B) -- (O);
+      \draw[|-|, thick] (-2,-0.5) -- (0,-0.5) node[midway, below] {$L$};
+      \draw[|-|, thick] (0,0.5) -- (2,0.5) node[midway, above] {$L$};
+    \end{tikzpicture}
+  \end{center}
+
+  If both people pull with the exact same force, the object will stay at the same place. We can explain this using vector addition: if we represent the force applied on the object by the pull of person $\xr{A}$ using the vector $\xr{\vec{F}}$, then the pull force applied on the object by person $\xdg{B}$ is $\xdg{-\vec{F}}$, since the total force must add up to zero (no force=no change in position\footnote{Yes, technically no force means no acceleration, so if this bothers you just assume the object had no initial velocity.}).
+
+  \vspace{1em}
+  Now consider adding a third person pulling on the object, and that all three people are arranged such that they are at $\ang{120}$ to eachother and at the exact same length $L$ from the object they are pulling:
+  
+  \begin{center}
+    \begin{tikzpicture}[
+      ]
+      \pgfmathsetmacro{\L}{2}
+      \draw[arcnode={6*\L}{$\ang{120}$}] ({\L/2},0) arc (0:120:{\L/2});
+      \draw[thick, dashed] ({\L/2},0) arc (0:120:{\L/2});
+      \node[person={black}{}, minimum size=5pt] (O) at (0,0) {};
+      \node[person={xred}{A}] (A) at (\L,0) {};
+      \node[person={xgreen}{B}] (B) at ({\L*cos(120)},{\L*sin(120)}) {};
+      \node[person={xblue}{C}] (C) at ({\L*cos(240)},{\L*sin(240)}) {};
+      \draw[rope] (A) -- (O);
+      \draw[rope] (B) -- (O);
+      \draw[rope] (C) -- (O);
+      \draw[ropeb] (A) -- (O);
+      \draw[ropeb] (B) -- (O);
+      \draw[ropeb] (C) -- (O);
+    \end{tikzpicture}
+  \end{center}
+
+  If the three people are pulling with the same force, what would be the total force experienced by the object? Again, we can express the forces using vectors: $\xr{\vec{F}_{A}},\ \xdg{\vec{F}_{B}}$ and $\xb{\vec{F}_{C}}$ - we want to calculate the sum $\xr{\vec{F}_{A}}+\xdg{\vec{F}_{B}}+\xb{\vec{F}_{C}}$. Since all forces have the same magnitude, we'll call that magnitude simply $F$. Using the standard basis vectors in $\Rs[2]$ we can consider the vector $\xr{\vec{F}_{A}}$ to be pointing to the right and thus having the column representation
+  \[
+    \xr{\vec{F}_{A}} = \colvec{F;0}.
+  \]
+  The vector $\xdg{\vec{F}_{B}}$ has the same magnitude but a different direction: we can use polar coordinates to find its column representations, and we get that these are $(F,\ang{120})$. A simple conversion yields
+  \[
+    \xdg{\vec{F}_{B}} = \colvec{F\cos\left(\ang{120}\right);F\sin\left(\ang{120}\right)} = F\colvec{-\frac{1}{2};\frac{\sqrt{3}}{2}} = \frac{F}{2}\colvec{-1;\sqrt{3}}.
+  \]
+
+  Similar calculation for $\xb{\vec{F}_{C}}$ gives $\xb{\vec{F}_{C}}=\frac{F}{2}\colvec{-1;-\sqrt{3}}$. Adding all three vectors together gives
+  \begin{align*}
+    \xr{\vec{F}_{A}}+\xdg{\vec{F}_{B}}+\xb{\vec{F}_{C}} &= \colvec{F;0} + \frac{F}{2}\colvec{-1;\sqrt{3}} + \frac{F}{2}\colvec{-1;-\sqrt{3}}\\
+                                                        &= \colvec{F-\frac{F}{2}+\frac{F}{2};0+\frac{\sqrt{3}F}{2}-\frac{\sqrt{3}F}{2}}\\
+                                                        &= \colvec{0;0}.
+  \end{align*}
+
+  We get, once again, that the total force applied on the object is zero.
+
+  \tbw{pattern continues for any $n$}
+  \end{example}
 
 \subsection{$\Rs[3]$ and beyond}
 \subsection{Linear combinations and subspaces}
