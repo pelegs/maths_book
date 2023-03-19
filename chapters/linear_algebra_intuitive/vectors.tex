@@ -623,8 +623,93 @@ Before we continue with the topic, let's use what we learned to solve some simpl
 
   We get, once again, that the total force applied on the object is zero.
 
-  \tbw{pattern continues for any $n$}
-  \end{example}
+  At this point one might wonder if this pattern always holds, that is - given $n\geq1$ people arranged at the vertices of a regular polygon, each pulling with the same force on a rope connected to some object at the center of the regular polygon, will the total force be zero? To help picture this question, here are schematics for the cases $n=4,5,6,7$:
+
+  \newcommand{\nrope}[2]{
+    \pgfmathsetmacro{\L}{1.5}
+    \pgfmathsetmacro{\n}{#1}
+    \pgfmathsetmacro{\m}{\n-1}
+    \pgfmathsetmacro{\degs}{int(360/\n)}
+    \node[person={black}{}, minimum size=5pt] (\n-O) at (0,0) {};
+    \foreach \k in {0,...,\m}{
+      \node[person={#2}{}] (\n-\k) at ({\L*cos(\degs*\k)},{\L*sin(\degs*\k)}) {};
+      \draw[rope] (\n-\k) -- (O);
+      \draw[ropeb] (\n-\k) -- (O);
+    }
+    \node at (0,{\L*1.5}) {\underline{$n=\n$}};
+    \draw[arcnode={-8*\L}{$\ang{\degs}$}] ({\L/2},0) arc (0:{\degs}:{\L/2});
+    \draw[thick, dashed] ({\L/2},0) arc (0:{\degs}:{\L/2});
+  }
+  \begin{center}
+    \begin{tikzpicture}
+      \nrope{4}{xred}
+    \end{tikzpicture}
+    \hspace{1.5cm}
+    \begin{tikzpicture}
+      \nrope{5}{xblue}
+    \end{tikzpicture}
+
+    \vspace{1em}
+    \begin{tikzpicture}
+      \nrope{6}{xgreen}
+    \end{tikzpicture}
+    \hspace{1.5cm}
+    \begin{tikzpicture}
+      \nrope{7}{xpurple}
+    \end{tikzpicture}
+  \end{center}
+  \tbw{correct $\ang{51}$ issue}
+
+  Intuitively, one would expect that for any $n\geq1$, $\sum\limits_{i=1}^{n}\vec{F}_{i}=\vec{0}$ due to symmetry. Let's do the actual ``dirty work'' and prove this. First, the angle between each two consecutive ropes/people is $\frac{\ang{360}}{n}$. We will use $\frac{2\pi}{n}$ instead, because radians are simply \textit{better} than degrees. We get that each vector $\vec{F}_{k}$ has the following polar coordinates:
+  \[
+    \vec{F}_{k}: \left(L,\frac{2\pi}{n}k\right),
+  \]
+  where $k=0,1,2,\dots,n-1$ - we use this so that the first vector always points directly to the right, which makes the calculations a bit more convinient.
+
+  Using these polar coordinates, we can write each vector in column form in the standard basis in $\Rs[2]$:
+  \[
+    \vec{F}_{k} = \colvec{L\cos\left(\frac{2\pi}{n}k\right);L\sin\left(\frac{2\pi}{n}k\right)}.
+  \]
+  Therefore, the sum of all $n$ vectors is
+  \[
+    \vec{V} = \sum\limits_{k=0}^{n-1}F_{k} = \sum\limits_{k=0}^{n-1}\colvec{L\cos\left(\frac{2\pi}{n}k\right);L\sin\left(\frac{2\pi}{n}k\right)} = L\sum\limits_{k=0}^{n-1}\colvec{\cos\left(\frac{2\pi}{n}k\right);\sin\left(\frac{2\pi}{n}k\right)}.
+  \]
+  Since we want to show that the sum is zero, we can ignore the norm $L$ as it doesn't play a role.
+
+  Since column vectors are added \textit{component-wise}, we actually need to show the following two equalities:
+  \begin{align*}
+    1.\quad\sum\limits_{k=0}^{n-1}\cos\left(\frac{2\pi}{n}k\right) &= 0,\\
+    2.\quad\sum\limits_{k=0}^{n-1}\sin\left(\frac{2\pi}{n}k\right) &= 0.
+  \end{align*}
+
+  Starting with the first sum, we will use Lagrange's trigonometric identities (\autoref{eq:Lagrange's trigonometric identities}). Since these identities involve sums with $k=0,1,2,\dots,n$ but our sums only use $k=0,1,2,\dots,n-1$, we would need to subtract the term where $k=n$ from the result, that is the term $\cos\left(\frac{2\pi}{n}n\right)=\cos\left(2\pi\right)=1$. Using $\theta=\frac{2\pi}{n}$ in the identities we get that
+  \begin{align*}
+    \sum\limits_{k=0}^{n-1}\cos\left( \frac{2\pi}{n}k \right) &= \sum\limits_{k=0}^{n}\cos\left( \frac{2\pi}{n}k \right)-1\\
+                                                              &= \frac{\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)+\sin\left(\left[n+\frac{1}{2}\right]\frac{2\pi}{n}k\right)}{2\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)}-1\\
+                                                              &= \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1.
+  \end{align*}
+  We can use the angle sum trigonometric identities (\autoref{eq:angle_sum}) to calculate $\sin\left(2\pi k+\frac{\pi}{n}k\right)$:
+  \begin{align*}
+    \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1 &= \frac{\sin\left(\frac{\pi}{n}k\right)+\left[\cancel{\sin\left(2\pi k\right)\cos\left(\frac{\pi}{n}k\right)}+\cancelcol[xblue]{\cos\left(2\pi k\right)}\sin\left(\frac{\pi}{n}k\right)\right]}{2\sin\left(\frac{\pi}{n}k\right)}-1\\
+                                                                                                                      &= \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1\\ 
+                                                                                                                      &= \frac{2\sin(\frac{\pi}{n}k)}{2\sin(\frac{\pi}{n}k)} - 1\\
+                                                                                                                      &= 1-1\\
+                                                                                                                      &= 0.
+  \end{align*}
+
+  And for the second sum (using $\sin\left(\frac{2\pi}{n}n\right)=\sin\left(2\pi\right)=0$):
+  \begin{align*}
+    \sum\limits_{k=0}^{n-1}\sin\left( \frac{2\pi}{n}k \right) &= \sum\limits_{k=0}^{n}\sin\left( \frac{2\pi}{n}k \right)\\
+                                                              &= \frac{\cos\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)-\cos\left(\left[n+\frac{1}{2}\right]\frac{2\pi}{n}k\right)}{2\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)}\\
+                                                              &= \frac{\cos\left(\frac{\pi}{n}k\right)-\cos\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}\\
+                                                              &= \frac{\cos\left(\frac{\pi}{n}k\right)-\left[\cancelcol[xblue]{\cos\left(2\pi k\right)}\cos\left(\frac{\pi}{n}k\right)-\cancel{\sin\left(2\pi k\right)\sin\left(\frac{\pi}{n}k\right)}\right]}{2\sin\left(\frac{\pi}{n}k\right)}\\
+                                                              &= \frac{\cos\left(\frac{\pi}{n}k\right)-\cos\left(\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}\\
+                                                              &= 0.
+  \end{align*}
+
+
+  Indeed, adding up all the vectors results in the zero vector - i.e. no force is applied on the object.
+\end{example}
 
 \subsection{$\Rs[3]$ and beyond}
 \subsection{Linear combinations and subspaces}
