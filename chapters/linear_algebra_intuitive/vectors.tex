@@ -250,13 +250,17 @@ We see that using these basis vectors, $\xp{\vec{v}}=3\xr{\vec{e}_{1}}+2\xb{\vec
   \end{center}
 \end{example}
 
-This notation is frequently refered to as a \emph{column vector}, and the numbers are called \emph{coordinates} or \emph{components}. The components themselves are usually denoted using the same symbol used for the vector (without the arrow sign) and an index: for example, the two components of the vector $\xp{\vec{v}}=\xtwocolvec{3}{2}$ are $\xr{v^{1}}=\xr{3}$ and $\xb{v^{2}}=\xb{2}$.
+This notation is frequently refered to as a \emph{column vector}, and the numbers are called the \emph{components} of the vectors. The components themselves are usually denoted using the same symbol used for the vector (without the arrow sign) and an index: for example, the two components of the vector $\xp{\vec{v}}=\xtwocolvec{3}{2}$ are $\xr{v^{1}}=\xr{3}$ and $\xb{v^{2}}=\xb{2}$.
 
 \begin{note}{Index notation}{}
   In this book we use upper-index notation to denote components of column vectors. Do not mistake these for powers! The reason for this choice (as opposed to lowe-index notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
 \end{note}
 
-The set of basis vectors used to represent vectors as columns is sometimes called a \emph{coordinate system}. We will see different common coordinate systems soon. Vectors have different components in different coordinate systems. For example, we can use the following two vectors $\xdg{\vec{d}_{1}}$ and $\xo{\vec{d}_{2}}$ as basis vectors:
+\begin{note}{Coordinate systems}{}
+  The set of basis vectors used to represent vectors as columns is sometimes called a \emph{coordinate system}. We will use the name \emph{basis set} to stay consistent.
+\end{note}
+
+Vectors have different components when using different basis sets. For example, we can use the following two vectors $\xdg{\vec{d}_{1}}$ and $\xo{\vec{d}_{2}}$ as basis vectors:
 
 \begin{center}
   \begin{tikzpicture}
@@ -268,7 +272,7 @@ The set of basis vectors used to represent vectors as columns is sometimes calle
   \end{tikzpicture}
 \end{center}
 
-In this new coordinate system, the vector $\xp{\vec{v}}$ from earlier has the following column representation:
+In this new basis set, the vector $\xp{\vec{v}}$ from earlier has the following column representation:
 
 \vspace{-1.2em}
 \begin{center}
@@ -286,9 +290,9 @@ In this new coordinate system, the vector $\xp{\vec{v}}$ from earlier has the fo
 \end{center}
 (i.e. its components are $\xdg{v^{1}}=\xdg{2}$ and $\xo{v^{2}}=\xo{2.5}$)
 
-This brings us to an important idea, which unfortunately might confuse those who are new to the topic: \textbf{vectors and their column representation are two separate things!} Vectors are objects with a length (norm) and a direction. They don't ``care'' about how \textit{we} describe them numerically: no matter what coordinate system we use, vectors remain the same - it's their \textit{representation} which changes.
+This brings us to an important idea, which unfortunately might confuse those who are new to the topic: \textbf{vectors and their column representation are two separate things!} Vectors are objects with a length (norm) and a direction. They don't ``care'' about how \textit{we} describe them numerically: no matter what basis set we use, vectors remain the same - it's their \textit{representation} which changes.
 
-In fact, not only does the choice of coordinate system affect the column representation of all vectors\footnote{except the zero vector, which is always $\vec{0}=\colvec{0;0}$}, two different vectors \textbf{can have the same column representation using two different coordinate systems.}. For example. let's say we choose any two non-zero vectors to be used as basis vectors: $\vec{u}$ and $\vec{v}$. Then the following is always true:
+In fact, not only does the choice of basis set affect the column representation of all vectors\footnote{except the zero vector, which is always $\vec{0}=\colvec{0;0}$}, two different vectors \textbf{can have the same column representation using two different basis sets.}. For example. let's say we choose any two non-zero vectors to be used as basis vectors: $\vec{u}$ and $\vec{v}$. Then the following is always true:
 \begin{align*}
   \vec{u} &= 1\cdot\vec{u} + 0\cdot\vec{v},\\
   \vec{v} &= 0\cdot\vec{u} + 1\cdot\vec{v}.
@@ -348,7 +352,7 @@ Now we use the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ to get th
 
 We get that $\xp{\frac{1}{2}\vec{v}}=\xr{1.5\vec{e}_{1}}+\xb{1\vec{e}_{2}}$, i.e. $\xp{\frac{1}{2}\vec{v}}=\xtwocolvec{1.5}{1}=\xtwocolvec{\frac{1}{2}\cdot3}{\frac{1}{2}\cdot2}$ - i.e. scaling $\xp{\vec{v}}$ by $\xp{\frac{1}{2}}$ simply multiplied both its components by $\xp{\frac{1}{2}}$.
 
-This is in fact true for any vector and any scalar, using any coordinate system: scaling a vector by a scalar $\alpha$ results in multiplying each of its components by $\alpha$:
+This is in fact true for any vector and any scalar, using any basis set: scaling a vector by a scalar $\alpha$ results in multiplying each of its components by $\alpha$:
 \begin{equation}
   \vec{u} = \xtwocolvec{u^{1}}{u^{2}}\quad\Longrightarrow\quad \alpha\vec{u} = \xtwocolvec{\alpha\cdot u^{1}}{\alpha\cdot u^{2}}.
   \label{eq:column_representation_scaling}
@@ -376,14 +380,30 @@ Now we calculate the components of $\vec{a}$ in the basis $\xr{\vec{e}_{1}},\xb{
   \end{tikzpicture}
 \end{center}
 
-We see that $\vec{a}=\xr{0\cdot\vec{e}_{1}}+\xb{3.5\vec{e}_{2}}=\xtwocolvec{0}{3.5} = \xtwocolvec{3+(-3)}{2+1.5}$, so the column representation of the addition of two vectors is simply the addition of their components. This is always true:
-\begin{equation}
-  \vec{u}=\xtwocolvec{u^{1}}{u^{2}},\ \vec{v}=\xtwocolvec{v^{1}}{v^{2}}\quad\Longrightarrow\quad\vec{u}+\vec{v}=\xtwocolvec{u^{1}+v^{1}}{u^{2}+v^{2}}.
-  \label{eq:column_representation_addition}
-\end{equation}
+We see that $\vec{a}=\xr{0\cdot\vec{e}_{1}}+\xb{3.5\vec{e}_{2}}=\xtwocolvec{0}{3.5} = \xtwocolvec{3+(-3)}{2+1.5}$, so the column representation of the addition of two vectors is simply the addition of their components.
 
-\begin{note}{Scaling and addition using different coordinate systems}{}
-This is only true if the column representation of the two vectors is in the same coordinate system (i.e. using the same basis vectors). Adding two column vectors in different coordinate systems (i.e. using different basis vectors) requires changing one of the column representation to the basis of the other one.
+This is infact not a coincidence: given two generic column vectors in the same basis $\left\{\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2}}\right\}$,
+\[
+  \vec{u}=\xtwocolvec{u^{1}}{u^{2}},\quad\vec{v}=\xtwocolvec{v^{1}}{v^{2}},
+\]
+we can write them as follows:
+\begin{align*}
+  \vec{u} &= \xr{u^{1}\vec{e}_{1}} + \xb{u^{2}\vec{e}_{2}},\\
+  \vec{v} &= \xr{v^{1}\vec{e}_{1}} + \xb{v^{2}\vec{e}_{2}}.
+\end{align*}
+When adding them in this form we can collect all similar terms together:
+\begin{align*}
+  \vec{w} &= \vec{u} + \vec{v} = \xr{u^{1}\vec{e}_{1}} + \xb{u^{2}\vec{e}_{2}} + \xr{v^{1}\vec{e}_{1}} + \xb{v^{2}\vec{e}_{2}}\\
+          &= \xr{\left(u^{1}+v^{1}\right)\vec{e}_{1}} + \xb{\left(u^{2}+v^{2}\right)\vec{e}_{2}}.
+\end{align*}
+and the column of the resulting vector $\vec{w}$ is therefore
+\[
+  \vec{w} = \xtwocolvec{u^{1}+v^{1}}{u^{2}+v^{2}},
+\]
+which is exactly the \emph{column-wise} addition of $\vec{u}$ and $\vec{v}$.
+
+\begin{note}{Scaling and addition using different basis sets}{}
+This is only true if the column representation of the two vectors uses the same basis set. Adding two column vectors in different basis sets requires changing one of the column representation to the basis of the other one. We will deal with change of basis later in the chapter.
 \end{note}
 
 Negating a vector can be thought of as multiplying it by the scalar $\alpha=-1$. Therefore, given a vector $\vec{v}=\xtwocolvec{v^{1}}{v^{2}}$, its opposite would be
@@ -444,8 +464,8 @@ We can place vectors on a two-dimensional Cartesian coordinate system, such that
 
 This arrangement has a fitting basis set, which we call the \emph{standard basis set of $\Rs[2]$}:
 \begin{enumerate}
-  \item $\xr{\hat{x}}$: a vector of unit length in the direction of the $x$-axis, i.e. from the origin of the axes to point $(1,0)$.
-  \item $\xb{\hat{y}}$: a vector of unit length in the direction of the $y$-axis, i.e. from the origin of the axes to point $(0,1)$.
+  \item $\cxhat$: a vector of unit length in the direction of the $x$-axis, i.e. from the origin of the axes to point $(1,0)$.
+  \item $\cyhat$: a vector of unit length in the direction of the $y$-axis, i.e. from the origin of the axes to point $(0,1)$.
 \end{enumerate}
 
 \begin{center}
@@ -545,10 +565,10 @@ and due to trigonometry, the angle $\xp{\theta}$ between $\xo{\vec{u}}$ and the 
   \label{eq:label}
 \end{equation}
 
-The alternative coordinate system, called the \emph{polar coordinate system}, uses a tuple of numbers: $\left(\xo{r},\xp{\theta}\right)$ - where $\xo{r}=\xo{\norm{u}}$. The conversion from the coordinates $\left(\xo{r},\xp{\theta}\right)$ to the column form $\xtwocolvec{u^{x}}{u^{y}}$ is therefore
+The alternative coordinate system, called the \emph{polar coordinate system}, uses a tuple of numbers: $\left(\xo{R},\xp{\theta}\right)$ - where $\xo{R}=\xo{\norm{u}}$. The conversion from the coordinates $\left(\xo{R},\xp{\theta}\right)$ to the column form $\xtwocolvec{u^{x}}{u^{y}}$ is therefore
 \begin{align*}
-  \xr{u^{x}} &= \xo{r}\cos(\xp{\theta}),\\\nonumber
-  \xb{u^{y}} &= \xo{r}\sin(\xp{\theta}).
+  \xr{u^{x}} &= \xo{R}\cos(\xp{\theta}),\\\nonumber
+  \xb{u^{y}} &= \xo{R}\sin(\xp{\theta}).
 \end{align*}
 (cf. \autoref{eq:basic_trig_rearrange})
 
@@ -556,7 +576,9 @@ The alternative coordinate system, called the \emph{polar coordinate system}, us
 
 Before we continue with the topic, let's use what we learned to solve some simple problems:
 
-\tbw{example: turtle Joe's travels}
+\begin{example}{Turtle walk}{}
+  Joe the turtle went on a stroll in the field: he first walked $10$ meters, then turned $\ang{30}$ counter clockwise and walked $5$ more meters. After a short rest Joe noticed the pond to his right, so he turned $\ang{45}$ clockwise and walked to the pond - about $30$ meters away. When he reached the pond he swam across it at a $\ang{20}$ counter clockwise and $10$ meters forward.
+\end{example}
 
 \begin{example}{Force on an onject}{forces}
   Consider a simplified game of ``tug of war'', where two people $\xr{A}$ and $\xdg{B}$ are pulling on some object (black circle) using two ropes of the same length $L$ directly opposite to one another\footnote{A key to solving all mathematical problems is being able to draw a simplified schematic of the situation. That is most definitely \textit{not} an excuse for the lousy drawing\dots}:
@@ -712,6 +734,59 @@ Before we continue with the topic, let's use what we learned to solve some simpl
 \end{example}
 
 \subsection{$\Rs[3]$ and beyond}
+Everything we discussed so far regarding vectors in $\Rs[2]$ can be easily applied to vectors existing in 3-dimensional space, which we also call $\Rs[3]$ (i.e. $\Rs\times\Rs\times\Rs$). These vectors also have a length (norm) and a direction, and can be scaled and added in the exact same way as vectors in $\Rs[2]$.
+
+The main difference between vectors in $\Rs[2]$ and vectors in $\Rs[3]$ is that any basis set in $\Rs[3]$ must contain \textbf{three} basis vectors instead of two, and therefore the column representation of vectors in $\Rs[3]$ has three entries. For example, given the three basis vectors $\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2},\ \xdg{\vec{e}_{3}}}$, then
+\[
+  \vec{v} = \xthreecolvec{2}{-3}{5}
+\]
+is the column representation of the vector
+\[
+  \vec{v} = \xr{2\vec{e}_{1}} - \xb{3\vec{e}_{2}} + \xdg{5\vec{e}_{3}}.
+\]
+
+Addition of column vectors in $\Rs[3]$ is also done component-wise, for example:
+\[
+  \xthreecolvec{2}{-3}{5} + \xthreecolvec{0}{4}{-2} = \xthreecolvec{2+0}{-3+4}{5-2} = \xthreecolvec{2}{1}{3}.
+\]
+
+$\Rs[3]$ also has a standard basis set: using a 3-dimensional Cartesian coordinate system with the axes $x,\ y$ and $z$,
+
+\begin{center}
+  \tdplotsetmaincoords{60}{135}
+  \begin{tikzpicture}[tdplot_main_coords]
+    \coordinate (O) at (0,0,0);
+
+    \foreach \x in {0,...,2.5}
+      \foreach \y in {0,...,2.5}{
+        \draw[very thin, gray!25] (\x,-0.5) -- (\x,2.5);
+        \draw[very thin, gray!25] (-0.5,\y) -- (2.5,\y);
+      }
+
+    \draw[vector, black!50] (O) -- (3,0,0) node[pos=1.20, font=\Large]{$x$};
+    \draw[vector, black!50] (O) -- (0,3,0) node[pos=1.10, font=\Large]{$y$};
+    \draw[vector, black!50] (O) -- (0,0,3) node[pos=1.15, font=\Large]{$z$};
+
+    \draw[vector, line width=3pt, xred] (O) -- (1,0,0) node[above]{$\hat{x}$};
+    \draw[vector, line width=3pt, xblue] (O) -- (0,1,0) node[above]{$\hat{y}$};
+    \draw[vector, line width=3pt, xdarkgreen] (O) -- (0,0,1) node[right]{$\hat{z}$};
+  \end{tikzpicture}
+\end{center}
+
+When using these basis vectors the three components of a vector $\vec{u}$ are sometimes refered to as $\xr{u^{x}},\ \xb{u^{y}}$ and $\xdg{u^{z}}$, and its norm is
+\begin{equation}
+  \norm{u} = \sqrt{\left(\xr{u^{x}}\right)^{2} + \left(\xb{u^{y}}\right)^{2} + \left(\xdg{u^{z}}\right)^{2}}.
+  \label{eq:3d_norm_pythagorean}
+\end{equation}
+
+\tbw{box's diagonal line, Pythagorean theorem in 3D bla bla bla.}
+
+\begin{note}{Yet another notation \shrug}{}
+  For whatever reason, the notation $\xr{\hat{i}},\ \xb{\hat{j}}$ and $\xdg{\hat{k}}$ is sometimes used in physics to refer to the standard basis vectors. Accordingly, the components of a vector $\vec{u}$ are refered to as $\xr{u^{i}},\ \xb{u^{j}}$ and $\xdg{u^{k}}$.
+\end{note}
+
+\tbw{generalization to $\Rs[n]$.}
+
 \subsection{Linear combinations and subspaces}
 \subsection{The scalar product}
 \subsection{The cross product}

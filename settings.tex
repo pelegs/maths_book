@@ -665,6 +665,9 @@
 \newcommand{\xtwocolvec}[2]{
   \colvec{\xr{#1};\xb{#2}}
 }
+\newcommand{\xthreecolvec}[3]{
+  \colvec{\xr{#1};\xb{#2};\xdg{#3}}
+}
 
 % Colored (common) vectors and angles I use
 \renewcommand{\vu}{\xr{\vec{u}}}
@@ -692,9 +695,9 @@
 \newcommand{\eb}[1]{\hat{e}_{#1}}
 
 % Colored x,y,z hats:
-\newcommand{\cxhat}{\textcolor{xred}{\hat{x}}}
-\newcommand{\cyhat}{\textcolor{xblue}{\hat{y}}}
-\newcommand{\czhat}{\textcolor{xdarkgreen}{\hat{z}}}
+\newcommand{\cxhat}{\xr{\hat{x}}}
+\newcommand{\cyhat}{\xb{\hat{y}}}
+\newcommand{\czhat}{\xdg{\hat{z}}}
 
 % Normal vector
 \newcommand{\normalVec}[2]{
