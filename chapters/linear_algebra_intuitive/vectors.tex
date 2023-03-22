@@ -190,6 +190,8 @@ While this simple approach works well for describing lengths, in the case of vec
   \end{tikzpicture}
 \end{center}
 
+\tbw{basis vectors in $\Rs[2]$ can't be in the same line}
+
 We can then use these basis vectors to measure other $2$-dimensional vectors, for example the following vector $\xp{\vec{v}}$:
 
 \begin{center}
@@ -733,10 +735,10 @@ Before we continue with the topic, let's use what we learned to solve some simpl
   Indeed, adding up all the vectors results in the zero vector - i.e. no force is applied on the object.
 \end{example}
 
-\subsection{$\Rs[3]$ and beyond}
+\subsection{$\Rs[3]$}
 Everything we discussed so far regarding vectors in $\Rs[2]$ can be easily applied to vectors existing in 3-dimensional space, which we also call $\Rs[3]$ (i.e. $\Rs\times\Rs\times\Rs$). These vectors also have a length (norm) and a direction, and can be scaled and added in the exact same way as vectors in $\Rs[2]$.
 
-The main difference between vectors in $\Rs[2]$ and vectors in $\Rs[3]$ is that any basis set in $\Rs[3]$ must contain \textbf{three} basis vectors instead of two, and therefore the column representation of vectors in $\Rs[3]$ has three entries. For example, given the three basis vectors $\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2},\ \xdg{\vec{e}_{3}}}$, then
+The main difference between vectors in $\Rs[2]$ and vectors in $\Rs[3]$ is that any basis set in $\Rs[3]$ must contain \textbf{three} basis vectors instead of two, and these must not lie in the same \textit{plane} (we will explore exactly what that means a bit later). The column representation of vectors in $\Rs[3]$ therefore has three entries. For example, given the three basis vectors $\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2},\ \xdg{\vec{e}_{3}}}$, then
 \[
   \vec{v} = \xthreecolvec{2}{-3}{5}
 \]
@@ -744,6 +746,8 @@ is the column representation of the vector
 \[
   \vec{v} = \xr{2\vec{e}_{1}} - \xb{3\vec{e}_{2}} + \xdg{5\vec{e}_{3}}.
 \]
+
+\tbw{basis vectors in $\Rs[3]$ can't lie in the same plane}
 
 Addition of column vectors in $\Rs[3]$ is also done component-wise, for example:
 \[
@@ -779,13 +783,127 @@ When using these basis vectors the three components of a vector $\vec{u}$ are so
   \label{eq:3d_norm_pythagorean}
 \end{equation}
 
-\tbw{box's diagonal line, Pythagorean theorem in 3D bla bla bla.}
+\autoref{eq:3d_norm_pythagorean} is a direct result of the Pythagorean theorem:
+\begin{proof}{Pythagorean theorem in 3D}{}
+  Given a box with sides $a,b$ and $c$, the length of the diagonal line of the base rectangle (in the figure below $\xb{d}$) is given by the Pythagorean theorem (see figure for reference):
+  \begin{center}
+    \tdplotsetmaincoords{70}{300}
+    \begin{tikzpicture}[tdplot_main_coords, every node/.style={font=\Large}]
+      % Grid
+      \foreach \x in {-1,...,3}
+      \foreach \y in {-1,...,5}{
+        \draw[very thin, gray!25] (\x,-1.5) -- (\x,5.5);
+        \draw[very thin, gray!25] (-1.5,\y) -- (3.5,\y);
+      }
+
+      % 3D triangle fill
+      \fill[xdarkgreen, opacity=0.2] (0,0,0) -- (2,4,0) -- (2,4,2) -- cycle;
+
+      % Cube frame
+      \draw[very thick] (0,0,0) -- (2,0,0) -- (2,4,0) -- (0,4,0) -- cycle;
+      \draw[very thick] (0,0,2) -- (2,0,2) -- (2,4,2) -- (0,4,2) -- cycle;
+      \draw[very thick] (0,0,0) -- (0,0,2);
+      \draw[very thick] (2,0,0) -- (2,0,2);
+      \draw[very thick] (0,4,0) -- (0,4,2);
+      \draw[very thick] (2,4,0) -- (2,4,2);
+
+      % Cube diagonals
+      \draw[ultra thick, xblue] (0,0,0) -- (2,4,0) node[midway, left, xshift=-10pt] {$d$};
+      \draw[ultra thick, xpurple] (2,4,0) -- (2,4,2) node[midway, left, yshift=-5pt] {$c$};
+      \draw[ultra thick, xorange] (0,0,0) -- (2,4,2) node[midway, above right, xshift=4pt, yshift=-8pt] {$f$};
+
+      % Labels
+      \node at (3,3,2) {$a$};
+      \node at (0.75,-0.5,0) {$b$};
+      \node at (2,-0.25,1) {$c$};
+    \end{tikzpicture}
+  \end{center}
+  \[
+    \xb{d} = \sqrt{a^{2}+b^{2}}.
+  \]
+  Using the height of the box $\xp{c}$ we can easily calculate the length of the main diagonal of the box, $\xo{f}$, using the Pythagorean theorem on the right triangle with sides $\xb{d},\ \xp{c}$ and hypothenous $\xo{f}$ (shaded in green in the figure):
+  \[
+    \xo{f} = \sqrt{\xb{d}^{2}+\xp{c}^{2}} = \sqrt{\left(\sqrt{a^{2}+b^{2}}\right)^{2}+\xp{c}^{2}} = \sqrt{a^{2}+b^{2}+c^{2}}.
+  \]
+\end{proof}
+
+Using the above proof we simply make the following substitutions:
+\begin{align*}
+  \xr{u^{x}} &=a,\\
+  \xb{u^{y}} &=b,\\
+  \xdg{u^{z}}&=c.
+\end{align*}
+The norm of $\vec{u}$ is then $\norm{u}=\xo{f}$.
 
 \begin{note}{Yet another notation \shrug}{}
   For whatever reason, the notation $\xr{\hat{i}},\ \xb{\hat{j}}$ and $\xdg{\hat{k}}$ is sometimes used in physics to refer to the standard basis vectors. Accordingly, the components of a vector $\vec{u}$ are refered to as $\xr{u^{i}},\ \xb{u^{j}}$ and $\xdg{u^{k}}$.
 \end{note}
 
-\tbw{generalization to $\Rs[n]$.}
+\subsection{$\Rs[n]$}
+Of course, why stop at three dimensions? We can generalize everything which worked so far to any $n$-dimensional space where $n=4,5,6,\dots$ - i.e. the space $\Rs\times\Rs\times\cdots\times\Rs=\Rs[n]$. Picturing vectors in 4-dimensions and above is rather difficult, but the logic remain the same: vectors still have a length and a direction, they can be scaled by a real number and added together in exactly the same fashion as in $\Rs[2]$ and $\Rs[3]$. The zero vector $\vec{0}$ exists and is neutral to addition, etc.
+
+Using the column representation in $\Rs[n]$ makes calculations rather easy: we need to choose $n$ basis vectors and use them to represent any other vector. We can't use any vectors though - just like basis vectors in $\Rs[2]$ must not be on the same \textit{line}, and basis vectors in $\Rs[3]$ can't be in the same \textit{plane}, so do the basis vectors in $\Rs[n]$ not be in the same $\left(n-1\right)$-dimensional \textit{space}. We will explore what that means exactly in the next subsection, but for now let us assume that this is always true, even though it might be somewhat abstract right now.
+
+Like with $\Rs[2]$ and $\Rs[3]$, we will name the $n$ vectors we choose as basis vectors for $\Rs[n]$ using lower-index notation:
+\[
+  \ebv{1},\ \ebv{2},\ \dots,\ \ebv{n}.
+\]
+Then, we can express any vector in $\Rs[n]$ using these basis vectors. For example, in $\Rs[7]$ the vector
+\[
+  \vec{v} = \xr{2\ebv{1}}-\xb{5\ebv{2}}+\xdg{\ebv{3}}-\xp{2\ebv{4}}-\xo{9\ebv{5}}+\xc{\ebv{6}}-\xpk{2\ebv{7}}
+\]
+will be written in column representation as
+\[
+  \vec{v} = \colvec{\xr{2};\xb{-5};\xdg{1};\xp{-2};\xo{-9};\xc{1};\xpk{-2}}.
+\]
+
+Generally of course, the $i$-component of a vector $\vec{u}\in\Rs[n]$ is denoted as $u^{i}$ (again, note the upper-index notation and don't confuse it with an exponent/power). So in the case above, $\xdg{v^{3}}=\xdg{1}$ and $\xo{v^{5}}=\xo{-9}$, for example.
+
+Like before, scaling and adding vectors in column representation in $\Rs[n]$ is done component-wise: given the two vectors
+\[
+  \vec{u}=\colvec{u^{1};u^{2};\vdots;u^{n}},\quad \vec{v}=\colvec{v^{1};v^{2};\vdots;v^{n}},
+\]
+and scalar $\alpha\in\Rs$, the following holds:
+\begin{align}
+  \alpha \vec{u} &= \colvec{\alpha u^{1};\alpha u^{2};\vdots;\alpha u^{n}},\\
+  \vec{u}+\vec{v} &= \colvec{u^{1}+v^{1};u^{2}+v^{2};\vdots;u^{n}+v^{n}}.
+\end{align}
+
+The standard basis set in $\Rs[n]$ is a set of vectors each of norm $1$ and pointing in the direction of the $n$-th Cartesian axis. Again, quite difficult to picture for $n\geq4$, but everything basically behaves just like in $\Rs[2]$ and $\Rs[3]$. The notation for the standard basis vectors in $\Rs[n]$ that we use in this book is the following:
+\begin{equation}
+  \eb{1},\ \eb{2},\ \dots,\ \eb{n}.
+  \label{eq:std_basis_vecs_Rn}
+\end{equation}
+
+The norm of a vector $\vec{v}\in\Rs[n]$ is a generalization of the Pythagorean theorem:
+\begin{equation}
+  \norm{v} = \sqrt{\left(v^{1}\right)^{2} + \left(v^{2}\right)^{2} + \cdots + \left(v^{n}\right)^{2}} = \sqrt{\sum\limits_{k=1}^{n}\left(v^{k}\right)^{2}}.
+  \label{eq:norm_Rs}
+\end{equation}
+(just as before, the $2$ above the components outside the paranthesis denotes power, and the numbers inside the paranthesis denote index)
+
+\subsection{Einstein summation notation}
+We now introduce a very common notation which is used almost everywhere in physics and will give a first hint on why we insist on the upper-index notation for vector components: the \emph{Einstein summation notation}. This notation does the following: everytime we see together an index both as upper-index and as lower-index \textit{in the same term}, it means that there is an implicit sum over that index (the limits of the sum are derived from context).
+
+For example, instead of writing a general vector $\vec{v}\in\Rs[n]$ as
+\[
+  \vec{u} = u^{1}\ebv{1} + u^{2}\ebv{2} + \cdots + u^{n}\ebv{n} = \sum\limits_{k=1}^{n}u^{k}\ebv{k},
+\]
+we simply write
+\begin{equation}
+  \vec{u} = u^{k}\ebv{k}.
+  \label{eq:Einstein_notation_vec_Rn}
+\end{equation}
+
+Another example: using the Einstein summation notation, the norm of the above vector $\vec{u}$ is written simply as
+\begin{equation}
+  \norm{u} = \sqrt{u^{k}\ebv{k}}.
+  \label{eq:Einstein_notation_norm_Rn}
+\end{equation}
+
+This notation might seem arbitrary and annoying now, but it becomes incredibly helpful when discussing high-dimensional \emph{tensors} which might have several components of different types (for which we use bith upper- and lower-indices).
+
+\tbw{examples for Einstein notation}
 
 \subsection{Linear combinations and subspaces}
 \subsection{The scalar product}
