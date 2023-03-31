@@ -1,936 +1,936 @@
 \section{Vectors}
-% \subsection{Basics}
-% \emph{Vectors} are the fundamental objects of linear algebra: the entire field revolves around manipulation of vectors. In this chapter we deal with the so-called \emph{real vectors}, which can be be defined in a geometric way:
-%
-% \begin{definition}{Real vectors}{real vectors}
-% 	A \textit{real vector} is an object with a \emph{magnitude} (also called \emph{norm}) and a \emph{direction}.
-% \end{definition}
-%
-% In this chapter we refer to real vectors simply as \textit{vectors}. Vectors can have $1,2,3,\dots$ number of dimensions. $2$-dimensional vectors can be drawn as arrows on a plane:
-% \begin{center}
-%   \begin{tikzpicture}
-%     \draw[vector, xred] (0,0) -- ++(2,3);
-%     \draw[vector, xblue] (-1,0) -- ++(-1,2);
-%     \draw[vector, xgreen] (0,-1) -- ++(-3,0);
-%     \draw[vector, xpurple] (2,0) -- ++(-1,-3);
-%     \draw[vector, xorange] (-4,2) -- ++(0,-4);
-%     \draw[vector, black] (-7,1) -- ++(1,-1);
-%   \end{tikzpicture}
-% \end{center}
-%
-% Similarly, $3$-dimensional vectors can be drawn as arrows in space:
-% % Work needs to be done on this illustration.
-% \begin{center}
-% 	\centering
-% 	\tdplotsetmaincoords{70}{45}
-% 	\begin{tikzpicture}[tdplot_main_coords]
-%     \draw[vector, xorange] (0,0,0) -- (2,-3,-3);
-% 		\draw[black!40, very thick, opacity=1, fill=gray, fill opacity=0.2] (4,4,0) -- (4,-4,0) -- (-4,-4,0) -- (-4,4,0) -- cycle;
-%     \draw[vector, xred] (0,0,0) -- (3,2,2);
-%     \draw[vector, xblue] (-2,-1,0) -- (-3,-1,3);
-%     \draw[vector, xpurple] (-3,3,0) -- ++(3,-4,0.5);
-% 	\end{tikzpicture}
-% \end{center}
-%
-% Unfortunately, it is difficult (if not impossible) to draw higher-dimensional vectors. For now, we will concentrate on $2$-dimensional vectors and explore their properties. Later in the section we will apply what we learned from $2$-dimensional vectors to $3$-dimensional vectors and higher-dimensional vectors as well.
-%
-% Vectors are usually denoted in one of the following ways:
-%
-% \begin{descitemize}
-% 	\setlength\itemsep{1em}
-% 	\addtolength{\itemindent}{5mm}
-% 	\item[Arrow above letter] $\vec{u},\ \vec{v},\ \vec{x},\ \vec{a},\ \dots$
-% 	\item[Bold letter] $\bm{u},\ \bm{v},\ \bm{x},\ \bm{a},\ \dots$
-% 	\item[Bar below letter] $\underline{u},\ \underline{v},\ \underline{x},\ \underline{a},\ \dots$
-% \end{descitemize}
-%
-% In this book we use the first notation style, i.e. an arrow above the letter. In addition vectors will almost always be denoted using lowercase \textit{Latin} script.
-%
-% When discussing vectors in a single context, we always consider them starting at the same point, called the \emph{origin}, and \emph{translating} (moving) vectors around in space does not change their properties: only their norms and directions matter. For example, we can draw the $2$-dimensional vectors from before such that their origins all lie on the same point:
-%
-% \begin{center}
-% 	\begin{tikzpicture}
-% 		\draw[vector, xred] (0,0) -- ++(2,3);
-% 		\draw[vector, xblue] (0,0) -- ++(-1,2);
-% 		\draw[vector, xgreen] (0,0) -- ++(-3,0);
-% 		\draw[vector, xpurple] (0,0) -- ++(-1,-3);
-% 		\draw[vector, xorange] (0,0) -- ++(0,-4);
-% 		\draw[vector, black] (0,0) -- ++(1,-1);
-% 		\fill (0,0) circle (0.05);
-% 	\end{tikzpicture}
-% \end{center}
-%
-% Any vector can be scaled by a real number $\alpha$: when this happens, its norm is multiplied by $\alpha$ while its direction stays the same. We call $\alpha$ a \emph{scalar}. For example, the vector $\color{xred}{\vec{v}}$ on the left is scaled here by different scalars $\alpha=2,2.5,-1$ and $-2$:
-%
-% \begin{center}
-% 	\begin{tikzpicture}[every node/.style={midway, left, xshift=-2mm}]
-% 		\Large
-% 		\draw[vector, xred] (0,0) -- ++(1.5,1) node {$\vec{v}$};
-% 		\draw[vector, xblue] (2,0) -- ++(3,2) node {$2\cdot \vec{v}$};
-% 		\draw[vector, xpurple] (4.5,0) -- ++(3.75,2.5) node {$2.5\cdot \vec{v}$};
-% 		\draw[stealth-, thick, xgreen!85!black] (7.5,0) -- ++(1.5,1) node {$-1\cdot \vec{v}$};
-% 		\draw[stealth-, thick, black] (9.5,0) -- ++(3,2) node {$-2\cdot \vec{v}$};
-% 	\end{tikzpicture}
-% \end{center}
-%
-% \begin{note}{Negative scale}{negative scale}
-% 	As can be seen in the example above, when scaling a vector by a negative amount its direction reverses. However, we consider two opposing direction (i.e. directions that are $\ang{180}$ apart) as being the same direction.
-% \end{note}
-%
-% In this chapter we use the following notation for the norm of a vector $\vec{v}$: $\norm{v}$.
-%
-% A vector $\vec{v}$ with norm $\norm{v}=1$ is called a \emph{unit vector}, and is usually denoted by replacing the arrow symbol by a hat symbol: $\hat{v}$. Any vector (except $\vec{0}$) can be scaled into a unit vector by scaling  the vector by $1$ over its own norm, i.e.
-% \begin{equation}
-% 	\hat{v} = \frac{1}{\norm{v}}\vec{v}.
-% 	\label{eq:normalized vector}
-% \end{equation}
-% The result of normalization is a vector of unit norm which points in the same direction of the original vector.
-%
-% Two vectors can be added together to yield a third vector: $\vu+\vv=\vw$. To find $\vw$ we use the following procedure (depicted in \autoref{fig:vector addition geometric}):
-% % The items need to be typeset without the chapter number
-% \begin{enumerate}
-% 	\item Move (translate) $\vv$ such that its origin lies on the head of $\vu$.
-% 	\item The vector $\vw$ is the vector drawn from the origin of $\vu$ to the head of $\vv$.
-% \end{enumerate}
-%
-% \renewcommand\thesubfigure{\arabic{subfigure}}
-% \begin{figure}[h]
-% 	\centering
-% 	 \begin{subfigure}[t]{0.45\textwidth}
-% 		\centering
-% 		\begin{tikzpicture}
-% 			\coordinate (O) at (0,0);
-% 			\coordinate (u) at (-2,1);
-% 			\coordinate (v) at (1.5,1);
-% 			\coordinate (w) at ($(u)+(v)$);
-% 			\draw[vector, xred] (O) -- (u) node[above left] {$\vu$};
-% 			\draw[vector, xblue] (O) -- (v) node[above right] {$\vv$};
-% 			\draworigin
-% 		\end{tikzpicture}
-% 		\caption{The vectors $\vu$ and $\vv$.}
-% 	\end{subfigure}
-% 	\hfill
-% 	\begin{subfigure}[t]{0.45\textwidth}
-% 		\centering
-% 		\begin{tikzpicture}
-% 			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
-% 			\draw[vector, xblue] (u) -- ++(v) node[above right] {$\vec{v}$};
-% 			\draworigin
-% 		\end{tikzpicture}
-% 		\caption{Translating $\vv$ such that its origin lies at the head of $\vu$.}
-% 	\end{subfigure}
-%
-% 	\vspace{3em}
-% 	\begin{subfigure}[t]{0.45\textwidth}
-% 		\centering
-% 		\begin{tikzpicture}
-% 			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
-% 			\draw[vector, xblue] (u) -- ++(v) node[above right] {$\vec{v}$};
-% 			\draw[vector, xpurple] (O) -- (w) node[right, yshift=-2mm] {$\vec{w}$};
-% 			\draworigin
-% 		\end{tikzpicture}
-% 		\caption{Drawing the vector $\vw$ from the origin to the head of $\vv$.}
-% 	\end{subfigure}
-% 	\hfill
-% 	\begin{subfigure}[t]{0.45\textwidth}
-% 		\centering
-% 		\begin{tikzpicture}
-% 			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
-% 			\draw[vector, xblue] (O) -- (v) node[above right] {$\vec{v}$};
-% 			\draw[vector, xpurple] (O) -- (w) node[above] {$\vec{w}$};
-% 			\draworigin
-% 		\end{tikzpicture}
-% 		\caption{All three vectors with the same origin.}
-% 	\end{subfigure}
-% 	\caption{Vector addition.}
-% 	\label{fig:vector addition geometric}
-% \end{figure}
-%
-% The addition of vectors as depicted here is commutative, i.e. $\vu+\vv = \vv+\vu$. This can be seen by using the \emph{parallelogram law of vector addition} as depicted in \autoref{fig:parallelogram}: drawing the two vectors $\vu, \vv$ and their translated copies (each such that its origin lies on the other vector's head) results in a parallelogram.
-%
-% \begin{figure}[h]
-% 	\centering
-% 	\begin{tikzpicture}
-% 		\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
-% 		\draw[vector, xblue] (O) -- (v) node[above right] {$\vec{v}$};
-% 		\draw[vector, xred] (v) -- ++(u);
-% 		\draw[vector, xblue] (u) -- ++(v);
-% 		\draw[vector, xpurple] (O) -- (w) node[above] {$\vec{w}$};
-% 		\draworigin
-% 	\end{tikzpicture}
-% 	\caption{The parallogram law of vector addition.}
-% 	\label{fig:parallelogram}
-% \end{figure}
-%
-% An important vector is the \emph{zero-vector}, denoted as $\vec{0}$. The zero-vector has a unique property: it is neutral in respect to vector addition, i.e. for any vector $\vec{v}$,
-% \begin{equation}
-% 	\vec{v} + \vec{0} = \vec{v}.
-% 	\label{eq:zero-vector}
-% \end{equation}
-% (we also say that $\vec{0}$ is the \emph{additive identity} in respect to vectors.)
-%
-% Any vector $\vec{v}$ always has an \emph{opposite} vector, denoted $-\vec{v}$. The addition of a vector and its opposite always result in the zero-vector, i.e.
-% \begin{equation}
-% 	\vec{v} + \left( -\vec{v} \right) = \vec{0}.
-% 	\label{eq:opposite vector}
-% \end{equation}
-%
-% \subsection{Column representation}
-% In order to be able to use vectors for actual calculations we must somehow quantify them. When quantifying the length of geometric objects we often first define some unit of measurement, for example a centimeter (\si{cm}). We then use this unit to measure the length of different objects.
-%
-% While this simple approach works well for describing lengths, in the case of vectors we also want to quantify directions - which becomes a bit complicated in higher dimensions if we use angles. Instead, we use more than one unit of measurement; in fact, we use several of them: a vector for each dimension (so in 2-dimensions we use two vectors, in 3-dimensions we use three vectors, etc.). We call these vectors \emph{basis vectors} and collect them in a set we call the \emph{basis set}.
-%
-% Any two vectors can form a basis set in 2-dimensions \textbf{as long as they are not pointing in the same direction}, meaning that they are not scales of eachother: if the vectors are $\vec{u}$ and $\vec{v}$, then there is no $\alpha\in\Rs$ such that $\vec{u}=\alpha\vec{v}$ (vectors that are scales of eachother are said to be \emph{coliniear}). For example, the following two vectors \textbf{can't form a basis in $2$-dimensions} since they are coliniear - they point in the same direction (specifically, $\vec{r}_{2}=2\vec{r}_{1}$):
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     \coordinate (O) at (0,0);
-%     \coordinate (r1) at (1,0.75);
-%     \coordinate (r2) at (2,1.5);
-%     \draw[vector] (O) -- ++(r1) node[midway, above left] {$\vec{r}_{1}$};
-%     \draw[vector] (3,0) -- ++(r2) node[midway, above left] {$\vec{r}_{2}$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% The restriction on coliniearity also means that the zero vector can never be a basis vector, since $\vec{0}=0\cdot\vec{v}$ for any $\vec{v}$.
-%
-% An example of two vectors that form a basis set in $2$-dimensions are the following two $2$-dimensional vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$:
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     % \coordinate (O) at (0,0);
-%     \coordinate (e1) at (1,0.5);
-%     \coordinate (e2) at (-0.5,0.5);
-%     \draw[vector, xred] (O) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
-%     \draw[vector, xblue] (3,0) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% \tbw{basis vectors in $\Rs[2]$ can't be in the same line}
-%
-% We can then use these basis vectors to measure other $2$-dimensional vectors, for example the following vector $\xp{\vec{v}}$:
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     \coordinate (v) at ($3*(e1)+2*(e2)$);
-%     \draw[vector, xpurple] (O) -- ++(v) node[midway, left] {$\vec{v}$};
-%     \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
-%     \draw[vector, xred, dashed] (e1) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
-%     \draw[vector, xred, dashed] ($2*(e1)$) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
-%     \draw[vector, xblue, dashed] ($3*(e1)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
-%     \draw[vector, xblue, dashed] ($3*(e1)+(e2)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
-%     \fill (O) circle (0.05);
-%   \end{tikzpicture}
-% \end{center}
-%
-% We see that using these basis vectors, $\xp{\vec{v}}=3\xr{\vec{e}_{1}}+2\xb{\vec{e}_{2}}$. This means that we need to add three times $\xr{\vec{e}_{1}}$ and two times $\xb{\vec{e}_{2}}$ to construct $\xp{\vec{v}}$. We denote this fact by writing $\xp{\vec{v}}$ as a column of two numbers:
-%
-% \[
-%   \xp{\vec{v}}=\colvec{\tikzmark{v1}{\xr{3}};\tikzmark{v2}{\xb{2}}}
-% \]
-%
-% \begin{tikzpicture}[overlay, remember picture]
-%   \coordinate(v1b) at (pic cs:v1);
-%   \coordinate(v2b) at (pic cs:v2);
-%   \node[right of=v1b, anchor=west, yshift=5pt] (v1txt) {How much of $\xr{\vec{e}_{1}}$ is in $\xp{\vec{v}}$};
-%   \node[right of=v2b, anchor=west, yshift=-5pt] (v2txt) {How much of $\xb{\vec{e}_{2}}$ is in $\xp{\vec{v}}$};
-%   \draw[->, thick, xred] (v1txt) -- ($(v1b)+(10pt,0)$);
-%   \draw[->, thick, xblue] (v2txt) -- ($(v2b)+(10pt,0)$);
-% \end{tikzpicture}
-%
-% \begin{example}{Vectors from basis vectors}{more vectors same basis}
-%   Two more vectors represented as sums of the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$:
-%
-%   \begin{center}
-%     \begin{tikzpicture}
-%       \coordinate (u) at ($2*(e1)-2*(e2)$);
-%       \draw[vector, xorange] (O) -- (u) node[midway, below] {$\xo{\vec{u}}$};
-%       \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
-%       \draw[vector, xred, dashed] (e1) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
-%       \draw[vector, xblue, dashed] ($2*(e1)$) -- ++($-1*(e2)$) node[midway, right] {$-\vec{e}_{2}$};
-%       \draw[vector, xblue, dashed] ($2*(e1)-(e2)$) -- ++($-1*(e2)$) node[midway, right] {$-\vec{e}_{2}$};
-%       \fill (O) circle (0.05);
-%       \node[right of=O, xshift=3cm, anchor=west] (u_math) {$\xo{\vec{u}}=2\xr{\vec{e}_{1}}-2\xb{\vec{e}_{2}}\quad\longrightarrow\quad\xo{\vec{u}}=\xtwocolvec{2}{-2}$};
-%     \end{tikzpicture}
-%
-%     \vspace{1.5em}
-%     \begin{tikzpicture}
-%       \coordinate (w) at ($-3*(e1)+1.5*(e2)$);
-%       \draw[vector, xgreen] (O) -- (w) node[midway, above] {$\xg{\vec{w}}$};
-%       \draw[vector, xred, dashed] (O) -- ++($-1*(e1)$) node[midway, below] {$-\vec{e}_{1}$};
-%       \draw[vector, xred, dashed] ($-1*(e1)$) -- ++($-1*(e1)$) node[midway, below] {$-\vec{e}_{1}$};
-%       \draw[vector, xred, dashed] ($-2*(e1)$) -- ++($-1*(e1)$) node[midway, below] {$-\vec{e}_{1}$};
-%       \draw[vector, xblue, dashed] ($-3*(e1)$) -- ++(e2) node[midway, left] {$\vec{e}_{2}$};
-%       \draw[vector, xblue, dashed] ($-3*(e1)+(e2)$) -- ++($0.5*(e2)$) node[midway, left] {$\frac{1}{2}\vec{e}_{2}$};
-%       \fill (O) circle (0.05);
-%       \node[right of=O, anchor=west] (u_math2) {$\xg{\vec{w}}=-3\xr{\vec{e}_{1}}+1.5\xb{\vec{e}_{2}}\quad\longrightarrow\quad\xg{\vec{w}}=\xtwocolvec{-3}{1.5}$};
-%     \end{tikzpicture}
-%   \end{center}
-% \end{example}
-%
-% This notation is frequently refered to as a \emph{column vector}, and the numbers are called the \emph{components} of the vectors. The components themselves are usually denoted using the same symbol used for the vector (without the arrow sign) and an index: for example, the two components of the vector $\xp{\vec{v}}=\xtwocolvec{3}{2}$ are $\xr{v^{1}}=\xr{3}$ and $\xb{v^{2}}=\xb{2}$.
-%
-% \begin{note}{Index notation}{}
-%   In this book we use upper-index notation to denote components of column vectors. Do not mistake these for powers! The reason for this choice (as opposed to lowe-index notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
-% \end{note}
-%
-% It should now be clear why we restrict basis vectors to be noncolinear: if we choose two coliniear vectors, any addition of the two vectors will end up pointing in the same direction as them, and we won't be able to express all vectors as columns (we will be restricted to only a single direction).
-%
-% \begin{note}{Coordinate systems}{}
-%   The set of basis vectors used to represent vectors as columns is sometimes called a \emph{coordinate system}. We will use the name \emph{basis set} to stay consistent.
-% \end{note}
-%
-% Vectors have different components when using different basis sets. For example, we can use the following two vectors $\xdg{\vec{d}_{1}}$ and $\xo{\vec{d}_{2}}$ as basis vectors:
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     \coordinate (O) at (0,0);
-%     \coordinate (e1b) at (1,0);
-%     \coordinate (e2b) at (0,1);
-%     \draw[vector, xdarkgreen] (O) -- ++(e1b) node[midway, above] {$\vec{d}_{1}$};
-%     \draw[vector, xorange] (3,0) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% In this new basis set, the vector $\xp{\vec{v}}$ from earlier has the following column representation:
-%
-% \vspace{-1.2em}
-% \begin{center}
-%   \begin{tikzpicture}
-%     \coordinate (O) at (0,0);
-%     \coordinate (vb) at ($2*(e1b)+2.5*(e2b)$);
-%     \draw[vector, xdarkgreen] (O) -- ++(e1b) node[midway, below] {$\vec{d}_{1}$};
-%     \draw[vector, xdarkgreen] (e1b) -- ++(e1b) node[midway, below] {$\vec{d}_{1}$};
-%     \draw[vector, xorange] ($2*(e1b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
-%     \draw[vector, xorange] ($2*(e1b)+(e2b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
-%     \draw[vector, xorange] ($2*(e1b)+2*(e2b)$) -- ++($0.5*(e2b)$) node[midway, right] {$\frac{1}{2}\vec{d}_{2}$};
-%     \draw[vector, xpurple] (O) -- (vb) node[above] {$\vec{v}$};
-%     \node[anchor=west] (txt1) at (3.5,1.3) {$\xp{\vec{v}}=2\xdg{\vec{d}_{1}}+2.5\xo{\vec{d}_{2}}\quad\longrightarrow\quad\xp{\vec{v}}=\colvec{\xdg{2};\xo{2.5}}$};
-%   \end{tikzpicture}
-% \end{center}
-% (i.e. its components are $\xdg{v^{1}}=\xdg{2}$ and $\xo{v^{2}}=\xo{2.5}$)
-%
-% This brings us to an important idea, which unfortunately might confuse those who are new to the topic: \textbf{vectors and their column representation are two separate things!} Vectors are objects with a length (norm) and a direction. They don't ``care'' about how \textit{we} describe them numerically: no matter what basis set we use, vectors remain the same - it's their \textit{representation} which changes.
-%
-% In fact, not only does the choice of basis set affect the column representation of all vectors\footnote{except the zero vector, which is always $\vec{0}=\colvec{0;0}$}, two different vectors \textbf{can have the same column representation using two different basis sets.}. For example. let's say we choose any two non-zero vectors to be used as basis vectors: $\vec{u}$ and $\vec{v}$. Then the following is always true:
-% \begin{align*}
-%   \vec{u} &= 1\cdot\vec{u} + 0\cdot\vec{v},\\
-%   \vec{v} &= 0\cdot\vec{u} + 1\cdot\vec{v}.
-% \end{align*}
-%
-% Therefore, the column representations of $\vec{u}$ and $\vec{v}$ will be exactly $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$. This means that the column vectors $\colvec{1;0}$ and $\colvec{0;1}$ can represent \textbf{any} two (non-zero) vectors we wish! So remember: you must always be sure with which basis vectors you are working. Otherwise, mistakes are bound to happen and calculations might make no sense.
-%
-% \tbw{more examples?}
-%
-% Since we need two real numbers to express any such 2-dimensional vector as a column, we call the set of all such vectors $\Rs\times\Rs$, or simply $\Rs[2]$.
-%
-% \subsection{Vector operations, norm and the zero vector in column form}
-% Previously we saw how to scale and add vectors (the latter using the parallogram method). Let us now see how we perform these operations using the column representation of vectors. We will use the same basis vectors as before:
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     % !! Use same basis vectors and v from before?.. !!
-%     \draw[vector, xred] (O) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
-%     \draw[vector, xblue] (3,0) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% We start with the vector $\xp{\vec{v}}$ from before, i.e. $\xp{3\cdot\vec{v}}=\xr{\vec{e}_{1}}+\xb{2\cdot\vec{e}_{2}}$ and $\xp{\vec{v}}=\xtwocolvec{3}{2}$:
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     \coordinate (v) at ($3*(e1)+2*(e2)$);
-%     \draw[vector, xpurple] (O) -- ++(v) node[midway, left] {$\vec{v}$};
-%     \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
-%     \draw[vector, xred, dashed] (e1) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
-%     \draw[vector, xred, dashed] ($2*(e1)$) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
-%     \draw[vector, xblue, dashed] ($3*(e1)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
-%     \draw[vector, xblue, dashed] ($3*(e1)+(e2)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
-%     \fill (O) circle (0.05);
-%   \end{tikzpicture}
-% \end{center}
-%
-% What then would be the components of, say, $\frac{1}{2}\xp{\vec{v}}$? First we scale $\xp{\vec{v}}$ by $\xp{\frac{1}{2}}$: remember, this just means ``squeezing'' the vector to $\xp{\frac{1}{2}}$ its former length, keeping it pointing in the same direction:
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     \draw[vector, xpurple] (O) -- ++(v) node[midway, above left] {$\vec{v}$};
-%     \draw[vector, xpurple] (5,0) -- ++($0.5*(v)$) node[midway, above left] {$\frac{1}{2}\vec{v}$};
-%     \draw[->, thick] (2.5,1) -- ++(1.5,0) node[midway, above] {$\frac{1}{2}\times$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% Now we use the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ to get the column representation of $\xp{\frac{1}{2}\vec{v}}$:
-% \begin{center}
-%   \begin{tikzpicture}
-%     \draw[vector, xpurple] (O) -- ++($0.5*(v)$) node[midway, above left] {$\frac{1}{2}\vec{v}$};
-%     \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
-%     \draw[vector, xred, dashed] (e1) -- ++($0.5*(e1)$) node[midway, below] {$\frac{1}{2}\vec{e}_{1}$};
-%     \draw[vector, xblue, dashed] ($1.5*(e1)$) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% We get that $\xp{\frac{1}{2}\vec{v}}=\xr{1.5\vec{e}_{1}}+\xb{1\vec{e}_{2}}$, i.e. $\xp{\frac{1}{2}\vec{v}}=\xtwocolvec{1.5}{1}=\xtwocolvec{\frac{1}{2}\cdot3}{\frac{1}{2}\cdot2}$ - i.e. scaling $\xp{\vec{v}}$ by $\xp{\frac{1}{2}}$ simply multiplied both its components by $\xp{\frac{1}{2}}$.
-%
-% This is in fact true for any vector and any scalar, using any basis set: scaling a vector by a scalar $\alpha$ results in multiplying each of its components by $\alpha$:
-% \begin{equation}
-%   \vec{u} = \xtwocolvec{u^{1}}{u^{2}}\quad\Longrightarrow\quad \alpha\vec{u} = \xtwocolvec{\alpha\cdot u^{1}}{\alpha\cdot u^{2}}.
-%   \label{eq:column_representation_scaling}
-% \end{equation}
-%
-% Now let's add two vectors together: $\xp{\vec{v}}-\xdg{\vec{w}}$ (the same $\xdg{\vec{w}}$ from \autoref{example:more vectors same basis}), again using the same basis vectors. We saw that $\xp{\vec{v}}=\xtwocolvec{3}{2}$ and $\xdg{\vec{w}}=\xtwocolvec{-3}{1.5}$. Using the parallelogram method their addition is the following vector $\vec{a}$:
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     \draw[vector, xpurple] (O) -- ++(v) node[midway, above left] {$\vec{v}$};
-%     \draw[vector, xdarkgreen] (v) -- ++(w) node[midway, above] {$\vec{w}$};
-%     \draw[vector] (O) -- ++($(v)+(w)$) node[midway, left, xshift=-5pt] {$\vec{a}=\xp{\vec{v}}+\xdg{\vec{w}}$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% Now we calculate the components of $\vec{a}$ in the basis $\xr{\vec{e}_{1}},\xb{\vec{e}_{2}}$:
-%
-% \begin{center}
-%   \begin{tikzpicture}
-%     \draw[vector] (O) -- ++($(v)+(w)$) node[midway, left, xshift=-5pt] {$\vec{a}$};
-%     \draw[vector, xblue, dashed] (O) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
-%     \draw[vector, xblue, dashed] (e2) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
-%     \draw[vector, xblue, dashed] ($2*(e2)$) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
-%     \draw[vector, xblue, dashed] ($3*(e2)$) -- ++($0.5*(e2)$) node[midway, above right] {$\frac{1}{2}\vec{e}_{2}$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% We see that $\vec{a}=\xr{0\cdot\vec{e}_{1}}+\xb{3.5\vec{e}_{2}}=\xtwocolvec{0}{3.5} = \xtwocolvec{3+(-3)}{2+1.5}$, so the column representation of the addition of two vectors is simply the addition of their components.
-%
-% This is infact not a coincidence: given two generic column vectors in the same basis $\left\{\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2}}\right\}$,
-% \[
-%   \vec{u}=\xtwocolvec{u^{1}}{u^{2}},\quad\vec{v}=\xtwocolvec{v^{1}}{v^{2}},
-% \]
-% we can write them as follows:
-% \begin{align*}
-%   \vec{u} &= \xr{u^{1}\vec{e}_{1}} + \xb{u^{2}\vec{e}_{2}},\\
-%   \vec{v} &= \xr{v^{1}\vec{e}_{1}} + \xb{v^{2}\vec{e}_{2}}.
-% \end{align*}
-% When adding them in this form we can collect all similar terms together:
-% \begin{align*}
-%   \vec{w} &= \vec{u} + \vec{v} = \xr{u^{1}\vec{e}_{1}} + \xb{u^{2}\vec{e}_{2}} + \xr{v^{1}\vec{e}_{1}} + \xb{v^{2}\vec{e}_{2}}\\
-%           &= \xr{\left(u^{1}+v^{1}\right)\vec{e}_{1}} + \xb{\left(u^{2}+v^{2}\right)\vec{e}_{2}}.
-% \end{align*}
-% and the column of the resulting vector $\vec{w}$ is therefore
-% \[
-%   \vec{w} = \xtwocolvec{u^{1}+v^{1}}{u^{2}+v^{2}},
-% \]
-% which is exactly the \emph{column-wise} addition of $\vec{u}$ and $\vec{v}$.
-%
-% \begin{note}{Scaling and addition using different basis sets}{}
-% This is only true if the column representation of the two vectors uses the same basis set. Adding two column vectors in different basis sets requires changing one of the column representation to the basis of the other one. We will deal with change of basis later in the chapter.
-% \end{note}
-%
-% Negating a vector can be thought of as multiplying it by the scalar $\alpha=-1$. Therefore, given a vector $\vec{v}=\xtwocolvec{v^{1}}{v^{2}}$, its opposite would be
-% \begin{equation}
-%   -\vec{v}=\xtwocolvec{-v^{1}}{-v^{2}}.
-%   \label{eq:column_representation_opposite}
-% \end{equation}
-%
-% And finally, since $\vec{0}=\vec{v}+\left(-\vec{v}\right)$ for any $\vec{v}$, we get that
-% \begin{equation}
-%   \vec{0} = \xtwocolvec{v^{1}}{v^{2}}+\left(-1\xtwocolvec{v^{1}}{v^{2}}\right) = \xtwocolvec{v^{1}}{v^{2}}+\xtwocolvec{-v^{1}}{-v^{2}} = \xtwocolvec{v^{1}-v^{1}}{v^{2}-v^{2}} = \xtwocolvec{0}{0}.
-%   \label{eq:column_representation_zero_vec}
-% \end{equation}
-%
-% \begin{summary}{Column representation of vectors}{}
-%   Scaling and adding vectors using their column representation is rather simple:
-%   \begin{enumerate}
-%     \item Scaling a vector by a scalar $\alpha$ is done by multiplying each of the vector's components by $\alpha$: $\alpha\xtwocolvec{v^{1}}{v^{2}}=\xtwocolvec{\alpha v^{1}}{\alpha v^{2}}$.
-%     \item Adding two vectors is done by adding their respective components: $\xtwocolvec{u^{1}}{u^{2}}+\xtwocolvec{v^{1}}{v^{2}}=\xtwocolvec{u^{1}+v^{1}}{u^{2}+v^{2}}$.
-%     In general, we say that using the column representation, vector scaling and addition is done \emph{component-wise}.
-%     \item Using the above operations we get that the opposite of a vector $\xtwocolvec{v^{1}}{v^{2}}$ is $\xtwocolvec{-v^{1}}{-v^{2}}$.
-%     \item We also get that the zero vector is always $\vec{0}=\xtwocolvec{0}{0}$.
-%
-%   \end{enumerate}
-% \end{summary}
-%
-% \subsection{Cartesian coordinates and the standard basis set}
-% We can place vectors on a two-dimensional Cartesian coordinate system, such that their origin coincide with the axis-origin (the point $\bm{O}=(0,0)$). We then mark the point where its head lies as $\bm{p}=(p_{x},p_{y})$:
-%
-% \begin{center}
-%   \begin{tikzpicture}[]
-%     \pgfmathsetmacro{\px}{2}
-%     \pgfmathsetmacro{\py}{1}
-%     \begin{axis}[
-%       vector plane,
-%       width=7cm, height=7cm,
-%       xmin=-1, xmax=3,
-%       ymin=-1, ymax=3,
-%       xtick={1,...,3},
-%       xticklabels={},
-%       yticklabels={},
-%       extra x ticks={\px},
-%       extra x tick labels={$p_{x}$},
-%       extra y ticks={\py},
-%       extra y tick labels={$p_{y}$},
-%     ]
-%     \coordinate (vec2d) at (\px,\py);
-%     \fill[gray] (vec2d) circle (0.05) node[above] {$\bm{p}=(p_{x},p_{y})$};
-%     \draw[gray, dashed] (vec2d) -- (\px,0);
-%     \draw[gray, dashed] (vec2d) -- (0,\py);
-%     \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above] {$\vec{u}$};
-%     \fill (0,0) circle (0.05) node[] (O2) {};
-%     \end{axis}
-%     \node[below left of=O2, xshift=-10pt] (O2txt) {$\bm{O}=(0,0)$};
-%     \draw[-stealth, thick, densely dotted] (O2txt) to[out=90, in=225, looseness=1.0] (O2);
-%   \end{tikzpicture}
-% \end{center}
-%
-% This arrangement has a fitting basis set, which we call the \emph{standard basis set of $\Rs[2]$}:
-% \begin{enumerate}
-%   \item $\cxhat$: a vector of unit length in the direction of the $x$-axis, i.e. from the origin of the axes to point $(1,0)$.
-%   \item $\cyhat$: a vector of unit length in the direction of the $y$-axis, i.e. from the origin of the axes to point $(0,1)$.
-% \end{enumerate}
-%
-% \begin{center}
-%   \begin{tikzpicture}[]
-%     \begin{axis}[
-%       vector plane,
-%       width=7cm, height=7cm,
-%       xmin=-1, xmax=3,
-%       ymin=-1, ymax=3,
-%       xtick={1,...,3},
-%       xticklabels={},
-%       yticklabels={},
-%       extra x ticks={1},
-%       extra x tick labels={(1,0)},
-%       extra y ticks={1},
-%       extra y tick labels={(0,1)},
-%     ]
-%     \coordinate (vec2d) at (2,1);
-%     \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above] {$\vec{u}$};
-%     \draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
-%     \draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
-%     \fill (0,0) circle (0.05) node[] (O2) {};
-%     \end{axis}
-%   \end{tikzpicture}
-% \end{center}
-%
-% Using the standard basis set, the first component of any vector is simply $p_{x}$ and the second component is $p_{y}$, i.e. $\xo{\vec{u}}=\xtwocolvec{p_{x}}{p_{y}}$. For example, we see that the vector $\xo{\vec{u}}$ in the above figure has the column representation $\xo{\vec{u}}=\xtwocolvec{2}{1}$.
-%
-% \begin{example}{Vectors on the Cartesian plane}{}
-%   Some more vectors on the 2-dimensions Cartesian plane and their column representation using the standard basis (each grid line is one unit in size):
-%
-%   \begin{center}
-%     \begin{tikzpicture}[]
-%       \begin{axis}[
-%         vector plane,
-%         width=7cm, height=7cm,
-%         xmin=-3, xmax=3,
-%         ymin=-3, ymax=3,
-%         xtick={-3,...,3},
-%         ytick={-3,...,3},
-%         xticklabels={},
-%         yticklabels={},
-%         major grid style={draw=gray!25, densely dotted},
-%       ]
-%       \draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
-%       \draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
-%       \draw[vector, xpurple] (0,0) -- (2,3) node[anchor=north west, pos=1.05, black] {$\xtwocolvec{2}{3}$};
-%       \draw[vector, xdarkgreen] (0,0) -- (-2,1) node[anchor=south, pos=1.05, black] {$\xtwocolvec{-2}{1}$};
-%       \draw[vector, xorange] (0,0) -- (-2,-2) node[anchor=east, pos=1.05, black] {$\xtwocolvec{-2}{-2}$};
-%       \draw[vector, gray] (0,0) -- (1,-2) node[anchor=west, pos=1.05, black] {$\xtwocolvec{1}{-2}$};
-%       \fill (0,0) circle (0.05) node[] (O2) {};
-%       \end{axis}
-%     \end{tikzpicture}
-%   \end{center}
-% \end{example}
-%
-% It's common to call $\xr{u^{1}}$ simply $\xr{x}$, and $\xb{u^{y}}$ simply $\xb{y}$, and therefore the components of some vector $\xo{\vec{u}}$ are called $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively.
-%
-% \subsection{Polar coordinates}
-% Using the 2-dimensional Cartesian plane we can define an alternative coordinate system for vectors: notice that each vector $\xo{\vec{u}}=\xtwocolvec{u^{x}}{u^{y}}$ defines a right triangle together with the $x$-axis; The side on the $x$-axis and the side parallel to the $y$-axis are then $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively:
-%
-% \begin{center}
-%   \begin{tikzpicture}[every node/.style={font=\Large}]
-%     \pgfmathsetmacro{\px}{2}
-%     \pgfmathsetmacro{\py}{3}
-%     \pgfmathsetmacro{\th}{atan(\py/\px)}
-%     \begin{axis}[
-%       vector plane,
-%       width=7cm, height=7cm,
-%       xmin=-1, xmax=3,
-%       ymin=-1, ymax=3,
-%       xtick={1,...,3},
-%       xticklabels={},
-%       yticklabels={},
-%     ]
-%     \coordinate (vec2d) at (\px,\py);
-%     \draw[gray, dashed] (vec2d) -- (\px,0);
-%     \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above left] {$\vec{u}$};
-%     \draw[thick] (1.75,0) -- (1.75,0.25) -- (2,0.25);
-% 		\draw[xred, very thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}] (0,0) -- (\px,0) node[midway, below , yshift=-5pt]{$u^{x}$};
-% 		\draw[xblue, very thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}] (\px,0) -- (\px,\py) node[midway, right, xshift=5pt]{$u^{y}$};
-%     \draw[xpurple, very thick] (0.75,0) arc (0:\th:0.75);
-%     \draw[xpurple, arcnode={3mm}{$\theta$}] (0.75,0) arc (0:\th:0.75);
-%     \fill (0,0) circle (0.05) node[] (O2) {};
-%     \end{axis}
-%   \end{tikzpicture}
-% \end{center}
-%
-% Due to the Pythagorean theorem we know that the norm of $\xo{\vec{u}}$ is
-% \begin{equation}
-%   \xo{\norm{u}} = \sqrt{\left(\xr{u^{x}}\right)^{2} + \left(\xb{u^{y}}\right)^{2}},
-%   \label{eq:pythagorean_vec_norm}
-% \end{equation}
-% and due to trigonometry, the angle $\xp{\theta}$ between $\xo{\vec{u}}$ and the $x$-axis is
-% \begin{equation}
-%   \xp{\theta} = \arctan\left(\frac{\xb{u^{y}}}{\xr{u^{x}}}\right).
-%   \label{eq:label}
-% \end{equation}
-%
-% The alternative coordinate system, called the \emph{polar coordinate system}, uses a tuple of numbers: $\left(\xo{R},\xp{\theta}\right)$ - where $\xo{R}=\xo{\norm{u}}$. The conversion from the coordinates $\left(\xo{R},\xp{\theta}\right)$ to the column form $\xtwocolvec{u^{x}}{u^{y}}$ is therefore
-% \begin{align*}
-%   \xr{u^{x}} &= \xo{R}\cos(\xp{\theta}),\\\nonumber
-%   \xb{u^{y}} &= \xo{R}\sin(\xp{\theta}).
-% \end{align*}
-% (cf. \autoref{eq:basic_trig_rearrange})
-%
-% \tbw{examples of transitioning between coords sys}
-%
-% Before we continue with the topic, let's use what we learned to solve some simple problems:
-%
-% \begin{example}{Turtle walk}{}
-%   Joe the turtle went on a stroll in the field: he first walked $10$ meters, then turned $\ang{30}$ counter clockwise and walked $5$ more meters. After a short rest Joe noticed the pond to his right, so he turned $\ang{45}$ clockwise and walked to the pond - about $30$ meters away. When he reached the pond he swam across it at a $\ang{20}$ counter clockwise and $10$ meters forward.
-% \end{example}
-%
-% \begin{example}{Force on an onject}{forces}
-%   Consider a simplified game of ``tug of war'', where two people $\xr{A}$ and $\xdg{B}$ are pulling on some object (black circle) using two ropes of the same length $L$ directly opposite to one another\footnote{A key to solving all mathematical problems is being able to draw a simplified schematic of the situation. That is most definitely \textit{not} an excuse for the lousy drawing\dots}:
-%
-%   \vspace{1em}
-%   \tikzset{
-%     person/.style 2 args={fill=#1, circle, label={[text=white]center:$#2$}, minimum size=15pt, inner sep=0pt},
-%     rope/.style={line width=4pt, xorange!75},
-%     ropeb/.style={rope, draw=xorange!50!black!75, dashed},
-%   }
-%   \begin{center}
-%     \begin{tikzpicture}
-%       \node[person={black}{}, minimum size=5pt] (O) at (0,0) {};
-%       \node[person={xred}{A}] (A) at (2,0) {};
-%       \node[person={xgreen}{B}] (B) at (-2,0) {};
-%       \draw[rope] (A) -- (O);
-%       \draw[rope] (B) -- (O);
-%       \draw[ropeb] (A) -- (O);
-%       \draw[ropeb] (B) -- (O);
-%       \draw[|-|, thick] (-2,-0.5) -- (0,-0.5) node[midway, below] {$L$};
-%       \draw[|-|, thick] (0,0.5) -- (2,0.5) node[midway, above] {$L$};
-%     \end{tikzpicture}
-%   \end{center}
-%
-%   If both people pull with the exact same force, the object will stay at the same place. We can explain this using vector addition: if we represent the force applied on the object by the pull of person $\xr{A}$ using the vector $\xr{\vec{F}}$, then the pull force applied on the object by person $\xdg{B}$ is $\xdg{-\vec{F}}$, since the total force must add up to zero (no force=no change in position\footnote{Yes, technically no force means no acceleration, so if this bothers you just assume the object had no initial velocity.}).
-%
-%   \vspace{1em}
-%   Now consider adding a third person pulling on the object, and that all three people are arranged such that they are at $\ang{120}$ to eachother and at the exact same length $L$ from the object they are pulling:
-%   
-%   \begin{center}
-%     \begin{tikzpicture}[
-%       ]
-%       \pgfmathsetmacro{\L}{2}
-%       \draw[arcnode={6*\L}{$\ang{120}$}] ({\L/2},0) arc (0:120:{\L/2});
-%       \draw[thick, dashed] ({\L/2},0) arc (0:120:{\L/2});
-%       \node[person={black}{}, minimum size=5pt] (O) at (0,0) {};
-%       \node[person={xred}{A}] (A) at (\L,0) {};
-%       \node[person={xgreen}{B}] (B) at ({\L*cos(120)},{\L*sin(120)}) {};
-%       \node[person={xblue}{C}] (C) at ({\L*cos(240)},{\L*sin(240)}) {};
-%       \draw[rope] (A) -- (O);
-%       \draw[rope] (B) -- (O);
-%       \draw[rope] (C) -- (O);
-%       \draw[ropeb] (A) -- (O);
-%       \draw[ropeb] (B) -- (O);
-%       \draw[ropeb] (C) -- (O);
-%     \end{tikzpicture}
-%   \end{center}
-%
-%   If the three people are pulling with the same force, what would be the total force experienced by the object? Again, we can express the forces using vectors: $\xr{\vec{F}_{A}},\ \xdg{\vec{F}_{B}}$ and $\xb{\vec{F}_{C}}$ - we want to calculate the sum $\xr{\vec{F}_{A}}+\xdg{\vec{F}_{B}}+\xb{\vec{F}_{C}}$. Since all forces have the same magnitude, we'll call that magnitude simply $F$. Using the standard basis vectors in $\Rs[2]$ we can consider the vector $\xr{\vec{F}_{A}}$ to be pointing to the right and thus having the column representation
-%   \[
-%     \xr{\vec{F}_{A}} = \colvec{F;0}.
-%   \]
-%   The vector $\xdg{\vec{F}_{B}}$ has the same magnitude but a different direction: we can use polar coordinates to find its column representations, and we get that these are $(F,\ang{120})$. A simple conversion yields
-%   \[
-%     \xdg{\vec{F}_{B}} = \colvec{F\cos\left(\ang{120}\right);F\sin\left(\ang{120}\right)} = F\colvec{-\frac{1}{2};\frac{\sqrt{3}}{2}} = \frac{F}{2}\colvec{-1;\sqrt{3}}.
-%   \]
-%
-%   Similar calculation for $\xb{\vec{F}_{C}}$ gives $\xb{\vec{F}_{C}}=\frac{F}{2}\colvec{-1;-\sqrt{3}}$. Adding all three vectors together gives
-%   \begin{align*}
-%     \xr{\vec{F}_{A}}+\xdg{\vec{F}_{B}}+\xb{\vec{F}_{C}} &= \colvec{F;0} + \frac{F}{2}\colvec{-1;\sqrt{3}} + \frac{F}{2}\colvec{-1;-\sqrt{3}}\\
-%                                                         &= \colvec{F-\frac{F}{2}+\frac{F}{2};0+\frac{\sqrt{3}F}{2}-\frac{\sqrt{3}F}{2}}\\
-%                                                         &= \colvec{0;0}.
-%   \end{align*}
-%
-%   We get, once again, that the total force applied on the object is zero.
-%
-%   At this point one might wonder if this pattern always holds, that is - given $n\geq1$ people arranged at the vertices of a regular polygon, each pulling with the same force on a rope connected to some object at the center of the regular polygon, will the total force be zero? To help picture this question, here are schematics for the cases $n=4,5,6,7$:
-%
-%   \newcommand{\nrope}[2]{
-%     \pgfmathsetmacro{\L}{1.5}
-%     \pgfmathsetmacro{\n}{#1}
-%     \pgfmathsetmacro{\m}{\n-1}
-%     \pgfmathsetmacro{\degs}{int(360/\n)}
-%     \node[person={black}{}, minimum size=5pt] (\n-O) at (0,0) {};
-%     \foreach \k in {0,...,\m}{
-%       \node[person={#2}{}] (\n-\k) at ({\L*cos(\degs*\k)},{\L*sin(\degs*\k)}) {};
-%       \draw[rope] (\n-\k) -- (O);
-%       \draw[ropeb] (\n-\k) -- (O);
-%     }
-%     \node at (0,{\L*1.5}) {\underline{$n=\n$}};
-%     \draw[arcnode={-8*\L}{$\ang{\degs}$}] ({\L/2},0) arc (0:{\degs}:{\L/2});
-%     \draw[thick, dashed] ({\L/2},0) arc (0:{\degs}:{\L/2});
-%   }
-%   \begin{center}
-%     \begin{tikzpicture}
-%       \nrope{4}{xred}
-%     \end{tikzpicture}
-%     \hspace{1.5cm}
-%     \begin{tikzpicture}
-%       \nrope{5}{xblue}
-%     \end{tikzpicture}
-%
-%     \vspace{1em}
-%     \begin{tikzpicture}
-%       \nrope{6}{xgreen}
-%     \end{tikzpicture}
-%     \hspace{1.5cm}
-%     \begin{tikzpicture}
-%       \nrope{7}{xpurple}
-%     \end{tikzpicture}
-%   \end{center}
-%   \tbw{correct $\ang{51}$ issue}
-%
-%   Intuitively, one would expect that for any $n\geq1$, $\sum\limits_{i=1}^{n}\vec{F}_{i}=\vec{0}$ due to symmetry. Let's do the actual ``dirty work'' and prove this. First, the angle between each two consecutive ropes/people is $\frac{\ang{360}}{n}$. We will use $\frac{2\pi}{n}$ instead, because radians are simply \textit{better} than degrees. We get that each vector $\vec{F}_{k}$ has the following polar coordinates:
-%   \[
-%     \vec{F}_{k}: \left(L,\frac{2\pi}{n}k\right),
-%   \]
-%   where $k=0,1,2,\dots,n-1$ - we use this so that the first vector always points directly to the right, which makes the calculations a bit more convinient.
-%
-%   Using these polar coordinates, we can write each vector in column form in the standard basis in $\Rs[2]$:
-%   \[
-%     \vec{F}_{k} = \colvec{L\cos\left(\frac{2\pi}{n}k\right);L\sin\left(\frac{2\pi}{n}k\right)}.
-%   \]
-%   Therefore, the sum of all $n$ vectors is
-%   \[
-%     \vec{V} = \sum\limits_{k=0}^{n-1}F_{k} = \sum\limits_{k=0}^{n-1}\colvec{L\cos\left(\frac{2\pi}{n}k\right);L\sin\left(\frac{2\pi}{n}k\right)} = L\sum\limits_{k=0}^{n-1}\colvec{\cos\left(\frac{2\pi}{n}k\right);\sin\left(\frac{2\pi}{n}k\right)}.
-%   \]
-%   Since we want to show that the sum is zero, we can ignore the norm $L$ as it doesn't play a role.
-%
-%   Since column vectors are added \textit{component-wise}, we actually need to show the following two equalities:
-%   \begin{align*}
-%     1.\quad\sum\limits_{k=0}^{n-1}\cos\left(\frac{2\pi}{n}k\right) &= 0,\\
-%     2.\quad\sum\limits_{k=0}^{n-1}\sin\left(\frac{2\pi}{n}k\right) &= 0.
-%   \end{align*}
-%
-%   Starting with the first sum, we will use Lagrange's trigonometric identities (\autoref{eq:Lagrange's trigonometric identities}). Since these identities involve sums with $k=0,1,2,\dots,n$ but our sums only use $k=0,1,2,\dots,n-1$, we would need to subtract the term where $k=n$ from the result, that is the term $\cos\left(\frac{2\pi}{n}n\right)=\cos\left(2\pi\right)=1$. Using $\theta=\frac{2\pi}{n}$ in the identities we get that
-%   \begin{align*}
-%     \sum\limits_{k=0}^{n-1}\cos\left( \frac{2\pi}{n}k \right) &= \sum\limits_{k=0}^{n}\cos\left( \frac{2\pi}{n}k \right)-1\\
-%                                                               &= \frac{\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)+\sin\left(\left[n+\frac{1}{2}\right]\frac{2\pi}{n}k\right)}{2\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)}-1\\
-%                                                               &= \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1.
-%   \end{align*}
-%   We can use the angle sum trigonometric identities (\autoref{eq:angle_sum}) to calculate $\sin\left(2\pi k+\frac{\pi}{n}k\right)$:
-%   \begin{align*}
-%     \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1 &= \frac{\sin\left(\frac{\pi}{n}k\right)+\left[\cancel{\sin\left(2\pi k\right)\cos\left(\frac{\pi}{n}k\right)}+\cancelcol[xblue]{\cos\left(2\pi k\right)}\sin\left(\frac{\pi}{n}k\right)\right]}{2\sin\left(\frac{\pi}{n}k\right)}-1\\
-%                                                                                                                       &= \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1\\ 
-%                                                                                                                       &= \frac{2\sin(\frac{\pi}{n}k)}{2\sin(\frac{\pi}{n}k)} - 1\\
-%                                                                                                                       &= 1-1\\
-%                                                                                                                       &= 0.
-%   \end{align*}
-%
-%   And for the second sum (using $\sin\left(\frac{2\pi}{n}n\right)=\sin\left(2\pi\right)=0$):
-%   \begin{align*}
-%     \sum\limits_{k=0}^{n-1}\sin\left( \frac{2\pi}{n}k \right) &= \sum\limits_{k=0}^{n}\sin\left( \frac{2\pi}{n}k \right)\\
-%                                                               &= \frac{\cos\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)-\cos\left(\left[n+\frac{1}{2}\right]\frac{2\pi}{n}k\right)}{2\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)}\\
-%                                                               &= \frac{\cos\left(\frac{\pi}{n}k\right)-\cos\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}\\
-%                                                               &= \frac{\cos\left(\frac{\pi}{n}k\right)-\left[\cancelcol[xblue]{\cos\left(2\pi k\right)}\cos\left(\frac{\pi}{n}k\right)-\cancel{\sin\left(2\pi k\right)\sin\left(\frac{\pi}{n}k\right)}\right]}{2\sin\left(\frac{\pi}{n}k\right)}\\
-%                                                               &= \frac{\cos\left(\frac{\pi}{n}k\right)-\cos\left(\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}\\
-%                                                               &= 0.
-%   \end{align*}
-%
-%
-%   Indeed, adding up all the vectors results in the zero vector - i.e. no force is applied on the object.
-% \end{example}
-%
-% \subsection{$\Rs[3]$}
-% Everything we discussed so far regarding vectors in $\Rs[2]$ can be easily applied to vectors existing in 3-dimensional space, which we also call $\Rs[3]$ (i.e. $\Rs\times\Rs\times\Rs$). These vectors also have a length (norm) and a direction, and can be scaled and added in the exact same way as vectors in $\Rs[2]$.
-%
-% The main difference between vectors in $\Rs[2]$ and vectors in $\Rs[3]$ is that any basis set in $\Rs[3]$ must contain \textbf{three} basis vectors instead of two, and these must not lie in the same \textit{plane} (we will explore exactly what that means a bit later). The column representation of vectors in $\Rs[3]$ therefore has three entries. For example, given the three basis vectors $\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2},\ \xdg{\vec{e}_{3}}}$, then
-% \[
-%   \vec{v} = \xthreecolvec{2}{-3}{5}
-% \]
-% is the column representation of the vector
-% \[
-%   \vec{v} = \xr{2\vec{e}_{1}} - \xb{3\vec{e}_{2}} + \xdg{5\vec{e}_{3}}.
-% \]
-%
-% The restriction on the set of vectors which can be used as basis vectors in $\Rs[3]$ is that \textbf{they must not be on the same plane}, as that will restrict the columns they can represent to also be on the same plane instead of pointing in all possible direction in $3$-dimensions. We call such vectors \emph{coplanar}. Note that if two or more vectors are on the same line in $3$-dimensions, they are also on the same plane. This means that any two of the three basis vectors (or all of them) are also not allowed to be coliniear.
-%
-% \tbw{figure of coplanar vectors?}
-%
-% Addition of column vectors in $\Rs[3]$ is also done component-wise, for example:
-% \[
-%   \xthreecolvec{2}{-3}{5} + \xthreecolvec{0}{4}{-2} = \xthreecolvec{2+0}{-3+4}{5-2} = \xthreecolvec{2}{1}{3}.
-% \]
-%
-% $\Rs[3]$ also has a standard basis set: using a 3-dimensional Cartesian coordinate system with the axes $x,\ y$ and $z$,
-%
-% \begin{center}
-%   \tdplotsetmaincoords{60}{135}
-%   \begin{tikzpicture}[tdplot_main_coords]
-%     \coordinate (O) at (0,0,0);
-%
-%     \foreach \x in {0,...,2.5}
-%       \foreach \y in {0,...,2.5}{
-%         \draw[very thin, gray!25] (\x,-0.5) -- (\x,2.5);
-%         \draw[very thin, gray!25] (-0.5,\y) -- (2.5,\y);
-%       }
-%
-%     \draw[vector, black!50] (O) -- (3,0,0) node[pos=1.20, font=\Large]{$x$};
-%     \draw[vector, black!50] (O) -- (0,3,0) node[pos=1.10, font=\Large]{$y$};
-%     \draw[vector, black!50] (O) -- (0,0,3) node[pos=1.15, font=\Large]{$z$};
-%
-%     \draw[vector, line width=3pt, xred] (O) -- (1,0,0) node[above]{$\hat{x}$};
-%     \draw[vector, line width=3pt, xblue] (O) -- (0,1,0) node[above]{$\hat{y}$};
-%     \draw[vector, line width=3pt, xdarkgreen] (O) -- (0,0,1) node[right]{$\hat{z}$};
-%   \end{tikzpicture}
-% \end{center}
-%
-% When using these basis vectors the three components of a vector $\vec{u}$ are sometimes refered to as $\xr{u^{x}},\ \xb{u^{y}}$ and $\xdg{u^{z}}$, and its norm is
-% \begin{equation}
-%   \norm{u} = \sqrt{\left(\xr{u^{x}}\right)^{2} + \left(\xb{u^{y}}\right)^{2} + \left(\xdg{u^{z}}\right)^{2}}.
-%   \label{eq:3d_norm_pythagorean}
-% \end{equation}
-%
-% \autoref{eq:3d_norm_pythagorean} is a direct result of the Pythagorean theorem:
-% \begin{proof}{Pythagorean theorem in 3D}{}
-%   Given a box with sides $a,b$ and $c$, the length of the diagonal line of the base rectangle (in the figure below $\xb{d}$) is given by the Pythagorean theorem (see figure for reference):
-%   \begin{center}
-%     \tdplotsetmaincoords{70}{300}
-%     \begin{tikzpicture}[tdplot_main_coords, every node/.style={font=\Large}]
-%       % Grid
-%       \foreach \x in {-1,...,3}
-%       \foreach \y in {-1,...,5}{
-%         \draw[very thin, gray!25] (\x,-1.5) -- (\x,5.5);
-%         \draw[very thin, gray!25] (-1.5,\y) -- (3.5,\y);
-%       }
-%
-%       % 3D triangle fill
-%       \fill[xdarkgreen, opacity=0.2] (0,0,0) -- (2,4,0) -- (2,4,2) -- cycle;
-%
-%       % Cube frame
-%       \draw[very thick] (0,0,0) -- (2,0,0) -- (2,4,0) -- (0,4,0) -- cycle;
-%       \draw[very thick] (0,0,2) -- (2,0,2) -- (2,4,2) -- (0,4,2) -- cycle;
-%       \draw[very thick] (0,0,0) -- (0,0,2);
-%       \draw[very thick] (2,0,0) -- (2,0,2);
-%       \draw[very thick] (0,4,0) -- (0,4,2);
-%       \draw[very thick] (2,4,0) -- (2,4,2);
-%
-%       % Cube diagonals
-%       \draw[ultra thick, xblue] (0,0,0) -- (2,4,0) node[midway, left, xshift=-10pt] {$d$};
-%       \draw[ultra thick, xpurple] (2,4,0) -- (2,4,2) node[midway, left, yshift=-5pt] {$c$};
-%       \draw[ultra thick, xorange] (0,0,0) -- (2,4,2) node[midway, above right, xshift=4pt, yshift=-8pt] {$f$};
-%
-%       % Labels
-%       \node at (3,3,2) {$a$};
-%       \node at (0.75,-0.5,0) {$b$};
-%       \node at (2,-0.25,1) {$c$};
-%     \end{tikzpicture}
-%   \end{center}
-%   \[
-%     \xb{d} = \sqrt{a^{2}+b^{2}}.
-%   \]
-%   Using the height of the box $\xp{c}$ we can easily calculate the length of the main diagonal of the box, $\xo{f}$, using the Pythagorean theorem on the right triangle with sides $\xb{d},\ \xp{c}$ and hypothenous $\xo{f}$ (shaded in green in the figure):
-%   \[
-%     \xo{f} = \sqrt{\xb{d}^{2}+\xp{c}^{2}} = \sqrt{\left(\sqrt{a^{2}+b^{2}}\right)^{2}+\xp{c}^{2}} = \sqrt{a^{2}+b^{2}+c^{2}}.
-%   \]
-% \end{proof}
-%
-% Using the above proof we simply make the following substitutions:
-% \begin{align*}
-%   \xr{u^{x}} &=a,\\
-%   \xb{u^{y}} &=b,\\
-%   \xdg{u^{z}}&=c.
-% \end{align*}
-% The norm of $\vec{u}$ is then $\norm{u}=\xo{f}$.
-%
-% \begin{note}{Yet another notation \shrug}{}
-%   For whatever reason, the notation $\xr{\hat{i}},\ \xb{\hat{j}}$ and $\xdg{\hat{k}}$ is sometimes used in physics to refer to the standard basis vectors. Accordingly, the components of a vector $\vec{u}$ are refered to as $\xr{u^{i}},\ \xb{u^{j}}$ and $\xdg{u^{k}}$.
-% \end{note}
-%
-% \subsection{$\Rs[n]$}
-% Of course, why stop at three dimensions? We can generalize everything which worked so far to any $n$-dimensional space where $n=4,5,6,\dots$ - i.e. the space $\Rs\times\Rs\times\cdots\times\Rs=\Rs[n]$. Picturing vectors in 4-dimensions and above is rather difficult, but the logic remain the same: vectors still have a length and a direction, they can be scaled by a real number and added together in exactly the same fashion as in $\Rs[2]$ and $\Rs[3]$. The zero vector $\vec{0}$ exists and is neutral to addition, etc.
-%
-% Using the column representation in $\Rs[n]$ makes calculations rather easy: we need to choose $n$ basis vectors and use them to represent any other vector. We can't use any vectors though - just like basis vectors in $\Rs[2]$ must not be on the same \textit{line}, and basis vectors in $\Rs[3]$ can't be in the same \textit{plane}, so do the basis vectors in $\Rs[n]$ not be in the same $\left(n-1\right)$-dimensional \textit{space}. We will explore what that means exactly in the next subsection, but for now let us assume that this is always true, even though it might be somewhat abstract right now.
-%
-% Like with $\Rs[2]$ and $\Rs[3]$, we will name the $n$ vectors we choose as basis vectors for $\Rs[n]$ using lower-index notation:
-% \[
-%   \ebv{1},\ \ebv{2},\ \dots,\ \ebv{n}.
-% \]
-% Then, we can express any vector in $\Rs[n]$ using these basis vectors. For example, in $\Rs[7]$ the vector
-% \[
-%   \vec{v} = \xr{2\ebv{1}}-\xb{5\ebv{2}}+\xdg{\ebv{3}}-\xp{2\ebv{4}}-\xo{9\ebv{5}}+\xc{\ebv{6}}-\xpk{2\ebv{7}}
-% \]
-% will be written in column representation as
-% \[
-%   \vec{v} = \colvec{\xr{2};\xb{-5};\xdg{1};\xp{-2};\xo{-9};\xc{1};\xpk{-2}}.
-% \]
-%
-% Generally of course, the $i$-component of a vector $\vec{u}\in\Rs[n]$ is denoted as $u^{i}$ (again, note the upper-index notation and don't confuse it with an exponent/power). So in the case above, $\xdg{v^{3}}=\xdg{1}$ and $\xo{v^{5}}=\xo{-9}$, for example.
-%
-% Like before, scaling and adding vectors in column representation in $\Rs[n]$ is done component-wise: given the two vectors
-% \[
-%   \vec{u}=\colvec{u^{1};u^{2};\vdots;u^{n}},\quad \vec{v}=\colvec{v^{1};v^{2};\vdots;v^{n}},
-% \]
-% and scalar $\alpha\in\Rs$, the following holds:
-% \begin{align}
-%   \alpha \vec{u} &= \colvec{\alpha u^{1};\alpha u^{2};\vdots;\alpha u^{n}},\\
-%   \vec{u}+\vec{v} &= \colvec{u^{1}+v^{1};u^{2}+v^{2};\vdots;u^{n}+v^{n}}.
-% \end{align}
-%
-% The standard basis set in $\Rs[n]$ is a set of vectors each of norm $1$ and pointing in the direction of the $n$-th Cartesian axis. Again, quite difficult to picture for $n\geq4$, but everything basically behaves just like in $\Rs[2]$ and $\Rs[3]$. The notation for the standard basis vectors in $\Rs[n]$ that we use in this book is the following:
-% \begin{equation}
-%   \eb{1},\ \eb{2},\ \dots,\ \eb{n}.
-%   \label{eq:std_basis_vecs_Rn}
-% \end{equation}
-%
-% The norm of a vector $\vec{v}\in\Rs[n]$ is a generalization of the Pythagorean theorem:
-% \begin{equation}
-%   \norm{v} = \sqrt{\left(v^{1}\right)^{2} + \left(v^{2}\right)^{2} + \cdots + \left(v^{n}\right)^{2}} = \sqrt{\sum\limits_{k=1}^{n}\left(v^{k}\right)^{2}}.
-%   \label{eq:norm_Rs}
-% \end{equation}
-% (just as before, the $2$ above the components outside the paranthesis denotes power, and the numbers inside the paranthesis denote index)
-%
-% \subsection{Einstein summation notation}
-% We now introduce a very common notation which is used almost everywhere in physics and will give a first hint on why we insist on the upper-index notation for vector components: the \emph{Einstein summation notation}. This notation does the following: everytime we see together an index both as upper-index and as lower-index \textit{in the same term}, it means that there is an implicit sum over that index (the limits of the sum are derived from context).
-%
-% For example, instead of writing a general vector $\vec{v}\in\Rs[n]$ as
-% \[
-%   \vec{u} = u^{1}\ebv{1} + u^{2}\ebv{2} + \cdots + u^{n}\ebv{n} = \sum\limits_{k=1}^{n}u^{k}\ebv{k},
-% \]
-% we simply write
-% \begin{equation}
-%   \vec{u} = u^{k}\ebv{k}.
-%   \label{eq:Einstein_notation_vec_Rn}
-% \end{equation}
-%
-% Another example: using the Einstein summation notation, the norm of the above vector $\vec{u}$ is written simply as
-% \begin{equation}
-%   \norm{u} = \sqrt{u^{k}\ebv{k}}.
-%   \label{eq:Einstein_notation_norm_Rn}
-% \end{equation}
-%
-% This notation might seem arbitrary and annoying now, but it becomes incredibly helpful when discussing high-dimensional \emph{tensors} which might have several components of different types (for which we use both upper- and lower-indices).
-%
-% \tbw{examples for Einstein notation}
-%
-% \subsection{Linear combinations and subspaces}
+\subsection{Basics}
+\emph{Vectors} are the fundamental objects of linear algebra: the entire field revolves around manipulation of vectors. In this chapter we deal with the so-called \emph{real vectors}, which can be be defined in a geometric way:
+
+\begin{definition}{Real vectors}{real vectors}
+	A \textit{real vector} is an object with a \emph{magnitude} (also called \emph{norm}) and a \emph{direction}.
+\end{definition}
+
+In this chapter we refer to real vectors simply as \textit{vectors}. Vectors can have $1,2,3,\dots$ number of dimensions. $2$-dimensional vectors can be drawn as arrows on a plane:
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector, xred] (0,0) -- ++(2,3);
+    \draw[vector, xblue] (-1,0) -- ++(-1,2);
+    \draw[vector, xgreen] (0,-1) -- ++(-3,0);
+    \draw[vector, xpurple] (2,0) -- ++(-1,-3);
+    \draw[vector, xorange] (-4,2) -- ++(0,-4);
+    \draw[vector, black] (-7,1) -- ++(1,-1);
+  \end{tikzpicture}
+\end{center}
+
+Similarly, $3$-dimensional vectors can be drawn as arrows in space:
+% Work needs to be done on this illustration.
+\begin{center}
+	\centering
+	\tdplotsetmaincoords{70}{45}
+	\begin{tikzpicture}[tdplot_main_coords]
+    \draw[vector, xorange] (0,0,0) -- (2,-3,-3);
+		\draw[black!40, very thick, opacity=1, fill=gray, fill opacity=0.2] (4,4,0) -- (4,-4,0) -- (-4,-4,0) -- (-4,4,0) -- cycle;
+    \draw[vector, xred] (0,0,0) -- (3,2,2);
+    \draw[vector, xblue] (-2,-1,0) -- (-3,-1,3);
+    \draw[vector, xpurple] (-3,3,0) -- ++(3,-4,0.5);
+	\end{tikzpicture}
+\end{center}
+
+Unfortunately, it is difficult (if not impossible) to draw higher-dimensional vectors. For now, we will concentrate on $2$-dimensional vectors and explore their properties. Later in the section we will apply what we learned from $2$-dimensional vectors to $3$-dimensional vectors and higher-dimensional vectors as well.
+
+Vectors are usually denoted in one of the following ways:
+
+\begin{descitemize}
+	\setlength\itemsep{1em}
+	\addtolength{\itemindent}{5mm}
+	\item[Arrow above letter] $\vec{u},\ \vec{v},\ \vec{x},\ \vec{a},\ \dots$
+	\item[Bold letter] $\bm{u},\ \bm{v},\ \bm{x},\ \bm{a},\ \dots$
+	\item[Bar below letter] $\underline{u},\ \underline{v},\ \underline{x},\ \underline{a},\ \dots$
+\end{descitemize}
+
+In this book we use the first notation style, i.e. an arrow above the letter. In addition vectors will almost always be denoted using lowercase \textit{Latin} script.
+
+When discussing vectors in a single context, we always consider them starting at the same point, called the \emph{origin}, and \emph{translating} (moving) vectors around in space does not change their properties: only their norms and directions matter. For example, we can draw the $2$-dimensional vectors from before such that their origins all lie on the same point:
+
+\begin{center}
+	\begin{tikzpicture}
+		\draw[vector, xred] (0,0) -- ++(2,3);
+		\draw[vector, xblue] (0,0) -- ++(-1,2);
+		\draw[vector, xgreen] (0,0) -- ++(-3,0);
+		\draw[vector, xpurple] (0,0) -- ++(-1,-3);
+		\draw[vector, xorange] (0,0) -- ++(0,-4);
+		\draw[vector, black] (0,0) -- ++(1,-1);
+		\fill (0,0) circle (0.05);
+	\end{tikzpicture}
+\end{center}
+
+Any vector can be scaled by a real number $\alpha$: when this happens, its norm is multiplied by $\alpha$ while its direction stays the same. We call $\alpha$ a \emph{scalar}. For example, the vector $\color{xred}{\vec{v}}$ on the left is scaled here by different scalars $\alpha=2,2.5,-1$ and $-2$:
+
+\begin{center}
+	\begin{tikzpicture}[every node/.style={midway, left, xshift=-2mm}]
+		\Large
+		\draw[vector, xred] (0,0) -- ++(1.5,1) node {$\vec{v}$};
+		\draw[vector, xblue] (2,0) -- ++(3,2) node {$2\cdot \vec{v}$};
+		\draw[vector, xpurple] (4.5,0) -- ++(3.75,2.5) node {$2.5\cdot \vec{v}$};
+		\draw[stealth-, thick, xgreen!85!black] (7.5,0) -- ++(1.5,1) node {$-1\cdot \vec{v}$};
+		\draw[stealth-, thick, black] (9.5,0) -- ++(3,2) node {$-2\cdot \vec{v}$};
+	\end{tikzpicture}
+\end{center}
+
+\begin{note}{Negative scale}{negative scale}
+	As can be seen in the example above, when scaling a vector by a negative amount its direction reverses. However, we consider two opposing direction (i.e. directions that are $\ang{180}$ apart) as being the same direction.
+\end{note}
+
+In this chapter we use the following notation for the norm of a vector $\vec{v}$: $\norm{v}$.
+
+A vector $\vec{v}$ with norm $\norm{v}=1$ is called a \emph{unit vector}, and is usually denoted by replacing the arrow symbol by a hat symbol: $\hat{v}$. Any vector (except $\vec{0}$) can be scaled into a unit vector by scaling  the vector by $1$ over its own norm, i.e.
+\begin{equation}
+	\hat{v} = \frac{1}{\norm{v}}\vec{v}.
+	\label{eq:normalized vector}
+\end{equation}
+The result of normalization is a vector of unit norm which points in the same direction of the original vector.
+
+Two vectors can be added together to yield a third vector: $\vu+\vv=\vw$. To find $\vw$ we use the following procedure (depicted in \autoref{fig:vector addition geometric}):
+% The items need to be typeset without the chapter number
+\begin{enumerate}
+	\item Move (translate) $\vv$ such that its origin lies on the head of $\vu$.
+	\item The vector $\vw$ is the vector drawn from the origin of $\vu$ to the head of $\vv$.
+\end{enumerate}
+
+\renewcommand\thesubfigure{\arabic{subfigure}}
+\begin{figure}[h]
+	\centering
+	 \begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\coordinate (O) at (0,0);
+			\coordinate (u) at (-2,1);
+			\coordinate (v) at (1.5,1);
+			\coordinate (w) at ($(u)+(v)$);
+			\draw[vector, xred] (O) -- (u) node[above left] {$\vu$};
+			\draw[vector, xblue] (O) -- (v) node[above right] {$\vv$};
+			\draworigin
+		\end{tikzpicture}
+		\caption{The vectors $\vu$ and $\vv$.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+			\draw[vector, xblue] (u) -- ++(v) node[above right] {$\vec{v}$};
+			\draworigin
+		\end{tikzpicture}
+		\caption{Translating $\vv$ such that its origin lies at the head of $\vu$.}
+	\end{subfigure}
+
+	\vspace{3em}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+			\draw[vector, xblue] (u) -- ++(v) node[above right] {$\vec{v}$};
+			\draw[vector, xpurple] (O) -- (w) node[right, yshift=-2mm] {$\vec{w}$};
+			\draworigin
+		\end{tikzpicture}
+		\caption{Drawing the vector $\vw$ from the origin to the head of $\vv$.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+			\draw[vector, xblue] (O) -- (v) node[above right] {$\vec{v}$};
+			\draw[vector, xpurple] (O) -- (w) node[above] {$\vec{w}$};
+			\draworigin
+		\end{tikzpicture}
+		\caption{All three vectors with the same origin.}
+	\end{subfigure}
+	\caption{Vector addition.}
+	\label{fig:vector addition geometric}
+\end{figure}
+
+The addition of vectors as depicted here is commutative, i.e. $\vu+\vv = \vv+\vu$. This can be seen by using the \emph{parallelogram law of vector addition} as depicted in \autoref{fig:parallelogram}: drawing the two vectors $\vu, \vv$ and their translated copies (each such that its origin lies on the other vector's head) results in a parallelogram.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\draw[vector, xred] (O) -- (u) node[above left] {$\vec{u}$};
+		\draw[vector, xblue] (O) -- (v) node[above right] {$\vec{v}$};
+		\draw[vector, xred] (v) -- ++(u);
+		\draw[vector, xblue] (u) -- ++(v);
+		\draw[vector, xpurple] (O) -- (w) node[above] {$\vec{w}$};
+		\draworigin
+	\end{tikzpicture}
+	\caption{The parallogram law of vector addition.}
+	\label{fig:parallelogram}
+\end{figure}
+
+An important vector is the \emph{zero-vector}, denoted as $\vec{0}$. The zero-vector has a unique property: it is neutral in respect to vector addition, i.e. for any vector $\vec{v}$,
+\begin{equation}
+	\vec{v} + \vec{0} = \vec{v}.
+	\label{eq:zero-vector}
+\end{equation}
+(we also say that $\vec{0}$ is the \emph{additive identity} in respect to vectors.)
+
+Any vector $\vec{v}$ always has an \emph{opposite} vector, denoted $-\vec{v}$. The addition of a vector and its opposite always result in the zero-vector, i.e.
+\begin{equation}
+	\vec{v} + \left( -\vec{v} \right) = \vec{0}.
+	\label{eq:opposite vector}
+\end{equation}
+
+\subsection{Column representation}
+In order to be able to use vectors for actual calculations we must somehow quantify them. When quantifying the length of geometric objects we often first define some unit of measurement, for example a centimeter (\si{cm}). We then use this unit to measure the length of different objects.
+
+While this simple approach works well for describing lengths, in the case of vectors we also want to quantify directions - which becomes a bit complicated in higher dimensions if we use angles. Instead, we use more than one unit of measurement; in fact, we use several of them: a vector for each dimension (so in 2-dimensions we use two vectors, in 3-dimensions we use three vectors, etc.). We call these vectors \emph{basis vectors} and collect them in a set we call the \emph{basis set}.
+
+Any two vectors can form a basis set in 2-dimensions \textbf{as long as they are not pointing in the same direction}, meaning that they are not scales of eachother: if the vectors are $\vec{u}$ and $\vec{v}$, then there is no $\alpha\in\Rs$ such that $\vec{u}=\alpha\vec{v}$ (vectors that are scales of eachother are said to be \emph{coliniear}). For example, the following two vectors \textbf{can't form a basis in $2$-dimensions} since they are coliniear - they point in the same direction (specifically, $\vec{r}_{2}=2\vec{r}_{1}$):
+
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (r1) at (1,0.75);
+    \coordinate (r2) at (2,1.5);
+    \draw[vector] (O) -- ++(r1) node[midway, above left] {$\vec{r}_{1}$};
+    \draw[vector] (3,0) -- ++(r2) node[midway, above left] {$\vec{r}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+The restriction on coliniearity also means that the zero vector can never be a basis vector, since $\vec{0}=0\cdot\vec{v}$ for any $\vec{v}$.
+
+An example of two vectors that form a basis set in $2$-dimensions are the following two $2$-dimensional vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$:
+
+\begin{center}
+  \begin{tikzpicture}
+    % \coordinate (O) at (0,0);
+    \coordinate (e1) at (1,0.5);
+    \coordinate (e2) at (-0.5,0.5);
+    \draw[vector, xred] (O) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
+    \draw[vector, xblue] (3,0) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+\tbw{basis vectors in $\Rs[2]$ can't be in the same line}
+
+We can then use these basis vectors to measure other $2$-dimensional vectors, for example the following vector $\xp{\vec{v}}$:
+
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (v) at ($3*(e1)+2*(e2)$);
+    \draw[vector, xpurple] (O) -- ++(v) node[midway, left] {$\vec{v}$};
+    \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] (e1) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] ($2*(e1)$) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xblue, dashed] ($3*(e1)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($3*(e1)+(e2)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
+    \fill (O) circle (0.05);
+  \end{tikzpicture}
+\end{center}
+
+We see that using these basis vectors, $\xp{\vec{v}}=3\xr{\vec{e}_{1}}+2\xb{\vec{e}_{2}}$. This means that we need to add three times $\xr{\vec{e}_{1}}$ and two times $\xb{\vec{e}_{2}}$ to construct $\xp{\vec{v}}$. We denote this fact by writing $\xp{\vec{v}}$ as a column of two numbers:
+
+\[
+  \xp{\vec{v}}=\colvec{\tikzmark{v1}{\xr{3}};\tikzmark{v2}{\xb{2}}}
+\]
+
+\begin{tikzpicture}[overlay, remember picture]
+  \coordinate(v1b) at (pic cs:v1);
+  \coordinate(v2b) at (pic cs:v2);
+  \node[right of=v1b, anchor=west, yshift=5pt] (v1txt) {How much of $\xr{\vec{e}_{1}}$ is in $\xp{\vec{v}}$};
+  \node[right of=v2b, anchor=west, yshift=-5pt] (v2txt) {How much of $\xb{\vec{e}_{2}}$ is in $\xp{\vec{v}}$};
+  \draw[->, thick, xred] (v1txt) -- ($(v1b)+(10pt,0)$);
+  \draw[->, thick, xblue] (v2txt) -- ($(v2b)+(10pt,0)$);
+\end{tikzpicture}
+
+\begin{example}{Vectors from basis vectors}{more vectors same basis}
+  Two more vectors represented as sums of the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$:
+
+  \begin{center}
+    \begin{tikzpicture}
+      \coordinate (u) at ($2*(e1)-2*(e2)$);
+      \draw[vector, xorange] (O) -- (u) node[midway, below] {$\xo{\vec{u}}$};
+      \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
+      \draw[vector, xred, dashed] (e1) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
+      \draw[vector, xblue, dashed] ($2*(e1)$) -- ++($-1*(e2)$) node[midway, right] {$-\vec{e}_{2}$};
+      \draw[vector, xblue, dashed] ($2*(e1)-(e2)$) -- ++($-1*(e2)$) node[midway, right] {$-\vec{e}_{2}$};
+      \fill (O) circle (0.05);
+      \node[right of=O, xshift=3cm, anchor=west] (u_math) {$\xo{\vec{u}}=2\xr{\vec{e}_{1}}-2\xb{\vec{e}_{2}}\quad\longrightarrow\quad\xo{\vec{u}}=\xtwocolvec{2}{-2}$};
+    \end{tikzpicture}
+
+    \vspace{1.5em}
+    \begin{tikzpicture}
+      \coordinate (w) at ($-3*(e1)+1.5*(e2)$);
+      \draw[vector, xgreen] (O) -- (w) node[midway, above] {$\xg{\vec{w}}$};
+      \draw[vector, xred, dashed] (O) -- ++($-1*(e1)$) node[midway, below] {$-\vec{e}_{1}$};
+      \draw[vector, xred, dashed] ($-1*(e1)$) -- ++($-1*(e1)$) node[midway, below] {$-\vec{e}_{1}$};
+      \draw[vector, xred, dashed] ($-2*(e1)$) -- ++($-1*(e1)$) node[midway, below] {$-\vec{e}_{1}$};
+      \draw[vector, xblue, dashed] ($-3*(e1)$) -- ++(e2) node[midway, left] {$\vec{e}_{2}$};
+      \draw[vector, xblue, dashed] ($-3*(e1)+(e2)$) -- ++($0.5*(e2)$) node[midway, left] {$\frac{1}{2}\vec{e}_{2}$};
+      \fill (O) circle (0.05);
+      \node[right of=O, anchor=west] (u_math2) {$\xg{\vec{w}}=-3\xr{\vec{e}_{1}}+1.5\xb{\vec{e}_{2}}\quad\longrightarrow\quad\xg{\vec{w}}=\xtwocolvec{-3}{1.5}$};
+    \end{tikzpicture}
+  \end{center}
+\end{example}
+
+This notation is frequently refered to as a \emph{column vector}, and the numbers are called the \emph{components} of the vectors. The components themselves are usually denoted using the same symbol used for the vector (without the arrow sign) and an index: for example, the two components of the vector $\xp{\vec{v}}=\xtwocolvec{3}{2}$ are $\xr{v^{1}}=\xr{3}$ and $\xb{v^{2}}=\xb{2}$.
+
+\begin{note}{Index notation}{}
+  In this book we use upper-index notation to denote components of column vectors. Do not mistake these for powers! The reason for this choice (as opposed to lowe-index notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
+\end{note}
+
+It should now be clear why we restrict basis vectors to be noncolinear: if we choose two coliniear vectors, any addition of the two vectors will end up pointing in the same direction as them, and we won't be able to express all vectors as columns (we will be restricted to only a single direction).
+
+\begin{note}{Coordinate systems}{}
+  The set of basis vectors used to represent vectors as columns is sometimes called a \emph{coordinate system}. We will use the name \emph{basis set} to stay consistent.
+\end{note}
+
+Vectors have different components when using different basis sets. For example, we can use the following two vectors $\xdg{\vec{d}_{1}}$ and $\xo{\vec{d}_{2}}$ as basis vectors:
+
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (e1b) at (1,0);
+    \coordinate (e2b) at (0,1);
+    \draw[vector, xdarkgreen] (O) -- ++(e1b) node[midway, above] {$\vec{d}_{1}$};
+    \draw[vector, xorange] (3,0) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+In this new basis set, the vector $\xp{\vec{v}}$ from earlier has the following column representation:
+
+\vspace{-1.2em}
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (vb) at ($2*(e1b)+2.5*(e2b)$);
+    \draw[vector, xdarkgreen] (O) -- ++(e1b) node[midway, below] {$\vec{d}_{1}$};
+    \draw[vector, xdarkgreen] (e1b) -- ++(e1b) node[midway, below] {$\vec{d}_{1}$};
+    \draw[vector, xorange] ($2*(e1b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
+    \draw[vector, xorange] ($2*(e1b)+(e2b)$) -- ++(e2b) node[midway, right] {$\vec{d}_{2}$};
+    \draw[vector, xorange] ($2*(e1b)+2*(e2b)$) -- ++($0.5*(e2b)$) node[midway, right] {$\frac{1}{2}\vec{d}_{2}$};
+    \draw[vector, xpurple] (O) -- (vb) node[above] {$\vec{v}$};
+    \node[anchor=west] (txt1) at (3.5,1.3) {$\xp{\vec{v}}=2\xdg{\vec{d}_{1}}+2.5\xo{\vec{d}_{2}}\quad\longrightarrow\quad\xp{\vec{v}}=\colvec{\xdg{2};\xo{2.5}}$};
+  \end{tikzpicture}
+\end{center}
+(i.e. its components are $\xdg{v^{1}}=\xdg{2}$ and $\xo{v^{2}}=\xo{2.5}$)
+
+This brings us to an important idea, which unfortunately might confuse those who are new to the topic: \textbf{vectors and their column representation are two separate things!} Vectors are objects with a length (norm) and a direction. They don't ``care'' about how \textit{we} describe them numerically: no matter what basis set we use, vectors remain the same - it's their \textit{representation} which changes.
+
+In fact, not only does the choice of basis set affect the column representation of all vectors\footnote{except the zero vector, which is always $\vec{0}=\colvec{0;0}$}, two different vectors \textbf{can have the same column representation using two different basis sets.}. For example. let's say we choose any two non-zero vectors to be used as basis vectors: $\vec{u}$ and $\vec{v}$. Then the following is always true:
+\begin{align*}
+  \vec{u} &= 1\cdot\vec{u} + 0\cdot\vec{v},\\
+  \vec{v} &= 0\cdot\vec{u} + 1\cdot\vec{v}.
+\end{align*}
+
+Therefore, the column representations of $\vec{u}$ and $\vec{v}$ will be exactly $\vec{u}=\colvec{1;0}$ and $\vec{v}=\colvec{0;1}$. This means that the column vectors $\colvec{1;0}$ and $\colvec{0;1}$ can represent \textbf{any} two (non-zero) vectors we wish! So remember: you must always be sure with which basis vectors you are working. Otherwise, mistakes are bound to happen and calculations might make no sense.
+
+\tbw{more examples?}
+
+Since we need two real numbers to express any such 2-dimensional vector as a column, we call the set of all such vectors $\Rs\times\Rs$, or simply $\Rs[2]$.
+
+\subsection{Vector operations, norm and the zero vector in column form}
+Previously we saw how to scale and add vectors (the latter using the parallogram method). Let us now see how we perform these operations using the column representation of vectors. We will use the same basis vectors as before:
+
+\begin{center}
+  \begin{tikzpicture}
+    % !! Use same basis vectors and v from before?.. !!
+    \draw[vector, xred] (O) -- ++(e1) node[midway, above] {$\vec{e}_{1}$};
+    \draw[vector, xblue] (3,0) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+We start with the vector $\xp{\vec{v}}$ from before, i.e. $\xp{3\cdot\vec{v}}=\xr{\vec{e}_{1}}+\xb{2\cdot\vec{e}_{2}}$ and $\xp{\vec{v}}=\xtwocolvec{3}{2}$:
+
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (v) at ($3*(e1)+2*(e2)$);
+    \draw[vector, xpurple] (O) -- ++(v) node[midway, left] {$\vec{v}$};
+    \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] (e1) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] ($2*(e1)$) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xblue, dashed] ($3*(e1)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($3*(e1)+(e2)$) -- ++(e2) node[midway, right] {$\vec{e}_{2}$};
+    \fill (O) circle (0.05);
+  \end{tikzpicture}
+\end{center}
+
+What then would be the components of, say, $\frac{1}{2}\xp{\vec{v}}$? First we scale $\xp{\vec{v}}$ by $\xp{\frac{1}{2}}$: remember, this just means ``squeezing'' the vector to $\xp{\frac{1}{2}}$ its former length, keeping it pointing in the same direction:
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector, xpurple] (O) -- ++(v) node[midway, above left] {$\vec{v}$};
+    \draw[vector, xpurple] (5,0) -- ++($0.5*(v)$) node[midway, above left] {$\frac{1}{2}\vec{v}$};
+    \draw[->, thick] (2.5,1) -- ++(1.5,0) node[midway, above] {$\frac{1}{2}\times$};
+  \end{tikzpicture}
+\end{center}
+
+Now we use the basis vectors $\xr{\vec{e}_{1}}$ and $\xb{\vec{e}_{2}}$ to get the column representation of $\xp{\frac{1}{2}\vec{v}}$:
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector, xpurple] (O) -- ++($0.5*(v)$) node[midway, above left] {$\frac{1}{2}\vec{v}$};
+    \draw[vector, xred, dashed] (O) -- ++(e1) node[midway, below] {$\vec{e}_{1}$};
+    \draw[vector, xred, dashed] (e1) -- ++($0.5*(e1)$) node[midway, below] {$\frac{1}{2}\vec{e}_{1}$};
+    \draw[vector, xblue, dashed] ($1.5*(e1)$) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+We get that $\xp{\frac{1}{2}\vec{v}}=\xr{1.5\vec{e}_{1}}+\xb{1\vec{e}_{2}}$, i.e. $\xp{\frac{1}{2}\vec{v}}=\xtwocolvec{1.5}{1}=\xtwocolvec{\frac{1}{2}\cdot3}{\frac{1}{2}\cdot2}$ - i.e. scaling $\xp{\vec{v}}$ by $\xp{\frac{1}{2}}$ simply multiplied both its components by $\xp{\frac{1}{2}}$.
+
+This is in fact true for any vector and any scalar, using any basis set: scaling a vector by a scalar $\alpha$ results in multiplying each of its components by $\alpha$:
+\begin{equation}
+  \vec{u} = \xtwocolvec{u^{1}}{u^{2}}\quad\Longrightarrow\quad \alpha\vec{u} = \xtwocolvec{\alpha\cdot u^{1}}{\alpha\cdot u^{2}}.
+  \label{eq:column_representation_scaling}
+\end{equation}
+
+Now let's add two vectors together: $\xp{\vec{v}}-\xdg{\vec{w}}$ (the same $\xdg{\vec{w}}$ from \autoref{example:more vectors same basis}), again using the same basis vectors. We saw that $\xp{\vec{v}}=\xtwocolvec{3}{2}$ and $\xdg{\vec{w}}=\xtwocolvec{-3}{1.5}$. Using the parallelogram method their addition is the following vector $\vec{a}$:
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector, xpurple] (O) -- ++(v) node[midway, above left] {$\vec{v}$};
+    \draw[vector, xdarkgreen] (v) -- ++(w) node[midway, above] {$\vec{w}$};
+    \draw[vector] (O) -- ++($(v)+(w)$) node[midway, left, xshift=-5pt] {$\vec{a}=\xp{\vec{v}}+\xdg{\vec{w}}$};
+  \end{tikzpicture}
+\end{center}
+
+Now we calculate the components of $\vec{a}$ in the basis $\xr{\vec{e}_{1}},\xb{\vec{e}_{2}}$:
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[vector] (O) -- ++($(v)+(w)$) node[midway, left, xshift=-5pt] {$\vec{a}$};
+    \draw[vector, xblue, dashed] (O) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] (e2) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($2*(e2)$) -- ++(e2) node[midway, above right] {$\vec{e}_{2}$};
+    \draw[vector, xblue, dashed] ($3*(e2)$) -- ++($0.5*(e2)$) node[midway, above right] {$\frac{1}{2}\vec{e}_{2}$};
+  \end{tikzpicture}
+\end{center}
+
+We see that $\vec{a}=\xr{0\cdot\vec{e}_{1}}+\xb{3.5\vec{e}_{2}}=\xtwocolvec{0}{3.5} = \xtwocolvec{3+(-3)}{2+1.5}$, so the column representation of the addition of two vectors is simply the addition of their components.
+
+This is infact not a coincidence: given two generic column vectors in the same basis $\left\{\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2}}\right\}$,
+\[
+  \vec{u}=\xtwocolvec{u^{1}}{u^{2}},\quad\vec{v}=\xtwocolvec{v^{1}}{v^{2}},
+\]
+we can write them as follows:
+\begin{align*}
+  \vec{u} &= \xr{u^{1}\vec{e}_{1}} + \xb{u^{2}\vec{e}_{2}},\\
+  \vec{v} &= \xr{v^{1}\vec{e}_{1}} + \xb{v^{2}\vec{e}_{2}}.
+\end{align*}
+When adding them in this form we can collect all similar terms together:
+\begin{align*}
+  \vec{w} &= \vec{u} + \vec{v} = \xr{u^{1}\vec{e}_{1}} + \xb{u^{2}\vec{e}_{2}} + \xr{v^{1}\vec{e}_{1}} + \xb{v^{2}\vec{e}_{2}}\\
+          &= \xr{\left(u^{1}+v^{1}\right)\vec{e}_{1}} + \xb{\left(u^{2}+v^{2}\right)\vec{e}_{2}}.
+\end{align*}
+and the column of the resulting vector $\vec{w}$ is therefore
+\[
+  \vec{w} = \xtwocolvec{u^{1}+v^{1}}{u^{2}+v^{2}},
+\]
+which is exactly the \emph{column-wise} addition of $\vec{u}$ and $\vec{v}$.
+
+\begin{note}{Scaling and addition using different basis sets}{}
+This is only true if the column representation of the two vectors uses the same basis set. Adding two column vectors in different basis sets requires changing one of the column representation to the basis of the other one. We will deal with change of basis later in the chapter.
+\end{note}
+
+Negating a vector can be thought of as multiplying it by the scalar $\alpha=-1$. Therefore, given a vector $\vec{v}=\xtwocolvec{v^{1}}{v^{2}}$, its opposite would be
+\begin{equation}
+  -\vec{v}=\xtwocolvec{-v^{1}}{-v^{2}}.
+  \label{eq:column_representation_opposite}
+\end{equation}
+
+And finally, since $\vec{0}=\vec{v}+\left(-\vec{v}\right)$ for any $\vec{v}$, we get that
+\begin{equation}
+  \vec{0} = \xtwocolvec{v^{1}}{v^{2}}+\left(-1\xtwocolvec{v^{1}}{v^{2}}\right) = \xtwocolvec{v^{1}}{v^{2}}+\xtwocolvec{-v^{1}}{-v^{2}} = \xtwocolvec{v^{1}-v^{1}}{v^{2}-v^{2}} = \xtwocolvec{0}{0}.
+  \label{eq:column_representation_zero_vec}
+\end{equation}
+
+\begin{summary}{Column representation of vectors}{}
+  Scaling and adding vectors using their column representation is rather simple:
+  \begin{enumerate}
+    \item Scaling a vector by a scalar $\alpha$ is done by multiplying each of the vector's components by $\alpha$: $\alpha\xtwocolvec{v^{1}}{v^{2}}=\xtwocolvec{\alpha v^{1}}{\alpha v^{2}}$.
+    \item Adding two vectors is done by adding their respective components: $\xtwocolvec{u^{1}}{u^{2}}+\xtwocolvec{v^{1}}{v^{2}}=\xtwocolvec{u^{1}+v^{1}}{u^{2}+v^{2}}$.
+    In general, we say that using the column representation, vector scaling and addition is done \emph{component-wise}.
+    \item Using the above operations we get that the opposite of a vector $\xtwocolvec{v^{1}}{v^{2}}$ is $\xtwocolvec{-v^{1}}{-v^{2}}$.
+    \item We also get that the zero vector is always $\vec{0}=\xtwocolvec{0}{0}$.
+
+  \end{enumerate}
+\end{summary}
+
+\subsection{Cartesian coordinates and the standard basis set}
+We can place vectors on a two-dimensional Cartesian coordinate system, such that their origin coincide with the axis-origin (the point $\bm{O}=(0,0)$). We then mark the point where its head lies as $\bm{p}=(p_{x},p_{y})$:
+
+\begin{center}
+  \begin{tikzpicture}[]
+    \pgfmathsetmacro{\px}{2}
+    \pgfmathsetmacro{\py}{1}
+    \begin{axis}[
+      vector plane,
+      width=7cm, height=7cm,
+      xmin=-1, xmax=3,
+      ymin=-1, ymax=3,
+      xtick={1,...,3},
+      xticklabels={},
+      yticklabels={},
+      extra x ticks={\px},
+      extra x tick labels={$p_{x}$},
+      extra y ticks={\py},
+      extra y tick labels={$p_{y}$},
+    ]
+    \coordinate (vec2d) at (\px,\py);
+    \fill[gray] (vec2d) circle (0.05) node[above] {$\bm{p}=(p_{x},p_{y})$};
+    \draw[gray, dashed] (vec2d) -- (\px,0);
+    \draw[gray, dashed] (vec2d) -- (0,\py);
+    \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above] {$\vec{u}$};
+    \fill (0,0) circle (0.05) node[] (O2) {};
+    \end{axis}
+    \node[below left of=O2, xshift=-10pt] (O2txt) {$\bm{O}=(0,0)$};
+    \draw[-stealth, thick, densely dotted] (O2txt) to[out=90, in=225, looseness=1.0] (O2);
+  \end{tikzpicture}
+\end{center}
+
+This arrangement has a fitting basis set, which we call the \emph{standard basis set of $\Rs[2]$}:
+\begin{enumerate}
+  \item $\cxhat$: a vector of unit length in the direction of the $x$-axis, i.e. from the origin of the axes to point $(1,0)$.
+  \item $\cyhat$: a vector of unit length in the direction of the $y$-axis, i.e. from the origin of the axes to point $(0,1)$.
+\end{enumerate}
+
+\begin{center}
+  \begin{tikzpicture}[]
+    \begin{axis}[
+      vector plane,
+      width=7cm, height=7cm,
+      xmin=-1, xmax=3,
+      ymin=-1, ymax=3,
+      xtick={1,...,3},
+      xticklabels={},
+      yticklabels={},
+      extra x ticks={1},
+      extra x tick labels={(1,0)},
+      extra y ticks={1},
+      extra y tick labels={(0,1)},
+    ]
+    \coordinate (vec2d) at (2,1);
+    \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above] {$\vec{u}$};
+    \draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
+    \draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
+    \fill (0,0) circle (0.05) node[] (O2) {};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+Using the standard basis set, the first component of any vector is simply $p_{x}$ and the second component is $p_{y}$, i.e. $\xo{\vec{u}}=\xtwocolvec{p_{x}}{p_{y}}$. For example, we see that the vector $\xo{\vec{u}}$ in the above figure has the column representation $\xo{\vec{u}}=\xtwocolvec{2}{1}$.
+
+\begin{example}{Vectors on the Cartesian plane}{}
+  Some more vectors on the 2-dimensions Cartesian plane and their column representation using the standard basis (each grid line is one unit in size):
+
+  \begin{center}
+    \begin{tikzpicture}[]
+      \begin{axis}[
+        vector plane,
+        width=7cm, height=7cm,
+        xmin=-3, xmax=3,
+        ymin=-3, ymax=3,
+        xtick={-3,...,3},
+        ytick={-3,...,3},
+        xticklabels={},
+        yticklabels={},
+        major grid style={draw=gray!25, densely dotted},
+      ]
+      \draw[vector, xred] (0,0) -- (1,0) node[midway, below] {$\hat{x}$};
+      \draw[vector, xblue] (0,0) -- (0,1) node[midway, left] {$\hat{y}$};
+      \draw[vector, xpurple] (0,0) -- (2,3) node[anchor=north west, pos=1.05, black] {$\xtwocolvec{2}{3}$};
+      \draw[vector, xdarkgreen] (0,0) -- (-2,1) node[anchor=south, pos=1.05, black] {$\xtwocolvec{-2}{1}$};
+      \draw[vector, xorange] (0,0) -- (-2,-2) node[anchor=east, pos=1.05, black] {$\xtwocolvec{-2}{-2}$};
+      \draw[vector, gray] (0,0) -- (1,-2) node[anchor=west, pos=1.05, black] {$\xtwocolvec{1}{-2}$};
+      \fill (0,0) circle (0.05) node[] (O2) {};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{example}
+
+It's common to call $\xr{u^{1}}$ simply $\xr{x}$, and $\xb{u^{y}}$ simply $\xb{y}$, and therefore the components of some vector $\xo{\vec{u}}$ are called $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively.
+
+\subsection{Polar coordinates}
+Using the 2-dimensional Cartesian plane we can define an alternative coordinate system for vectors: notice that each vector $\xo{\vec{u}}=\xtwocolvec{u^{x}}{u^{y}}$ defines a right triangle together with the $x$-axis; The side on the $x$-axis and the side parallel to the $y$-axis are then $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively:
+
+\begin{center}
+  \begin{tikzpicture}[every node/.style={font=\Large}]
+    \pgfmathsetmacro{\px}{2}
+    \pgfmathsetmacro{\py}{3}
+    \pgfmathsetmacro{\th}{atan(\py/\px)}
+    \begin{axis}[
+      vector plane,
+      width=7cm, height=7cm,
+      xmin=-1, xmax=3,
+      ymin=-1, ymax=3,
+      xtick={1,...,3},
+      xticklabels={},
+      yticklabels={},
+    ]
+    \coordinate (vec2d) at (\px,\py);
+    \draw[gray, dashed] (vec2d) -- (\px,0);
+    \draw[vector, xorange] (0,0) -- (vec2d) node[midway, above left] {$\vec{u}$};
+    \draw[thick] (1.75,0) -- (1.75,0.25) -- (2,0.25);
+		\draw[xred, very thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}] (0,0) -- (\px,0) node[midway, below , yshift=-5pt]{$u^{x}$};
+		\draw[xblue, very thick, decorate, decoration={brace, amplitude=3pt, raise=3pt, mirror}] (\px,0) -- (\px,\py) node[midway, right, xshift=5pt]{$u^{y}$};
+    \draw[xpurple, very thick] (0.75,0) arc (0:\th:0.75);
+    \draw[xpurple, arcnode={3mm}{$\theta$}] (0.75,0) arc (0:\th:0.75);
+    \fill (0,0) circle (0.05) node[] (O2) {};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+Due to the Pythagorean theorem we know that the norm of $\xo{\vec{u}}$ is
+\begin{equation}
+  \xo{\norm{u}} = \sqrt{\left(\xr{u^{x}}\right)^{2} + \left(\xb{u^{y}}\right)^{2}},
+  \label{eq:pythagorean_vec_norm}
+\end{equation}
+and due to trigonometry, the angle $\xp{\theta}$ between $\xo{\vec{u}}$ and the $x$-axis is
+\begin{equation}
+  \xp{\theta} = \arctan\left(\frac{\xb{u^{y}}}{\xr{u^{x}}}\right).
+  \label{eq:label}
+\end{equation}
+
+The alternative coordinate system, called the \emph{polar coordinate system}, uses a tuple of numbers: $\left(\xo{R},\xp{\theta}\right)$ - where $\xo{R}=\xo{\norm{u}}$. The conversion from the coordinates $\left(\xo{R},\xp{\theta}\right)$ to the column form $\xtwocolvec{u^{x}}{u^{y}}$ is therefore
+\begin{align*}
+  \xr{u^{x}} &= \xo{R}\cos(\xp{\theta}),\\\nonumber
+  \xb{u^{y}} &= \xo{R}\sin(\xp{\theta}).
+\end{align*}
+(cf. \autoref{eq:basic_trig_rearrange})
+
+\tbw{examples of transitioning between coords sys}
+
+Before we continue with the topic, let's use what we learned to solve some simple problems:
+
+\begin{example}{Turtle walk}{}
+  Joe the turtle went on a stroll in the field: he first walked $10$ meters, then turned $\ang{30}$ counter clockwise and walked $5$ more meters. After a short rest Joe noticed the pond to his right, so he turned $\ang{45}$ clockwise and walked to the pond - about $30$ meters away. When he reached the pond he swam across it at a $\ang{20}$ counter clockwise and $10$ meters forward.
+\end{example}
+
+\begin{example}{Force on an onject}{forces}
+  Consider a simplified game of ``tug of war'', where two people $\xr{A}$ and $\xdg{B}$ are pulling on some object (black circle) using two ropes of the same length $L$ directly opposite to one another\footnote{A key to solving all mathematical problems is being able to draw a simplified schematic of the situation. That is most definitely \textit{not} an excuse for the lousy drawing\dots}:
+
+  \vspace{1em}
+  \tikzset{
+    person/.style 2 args={fill=#1, circle, label={[text=white]center:$#2$}, minimum size=15pt, inner sep=0pt},
+    rope/.style={line width=4pt, xorange!75},
+    ropeb/.style={rope, draw=xorange!50!black!75, dashed},
+  }
+  \begin{center}
+    \begin{tikzpicture}
+      \node[person={black}{}, minimum size=5pt] (O) at (0,0) {};
+      \node[person={xred}{A}] (A) at (2,0) {};
+      \node[person={xgreen}{B}] (B) at (-2,0) {};
+      \draw[rope] (A) -- (O);
+      \draw[rope] (B) -- (O);
+      \draw[ropeb] (A) -- (O);
+      \draw[ropeb] (B) -- (O);
+      \draw[|-|, thick] (-2,-0.5) -- (0,-0.5) node[midway, below] {$L$};
+      \draw[|-|, thick] (0,0.5) -- (2,0.5) node[midway, above] {$L$};
+    \end{tikzpicture}
+  \end{center}
+
+  If both people pull with the exact same force, the object will stay at the same place. We can explain this using vector addition: if we represent the force applied on the object by the pull of person $\xr{A}$ using the vector $\xr{\vec{F}}$, then the pull force applied on the object by person $\xdg{B}$ is $\xdg{-\vec{F}}$, since the total force must add up to zero (no force=no change in position\footnote{Yes, technically no force means no acceleration, so if this bothers you just assume the object had no initial velocity.}).
+
+  \vspace{1em}
+  Now consider adding a third person pulling on the object, and that all three people are arranged such that they are at $\ang{120}$ to eachother and at the exact same length $L$ from the object they are pulling:
+  
+  \begin{center}
+    \begin{tikzpicture}[
+      ]
+      \pgfmathsetmacro{\L}{2}
+      \draw[arcnode={6*\L}{$\ang{120}$}] ({\L/2},0) arc (0:120:{\L/2});
+      \draw[thick, dashed] ({\L/2},0) arc (0:120:{\L/2});
+      \node[person={black}{}, minimum size=5pt] (O) at (0,0) {};
+      \node[person={xred}{A}] (A) at (\L,0) {};
+      \node[person={xgreen}{B}] (B) at ({\L*cos(120)},{\L*sin(120)}) {};
+      \node[person={xblue}{C}] (C) at ({\L*cos(240)},{\L*sin(240)}) {};
+      \draw[rope] (A) -- (O);
+      \draw[rope] (B) -- (O);
+      \draw[rope] (C) -- (O);
+      \draw[ropeb] (A) -- (O);
+      \draw[ropeb] (B) -- (O);
+      \draw[ropeb] (C) -- (O);
+    \end{tikzpicture}
+  \end{center}
+
+  If the three people are pulling with the same force, what would be the total force experienced by the object? Again, we can express the forces using vectors: $\xr{\vec{F}_{A}},\ \xdg{\vec{F}_{B}}$ and $\xb{\vec{F}_{C}}$ - we want to calculate the sum $\xr{\vec{F}_{A}}+\xdg{\vec{F}_{B}}+\xb{\vec{F}_{C}}$. Since all forces have the same magnitude, we'll call that magnitude simply $F$. Using the standard basis vectors in $\Rs[2]$ we can consider the vector $\xr{\vec{F}_{A}}$ to be pointing to the right and thus having the column representation
+  \[
+    \xr{\vec{F}_{A}} = \colvec{F;0}.
+  \]
+  The vector $\xdg{\vec{F}_{B}}$ has the same magnitude but a different direction: we can use polar coordinates to find its column representations, and we get that these are $(F,\ang{120})$. A simple conversion yields
+  \[
+    \xdg{\vec{F}_{B}} = \colvec{F\cos\left(\ang{120}\right);F\sin\left(\ang{120}\right)} = F\colvec{-\frac{1}{2};\frac{\sqrt{3}}{2}} = \frac{F}{2}\colvec{-1;\sqrt{3}}.
+  \]
+
+  Similar calculation for $\xb{\vec{F}_{C}}$ gives $\xb{\vec{F}_{C}}=\frac{F}{2}\colvec{-1;-\sqrt{3}}$. Adding all three vectors together gives
+  \begin{align*}
+    \xr{\vec{F}_{A}}+\xdg{\vec{F}_{B}}+\xb{\vec{F}_{C}} &= \colvec{F;0} + \frac{F}{2}\colvec{-1;\sqrt{3}} + \frac{F}{2}\colvec{-1;-\sqrt{3}}\\
+                                                        &= \colvec{F-\frac{F}{2}+\frac{F}{2};0+\frac{\sqrt{3}F}{2}-\frac{\sqrt{3}F}{2}}\\
+                                                        &= \colvec{0;0}.
+  \end{align*}
+
+  We get, once again, that the total force applied on the object is zero.
+
+  At this point one might wonder if this pattern always holds, that is - given $n\geq1$ people arranged at the vertices of a regular polygon, each pulling with the same force on a rope connected to some object at the center of the regular polygon, will the total force be zero? To help picture this question, here are schematics for the cases $n=4,5,6,7$:
+
+  \newcommand{\nrope}[2]{
+    \pgfmathsetmacro{\L}{1.5}
+    \pgfmathsetmacro{\n}{#1}
+    \pgfmathsetmacro{\m}{\n-1}
+    \pgfmathsetmacro{\degs}{int(360/\n)}
+    \node[person={black}{}, minimum size=5pt] (\n-O) at (0,0) {};
+    \foreach \k in {0,...,\m}{
+      \node[person={#2}{}] (\n-\k) at ({\L*cos(\degs*\k)},{\L*sin(\degs*\k)}) {};
+      \draw[rope] (\n-\k) -- (O);
+      \draw[ropeb] (\n-\k) -- (O);
+    }
+    \node at (0,{\L*1.5}) {\underline{$n=\n$}};
+    \draw[arcnode={-8*\L}{$\ang{\degs}$}] ({\L/2},0) arc (0:{\degs}:{\L/2});
+    \draw[thick, dashed] ({\L/2},0) arc (0:{\degs}:{\L/2});
+  }
+  \begin{center}
+    \begin{tikzpicture}
+      \nrope{4}{xred}
+    \end{tikzpicture}
+    \hspace{1.5cm}
+    \begin{tikzpicture}
+      \nrope{5}{xblue}
+    \end{tikzpicture}
+
+    \vspace{1em}
+    \begin{tikzpicture}
+      \nrope{6}{xgreen}
+    \end{tikzpicture}
+    \hspace{1.5cm}
+    \begin{tikzpicture}
+      \nrope{7}{xpurple}
+    \end{tikzpicture}
+  \end{center}
+  \tbw{correct $\ang{51}$ issue}
+
+  Intuitively, one would expect that for any $n\geq1$, $\sum\limits_{i=1}^{n}\vec{F}_{i}=\vec{0}$ due to symmetry. Let's do the actual ``dirty work'' and prove this. First, the angle between each two consecutive ropes/people is $\frac{\ang{360}}{n}$. We will use $\frac{2\pi}{n}$ instead, because radians are simply \textit{better} than degrees. We get that each vector $\vec{F}_{k}$ has the following polar coordinates:
+  \[
+    \vec{F}_{k}: \left(L,\frac{2\pi}{n}k\right),
+  \]
+  where $k=0,1,2,\dots,n-1$ - we use this so that the first vector always points directly to the right, which makes the calculations a bit more convinient.
+
+  Using these polar coordinates, we can write each vector in column form in the standard basis in $\Rs[2]$:
+  \[
+    \vec{F}_{k} = \colvec{L\cos\left(\frac{2\pi}{n}k\right);L\sin\left(\frac{2\pi}{n}k\right)}.
+  \]
+  Therefore, the sum of all $n$ vectors is
+  \[
+    \vec{V} = \sum\limits_{k=0}^{n-1}F_{k} = \sum\limits_{k=0}^{n-1}\colvec{L\cos\left(\frac{2\pi}{n}k\right);L\sin\left(\frac{2\pi}{n}k\right)} = L\sum\limits_{k=0}^{n-1}\colvec{\cos\left(\frac{2\pi}{n}k\right);\sin\left(\frac{2\pi}{n}k\right)}.
+  \]
+  Since we want to show that the sum is zero, we can ignore the norm $L$ as it doesn't play a role.
+
+  Since column vectors are added \textit{component-wise}, we actually need to show the following two equalities:
+  \begin{align*}
+    1.\quad\sum\limits_{k=0}^{n-1}\cos\left(\frac{2\pi}{n}k\right) &= 0,\\
+    2.\quad\sum\limits_{k=0}^{n-1}\sin\left(\frac{2\pi}{n}k\right) &= 0.
+  \end{align*}
+
+  Starting with the first sum, we will use Lagrange's trigonometric identities (\autoref{eq:Lagrange's trigonometric identities}). Since these identities involve sums with $k=0,1,2,\dots,n$ but our sums only use $k=0,1,2,\dots,n-1$, we would need to subtract the term where $k=n$ from the result, that is the term $\cos\left(\frac{2\pi}{n}n\right)=\cos\left(2\pi\right)=1$. Using $\theta=\frac{2\pi}{n}$ in the identities we get that
+  \begin{align*}
+    \sum\limits_{k=0}^{n-1}\cos\left( \frac{2\pi}{n}k \right) &= \sum\limits_{k=0}^{n}\cos\left( \frac{2\pi}{n}k \right)-1\\
+                                                              &= \frac{\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)+\sin\left(\left[n+\frac{1}{2}\right]\frac{2\pi}{n}k\right)}{2\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)}-1\\
+                                                              &= \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1.
+  \end{align*}
+  We can use the angle sum trigonometric identities (\autoref{eq:angle_sum}) to calculate $\sin\left(2\pi k+\frac{\pi}{n}k\right)$:
+  \begin{align*}
+    \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1 &= \frac{\sin\left(\frac{\pi}{n}k\right)+\left[\cancel{\sin\left(2\pi k\right)\cos\left(\frac{\pi}{n}k\right)}+\cancelcol[xblue]{\cos\left(2\pi k\right)}\sin\left(\frac{\pi}{n}k\right)\right]}{2\sin\left(\frac{\pi}{n}k\right)}-1\\
+                                                                                                                      &= \frac{\sin\left(\frac{\pi}{n}k\right)+\sin\left(\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}-1\\ 
+                                                                                                                      &= \frac{2\sin(\frac{\pi}{n}k)}{2\sin(\frac{\pi}{n}k)} - 1\\
+                                                                                                                      &= 1-1\\
+                                                                                                                      &= 0.
+  \end{align*}
+
+  And for the second sum (using $\sin\left(\frac{2\pi}{n}n\right)=\sin\left(2\pi\right)=0$):
+  \begin{align*}
+    \sum\limits_{k=0}^{n-1}\sin\left( \frac{2\pi}{n}k \right) &= \sum\limits_{k=0}^{n}\sin\left( \frac{2\pi}{n}k \right)\\
+                                                              &= \frac{\cos\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)-\cos\left(\left[n+\frac{1}{2}\right]\frac{2\pi}{n}k\right)}{2\sin\left(\cancel{\frac{1}{2}}\frac{\cancel{2}\pi}{n}k\right)}\\
+                                                              &= \frac{\cos\left(\frac{\pi}{n}k\right)-\cos\left(2\pi k+\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}\\
+                                                              &= \frac{\cos\left(\frac{\pi}{n}k\right)-\left[\cancelcol[xblue]{\cos\left(2\pi k\right)}\cos\left(\frac{\pi}{n}k\right)-\cancel{\sin\left(2\pi k\right)\sin\left(\frac{\pi}{n}k\right)}\right]}{2\sin\left(\frac{\pi}{n}k\right)}\\
+                                                              &= \frac{\cos\left(\frac{\pi}{n}k\right)-\cos\left(\frac{\pi}{n}k\right)}{2\sin\left(\frac{\pi}{n}k\right)}\\
+                                                              &= 0.
+  \end{align*}
+
+
+  Indeed, adding up all the vectors results in the zero vector - i.e. no force is applied on the object.
+\end{example}
+
+\subsection{$\Rs[3]$}
+Everything we discussed so far regarding vectors in $\Rs[2]$ can be easily applied to vectors existing in 3-dimensional space, which we also call $\Rs[3]$ (i.e. $\Rs\times\Rs\times\Rs$). These vectors also have a length (norm) and a direction, and can be scaled and added in the exact same way as vectors in $\Rs[2]$.
+
+The main difference between vectors in $\Rs[2]$ and vectors in $\Rs[3]$ is that any basis set in $\Rs[3]$ must contain \textbf{three} basis vectors instead of two, and these must not lie in the same \textit{plane} (we will explore exactly what that means a bit later). The column representation of vectors in $\Rs[3]$ therefore has three entries. For example, given the three basis vectors $\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2},\ \xdg{\vec{e}_{3}}}$, then
+\[
+  \vec{v} = \xthreecolvec{2}{-3}{5}
+\]
+is the column representation of the vector
+\[
+  \vec{v} = \xr{2\vec{e}_{1}} - \xb{3\vec{e}_{2}} + \xdg{5\vec{e}_{3}}.
+\]
+
+The restriction on the set of vectors which can be used as basis vectors in $\Rs[3]$ is that \textbf{they must not be on the same plane}, as that will restrict the columns they can represent to also be on the same plane instead of pointing in all possible direction in $3$-dimensions. We call such vectors \emph{coplanar}. Note that if two or more vectors are on the same line in $3$-dimensions, they are also on the same plane. This means that any two of the three basis vectors (or all of them) are also not allowed to be coliniear.
+
+\tbw{figure of coplanar vectors?}
+
+Addition of column vectors in $\Rs[3]$ is also done component-wise, for example:
+\[
+  \xthreecolvec{2}{-3}{5} + \xthreecolvec{0}{4}{-2} = \xthreecolvec{2+0}{-3+4}{5-2} = \xthreecolvec{2}{1}{3}.
+\]
+
+$\Rs[3]$ also has a standard basis set: using a 3-dimensional Cartesian coordinate system with the axes $x,\ y$ and $z$,
+
+\begin{center}
+  \tdplotsetmaincoords{60}{135}
+  \begin{tikzpicture}[tdplot_main_coords]
+    \coordinate (O) at (0,0,0);
+
+    \foreach \x in {0,...,2.5}
+      \foreach \y in {0,...,2.5}{
+        \draw[very thin, gray!25] (\x,-0.5) -- (\x,2.5);
+        \draw[very thin, gray!25] (-0.5,\y) -- (2.5,\y);
+      }
+
+    \draw[vector, black!50] (O) -- (3,0,0) node[pos=1.20, font=\Large]{$x$};
+    \draw[vector, black!50] (O) -- (0,3,0) node[pos=1.10, font=\Large]{$y$};
+    \draw[vector, black!50] (O) -- (0,0,3) node[pos=1.15, font=\Large]{$z$};
+
+    \draw[vector, line width=3pt, xred] (O) -- (1,0,0) node[above]{$\hat{x}$};
+    \draw[vector, line width=3pt, xblue] (O) -- (0,1,0) node[above]{$\hat{y}$};
+    \draw[vector, line width=3pt, xdarkgreen] (O) -- (0,0,1) node[right]{$\hat{z}$};
+  \end{tikzpicture}
+\end{center}
+
+When using these basis vectors the three components of a vector $\vec{u}$ are sometimes refered to as $\xr{u^{x}},\ \xb{u^{y}}$ and $\xdg{u^{z}}$, and its norm is
+\begin{equation}
+  \norm{u} = \sqrt{\left(\xr{u^{x}}\right)^{2} + \left(\xb{u^{y}}\right)^{2} + \left(\xdg{u^{z}}\right)^{2}}.
+  \label{eq:3d_norm_pythagorean}
+\end{equation}
+
+\autoref{eq:3d_norm_pythagorean} is a direct result of the Pythagorean theorem:
+\begin{proof}{Pythagorean theorem in 3D}{}
+  Given a box with sides $a,b$ and $c$, the length of the diagonal line of the base rectangle (in the figure below $\xb{d}$) is given by the Pythagorean theorem (see figure for reference):
+  \begin{center}
+    \tdplotsetmaincoords{70}{300}
+    \begin{tikzpicture}[tdplot_main_coords, every node/.style={font=\Large}]
+      % Grid
+      \foreach \x in {-1,...,3}
+      \foreach \y in {-1,...,5}{
+        \draw[very thin, gray!25] (\x,-1.5) -- (\x,5.5);
+        \draw[very thin, gray!25] (-1.5,\y) -- (3.5,\y);
+      }
+
+      % 3D triangle fill
+      \fill[xdarkgreen, opacity=0.2] (0,0,0) -- (2,4,0) -- (2,4,2) -- cycle;
+
+      % Cube frame
+      \draw[very thick] (0,0,0) -- (2,0,0) -- (2,4,0) -- (0,4,0) -- cycle;
+      \draw[very thick] (0,0,2) -- (2,0,2) -- (2,4,2) -- (0,4,2) -- cycle;
+      \draw[very thick] (0,0,0) -- (0,0,2);
+      \draw[very thick] (2,0,0) -- (2,0,2);
+      \draw[very thick] (0,4,0) -- (0,4,2);
+      \draw[very thick] (2,4,0) -- (2,4,2);
+
+      % Cube diagonals
+      \draw[ultra thick, xblue] (0,0,0) -- (2,4,0) node[midway, left, xshift=-10pt] {$d$};
+      \draw[ultra thick, xpurple] (2,4,0) -- (2,4,2) node[midway, left, yshift=-5pt] {$c$};
+      \draw[ultra thick, xorange] (0,0,0) -- (2,4,2) node[midway, above right, xshift=4pt, yshift=-8pt] {$f$};
+
+      % Labels
+      \node at (3,3,2) {$a$};
+      \node at (0.75,-0.5,0) {$b$};
+      \node at (2,-0.25,1) {$c$};
+    \end{tikzpicture}
+  \end{center}
+  \[
+    \xb{d} = \sqrt{a^{2}+b^{2}}.
+  \]
+  Using the height of the box $\xp{c}$ we can easily calculate the length of the main diagonal of the box, $\xo{f}$, using the Pythagorean theorem on the right triangle with sides $\xb{d},\ \xp{c}$ and hypothenous $\xo{f}$ (shaded in green in the figure):
+  \[
+    \xo{f} = \sqrt{\xb{d}^{2}+\xp{c}^{2}} = \sqrt{\left(\sqrt{a^{2}+b^{2}}\right)^{2}+\xp{c}^{2}} = \sqrt{a^{2}+b^{2}+c^{2}}.
+  \]
+\end{proof}
+
+Using the above proof we simply make the following substitutions:
+\begin{align*}
+  \xr{u^{x}} &=a,\\
+  \xb{u^{y}} &=b,\\
+  \xdg{u^{z}}&=c.
+\end{align*}
+The norm of $\vec{u}$ is then $\norm{u}=\xo{f}$.
+
+\begin{note}{Yet another notation \shrug}{}
+  For whatever reason, the notation $\xr{\hat{i}},\ \xb{\hat{j}}$ and $\xdg{\hat{k}}$ is sometimes used in physics to refer to the standard basis vectors. Accordingly, the components of a vector $\vec{u}$ are refered to as $\xr{u^{i}},\ \xb{u^{j}}$ and $\xdg{u^{k}}$.
+\end{note}
+
+\subsection{$\Rs[n]$}
+Of course, why stop at three dimensions? We can generalize everything which worked so far to any $n$-dimensional space where $n=4,5,6,\dots$ - i.e. the space $\Rs\times\Rs\times\cdots\times\Rs=\Rs[n]$. Picturing vectors in 4-dimensions and above is rather difficult, but the logic remain the same: vectors still have a length and a direction, they can be scaled by a real number and added together in exactly the same fashion as in $\Rs[2]$ and $\Rs[3]$. The zero vector $\vec{0}$ exists and is neutral to addition, etc.
+
+Using the column representation in $\Rs[n]$ makes calculations rather easy: we need to choose $n$ basis vectors and use them to represent any other vector. We can't use any vectors though - just like basis vectors in $\Rs[2]$ must not be on the same \textit{line}, and basis vectors in $\Rs[3]$ can't be in the same \textit{plane}, so do the basis vectors in $\Rs[n]$ not be in the same $\left(n-1\right)$-dimensional \textit{space}. We will explore what that means exactly in the next subsection, but for now let us assume that this is always true, even though it might be somewhat abstract right now.
+
+Like with $\Rs[2]$ and $\Rs[3]$, we will name the $n$ vectors we choose as basis vectors for $\Rs[n]$ using lower-index notation:
+\[
+  \ebv{1},\ \ebv{2},\ \dots,\ \ebv{n}.
+\]
+Then, we can express any vector in $\Rs[n]$ using these basis vectors. For example, in $\Rs[7]$ the vector
+\[
+  \vec{v} = \xr{2\ebv{1}}-\xb{5\ebv{2}}+\xdg{\ebv{3}}-\xp{2\ebv{4}}-\xo{9\ebv{5}}+\xc{\ebv{6}}-\xpk{2\ebv{7}}
+\]
+will be written in column representation as
+\[
+  \vec{v} = \colvec{\xr{2};\xb{-5};\xdg{1};\xp{-2};\xo{-9};\xc{1};\xpk{-2}}.
+\]
+
+Generally of course, the $i$-component of a vector $\vec{u}\in\Rs[n]$ is denoted as $u^{i}$ (again, note the upper-index notation and don't confuse it with an exponent/power). So in the case above, $\xdg{v^{3}}=\xdg{1}$ and $\xo{v^{5}}=\xo{-9}$, for example.
+
+Like before, scaling and adding vectors in column representation in $\Rs[n]$ is done component-wise: given the two vectors
+\[
+  \vec{u}=\colvec{u^{1};u^{2};\vdots;u^{n}},\quad \vec{v}=\colvec{v^{1};v^{2};\vdots;v^{n}},
+\]
+and scalar $\alpha\in\Rs$, the following holds:
+\begin{align}
+  \alpha \vec{u} &= \colvec{\alpha u^{1};\alpha u^{2};\vdots;\alpha u^{n}},\\
+  \vec{u}+\vec{v} &= \colvec{u^{1}+v^{1};u^{2}+v^{2};\vdots;u^{n}+v^{n}}.
+\end{align}
+
+The standard basis set in $\Rs[n]$ is a set of vectors each of norm $1$ and pointing in the direction of the $n$-th Cartesian axis. Again, quite difficult to picture for $n\geq4$, but everything basically behaves just like in $\Rs[2]$ and $\Rs[3]$. The notation for the standard basis vectors in $\Rs[n]$ that we use in this book is the following:
+\begin{equation}
+  \eb{1},\ \eb{2},\ \dots,\ \eb{n}.
+  \label{eq:std_basis_vecs_Rn}
+\end{equation}
+
+The norm of a vector $\vec{v}\in\Rs[n]$ is a generalization of the Pythagorean theorem:
+\begin{equation}
+  \norm{v} = \sqrt{\left(v^{1}\right)^{2} + \left(v^{2}\right)^{2} + \cdots + \left(v^{n}\right)^{2}} = \sqrt{\sum\limits_{k=1}^{n}\left(v^{k}\right)^{2}}.
+  \label{eq:norm_Rs}
+\end{equation}
+(just as before, the $2$ above the components outside the paranthesis denotes power, and the numbers inside the paranthesis denote index)
+
+\subsection{Einstein summation notation}
+We now introduce a very common notation which is used almost everywhere in physics and will give a first hint on why we insist on the upper-index notation for vector components: the \emph{Einstein summation notation}. This notation does the following: everytime we see together an index both as upper-index and as lower-index \textit{in the same term}, it means that there is an implicit sum over that index (the limits of the sum are derived from context).
+
+For example, instead of writing a general vector $\vec{v}\in\Rs[n]$ as
+\[
+  \vec{u} = u^{1}\ebv{1} + u^{2}\ebv{2} + \cdots + u^{n}\ebv{n} = \sum\limits_{k=1}^{n}u^{k}\ebv{k},
+\]
+we simply write
+\begin{equation}
+  \vec{u} = u^{k}\ebv{k}.
+  \label{eq:Einstein_notation_vec_Rn}
+\end{equation}
+
+Another example: using the Einstein summation notation, the norm of the above vector $\vec{u}$ is written simply as
+\begin{equation}
+  \norm{u} = \sqrt{u^{k}\ebv{k}}.
+  \label{eq:Einstein_notation_norm_Rn}
+\end{equation}
+
+This notation might seem arbitrary and annoying now, but it becomes incredibly helpful when discussing high-dimensional \emph{tensors} which might have several components of different types (for which we use both upper- and lower-indices).
+
+\tbw{examples for Einstein notation}
+
+\subsection{Linear combinations and subspaces}
 
 \subsection{The dot product}
 \tbw{an intro with a daily example of projection}
 
-An \emph{orthogonal projection} of a vector $\xr{\vec{u}}$ onto another vector $\xb{\vec{v}}$ essentially measures how much of $\xr{\vec{u}}$ is in the direction of $\xb{\vec{v}}$:
+An \emph{orthogonal projection} of a vector $\vu$ onto another vector $\vv$ essentially measures how much of $\vu$ is in the direction of $\vv$:
 
 \vspace{1em}
 \begin{center}
@@ -998,14 +998,59 @@ Since the two vectors form a right triangle together with the perpendicular line
   \end{tikzpicture}
 \end{center}
 
-% By applying \autoref{eq:basic_trig_rearrange} we get the following expression:
-%
-% \begin{equation}
-%   \projection = \xr{\norm{u}}\cos\left(\ath\right).
-%   \label{eq:projection_angle}
-% \end{equation}
-%
-% \subsection{The cross product}
-% \subsection{The Gram-Schmidt process}
-% \subsection{Normal vectors}
-% \subsection{Usage examples}
+By applying \autoref{eq:basic_trig_rearrange} we get the following expression:
+
+\begin{equation}
+  \projection = \xr{\norm{u}}\cos\left(\ath\right).
+  \label{eq:projection_angle}
+\end{equation}
+
+Using the above equation we can define a product between the two vectors, called the \emph{dot product} - it simply the orthogonal projection of $\vu$ onto $\vv$ multiplied by the norm of $\vv$:
+
+\begin{equation}
+  \vu \cdot \vv = \xb{\norm{v}}\projection = \xr{\norm{u}}\xb{\norm{v}}\cos\left(\ath\right).
+  \label{eq:dot_product}
+\end{equation}
+
+\begin{note}{The name ``dot product''}{}
+  Yes, the term ``dot product'' comes from the use of the symbol $\cdot$ to represent it.
+\end{note}
+
+The dot product works in any space $\Rs[n]$: it takes two vectors and returns a scalar, i.e. it can be thought of as a function of the type
+\begin{equation}
+  \Rs[n]\times\Rs[n] \to \Rs,
+  \label{eq:dot_product_signature}
+\end{equation}
+and therefore, depending mostly on context, it is also called \emph{scalar product}. Another name sometimes used is \emph{inner product}, which is a more generalized concept that we introduce in future chapters.
+
+\begin{note}{Dot product notations}{}
+  While in this section we use the dot notation, other notations are also used depending on the context. Here are some examples for such notations for two vectors $\vec{a}$ and $\vec{b}$:
+
+  \vspace{1em}
+  \begin{center}
+    \begin{NiceTabular}{cp{7cm}}[
+      cell-space-limits=5pt, code-before=\rowcolors{1}{\tabcol!15}{\tabcol!10} \rowcolor{\tabcol!50}{1}
+      ]
+      \toprule
+      \RowStyle[bold=true]{} Notation & Remarks\\
+      \midrule
+      $\left\langle \vec{a},\vec{b} \right\rangle$ & Used in both abstract and applied mathematics.\\
+      $\left( \vec{a},\vec{b} \right)$ & Mostly used in abstract mathematics.\\
+      $\innerproduct{\vec{a}}{\vec{b}}$ & Called the \emph{Dirac notation}, also known as the \emph{bra-ket notation}. Mostly used in physics, especially in quantum physics. This is actually a very useful notation, and we discuss it more in-depth in a later section.\\
+      \bottomrule
+    \end{NiceTabular}
+  \end{center}
+\end{note}
+
+Let's explore some properties of the dot product:
+\begin{descitemize}
+  \item[It is commutative] since $\vu,\ \vv$ and $\cos\left(\ath\right)$ are all real numbers, we can flip the order of the dot product and get the same result:
+    \[
+      \vu \cdot \vv = \xr{\norm{u}}\xb{\norm{v}}\cos\left(\ath\right) = \xb{\norm{v}}\xr{\norm{u}}\cos\left(\ath\right) = \vv \cdot \vu.
+    \]
+\end{descitemize}
+
+\subsection{The cross product}
+\subsection{The Gram-Schmidt process}
+\subsection{Normal vectors}
+\subsection{Usage examples}
