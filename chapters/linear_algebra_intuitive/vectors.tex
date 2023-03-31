@@ -310,7 +310,7 @@ In this new basis set, the vector $\xp{\vec{v}}$ from earlier has the following 
 \end{center}
 (i.e. its components are $\xdg{v^{1}}=\xdg{2}$ and $\xo{v^{2}}=\xo{2.5}$)
 
-This brings us to an important idea, which unfortunately might confuse those who are new to the topic: \textbf{vectors and their column representation are two separate things!} Vectors are objects with a length (norm) and a direction. They don't ``care'' about how \textit{we} describe them numerically: no matter what basis set we use, vectors remain the same - it's their \textit{representation} which changes.
+This brings us to an important idea, which unfortunately might confuse those who are new to the topic: \textbf{vectors and their column representation are two separate things!} Vectors are objects with a length (norm) and a direction. They don't ``care'' about how \textit{we} describe them numerically: no matter what basis set we use, vectors remain the same - it is their \textit{representation} which changes.
 
 In fact, not only does the choice of basis set affect the column representation of all vectors\footnote{except the zero vector, which is always $\vec{0}=\colvec{0;0}$}, two different vectors \textbf{can have the same column representation using two different basis sets.}. For example. let's say we choose any two non-zero vectors to be used as basis vectors: $\vec{u}$ and $\vec{v}$. Then the following is always true:
 \begin{align*}
@@ -542,7 +542,7 @@ Using the standard basis set, the first component of any vector is simply $p_{x}
   \end{center}
 \end{example}
 
-It's common to call $\xr{u^{1}}$ simply $\xr{x}$, and $\xb{u^{y}}$ simply $\xb{y}$, and therefore the components of some vector $\xo{\vec{u}}$ are called $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively.
+it is common to call $\xr{u^{1}}$ simply $\xr{x}$, and $\xb{u^{y}}$ simply $\xb{y}$, and therefore the components of some vector $\xo{\vec{u}}$ are called $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively.
 
 \subsection{Polar coordinates}
 Using the 2-dimensional Cartesian plane we can define an alternative coordinate system for vectors: notice that each vector $\xo{\vec{u}}=\xtwocolvec{u^{x}}{u^{y}}$ defines a right triangle together with the $x$-axis; The side on the $x$-axis and the side parallel to the $y$-axis are then $\xr{u^{x}}$ and $\xb{u^{y}}$, respectively:
@@ -1042,13 +1042,141 @@ and therefore, depending mostly on context, it is also called \emph{scalar produ
   \end{center}
 \end{note}
 
-Let's explore some properties of the dot product:
+Some properties of the dot product:
 \begin{descitemize}
   \item[It is commutative] since $\vu,\ \vv$ and $\cos\left(\ath\right)$ are all real numbers, we can flip the order of the dot product and get the same result:
     \[
       \vu \cdot \vv = \xr{\norm{u}}\xb{\norm{v}}\cos\left(\ath\right) = \xb{\norm{v}}\xr{\norm{u}}\cos\left(\ath\right) = \vv \cdot \vu.
     \]
+
+  \item[It is distributive over vector addition] $\vu\cdot\left(\vv+\vw\right)=\vu\cdot\vv + \vu\cdot\vw$.
+
+  \item[We can pull scalars out of the product]
+    \begin{align*}
+      \left( \alpha \vu \right)\cdot\vv &= \xr{\gnorm{\alpha\vec{u}}}\xb{\norm{v}}\cos\left(\ath\right)\\
+                                        &= \alpha\xr{\norm{u}}\xb{\norm{v}}\cos\left(\ath\right) \leftarrow \alpha\left(\vu\cdot\vv\right) \\
+                                        &= \xr{\norm{u}}\xb{\gnorm{\alpha\vec{v}}}\cos\left(\ath\right). \leftarrow \vu\cdot\left(\alpha\vv\right) \\
+    \end{align*}
 \end{descitemize}
+
+And now for the most important property: as we mentioned before, when the two vectors are orthogonal - the dot product is zero. This can be seen arithmetically using \autoref{eq:dot_product}: when the vectors are orthogonal $\ath=\ang{90}=\frac{\pi}{2}$, and thus $\cos\left(\ath\right)=0$. If both vectors are non-zero and their dot product is zero - they are orthogonal.
+
+This is such an important fact that we will put effort into framing it nicely, so you could memorize it well. How well should you memorize this? So well that if someone wakes you up in the middle of the night and asked you, you could easily repeat it!
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[
+			%background rectangle/.style={fill=olive!2},
+			%show background rectangle,
+			every node/.style={inner sep=0pt, text=xverydarkblue},
+			node distance=12mm
+		]
+		\Large
+
+		% Text
+		\node[text width=8cm, align=center] (u dot v){
+			$\vec{u}\cdot\vec{v} = 0$
+		};
+		\node[align=center, below of=u dot v](equiv) {$\Updownarrow$};
+		\node[align=center, below of=equiv](orthogonal) {$\vec{u}$ and $\vec{v}$ are orthogonal};
+
+		% Corners
+		\node[shift={(-1cm,1cm)}, anchor=north west](CNW) at (u dot v.north west) {\pgfornament[width=1.75cm, color=xverydarkblue]{63}};
+		\node[shift={(1cm,1cm)}, anchor=north east](CNE) at (u dot v.north east) {\pgfornament[width=1.75cm, symmetry=v, color=xverydarkblue]{63}};
+		\node[shift={(-1cm,-3.7cm)}, anchor=south west](CSW) at (u dot v.south west) {\pgfornament[width=1.75cm, symmetry=h, color=xverydarkblue]{37}};
+		\node[shift={(1cm,-3.7cm)}, anchor=south east](CSE) at (u dot v.south east) {\pgfornament[width=1.75cm, symmetry=c, color=xverydarkblue]{41}};
+
+		% Frames
+		\color{xverydarkblue}
+		\pgfornamenthline{CNW}{CNE}{north}{86}
+		\pgfornamenthline{CSW}{CSE}{south}{86}
+		\pgfornamentvline{CNW}{CSW}{west}{86}
+		\pgfornamentvline{CNE}{CSE}{east}{86}
+	\end{tikzpicture}
+\end{figure}
+
+\tbw{calculation examples?}
+
+\tbw{No cancellation}
+
+Of course it is not always easy to find the angle between two vectors - especially not in spaces with more than $2$ dimensions. Since in practive we almost always use vectors in their column represented, it would be nice to find a formula for the dot product which uses this form. Luckily there is such a formula, and it is actually quite simple! Instead of just showing it, let's find it ourselves\footnote{where's the fun otherwise?}.
+
+We start with two vectors, $\vu$ and $\vv$. We will assume for simplicity that we are working in $\Rs[3]$ - although that is not strictly necessary, and after we find the formula we will see how to generalize it to $\Rs[n]$. Using the standard basis in $\Rs[3]$ we have
+\[
+  \vu = \xr{\colvec{u^{x};u^{y};u^{z}}},\quad \vv=\xb{\colvec{v^{x};v^{y};v^{z}}}.
+\]
+The difference of the two vectors is
+\[
+  \vec{w} = \vu-\vv = \colvec{\rcu{x}-\bcv{x};\rcu{y}-\bcv{y};\rcu{z}-\bcv{z}}.
+\]
+
+\begin{center}
+  \begin{tikzpicture}[every node/.style={font=\Large}]
+    \coordinate (O) at (0,0);
+    \coordinate (u) at (3,2);
+    \coordinate (v) at (4,0.5);
+    \pgfmathanglebetweenpoints{\pgfpointanchor{O}{center}}{\pgfpointanchor{v}{center}}
+    \edef\ph{\pgfmathresult}
+    \pgfmathanglebetweenpoints{\pgfpointanchor{O}{center}}{\pgfpointanchor{u}{center}}
+    \edef\th{\pgfmathresult}
+    \pgfmathsetmacro{\psi}{(\th-\ph)/2}
+    \draw[ultra thick, xpurple, fill=xpurple] (0,0) pic {carc=\ph:\th:1};
+    \node[xpurple, yshift=4pt] at ({1.3*cos(\psi)},{1.3*sin(\psi)}) {$\theta$};
+    \draw[vector, xred] (O) -- (u) node[midway, above left] {$\vec{u}$};
+    \draw[vector, xblue] (O) -- (v) node[pos=1.05] {$\vec{v}$};
+    \draw[vector] (v) -- (u) node[midway, above right] {$\vec{w}=\vu-\vv$};
+    \fill (O) circle (0.05);
+  \end{tikzpicture}
+\end{center}
+
+Using the law of cosines (\autoref{eq:law of cosines}) we get
+\[
+  \norm{w} = \xr{\norm{u}}^{2} + \xb{\norm{v}}^{2} - 2\xr{\norm{u}}\xb{\norm{v}}\cos\left(\ath\right).
+\]
+
+Substituting in the definition of the dot product gives
+\[
+  \norm{w} = \xr{\norm{u}}^{2} + \xb{\norm{v}}^{2} - 2\vu\cdot\vv,
+\]
+which by rearrangement yields
+\[
+  \vu\cdot\vv = \frac{1}{2}\left(\xr{\norm{u}}^{2} + \xb{\norm{v}}^{2} - \norm{w}\right).
+\]
+
+Now we simply substitute in the explicit forms of all the terms inside the paranthesis,
+\[
+  \vu\cdot\vv = \frac{1}{2}\left(\left(\rcu{x}\right)^{2}+\left(\rcu{y}\right)^{2}+\left(\rcu{z}\right)^{2} + \left(\bcv{x}\right)^{2}+\left(\bcv{y}\right)^{2}+\left(\bcv{z}\right)^{2} - \left(\rcu{x}-\bcv{x}\right)^{2} - \left(\rcu{y}-\bcv{y}\right)^{2} - \left(\rcu{z}-\bcv{z}\right)^{2} \right),
+\]
+expand and cancel terms. We finally get
+\begin{equation}
+  \vu\cdot\vv = \frac{1}{\cancelcol[xdarkgreen]{2}}\left(\cancelcol[xdarkgreen]{2}\rcu{x}\bcv{x} + \cancelcol[xdarkgreen]{2}\rcu{y}\bcv{y} + \cancelcol[xdarkgreen]{2}\rcu{z}\bcv{z}\right) = \rcu{x}\bcv{x} + \rcu{y}\bcv{y} + \rcu{z}\bcv{z}.
+  \label{eq:dot_product_column_form_R3}
+\end{equation}
+
+Indeed quite a simple formula! If we use the general $\Rs[n]$ instead of $\Rs[3]$, we would get the general formula
+\begin{equation}
+  \vu\cdot\vv = \rcu{1}\bcv{1} + \rcu{2}\bcv{2} + \cdots + \rcu{n}\bcv{n} = \sum\limits_{k=1}^{n}\rcu{k}\bcv{k}.
+  \label{eq:dot_product_column_form}
+\end{equation}
+
+\tbw{examples?}
+
+A useful result of \autoref{eq:dot_product_column_form} is that the dot product of a vector with itself gives the square of the vector's norm:
+\begin{equation}
+  \vu\cdot\vu = \sum\limits_{k=1}^{n}\rcu{k}\rcu{k} = \sum\limits_{k=1}^{n}\left(\rcu{k}\right)^{2} = \xr{\norm{u}}^{2}.
+  \label{eq:dot_product_sqr_norm}
+\end{equation}
+
+\begin{note}{Row-column product}{}
+  While \autoref{eq:dot_product_column_form} is very neat, the way it is written here has some issues which are hard to explain at the moment - but are expanded on in later chapters. For now we just say that when we calculate the dot product of two vectors it is better to express the first one as a \emph{row vector}. What precisely is a row vector and how it differs from a column vector is explained in the section \autoref{section:covectors}. For now just accept that a row vector is an object similar to a column vector, but we write its components using a subscript instead of a superscript. That is, the row vector $\xr{\underline{u}}$ has components $\xr{u_{1}}, \xr{u_{2}}, \dots, \xr{u_{n}}$. We can then write
+  \[
+    \vu\cdot\vv \longrightarrow \xr{\underline{u}}\cdot\vv = \xr{\rowvec{u_{1};u_{2};\dots;u_{n}}}\ \xb{\colvec{v^{1};v^{2};\vdots;v^{n}}} = \sum\limits_{k=1}^{n}\xr{u_{k}}\bcv{k} = \xr{u_{k}}\bcv{k}.
+  \]
+  (the last equality is using Einstein notation)
+
+  \vspace{1em}
+  So just keep this in mind. It might be a bit strange at the moment, but it will become more clear in later sections.
+\end{note}
 
 \subsection{The cross product}
 \subsection{The Gram-Schmidt process}
