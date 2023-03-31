@@ -935,37 +935,18 @@ An \emph{orthogonal projection} of a vector $\xr{\vec{u}}$ onto another vector $
 \vspace{1em}
 \begin{center}
   \begin{tikzpicture}[every node/.style={font=\Large}]
-    % Definitions
-    \pgfmathsetmacro{\ux}{3}
-    \pgfmathsetmacro{\uy}{4}
-    \pgfmathsetmacro{\uL}{sqrt((\ux)^2+(\uy)^2)}
-    \pgfmathsetmacro{\vx}{6}
-    \pgfmathsetmacro{\vy}{2}
-    \pgfmathsetmacro{\vL}{sqrt((\vx)^2+(\vy)^2)}
-    \pgfmathsetmacro{\vxnormed}{\vx/\vL}
-    \pgfmathsetmacro{\vynormed}{\vy/\vL}
-    \pgfmathsetmacro{\projuv}{(\ux*\vx+\uy*\vy)/\vL}
-    \pgfmathsetmacro{\projx}{\vxnormed*\projuv}
-    \pgfmathsetmacro{\projy}{\vynormed*\projuv}
-    \pgfmathsetmacro{\pux}{\projx-\ux}
-    \pgfmathsetmacro{\puy}{\projy-\uy}
-    \pgfmathsetmacro{\ph}{atan(\vy/\vx)}
-    \pgfmathsetmacro{\dL}{0.35}
-
-    % Coordinates
-    \coordinate (u) at (\ux,\uy);
-    \coordinate (v) at (\vx,\vy);
-    \coordinate (vdir) at (\vxnormed*\dL,\vynormed*\dL);
-    \coordinate (projection) at (\projx,\projy);
-    \coordinate (perpdir) at ({\pux/sqrt((\pux)^2+(\puy)^2)*\dL},{\puy/sqrt((\pux)^2+(\puy)^2)*\dL});
-
-    % Drawings
+    \coordinate (O) at (0,0);
+    \coordinate (u) at (3,4);
+    \coordinate (v) at (6,2);
+    \coordinate (proj) at ($(O)!(u)!(v)$);
+    \pgfmathanglebetweenpoints{\pgfpointanchor{O}{center}}{\pgfpointanchor{v}{center}}
+    \edef\ph{\pgfmathresult}
     \draw[vector, xred] (0,0) -- (u) node[midway, above left] {$\vec{u}$};
     \draw[vector, xblue] (0,0) -- (v) node[pos=1.05] {$\vec{v}$};
-    \draw[dashed] (u) -- (projection);
-    \draw ($(projection)-(perpdir)$) -- ++($-1*(vdir)$) -- ++(perpdir);
+    \draw[dashed] (u) -- (proj);
+    \draw[right angle quadrant=2, right angle symbol={O}{v}{u}];
     \fill (0,0) circle (0.05);
-    \draw[ultra thick, decorate, decoration={brace, amplitude=3pt, raise=5pt, mirror}] (0,0) -- (projection) node[midway, below, yshift=-10pt, rotate=\ph]{$\projection$};
+    \draw[ultra thick, decorate, decoration={brace, amplitude=3pt, raise=5pt, mirror}] (0,0) -- (proj) node[midway, below, yshift=-10pt, rotate=\ph]{$\projection$};
   \end{tikzpicture}
 \end{center}
 
@@ -974,96 +955,57 @@ Depending on the directions of both vectors, the projection might be negative:
 \vspace{1em}
 \begin{center}
   \begin{tikzpicture}[every node/.style={font=\Large}]
-    % Definitions
-    \pgfmathsetmacro{\wx}{-3}
-    \pgfmathsetmacro{\wy}{2}
-    \pgfmathsetmacro{\wL}{sqrt((\wx)^2+(\wy)^2)}
-    \pgfmathsetmacro{\vx}{6}
-    \pgfmathsetmacro{\vy}{2}
-    \pgfmathsetmacro{\vL}{sqrt((\vx)^2+(\vy)^2)}
-    \pgfmathsetmacro{\vxnormed}{\vx/\vL}
-    \pgfmathsetmacro{\vynormed}{\vy/\vL}
-    \pgfmathsetmacro{\projwv}{(\wx*\vx+\wy*\vy)/\vL}
-    \pgfmathsetmacro{\projx}{\vxnormed*\projwv}
-    \pgfmathsetmacro{\projy}{\vynormed*\projwv}
-    \pgfmathsetmacro{\pwx}{\projx-\wx}
-    \pgfmathsetmacro{\pwy}{\projy-\wy}
-    \pgfmathsetmacro{\ph}{atan(\vy/\vx)}
-    \pgfmathsetmacro{\dL}{0.35}
-
-    % Coordinates
-    \coordinate (w) at (\wx,\wy);
-    \coordinate (v) at (\vx,\vy);
-    \coordinate (vdir) at (\vxnormed*\dL,\vynormed*\dL);
-    \coordinate (projection) at (\projx,\projy);
-    \coordinate (perpdir) at ({\pwx/sqrt((\pwx)^2+(\pwy)^2)*\dL},{\pwy/sqrt((\pwx)^2+(\pwy)^2)*\dL});
-
-    % Drawings
-    \draw[xblue, very thick, densely dotted] (0,0) -- ($-10*(vdir)$);
-    \draw[vector, xorange] (0,0) -- (w) node[midway, above right] {$\vec{w}$};
-    \draw[vector, xblue] (0,0) -- (v) node[pos=1.05] {$\vec{v}$};
-    \draw[dashed] (w) -- (projection);
-    \draw ($(projection)-(perpdir)$) -- ++($-1*(vdir)$) -- ++(perpdir);
+    \coordinate (O) at (0,0);
+    \coordinate (w) at (-2,3);
+    \coordinate (r) at (3,-1);
+    \coordinate (proj) at ($(O)!(w)!(r)$);
+    \pgfmathanglebetweenpoints{\pgfpointanchor{O}{center}}{\pgfpointanchor{r}{center}}
+    \edef\ph{\pgfmathresult}
+    \draw[very thick, densely dotted, xorange] (O) -- ($-1*(r)$);
+    \draw[vector, xdarkgreen] (0,0) -- (w) node[midway, above right] {$\vec{w}$};
+    \draw[vector, xorange] (0,0) -- (r) node[pos=1.05] {$\vec{r}$};
+    \draw[dashed] (w) -- (proj);
+    \draw[right angle symbol={O}{r}{w}];
     \fill (0,0) circle (0.05);
-    \draw[ultra thick, decorate, decoration={brace, amplitude=3pt, raise=5pt}] (0,0) -- (projection) node[midway, below, yshift=-10pt, rotate=\ph]{$\projection[w][v][xorange]<0$};
+    \draw[ultra thick, decorate, decoration={brace, amplitude=3pt, raise=5pt}] (0,0) -- (proj) node[midway, below, yshift=-10pt, rotate=\ph]{$\projection[w][r][xdarkgreen][xorange]<0$};
   \end{tikzpicture}
 \end{center}
 
-Two more edge cases exist:
-\begin{enumerate}
-  \item If the two vectors are orthongonal, the projection is zero.
-  \item If the two vectors are coliniear, the projection equals the projected vector.
-\end{enumerate}
+Of course, if the the vectors are \emph{orthogonal} then the projection equals zero, since the projected vector and the projection line coincide. On the other hand, if the two vectors are pointing in the same direction, the projection would equal the norm of the projected vector.
 
-Since the two vectors form a right triangle together with the perpendicular line, we can use the angle $\ath$ between the vectors to calculate the projection:
+Since the two vectors form a right triangle together with the perpendicular line, we can use the angle $\ath$ between them to calculate the projection:
 
 \vspace{1em}
 \begin{center}
   \begin{tikzpicture}[every node/.style={font=\Large}]
-    % Definitions
-    \pgfmathsetmacro{\ux}{3}
-    \pgfmathsetmacro{\uy}{4}
-    \pgfmathsetmacro{\uL}{sqrt((\ux)^2+(\uy)^2)}
-    \pgfmathsetmacro{\vx}{6}
-    \pgfmathsetmacro{\vy}{2}
-    \pgfmathsetmacro{\vL}{sqrt((\vx)^2+(\vy)^2)}
-    \pgfmathsetmacro{\vxnormed}{\vx/\vL}
-    \pgfmathsetmacro{\vynormed}{\vy/\vL}
-    \pgfmathsetmacro{\projuv}{(\ux*\vx+\uy*\vy)/\vL}
-    \pgfmathsetmacro{\projx}{\vxnormed*\projuv}
-    \pgfmathsetmacro{\projy}{\vynormed*\projuv}
-    \pgfmathsetmacro{\pux}{\projx-\ux}
-    \pgfmathsetmacro{\puy}{\projy-\uy}
-    \pgfmathsetmacro{\th}{atan2(\uy,\ux)}
-    \pgfmathsetmacro{\ph}{atan(\vy/\vx)}
-    \pgfmathsetmacro{\dL}{0.35}
-
-    % Coordinates
-    \coordinate (u) at (\ux,\uy);
-    \coordinate (v) at (\vx,\vy);
-    \coordinate (vdir) at (\vxnormed*\dL,\vynormed*\dL);
-    \coordinate (projection) at (\projx,\projy);
-    \coordinate (perpdir) at ({\pux/sqrt((\pux)^2+(\puy)^2)*\dL},{\puy/sqrt((\pux)^2+(\puy)^2)*\dL});
-
-    % Drawings
-    \draw[xpurple, very thick, fill=xpurple!25] (0,0) -- ($4*(vdir)$) arc (\ph:\th:4) -- cycle;
-    \draw[vector, xred] (0,0) -- (u) node[midway, above left] {$\vec{u}$};
-    \draw[vector, xblue] (0,0) -- (v) node[pos=1.05] {$\vec{v}$};
-    \draw[dashed] (u) -- (projection);
-    \draw ($(projection)-(perpdir)$) -- ++($-1*(vdir)$) -- ++(perpdir);
-    \fill (0,0) circle (0.05);
-    \draw[ultra thick, decorate, decoration={brace, amplitude=3pt, raise=5pt, mirror}] (0,0) -- (projection) node[midway, below, yshift=-10pt, rotate=\ph]{$\projection$};
+    \coordinate (O) at (0,0);
+    \coordinate (u) at (5,4);
+    \coordinate (v) at (6,0.5);
+    \coordinate (proj) at ($(O)!(u)!(v)$);
+    \pgfmathanglebetweenpoints{\pgfpointanchor{O}{center}}{\pgfpointanchor{v}{center}}
+    \edef\ph{\pgfmathresult}
+    \pgfmathanglebetweenpoints{\pgfpointanchor{O}{center}}{\pgfpointanchor{u}{center}}
+    \edef\th{\pgfmathresult}
+    \pgfmathsetmacro{\psi}{(\th-\ph)/2}
+    \draw[ultra thick, xpurple, fill=xpurple] (0,0) pic {carc=\ph:\th:2};
+    \node[xpurple, yshift=3pt] at ({1.5*cos(\psi)},{1.5*sin(\psi)}) {$\theta$};
+    \draw[vector, xred] (O) -- (u) node[midway, above left] {$\vec{u}$};
+    \draw[vector, xblue] (O) -- (v) node[pos=1.05] {$\vec{v}$};
+    \draw[dashed] (u) -- (proj);
+    \draw[right angle quadrant=2, right angle symbol={O}{v}{u}];
+    \fill (O) circle (0.05);
+    \draw[ultra thick, decorate, decoration={brace, amplitude=3pt, raise=5pt, mirror}] (O) -- (proj) node[midway, below, yshift=-10pt, rotate=\ph]{$\projection$};
   \end{tikzpicture}
 \end{center}
 
-By applying \autoref{eq:basic_trig_rearrange} we get the following expression:
-
-\begin{equation}
-  \projection = \xr{\norm{u}}\cos\left(\ath\right).
-  \label{eq:projection_angle}
-\end{equation}
-
-\subsection{The cross product}
-\subsection{The Gram-Schmidt process}
-\subsection{Normal vectors}
-\subsection{Usage examples}
+% By applying \autoref{eq:basic_trig_rearrange} we get the following expression:
+%
+% \begin{equation}
+%   \projection = \xr{\norm{u}}\cos\left(\ath\right).
+%   \label{eq:projection_angle}
+% \end{equation}
+%
+% \subsection{The cross product}
+% \subsection{The Gram-Schmidt process}
+% \subsection{Normal vectors}
+% \subsection{Usage examples}
