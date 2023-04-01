@@ -1074,10 +1074,9 @@ This is such an important fact that we will put effort into framing it nicely, s
 		\Large
 
 		% Text
-		\node[text width=8cm, align=center] (u dot v){
-			$\vec{u}\cdot\vec{v} = 0$
-		};
-		\node[align=center, below of=u dot v](equiv) {$\Updownarrow$};
+		\node[text width=8cm, align=center] (u dot v){$\vec{u}\cdot\vec{v}=0$};
+    \node[text width=8cm, align=center, below of=u dot v, yshift=6mm] (no zero){(and both are non-zero)};
+		\node[align=center, below of=u dot v, yshift=-3mm](equiv) {$\Updownarrow$};
 		\node[align=center, below of=equiv](orthogonal) {$\vec{u}$ and $\vec{v}$ are orthogonal};
 
 		% Corners
@@ -1097,7 +1096,19 @@ This is such an important fact that we will put effort into framing it nicely, s
 
 \tbw{calculation examples?}
 
-\tbw{No cancellation}
+A result of the fact that the dot product of two vectors can be zero even if both vectors are non-zero is that unlike with real numbers, terms can't be cancelled: suppose we have some three \textbf{non-zero} real numbers $a,\ b$ and $c$, such that
+\[
+  ab = ac,
+\]
+then we know that $b=c$. However, that doesn't work with vectors and the dot product: suppose the three vectors $\vu,\ \vv$ and $\vw\neq\vv$ are all non-zero, and
+\[
+  \vu\cdot\vv = \vu\cdot\vw.
+\]
+By rearranging and using the distributive property of the dot product, we can write
+\[
+  \vu\cdot(\vv-\vw) = \vec{0}.
+\]
+This means that $\vu$ is orthogonal to the vector $\vu-\vw$, which is also non-zero since $\vw\neq\vv$.
 
 Of course it is not always easy to find the angle between two vectors - especially not in spaces with more than $2$ dimensions. Since in practive we almost always use vectors in their column represented, it would be nice to find a formula for the dot product which uses this form. Luckily there is such a formula, and it is actually quite simple! Instead of just showing it, let's find it ourselves\footnote{where's the fun otherwise?}.
 
