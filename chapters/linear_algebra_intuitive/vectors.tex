@@ -1190,6 +1190,134 @@ A useful result of \autoref{eq:dot_product_column_form} is that the dot product 
 \end{note}
 
 \subsection{The cross product}
+Another commonly used product of two vectors is the so-called \emph{cross product}. Unlike the dot product, it is only really valid in $\Rs[2],\ \Rs[3]$ and $\Rs[7]$, of which we will focus on $\Rs[3]$ and touch a bit on its uses in $\Rs[2]$. Also in contrast to the dot product, the cross product in $\Rs[3]$ results in a vector rather than a scalar - therefore the product is sometimes known as the \emph{vector product}. The cross product uses the notation $\vec{a}\times\vec{b}$, from which it derives its name.
+
+We start with the definition of the cross product in $\Rs[2]$: the cross product of two vectors $\vu=\vutd$ and $\vv=\vvtd$ is the (signed) area of the parallelogram defined by the two vectors (see \autoref{fig:cross_product_in_R2}).
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			vector plane,
+			xmin=-1, xmax=4,
+			ymin=-1, ymax=4,
+			xticklabels={,},
+			yticklabels={,},
+		]
+			\tikzset{every node/.style={font=\large}}
+			\fill[xpurple, opacity=0.2] (0,0) -- (1,2.5) -- (3,3) -- (2,0.5) -- cycle;
+			\draw[vector, xred] (0,0) -- (1,2.5) node[midway, above left] {$\vec{u}$};
+			\draw[vector, xblue] (0,0) -- (2,0.5) node[midway, above] {$\vec{v}$};
+			\draw[vector, xred, dashed] (2,0.5) -- (3,3);
+			\draw[vector, xblue, dashed] (1,2.5,0) -- (3,3);
+			\node[xpurple] at (1.5,1.75) {$\vec{u}\times\vec{v}$};
+			\addplot[only marks, mark=*] coordinates {(0,0)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The cross product in $\Rs[2]$  of two vectors $\vu=\vutd$ and $\vv=\vvtd$ as the signed area of the parallogram defined by the vectors.}
+	\label{fig:cross_product_in_R2}
+\end{figure}
+
+The value of the parallelogram defined by $\vu$ and $\vv$ is
+\begin{equation}
+	\vu\times\vv = \gnorm{\vu}\gnorm{\vv}\sin \left( \ath \right),
+	\label{eq:cross_product_geometric_area}
+\end{equation}
+where $\ath$ is the angle between the vectors. This is extremely similar to the scalar product, and we can use this fact to find how to calculate the cross product from vectors in column form: if we replace $\vu$ by a vector orthogonal to it, denoted by $\vu^{\perp}$, the cross product is then
+\begin{equation}
+	\vu\times\vv = \gnorm{\vu^{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right),
+	\label{eq:cross_product_to_dot_product_part1}
+\end{equation}
+since the angle between $\vu^{\perp}$ and $\vv$ is $\frac{\pi}{2}$ more than that between $\vu$ and $\vv$. Using the fact that $\sin \left( \theta+\frac{\pi}{2} \right) = \cos \left( \theta \right)$, we get the equality
+\begin{align}
+	\vu\times\vv &= \gnorm{\vu^{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right)\nonumber\\
+				 &= \gnorm{\vu^{\perp}}\gnorm{\vv}\cos \left( \ath \right)\nonumber\\
+				 &= \vu^{\perp}\cdot\vv.
+	\label{eq:cross_product_to_dot_product_part2}
+\end{align}
+In $\Rs[2]$, any vector $\vu=\vutd$ has two vectors orthogonal to it: $\colvec{\textcolor{xred}{-b};\textcolor{xred}{a}}$ and $\colvec{\textcolor{xred}{b};\textcolor{xred}{-a}}$. Choosing the former gives
+\begin{equation}
+	\vu\times\vv = \colvec{\textcolor{xred}{-b};\textcolor{xred}{a}} \cdot \vvtd = -\textcolor{xred}{b}\textcolor{xblue}{c}+\textcolor{xred}{a}\textcolor{xblue}{d},
+	\label{eq:cross_product_2d_algebraic}
+\end{equation}
+while choosing the latter gives
+\begin{equation}
+	\vu\times\vv = \colvec{\textcolor{xred}{b};\textcolor{xred}{-a}} \cdot \vvtd = \textcolor{xred}{b}\textcolor{xblue}{c}-\textcolor{xred}{a}\textcolor{xblue}{d}.
+	\label{eq:}
+\end{equation}
+These two forms are the opposite of each other - i.e. if one yields the value $4$, the other yields the value $-4$. We will see which one is used in a moment.
+
+On to $\Rs[3]$: geometrically, the cross product of two vectors $\vu,\vv\in\Rs[3]$ is defined as a \textbf{vector} $\vw\in\Rs[3]$ which is \textbf{orthogonal to both} $\vu$ and $\vv$, and with norm of the same magnitude as the product would have in $\Rs[2]$, i.e.
+\begin{equation}
+	\gnorm{\vw} = \gnorm{\vu}\gnorm{\vv}\sin\left(\ath\right).
+	\label{eq:cross product geometry}
+\end{equation}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\huge
+
+	% Plane
+		\draw[-, dashed, very thick, fill=xgreen!30] (0,0,0) -- (0,0,7) -- (7,0,7) -- (7,0,0) -- cycle;
+
+	% Coordinates
+		\coordinate (o) at (1,0,3);
+		\coordinate (u) at (2,0,2.5);
+		\coordinate (v) at (4,0,-2);
+		\coordinate (w) at (0,3,0);
+
+	% Angle
+		\draw[very thick, xpurple, cap=round] (2,0,4.2) arc [start angle=-70, end angle=33, x radius=0.7, y radius=0.4];
+		\node[text=xpurple] at ($(o)+(0.5,-0.13,0)$) {\large$\theta$};
+
+	% Vectors
+		\draw[vector, xred] (o) -- ++(u) node [pos=1.1, xshift=3pt] {$\vec{u}$};
+		\draw[vector, xblue] (o) -- ++(v) node [pos=1.1, xshift=-5pt] {$\vec{v}$};
+		\draw[vector, xpurple] (o) -- ++(w) node [pos=1.1, xshift=1cm] {$\vw=\vu\times\vv$};
+
+	% Perpendiculars
+		\tikzset{rightangle/.style={-, thick, fill=gray!50, fill opacity=0.5}}
+		\draw[rightangle] (o) -- ++(0.3,0,-0.15) -- ++(0,0.3,0) -- ++(-0.3,0,0.15) -- cycle;
+		\draw[rightangle] (o) -- ++(0.4,0,0.5) -- ++(0,0.3,0) -- ++(-0.4,0,-0.5) -- cycle;
+	\end{tikzpicture}
+	\caption{The cross product of the vectors $\vu$ and $\vv$ relative to the plane spanned by the two vectors.}
+	\label{fig:cross product}
+\end{figure}
+
+The direction of $\vu\times\vv$ is determined by the \emph{right-hand rule}: using a person's right hand, when $\vu$ points in the direction of their index finger and $\vv$ points in the direction of their middle finger, then vector $\vw=\vu\times\vv$ points in the direction of their thumb:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{figures/linear_algebra/rhr.pdf}
+\end{figure}
+
+The cross product is \textbf{anti-commutative}, i.e. changing the order of the vectors results in inverting the product:
+  \begin{equation*}
+  \vu\times\vv = -\left( \vv\times\vu \right).
+  \end{equation*}
+
+  When the vectors are given as column vectors, $\vu=\xr{\colvec{u^{x};u^{y};u^{z}}}$ and $\vv=\xb{\colvec{v^{x};v^{y};v^{z}}}$, the resulting cross product is
+
+\begin{equation}
+	\vu\times\vv = \begin{pmatrix}\textcolor{xred}{u_{y}}\textcolor{xblue}{v_{z}}-\textcolor{xred}{u_{z}}\textcolor{xblue}{v_{y}}\\\textcolor{xred}{u_{z}}\textcolor{xblue}{v_{x}}-\textcolor{xred}{u_{x}}\textcolor{xblue}{v_{z}}\\\textcolor{xred}{u_{x}}\textcolor{xblue}{v_{y}}-\textcolor{xred}{u_{y}}\textcolor{xblue}{v_{x}}\end{pmatrix}
+	\label{eq:cross product calculation}
+\end{equation}
+
+\begin{note}{The cross product of the standard basis vectors}{}
+	The cross product of two of the standard basis vectors in $\Rs[3]$ is the third basis vector. Its sign ($\pm$) is determined by a cyclic rule:
+	\begin{equation*}
+		\text{sign}\left( \eb{i}\times\eb{j} \right) =
+		\begin{cases}
+			1 & \text{if } (i,j)\in \left\{(1,2),\ (2,3),\ (3,1)\right\},\\
+			-1 & \text{if } (i,j)\in \left\{(3,2),\ (2,1),\ (1,3)\right\},\\
+			0 & \text{otherwise}.
+		\end{cases}
+	\end{equation*}
+\end{note}
+\begin{challenge}{Orthogonalily of the cross product}{}
+	Using component calculation and utilizing the dot product, show that $\vec{a}\times\vec{v}$ is indeed orthogonal to both $\vec{a}$ and $\vec{b}$.
+\end{challenge}
 \subsection{The Gram-Schmidt process}
 \subsection{Normal vectors}
 \subsection{Usage examples}
