@@ -925,6 +925,8 @@ This notation might seem arbitrary and annoying now, but it becomes incredibly h
 
 \tbw{examples for Einstein notation}
 
+\tbw{unit vectors and normalization in column representation}
+
 \subsection{Linear combinations and subspaces}
 
 \subsection{The dot product}
@@ -1300,7 +1302,7 @@ The cross product is \textbf{anti-commutative}, i.e. changing the order of the v
   When the vectors are given as column vectors, $\vu=\xr{\colvec{u^{x};u^{y};u^{z}}}$ and $\vv=\xb{\colvec{v^{x};v^{y};v^{z}}}$, the resulting cross product is
 
 \begin{equation}
-	\vu\times\vv = \begin{pmatrix}\textcolor{xred}{u_{y}}\textcolor{xblue}{v_{z}}-\textcolor{xred}{u_{z}}\textcolor{xblue}{v_{y}}\\\textcolor{xred}{u_{z}}\textcolor{xblue}{v_{x}}-\textcolor{xred}{u_{x}}\textcolor{xblue}{v_{z}}\\\textcolor{xred}{u_{x}}\textcolor{xblue}{v_{y}}-\textcolor{xred}{u_{y}}\textcolor{xblue}{v_{x}}\end{pmatrix}
+  \vu\times\vv = \colvec{\rcu{y}\bcv{z}-\rcu{z}\bcv{y};\rcu{z}\bcv{x}-\rcu{x}\bcv{z};\rcu{x}\bcv{y}-\rcu{y}\bcv{x}}.
 	\label{eq:cross product calculation}
 \end{equation}
 
