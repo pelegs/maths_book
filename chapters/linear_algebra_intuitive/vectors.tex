@@ -271,7 +271,7 @@ We see that using these basis vectors, $\xp{\vec{v}}=3\xr{\vec{e}_{1}}+2\xb{\vec
 This notation is frequently refered to as a \emph{column vector}, and the numbers are called the \emph{components} of the vectors. The components themselves are usually denoted using the same symbol used for the vector (without the arrow sign) and an index: for example, the two components of the vector $\xp{\vec{v}}=\xtwocolvec{3}{2}$ are $\xr{v^{1}}=\xr{3}$ and $\xb{v^{2}}=\xb{2}$.
 
 \begin{note}{Index notation}{}
-  In this book we use upper-index notation to denote components of column vectors. Do not mistake these for powers! The reason for this choice (as opposed to lowe-index notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
+  In this book we use upper-index notation (superscript) to denote components of column vectors. Do not mistake these for powers! The reason for this choice (as opposed to lowe-index/subscript notation, i.e. $v_{1},\ v_{2},$ etc.) is to stay consistent with later parts of the book, where covectors and in general tensors are presented.
 \end{note}
 
 It should now be clear why we restrict basis vectors to be noncolinear: if we choose two coliniear vectors, any addition of the two vectors will end up pointing in the same direction as them, and we won't be able to express all vectors as columns (we will be restricted to only a single direction).
@@ -324,7 +324,7 @@ Therefore, the column representations of $\vec{u}$ and $\vec{v}$ will be exactly
 
 Since we need two real numbers to express any such 2-dimensional vector as a column, we call the set of all such vectors $\Rs\times\Rs$, or simply $\Rs[2]$.
 
-\subsection{Vector operations, norm and the zero vector in column form}
+\subsection{Vector operations and the zero vector in column form}
 Previously we saw how to scale and add vectors (the latter using the parallogram method). Let us now see how we perform these operations using the column representation of vectors. We will use the same basis vectors as before:
 
 \begin{center}
@@ -594,6 +594,10 @@ The alternative coordinate system, called the \emph{polar coordinate system}, us
 
 \tbw{examples of transitioning between coords sys}
 
+\subsection{Unit vectors in the standard basis}
+\tbw{this subsection}
+
+\subsection{Examples}
 Before we continue with the topic, let's use what we learned to solve some simple problems:
 
 \begin{example}{Turtle walk}{}
@@ -753,7 +757,7 @@ Before we continue with the topic, let's use what we learned to solve some simpl
   Indeed, adding up all the vectors results in the zero vector - i.e. no force is applied on the object.
 \end{example}
 
-\subsection{$\Rs[3]$}
+\subsection{$3$-dimensional vectors and the space $\Rs[3]$}
 Everything we discussed so far regarding vectors in $\Rs[2]$ can be easily applied to vectors existing in 3-dimensional space, which we also call $\Rs[3]$ (i.e. $\Rs\times\Rs\times\Rs$). These vectors also have a length (norm) and a direction, and can be scaled and added in the exact same way as vectors in $\Rs[2]$.
 
 The main difference between vectors in $\Rs[2]$ and vectors in $\Rs[3]$ is that any basis set in $\Rs[3]$ must contain \textbf{three} basis vectors instead of two, and these must not lie in the same \textit{plane} (we will explore exactly what that means a bit later). The column representation of vectors in $\Rs[3]$ therefore has three entries. For example, given the three basis vectors $\xr{\vec{e}_{1}},\ \xb{\vec{e}_{2},\ \xdg{\vec{e}_{3}}}$, then
@@ -859,7 +863,7 @@ The norm of $\vec{u}$ is then $\norm{u}=\xo{f}$.
   For whatever reason, the notation $\xr{\hat{i}},\ \xb{\hat{j}}$ and $\xdg{\hat{k}}$ is sometimes used in physics to refer to the standard basis vectors. Accordingly, the components of a vector $\vec{u}$ are refered to as $\xr{u^{i}},\ \xb{u^{j}}$ and $\xdg{u^{k}}$.
 \end{note}
 
-\subsection{$\Rs[n]$}
+\subsection{$n$-dimensional vectors and the space $\Rs[n]$}
 Of course, why stop at three dimensions? We can generalize everything which worked so far to any $n$-dimensional space where $n=4,5,6,\dots$ - i.e. the space $\Rs\times\Rs\times\cdots\times\Rs=\Rs[n]$. Picturing vectors in 4-dimensions and above is rather difficult, but the logic remain the same: vectors still have a length and a direction, they can be scaled by a real number and added together in exactly the same fashion as in $\Rs[2]$ and $\Rs[3]$. The zero vector $\vec{0}$ exists and is neutral to addition, etc.
 
 Using the column representation in $\Rs[n]$ makes calculations rather easy: we need to choose $n$ basis vectors and use them to represent any other vector. We can't use any vectors though - just like basis vectors in $\Rs[2]$ must not be on the same \textit{line}, and basis vectors in $\Rs[3]$ can't be in the same \textit{plane}, so do the basis vectors in $\Rs[n]$ not be in the same $\left(n-1\right)$-dimensional \textit{space}. We will explore what that means exactly in the next subsection, but for now let us assume that this is always true, even though it might be somewhat abstract right now.
@@ -928,9 +932,19 @@ This notation might seem arbitrary and annoying now, but it becomes incredibly h
 \tbw{unit vectors and normalization in column representation}
 
 \subsection{Linear combinations and subspaces}
+\tbw{
+  \begin{enumerate}
+    \item linear combs
+    \item spans
+    \item basis sets and dimensionality
+    \item 
+  \end{enumerate}
+}
 
 \subsection{The dot product}
 \tbw{an intro with a daily example of projection}
+\tbw{angle between two vectors in $\Rs[n]$?}
+\tbw{don't forget to mention that the dot product calculation only works in orthonormal basis sets!}
 
 An \emph{orthogonal projection} of a vector $\vu$ onto another vector $\vv$ essentially measures how much of $\vu$ is in the direction of $\vv$:
 
