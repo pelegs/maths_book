@@ -618,6 +618,8 @@ Before we continue with the topic, let's use what we learned to solve some simpl
   Joe the turtle went on a stroll in the field: he first walked $10$ meters, then turned $\ang{30}$ counter clockwise and walked $5$ more meters. After a short rest Joe noticed the pond to his right, so he turned $\ang{45}$ clockwise and walked to the pond - about $30$ meters away. When he reached the pond he swam across it at a $\ang{20}$ counter clockwise and $10$ meters forward.
 \end{example}
 
+\tbw{write an example involving normalization?}
+
 \begin{example}{Force on an onject}{forces}
   Consider a simplified game of ``tug of war'', where two people $\xr{A}$ and $\xdg{B}$ are pulling on some object (black circle) using two ropes of the same length $L$ directly opposite to one another\footnote{A key to solving all mathematical problems is being able to draw a simplified schematic of the situation. That is most definitely \textit{not} an excuse for the lousy drawing\dots}:
 
@@ -951,7 +953,7 @@ This notation might seem arbitrary and annoying now, but it becomes incredibly h
     \item linear combs
     \item spans
     \item basis sets and dimensionality
-    \item 
+    \item orthogonal and orthonormal basis sets
   \end{enumerate}
 }
 
@@ -1253,16 +1255,16 @@ The value of the parallelogram defined by $\vu$ and $\vv$ is
 	\vu\times\vv = \gnorm{\vu}\gnorm{\vv}\sin \left( \ath \right),
 	\label{eq:cross_product_geometric_area}
 \end{equation}
-where $\ath$ is the angle between the vectors. This is extremely similar to the scalar product, and we can use this fact to find how to calculate the cross product from vectors in column form: if we replace $\vu$ by a vector orthogonal to it, denoted by $\vu^{\perp}$, the cross product is then
+where $\ath$ is the angle between the vectors. This is extremely similar to the scalar product, and we can use this fact to find how to calculate the cross product from vectors in column form: if we replace $\vu$ by a vector orthogonal to it, denoted by $\vu_{\perp}$, the cross product is then
 \begin{equation}
-	\vu\times\vv = \gnorm{\vu^{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right),
+	\vu\times\vv = \gnorm{\vu_{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right),
 	\label{eq:cross_product_to_dot_product_part1}
 \end{equation}
-since the angle between $\vu^{\perp}$ and $\vv$ is $\frac{\pi}{2}$ more than that between $\vu$ and $\vv$. Using the fact that $\sin \left( \theta+\frac{\pi}{2} \right) = \cos \left( \theta \right)$, we get the equality
+since the angle between $\vu_{\perp}$ and $\vv$ is $\frac{\pi}{2}$ more than that between $\vu$ and $\vv$. Using the fact that $\sin \left( \theta+\frac{\pi}{2} \right) = \cos \left( \theta \right)$, we get the equality
 \begin{align}
-	\vu\times\vv &= \gnorm{\vu^{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right)\nonumber\\
-				 &= \gnorm{\vu^{\perp}}\gnorm{\vv}\cos \left( \ath \right)\nonumber\\
-				 &= \vu^{\perp}\cdot\vv.
+	\vu\times\vv &= \gnorm{\vu_{\perp}}\gnorm{\vv}\sin \left( \ath+\frac{\pi}{2} \right)\nonumber\\
+				 &= \gnorm{\vu_{\perp}}\gnorm{\vv}\cos \left( \ath \right)\nonumber\\
+				 &= \vu_{\perp}\cdot\vv.
 	\label{eq:cross_product_to_dot_product_part2}
 \end{align}
 In $\Rs[2]$, any vector $\vu=\vutd$ has two vectors orthogonal to it: $\colvec{\textcolor{xred}{-b};\textcolor{xred}{a}}$ and $\colvec{\textcolor{xred}{b};\textcolor{xred}{-a}}$. Choosing the former gives
@@ -1334,20 +1336,40 @@ The cross product is \textbf{anti-commutative}, i.e. changing the order of the v
 	\label{eq:cross product calculation}
 \end{equation}
 
-\begin{note}{The cross product of the standard basis vectors}{}
-	The cross product of two of the standard basis vectors in $\Rs[3]$ is the third basis vector. Its sign ($\pm$) is determined by a cyclic rule:
-	\begin{equation*}
-		\text{sign}\left( \eb{i}\times\eb{j} \right) =
-		\begin{cases}
-			1 & \text{if } (i,j)\in \left\{(1,2),\ (2,3),\ (3,1)\right\},\\
-			-1 & \text{if } (i,j)\in \left\{(3,2),\ (2,1),\ (1,3)\right\},\\
-			0 & \text{otherwise}.
-		\end{cases}
-	\end{equation*}
-\end{note}
-\begin{challenge}{Orthogonalily of the cross product}{}
-	Using component calculation and utilizing the dot product, show that $\vec{a}\times\vec{v}$ is indeed orthogonal to both $\vec{a}$ and $\vec{b}$.
-\end{challenge}
-\subsection{The Gram-Schmidt process}
-\subsection{Normal vectors}
-\subsection{Usage examples}
+Another way of writing the cross product is by using the \emph{Levi-Civita} symbol $\varepsilon_{ijk}$, which is a sort of a generalization of the Kronecker delta to three indices $i,j,k\in{1,2,3}$. The Levi-Civita symbol is defined as follows:
+\begin{equation}
+  \varepsilon_{ijk} = \begin{cases}
+    +1 & \text{if}\ (i,j,k)\in\left\{(1,2,3),(2,3,1),(3,1,2)\right\},\\
+    -1 & \text{if}\ (i,j,k)\in\left\{(2,1,3),(3,2,1),(1,3,2)\right\},\\
+    0 & \text{if}\ i=j,\ i=k\ \text{or}\ j=k.
+                      \end{cases}
+  \label{eq:Levi-Civita symbol}
+\end{equation}
+
+\tbw{explaining the LV symbol + examples}
+
+if we use an orthonormal basis set $B=\left\{\eb{1},\eb{2},\eb{3}\right\}$ which is ordered according to the right-hand rule (e.g. the standard basis set), then the cross product of the two vectors
+\[
+  \vec{a}=\colvec{a^{1};a^{2};a^{3}},\quad\vec{b}=\colvec{b^{1};b^{2};b^{3}},
+\]
+
+is
+\begin{equation}
+  \vec{c} = \vec{a}\times\vec{b} = \sum\limits_{i=1}^{3}\sum\limits_{j=1}^{3}\sum\limits_{k=1}^{3}\varepsilon_{ijk}a^{j}b^{k},
+  \label{eq:cross_product_LCsymbol}
+\end{equation}
+i.e. the component $i$ of the resulting vector $\vec{c}$ is
+\begin{equation}
+  c^{i} = \sum\limits_{j=1}^{3}\sum\limits_{k=1}^{3}\varepsilon_{ijk}a^{j}b^{k}.
+  \label{eq:cross_product_LCsymbol_component}
+\end{equation}
+
+% The standard basis set vectors $\cxhat,\ \cyhat$ and $\czhat$ have a nice relationship in regards to the cross product: since they form an orthonormal basis set, the cross product of any two of the vectors $\hat{e}_{\alpha},\ \hat{e}_{\beta}$ (where $\alpha,\beta\in\left\{\xr{x},\xb{y},\xdg{z}\right\}$) is either the third vector (up to a sign) or zero (in case $\alpha=\beta$). So for example, $\cxhat\times\cyhat=\czhat$ and $\cyhat\times\cyhat=\vec{0}$.
+
+% \begin{challenge}{Orthogonalily of the cross product}{}
+% 	Using component calculation and utilizing the dot product, show that $\vec{a}\times\vec{v}$ is indeed orthogonal to both $\vec{a}$ and $\vec{b}$.
+% \end{challenge}
+
+% \subsection{The Gram-Schmidt process}
+% \subsection{Normal vectors}
+% \subsection{Usage examples}
