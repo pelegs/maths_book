@@ -665,6 +665,11 @@
 \newcommand{\ghl}[1]{\textcolor{xgreen}{#1}}
 \newcommand{\phl}[1]{\textcolor{xpurple}{#1}}
 
+% Terms in a summation
+\newcommand{\sumterm}[3]{
+  \tikz[baseline=-0.5ex, node distance=17pt]{\node[fill=#2, opacity=1, fill opacity=0.25, text opacity=1](ki){#1};\node[below of=ki, #2]{#3};}
+}
+
 % Row and Column vectors
 \makeatletter
 \newcommand\rcvector[2][\\]{\ensuremath{%
