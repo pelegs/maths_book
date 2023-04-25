@@ -1,1 +1,37 @@
 \section{Covectors}\label{section:covectors}
+\subsection{Basics}
+In the matrix section we learned that any linear transformation $T:\Rs[n]\to\Rs[m]$ can be represented by the product of a matrix with $m$ rows and $n$ columns and a vector in $\Rs[n]$ (in this order). The special case were $m=1$ - i.e. a matrix with a single row - has some interesting properties which we will explore in this section.
+
+We start with a definition: given a space $\Rs[n]$, a linear transformation of the type $T:\Rs[n]\to\Rs$ is called a \emph{dual vector} and is represented by a row of $n$ real numbers (refered to as a \emph{row vector}):
+\begin{equation}
+\covec{v} = \rowvec{v_{1};v_{2};\cdots;v_{n}}.
+  \label{eq:}
+\end{equation}
+(note that the components of $\covec{v}$ are deoted with a lower-index notation, as opposed to the components of vectors)
+
+The set of all dual vectors for a given space $\Rs[n]$ is called the \emph{dual space} of $\Rs[n]$.
+
+\subsection{Inner and outer products}
+The application of a dual vector $\covec{u}$ on a vector $\vec{v}$ is equal to the product of a matrix row representing $\covec{i}$ with a matrix column representing $\vec{v}$ - i.e. it is simply the inner product of $\covec{u}$ with $\vec{v}$:
+\begin{equation}
+  \covec{u}\left(\vec{v}\right) = \covec{u}\cdot\vec{v} = \rowvec{u_{1};u_{2};\cdots;u_{n}}\colvec{v^{1};v^{2};\vdots;v^{n}} = \sum\limits_{k=1}^{n}u_{k}v^{k} = u_{k}v^{k}.
+  \label{eq:}
+\end{equation}
+
+However, by just using this method we run into a problem: since the inner product is commutative we expect that $\covec{u}\cdot\vec{v}=\vec{v}\cdot\covec{u}$, but the latter gives
+\[
+  \colvec{v^{1};v^{2};\vdots;v^{n}}\rowvec{u_{1};u_{2};\cdots;u_{n}}.
+\]
+This represents a product of an $n\times 1$ matrix with a $1\times n$ matrix, which should be an $m\times m$ matrix. Indeed, we actually call this the \emph{outer product}. Since for $n>1$ an $n\times n$ matrix isn't equal any scalar, we have an issue.
+
+To circumvent this problem we define the inner product of a vector and a dual vector such that the object on the left is always represented by a row vector, and the object on the right is always represented by a column vector. So if we want to calculate $\covec{u}\cdot\vec{v}$ everything is ok, but if we want to calculate $\vec{v}\cdot\covec{u}$ we need to \textbf{transpose} both representations:
+\begin{equation}
+  \colvec{v^{1};v^{2};\vdots;v^{n}}^{\top} = \rowvec{v_{1};v_{2};\cdots;v_{n}},\quad \rowvec{u_{1};u_{2};\cdots;u_{n}}^{\top} = \colvec{u^{1};u^{2};\vdots;u^{n}}.
+  \label{eq:}
+\end{equation}
+
+\subsection{Geometric visualization}
+
+\subsection{Basis sets and duality}
+
+\subsection{Covariant vs. contravariant vectors}
